@@ -1,0 +1,437 @@
+
+// MaitriseImageRecDlg.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "MaitriseImageRecDlg.h"
+#include "afxdialogex.h"
+#include "iostream"
+#include "sstream"
+#include <math.h>
+#include <process.h>
+
+# include <chrono>
+
+using namespace std;
+using  ns = chrono::nanoseconds;
+using get_time = chrono::steady_clock;
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#endif
+
+#define DBOUT( s )            \
+{                             \
+   std::ostringstream os_;    \
+   os_ << s;                   \
+   OutputDebugStringA(os_.str().c_str() );  \
+}
+
+
+// CAboutDlg dialog used for App About
+
+class CAboutDlg : public CDialogEx
+{
+public:
+	CAboutDlg();
+
+// Dialog Data
+#ifdef AFX_DESIGN_TIME
+	enum { IDD = IDD_ABOUTBOX };
+#endif
+
+	protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV support
+
+// Implementation
+protected:
+	DECLARE_MESSAGE_MAP()
+};
+
+CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
+{
+}
+
+void CAboutDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialogEx::DoDataExchange(pDX);
+}
+
+BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+END_MESSAGE_MAP()
+
+
+// CMaitriseImageRecDlg dialog
+
+
+
+CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(IDD_MAITRISEIMAGEREC_DIALOG, pParent)
+	
+{
+	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+
+}
+
+void CMaitriseImageRecDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_PIC, test);
+}
+
+BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
+	ON_WM_SYSCOMMAND()
+	ON_WM_PAINT()
+	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDOK, &CMaitriseImageRecDlg::OnBnClickedOk)
+END_MESSAGE_MAP()
+
+
+// CMaitriseImageRecDlg message handlers
+
+BOOL CMaitriseImageRecDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// Add "About..." menu item to system menu.
+
+	// IDM_ABOUTBOX must be in the system command range.
+	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
+	ASSERT(IDM_ABOUTBOX < 0xF000);
+
+	CMenu* pSysMenu = GetSystemMenu(FALSE);
+	if (pSysMenu != NULL)
+	{
+		BOOL bNameValid;
+		CString strAboutMenu;
+		bNameValid = strAboutMenu.LoadString(IDS_ABOUTBOX);
+		ASSERT(bNameValid);
+		if (!strAboutMenu.IsEmpty())
+		{
+			pSysMenu->AppendMenu(MF_SEPARATOR);
+			pSysMenu->AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);
+		}
+	}
+
+	// Set the icon for this dialog.  The framework does this automatically
+	//  when the application's main window is not a dialog
+	SetIcon(m_hIcon, TRUE);			// Set big icon
+	SetIcon(m_hIcon, FALSE);		// Set small icon
+
+	// TODO: Add extra initialization here
+	//img.Testing();
+	return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void CMaitriseImageRecDlg::OnSysCommand(UINT nID, LPARAM lParam)
+{
+	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
+	{
+		CAboutDlg dlgAbout;
+		dlgAbout.DoModal();
+	}
+	else
+	{
+		CDialogEx::OnSysCommand(nID, lParam);
+	}
+}
+
+
+// If you add a minimize button to your dialog, you will need the code below
+//  to draw the icon.  For MFC applications using the document/view model,
+//  this is automatically done for you by the framework.
+
+void CMaitriseImageRecDlg::OnPaint()
+{
+	if (IsIconic())
+	{
+		CPaintDC dc(this); // device context for painting
+
+		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
+
+		// Center icon in client rectangle
+		int cxIcon = GetSystemMetrics(SM_CXICON);
+		int cyIcon = GetSystemMetrics(SM_CYICON);
+		CRect rect;
+		GetClientRect(&rect);
+		int x = (rect.Width() - cxIcon + 1) / 2;
+		int y = (rect.Height() - cyIcon + 1) / 2;
+
+		// Draw the icon
+		dc.DrawIcon(x, y, m_hIcon);
+
+		if (kinectPic != NULL) {
+			test.SetBitmap(kinectPic);
+		}
+
+
+		
+
+
+	}
+	else
+	{
+		CDialogEx::OnPaint();
+	}
+}
+
+// The system calls this function to obtain the cursor to display while the user drags
+//  the minimized window.
+HCURSOR CMaitriseImageRecDlg::OnQueryDragIcon()
+{
+	return static_cast<HCURSOR>(m_hIcon);
+}
+
+
+
+void CMaitriseImageRecDlg::Test(IKinectSensor * kinectSensor)
+{
+	// Initialize the Kinect and get coordinate mapper and the body reader
+	IMultiSourceFrame* pMultiFrameSource = NULL;
+	HRESULT hr;
+	ICoordinateMapper* coordMap;
+
+
+
+
+		hr = kinectSensor->get_CoordinateMapper(&coordMap);
+
+	if (SUCCEEDED(hr))
+	{
+		DBOUT("YES");
+	}
+	else DBOUT("FUCK");
+
+
+}
+
+void CMaitriseImageRecDlg::OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	// This feature requires Windows XP or greater.
+	// The symbol _WIN32_WINNT must be >= 0x0501.
+	// TODO: Add your control notification handler code here
+	*pResult = 0;
+}
+
+
+
+
+
+void CMaitriseImageRecDlg::OnBnClickedOk()
+{
+
+	//img.Testing();
+	
+
+	HRESULT hr;
+	
+	CBitmap b;
+	auto start = get_time::now(); //use auto keyword to minimize typing strokes :)
+	auto end = get_time::now();
+
+	hr = GetDefaultKinectSensor(&m_pKinectSensor);
+	if (FAILED(hr))
+	{
+		return;
+	}
+	hr = m_pKinectSensor->Open();
+
+
+
+	if (m_pKinectSensor)
+	{
+		// Initialize the Kinect and get coordinate mapper and the body reader
+		IMultiSourceFrame* pMultiFrameSource = NULL;
+
+		hr = m_pKinectSensor->Open();
+
+
+
+		if (SUCCEEDED(hr))
+		{
+			hr = m_pKinectSensor->get_CoordinateMapper(&m_pCoordinateMapper);
+		}
+
+		if (SUCCEEDED(hr))
+		{
+			hr = m_pKinectSensor->OpenMultiSourceFrameReader(FrameSourceTypes_Depth | FrameSourceTypes_Body | FrameSourceTypes_Color, &m_multiSourceFrame);
+		}
+
+		WAITABLE_HANDLE m_MultiSourceEvent;
+		m_multiSourceFrame->SubscribeMultiSourceFrameArrived(&m_MultiSourceEvent);
+		MSG msg;
+		RGBQUAD *pBuffer = NULL;
+
+		while (true)
+
+		{
+			while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+			{
+
+				TranslateMessage(&msg);
+				DispatchMessageW(&msg);
+			}
+
+			if (WAIT_OBJECT_0 == WaitForSingleObject(reinterpret_cast<HANDLE>(m_MultiSourceEvent), INFINITE))
+			{
+				start = get_time::now();
+
+				IMultiSourceFrameArrivedEventArgs* pArgs{ nullptr };
+				IMultiSourceFrameReference* frameRef{ nullptr };
+				IMultiSourceFrame* frame{ nullptr };
+				//S_OK
+				hr = m_multiSourceFrame->GetMultiSourceFrameArrivedEventData(m_MultiSourceEvent, &pArgs);
+				//S_OK
+				hr = pArgs->get_FrameReference(&frameRef);
+				//S_OK
+				hr = frameRef->AcquireFrame(&frame);
+				IColorFrameReference *colorFrameRef{ nullptr };
+				//S_OK
+				hr = frame->get_ColorFrameReference(&colorFrameRef);
+				IColorFrame *colorFrame = nullptr;
+				// Next one fails with E_FAIL
+				hr = colorFrameRef->AcquireFrame(&colorFrame);
+
+				//------------------------------
+
+				if (SUCCEEDED(hr))
+				{
+					INT64 nTime = 0;
+					IFrameDescription* pFrameDescription = NULL;
+					int nWidth = 0;
+					int nHeight = 0;
+					ColorImageFormat imageFormat = ColorImageFormat_None;
+					UINT nBufferSize = 0;
+					
+
+					hr = colorFrame->get_RelativeTime(&nTime);
+
+					if (SUCCEEDED(hr))
+					{
+						hr = colorFrame->get_FrameDescription(&pFrameDescription);
+					}
+
+					if (SUCCEEDED(hr))
+					{
+						hr = pFrameDescription->get_Width(&nWidth);
+					}
+
+					if (SUCCEEDED(hr))
+					{
+						hr = pFrameDescription->get_Height(&nHeight);
+					}
+
+					if (pBuffer == NULL || nWidth != width || nHeight != height) {
+						if (pBuffer != NULL)
+							delete pBuffer;
+						pBuffer = new RGBQUAD[nWidth * nHeight];
+						width = nWidth;
+						height = nHeight;
+						nBufferSize = nWidth * nHeight * sizeof(RGBQUAD);
+
+					}
+
+					if (SUCCEEDED(hr))
+					{
+						hr = colorFrame->get_RawColorImageFormat(&imageFormat);
+					}
+
+					if (SUCCEEDED(hr))
+					{
+						if (imageFormat == ColorImageFormat_Bgra)
+						{
+							hr = colorFrame->AccessRawUnderlyingBuffer(&nBufferSize, reinterpret_cast<BYTE**>(&pBuffer));
+						
+							CDC sdc;
+							sdc.CreateDC(_T("DISPLAY"), NULL, NULL, NULL);
+							CDC dc;
+							dc.CreateCompatibleDC(&sdc);
+							CBitmap b;
+							b.CreateCompatibleBitmap(&sdc, nWidth, nHeight);
+							b.SetBitmapBits(nBufferSize, reinterpret_cast<BYTE**>(&pBuffer));
+							test.SetBitmap(b);
+						}
+						else if (imageFormat == ColorImageFormat_Yuy2) {
+							BYTE* cc;
+							
+								nBufferSize = nWidth * nHeight * sizeof(RGBQUAD);
+
+							//hr = colorFrame->CopyRawFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer));
+							
+							hr = colorFrame->CopyConvertedFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer), ColorImageFormat_Bgra);
+							BYTE* testingTest = reinterpret_cast<BYTE*>(pBuffer);
+							cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
+
+
+
+
+							CDC sdc;
+							sdc.CreateDC(_T("DISPLAY"), NULL, NULL, NULL);
+							CDC dc;
+							dc.CreateCompatibleDC(&sdc);
+							CBitmap bmp;
+							bmp.CreateCompatibleBitmap(&sdc, nWidth, nHeight);
+							bmp.SetBitmapBits(nBufferSize, testingTest);
+
+						
+							kinectPic = (HBITMAP)bmp.Detach();
+							imageLoaded = true;
+							
+							end = get_time::now();
+							std::ostringstream ss;
+							auto time = end - start;
+							//DBOUT("Time : " << ((chrono::duration_cast<ns>(time).count())/1000));
+							//BYTE t = cc[4];
+							//BYTE a = cc[0];
+
+							
+
+						
+						}
+
+						//else
+						//{
+						//	hr = E_FAIL;
+						//}
+					}
+
+					//if (SUCCEEDED(hr))
+					//{
+					//	ProcessColor(nTime, pBuffer, nWidth, nHeight);
+					//}
+
+					SafeRelease(pFrameDescription);
+				}
+
+
+
+				//----------------
+
+				SafeRelease(colorFrame);
+				SafeRelease(colorFrameRef);
+				SafeRelease(frameRef);
+
+				SafeRelease(pArgs);
+			}
+
+			if (WM_QUIT == msg.message)
+			{
+				break;
+			}
+
+		} // end main loop
+	}
+	
+    //------------------------------------------------------------
+	img.Testing();
+	CImage img;
+	img.Load(_T("C:\\Users\\Mathieu\\Pictures\\OldStuff\\06-56-15-False.png"));
+	test.SetBitmap(img);
+    //CDialogEx::OnOK();
+	
+}
+
+
+
+
+
