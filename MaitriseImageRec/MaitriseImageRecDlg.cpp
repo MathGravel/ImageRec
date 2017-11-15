@@ -20,6 +20,8 @@ using get_time = chrono::steady_clock;
 #define new DEBUG_NEW
 #endif
 
+int WM_FIND = RegisterWindowMessage(L"PICUPDATED");
+
 #define DBOUT( s )            \
 {                             \
    std::ostringstream os_;    \
@@ -84,6 +86,7 @@ BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CMaitriseImageRecDlg::OnBnClickedOk)
+	ON_REGISTERED_MESSAGE(WM_FIND,CMaitriseImageRecDlg::OnImageUpdated)
 END_MESSAGE_MAP()
 
 
@@ -221,8 +224,9 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 {
 
 	//img.Testing();
-	
 
+
+	
 	HRESULT hr;
 	
 	CBitmap b;
@@ -361,22 +365,23 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 							hr = colorFrame->CopyConvertedFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer), ColorImageFormat_Bgra);
 							BYTE* testingTest = reinterpret_cast<BYTE*>(pBuffer);
 							cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
+							//cv::imshow("", cvKinect);
 
 
-
-
-							CDC sdc;
-							sdc.CreateDC(_T("DISPLAY"), NULL, NULL, NULL);
-							CDC dc;
-							dc.CreateCompatibleDC(&sdc);
-							CBitmap bmp;
-							bmp.CreateCompatibleBitmap(&sdc, nWidth, nHeight);
-							bmp.SetBitmapBits(nBufferSize, testingTest);
+							//CDC sdc;
+							//sdc.CreateDC(_T("DISPLAY"), NULL, NULL, NULL);
+							//CDC dc;
+							//dc.CreateCompatibleDC(&sdc);
+							//CBitmap bmp;
+							//bmp.CreateCompatibleBitmap(&sdc, nWidth, nHeight);
+							//bmp.SetBitmapBits(nBufferSize, testingTest);
 
 						
-							kinectPic = (HBITMAP)bmp.Detach();
+							//kinectPic = (HBITMAP)bmp.Detach();
+
 							imageLoaded = true;
-							
+							PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
+
 							end = get_time::now();
 							std::ostringstream ss;
 							auto time = end - start;
@@ -420,16 +425,39 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 			}
 
 		} // end main loop
+		
 	}
 	
-    //------------------------------------------------------------
-	img.Testing();
-	CImage img;
-	img.Load(_T("C:\\Users\\Mathieu\\Pictures\\OldStuff\\06-56-15-False.png"));
-	test.SetBitmap(img);
-    //CDialogEx::OnOK();
+    
 	
 }
+
+
+
+LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
+{
+	//DBOUT("Ca marche");
+	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
+	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
+	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
+	
+	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+	
+	HWND hParent = ::GetParent(hWnd);
+	::SetParent(hWnd, pic->m_hWnd);
+
+
+	IplImage tmp = cvKinect;
+	cvShowImage("IDC_STATIC_OUTPUT", &tmp);
+	//test.SetBitmap(kinectPic);
+	//::ShowWindow(hParent, SW_HIDE);
+
+	return (LRESULT)1;
+
+}
+
+
+
 
 
 

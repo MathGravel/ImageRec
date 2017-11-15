@@ -27,7 +27,7 @@ public:
 
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV support
-	CMaitriseImageRecApp img;
+	//CMaitriseImageRecApp img;
 	
 
 // Implementation
@@ -61,13 +61,13 @@ protected:
 	HBITMAP kinectPic = NULL;
 	int width = -1;
 	int height = -1;
-	void UpdatePicture();
 	static void Test(IKinectSensor* kinectSensor);
 public:
 	afx_msg void OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedOk();
-	afx_msg void OnStnClickedImage();
+	afx_msg LRESULT OnImageUpdated(WPARAM wParam, LPARAM lParam);
 //	int ffgg;
 //	CInkpicture1 Kinect;
 	CStatic test;
+	afx_msg void OnStnClickedPicKinect();
 };
