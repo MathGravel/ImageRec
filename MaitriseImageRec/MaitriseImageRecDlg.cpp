@@ -243,7 +243,7 @@ void CMaitriseImageRecDlg::drawVisualRect(cv::Rect& rect)
 	DBOUT("Draw a rectangle (x,y,w,h) : " << rect.x << "," << rect.y << "," << rect.width << "," << rect.height << ")\n"); 
 	cv::Mat temp = cvKinect.clone(); 
 	cv::rectangle(temp, rect, cv::Scalar(0, 0, 200), 2, 8,0); 
-
+	temp = TextInMat(temp, "SuperTest", rect);
 	cv::imshow("IDC_STATIC_OUTPUT", temp);
 	//cv::imshow("IDC_PIC_KINECT", temp); 
 }
@@ -669,5 +669,11 @@ void CMaitriseImageRecDlg::OnBnClickedTestImageFixe()
 	// TODO: Add your control notification handler code here
 }
 
-
-
+// https://stackoverflow.com/questions/5175628/how-to-overlay-text-on-image-when-working-with-cvmat-type
+cv::Mat CMaitriseImageRecDlg::TextInMat(cv::Mat mat, std::string content, cv::Rect rect) {
+	content = "Testing 1-2"; 
+	cv::Mat temp = mat.clone(); 
+	cv::putText(temp, content.c_str(), cvPoint(rect.x, rect.y + rect.height + 30),
+		cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(200, 200, 250), 1, CV_AA);
+	return temp; 
+}

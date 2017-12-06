@@ -101,6 +101,7 @@ public:
 	afx_msg void OnBnClickedCheck1();
 	afx_msg void OnBnClickedForceSquare();
 	afx_msg void OnBnClickedTestImageFixe();
+	cv::Mat TextInMat(cv::Mat mat, std::string content, cv::Rect rect);
 	afx_msg void OnBnClickedNeuralLocal();
 	afx_msg void OnBnClickedNeuralGlobal();
 };
