@@ -582,7 +582,7 @@ void CMaitriseImageRecDlg::OnEnChangeCategorieEdit()
 void CMaitriseImageRecDlg::OnBnClickedCategorieSave()
 {
 	// DBOUT("From button : " << lastCategorie << "****************"); 
-	if(lastCategorie != NULL && !cvKinect.empty())
+//	if(lastCategorie != NULL && !cvKinect.empty())
 	fileManager.saveImage(lastCategorie, cvKinect(zone)); 
 	// fileManager.saveImage("Bouteille", cvKinect(zone));
 	// TODO: Add your control notification handler code here
