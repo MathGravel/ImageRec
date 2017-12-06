@@ -1,9 +1,9 @@
 #pragma once
 #include "CNN.h"
-#include <boost/python.hpp>
-#include <boost/foreach.hpp> 
+//#include <boost/python.hpp>
+//#include <boost/foreach.hpp> 
 
-namespace py = boost::python;
+//namespace py = boost::python;
 
 class GoogleVisionCNN : public  CNN {
 	GoogleVisionCNN();
