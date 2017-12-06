@@ -8,14 +8,10 @@
 class CNN {
 
 public:
-	CNN();
-	void train(std::string dataLocation);
-	void getPictureInfo(cv::Mat picture);
+	virtual void train() = 0;
+	virtual std::string getPictureInfo(const cv::Mat& picture) = 0;
+	virtual void updateModel(const cv::Mat& picture, bool correctlyIdentified) = 0;
 
-
-private:
-	void extractLayer(int layer);
-	void trainInternal(std::string dataLocation);
 
 
 };

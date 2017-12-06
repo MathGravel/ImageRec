@@ -10,6 +10,8 @@
 #include <mutex>          // std::mutex
 #include <windows.h>
 #include "FileManager.h"
+#include "GoogleVisionCNN.h"
+
 #include "CInputDialog.h"
 //#include "resource.h"
 
