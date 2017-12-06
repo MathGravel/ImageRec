@@ -9,6 +9,8 @@
 
 #include <mutex>          // std::mutex
 #include <windows.h>
+#include "FileManager.h"
+#include "CInputDialog.h"
 
 #pragma once
 
@@ -54,7 +56,7 @@ protected:
 	IDepthFrameReference* m_depthFrame;
 	IBodyFrameReference* m_bodyFrame;
 	IColorFrameReference* m_colorFrame;
-	cv::Mat cvKinect;
+	
 	WAITABLE_HANDLE waitableHandle = 0;
 	WAITABLE_HANDLE m_MultiSourceEvent;
 	bool imageLoaded = false;
@@ -62,7 +64,14 @@ protected:
 	int width = -1;
 	int height = -1;
 	static void Test(IKinectSensor* kinectSensor);
+
+	
+	
+	
 public:
+	FileManager fileManager;
+	cv::Mat cvKinect;
+	std::string lastCategorie =  ""; 
 	afx_msg void OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedOk();
 	afx_msg LRESULT OnImageUpdated(WPARAM wParam, LPARAM lParam);
@@ -70,4 +79,12 @@ public:
 //	CInkpicture1 Kinect;
 	CStatic test;
 	afx_msg void OnStnClickedPicKinect();
+	afx_msg void OnBnClickedCancel();
+
+	virtual BOOL PreTranslateMessage(MSG * pMsg);
+
+	void drawVisualRect(cv::Rect& rect);
+	afx_msg void OnEnChangeEdit1();
+	afx_msg void OnEnChangeCategorieEdit();
+	afx_msg void OnBnClickedCategorieSave();
 };

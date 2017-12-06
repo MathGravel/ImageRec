@@ -9,6 +9,7 @@
 #include "sstream"
 #include <math.h>
 #include <process.h>
+#include "Dbout.h"
 
 # include <chrono>
 
@@ -22,14 +23,11 @@ using get_time = chrono::steady_clock;
 
 int WM_FIND = RegisterWindowMessage(L"PICUPDATED");
 
-#define DBOUT( s )            \
-{                             \
-   std::ostringstream os_;    \
-   os_ << s;                   \
-   OutputDebugStringA(os_.str().c_str() );  \
-}
+void mouse_move(int event, int x, int y, int flag, void* param);
 
-
+bool isDragged = false;
+int oldX(0), oldY(0), newX(0), newY(0);
+cv::Rect zone(0, 0, 0, 0);
 // CAboutDlg dialog used for App About
 
 class CAboutDlg : public CDialogEx
@@ -71,7 +69,13 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_MAITRISEIMAGEREC_DIALOG, pParent)
 	
 {
+
+
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+
+	
+	//PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
+
 
 }
 
@@ -87,6 +91,9 @@ BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CMaitriseImageRecDlg::OnBnClickedOk)
 	ON_REGISTERED_MESSAGE(WM_FIND,CMaitriseImageRecDlg::OnImageUpdated)
+	ON_BN_CLICKED(IDCANCEL, &CMaitriseImageRecDlg::OnBnClickedCancel)
+	ON_EN_CHANGE(IDC_CATEGORIE_EDIT, &CMaitriseImageRecDlg::OnEnChangeCategorieEdit)
+	ON_BN_CLICKED(IDC_CATEGORIE_SAVE, &CMaitriseImageRecDlg::OnBnClickedCategorieSave)
 END_MESSAGE_MAP()
 
 
@@ -206,6 +213,16 @@ void CMaitriseImageRecDlg::Test(IKinectSensor * kinectSensor)
 	else DBOUT("FUCK");
 
 
+}
+
+void CMaitriseImageRecDlg::drawVisualRect(cv::Rect& rect)
+{
+	DBOUT("Draw a rectangle (x,y,w,h) : " << rect.x << "," << rect.y << "," << rect.width << "," << rect.height << ")\n"); 
+	cv::Mat temp = cvKinect.clone(); 
+	cv::rectangle(temp, rect, cv::Scalar(0, 0, 200), 2, 8,0); 
+
+	cv::imshow("IDC_STATIC_OUTPUT", temp);
+	//cv::imshow("IDC_PIC_KINECT", temp); 
 }
 
 void CMaitriseImageRecDlg::OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult)
@@ -364,7 +381,7 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 							
 							hr = colorFrame->CopyConvertedFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer), ColorImageFormat_Bgra);
 							BYTE* testingTest = reinterpret_cast<BYTE*>(pBuffer);
-							cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
+							//cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
 							//cv::imshow("", cvKinect);
 
 
@@ -446,9 +463,7 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
 
-
-	IplImage tmp = cvKinect;
-	cvShowImage("IDC_STATIC_OUTPUT", &tmp);
+    cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
 	//test.SetBitmap(kinectPic);
 	//::ShowWindow(hParent, SW_HIDE);
 
@@ -457,9 +472,118 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 }
 
 
+void CMaitriseImageRecDlg::OnBnClickedCancel()
+{
+	// TODO: Add your control notification handler code here
+	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
+
+	cvKinect = cv::imread("res\\PerrierIn.png.png", cv::IMREAD_COLOR);
+	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
+	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
+
+	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+
+	HWND hParent = ::GetParent(hWnd);
+	::SetParent(hWnd, pic->m_hWnd);
+
+
+	IplImage tmp = cvKinect;
+	//cvShowImage("IDC_STATIC_OUTPUT", &tmp);
+	cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
+
+	cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
+	//CDialogEx::OnCancel();
+}
+
+BOOL CMaitriseImageRecDlg::PreTranslateMessage(MSG* pMsg) {
+	int x = (int)pMsg->wParam; 
+	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+	std::string msgToGet = ""; 
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		if (x == VK_SPACE) {
+			// SET THE SPACE ACTION
+			DBOUT("Space is pressed"); 
+			MessageBox(L"Space as been push", L"AreYouGood?", MB_OK);
+		}
+
+		if (x == VK_RETURN) {
+			// Creates textbox for input
+		
+		}
+	}
+	return false;
+}
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+void mouse_move(int event, int x, int y, int flag, void* param) {
+	CMaitriseImageRecDlg* cmird = (CMaitriseImageRecDlg*)param;
+	int static pastX;
+	int static pastY; 
+	if (event == CV_EVENT_LBUTTONDOWN) {
+		oldX = x;
+		oldY = y; 
+		DBOUT("MOUSE BUTTON DOWN\n");
+		isDragged = true; 
+	}
+	else if (event == CV_EVENT_LBUTTONUP) {
+
+		isDragged = false; 
+		DBOUT("MOUSE BUTTON UP\n"); 
+		cmird->fileManager.saveImage("CategorieNo3", cmird->cvKinect(zone)); 
+	}
+	else if (!isDragged) {
+
+	}
+	else if (isDragged) {
+		newX = x;
+		newY = y;
+		zone.x = (oldX < newX ? oldX : newX);
+		zone.y = (oldY < newY ? oldY : newY);
+		zone.height = (oldY < newY ? newY - oldY : oldY - newY);
+		zone.width = (oldX < newX ? newX - oldX : oldX - newX);
+		if (FORCING_SQUARE) {
+			zone.height = (zone.height > zone.width ? zone.height : zone.width);
+			zone.width = (zone.width > zone.height ? zone.width : zone.height);
+		}
+		pastX = x; 
+		pastY = y; 
+		cmird->drawVisualRect(zone); 
+	}
+
+	if (false && true) {
+		DBOUT("isDragged : " << isDragged << "oldX, oldY = " << oldX << "," << oldY << "newX, newY = " << newX << "," << newY << std::endl); 
+		DBOUT("x,y is : " << x << " " << y << std::endl);
+		DBOUT("Rect is (x,y,w,h): (" << zone.x << "," << zone.y << "," << zone.width << "," << zone.height << ")" << std::endl);
+	}
+}
 
 
 
 
+void CMaitriseImageRecDlg::OnEnChangeCategorieEdit()
+{
+	//zone != NULL) {
+	CEdit* editTitle = (CEdit*)GetDlgItem(IDC_CATEGORIE_EDIT);
+	if ( true) {
+		char* temp = new char[50];
+		CString input;
+		editTitle->GetWindowTextW(input);
+		//editTitle->GetWindowText(temp, 50); 
+		CT2CA converter(input);
+		lastCategorie = std::string(converter);
+	}
+}
 
 
+
+
+void CMaitriseImageRecDlg::OnBnClickedCategorieSave()
+{
+	// DBOUT("From button : " << lastCategorie << "****************"); 
+	if(lastCategorie != NULL && !cvKinect.empty())
+	fileManager.saveImage(lastCategorie, cvKinect(zone)); 
+	// fileManager.saveImage("Bouteille", cvKinect(zone));
+	// TODO: Add your control notification handler code here
+}
