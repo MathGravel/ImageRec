@@ -82,7 +82,6 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 void CMaitriseImageRecDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_PIC, test);
 }
 
 BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
@@ -462,6 +461,7 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 	
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
+	::ShowWindow(hParent, SW_HIDE);
 
     cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
 	//test.SetBitmap(kinectPic);
@@ -485,7 +485,7 @@ void CMaitriseImageRecDlg::OnBnClickedCancel()
 
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
-
+	::ShowWindow(hParent, SW_HIDE);
 
 	IplImage tmp = cvKinect;
 	//cvShowImage("IDC_STATIC_OUTPUT", &tmp);
