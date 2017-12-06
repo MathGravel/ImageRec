@@ -72,7 +72,7 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 
 
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
-
+	
 	
 	//PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
 
