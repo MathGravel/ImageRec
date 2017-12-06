@@ -114,6 +114,9 @@
     <None Include="res\MaitriseImageRec.rc2">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="GoogleCloud.py">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\MaitriseImageRec.ico">

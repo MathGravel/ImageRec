@@ -67,6 +67,7 @@ protected:
 	int width = -1;
 	int height = -1;
 	static void Test(IKinectSensor* kinectSensor);
+	GoogleVisionCNN ccv;
 
 	
 	

@@ -3,9 +3,11 @@
 #include <boost/python.hpp>
 #include <boost/foreach.hpp> 
 
+
 namespace py = boost::python;
 
 class GoogleVisionCNN : public  CNN {
+public:
 	GoogleVisionCNN();
 	~GoogleVisionCNN();
 

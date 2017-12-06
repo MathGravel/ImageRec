@@ -73,7 +73,7 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 	// TODO: Add your control notification handler code here
-
+	
 	//CDialogEx::OnCancel();
 	// TODO: Add your control notification handler code here
 	
@@ -85,7 +85,6 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 void CMaitriseImageRecDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_PIC, test);
 }
 
 BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
@@ -148,6 +147,7 @@ BOOL CMaitriseImageRecDlg::OnInitDialog()
 
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
+	::ShowWindow(hParent, SW_HIDE);
 
 
 	cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
@@ -193,9 +193,9 @@ void CMaitriseImageRecDlg::OnPaint()
 		// Draw the icon
 		dc.DrawIcon(x, y, m_hIcon);
 
-		if (kinectPic != NULL) {
-			test.SetBitmap(kinectPic);
-		}
+		//if (kinectPic != NULL) {
+		//	test.SetBitmap(kinectPic);
+		//}
 
 
 		
@@ -240,12 +240,14 @@ void CMaitriseImageRecDlg::Test(IKinectSensor * kinectSensor)
 
 void CMaitriseImageRecDlg::drawVisualRect(cv::Rect& rect)
 {
+	if (cvKinect.rows > 0 ) {
 	DBOUT("Draw a rectangle (x,y,w,h) : " << rect.x << "," << rect.y << "," << rect.width << "," << rect.height << ")\n"); 
 	cv::Mat temp = cvKinect.clone(); 
 	cv::rectangle(temp, rect, cv::Scalar(0, 0, 200), 2, 8,0); 
 
 	cv::imshow("IDC_STATIC_OUTPUT", temp);
 	//cv::imshow("IDC_PIC_KINECT", temp); 
+	}
 }
 
 void CMaitriseImageRecDlg::OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult)
@@ -485,10 +487,10 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 	
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
+		::ShowWindow(hParent, SW_HIDE);
 
     cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
 	//test.SetBitmap(kinectPic);
-	//::ShowWindow(hParent, SW_HIDE);
 
 	return (LRESULT)1;
 
@@ -596,8 +598,10 @@ void CMaitriseImageRecDlg::OnBnClickedCategorieSave()
 
 void CMaitriseImageRecDlg::OnBnClickedShowFilter()
 {
-
+	
+	cv::putText(cvKinect, ccv.getPictureInfo(cvKinect), cv::Point(100, 300), cv::HersheyFonts::FONT_HERSHEY_PLAIN, 10,cv::Scalar(0,0,200));
 	// TODO: Add your control notification handler code here
+
 }
 
 
