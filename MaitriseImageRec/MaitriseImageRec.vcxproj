@@ -204,6 +204,7 @@
     <ClInclude Include="easyCNN.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GoogleVisionCNN.h" />
+    <ClInclude Include="ImageTreatment.h" />
     <ClInclude Include="KinectTreatment.h" />
     <ClInclude Include="MaitriseImageRec.h" />
     <ClInclude Include="MaitriseImageRecDlg.h" />
@@ -220,6 +221,7 @@
     <ClCompile Include="easyCNN.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GoogleVisionCNN.cpp" />
+    <ClCompile Include="ImageTreatment.cpp" />
     <ClCompile Include="KinectTreatment.cpp" />
     <ClCompile Include="MaitriseImageRec.cpp" />
     <ClCompile Include="MaitriseImageRecDlg.cpp" />
