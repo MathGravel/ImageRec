@@ -13,6 +13,7 @@
 #include "GoogleVisionCNN.h"
 
 #include "CInputDialog.h"
+//#include "resource.h"
 
 #pragma once
 
@@ -74,6 +75,12 @@ public:
 	FileManager fileManager;
 	cv::Mat cvKinect;
 	std::string lastCategorie =  ""; 
+	bool pauseCapture = false; 
+	bool forceSquare = false; 
+
+	bool neuralLocal = false; 
+	bool neuralGlobal = false; 
+
 	afx_msg void OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult);
 	afx_msg void OnBnClickedOk();
 	afx_msg LRESULT OnImageUpdated(WPARAM wParam, LPARAM lParam);
@@ -86,7 +93,16 @@ public:
 	virtual BOOL PreTranslateMessage(MSG * pMsg);
 
 	void drawVisualRect(cv::Rect& rect);
-	afx_msg void OnEnChangeEdit1();
+
 	afx_msg void OnEnChangeCategorieEdit();
 	afx_msg void OnBnClickedCategorieSave();
+	afx_msg void OnBnClickedShowFilter();
+
+	afx_msg void OnBnClickedPauseCapture();
+	afx_msg void OnBnClickedRestartCapture();
+	afx_msg void OnBnClickedCheck1();
+	afx_msg void OnBnClickedForceSquare();
+	afx_msg void OnBnClickedTestImageFixe();
+	afx_msg void OnBnClickedNeuralLocal();
+	afx_msg void OnBnClickedNeuralGlobal();
 };

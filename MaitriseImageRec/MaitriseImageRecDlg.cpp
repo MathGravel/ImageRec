@@ -72,7 +72,10 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 
 
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
-	
+	// TODO: Add your control notification handler code here
+
+	//CDialogEx::OnCancel();
+	// TODO: Add your control notification handler code here
 	
 	//PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
 
@@ -82,6 +85,7 @@ CMaitriseImageRecDlg::CMaitriseImageRecDlg(CWnd* pParent /*=NULL*/)
 void CMaitriseImageRecDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_PIC, test);
 }
 
 BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
@@ -90,9 +94,17 @@ BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDOK, &CMaitriseImageRecDlg::OnBnClickedOk)
 	ON_REGISTERED_MESSAGE(WM_FIND,CMaitriseImageRecDlg::OnImageUpdated)
-	ON_BN_CLICKED(IDCANCEL, &CMaitriseImageRecDlg::OnBnClickedCancel)
+	//ON_BN_CLICKED(IDCANCEL, &CMaitriseImageRecDlg::OnBnClickedCancel)
 	ON_EN_CHANGE(IDC_CATEGORIE_EDIT, &CMaitriseImageRecDlg::OnEnChangeCategorieEdit)
 	ON_BN_CLICKED(IDC_CATEGORIE_SAVE, &CMaitriseImageRecDlg::OnBnClickedCategorieSave)
+	ON_BN_CLICKED(IDC_SHOW_FILTER, &CMaitriseImageRecDlg::OnBnClickedShowFilter)
+
+	ON_BN_CLICKED(IDC_PAUSE_CAPTURE, &CMaitriseImageRecDlg::OnBnClickedPauseCapture)
+	ON_BN_CLICKED(IDC_RESTART_CAPTURE, &CMaitriseImageRecDlg::OnBnClickedRestartCapture)
+	ON_BN_CLICKED(IDC_FORCE_SQUARE, &CMaitriseImageRecDlg::OnBnClickedForceSquare)
+	ON_BN_CLICKED(ID_TEST_IMAGE_FIXE, &CMaitriseImageRecDlg::OnBnClickedTestImageFixe)
+	ON_BN_CLICKED(IDC_NEURAL_LOCAL, &CMaitriseImageRecDlg::OnBnClickedNeuralLocal)
+	ON_BN_CLICKED(IDC_NEURAL_GLOBAL, &CMaitriseImageRecDlg::OnBnClickedNeuralGlobal)
 END_MESSAGE_MAP()
 
 
@@ -127,6 +139,18 @@ BOOL CMaitriseImageRecDlg::OnInitDialog()
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
+	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
+
+	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
+	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
+
+	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+
+	HWND hParent = ::GetParent(hWnd);
+	::SetParent(hWnd, pic->m_hWnd);
+
+
+	cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
 	// TODO: Add extra initialization here
 	//img.Testing();
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -291,8 +315,8 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 				TranslateMessage(&msg);
 				DispatchMessageW(&msg);
 			}
-
-			if (WAIT_OBJECT_0 == WaitForSingleObject(reinterpret_cast<HANDLE>(m_MultiSourceEvent), INFINITE))
+	
+			if (!pauseCapture && WAIT_OBJECT_0 == WaitForSingleObject(reinterpret_cast<HANDLE>(m_MultiSourceEvent), INFINITE))
 			{
 				start = get_time::now();
 
@@ -380,7 +404,7 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 							
 							hr = colorFrame->CopyConvertedFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer), ColorImageFormat_Bgra);
 							BYTE* testingTest = reinterpret_cast<BYTE*>(pBuffer);
-							//cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
+							cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
 							//cv::imshow("", cvKinect);
 
 
@@ -461,7 +485,6 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 	
 	HWND hParent = ::GetParent(hWnd);
 	::SetParent(hWnd, pic->m_hWnd);
-	::ShowWindow(hParent, SW_HIDE);
 
     cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
 	//test.SetBitmap(kinectPic);
@@ -474,25 +497,7 @@ LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 
 void CMaitriseImageRecDlg::OnBnClickedCancel()
 {
-	// TODO: Add your control notification handler code here
-	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
 
-	cvKinect = cv::imread("res\\PerrierIn.png.png", cv::IMREAD_COLOR);
-	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
-	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
-
-	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
-
-	HWND hParent = ::GetParent(hWnd);
-	::SetParent(hWnd, pic->m_hWnd);
-	::ShowWindow(hParent, SW_HIDE);
-
-	IplImage tmp = cvKinect;
-	//cvShowImage("IDC_STATIC_OUTPUT", &tmp);
-	cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
-
-	cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
-	//CDialogEx::OnCancel();
 }
 
 BOOL CMaitriseImageRecDlg::PreTranslateMessage(MSG* pMsg) {
@@ -531,6 +536,7 @@ void mouse_move(int event, int x, int y, int flag, void* param) {
 
 		isDragged = false; 
 		DBOUT("MOUSE BUTTON UP\n"); 
+		if(zone.area() > 10)
 		cmird->fileManager.saveImage("CategorieNo3", cmird->cvKinect(zone)); 
 	}
 	else if (!isDragged) {
@@ -543,7 +549,7 @@ void mouse_move(int event, int x, int y, int flag, void* param) {
 		zone.y = (oldY < newY ? oldY : newY);
 		zone.height = (oldY < newY ? newY - oldY : oldY - newY);
 		zone.width = (oldX < newX ? newX - oldX : oldX - newX);
-		if (FORCING_SQUARE) {
+		if (cmird->forceSquare) {
 			zone.height = (zone.height > zone.width ? zone.height : zone.width);
 			zone.width = (zone.width > zone.height ? zone.width : zone.height);
 		}
@@ -566,14 +572,13 @@ void CMaitriseImageRecDlg::OnEnChangeCategorieEdit()
 {
 	//zone != NULL) {
 	CEdit* editTitle = (CEdit*)GetDlgItem(IDC_CATEGORIE_EDIT);
-	if ( true) {
-		char* temp = new char[50];
-		CString input;
-		editTitle->GetWindowTextW(input);
-		//editTitle->GetWindowText(temp, 50); 
-		CT2CA converter(input);
-		lastCategorie = std::string(converter);
-	}
+	char* temp = new char[50];
+	CString input;
+	editTitle->GetWindowTextW(input);
+	//editTitle->GetWindowText(temp, 50); 
+	CT2CA converter(input);
+	lastCategorie = std::string(converter);
+	
 }
 
 
@@ -587,3 +592,82 @@ void CMaitriseImageRecDlg::OnBnClickedCategorieSave()
 	// fileManager.saveImage("Bouteille", cvKinect(zone));
 	// TODO: Add your control notification handler code here
 }
+
+
+void CMaitriseImageRecDlg::OnBnClickedShowFilter()
+{
+
+	// TODO: Add your control notification handler code here
+}
+
+
+
+
+
+void CMaitriseImageRecDlg::OnBnClickedPauseCapture()
+{
+	pauseCapture = true; 
+	// TODO: Add your control notification handler code here
+}
+
+
+void CMaitriseImageRecDlg::OnBnClickedRestartCapture()
+{
+	pauseCapture = false; 
+	// TODO: Add your control notification handler code here
+}
+
+
+
+
+void CMaitriseImageRecDlg::OnBnClickedForceSquare()
+{
+	
+	CButton* checkButton = (CButton*)GetDlgItem(IDC_FORCE_SQUARE); 
+	forceSquare = checkButton->GetCheck() == 1; 
+
+	DBOUT("CheckButton forceSquare = " << (forceSquare ? "Set a true" : "Set a false") << std::endl); 
+
+}
+void CMaitriseImageRecDlg::OnBnClickedNeuralLocal()
+{
+	CButton* checkButton = (CButton*)GetDlgItem(IDC_NEURAL_LOCAL); 
+	neuralLocal = checkButton->GetCheck() == 1; 
+	DBOUT("CheckButton neuralLocal = " << (neuralLocal ? "Set a true" : "Set a false") << std::endl);
+}
+
+
+void CMaitriseImageRecDlg::OnBnClickedNeuralGlobal()
+{
+	CButton* checkButton = (CButton*)GetDlgItem(IDC_NEURAL_GLOBAL);
+	neuralGlobal = checkButton->GetCheck() == 1; 
+	DBOUT("CheckButton neuralGlobal = " << (neuralGlobal ? "Set a true" : "Set a false") << std::endl);
+}
+
+void CMaitriseImageRecDlg::OnBnClickedTestImageFixe()
+{
+	// TODO: Add your control notification handler code here
+	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
+
+	cvKinect = cv::imread("res\\PerrierIn.png.png", cv::IMREAD_COLOR);
+	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
+	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
+
+	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+
+	HWND hParent = ::GetParent(hWnd);
+	::SetParent(hWnd, pic->m_hWnd);
+
+
+	IplImage tmp = cvKinect;
+	//cvShowImage("IDC_STATIC_OUTPUT", &tmp);
+	cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
+
+	//cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
+	
+	//CDialogEx::OnCancel();
+	// TODO: Add your control notification handler code here
+}
+
+
+
