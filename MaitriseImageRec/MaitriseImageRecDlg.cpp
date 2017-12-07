@@ -99,7 +99,6 @@ BEGIN_MESSAGE_MAP(CMaitriseImageRecDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_SHOW_FILTER, &CMaitriseImageRecDlg::OnBnClickedShowFilter)
 
 	ON_BN_CLICKED(IDC_PAUSE_CAPTURE, &CMaitriseImageRecDlg::OnBnClickedPauseCapture)
-	ON_BN_CLICKED(IDC_RESTART_CAPTURE, &CMaitriseImageRecDlg::OnBnClickedRestartCapture)
 	ON_BN_CLICKED(IDC_FORCE_SQUARE, &CMaitriseImageRecDlg::OnBnClickedForceSquare)
 	ON_BN_CLICKED(ID_TEST_IMAGE_FIXE, &CMaitriseImageRecDlg::OnBnClickedTestImageFixe)
 	ON_BN_CLICKED(IDC_NEURAL_LOCAL, &CMaitriseImageRecDlg::OnBnClickedNeuralLocal)
@@ -151,6 +150,8 @@ BOOL CMaitriseImageRecDlg::OnInitDialog()
 
 
 	cvSetMouseCallback("IDC_STATIC_OUTPUT", &mouse_move, this);
+	CWnd *pB = GetDlgItem(IDC_PAUSE_CAPTURE);
+	pB->ShowWindow(SW_HIDE);
 	// TODO: Add extra initialization here
 	//img.Testing();
 	return TRUE;  // return TRUE  unless you set the focus to a control
@@ -217,34 +218,13 @@ HCURSOR CMaitriseImageRecDlg::OnQueryDragIcon()
 
 
 
-void CMaitriseImageRecDlg::Test(IKinectSensor * kinectSensor)
-{
-	// Initialize the Kinect and get coordinate mapper and the body reader
-	IMultiSourceFrame* pMultiFrameSource = NULL;
-	HRESULT hr;
-	ICoordinateMapper* coordMap;
-
-
-
-
-		hr = kinectSensor->get_CoordinateMapper(&coordMap);
-
-	if (SUCCEEDED(hr))
-	{
-		DBOUT("YES");
-	}
-	else DBOUT("FUCK");
-
-
-}
-
 void CMaitriseImageRecDlg::drawVisualRect(cv::Rect& rect)
 {
 	if (cvKinect.rows > 0 ) {
 	DBOUT("Draw a rectangle (x,y,w,h) : " << rect.x << "," << rect.y << "," << rect.width << "," << rect.height << ")\n"); 
 	cv::Mat temp = cvKinect.clone(); 
 	cv::rectangle(temp, rect, cv::Scalar(0, 0, 200), 2, 8,0); 
-
+	temp = TextInMat(temp, "SuperTest", rect);
 	cv::imshow("IDC_STATIC_OUTPUT", temp);
 	//cv::imshow("IDC_PIC_KINECT", temp); 
 	}
@@ -259,9 +239,69 @@ void CMaitriseImageRecDlg::OnNMThemeChangedImage(NMHDR *pNMHDR, LRESULT *pResult
 }
 
 
+void CMaitriseImageRecDlg::OnBnClickedOk()
+{
+	MSG msg;
+	CWnd *pB = GetDlgItem(IDOK);
+	pB->ShowWindow(SW_HIDE);
+	 pB = GetDlgItem(IDC_PAUSE_CAPTURE);
+	pB->ShowWindow(SW_SHOW);
+	
+	while (1) {
+
+		while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+		{
+
+			TranslateMessage(&msg);
+			DispatchMessageW(&msg);
+		}
+		if (pauseCapture)
+			break;
+		kinect.setRGB();
+		kinect.setDepth(false);
+		
+		
+		//create_rgbd(kinect.depthImage, kinect.rgbImage, cvKinect);
+		cvKinect = kinect.rgbImage;
+		PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
 
 
+		if (WM_QUIT == msg.message)
+		{
+			break;
+		}
+	}
 
+}
+
+void CMaitriseImageRecDlg::create_rgbd(cv::Mat& depth_im, cv::Mat& rgb_im, cv::Mat& rgbd_im)
+{
+
+	uint depthSize = kinect.lengthInPixels;
+	ColorSpacePoint* m_pColorCoordinates = new ColorSpacePoint[depthSize];
+	ushort* _depthData = new ushort[depthSize];
+	HRESULT hr = kinect.coordinateMapper->MapDepthFrameToColorSpace(kinect.depthImage.rows * kinect.depthImage.cols, (UINT16*)depth_im.data, kinect.depthImage.rows * kinect.depthImage.cols, m_pColorCoordinates);
+	rgbd_im = cv::Mat::zeros(depth_im.rows, depth_im.cols, CV_8UC3);
+	double minVal, maxVal;
+	cv::minMaxLoc(depth_im, &minVal, &maxVal);
+	for (int i = 0; i < kinect.depthImage.rows; i++) {
+		for (int j = 0; j < kinect.depthImage.cols; j++) {
+			if (depth_im.at<UINT16>(i, j) > 0 && depth_im.at<UINT16>(i, j) < maxVal * (600 / 100) && depth_im.at<UINT16>(i, j) > maxVal * 0 / 100) {
+				double a = i * kinect.depthImage.cols + j;
+				ColorSpacePoint colorPoint = m_pColorCoordinates[i*kinect.depthImage.cols + j];
+				int colorX = (int)(floor(colorPoint.X + 0.5));
+				int colorY = (int)(floor(colorPoint.Y + 0.5));
+				if ((colorX >= 0) && (colorX < kinect.rgbImage.cols) && (colorY >= 0) && (colorY < kinect.rgbImage.rows))
+				{
+					rgbd_im.at<cv::Vec3b>(i, j) = rgb_im.at<cv::Vec3b>(colorY, colorX);
+				}
+			}
+
+		}
+	}
+}
+
+/*
 void CMaitriseImageRecDlg::OnBnClickedOk()
 {
 
@@ -332,15 +372,28 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 				//S_OK
 				hr = frameRef->AcquireFrame(&frame);
 				IColorFrameReference *colorFrameRef{ nullptr };
+				IDepthFrameReference *DepthFrameRef{ nullptr };
+
 				//S_OK
+				
 				hr = frame->get_ColorFrameReference(&colorFrameRef);
+				hr = frame->get_DepthFrameReference(&DepthFrameRef);
+
 				IColorFrame *colorFrame = nullptr;
 				// Next one fails with E_FAIL
 				hr = colorFrameRef->AcquireFrame(&colorFrame);
+				while (!SUCCEEDED(hr))
+					hr = colorFrameRef->AcquireFrame(&colorFrame);
+
+				IDepthFrame* depthFrame = NULL;
+				hr = DepthFrameRef->AcquireFrame(&depthFrame);
+
+				 while (!SUCCEEDED(hr)) 
+					 hr = DepthFrameRef->AcquireFrame(&depthFrame);
 
 				//------------------------------
 
-				if (SUCCEEDED(hr))
+				if (true)
 				{
 					INT64 nTime = 0;
 					IFrameDescription* pFrameDescription = NULL;
@@ -348,23 +401,48 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 					int nHeight = 0;
 					ColorImageFormat imageFormat = ColorImageFormat_None;
 					UINT nBufferSize = 0;
-					
-
+					IFrameDescription* pFrameDescriptiond = NULL;
+					int nWidthd = 0;
+					int nHeightd = 0;
+					UINT nBufferSized = 0;
+					USHORT minDepth, maxDepth;
 					hr = colorFrame->get_RelativeTime(&nTime);
+					UINT16 * bufTemp;
+					RGBQUAD* depthBuffer;
 
 					if (SUCCEEDED(hr))
 					{
 						hr = colorFrame->get_FrameDescription(&pFrameDescription);
+						hr = depthFrame->get_FrameDescription(&pFrameDescriptiond);
+
 					}
 
 					if (SUCCEEDED(hr))
 					{
 						hr = pFrameDescription->get_Width(&nWidth);
+						hr = pFrameDescriptiond->get_Width(&nWidthd);
+
 					}
 
 					if (SUCCEEDED(hr))
 					{
 						hr = pFrameDescription->get_Height(&nHeight);
+						hr = pFrameDescriptiond->get_Height(&nHeightd);
+
+					}
+					if (SUCCEEDED(hr))
+					{
+						hr = depthFrame->get_DepthMinReliableDistance(&minDepth);
+					}
+
+					if (SUCCEEDED(hr))
+					{
+						// In order to see the full range of depth (including the less reliable far field depth)
+						// we are setting nDepthMaxDistance to the extreme potential depth threshold
+						maxDepth = USHRT_MAX;
+
+						// Note:  If you wish to filter by reliable depth distance, uncomment the following line.
+						//// hr = pDepthFrame->get_DepthMaxReliableDistance(&nDepthMaxDistance);
 					}
 
 					if (pBuffer == NULL || nWidth != width || nHeight != height) {
@@ -381,6 +459,42 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 					{
 						hr = colorFrame->get_RawColorImageFormat(&imageFormat);
 					}
+
+					if (SUCCEEDED(hr)) {
+						hr = depthFrame->AccessUnderlyingBuffer(&nBufferSized, &bufTemp);
+						RGBQUAD * m_pDepth = new RGBQUAD[nWidthd * nHeightd];
+						RGBQUAD * m_pDepthRGBX = m_pDepth;
+						// end pixel is start + width*height - 1
+						const UINT16* pBufferEnd = bufTemp + (nWidthd * nHeightd);
+
+						while (bufTemp < pBufferEnd)
+						{
+							USHORT depth = *bufTemp;
+
+							// To convert to a byte, we're discarding the most-significant
+							// rather than least-significant bits.
+							// We're preserving detail, although the intensity will "wrap."
+							// Values outside the reliable depth range are mapped to 0 (black).
+
+							// Note: Using conditionals in this loop could degrade performance.
+							// Consider using a lookup table instead when writing production code.
+							BYTE intensity = static_cast<BYTE>((depth >= minDepth) && (depth <= maxDepth) ? (depth % 256) : 0);
+
+							m_pDepthRGBX->rgbRed = intensity;
+							m_pDepthRGBX->rgbGreen = intensity;
+							m_pDepthRGBX->rgbBlue = intensity;
+
+							++m_pDepthRGBX;
+							++bufTemp;
+						}
+						cvKinectFiltered = cv::Mat(nHeightd, nWidthd, CV_8UC4, reinterpret_cast<BYTE*>(m_pDepth));
+
+
+						imageLoaded = true;
+						//PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
+
+					}
+
 
 					if (SUCCEEDED(hr))
 					{
@@ -407,19 +521,7 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 							hr = colorFrame->CopyConvertedFrameDataToArray(nBufferSize, reinterpret_cast<BYTE*>(pBuffer), ColorImageFormat_Bgra);
 							BYTE* testingTest = reinterpret_cast<BYTE*>(pBuffer);
 							cvKinect = cv::Mat(nHeight, nWidth, CV_8UC4, reinterpret_cast<BYTE*>(pBuffer));
-							//cv::imshow("", cvKinect);
-
-
-							//CDC sdc;
-							//sdc.CreateDC(_T("DISPLAY"), NULL, NULL, NULL);
-							//CDC dc;
-							//dc.CreateCompatibleDC(&sdc);
-							//CBitmap bmp;
-							//bmp.CreateCompatibleBitmap(&sdc, nWidth, nHeight);
-							//bmp.SetBitmapBits(nBufferSize, testingTest);
-
 						
-							//kinectPic = (HBITMAP)bmp.Detach();
 
 							imageLoaded = true;
 							PostMessageA(this->m_hWnd, WM_FIND, (WPARAM)1, (LPARAM)2);
@@ -427,25 +529,16 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
 							end = get_time::now();
 							std::ostringstream ss;
 							auto time = end - start;
-							//DBOUT("Time : " << ((chrono::duration_cast<ns>(time).count())/1000));
-							//BYTE t = cc[4];
-							//BYTE a = cc[0];
-
+							
 							
 
 						
 						}
 
-						//else
-						//{
-						//	hr = E_FAIL;
-						//}
+					
 					}
 
-					//if (SUCCEEDED(hr))
-					//{
-					//	ProcessColor(nTime, pBuffer, nWidth, nHeight);
-					//}
+				
 
 					SafeRelease(pFrameDescription);
 				}
@@ -473,24 +566,17 @@ void CMaitriseImageRecDlg::OnBnClickedOk()
     
 	
 }
-
+*/
 
 
 LRESULT  CMaitriseImageRecDlg::OnImageUpdated(WPARAM wParam, LPARAM lParam)
 {
-	//DBOUT("Ca marche");
-	cvNamedWindow("IDC_STATIC_OUTPUT", 0);
-	cvResizeWindow("IDC_STATIC_OUTPUT", 1920, 1080);
-	CWnd* pic = GetDlgItem(IDC_PIC_KINECT);
 	
-	HWND hWnd = (HWND)cvGetWindowHandle("IDC_STATIC_OUTPUT");
+	imT.setImage(cvKinect);
+	imT.findShapes();
+	cvKinectFiltered = imT.getPicWithShapes();
+	cv::imshow("IDC_STATIC_OUTPUT", cvKinectFiltered);
 	
-	HWND hParent = ::GetParent(hWnd);
-	::SetParent(hWnd, pic->m_hWnd);
-		::ShowWindow(hParent, SW_HIDE);
-
-    cv::imshow("IDC_STATIC_OUTPUT", cvKinect);
-	//test.SetBitmap(kinectPic);
 
 	return (LRESULT)1;
 
@@ -538,8 +624,8 @@ void mouse_move(int event, int x, int y, int flag, void* param) {
 
 		isDragged = false; 
 		DBOUT("MOUSE BUTTON UP\n"); 
-		if(zone.area() > 10)
-		cmird->fileManager.saveImage("CategorieNo3", cmird->cvKinect(zone)); 
+		//if(zone.area() > 10)
+		//cmird->fileManager.saveImage("CategorieNo3", cmird->cvKinect(zone)); 
 	}
 	else if (!isDragged) {
 
@@ -598,9 +684,14 @@ void CMaitriseImageRecDlg::OnBnClickedCategorieSave()
 
 void CMaitriseImageRecDlg::OnBnClickedShowFilter()
 {
-	
-	cv::putText(cvKinect, ccv.getPictureInfo(cvKinect), cv::Point(100, 300), cv::HersheyFonts::FONT_HERSHEY_PLAIN, 10,cv::Scalar(0,0,200));
+	//std::string rep = ccv.getPictureInfo(cvKinect);
+	//cv::Mat ex = TextInMat(cvKinect, rep, zone);
+	//cv::imshow("IDC_STATIC_OUTPUT", ex);
 	// TODO: Add your control notification handler code here
+	imT.setImage(cvKinect);
+	imT.findShapes();
+	cvKinectFiltered = imT.getFilteredPicWithShapes();
+	cv::imshow("IDC_STATIC_OUTPUT", cvKinectFiltered);
 
 }
 
@@ -610,16 +701,19 @@ void CMaitriseImageRecDlg::OnBnClickedShowFilter()
 
 void CMaitriseImageRecDlg::OnBnClickedPauseCapture()
 {
-	pauseCapture = true; 
+	pauseCapture = !pauseCapture;
+	std::string caption = pauseCapture ? "Restart Capture" : "Pause Capture";
+	CWnd *pB = GetDlgItem(IDC_PAUSE_CAPTURE);
+	CString str(caption.c_str());
+	pB->SetWindowText(str);
+
+	this->OnBnClickedOk();
+
 	// TODO: Add your control notification handler code here
 }
 
 
-void CMaitriseImageRecDlg::OnBnClickedRestartCapture()
-{
-	pauseCapture = false; 
-	// TODO: Add your control notification handler code here
-}
+
 
 
 
@@ -673,5 +767,10 @@ void CMaitriseImageRecDlg::OnBnClickedTestImageFixe()
 	// TODO: Add your control notification handler code here
 }
 
-
-
+// https://stackoverflow.com/questions/5175628/how-to-overlay-text-on-image-when-working-with-cvmat-type
+cv::Mat CMaitriseImageRecDlg::TextInMat(cv::Mat mat, std::string content, cv::Rect rect) {
+	cv::Mat temp = mat.clone(); 
+	cv::putText(temp, content.c_str(), cvPoint(rect.x, rect.y + rect.height + 30),
+		cv::FONT_HERSHEY_COMPLEX_SMALL, 0.8, cvScalar(200, 200, 250), 1, CV_AA);
+	return temp; 
+}

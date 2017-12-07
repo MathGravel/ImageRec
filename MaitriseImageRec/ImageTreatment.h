@@ -3,11 +3,13 @@
 #include <vector>
 #include <map>
 #include <list>
+#include "Dbout.h"
+
 
 #define MAXTHRESHOLD 180
 #define MINTHRESHOLD 120
 #define USECOLORTHREASH 1
-#define USEHISTEQUAL 1
+#define USEHISTEQUAL 0
 
 using namespace std;
 using namespace cv;
@@ -24,6 +26,7 @@ public:
 	cv::Mat getOriginalPic();
 	const cv::Mat& getFilteredPic();
 	const cv::Mat& getFilteredPicWithShapes();
+	const cv::Mat& getPicWithShapes();
 
 	std::vector<cv::Mat> getShapesAvg();
 	std::vector<cv::Mat> getShapes();
@@ -34,6 +37,8 @@ private:
 	cv::Mat filteredPic;
 	cv::Mat filteredGreyPic;
 	cv::Mat filteredPicWithShapes;
+	cv::Mat currentPicWithShapes;
+
 
 	std::map<ImageFilters, bool> filterUsed;
 	std::list<cv::Mat> pastPictures;

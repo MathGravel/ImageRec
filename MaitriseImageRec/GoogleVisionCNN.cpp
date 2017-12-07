@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GoogleVisionCNN.h"
-#include <Python.h>
+//#include <Python.h>
 #include <iostream>
 #include <fstream>
 
@@ -25,7 +25,6 @@ GoogleVisionCNN::GoogleVisionCNN()
 
 }
 GoogleVisionCNN::~GoogleVisionCNN() {
-	Py_Finalize();
 }
 
 void GoogleVisionCNN::train()

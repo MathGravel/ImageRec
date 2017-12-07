@@ -11,6 +11,8 @@
 #include <windows.h>
 #include "FileManager.h"
 #include "GoogleVisionCNN.h"
+#include "ImageTreatment.h"
+#include "NtKinect.h"
 
 #include "CInputDialog.h"
 //#include "resource.h"
@@ -68,13 +70,14 @@ protected:
 	int height = -1;
 	static void Test(IKinectSensor* kinectSensor);
 	GoogleVisionCNN ccv;
-
-	
-	
+	cv::Mat cvKinect;
+	cv::Mat cvKinectFiltered;
+	ImageTreatment imT;
+	void CMaitriseImageRecDlg::create_rgbd(cv::Mat& depth_im, cv::Mat& rgb_im, cv::Mat& rgbd_im);
+	NtKinect kinect;
 	
 public:
 	FileManager fileManager;
-	cv::Mat cvKinect;
 	std::string lastCategorie =  ""; 
 	bool pauseCapture = false; 
 	bool forceSquare = false; 
@@ -104,6 +107,7 @@ public:
 	afx_msg void OnBnClickedCheck1();
 	afx_msg void OnBnClickedForceSquare();
 	afx_msg void OnBnClickedTestImageFixe();
+	cv::Mat TextInMat(cv::Mat mat, std::string content, cv::Rect rect);
 	afx_msg void OnBnClickedNeuralLocal();
 	afx_msg void OnBnClickedNeuralGlobal();
 };

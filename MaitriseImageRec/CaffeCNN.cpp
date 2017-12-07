@@ -17,9 +17,13 @@ void CaffeCNN::train() {
 
 std::string CaffeCNN::getPictureInfo(const cv::Mat & image)
 {
-	return "1";
+	return std::string(""); 
 }
 
 void CaffeCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)
+{
+}
+
+void CaffeCNN::prepareData()
 {
 }

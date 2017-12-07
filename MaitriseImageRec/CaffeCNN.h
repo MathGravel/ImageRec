@@ -13,6 +13,9 @@ public:
 	std::string getPictureInfo(const cv::Mat& image);
 	void updateModel(const cv::Mat& picture, bool correctlyIdentified);
 
+	void prepareData();
+
+
 private :
 	std::string imagesLoc;
 	std::string lmdbLoc;

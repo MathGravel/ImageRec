@@ -59,6 +59,11 @@ const cv::Mat & ImageTreatment::getFilteredPicWithShapes()
 	return this->filteredPicWithShapes;
 }
 
+const cv::Mat & ImageTreatment::getPicWithShapes()
+{
+	return this->currentPicWithShapes;
+}
+
 std::vector<cv::Mat> ImageTreatment::getShapesAvg()
 {
 	return std::vector<cv::Mat>();
@@ -135,6 +140,9 @@ void ImageTreatment::threshholdCanny(cv::Mat & imgInput)
 	//Actuellement vide 
 }
 
+
+
+
 void ImageTreatment::extractShapes()
 {
 
@@ -143,19 +151,42 @@ void ImageTreatment::extractShapes()
 	std::vector<std::vector<cv::Point> > contours;
 
 	std::vector<cv::Vec4i> hierarchy;
-	cv::Mat dst = filteredPic.clone();;
 	
 
-	if (USECOLORTHREASH) {
-		dst = threshHoldColors(dst);
-	}
+	//if (USECOLORTHREASH) 
+	//	filteredPic = threshHoldColors(filteredPic);
 	if (USEHISTEQUAL)
-		dst = threshHoldColors(dst);
+		filteredPic = equalizeColorHistograms(filteredPic);
 
-	cvtColor(dst, filteredGreyPic, cv::COLOR_BGR2GRAY);
+	cvtColor(filteredPic, filteredGreyPic, cv::COLOR_BGR2GRAY);
+	//equalizeHist(filteredGreyPic, filteredGreyPic);
 
-	threshold(filteredGreyPic, threshold_output, minThresh, maxThresh, cv::THRESH_BINARY);
-	findContours(threshold_output, contours, hierarchy, cv::RETR_LIST, cv::CHAIN_APPROX_SIMPLE, cv::Point(0, 0));
+	//threshold(filteredGreyPic, threshold_output, minThresh, maxThresh, cv::THRESH_BINARY);
+
+	Canny(filteredGreyPic, threshold_output, 50, 150, 3);
+
+
+	findContours(threshold_output, contours, hierarchy, CV_RETR_TREE, cv::CHAIN_APPROX_NONE, cv::Point(0, 0));
+	vector<Vec3f> circles;
+
+	HoughCircles(threshold_output, circles, HOUGH_GRADIENT, 1, 10,
+		100, 30, 1, 100); // change the last two parameters
+						  // (min_radius & max_radius) to detect larger circles	for (size_t i = 0; i < lines.size(); i++)
+	currentPicWithShapes = currentPic.clone();
+	filteredPicWithShapes = threshold_output.clone();
+	for (size_t i = 0; i < circles.size(); i++)
+	{
+		Vec3i c = circles[i];
+		circle(currentPicWithShapes, Point(c[0], c[1]), c[2], Scalar(100, 100, 0), 3, LINE_AA);
+		circle(currentPicWithShapes, Point(c[0], c[1]), 2, Scalar(100, 100, 0), 3, LINE_AA);
+	}
+	vector<Vec4i> lines;
+	HoughLinesP(threshold_output, lines, 1, CV_PI / 180, 40, 40, 10);
+	for (size_t i = 0; i < lines.size(); i++)
+	{
+		Vec4i l = lines[i];
+		line(currentPicWithShapes, Point(l[0], l[1]), Point(l[2], l[3]), Scalar(50, 0, 155), 3, CV_AA);
+	}
 
 	std::vector<std::vector<cv::Point> > contours_poly(contours.size());
 
@@ -169,7 +200,7 @@ void ImageTreatment::extractShapes()
 
 		approxPolyDP(cv::Mat(contours[i]), contours_poly[i], 3, true);
 		cv::Rect bounding = cv::boundingRect(cv::Mat(contours_poly[i]));
-		if (bounding.area()  < (0.8 * (filteredGreyPic.cols * filteredGreyPic.rows)))
+		if (bounding.area()  < (0.6 * (filteredGreyPic.cols * filteredGreyPic.rows)))
 			boundRect[i] = bounding;
 
 
@@ -184,7 +215,6 @@ void ImageTreatment::extractShapes()
 			boundRectNew.push_back(boundRect[i]);
 
 	bool verif = true;
-	vector<Rect> boundRectNewer;
 
 	int c = 0;
 
@@ -219,13 +249,25 @@ void ImageTreatment::extractShapes()
 		currentShapes.push_back(currentPic(*it));
 	}
 
-	filteredPicWithShapes = filteredPic.clone();
-	for (size_t i = 0; i < boundRectNewer.size(); i++)
+	//filteredPicWithShapes = filteredPic.clone();
+	//currentPicWithShapes = currentPic.clone();
+	for (it = boundRectNew.begin(); it != boundRectNew.end();++it)
 	{
 		Scalar color = Scalar(0, 200, 0);
 
-		rectangle(filteredPicWithShapes, boundRectNewer[i].tl(), boundRectNewer[i].br(), color, 2, 8, 0);
+		rectangle(filteredPicWithShapes, it->tl(), it->br(), color, 2, 8, 0);
+		//rectangle(currentPicWithShapes, it->tl(), it->br(), color, 2, 8, 0);
 
+	}
+	Scalar color = Scalar(0, 200, 0);
+
+	for (int i = 0; i < boundRect.size(); i++) {
+		
+		if (hierarchy[i][2] + hierarchy[i][3] < 0)
+		{ 
+		rectangle(currentPicWithShapes, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
+		putText(currentPicWithShapes, hierarchy[i][0] + " " + hierarchy[i][1], boundRect[i].tl(), cv::HersheyFonts::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(140, 0, 0));
+		}
 	}
 
 }
