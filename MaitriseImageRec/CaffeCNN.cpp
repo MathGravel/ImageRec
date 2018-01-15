@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "CaffeCNN.h"
 
 
@@ -12,7 +11,7 @@ CaffeCNN::~CaffeCNN()
 }
 
 void CaffeCNN::train() {
-
+		
 }
 
 std::string CaffeCNN::getPictureInfo(const cv::Mat & image)

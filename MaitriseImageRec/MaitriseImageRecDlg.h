@@ -103,8 +103,6 @@ public:
 	afx_msg void OnBnClickedShowFilter();
 
 	afx_msg void OnBnClickedPauseCapture();
-	afx_msg void OnBnClickedRestartCapture();
-	afx_msg void OnBnClickedCheck1();
 	afx_msg void OnBnClickedForceSquare();
 	afx_msg void OnBnClickedTestImageFixe();
 	cv::Mat TextInMat(cv::Mat mat, std::string content, cv::Rect rect);

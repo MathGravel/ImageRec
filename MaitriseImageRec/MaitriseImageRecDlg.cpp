@@ -688,10 +688,9 @@ void CMaitriseImageRecDlg::OnBnClickedShowFilter()
 	//cv::Mat ex = TextInMat(cvKinect, rep, zone);
 	//cv::imshow("IDC_STATIC_OUTPUT", ex);
 	// TODO: Add your control notification handler code here
-	imT.setImage(cvKinect);
-	imT.findShapes();
-	cvKinectFiltered = imT.getFilteredPicWithShapes();
-	cv::imshow("IDC_STATIC_OUTPUT", cvKinectFiltered);
+	std::string name = ccv.getPictureInfo(cvKinect(zone));
+	cv::Mat nextPic = this->TextInMat(cvKinect, name, zone);
+	cv::imshow("IDC_STATIC_OUTPUT", nextPic);
 
 }
 

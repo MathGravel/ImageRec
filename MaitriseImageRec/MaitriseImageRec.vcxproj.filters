@@ -16,6 +16,9 @@
     <Filter Include="BaseImages">
       <UniqueIdentifier>{804ef2b8-a3ab-4ccf-b759-c36facdb9476}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CaffeTools">
+      <UniqueIdentifier>{1f5d4d10-d4da-4393-bc7f-3599b9efec58}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -66,6 +69,18 @@
     <ClInclude Include="CaffeCNN.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NtKinect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CaffeTools.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputeImageMean.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvertImageSet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MaitriseImageRec.cpp">
@@ -103,6 +118,15 @@
     </ClCompile>
     <ClCompile Include="CaffeCNN.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="compute_image_mean.cpp">
+      <Filter>CaffeTools</Filter>
+    </ClCompile>
+    <ClCompile Include="convert_imageset.cpp">
+      <Filter>CaffeTools</Filter>
+    </ClCompile>
+    <ClCompile Include="caffe.cpp">
+      <Filter>CaffeTools</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
