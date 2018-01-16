@@ -8,14 +8,8 @@
 #include <vector>
 
 #include "boost/scoped_ptr.hpp"
-#include "gflags/gflags.h"
-#include "glog/logging.h"
 
-#include "caffe/proto/caffe.pb.h"
-#include "caffe/util/db.hpp"
-#include "caffe/util/io.hpp"
 
-using namespace caffe;  // NOLINT(build/namespaces)
 
 
 
@@ -23,8 +17,7 @@ using std::max;
 using std::pair;
 using boost::scoped_ptr;
 
-DEFINE_string(backend, "lmdb",
-	"The backend {leveldb, lmdb} containing the images");
+
 
 
 class ComputeImageMean {

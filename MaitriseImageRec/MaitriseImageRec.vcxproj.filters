@@ -119,15 +119,6 @@
     <ClCompile Include="CaffeCNN.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="compute_image_mean.cpp">
-      <Filter>CaffeTools</Filter>
-    </ClCompile>
-    <ClCompile Include="convert_imageset.cpp">
-      <Filter>CaffeTools</Filter>
-    </ClCompile>
-    <ClCompile Include="caffe.cpp">
-      <Filter>CaffeTools</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MaitriseImageRec.rc">

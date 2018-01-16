@@ -3,7 +3,6 @@
 
 #include <string>
 #include <opencv2/opencv.hpp>
-#include <caffe/caffe.hpp>
 #include <algorithm>
 #include <iosfwd>
 #include <memory>

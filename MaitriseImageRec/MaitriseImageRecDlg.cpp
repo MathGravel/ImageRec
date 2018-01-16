@@ -712,11 +712,6 @@ void CMaitriseImageRecDlg::OnBnClickedPauseCapture()
 }
 
 
-
-
-
-
-
 void CMaitriseImageRecDlg::OnBnClickedForceSquare()
 {
 	

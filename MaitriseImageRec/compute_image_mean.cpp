@@ -8,7 +8,7 @@ std::string ComputeImageMean::createMeanImage() {
 	return "";
 }
 
-
+/*
 
 int main(int argc, char** argv) {
 #ifdef USE_OPENCV
@@ -112,3 +112,4 @@ int main(int argc, char** argv) {
 #endif  // USE_OPENCV
   return 0;
 }
+*/
