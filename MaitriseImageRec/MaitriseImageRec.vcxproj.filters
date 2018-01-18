@@ -81,6 +81,9 @@
     <ClInclude Include="ConvertImageSet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ImgSegCNN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MaitriseImageRec.cpp">
@@ -117,6 +120,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CaffeCNN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="caffe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImgSegCNN.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

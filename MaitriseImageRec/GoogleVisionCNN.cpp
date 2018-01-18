@@ -92,3 +92,16 @@ std::string GoogleVisionCNN::getPictureInfo(const cv::Mat & image)
 void GoogleVisionCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)
 {
 }
+
+std::string GoogleVisionCNN::predict(const cv::Mat & picture)
+{
+	return std::string();
+}
+
+void GoogleVisionCNN::savePicture(const cv::Mat & picture, std::string name)
+{
+}
+
+void GoogleVisionCNN::trainCNN()
+{
+}
