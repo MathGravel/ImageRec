@@ -1,4 +1,4 @@
-#include "ComputeImageMean.h"
+#include "../../Header files/CNN/ComputeImageMean.h"
 
 ComputeImageMean::ComputeImageMean() {
 }

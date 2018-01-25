@@ -1,8 +1,8 @@
 
 // CNN.cpp : implementation file
 //
-#include "stdafx.h"
-#include "CNN.h"
+#include "../../Header files/stdafx.h"
+#include "../../Header files/CNN/CNN.h"
 
 
 CNN::CNN()

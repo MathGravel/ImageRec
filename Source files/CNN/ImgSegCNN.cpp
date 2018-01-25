@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "ImgSegCNN.h"
+#include "../../Header files/stdafx.h"
+#include "../../Header files/CNN/ImgSegCNN.h"
 
 ImgSegCNN::ImgSegCNN()
 {

@@ -1,4 +1,4 @@
-#include "CaffeCNN.h"
+#include "../../Header files/CNN/CaffeCNN.h"
 
 using namespace caffe;  // NOLINT(build/namespaces)
 using std::string;

@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "GoogleVisionCNN.h"
+#include "../../Header files/stdafx.h"
+#include "../../Header files/CNN/GoogleVisionCNN.h"
 //#include <Python.h>
 #include <iostream>
 #include <fstream>
