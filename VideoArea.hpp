@@ -18,7 +18,7 @@
 class VideoArea : public Gtk::DrawingArea
 {
     protected:
-    //cv::VideoCapture cv_cap;
+    cv::VideoCapture cv_cap;
 
     bool cv_opened;
         Kinect* kin;
