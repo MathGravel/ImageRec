@@ -17,19 +17,42 @@
 
 class VideoArea : public Gtk::DrawingArea
 {
-    protected:
-    cv::VideoCapture cv_cap;
 
+public:
+    VideoArea ();
+    void StartKinect();
+    void StopKinect();
+    virtual ~VideoArea();
+
+    cv::Mat getChosenRoi() {
+        return chosenROI;
+    }
+
+    bool hasChosenROI(){
+        return chosedROI;
+    }
+
+protected:
     bool cv_opened;
-        Kinect* kin;
+    VideoSource * sourceFeed;
+
 
     virtual bool on_draw (const Cairo::RefPtr<Cairo::Context> &cr);
-        bool on_timeout ();
-    public:
-        VideoArea ();
-        void StartKinect();
-        void StopKinect();
-        virtual ~VideoArea();
+    bool onMouseDown(GdkEventButton * event);
+    bool onMouseMove(GdkEventMotion * event);
+    bool onMouseUp(GdkEventButton * event);
+    bool on_timeout ();
+
+
+
+private:
+    bool on_dragged;
+    bool chosedROI;
+    int x1,x2,y1,y2;
+    cv::Rect rectROI;
+    cv::Mat chosenROI;
+    cv::Mat currentPic;
+
 };
 
 #endif	/* VIDEOAREA_HPP */
