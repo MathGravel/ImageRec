@@ -18,7 +18,7 @@ find_package(freenect2 REQUIRED)
 
 include_directories("/usr/include/libusb-1.0/")
 include_directories("./Header files")
-include_directories("./Header files/CNdN")
+include_directories("./Header files/CNN")
 include_directories("./Source files/")
 include_directories("./Source files/CNN")
 
@@ -32,7 +32,7 @@ link_directories(${GTKMM_LIBRARY_DIRS})
 
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
-add_executable(ImageRec main.cpp MainWindow.cpp VideoArea.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp")
+add_executable(ImageRec main.cpp MainWindow.cpp VideoArea.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp" ROISelection.cpp ROISelection.h FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h ImageTransformBar.cpp ImageTransformBar.h GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GTK3_LIBRARIES})

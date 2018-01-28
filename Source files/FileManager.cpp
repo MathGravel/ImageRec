@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "FileManager.h"
+#include "../Header files/stdafx.h"
+#include "../Header files/FileManager.h"
 
 
 FileManager::FileManager()
@@ -45,9 +45,9 @@ void FileManager::saveImage(std::string categorie, cv::Mat& mat)
 			}
 			catch (std::runtime_error& ex) {
 				std::string msg(ex.what());
-				DBOUT("Le fichier n'as pas été sauvegardé" << msg);
+				DBOUT("Le fichier n'as pas ï¿½tï¿½ sauvegardï¿½" << msg);
 			}
-			DBOUT("Fichier sauvegardé");
+			DBOUT("Fichier sauvegardï¿½");
 		}
 	}
 	//DBOUT("FilenameCreated : " << createFilename(categorie)); 

@@ -19,7 +19,7 @@
 #include <gtkmm/grid.h>
 #include <gtkmm/label.h>
 #include <gtkmm/offscreenwindow.h>
-
+#include "FileManager.h"
 
 
 
@@ -46,7 +46,7 @@ class MainWindow : public Gtk::Window
         Gtk::Box box;
         Gtk::ButtonBox bx ;
         Gtk::Label a;
-    void on_button_clicked(Glib::ustring data);
+        void on_button_clicked(Glib::ustring data);
         void on_start_capture(Glib::ustring data);
         void on_stop_capture(Glib::ustring data);
         void on_show_analysis(Glib::ustring data);

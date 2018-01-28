@@ -19,19 +19,21 @@
 #include <libfreenect2/registration.h>
 #include <libfreenect2/packet_pipeline.h>
 #include <libfreenect2/logger.h>
+#include "VideoSource.h"
+
 typedef void* HANDLE;
 typedef bool BOOLEAN;
 
 
-class Kinect {
+class Kinect : public VideoSource {
 public:
     Kinect();
     ~Kinect();
 
 
-    cv::Mat getcurrentColorFrame();
-    cv::Mat getcurrentDepthFrame();
-    cv::Mat getcurrentRGBDFrame();
+    cv::Mat getColorFeed();
+    cv::Mat getDepthFeed();
+    cv::Mat getMappedFeed();
 
     void update();
 

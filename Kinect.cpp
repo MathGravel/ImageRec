@@ -76,14 +76,14 @@ Kinect::~Kinect() {
 }
 
 
-cv::Mat Kinect::getcurrentColorFrame(){
+cv::Mat Kinect::getColorFeed(){
     return rgbmat;
 }
 
-cv::Mat Kinect::getcurrentDepthFrame(){
+cv::Mat Kinect::getDepthFeed(){
     return depthmat;
 }
-cv::Mat Kinect::getcurrentRGBDFrame(){
+cv::Mat Kinect::getMappedFeed(){
     return rgbd2;
 }
 
@@ -102,6 +102,8 @@ void Kinect::update() {
     cv::Mat(rgb->height, rgb->width, CV_8UC4, rgb->data).copyTo(rgbmat);
     cv::Mat(ir->height, ir->width, CV_32FC1, ir->data).copyTo(irmat);
     cv::Mat(depth->height, depth->width, CV_32FC1, depth->data).copyTo(depthmat);
+
+
 
     //! [registration]
     registration->apply(rgb, depth, &undistorted, &registered, true, &depth2rgb);

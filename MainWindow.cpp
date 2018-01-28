@@ -3,7 +3,7 @@
 MainWindow::MainWindow()
 {
 
-    set_title ("OpenCV with GTK");
+    set_title ("Camera Feed");
     set_border_width (10);
 
 
@@ -17,7 +17,6 @@ MainWindow::MainWindow()
     video_frame.set_shadow_type (Gtk::SHADOW_OUT);
     video_frame.set_size_request(1620, 680);
     //this->set_size_request(900,800);
-    Gtk::
     video_area.set_tooltip_text("Video");
     video_frame.add(video_area);
     startCapture = Gtk::Button("Start");
@@ -59,9 +58,14 @@ MainWindow::MainWindow()
     // with a pointer to "button 1" as it's argument
     startCapture.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_start_capture), "Start Capture"));
+    stopCapture.signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_stop_capture), "Stop Capture"));
+    showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_show_analysis), "show Analysis"));
+
    // add(box);
    //add(bx);
-    // this->signal_delete_event().connect(sigc::mem_fun(this,&MainWindow::destroy));
+     //this->signal_delete_event().connect(sigc::mem_fun(this,&MainWindow::destroy));
    // startCapture.show();
     //add(startCapture);
     //startCapture.show();
@@ -107,10 +111,12 @@ void MainWindow::on_stop_capture(Glib::ustring data)
 
 // Our new improved signal handler.  The data passed to this method is
 // printed to stdout.
-void MainWindow::on_button_clicked(Glib::ustring data)
+void MainWindow::on_show_analysis(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
-    video_area.StartKinect();
+    FileManager fm(this);
+    int result =  fm.run();
+
 }
 
 
