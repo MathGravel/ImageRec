@@ -20,7 +20,8 @@
 #include <gtkmm/label.h>
 #include <gtkmm/offscreenwindow.h>
 #include "FileManager.h"
-
+#include "ImageSegmentationManual.h"
+#include "KinectTreatment.h"
 
 
 
@@ -31,7 +32,7 @@ class MainWindow : public Gtk::Window
 {
     public:
         MainWindow ();
-        virtual ~MainWindow();
+    ~MainWindow();
         void Test();
     protected:
         Gtk::Frame video_frame;
@@ -56,8 +57,13 @@ class MainWindow : public Gtk::Window
 
 
 
-private:
 
+private:
+        VideoSource * cameraFeed;
+        VideoSource * camNoTreatment;
+
+        KinectTreatment* kinTreat = NULL;
+        bool segImg = false;
         void pack_View();
         void destroy (GdkEventAny* event);
 

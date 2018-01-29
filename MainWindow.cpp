@@ -22,64 +22,55 @@ MainWindow::MainWindow()
     startCapture = Gtk::Button("Start");
     stopCapture = Gtk::Button("Stop");
     showAnalysis = Gtk::Button("Show Analysis");
-    testButton = Gtk::Button("Test");
+    savePicButton = Gtk::Button("Save ROI");
+    localRecButton = Gtk::Button("Local Recognition");
+    globalRecButton = Gtk::Button("Global Recognition");
     testButton.set_size_request(200,200);
     //box.add(video_frame);
     box.add(video_frame);
     //bx.add(video_frame);
+    bx.set_spacing(10);
     bx.add(startCapture);
     bx.add(stopCapture);
     bx.add(showAnalysis);
+    bx.add(savePicButton);
+    bx.add(localRecButton);
+    bx.add(globalRecButton);
 
     bx.show();
     box.add(bx);
     add(box);
     //bx = Gtk::HButtonBox(L);
-   // bx.add(startCapture);
-   // bx.add(stopCapture);
-   // bx.pack_start(startCapture);
-    //bx.set_size_request(400,400);
-    //a = Gtk::Label("This is the first",true);
-   // a.set_size_request(200,200);
-    //Gtk::Label b("This is the second",true);
-    //add(a);
-    //add(a);
-   // bx.add(a);
-    //bx.add(b);
-    //bx.add(showAnalysis);
-    //bx.add(testButton);
-    //box.add(bx);
-    //box.add(startCapture);
-    //box.add(stopCapture);
-    //box.add(showAnalysis);
-    //box.add(testButton);
-    //box.add(bx);
-    // Now when the button is clicked, we call the "on_button_clicked" function
-    // with a pointer to "button 1" as it's argument
+
     startCapture.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_start_capture), "Start Capture"));
     stopCapture.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_stop_capture), "Stop Capture"));
     showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_show_analysis), "show Analysis"));
+    savePicButton.signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_save_pic), "save picture"));
+    showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_local_recognition), "Local recognition"));
+    showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
+            sigc::mem_fun(*this, &MainWindow::on_global_recognition), "Global Recognition"));
 
-   // add(box);
-   //add(bx);
-     //this->signal_delete_event().connect(sigc::mem_fun(this,&MainWindow::destroy));
-   // startCapture.show();
-    //add(startCapture);
-    //startCapture.show();
-    //box.show();
-    //video_frame.show();
-    //video_frame.show_all_children();
-    //add(video_frame);
-    //show();
     show_all();
     show_all_children(true);
     //startCapture.show();
     //bx.show();
 
     //show_all_children(true);*/
+    cameraFeed = NULL;
+}
+
+ MainWindow::~MainWindow() {
+    if (cameraFeed != NULL)
+        delete cameraFeed;
+    if (kinTreat != NULL)
+        delete kinTreat;
+    cameraFeed = NULL;
+    kinTreat = NULL;
 }
 
 void  MainWindow::destroy (GdkEventAny* event)
@@ -97,7 +88,12 @@ void MainWindow::pack_View(){
 void MainWindow::on_start_capture(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
-    video_area.StartKinect();
+    if (cameraFeed == NULL) {
+        cameraFeed = new Kinect();
+        camNoTreatment = cameraFeed;
+        video_area.StartCamera(cameraFeed);
+    } else
+        video_area.StartCamera();
 }
 
 // Our new improved signal handler.  The data passed to this method is
@@ -105,13 +101,29 @@ void MainWindow::on_start_capture(Glib::ustring data)
 void MainWindow::on_stop_capture(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
-    video_area.StopKinect();
+    video_area.StopCamera();
 }
 
+void MainWindow::on_show_analysis(Glib::ustring data) {
+
+   // segImg = !segImg;
+   // if (segImg) {
+     //   if (kinTreat == NULL)
+       //     kinTreat = new KinectTreatment(camNoTreatment);
+       // cameraFeed = kinTreat;
+    //}
+    //else {
+      //  cameraFeed = camNoTreatment;
+    //}
+
+    //video_area.StartCamera(cameraFeed);
+    video_area.setSegImage();
+
+}
 
 // Our new improved signal handler.  The data passed to this method is
 // printed to stdout.
-void MainWindow::on_show_analysis(Glib::ustring data)
+void MainWindow::on_save_pic(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     FileManager fm(this);
@@ -119,13 +131,11 @@ void MainWindow::on_show_analysis(Glib::ustring data)
 
 }
 
+void MainWindow::on_local_recognition(Glib::ustring data) {
+    // A finir demain
+}
 
-void MainWindow::Test() {
-    video_area.StartKinect();
+void MainWindow::on_global_recognition(Glib::ustring data) {
 
 }
 
-MainWindow::~MainWindow()
-{
-
-}

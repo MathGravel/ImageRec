@@ -11,12 +11,16 @@ VideoArea::VideoArea() : cv_opened(false) {
     on_dragged = false;
     chosedROI =false;
     this->add_events(Gdk::BUTTON_PRESS_MASK | Gdk::BUTTON_RELEASE_MASK | Gdk::BUTTON1_MOTION_MASK);
+    Glib::signal_timeout().connect(sigc::mem_fun(*this, &VideoArea::on_timeout), 50);
+    this->signal_button_press_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseDown));
+    this->signal_motion_notify_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseMove));
+    this->signal_button_release_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseUp));
     //this->add_events(Gdk::DRAG_ENTER | Gdk::DRAG_LEAVE | Gdk::DRAG_MOTION);
 }
 
 VideoArea::~VideoArea() {
-    if (sourceFeed != NULL)
-        delete sourceFeed;
+    //if (sourceFeed != NULL)
+      //  delete sourceFeed;
 }
 
 bool VideoArea::onMouseDown(GdkEventButton * event) {
@@ -69,20 +73,13 @@ bool VideoArea::onMouseMove(GdkEventMotion *event) {
 }
 
 
-void VideoArea::StartKinect() {
-    cv_opened = true;
-    if (sourceFeed == NULL) {
-        sourceFeed = new Kinect();
-        Glib::signal_timeout().connect(sigc::mem_fun(*this, &VideoArea::on_timeout), 50);
-        this->signal_button_press_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseDown));
-        this->signal_motion_notify_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseMove));
-        this->signal_button_release_event().connect(sigc::mem_fun(*this,&VideoArea::onMouseUp));
+void VideoArea::StartCamera(VideoSource * feed) {
+        cv_opened = true;
+        sourceFeed = feed;
 
-
-    }
 }
 
-void VideoArea::StopKinect() {
+void VideoArea::StopCamera() {
     cv_opened = false;
 }
 
@@ -105,6 +102,10 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     sourceFeed->update();
     currentPic = sourceFeed->getColorFeed();
     cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
+
+    if (segImg)
+        currentPic = imgSeg.segmentPic(currentPic);
+
     cv::Mat picShow;
     if (chosedROI) {
         picShow = currentPic.clone();

@@ -13,6 +13,7 @@
 
 #include <opencv2/opencv.hpp>
 #include "Kinect.h"
+#include "ImageSegmentationManual.h"
 
 
 class VideoArea : public Gtk::DrawingArea
@@ -20,8 +21,8 @@ class VideoArea : public Gtk::DrawingArea
 
 public:
     VideoArea ();
-    void StartKinect();
-    void StopKinect();
+    void StartCamera(VideoSource * feed = NULL);
+    void StopCamera();
     virtual ~VideoArea();
 
     cv::Mat getChosenRoi() {
@@ -31,6 +32,8 @@ public:
     bool hasChosenROI(){
         return chosedROI;
     }
+
+    void setSegImage() {segImg = !segImg;}
 
 protected:
     bool cv_opened;
@@ -42,7 +45,8 @@ protected:
     bool onMouseMove(GdkEventMotion * event);
     bool onMouseUp(GdkEventButton * event);
     bool on_timeout ();
-
+    bool segImg = false;
+    ImageSegmentationManual imgSeg;
 
 
 private:
