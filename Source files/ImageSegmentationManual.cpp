@@ -22,11 +22,6 @@ ImageSegmentationManual::~ImageSegmentationManual() {
 }
 
 
-cv::Mat ImageSegmentationManual::segmentPhoto(cv::Mat picture){
-
-
-}
-
 void ImageSegmentationManual::setThreshhold(int threshMin, int threshMax) {
     minThresh = threshMin;
     maxThresh = threshMax;
@@ -115,17 +110,17 @@ cv::Mat ImageSegmentationManual::segmentPic(cv::Mat picture) {
     findContours(threshold_output, contours, hierarchy, CV_RETR_TREE, cv::CHAIN_APPROX_NONE, cv::Point(0, 0));
     vector<Vec3f> circles;
 
-    HoughCircles(threshold_output, circles, HOUGH_GRADIENT, 1, 10,
-                 100, 30, 1, 100); // change the last two parameters
+    //HoughCircles(threshold_output, circles, HOUGH_GRADIENT, 1, 10,
+     //            100, 30, 1, 100); // change the last two parameters
     // (min_radius & max_radius) to detect larger circles	for (size_t i = 0; i < lines.size(); i++)
     cv::Mat currentPicWithShapes = picture.clone();
     cv::Mat filteredPicWithShapes = threshold_output.clone();
-    for (size_t i = 0; i < circles.size(); i++)
-    {
-        Vec3i c = circles[i];
-        circle(currentPicWithShapes, Point(c[0], c[1]), c[2], Scalar(100, 100, 0), 3, LINE_AA);
-        circle(currentPicWithShapes, Point(c[0], c[1]), 2, Scalar(100, 100, 0), 3, LINE_AA);
-    }
+    //for (size_t i = 0; i < circles.size(); i++)
+   // {
+     //   Vec3i c = circles[i];
+       // circle(currentPicWithShapes, Point(c[0], c[1]), c[2], Scalar(100, 100, 0), 3, LINE_AA);
+       // circle(currentPicWithShapes, Point(c[0], c[1]), 2, Scalar(100, 100, 0), 3, LINE_AA);
+    //}
     vector<Vec4i> lines;
     HoughLinesP(threshold_output, lines, 1, CV_PI / 180, 40, 40, 10);
     for (size_t i = 0; i < lines.size(); i++)
@@ -183,8 +178,6 @@ cv::Mat ImageSegmentationManual::segmentPic(cv::Mat picture) {
         }
         if (!verif)
             it++;
-        std::cout << " The size : " << boundRectNew.size();
-
     }
 
     for (it = boundRectNew.begin(); it != boundRectNew.end(); it++) {
@@ -193,26 +186,30 @@ cv::Mat ImageSegmentationManual::segmentPic(cv::Mat picture) {
 
     //filteredPicWithShapes = filteredPic.clone();
     //currentPicWithShapes = currentPic.clone();
+    cv::Mat pic = picture.clone();
+
     for (it = boundRectNew.begin(); it != boundRectNew.end();++it)
     {
         Scalar color = Scalar(0, 200, 0);
 
         rectangle(filteredPicWithShapes, it->tl(), it->br(), color, 2, 8, 0);
         //rectangle(currentPicWithShapes, it->tl(), it->br(), color, 2, 8, 0);
+        rectangle(pic, it->tl(), it->br(), color, 2, 8, 0);
+
 
     }
     Scalar color = Scalar(0, 200, 0);
-
     for (int i = 0; i < boundRect.size(); i++) {
 
         if (hierarchy[i][2] + hierarchy[i][3] < 0)
         {
             rectangle(currentPicWithShapes, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
-            putText(currentPicWithShapes, hierarchy[i][0] + " " + hierarchy[i][1], boundRect[i].tl(), cv::HersheyFonts::FONT_HERSHEY_COMPLEX, 1, cv::Scalar(140, 0, 0));
+            rectangle(pic, boundRect[i].tl(), boundRect[i].br(), color, 2, 8, 0);
+
         }
     }
 
-    return currentPicWithShapes;
+    return threshold_output;
 
 
 }

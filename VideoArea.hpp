@@ -34,6 +34,7 @@ public:
     }
 
     void setSegImage() {segImg = !segImg;}
+    void  SaveROI(const std::string fileLoc, const std::string itemClass);
 
 protected:
     bool cv_opened;

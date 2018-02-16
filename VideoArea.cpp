@@ -3,6 +3,12 @@
 #include <gdkmm/general.h>
 #include <glibmm/main.h>
 #include <gdkmm/pixbuf.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <chrono>
+#include <ctime>
+
+struct stat info;
 
 
 VideoArea::VideoArea() : cv_opened(false) {
@@ -101,6 +107,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
     sourceFeed->update();
     currentPic = sourceFeed->getColorFeed();
+    cv::Mat mappedFeed = sourceFeed->getMappedFeed();
     cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
 
     if (segImg)
@@ -114,10 +121,43 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     } else
         picShow = currentPic;
 
+    //auto test = selection::selectiveSearch(picShow,mappedFeed);
+
+    //for (auto &e : test) {
+      //  cv::rectangle(picShow,e.tl(),e.br(),cv::Scalar(0,200,0),2,8,0);
+    //}
 
     Gdk::Cairo::set_source_pixbuf(cr, Gdk::Pixbuf::create_from_data(picShow.data, Gdk::COLORSPACE_RGB, false, 8, picShow.cols,
                                                                     picShow.rows, picShow.step));
     cr->paint();
 
     return true;
+}
+
+void  VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) {
+
+    std::string location = fileLoc;
+    location.append("/");
+    location.append(itemClass);
+
+    if (chosedROI) {
+        if( stat(location.c_str() , &info ) != 0 ) {
+            const int dir_err = mkdir(location.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+        }
+        location.append("/");
+        std::string filename = "";
+        time_t t = time(0);   // get time now
+        struct tm * now = localtime( & t );
+        filename.append(std::to_string(now->tm_year + 1900) + '-');
+        filename.append(std::to_string((now->tm_mon + 1)) + '-');
+        filename.append(std::to_string((now->tm_mday)) + '-');
+        filename.append(std::to_string((now->tm_hour)) + '-');
+        filename.append(std::to_string((now->tm_min)) + '-');
+        filename.append(std::to_string((now->tm_sec)));
+        filename.append(".png");
+        location.append(filename);
+
+        cv::imwrite(location,chosenROI);
+
+    }
 }

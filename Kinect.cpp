@@ -91,7 +91,7 @@ void Kinect::update() {
 
     this->acquire();
     libfreenect2::FrameMap frames;
-    libfreenect2::Frame undistorted(512, 424, 4), registered(512, 424, 4), depth2rgb(1920, 1080 + 2, 4); // check here (https://github.com/OpenKinect/libfreenect2/issues/337) and here (https://github.com/OpenKinect/libfreenect2/issues/464) why depth2rgb image should be bigger
+    libfreenect2::Frame undistorted(512, 424, 4), registered(512, 424, 4), depth2rgb(1920, 1082, 4); // check here (https://github.com/OpenKinect/libfreenect2/issues/337) and here (https://github.com/OpenKinect/libfreenect2/issues/464) why depth2rgb image should be bigger
 
     listener->waitForNewFrame(frames);
     libfreenect2::Frame *rgb = frames[libfreenect2::Frame::Color];
@@ -112,6 +112,10 @@ void Kinect::update() {
     cv::Mat(undistorted.height, undistorted.width, CV_32FC1, undistorted.data).copyTo(depthmatUndistorted);
     cv::Mat(registered.height, registered.width, CV_8UC4, registered.data).copyTo(rgbd);
     cv::Mat(depth2rgb.height, depth2rgb.width, CV_32FC1, depth2rgb.data).copyTo(rgbd2);
+
+    rgbd2 = rgbd2.clone() / 4096.0f;
+
+    //imwrite("rgbd2.png",rgbd2);
 
     listener->release(frames);
     this->release();

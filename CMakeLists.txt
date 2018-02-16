@@ -8,12 +8,14 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
 find_package( OpenCV REQUIRED )
+find_package(PythonLibs 3.5.2 REQUIRED)
+include_directories(${PYTHON_INCLUDE_DIRS})
 include_directories(${GTK3_INCLUDE_DIRS})
 link_directories(${GTK3_LIBRARY_DIRS})
 pkg_check_modules(GTKMM gtkmm-3.0)
 
 find_package(Threads REQUIRED)
-find_package(freenect2 REQUIRED)
+find_package(freenect2 REQUIRED HINTS "ENV{HOME}/freenect2")
 
 
 include_directories("/usr/include/libusb-1.0/")
@@ -39,4 +41,4 @@ TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GTK3_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${FREENECT2_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${freenect2_LIBRARIES})
-
+target_link_libraries(${CMAKE_PROJECT_NAME} ${PYTHON_LIBRARIES})

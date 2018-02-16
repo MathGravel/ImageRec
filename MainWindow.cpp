@@ -128,6 +128,10 @@ void MainWindow::on_save_pic(Glib::ustring data)
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     FileManager fm(this);
     int result =  fm.run();
+    string location = "/home/uqamportable/Pictures";
+    if (result == 1 ){
+        video_area.SaveROI(location,fm.getCategorieItem());
+    }
 
 }
 

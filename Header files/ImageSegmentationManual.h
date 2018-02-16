@@ -31,14 +31,13 @@ public:
     virtual ~ImageSegmentationManual();
 
 
-    cv::Mat segmentPhoto(cv::Mat picture);
+    cv::Mat  segmentPic(cv::Mat picture) ;
     void setThreshhold(int threshMin, int threshMax);
 
 
 
 private:
     cv::Mat normalizePicHistogram(cv::Mat picture) const;
-    cv::Mat  segmentPic(cv::Mat picture) ;
     cv::Mat threshHoldColors(cv::Mat imgInput) const;
     int minThresh = MINTHRESHOLD;
     int maxThresh = MAXTHRESHOLD;

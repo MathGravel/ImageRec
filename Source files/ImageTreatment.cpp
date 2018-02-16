@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "ImageTreatment.h"
+#include "../Header files/stdafx.h"
+#include "../Header files/ImageTreatment.h"
 
 
 ImageTreatment::ImageTreatment()

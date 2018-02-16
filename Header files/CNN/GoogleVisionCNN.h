@@ -1,5 +1,7 @@
 #pragma once
 #include "CNN.h"
+#include <Python.h>
+
 //#include <boost/python.hpp>
 //#include <boost/foreach.hpp> 
 
@@ -19,4 +21,7 @@ public:
 private :
 	std::string lastName;
 	float lastScore;
+	PyObject *pName, *pModule, *pDict, *pFunc;
+	PyObject *pArgs, *pValue;
+	PyObject *responses;
 };

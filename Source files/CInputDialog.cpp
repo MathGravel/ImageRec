@@ -1,5 +1,5 @@
-#include "stdafx.h"
-#include "CInputDialog.h"
+#include "../Header files/stdafx.h"
+#include "../Header files/CInputDialog.h"
 
 
 CInputDialog::CInputDialog(CWnd* pParent) :
