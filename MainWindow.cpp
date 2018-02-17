@@ -15,7 +15,7 @@ MainWindow::MainWindow()
     video_frame.set_label ("OpenCV Video");
     video_frame.set_label_align (Gtk::ALIGN_CENTER, Gtk::ALIGN_CENTER);
     video_frame.set_shadow_type (Gtk::SHADOW_OUT);
-    video_frame.set_size_request(1620, 680);
+    video_frame.set_size_request(1620, 780);
     //this->set_size_request(900,800);
     video_area.set_tooltip_text("Video");
     video_frame.add(video_area);
@@ -50,9 +50,9 @@ MainWindow::MainWindow()
             sigc::mem_fun(*this, &MainWindow::on_show_analysis), "show Analysis"));
     savePicButton.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_save_pic), "save picture"));
-    showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
+    localRecButton.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_local_recognition), "Local recognition"));
-    showAnalysis.signal_clicked().connect(sigc::bind<Glib::ustring>(
+    globalRecButton.signal_clicked().connect(sigc::bind<Glib::ustring>(
             sigc::mem_fun(*this, &MainWindow::on_global_recognition), "Global Recognition"));
 
     show_all();
@@ -136,7 +136,9 @@ void MainWindow::on_save_pic(Glib::ustring data)
 }
 
 void MainWindow::on_local_recognition(Glib::ustring data) {
-    // A finir demain
+
+    video_area.setLocalSegmentation();
+
 }
 
 void MainWindow::on_global_recognition(Glib::ustring data) {

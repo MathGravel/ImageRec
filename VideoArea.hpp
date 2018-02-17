@@ -10,10 +10,12 @@
 
 #include <gtkmm/drawingarea.h>
 #include <cairomm/context.h>
-
+#include "selectivesearch.hpp"
 #include <opencv2/opencv.hpp>
 #include "Kinect.h"
 #include "ImageSegmentationManual.h"
+#include <thread>         // std::thread
+#include <future>         // std::promise, std::future
 
 
 class VideoArea : public Gtk::DrawingArea
@@ -31,6 +33,10 @@ public:
 
     bool hasChosenROI(){
         return chosedROI;
+    }
+
+    void setLocalSegmentation() {
+        localRec = !localRec;
     }
 
     void setSegImage() {segImg = !segImg;}
@@ -53,10 +59,19 @@ protected:
 private:
     bool on_dragged;
     bool chosedROI;
+    bool localRec;
+    bool segmenting = false;
+    int skipframes = 0;
     int x1,x2,y1,y2;
     cv::Rect rectROI;
     cv::Mat chosenROI;
     cv::Mat currentPic;
+    cv::Mat formattedPic;
+    cv::Mat AddData();
+    std::vector<cv::Rect> regions;
+    std::string classifyPic(cv::Mat imgClassify);
+    cv::Mat FindRegionProposals(cv::Mat picToSeg);
+    std::future<std::vector<cv::Rect>> resultSeg;
 
 };
 
