@@ -15,15 +15,22 @@ Section à refaire
   - LibFreeNect 2
   - ... 
 
+Les dépendances peuvent être installé en executant le script
+
+```
+sud sh install.sh
+```
+
+
 ## Usage
 
-Ce programme peut être compilé et testé par les commandes
+Ce programme peut être compilé et testé par les commandes :
 
 ```mkdir build
-```cd build
-```cmake ..
-```make
-% ./ImageRec
+cd build
+cmake ..
+make
+ ./ImageRec
 ```
 
 
