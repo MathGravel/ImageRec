@@ -3,7 +3,7 @@
 #include <string>
 
 /* Pair (label, confidence) representing a prediction. */
-typedef std::pair<string, float> Prediction;
+typedef std::pair<std::string, float> Prediction;
 
 class CNN {
 

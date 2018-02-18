@@ -16,6 +16,8 @@
 #include "ImageSegmentationManual.h"
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
+#include "Header files/CNN/CaffeCNN.h"
+#include "Socket.h"
 
 
 class VideoArea : public Gtk::DrawingArea
@@ -41,7 +43,8 @@ public:
 
     void setSegImage() {segImg = !segImg;}
     void  SaveROI(const std::string fileLoc, const std::string itemClass);
-
+    std::string classe = "";
+    bool globalRec = false;
 protected:
     bool cv_opened;
     VideoSource * sourceFeed;
@@ -64,12 +67,17 @@ private:
     int skipframes = 0;
     int x1,x2,y1,y2;
     cv::Rect rectROI;
+    CaffeCNN caffe;
     cv::Mat chosenROI;
     cv::Mat currentPic;
     cv::Mat formattedPic;
     cv::Mat AddData();
+
+
     std::vector<cv::Rect> regions;
-    std::string classifyPic(cv::Mat imgClassify);
+    std::vector<std::string> probs;
+
+    void classifyPic(cv::Mat& currentPic);
     cv::Mat FindRegionProposals(cv::Mat picToSeg);
     std::future<std::vector<cv::Rect>> resultSeg;
 

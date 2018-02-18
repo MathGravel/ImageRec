@@ -1,9 +1,10 @@
 #pragma once
 #include "CNN.h"
-#include <caffe/caffe.hpp>
+#include "../../Classifier.h"
 
-#include <string>
-#include <opencv2/opencv.hpp>
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <algorithm>
 #include <iosfwd>
 #include <memory>
@@ -11,10 +12,11 @@
 #include <utility>
 #include <vector>
 
-static bool PairCompare(const std::pair<float, int>& lhs,
-	const std::pair<float, int>& rhs) {
-	return lhs.first > rhs.first;
-}
+
+
+
+
+
 
 
 class CaffeCNN : public  CNN
@@ -29,7 +31,7 @@ public:
 	 void savePicture(const cv::Mat& picture, std::string name);
 	 void trainCNN();
 	void prepareData();
-	
+
 
 
 private :
@@ -40,10 +42,11 @@ private :
 	std::string imageMeanLoc;
 	std::string solverLoc;
 	std::string trainerLoc;
+    Classifier classifier;
 	void prepareImageMean();
 	void transformImagesDB();
 	void resizeImagesDB();
-	void setImageMean(const string mean_loc);
+	void setImageMean(const std::string mean_loc);
 	std::vector<float> predire(const cv::Mat& img);
 	void wrapInputLayer(std::vector<cv::Mat>* input_channels);
 	void preparation(const cv::Mat& img,

@@ -182,6 +182,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     //std::packaged_task<cv::Mat(cv::Mat)> task(&segmentPic);
     //auto f=task.get_future();
     //task(this->currentPic);
+    formattedPic.release();
     formattedPic = this->currentPic.clone();
 
     if (localRec) {
@@ -192,28 +193,40 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         } else {
             if (resultSeg.wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
                 regions.clear();
+                probs.clear();
                 regions = resultSeg.get();
+                this->classifyPic(formattedPic);
                 segmenting = false;
             }
         }
-        for (auto &&rect : regions) {
-            cv::rectangle(formattedPic, rect, cv::Scalar(0, 255, 0), 3, 8);
+
+
+        std::vector<cv::Rect>::iterator it = regions.begin();
+        std::vector<std::string>::iterator it2 = probs.begin();
+
+        while (it != regions.end() && it2 != probs.end()) {
+            cv::Rect reg = *it;
+            std::string prob = *it2;
+            cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
+            cv::putText(formattedPic,prob,cv::Point(reg.x ,reg.y + reg.height),FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0), 4);
+
+            it++;
+            it2++;
         }
+
+
     }
 
-
-
-
-    //auto test = selection::selectiveSearch(picShow,mappedFeed);
-
-    //for (auto &e : test) {
-    //  cv::rectangle(picShow,e.tl(),e.br(),cv::Scalar(0,200,0),2,8,0);
-    //}
 
 
     if (chosedROI) {
         cv::rectangle(formattedPic, rectROI, cv::Scalar(0, 0, 200), 2, 8, 0);
         chosenROI = currentPic(rectROI);
+       // if (globalRec) {
+        //    this->classifyPic(chosenROI);
+        //    globalRec = false;
+        //}
+        //cv::putText(formattedPic,classe,cv::Point(rectROI.x ,rectROI.y + rectROI.height),FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0), 4);
     }
 
     Gdk::Cairo::set_source_pixbuf(cr,
@@ -277,7 +290,7 @@ cv::Mat VideoArea::AddData() {
 
 
     }
-
+    currentSmall.release();
     return current;
 }
 
@@ -288,8 +301,20 @@ cv::Mat VideoArea::FindRegionProposals(cv::Mat picToSeg) {
 }
 
 
-std::string VideoArea::classifyPic(cv::Mat imgClassify) {
+void VideoArea::classifyPic(cv::Mat& currentPic) {
 
+   // if (classe == "")
+    //    classe = caffe.predict(currentPic.clone());
+   // cv::putText(currentPic,classe,cv::Point(rectROI.x,rectROI.y),8,2,cv::Scalar(100,100,100));
+    //Socket::Send_Data(classe.c_str(),80);
+    //std::cout << "\n DERP  ----" << classe << " ----- \n";
+    probs.clear();
+    for (auto &&rect : regions) {
+            cv::Mat reg = currentPic(rect);
+            probs.push_back(caffe.predict(reg));
+            reg.release();
+    }
+    std::cout << "done";
 }
 
 

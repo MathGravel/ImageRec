@@ -142,6 +142,8 @@ void MainWindow::on_local_recognition(Glib::ustring data) {
 }
 
 void MainWindow::on_global_recognition(Glib::ustring data) {
-
+   // std::cout << caffe.predict(video_area.getChosenRoi());
+    video_area.classe = "";
+    video_area.globalRec = true;
 }
 
