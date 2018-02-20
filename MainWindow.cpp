@@ -89,11 +89,12 @@ void MainWindow::on_start_capture(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     if (cameraFeed == NULL) {
-        cameraFeed = new Kinect();
+        //cameraFeed = new Kinect();
+        cameraFeed = new RealSense();
         camNoTreatment = cameraFeed;
         video_area.StartCamera(cameraFeed);
     } else
-        video_area.StartCamera();
+        video_area.RestartCamera();
 }
 
 // Our new improved signal handler.  The data passed to this method is
@@ -106,17 +107,6 @@ void MainWindow::on_stop_capture(Glib::ustring data)
 
 void MainWindow::on_show_analysis(Glib::ustring data) {
 
-   // segImg = !segImg;
-   // if (segImg) {
-     //   if (kinTreat == NULL)
-       //     kinTreat = new KinectTreatment(camNoTreatment);
-       // cameraFeed = kinTreat;
-    //}
-    //else {
-      //  cameraFeed = camNoTreatment;
-    //}
-
-    //video_area.StartCamera(cameraFeed);
     video_area.setSegImage();
 
 }

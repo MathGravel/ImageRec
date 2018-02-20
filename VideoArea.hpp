@@ -26,6 +26,8 @@ class VideoArea : public Gtk::DrawingArea
 public:
     VideoArea ();
     void StartCamera(VideoSource * feed = NULL);
+    void RestartCamera();
+
     void StopCamera();
     virtual ~VideoArea();
 

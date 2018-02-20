@@ -64,9 +64,13 @@ list(APPEND Caffe_INCLUDE_DIRS "/usr/local/include/opencv2")
 
 
 find_package(Threads REQUIRED)
+find_package(realsense2 REQUIRED)
+
 find_package(freenect2 REQUIRED HINTS "ENV{HOME}/freenect2")
 
 include_directories(${Protobuf_INCLUDE_DIRS})
+include_directories(${realsense2_INCLUDE_DIRS})
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories("/usr/include/libusb-1.0/")
 include_directories("./Header files")
@@ -90,6 +94,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GTK3_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${FREENECT2_LIBRARIES})
+TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${realsense2_LIBRARIES} -lrealsense2)
+
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${freenect2_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${Caffe_LIBRARIES} -lglog -lprotobuf -lboost_system)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${Protobuf_LIBRARIES})

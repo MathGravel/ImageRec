@@ -22,6 +22,8 @@
 #include "FileManager.h"
 #include "ImageSegmentationManual.h"
 #include "KinectTreatment.h"
+#include "RealSense.h"
+
 #include "Header files/CNN/CaffeCNN.h"
 
 

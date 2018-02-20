@@ -88,6 +88,11 @@ void VideoArea::StartCamera(VideoSource *feed) {
 
 }
 
+void VideoArea::RestartCamera() {
+    cv_opened = true;
+
+}
+
 void VideoArea::StopCamera() {
     cv_opened = false;
 }
@@ -154,34 +159,20 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture) {
 bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
     // if (!cv_opened) return false;
-    if (sourceFeed == NULL || !cv_opened)
+    if (sourceFeed == NULL)
         return false;
 
+    if (cv_opened ) {
 
     sourceFeed->update();
     currentPic = sourceFeed->getColorFeed();
     cv::Mat mappedFeed = sourceFeed->getMappedFeed();
     cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
 
-    /*if (segImg)
-        currentPic = imgSeg.segmentPic(currentPic);
-
-    cv::Mat picShow;
-    if (chosedROI) {
-        picShow = currentPic.clone();
-        cv::rectangle(picShow, rectROI, cv::Scalar(0, 0, 200), 2, 8, 0);
-        chosenROI = currentPic(rectROI);
-    } else
-        picShow = currentPic;
-    */
     cv::Mat picShow;
 
 
-    //formattedPic = this->AddData();
 
-    //std::packaged_task<cv::Mat(cv::Mat)> task(&segmentPic);
-    //auto f=task.get_future();
-    //task(this->currentPic);
     formattedPic.release();
     formattedPic = this->currentPic.clone();
 
@@ -227,6 +218,8 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         //    globalRec = false;
         //}
         //cv::putText(formattedPic,classe,cv::Point(rectROI.x ,rectROI.y + rectROI.height),FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0), 4);
+    }
+
     }
 
     Gdk::Cairo::set_source_pixbuf(cr,
@@ -341,7 +334,12 @@ void VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) 
         filename.append(".png");
         location.append(filename);
 
-        cv::imwrite(location, chosenROI);
+        //RGB
+        cv::Mat chosenROI_RGB;
+        cv::cvtColor(chosenROI, chosenROI_RGB,CV_RGB2BGR);
+
+        cv::imwrite(location, chosenROI_RGB);
+        //cv::imwrite(location, chosenROI);
 
     }
 }
