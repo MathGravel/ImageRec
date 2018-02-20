@@ -107,8 +107,8 @@ void MainWindow::on_stop_capture(Glib::ustring data)
 
 void MainWindow::on_show_analysis(Glib::ustring data) {
 
-    video_area.setSegImage();
-
+    //video_area.setSegImage();
+    video_area.SegmentClassifyROI();
 }
 
 // Our new improved signal handler.  The data passed to this method is

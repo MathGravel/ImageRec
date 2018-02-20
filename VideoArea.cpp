@@ -19,7 +19,7 @@ VideoArea::VideoArea() : cv_opened(false) {
     on_dragged = false;
     chosedROI = false;
     localRec = false;
-    segmenting =false;
+    segmenting = false;
     this->add_events(Gdk::BUTTON_PRESS_MASK | Gdk::BUTTON_RELEASE_MASK | Gdk::BUTTON1_MOTION_MASK);
     Glib::signal_timeout().connect(sigc::mem_fun(*this, &VideoArea::on_timeout), 50);
     this->signal_button_press_event().connect(sigc::mem_fun(*this, &VideoArea::onMouseDown));
@@ -124,11 +124,7 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture) {
         ratiox = ratiox * 1.25;
         newWidth = newWidth / 1.25;
     }
-    // ratiox = ceil(ratiox);
 
-
-    // int newWidth = width * newHeight / height;
-    //ratioy = current.rows / newHeight;
 
     resize(current, currentSmall, cv::Size(newWidth, newHeight));
 
@@ -138,22 +134,17 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture) {
     // do something...
     std::vector<cv::Rect> resizedRegions;
     for (auto &&rect : regions) {
-        //cv::rectangle( currentSmall, rect, cv::Scalar( 0, 255, 0 ), 3, 8 );
 
         cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
         resizedRegions.push_back(x);
-        //rectangle(imO, x, Scalar(0, 255, 0));
-       // cv::rectangle(current, x, cv::Scalar(0, 255, 0), 3, 8);
+
 
     }
-
-
 
 
     return resizedRegions;
 
 }
-
 
 
 bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
@@ -162,15 +153,17 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     if (sourceFeed == NULL)
         return false;
 
-    if (cv_opened ) {
+    if (cv_opened) {
 
-    sourceFeed->update();
-    currentPic = sourceFeed->getColorFeed();
-    cv::Mat mappedFeed = sourceFeed->getMappedFeed();
-    cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
+        sourceFeed->update();
+        currentPic = sourceFeed->getColorFeed();
+        cv::Mat mappedFeed = sourceFeed->getMappedFeed();
+        cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
+
+
+    }
 
     cv::Mat picShow;
-
 
 
     formattedPic.release();
@@ -180,7 +173,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         if (!segmenting) {
             resultSeg = std::async(std::launch::async, segmentPic, currentPic.clone());
             segmenting = true;
-            //formattedPic = this->currentPic;
+
         } else {
             if (resultSeg.wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
                 regions.clear();
@@ -199,7 +192,8 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
             cv::Rect reg = *it;
             std::string prob = *it2;
             cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
-            cv::putText(formattedPic,prob,cv::Point(reg.x ,reg.y + reg.height),FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0), 4);
+            cv::putText(formattedPic, prob, cv::Point(reg.x, reg.y + reg.height), FONT_HERSHEY_SIMPLEX, 0.5,
+                        Scalar(0, 0, 0), 4);
 
             it++;
             it2++;
@@ -209,18 +203,13 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     }
 
 
-
+    //cv::Mat imgScreen = formattedPic.clone();
     if (chosedROI) {
         cv::rectangle(formattedPic, rectROI, cv::Scalar(0, 0, 200), 2, 8, 0);
         chosenROI = currentPic(rectROI);
-       // if (globalRec) {
-        //    this->classifyPic(chosenROI);
-        //    globalRec = false;
-        //}
-        //cv::putText(formattedPic,classe,cv::Point(rectROI.x ,rectROI.y + rectROI.height),FONT_HERSHEY_SIMPLEX, 0.5, Scalar(0,0,0), 4);
-    }
 
     }
+
 
     Gdk::Cairo::set_source_pixbuf(cr,
                                   Gdk::Pixbuf::create_from_data(formattedPic.data, Gdk::COLORSPACE_RGB, false, 8,
@@ -229,6 +218,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     cr->paint();
     skipframes++;
     skipframes = skipframes % 10;
+    //imgScreen.release();
 
     return true;
 }
@@ -239,10 +229,6 @@ cv::Mat VideoArea::AddData() {
 
     cv::Mat current = this->currentPic.clone();
     cv::Mat currentSmall = this->currentPic.clone();
-
-    // if (segImg)
-    //    currentPic = imgSeg.segmentPic(currentPic);
-
 
     if (localRec) {
 
@@ -258,10 +244,10 @@ cv::Mat VideoArea::AddData() {
             ratiox = ratiox * 1.25;
             newWidth = newWidth / 1.25;
         }
-       // ratiox = ceil(ratiox);
+        // ratiox = ceil(ratiox);
 
 
-       // int newWidth = width * newHeight / height;
+        // int newWidth = width * newHeight / height;
         //ratioy = current.rows / newHeight;
 
         resize(current, currentSmall, cv::Size(newWidth, newHeight));
@@ -273,7 +259,7 @@ cv::Mat VideoArea::AddData() {
         // do something...
 
         for (auto &&rect : regions) {
-            cv::rectangle( currentSmall, rect, cv::Scalar( 0, 255, 0 ), 3, 8 );
+            cv::rectangle(currentSmall, rect, cv::Scalar(0, 255, 0), 3, 8);
 
             cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
             //rectangle(imO, x, Scalar(0, 255, 0));
@@ -288,26 +274,37 @@ cv::Mat VideoArea::AddData() {
 }
 
 
-
 cv::Mat VideoArea::FindRegionProposals(cv::Mat picToSeg) {
 
 }
 
 
-void VideoArea::classifyPic(cv::Mat& currentPic) {
+void VideoArea::SegmentClassifyROI() {
+    if (!chosedROI)
+        return;
+    regions.clear();
+    probs.clear();
+    regions.push_back(rectROI);
+    probs.push_back(caffe.predict(chosenROI));
+    std::cout << caffe.predict(chosenROI) << std::endl;
 
-   // if (classe == "")
+}
+
+
+void VideoArea::classifyPic(cv::Mat &currentPic) {
+
+    // if (classe == "")
     //    classe = caffe.predict(currentPic.clone());
-   // cv::putText(currentPic,classe,cv::Point(rectROI.x,rectROI.y),8,2,cv::Scalar(100,100,100));
+    // cv::putText(currentPic,classe,cv::Point(rectROI.x,rectROI.y),8,2,cv::Scalar(100,100,100));
     //Socket::Send_Data(classe.c_str(),80);
     //std::cout << "\n DERP  ----" << classe << " ----- \n";
     probs.clear();
     for (auto &&rect : regions) {
-            cv::Mat reg = currentPic(rect);
-            probs.push_back(caffe.predict(reg));
-            reg.release();
+        cv::Mat reg = currentPic(rect);
+        probs.push_back(caffe.predict(reg));
+        reg.release();
     }
-    std::cout << "done";
+
 }
 
 
@@ -336,7 +333,7 @@ void VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) 
 
         //RGB
         cv::Mat chosenROI_RGB;
-        cv::cvtColor(chosenROI, chosenROI_RGB,CV_RGB2BGR);
+        cv::cvtColor(chosenROI, chosenROI_RGB, CV_RGB2BGR);
 
         cv::imwrite(location, chosenROI_RGB);
         //cv::imwrite(location, chosenROI);

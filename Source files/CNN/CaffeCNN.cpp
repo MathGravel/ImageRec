@@ -15,11 +15,11 @@ CaffeCNN::CaffeCNN()
 
     //::google::InitGoogleLogging("ImageRec");
 
-    string model_file   = "/home/uqamportable/Documents/RobotLib/caffe/models/bvlc_reference_caffenet/deploy.prototxt";
-    string trained_file = "/home/uqamportable/Documents/RobotLib/caffe/models/bvlc_reference_caffenet/caffenet_train_iter_700.caffemodel";
+    string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
+    string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/caffenet_train_iter_500.caffemodel";
     //string trained_file = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/newcnn.caffemodel";
-    string mean_file    = "/home/uqamportable/Documents/RobotLib/caffe/data/demo_cuisine/imagenet_mean.binaryproto";
-    string label_file   = "/home/uqamportable/Documents/RobotLib/caffe/data/demo_cuisine/det_synset_words.txt";
+    string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/imagenet_mean.binaryproto";
+    string label_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt";
     classifier = Classifier(model_file, trained_file, mean_file, label_file);
 
 

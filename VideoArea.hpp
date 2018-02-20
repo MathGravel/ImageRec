@@ -27,6 +27,7 @@ public:
     VideoArea ();
     void StartCamera(VideoSource * feed = NULL);
     void RestartCamera();
+    void SegmentClassifyROI();
 
     void StopCamera();
     virtual ~VideoArea();
