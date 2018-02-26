@@ -5,7 +5,7 @@ MainWindow::MainWindow()
 
     set_title ("Camera Feed");
     set_border_width (10);
-
+    previous = "val";
 
     box = Gtk::Box(Gtk::ORIENTATION_VERTICAL);
 
@@ -116,10 +116,11 @@ void MainWindow::on_show_analysis(Glib::ustring data) {
 void MainWindow::on_save_pic(Glib::ustring data)
 {
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
-    FileManager fm(this);
+    FileManager fm(this,previous);
     int result =  fm.run();
-    string location = "/home/uqamportable/Pictures";
+    string location = "./Dataset-Non-Formatte";
     if (result == 1 ){
+        previous = fm.getCategorieItem();
         video_area.SaveROI(location,fm.getCategorieItem());
     }
 

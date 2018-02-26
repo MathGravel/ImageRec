@@ -313,12 +313,29 @@ void VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) 
     std::string location = fileLoc;
     location.append("/");
     location.append(itemClass);
+    std::string locOriginal = location;
+    locOriginal.append("-org");
+    std::string locRes = location;
+    locRes.append("-res");
+
+
+    cv::Mat resized;
 
     if (chosedROI) {
         if (stat(location.c_str(), &info) != 0) {
             const int dir_err = mkdir(location.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
         }
+        if (stat(locOriginal.c_str(), &info) != 0) {
+            const int dir_err = mkdir(locOriginal.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+        }
+        if (stat(locRes.c_str(), &info) != 0) {
+            const int dir_err = mkdir(locRes.c_str(), S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+        }
+
         location.append("/");
+        locOriginal.append("/");
+        locRes.append("/");
+
         std::string filename = "";
         time_t t = time(0);   // get time now
         struct tm *now = localtime(&t);
@@ -330,12 +347,26 @@ void VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) 
         filename.append(std::to_string((now->tm_sec)));
         filename.append(".png");
         location.append(filename);
+        locOriginal.append(filename);
+        locRes.append(filename);
+
 
         //RGB
         cv::Mat chosenROI_RGB;
         cv::cvtColor(chosenROI, chosenROI_RGB, CV_RGB2BGR);
+        resized = chosenROI_RGB.clone();
+        cv::resize(resized,resized,cv::Size(8,8));
+        cv::Mat org = this->currentPic.clone();
+        cv::cvtColor(org, org, CV_RGB2BGR);
+
 
         cv::imwrite(location, chosenROI_RGB);
+        cv::imwrite(locOriginal, org);
+        cv::imwrite(locRes, resized);
+
+        org.release();
+        resized.release();
+        chosenROI_RGB.release();
         //cv::imwrite(location, chosenROI);
 
     }

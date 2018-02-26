@@ -17,7 +17,7 @@
 class FileManager : public Gtk::Dialog {
 
 public:
-    FileManager(Gtk::Window* parent);
+    FileManager(Gtk::Window* parent,std::string previous);
 
     std::string getCategorieItem() {
         return categorieEntry.get_text();

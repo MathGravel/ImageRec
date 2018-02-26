@@ -5,7 +5,7 @@
 #include "FileManager.h"
 
 
-FileManager::FileManager(Gtk::Window* parent) {
+FileManager::FileManager(Gtk::Window* parent,std::string previous) {
 
     set_title ("Camera Feed");
     set_border_width (10);
@@ -15,7 +15,7 @@ FileManager::FileManager(Gtk::Window* parent) {
     yesButton = Gtk::Button("Save");
     noButton = Gtk::Button("Cancel");
     categorieEntry = Gtk::Entry();
-    categorieEntry.set_text("Default");
+    categorieEntry.set_text(previous);
     this->set_transient_for(*parent);
     //layout.attach(categorieEntry,0,0,2,1);
     //layout.attach(yesButton,0,1,1,1);

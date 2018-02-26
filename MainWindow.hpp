@@ -64,7 +64,7 @@ class MainWindow : public Gtk::Window
 private:
         VideoSource * cameraFeed;
         VideoSource * camNoTreatment;
-
+        std::string previous;
         KinectTreatment* kinTreat = NULL;
         bool segImg = false;
         void pack_View();
