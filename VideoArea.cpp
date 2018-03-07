@@ -132,9 +132,16 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
     resize(depthPic, currentDepthSmall, cv::Size(newWidth, newHeight));
 
 
-    auto regions = selectiveDepth::selectiveSearchDepth(currentSmall,currentDepthSmall, 200, 0.9, 60, 400, 1000, 4);
+    auto regions = selectiveDepth::selectiveSearchDepth(currentSmall,currentDepthSmall, 150, 0.9, 30, 300, currentSmall.rows * currentSmall.cols/6, 50);
 
-    // do something...
+
+    std::vector<cv::Rect> newRect;
+
+    cv::groupRectangles(regions,1,0.1);
+
+
+
+        // do something...
     std::vector<cv::Rect> resizedRegions;
     for (auto &&rect : regions) {
 
@@ -148,6 +155,30 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
     return resizedRegions;
 
 }
+
+
+
+void VideoArea::mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes)
+{
+    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1); // Mask of original image
+    cv::Size scaleFactor(10,10); // To expand rectangles, i.e. increase sensitivity to nearby rectangles. Doesn't have to be (10,10)--can be anything
+    for (int i = 0; i < inputBoxes.size(); i++)
+    {
+        cv::Rect box = inputBoxes.at(i) + scaleFactor;
+        cv::rectangle(mask, box, cv::Scalar(255), CV_FILLED); // Draw filled bounding boxes on mask
+    }
+
+    std::vector<std::vector<cv::Point>> contours;
+    // Find contours in mask
+    // If bounding boxes overlap, they will be joined by this function call
+    cv::findContours(mask, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
+    for (int j = 0; j < contours.size(); j++)
+    {
+        outputBoxes.push_back(cv::boundingRect(contours.at(j)));
+    }
+}
+
+
 
 
 bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
@@ -184,6 +215,10 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
                 regions = resultSeg.get();
                 //this->classifyPic(formattedPic);
                 segmenting = false;
+            }
+            else {
+                cv::putText(formattedPic, "Formattage en cours", cv::Point(100,100), FONT_HERSHEY_SIMPLEX, 0.5,
+                            Scalar(0, 0, 0), 4);
             }
         }
 
@@ -224,6 +259,8 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
                                   Gdk::Pixbuf::create_from_data(formattedPic.data, Gdk::COLORSPACE_RGB, false, 8,
                                                                 formattedPic.cols,
                                                                 formattedPic.rows, formattedPic.step));
+
+
     cr->paint();
     skipframes++;
     skipframes = skipframes % 10;

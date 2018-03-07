@@ -51,8 +51,8 @@ void RealSense::update() {
 
 
     auto color_frame = data.get_color_frame();
-    auto depth_frame = data.get_depth_frame();
-    //rs2::frame depth = color_map(data.get_depth_frame());
+    //auto depth_frame = data.get_depth_frame();
+    rs2::frame depth = color_map(data.get_depth_frame());
 
 
 
@@ -68,15 +68,16 @@ void RealSense::update() {
 
 
     // Query frame size (width and height)
-    //const int w = depth.as<rs2::video_frame>().get_width();
-    //const int h = depth.as<rs2::video_frame>().get_height();
+    const int w = depth.as<rs2::video_frame>().get_width();
+    const int h = depth.as<rs2::video_frame>().get_height();
 
     depthFeed.release();
 
-    depthFeed = frame_to_mat(depth_frame);
-    //colorFeed =  cv::Mat(cv::Size(w, h), CV_8UC3, (void*)depth.get_data(), cv::Mat::AUTO_STEP);
+    //colorFeed = frame_to_mat(depth);
+    depthFeed =  cv::Mat(cv::Size(w, h), CV_8UC3, (void*)depth.get_data(), cv::Mat::AUTO_STEP);
 
     cv::resize(colorFeed,colorFeed,cv::Size(1920,1080));
+    cv::resize(depthFeed,depthFeed,cv::Size(1920,1080));
 
 
 }

@@ -77,6 +77,7 @@ private:
     cv::Mat currentDepthPic;
     cv::Mat AddData();
 
+    void mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes);
 
     std::vector<cv::Rect> regions;
     std::vector<std::string> probs;

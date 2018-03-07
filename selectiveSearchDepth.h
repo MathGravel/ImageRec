@@ -408,7 +408,7 @@ namespace selectiveDepth
 
     inline double calcSimilarity( const Region &r1, const Region &r2, int imSize )
     {
-        return ( calcSimOfColour( r1, r2 ) + calcSimOfTexture( r1, r2 ) + calcSimOfSize( r1, r2, imSize ) + calcSimOfRect( r1, r2, imSize ) + calcSimofDepth(r1,r2,imSize) );
+        return ( calcSimOfColour( r1, r2 ) + calcSimOfTexture( r1, r2 ) +  calcSimOfSize( r1, r2, imSize ) + calcSimOfRect( r1, r2, imSize ) + calcSimofDepth(r1,r2,imSize) );
     }
 
 
@@ -766,6 +766,8 @@ namespace selectiveDepth
 
         auto R = extractRegions( img,depth, universe );
 
+        std::map<int, Region> RR;
+        std::cout << R.size() << std::endl;
 
         auto neighbours = extractNeighbours( R );
 
@@ -789,8 +791,9 @@ namespace selectiveDepth
             auto ij = std::make_pair( i, j );
 
             int t = R.rbegin()->first + 1;
-            R[t] = mergeRegions( R[i], R[j] );
 
+            R[t] = mergeRegions( R[i], R[j] );
+            RR[t] = mergeRegions( R[i], R[j] );
             std::vector<std::pair<int, int>> keyToDelete;
 
             for ( auto &s : S )
@@ -816,11 +819,13 @@ namespace selectiveDepth
                 S[std::make_pair( n, t )] = calcSimilarity( R[n], R[t], imgSize );
             }
         }
+        std::cout << R.size() << std::endl;
+
 
         std::vector<cv::Rect> proposals;
-        proposals.reserve( R.size() );
+        proposals.reserve( RR.size() );
 
-        for ( auto &r : R )
+        for ( auto &r : RR )
         {
             // exclude same rectangle (with different segments)
             if ( std::find( proposals.begin(), proposals.end(), r.second.rect ) != proposals.end() )
