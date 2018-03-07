@@ -108,10 +108,12 @@ bool VideoArea::on_timeout() {
 }
 
 
-std::vector<cv::Rect> segmentPic(cv::Mat picture) {
+std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
 
     cv::Mat current = picture;
     cv::Mat currentSmall = current.clone();
+    cv::Mat currentDepthSmall = depthPic.clone();
+
 
     int height = current.rows;
     int width = current.cols;
@@ -127,9 +129,10 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture) {
 
 
     resize(current, currentSmall, cv::Size(newWidth, newHeight));
+    resize(depthPic, currentDepthSmall, cv::Size(newWidth, newHeight));
 
 
-    auto regions = ss::selectiveSearch(currentSmall, 200, 0.9, 60, 400, 1000, 4);
+    auto regions = selectiveDepth::selectiveSearchDepth(currentSmall,currentDepthSmall, 200, 0.9, 60, 400, 1000, 4);
 
     // do something...
     std::vector<cv::Rect> resizedRegions;
@@ -157,7 +160,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
         sourceFeed->update();
         currentPic = sourceFeed->getColorFeed();
-        cv::Mat mappedFeed = sourceFeed->getMappedFeed();
+        currentDepthPic = sourceFeed->getDepthFeed();
         cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
 
 
@@ -171,7 +174,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
     if (localRec) {
         if (!segmenting) {
-            resultSeg = std::async(std::launch::async, segmentPic, currentPic.clone());
+            resultSeg = std::async(std::launch::async, segmentPic, currentPic.clone(),currentDepthPic.clone());
             segmenting = true;
 
         } else {
@@ -179,7 +182,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
                 regions.clear();
                 probs.clear();
                 regions = resultSeg.get();
-                this->classifyPic(formattedPic);
+                //this->classifyPic(formattedPic);
                 segmenting = false;
             }
         }
@@ -187,6 +190,12 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
         std::vector<cv::Rect>::iterator it = regions.begin();
         std::vector<std::string>::iterator it2 = probs.begin();
+
+        while (it != regions.end() ) {
+            cv::Rect reg = *it;
+            cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
+            it++;
+        }
 
         while (it != regions.end() && it2 != probs.end()) {
             cv::Rect reg = *it;
@@ -223,7 +232,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     return true;
 }
 
-
+/*
 cv::Mat VideoArea::AddData() {
 
 
@@ -272,7 +281,7 @@ cv::Mat VideoArea::AddData() {
     currentSmall.release();
     return current;
 }
-
+*/
 
 cv::Mat VideoArea::FindRegionProposals(cv::Mat picToSeg) {
 

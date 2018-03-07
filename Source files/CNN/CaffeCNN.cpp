@@ -16,7 +16,7 @@ CaffeCNN::CaffeCNN()
     //::google::InitGoogleLogging("ImageRec");
 
     string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
-    string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/caffenet_train_iter_500.caffemodel";
+    string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/solver_iter_2000.caffemodel";
     //string trained_file = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/newcnn.caffemodel";
     string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/imagenet_mean.binaryproto";
     string label_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt";

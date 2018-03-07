@@ -29,12 +29,16 @@ public:
     void update();
 private:
     //A faire, ajouter les composants necessaire pour utiliser la camera realsense.
+    cv::Mat frame_to_mat(const rs2::frame& f);
+    cv::Mat depth_frame_to_meters(const rs2::pipeline& pipe, const rs2::depth_frame& f);
+
     cv::Mat colorFeed;
     cv::Mat depthFeed;
     rs2::colorizer color_map;
     rs2::pipeline pipe;
     rs2::frameset data;
-
+    rs2::align align_to;
+    int last_frame_number;
 
 };
 

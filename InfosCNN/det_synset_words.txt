@@ -1,3 +1,7 @@
-n01 chocolat
-n02 cafetiere
-n03 the_vert
+0 Cafetiere
+1 Caffe
+2 Can
+3 Chocolat
+4 Tasse
+5 The
+6 Theiere

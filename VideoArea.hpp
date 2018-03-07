@@ -10,7 +10,7 @@
 
 #include <gtkmm/drawingarea.h>
 #include <cairomm/context.h>
-#include "selectivesearch.hpp"
+#include "selectiveSearchDepth.h"
 #include <opencv2/opencv.hpp>
 #include "Kinect.h"
 #include "ImageSegmentationManual.h"
@@ -74,6 +74,7 @@ private:
     cv::Mat chosenROI;
     cv::Mat currentPic;
     cv::Mat formattedPic;
+    cv::Mat currentDepthPic;
     cv::Mat AddData();
 
 
