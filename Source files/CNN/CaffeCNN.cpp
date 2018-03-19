@@ -18,7 +18,7 @@ CaffeCNN::CaffeCNN()
     string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
     string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/solver_iter_2000.caffemodel";
     //string trained_file = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/newcnn.caffemodel";
-    string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/imagenet_mean.binaryproto";
+    string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/agewell_mean.binaryproto";
     string label_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt";
     classifier = Classifier(model_file, trained_file, mean_file, label_file);
 
@@ -65,6 +65,8 @@ std::string CaffeCNN::predict(const cv::Mat & picture)
         oss << std::fixed << std::setprecision(4) << p.second << " - \""
             << p.first << "\"" << std::endl;
     }*/
+    std::cout << predictions[0].first << std::endl;
+
     oss << std::fixed << std::setprecision(4) << predictions[0].second << "-"
         << predictions[0].first  << std::endl;
     return oss.str();

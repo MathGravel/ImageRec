@@ -1,5 +1,19 @@
 #pragma once
 #include "CNN.h"
+#include <opencv2/dnn.hpp>
+#include <opencv2/dnn.hpp>
+#include <opencv2/core/core.hpp>
+
+#include <opencv2/imgproc.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/core/utils/trace.hpp>
+using namespace cv;
+using namespace cv::dnn;
+
+#include <fstream>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
 
 class ImgSegCNN : public  CNN {
 public:
@@ -15,4 +29,10 @@ public:
 private:
 	std::string lastName;
 	float lastScore;
+    cv::dnn::Net neuralNet;
+    void getMaxClass(const Mat &probBlob, int *classId, double *classProb);
+    std::vector<String> readClassNames(const char *filename );
+    cv::Mat mean_;
+    cv::Scalar channel_mean;
+    int check;
 };

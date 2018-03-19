@@ -88,9 +88,9 @@ link_directories(${GTKMM_LIBRARY_DIRS})
 
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
-add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp" ROISelection.cpp ROISelection.h FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h  GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Source files/CNN/HandDetector.cpp" "Header files/CNN/HandDetector.h" selectiveSearchDepth.h)
-target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})
+add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp" ROISelection.cpp ROISelection.h FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h  GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
+target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GTK3_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${FREENECT2_LIBRARIES})

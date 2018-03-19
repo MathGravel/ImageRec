@@ -34,6 +34,8 @@ private:
 
     cv::Mat colorFeed;
     cv::Mat depthFeed;
+    cv::Mat depthMeters;
+
     rs2::colorizer color_map;
     rs2::pipeline pipe;
     rs2::frameset data;

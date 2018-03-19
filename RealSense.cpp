@@ -40,7 +40,7 @@ cv::Mat RealSense::getDepthFeed() {
 }
 
 cv::Mat RealSense::getMappedFeed() {
-    return this->colorFeed;
+    return this->depthMeters;
 }
 
 void RealSense::update() {
@@ -53,10 +53,6 @@ void RealSense::update() {
     auto color_frame = data.get_color_frame();
     //auto depth_frame = data.get_depth_frame();
     rs2::frame depth = color_map(data.get_depth_frame());
-
-
-
-
 
     // If we only received new depth frame,
     // but the color did not update, contcolorFeedinue
@@ -76,8 +72,7 @@ void RealSense::update() {
     //colorFeed = frame_to_mat(depth);
     depthFeed =  cv::Mat(cv::Size(w, h), CV_8UC3, (void*)depth.get_data(), cv::Mat::AUTO_STEP);
 
-    cv::resize(colorFeed,colorFeed,cv::Size(1920,1080));
-    cv::resize(depthFeed,depthFeed,cv::Size(1920,1080));
+    depthMeters = this->depth_frame_to_meters(pipe,depth);
 
 
 }
@@ -86,6 +81,7 @@ cv::Mat RealSense::frame_to_mat(const rs2::frame& f)
 {
     using namespace cv;
     using namespace rs2;
+
 
     auto vf = f.as<video_frame>();
     const int w = vf.get_width();

@@ -118,7 +118,7 @@ void MainWindow::on_save_pic(Glib::ustring data)
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     FileManager fm(this,previous);
     int result =  fm.run();
-    string location = "./Dataset-Non-Formatte";
+    string location = "/home/uqamportable/Pictures";
     if (result == 1 ){
         previous = fm.getCategorieItem();
         video_area.SaveROI(location,fm.getCategorieItem());
@@ -128,13 +128,16 @@ void MainWindow::on_save_pic(Glib::ustring data)
 
 void MainWindow::on_local_recognition(Glib::ustring data) {
 
+    video_area.showi = false;
     video_area.setLocalSegmentation();
 
 }
 
 void MainWindow::on_global_recognition(Glib::ustring data) {
    // std::cout << caffe.predict(video_area.getChosenRoi());
-    video_area.classe = "";
-    video_area.globalRec = true;
+    //video_area.classe = "";
+    //video_area.globalRec = true;
+   // video_area.showi = false;
+    video_area.SavePictures();
 }
 

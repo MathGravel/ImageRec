@@ -17,7 +17,11 @@
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
 #include "Header files/CNN/CaffeCNN.h"
+#include "Header files/CNN/ImgSegCNN.h"
+
 #include "Socket.h"
+#include "MaskRCNN.h"
+#include "DetectedObject.h"
 
 
 class VideoArea : public Gtk::DrawingArea
@@ -48,6 +52,9 @@ public:
     void  SaveROI(const std::string fileLoc, const std::string itemClass);
     std::string classe = "";
     bool globalRec = false;
+    bool showi = false;
+    void SavePictures();
+
 protected:
     bool cv_opened;
     VideoSource * sourceFeed;
@@ -61,7 +68,6 @@ protected:
     bool segImg = false;
     ImageSegmentationManual imgSeg;
 
-
 private:
     bool on_dragged;
     bool chosedROI;
@@ -70,14 +76,20 @@ private:
     int skipframes = 0;
     int x1,x2,y1,y2;
     cv::Rect rectROI;
-    CaffeCNN caffe;
+    //CaffeCNN caffe;
+
+    ImgSegCNN caffe;
     cv::Mat chosenROI;
     cv::Mat currentPic;
     cv::Mat formattedPic;
     cv::Mat currentDepthPic;
+    cv::Mat currentMappedPic;
     cv::Mat AddData();
+    MaskRCNN handDetector;
 
     void mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes);
+
+    void detectHand(cv::Mat color, cv::Mat depth,std::vector<cv::Rect>& rect);
 
     std::vector<cv::Rect> regions;
     std::vector<std::string> probs;
@@ -85,6 +97,7 @@ private:
     void classifyPic(cv::Mat& currentPic);
     cv::Mat FindRegionProposals(cv::Mat picToSeg);
     std::future<std::vector<cv::Rect>> resultSeg;
+
 
 };
 

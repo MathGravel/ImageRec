@@ -8,12 +8,13 @@
 #include <chrono>
 #include <ctime>
 #include <functional>     // std::ref
-
+#include <chrono>
+#include <thread>
 
 struct stat info;
 
 
-VideoArea::VideoArea() : cv_opened(false) {
+VideoArea::VideoArea() : cv_opened(false),handDetector(720,1280) {
 
     sourceFeed = NULL;
     on_dragged = false;
@@ -63,9 +64,7 @@ bool VideoArea::onMouseMove(GdkEventMotion *event) {
 
     int newX, newY;
     if (on_dragged) {
-        std::cout << "OnMouseMoveInterieur" << std::endl;
         chosedROI = true;
-        std::cout << "DERP" << std::endl;
 
         newX = event->x;
         newY = event->y;
@@ -148,7 +147,6 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
         cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
         resizedRegions.push_back(x);
 
-
     }
 
 
@@ -178,7 +176,18 @@ void VideoArea::mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat
     }
 }
 
+template<typename Base, typename T>
+inline bool instanceof(const T*) {
+    return std::is_base_of<Base, T>::value;
+}
 
+void VideoArea::detectHand(cv::Mat color, cv::Mat depth,std::vector<cv::Rect>& rect) {
+
+    for (auto& handPos : handDetector.findObjects(color,depth)) {
+        rect.push_back(handPos.getObjPos());
+    }
+
+}
 
 
 bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
@@ -192,9 +201,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         sourceFeed->update();
         currentPic = sourceFeed->getColorFeed();
         currentDepthPic = sourceFeed->getDepthFeed();
-        cv::cvtColor(currentPic, currentPic, CV_BGR2RGB);
-
-
+        currentMappedPic = sourceFeed->getMappedFeed();
     }
 
     cv::Mat picShow;
@@ -213,6 +220,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
                 regions.clear();
                 probs.clear();
                 regions = resultSeg.get();
+                //objets = resultSeg.get();
                 //this->classifyPic(formattedPic);
                 segmenting = false;
             }
@@ -222,15 +230,49 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
             }
         }
 
+        std::vector<cv::Rect> objets(regions);
 
-        std::vector<cv::Rect>::iterator it = regions.begin();
+        this->detectHand(currentPic,currentMappedPic,objets);
+
+        std::vector<cv::Rect>::iterator it = objets.begin();
         std::vector<std::string>::iterator it2 = probs.begin();
 
-        while (it != regions.end() ) {
+        while (it != objets.end() ) {
             cv::Rect reg = *it;
             cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
             it++;
         }
+
+        //while (it != regions.end() && it2 != probs.end()) {
+          //  cv::Rect reg = *it;
+          //  std::string prob = *it2;
+          //  cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
+          //  cv::putText(formattedPic, prob, cv::Point(reg.x, reg.y + reg.height), FONT_HERSHEY_SIMPLEX, 0.5,
+          //              Scalar(0, 0, 0), 4);
+
+          //  it++;
+          //  it2++;
+       // }
+
+
+    }
+
+    std::vector<cv::Rect> objets;
+
+    this->detectHand(currentPic,currentMappedPic,objets);
+    std::vector<cv::Rect>::iterator it = objets.begin();
+    while (it != objets.end() ) {
+        cv::Rect reg = *it;
+        cv::rectangle(formattedPic, reg, cv::Scalar(0, 20, 200), 3, 8);
+        it++;
+    }
+
+
+
+    if (showi) {
+        std::vector<cv::Rect>::iterator it = regions.begin();
+        std::vector<std::string>::iterator it2 = probs.begin();
+
 
         while (it != regions.end() && it2 != probs.end()) {
             cv::Rect reg = *it;
@@ -242,10 +284,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
             it++;
             it2++;
         }
-
-
     }
-
 
     //cv::Mat imgScreen = formattedPic.clone();
     if (chosedROI) {
@@ -253,6 +292,8 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         chosenROI = currentPic(rectROI);
 
     }
+
+     cv::cvtColor(formattedPic, formattedPic, CV_BGR2RGB);
 
 
     Gdk::Cairo::set_source_pixbuf(cr,
@@ -332,6 +373,7 @@ void VideoArea::SegmentClassifyROI() {
     probs.clear();
     regions.push_back(rectROI);
     probs.push_back(caffe.predict(chosenROI));
+    showi = true;
     std::cout << caffe.predict(chosenROI) << std::endl;
 
 }
@@ -353,6 +395,32 @@ void VideoArea::classifyPic(cv::Mat &currentPic) {
 
 }
 
+
+void VideoArea::SavePictures() {
+    std::string imgName = "Can";
+    cv::Mat currentPic = chosenROI.clone();
+
+    cv::resize(currentPic,currentPic,Size(256,256));
+
+    static int currVal = 0;
+        std::string emp ;
+        std::string empOrg;
+        emp.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/TasseCaffe/tassecaffe.");
+    empOrg.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/TasseCaffeOrg/tassecaffe.");
+
+    emp.append(std::to_string(currVal));
+    empOrg.append(std::to_string(currVal));
+
+    currVal++;
+        empOrg = emp;
+        empOrg.append(".org.png");
+        emp.append(".png");
+        cv::imwrite(emp,currentPic);
+        cv::imwrite(empOrg,chosenROI);
+
+    currentPic.release();
+
+}
 
 void VideoArea::SaveROI(const std::string fileLoc, const std::string itemClass) {
 
