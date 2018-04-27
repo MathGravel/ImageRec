@@ -83,11 +83,11 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
             // This is a very naive way to estimate objects depth
             // but it is intended to demonstrate how one might
             // use depht data in general
-            //Scalar m = mean(this->depth_pic(object));
+            Scalar m = mean(this->depth_pic(object));
             object.x += startingPos.x;
             object.y += startingPos.y;
 
-            DetectedObject obj(object,"Main");
+            DetectedObject obj(object,"Main",m[0]);
             objets.push_back(obj);
 
         }

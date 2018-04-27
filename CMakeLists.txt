@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.9)
 project(ImageRec)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 
@@ -88,7 +88,7 @@ link_directories(${GTKMM_LIBRARY_DIRS})
 
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
-add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp" ROISelection.cpp ROISelection.h FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h  GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h)
+add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp Kinect.cpp "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp"  FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h  GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h ObjectAff.cpp ObjectAff.h ImageNorm.cpp ImageNorm.h Affordance.h "Header files/CNN/RCNN.h" "Source files/CNN/RCNN.cpp" "Header files/ActivityRegion.h" "Source files/ActivityRegion.cpp")
 target_link_libraries(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 target_link_libraries(${CMAKE_PROJECT_NAME} ${GTKMM_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${GTK3_LIBRARIES})

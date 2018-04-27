@@ -45,9 +45,9 @@ void FileManager::saveImage(std::string categorie, cv::Mat& mat)
 			}
 			catch (std::runtime_error& ex) {
 				std::string msg(ex.what());
-				DBOUT("Le fichier n'as pas �t� sauvegard�" << msg);
+				DBOUT("Le fichier n'as pas ete sauvegarde" << msg);
 			}
-			DBOUT("Fichier sauvegard�");
+			DBOUT("Fichier sauvegarde");
 		}
 	}
 	//DBOUT("FilenameCreated : " << createFilename(categorie)); 

@@ -405,8 +405,8 @@ void VideoArea::SavePictures() {
     static int currVal = 0;
         std::string emp ;
         std::string empOrg;
-        emp.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/TasseCaffe/tassecaffe.");
-    empOrg.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/TasseCaffeOrg/tassecaffe.");
+        emp.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/Env/env.");
+    empOrg.append("/home/uqamportable/CLionProjects/ImageRec/cmake-build-debug/Images/EnvOrg/env.");
 
     emp.append(std::to_string(currVal));
     empOrg.append(std::to_string(currVal));

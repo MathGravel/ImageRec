@@ -58,9 +58,6 @@ void ImgSegCNN::train()
 
 std::string ImgSegCNN::getPictureInfo(const cv::Mat & image)
 {
-
-
-
 	return std::string();
 }
 
@@ -71,15 +68,12 @@ void ImgSegCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)
 std::string ImgSegCNN::predict(const cv::Mat & picture)
 {
 
-
-    //cv::imwrite("check.png",picture);
     cv::Mat pic;
-    //cv::Mat mean = cv::Mat(cv::Size(picture.cols,picture.rows), check, channel_mean);
-    //cv::subtract(picture,mean,pic);
+
     cv::resize(picture,pic,cv::Size(256,256));
     cv::imwrite("testing.png",pic);
     //GoogLeNet accepts only 224x224 BGR-images
-    Mat inputBlob = blobFromImage(pic, 1.0f, Size(),
+    Mat inputBlob = blobFromImage(pic, 1.0f, Size(256,256),
                                   cv::Scalar(104,117,123), false,false);   //Convert Mat to batch of images
     //! [Prepare blob]
     neuralNet.setInput(inputBlob, "data");        //set the network input
@@ -105,9 +99,21 @@ void ImgSegCNN::savePicture(const cv::Mat & picture, std::string name)
 {
 }
 
-void ImgSegCNN::trainCNN()
-{
+
+std::vector<double> ImgSegCNN::getClassesProb(const Mat &probBloc) {
+
+    std::vector<double> classesProb;
+    std::cout << probBloc.at<float>(1,0);
+    int j = max(probBloc.cols,probBloc.rows);
+    for (int i = 0; i < j; i++)
+        classesProb.push_back(probBloc.at<float>(0,i) * 100);
+
+    return classesProb;
+
+
 }
+
+
 
 /* Find best class for the blob (i. e. class with maximal probability) */
  void ImgSegCNN::getMaxClass(const Mat &probBlob, int *classId, double *classProb)
@@ -115,11 +121,8 @@ void ImgSegCNN::trainCNN()
     Mat probMat = probBlob.reshape(1, 1); //reshape the blob to 1x1000 matrix
     Point classNumber;
 
-    minMaxLoc(probMat, NULL, classProb, NULL, &classNumber);
 
-    //for (int i = 0; i < probMat.cols;i++){
-    //    std::cout << probMat.at
-    //}
+    minMaxLoc(probMat, NULL, classProb, NULL, &classNumber);
 
     *classId = classNumber.x;
 }
