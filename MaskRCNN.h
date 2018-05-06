@@ -16,19 +16,19 @@ using namespace cv::dnn;
 class MaskRCNN {
 
 public:
-    MaskRCNN(std::string inference_path, int imgHeight,int imgWidth);
+    MaskRCNN(std::string inference_path, int imgHeight,int imgWidth, bool estMain);
      ~MaskRCNN();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
 
 private:
 
-    cv::Mat profondeurs;
+    std::string classNames[10]  = {"Background","teapot","can","chocolate","tea","coffee","coffeemaker","mug","pitcher","milk"};
     std::vector<DetectedObject> objects;
     std::string network;
     std::string networkDef;
     cv::Mat color_pic;
     cv::Mat originalColor;
-
+    bool main;
     cv::Mat depth_pic;
     cv::dnn::Net neuralNetwork;
     cv::Size cropSize;

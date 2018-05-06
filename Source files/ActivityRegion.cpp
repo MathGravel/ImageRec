@@ -4,8 +4,8 @@
 #include "ActivityRegion.h"
 
 
-ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/cnnModel",720,1280),
-                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280),
+ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true),
+                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false) {
 }
 
@@ -63,11 +63,12 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
             hand = cv::Rect(hands.front().getObjPos());
         else
             hand = cv::Rect(0,0,0,0);
-        if (!detect.empty() && hands.empty())
-            currentAffordance = affordances.findAffordances(detect, hands.front());
+        if (!detect.empty() && !hands.empty()) {
+            currentAffordance = affordances.findAffordance(detect, hands.front());
             if (currentAffordance != NULL) {
                 currentAffordances.push(currentAffordance);
             }
+        }
 
     }
 

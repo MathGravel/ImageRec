@@ -134,19 +134,6 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
         act.Update(formattedPic,currentDepthPic);
 
-        /*std::vector<cv::Rect> regi = act.getRegions();
-        cv::Rect hand = act.getHandRegion()
-
-        std::vector<cv::Rect>::iterator it = regi.begin();
-        std::vector<std::string>::iterator it2 = probs.begin();
-
-        while (it != regi.end() ) {
-            cv::Rect reg = *it;
-            cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
-            it++;
-        }
-        cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
-        */
         formattedPic = act.getImageWithROI();
 
     }

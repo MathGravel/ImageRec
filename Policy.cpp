@@ -37,7 +37,7 @@ Policy::Policy() {
 bool Policy::update(Affordance observation) const {
 
     std::stringstream ss;
-    ss << "mainSolver.add(\"" << observation << " \")";
+    ss << "mainSolver.add(\"" << observation.getName() << " \"," << observation.getObjectProbability() << ")";
     PyRun_SimpleString(ss.str().c_str());
 
     return true;
@@ -60,19 +60,20 @@ Affordance Policy::getNextAction() const {
 
     PyObject* plan = PyObject_GetAttrString(main,"ret");
     PyObject * temp_bytes = PyUnicode_AsEncodedString(plan, "UTF-8", "strict"); // Owned reference
-
+    Affordance aff = Affordance();
 
     if (temp_bytes != NULL) {
         char * my_result = PyBytes_AsString(temp_bytes); // Borrowed pointer
         my_result = strdup(my_result);
         Py_DecRef(temp_bytes);
         Py_DecRef(plan);
+
+        aff = Affordance(my_result,100);
         std::cout << my_result << std::endl;
 
     } else {
         std::cout << "Ca marche pas";
     }
 
-    std::cout << "ret";
-    return Affordance();
+    return aff;
 }

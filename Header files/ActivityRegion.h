@@ -68,12 +68,16 @@ public:
         cv::Mat pic = currentImage.clone();
         if (! regions.empty()) {
             for (auto &reg : regions) {
-                cv::rectangle(pic, reg, cv::Scalar(100, 100, 100));
+                cv::rectangle(pic, reg, cv::Scalar(100, 100, 100),3);
             }
         }
-        else if ()
+        else if (!detect.empty()) {
+            for (auto &reg : detect) {
+                cv::rectangle(pic, reg.getObjPos(), cv::Scalar(100, 100, 100));
+            }
+        }
         if (hand.x != 0 && hand.y != 0)
-            cv::rectangle(pic,hand,cv::Scalar(100,50,25));
+            cv::rectangle(pic,hand,cv::Scalar(100,50,25),4);
 
         return pic;
     }

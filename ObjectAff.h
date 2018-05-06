@@ -33,6 +33,7 @@ public:
 
 
     AffordanceTime* findAffordances(DetectedObjects& regions,DetectedObject& hand);
+    AffordanceTime* findAffordance(std::vector<DetectedObject> &regions, DetectedObject &hand);
 
     void clearCurrentAffordances();
 

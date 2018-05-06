@@ -9,8 +9,7 @@
 int main1(int argc, char** argv)
 {
     Policy p;
-
-    //std::cout << Affordance() << std::endl;
+    p.update(Affordance());
     p.getNextAction();
     return 0;
 }

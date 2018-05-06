@@ -4,7 +4,7 @@
 
 #include "MaskRCNN.h"
 
-MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth) {
+MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain) {
 
     width = 300;
     height = 300;
@@ -13,7 +13,7 @@ MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth) {
     scaleFactor = 0.01f;
     network = inference_path + "/graph.pb";
     networkDef = inference_path + "/label.pbtxt";
-
+    main = estMain;
     neuralNetwork = cv::dnn::readNetFromTensorflow(network,networkDef);
     //neuralNetwork.setPreferableBackend()
     //cropSize = Size(static_cast<int>(imgHeight * resizeRatio),imgWidth);
@@ -51,7 +51,10 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
     this->depth_pic = depth.clone();
     //cv::resize(this->color_pic,this->color_pic,Size(1280,720));
 
-    Mat blob = blobFromImage(color_pic,scaleFactor,Size(width,height),Scalar(),true);
+   // Mat blob = blobFromImage(this->color_pic,scaleFactor,Size(width,height),Scalar(),true);
+    Mat blob = blobFromImage(color_pic, 1/100.0,
+                                  Size(300, 300),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
+
     neuralNetwork.setInput(blob);
     Mat detections = neuralNetwork.forward("detection_out");
     Mat matricesDet(detections.size[2],detections.size[3],CV_32F,detections.ptr<float>());
@@ -59,7 +62,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
     this->color_pic = color(crop);
     this->depth_pic = depth(crop);
 
-    float confidenceThreshold = 0.5f;
+    float confidenceThreshold = 0.45f;
     for(int i = 0; i < matricesDet.rows; i++)
     {
         float confidence = matricesDet.at<float>(i, 2);
@@ -87,7 +90,10 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
             object.x += startingPos.x;
             object.y += startingPos.y;
 
-            DetectedObject obj(object,"Main",m[0]);
+            std::string nom = "";
+            nom = main ? "Hand":classNames[objectClass];
+
+            DetectedObject obj(object,nom,m[0],confidence);
             objets.push_back(obj);
 
         }
