@@ -102,6 +102,11 @@ private:
 
 class DetectedObjects {
 public:
+
+    DetectedObjects() {
+
+    }
+
     DetectedObjects(std::vector<DetectedObject>& objets) {
         objs = objets;
 
@@ -115,6 +120,10 @@ public:
     DetectedObject * end()
     {
         return & (*objs.end());
+    }
+
+    bool empty() {
+        return objs.empty();
     }
 
 
@@ -143,6 +152,15 @@ public:
 
         return nullObj;
     }
+
+
+    /*DetectedObjects& operator =(const DetectedObjects detect) {
+        for (DetectedObject obj : detect.objs) {
+            this->objs.push_back(obj);
+        }
+    }*/
+
+
 
 private:
     std::vector<DetectedObject> objs;

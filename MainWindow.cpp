@@ -15,6 +15,7 @@ MainWindow::MainWindow()
     video_frame.set_label ("OpenCV Video");
     video_frame.set_label_align (Gtk::ALIGN_CENTER, Gtk::ALIGN_CENTER);
     video_frame.set_shadow_type (Gtk::SHADOW_OUT);
+
     video_frame.set_size_request(1620, 780);
     //this->set_size_request(900,800);
     video_area.set_tooltip_text("Video");
@@ -26,10 +27,12 @@ MainWindow::MainWindow()
     localRecButton = Gtk::Button("Local Recognition");
     globalRecButton = Gtk::Button("Global Recognition");
     testButton.set_size_request(200,200);
-    //box.add(video_frame);
     box.add(video_frame);
+    //box.add(video_frame);
     //bx.add(video_frame);
     bx.set_spacing(10);
+    box.set_spacing(10);
+
     bx.add(startCapture);
     bx.add(stopCapture);
     bx.add(showAnalysis);
@@ -38,7 +41,11 @@ MainWindow::MainWindow()
     bx.add(globalRecButton);
 
     bx.show();
+
     box.add(bx);
+    box.add(activity);
+
+    //box.add(activity);
     add(box);
     //bx = Gtk::HButtonBox(L);
 
@@ -134,10 +141,9 @@ void MainWindow::on_local_recognition(Glib::ustring data) {
 }
 
 void MainWindow::on_global_recognition(Glib::ustring data) {
-   // std::cout << caffe.predict(video_area.getChosenRoi());
-    //video_area.classe = "";
-    //video_area.globalRec = true;
-   // video_area.showi = false;
-    video_area.SavePictures();
+    //video_area.SavePictures();
+    Affordance aff = video_area.GetCurrentAffordance();
+    p.update(aff);
+    activity.set_text(p.getNextAction().to_str());
 }
 

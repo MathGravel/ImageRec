@@ -10,8 +10,6 @@ RealSense::RealSense() :align_to(RS2_STREAM_COLOR) {
 
     //Add desired streams to configuration
     cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_BGR8, 30);
-
-    //cfg.enable_stream(RS2_STREAM_DEPTH, 640, 480, RS2_FORMAT_Z16, 30);
     cfg.enable_stream(RS2_STREAM_DEPTH,1280,720,RS2_FORMAT_Z16);
     //pipe.start(cfg);
     last_frame_number = 0;
@@ -123,7 +121,6 @@ cv::Mat RealSense::depth_frame_to_meters(const rs2::pipeline& pipe, const rs2::d
             .get_depth_scale();
     dm = dm * depth_scale;
 
-    std::cout << mean(dm(Rect(100,100,40,40))) << " meters" << std::endl;
 
 
     return dm;

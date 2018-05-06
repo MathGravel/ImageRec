@@ -4,18 +4,119 @@
 #include "ActivityRegion.h"
 
 
-ActivityRegion::ActivityRegion() {
-
+ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/cnnModel",720,1280),
+                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280),
+                                 currentlySegmenting(false),newRegions(false),newAffordance(false) {
 }
-
 
 Affordance ActivityRegion::getCurrentAffordance() {
-    return affordances.getAffordances().front().getAffordance();
+    return currentAffordance->getAffordance();
 }
 
-void ActivityRegion::Update() {
+std::string ActivityRegion::getAffordanceString() {
+    std::ostringstream oss;
+    oss << currentAffordance;
+    return oss.str();
+}
+
+
+ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic);
+
+void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
+
+    std::vector<cv::Rect> objects;
+    DetectedObjects objs;
+    detect.clear();
+    std::vector<DetectedObject> objets;
+    std::vector<DetectedObject> hands;
+    currentImage = vision;
+    currentImageDepth = depthVision;
+
+    if (newRegions) {
+        if (!currentlySegmenting) {
+            resultSeg = std::async(std::launch::async, segmentPic, vision.clone(),depthVision.clone());
+            currentlySegmenting = true;
+        } else {
+            if (resultSeg.wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
+                regions.clear();
+                objects = resultSeg.get();
+                regions = objects;
+                currentlySegmenting = false;
+            }
+        }
+        hands = this->detectHand(vision,depthVision);
+        if (!hands.empty())
+            hand = cv::Rect(hands.front().getObjPos());
+        else
+            hand = cv::Rect(0,0,0,0);
+
+        if (!objets.empty() && !hands.empty()) {
+
+            detect = confirmAffordance(objects,hands.front(),vision,depthVision);
+            objs = DetectedObjects(detect);
+        }
+
+    } else {
+        detect = this->detectObjets(vision, depthVision);
+        hands = this->detectHand(vision,depthVision);
+        if (!hands.empty())
+            hand = cv::Rect(hands.front().getObjPos());
+        else
+            hand = cv::Rect(0,0,0,0);
+        if (!detect.empty() && hands.empty())
+            currentAffordance = affordances.findAffordances(detect, hands.front());
+            if (currentAffordance != NULL) {
+                currentAffordances.push(currentAffordance);
+            }
+
+    }
 
 }
+
+void ActivityRegion::updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI) {
+    std::vector<cv::Rect> objects;
+    DetectedObjects objs;
+    std::vector<DetectedObject> detect;
+    std::vector<DetectedObject> hands;
+    currentImage = vision;
+    currentImageDepth = depthVision;
+
+
+    regions.push_back(chosenROI);
+
+    hands = this->detectHand(vision,depthVision);
+    hand = hands.front().getObjPos();
+    if (!objects.empty() && !hands.empty()) {
+
+        detect = confirmAffordance(objects,hands.front(),vision,depthVision);
+        objs = DetectedObjects(detect);
+    }
+    if (!detect.empty())
+        currentAffordance = affordances.findAffordances(objs,detect.front());
+}
+
+Affordance ActivityRegion::testManuallyROI(cv::Mat vision,  cv::Rect chosenROI) {
+    std::pair<std::string,float> prediction = caffe.predict(vision(chosenROI)) ;
+    Affordance aff(prediction.first,prediction.second,chosenROI,prediction.second);
+
+    return aff;
+}
+
+
+std::vector<DetectedObject> ActivityRegion::confirmAffordance(const std::vector<cv::Rect>& objets, const DetectedObject& hand, const cv::Mat & picture, const cv::Mat & depth) {
+
+    std::vector<DetectedObject> classes;
+
+    for (auto & region : objets) {
+        if ( (region & hand.getObjPos()).area() > 0) {
+            std::pair<std::string,float> prediction = caffe.predict(picture(region)) ;
+            DetectedObject detected(region,prediction.first,mean(depth(region))[0],prediction.second);
+            classes.push_back(detected);
+        }
+    }
+    return classes;
+}
+
 
 
 std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
@@ -23,7 +124,6 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
     cv::Mat current = picture;
     cv::Mat currentSmall = current.clone();
     cv::Mat currentDepthSmall = depthPic.clone();
-
 
     int height = current.rows;
     int width = current.cols;
@@ -41,15 +141,10 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
     resize(current, currentSmall, cv::Size(newWidth, newHeight));
     resize(depthPic, currentDepthSmall, cv::Size(newWidth, newHeight));
 
-
     auto regions = selectiveDepth::selectiveSearchDepth(currentSmall,currentDepthSmall, 150, 0.9, 30, 300, currentSmall.rows * currentSmall.cols/6, 50);
 
-
     std::vector<cv::Rect> newRect;
-
     cv::groupRectangles(regions,1,0.1);
-
-
 
     // do something...
     std::vector<cv::Rect> resizedRegions;
@@ -57,9 +152,7 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
 
         cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
         resizedRegions.push_back(x);
-
     }
-
 
     return resizedRegions;
 
@@ -90,10 +183,10 @@ inline bool instanceof(const T*) {
     return std::is_base_of<Base, T>::value;
 }
 
-void ActivityRegion::detectHand(cv::Mat color, cv::Mat depth,std::vector<cv::Rect>& rect) {
+std::vector<DetectedObject> ActivityRegion::detectHand(cv::Mat color, cv::Mat depth) {
+    return handDetector.findObjects(color,depth) ;
+}
 
-    for (auto& handPos : handDetector.findObjects(color,depth)) {
-        rect.push_back(handPos.getObjPos());
-    }
-
+std::vector<DetectedObject> ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {
+    return objectDetector.findObjects(color,depth) ;
 }

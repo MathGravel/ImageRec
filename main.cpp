@@ -1,21 +1,19 @@
 
 // GTKmm and User interface includes
 #include "MainWindow.hpp"
-#include "Header files/CNN/ImgSegCNN.h"
-#include <caffe/caffe.hpp>
-#include <opencv2/opencv.hpp>
+#include "Affordance.h"
+
+#include "Policy.h"
 
 
-/*int main(int argc, char** argv)
+int main1(int argc, char** argv)
 {
-    cv::Mat img;
-    img = cv::imread("check.png");
-    ImgSegCNN cnn;
-    cnn.predict(img);
+    Policy p;
 
-
+    //std::cout << Affordance() << std::endl;
+    p.getNextAction();
     return 0;
-}*/
+}
 
 
 

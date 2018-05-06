@@ -16,7 +16,7 @@ using namespace cv::dnn;
 class MaskRCNN {
 
 public:
-    MaskRCNN( int imgHeight,int imgWidth);
+    MaskRCNN(std::string inference_path, int imgHeight,int imgWidth);
      ~MaskRCNN();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
 

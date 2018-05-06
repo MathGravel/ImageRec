@@ -23,8 +23,10 @@ public:
     void train();
     std::string getPictureInfo(const cv::Mat& image);
     void updateModel(const cv::Mat& picture, bool correctlyIdentified);
-    std::string predict(const cv::Mat& picture);
+    Prediction predict(const cv::Mat& picture);
     void savePicture(const cv::Mat& picture, std::string name);
+    std::map<std::string, float> predictMatrix(const cv::Mat& picture);
+
     std::vector<double> getClassesProb(const Mat &probBloc) ;
 
 private:

@@ -3,6 +3,8 @@
 #include <Python.h>
 #include <iostream>
 #include <fstream>
+#include <map>
+
 
 #include <shlobj.h>
 
@@ -32,7 +34,7 @@ void GoogleVisionCNN::train()
 	//Not needed with the CNN used in network
 }
 
-std::string GoogleVisionCNN::getPictureInfo(const cv::Mat & image)
+Prediction GoogleVisionCNN::getPictureInfo(const cv::Mat & image)
 {
 	/*py::object client = py::exec("client = vision.ImageAnnotatorClient()");
 	std::vector<uchar> buf;
@@ -85,8 +87,7 @@ std::string GoogleVisionCNN::getPictureInfo(const cv::Mat & image)
 	}
 
 
-
-	return lastName;
+	return std::make_pair("",0);
 }
 
 void GoogleVisionCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)

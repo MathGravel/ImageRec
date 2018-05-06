@@ -7,13 +7,16 @@
 
 #include <opencv2/opencv.hpp>
 #include <ctime>
-
+#include <sstream>
 
 
 class Affordance {
 
 public:
-    Affordance() {}
+    Affordance(std::string obj = "teacup", double prob=76.7653) {
+        objectName = obj;
+        objProb = prob;
+    }
     Affordance(std::string obj,double pos,cv::Rect reg,double prob) :
             objectName(obj),objectPos(pos),region(reg),objProb(prob){}
 
@@ -22,6 +25,12 @@ public:
     double getObjectPosition() const {return objectPos;};
     const cv::Rect& getRegion() const {return region;};
     double getObjectProbability() const {return objProb;};
+
+    std::string to_str() const {
+        std::stringstream ss;
+        ss << *this;
+        return ss.str();
+    };
 
 
 private:
@@ -33,6 +42,12 @@ private:
     //Date
     //To_String Format (obj)_(x.xx)
     //Si t'a aucune interaction envoie un objet void i.e un appel constructeur vide
+
+    friend std::ostream& operator <<(std::ostream& o, const Affordance a) {
+        return o << "(" << a.objectName << ")(" << std::setprecision(4) << a.objProb << ")" << std::endl;
+    }
+
+
 
 };
 
@@ -76,6 +91,10 @@ private:
     double startTime;
     double currentTime;
 
+
+    friend std::ostream& operator <<(std::ostream& o, const AffordanceTime a) {
+        return o << a.affordance;
+    }
 
 };
 

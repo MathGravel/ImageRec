@@ -22,6 +22,7 @@
 #include "Socket.h"
 #include "MaskRCNN.h"
 #include "DetectedObject.h"
+#include "Header files/ActivityRegion.h"
 
 
 class VideoArea : public Gtk::DrawingArea
@@ -47,6 +48,18 @@ public:
     void setLocalSegmentation() {
         localRec = !localRec;
     }
+
+
+    bool hasNewAffordance() {
+        return act.AffordanceUpdated();
+    }
+
+    const Affordance GetCurrentAffordance()  {
+        AffordanceTime* aff =  act.currentAffordances.top();
+        act.currentAffordances.pop();
+        return aff->getAffordance();
+    }
+
 
     void setSegImage() {segImg = !segImg;}
     void  SaveROI(const std::string fileLoc, const std::string itemClass);
@@ -78,24 +91,22 @@ private:
     cv::Rect rectROI;
     //CaffeCNN caffe;
 
-    ImgSegCNN caffe;
+    //ImgSegCNN caffe;
     cv::Mat chosenROI;
     cv::Mat currentPic;
     cv::Mat formattedPic;
     cv::Mat currentDepthPic;
     cv::Mat currentMappedPic;
     cv::Mat AddData();
-    MaskRCNN handDetector;
+    //MaskRCNN handDetector;
+    ActivityRegion act;
 
-    void mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes);
 
-    void detectHand(cv::Mat color, cv::Mat depth,std::vector<cv::Rect>& rect);
 
     std::vector<cv::Rect> regions;
     std::vector<std::string> probs;
 
-    void classifyPic(cv::Mat& currentPic);
-    cv::Mat FindRegionProposals(cv::Mat picToSeg);
+
     std::future<std::vector<cv::Rect>> resultSeg;
 
 

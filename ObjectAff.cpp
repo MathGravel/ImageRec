@@ -6,7 +6,7 @@
 
 ObjectAffordances::ObjectAffordances(int numberClasses) {
     numClasses = numberClasses;
-
+    nbClasses = 0;
     confMatrix = new double*[numClasses];
     for (int i  = 0; i < numClasses;i++)
         confMatrix[i] = new double[numClasses];
@@ -32,14 +32,14 @@ AffordanceTime* ObjectAffordances::findAffordances(DetectedObjects &regions, Det
                 affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions();
             else
                 affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
+
             currentAffordance = &affordances[regionsOverlap.getObjectType()];
+            std::cout << *currentAffordance << std::endl;
+
         }
     }
 
     //Ajoute un check que si c plus que 5 secondes tu marque l'interaction comme finit.
-
-
-
     return currentAffordance;
 }
 
@@ -92,6 +92,7 @@ void ObjectAffordances::setConfusionMatrix(int noClasses, double** matrix) {
     }
 
     objaff.setConfusionMatrix(noClasses,matrix);
+
 
     return is;
 }

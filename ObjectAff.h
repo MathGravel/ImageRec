@@ -57,6 +57,8 @@ private:
     bool checkifNewInteraction(DetectedObject & obj);
 
 
+    int nbClasses;
+
     class AffordanceCheck {
 
     public:

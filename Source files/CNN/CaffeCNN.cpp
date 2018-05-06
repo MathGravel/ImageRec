@@ -55,21 +55,23 @@ void CaffeCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)
 {
 }
 
-std::string CaffeCNN::predict(const cv::Mat & picture)
+std::map<std::string, float> CaffeCNN::predictMatrix(const cv::Mat& picture)
+{
+    std::map<std::string, float> nul;
+    return nul;
+}
+
+Prediction CaffeCNN::predict(const cv::Mat & picture)
 {
     std::vector<Prediction> predictions = classifier.Classify(picture);
-    std::ostringstream oss;
     /* Print the top N predictions. */
     /*for (size_t i = 0; i < predictions.size(); ++i) {
         Prediction p = predictions[i];
         oss << std::fixed << std::setprecision(4) << p.second << " - \""
             << p.first << "\"" << std::endl;
     }*/
-    std::cout << predictions[0].first << std::endl;
 
-    oss << std::fixed << std::setprecision(4) << predictions[0].second << "-"
-        << predictions[0].first  << std::endl;
-    return oss.str();
+    return predictions[0];
 }
 
 void CaffeCNN::savePicture(const cv::Mat & picture, std::string name)

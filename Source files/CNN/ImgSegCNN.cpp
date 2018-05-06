@@ -40,10 +40,7 @@ void ImgSegCNN::train()
 
     /* Merge the separate channels into a single image. */
     cv::Mat mean;
-   // std::vector<cv::Mat> channe;
-    //channe.push_back(channels[2]);
-    //channe.push_back(channels[1]);
-    //channe.push_back(channels[0]);
+
 
 
     cv::merge(channels, mean);
@@ -52,7 +49,6 @@ void ImgSegCNN::train()
     * filled with this value. */
      channel_mean = cv::mean(mean);
     check = mean.type();
-//    mean_ = cv::Mat(input_geometry_, mean.type(), channel_mean);
 
 }
 
@@ -65,13 +61,11 @@ void ImgSegCNN::updateModel(const cv::Mat & picture, bool correctlyIdentified)
 {
 }
 
-std::string ImgSegCNN::predict(const cv::Mat & picture)
-{
+std::map<std::string, float> ImgSegCNN::predictMatrix(const cv::Mat& picture) {
 
     cv::Mat pic;
 
     cv::resize(picture,pic,cv::Size(256,256));
-    cv::imwrite("testing.png",pic);
     //GoogLeNet accepts only 224x224 BGR-images
     Mat inputBlob = blobFromImage(pic, 1.0f, Size(256,256),
                                   cv::Scalar(104,117,123), false,false);   //Convert Mat to batch of images
@@ -84,15 +78,71 @@ std::string ImgSegCNN::predict(const cv::Mat & picture)
     double classProb;
     getMaxClass(prob, &classId, &classProb);//find the best class
 
+
+
+
     //! [Print results]
     std::vector<String> classNames = readClassNames("/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt");
+
+    std::vector<double> t = getClassesProb(prob);
+
+    std::map<std::string, float> predictionMat;
+
+    int ii = 0;
+    for (std::vector<double>::iterator it = t.begin(); it != t.end();it++) {
+
+        std::cout << "Current Classe " << *it << "  " <<  classNames.at(ii) <<  " | ";
+        predictionMat[classNames.at(ii)] = *it;
+        ii++;
+    }
+
+    return predictionMat;
+
+};
+
+
+
+Prediction ImgSegCNN::predict(const cv::Mat & picture)
+{
+
+    cv::Mat pic;
+
+    cv::resize(picture,pic,cv::Size(256,256));
+    //GoogLeNet accepts only 224x224 BGR-images
+    Mat inputBlob = blobFromImage(pic, 1.0f, Size(256,256),
+                                  cv::Scalar(104,117,123), false,false);   //Convert Mat to batch of images
+    //! [Prepare blob]
+    neuralNet.setInput(inputBlob, "data");        //set the network input
+    Mat prob = neuralNet.forward("prob");         //compute output
+
+    //! [Gather output]
+    int classId;
+    double classProb;
+    getMaxClass(prob, &classId, &classProb);//find the best class
+
+
+
+
+    //! [Print results]
+    std::vector<String> classNames = readClassNames("/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt");
+
+    std::vector<double> t = getClassesProb(prob);
+    int ii = 0;
+    for (std::vector<double>::iterator it = t.begin(); it != t.end();it++) {
+        std::cout << "Current Classe " << *it << "  " <<  classNames.at(ii) <<  " | ";
+        ii++;
+    }
+    std::cout << std::endl;
+
     std::cout << "Best class: #" << classId << " '" << classNames.at(classId) << "'" << std::endl;
     std::cout << "Probability: " << classProb * 100 << "%" << std::endl;
     //! [Print results]
 
 
     string val = classNames.at(classId) + " " + ( classProb * 100) + " ";
-	return val;
+
+
+    return std::make_pair(classNames.at(classId),classProb * 100);
 }
 
 void ImgSegCNN::savePicture(const cv::Mat & picture, std::string name)

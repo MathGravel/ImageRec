@@ -14,7 +14,7 @@
 struct stat info;
 
 
-VideoArea::VideoArea() : cv_opened(false),handDetector(720,1280) {
+VideoArea::VideoArea() : cv_opened(false) {
 
     sourceFeed = NULL;
     on_dragged = false;
@@ -61,7 +61,6 @@ bool VideoArea::onMouseUp(GdkEventButton *event) {
 
 bool VideoArea::onMouseMove(GdkEventMotion *event) {
 
-
     int newX, newY;
     if (on_dragged) {
         chosedROI = true;
@@ -106,89 +105,10 @@ bool VideoArea::on_timeout() {
     return true;
 }
 
-
-std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
-
-    cv::Mat current = picture;
-    cv::Mat currentSmall = current.clone();
-    cv::Mat currentDepthSmall = depthPic.clone();
-
-
-    int height = current.rows;
-    int width = current.cols;
-    int newHeight = height;
-    int newWidth = width;
-    double ratiox = 1;
-    double ratioy = 1;
-    while (newHeight > 256 && newWidth > 200) {
-        newHeight = newHeight / 1.25;
-        ratiox = ratiox * 1.25;
-        newWidth = newWidth / 1.25;
-    }
-
-
-    resize(current, currentSmall, cv::Size(newWidth, newHeight));
-    resize(depthPic, currentDepthSmall, cv::Size(newWidth, newHeight));
-
-
-    auto regions = selectiveDepth::selectiveSearchDepth(currentSmall,currentDepthSmall, 150, 0.9, 30, 300, currentSmall.rows * currentSmall.cols/6, 50);
-
-
-    std::vector<cv::Rect> newRect;
-
-    cv::groupRectangles(regions,1,0.1);
-
-
-
-        // do something...
-    std::vector<cv::Rect> resizedRegions;
-    for (auto &&rect : regions) {
-
-        cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
-        resizedRegions.push_back(x);
-
-    }
-
-
-    return resizedRegions;
-
-}
-
-
-
-void VideoArea::mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes)
-{
-    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1); // Mask of original image
-    cv::Size scaleFactor(10,10); // To expand rectangles, i.e. increase sensitivity to nearby rectangles. Doesn't have to be (10,10)--can be anything
-    for (int i = 0; i < inputBoxes.size(); i++)
-    {
-        cv::Rect box = inputBoxes.at(i) + scaleFactor;
-        cv::rectangle(mask, box, cv::Scalar(255), CV_FILLED); // Draw filled bounding boxes on mask
-    }
-
-    std::vector<std::vector<cv::Point>> contours;
-    // Find contours in mask
-    // If bounding boxes overlap, they will be joined by this function call
-    cv::findContours(mask, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
-    for (int j = 0; j < contours.size(); j++)
-    {
-        outputBoxes.push_back(cv::boundingRect(contours.at(j)));
-    }
-}
-
 template<typename Base, typename T>
 inline bool instanceof(const T*) {
     return std::is_base_of<Base, T>::value;
 }
-
-void VideoArea::detectHand(cv::Mat color, cv::Mat depth,std::vector<cv::Rect>& rect) {
-
-    for (auto& handPos : handDetector.findObjects(color,depth)) {
-        rect.push_back(handPos.getObjPos());
-    }
-
-}
-
 
 bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
@@ -208,85 +128,29 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
 
     formattedPic.release();
-    formattedPic = this->currentPic.clone();
+    formattedPic = currentPic.clone();
 
     if (localRec) {
-        if (!segmenting) {
-            resultSeg = std::async(std::launch::async, segmentPic, currentPic.clone(),currentDepthPic.clone());
-            segmenting = true;
 
-        } else {
-            if (resultSeg.wait_for(std::chrono::seconds(0)) == std::future_status::ready) {
-                regions.clear();
-                probs.clear();
-                regions = resultSeg.get();
-                //objets = resultSeg.get();
-                //this->classifyPic(formattedPic);
-                segmenting = false;
-            }
-            else {
-                cv::putText(formattedPic, "Formattage en cours", cv::Point(100,100), FONT_HERSHEY_SIMPLEX, 0.5,
-                            Scalar(0, 0, 0), 4);
-            }
-        }
+        act.Update(formattedPic,currentDepthPic);
 
-        std::vector<cv::Rect> objets(regions);
+        /*std::vector<cv::Rect> regi = act.getRegions();
+        cv::Rect hand = act.getHandRegion()
 
-        this->detectHand(currentPic,currentMappedPic,objets);
-
-        std::vector<cv::Rect>::iterator it = objets.begin();
+        std::vector<cv::Rect>::iterator it = regi.begin();
         std::vector<std::string>::iterator it2 = probs.begin();
 
-        while (it != objets.end() ) {
+        while (it != regi.end() ) {
             cv::Rect reg = *it;
             cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
             it++;
         }
-
-        //while (it != regions.end() && it2 != probs.end()) {
-          //  cv::Rect reg = *it;
-          //  std::string prob = *it2;
-          //  cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
-          //  cv::putText(formattedPic, prob, cv::Point(reg.x, reg.y + reg.height), FONT_HERSHEY_SIMPLEX, 0.5,
-          //              Scalar(0, 0, 0), 4);
-
-          //  it++;
-          //  it2++;
-       // }
-
+        cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
+        */
+        formattedPic = act.getImageWithROI();
 
     }
 
-    std::vector<cv::Rect> objets;
-
-    this->detectHand(currentPic,currentMappedPic,objets);
-    std::vector<cv::Rect>::iterator it = objets.begin();
-    while (it != objets.end() ) {
-        cv::Rect reg = *it;
-        cv::rectangle(formattedPic, reg, cv::Scalar(0, 20, 200), 3, 8);
-        it++;
-    }
-
-
-
-    if (showi) {
-        std::vector<cv::Rect>::iterator it = regions.begin();
-        std::vector<std::string>::iterator it2 = probs.begin();
-
-
-        while (it != regions.end() && it2 != probs.end()) {
-            cv::Rect reg = *it;
-            std::string prob = *it2;
-            cv::rectangle(formattedPic, reg, cv::Scalar(0, 255, 0), 3, 8);
-            cv::putText(formattedPic, prob, cv::Point(reg.x, reg.y + reg.height), FONT_HERSHEY_SIMPLEX, 0.5,
-                        Scalar(0, 0, 0), 4);
-
-            it++;
-            it2++;
-        }
-    }
-
-    //cv::Mat imgScreen = formattedPic.clone();
     if (chosedROI) {
         cv::rectangle(formattedPic, rectROI, cv::Scalar(0, 0, 200), 2, 8, 0);
         chosenROI = currentPic(rectROI);
@@ -310,90 +174,20 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     return true;
 }
 
-/*
-cv::Mat VideoArea::AddData() {
-
-
-    cv::Mat current = this->currentPic.clone();
-    cv::Mat currentSmall = this->currentPic.clone();
-
-    if (localRec) {
-
-
-        int height = current.rows;
-        int width = current.cols;
-        int newHeight = height;
-        int newWidth = width;
-        double ratiox = 1;
-        double ratioy = 1;
-        while (newHeight > 256 && newWidth > 200) {
-            newHeight = newHeight / 1.25;
-            ratiox = ratiox * 1.25;
-            newWidth = newWidth / 1.25;
-        }
-        // ratiox = ceil(ratiox);
-
-
-        // int newWidth = width * newHeight / height;
-        //ratioy = current.rows / newHeight;
-
-        resize(current, currentSmall, cv::Size(newWidth, newHeight));
-
-        // selective search
-        if (skipframes == 0)
-            regions = ss::selectiveSearch(currentSmall, 200, 0.9, 60, 400, 1000, 4);
-
-        // do something...
-
-        for (auto &&rect : regions) {
-            cv::rectangle(currentSmall, rect, cv::Scalar(0, 255, 0), 3, 8);
-
-            cv::Rect x(rect.x * ratiox, rect.y * ratiox, rect.width * ratiox, rect.height * ratiox);
-            //rectangle(imO, x, Scalar(0, 255, 0));
-            cv::rectangle(current, x, cv::Scalar(0, 255, 0), 3, 8);
-
-        }
-
-
-    }
-    currentSmall.release();
-    return current;
-}
-*/
-
-cv::Mat VideoArea::FindRegionProposals(cv::Mat picToSeg) {
-
-}
-
-
 void VideoArea::SegmentClassifyROI() {
     if (!chosedROI)
         return;
-    regions.clear();
-    probs.clear();
-    regions.push_back(rectROI);
-    probs.push_back(caffe.predict(chosenROI));
-    showi = true;
-    std::cout << caffe.predict(chosenROI) << std::endl;
+    //regions.clear();
+    //probs.clear();
+    //regions.push_back(rectROI);
+
+    Affordance roi = act.testManuallyROI(currentPic,rectROI);
+    std::cout << roi << std::endl;
+
 
 }
 
 
-void VideoArea::classifyPic(cv::Mat &currentPic) {
-
-    // if (classe == "")
-    //    classe = caffe.predict(currentPic.clone());
-    // cv::putText(currentPic,classe,cv::Point(rectROI.x,rectROI.y),8,2,cv::Scalar(100,100,100));
-    //Socket::Send_Data(classe.c_str(),80);
-    //std::cout << "\n DERP  ----" << classe << " ----- \n";
-    probs.clear();
-    for (auto &&rect : regions) {
-        cv::Mat reg = currentPic(rect);
-        probs.push_back(caffe.predict(reg));
-        reg.release();
-    }
-
-}
 
 
 void VideoArea::SavePictures() {

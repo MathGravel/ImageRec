@@ -4,15 +4,15 @@
 
 #include "MaskRCNN.h"
 
-MaskRCNN::MaskRCNN( int imgHeight,int imgWidth) {
+MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth) {
 
     width = 300;
     height = 300;
     resizeRatio = width / (float) height;
     meanRatio = 127;
     scaleFactor = 0.01f;
-    network = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/graph.pb";
-    networkDef = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/label.pbtxt";
+    network = inference_path + "/graph.pb";
+    networkDef = inference_path + "/label.pbtxt";
 
     neuralNetwork = cv::dnn::readNetFromTensorflow(network,networkDef);
     //neuralNetwork.setPreferableBackend()
