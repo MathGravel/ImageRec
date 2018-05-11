@@ -132,9 +132,9 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
     if (localRec) {
 
-        act.Update(formattedPic,currentDepthPic);
+        ActivityRegion::instance()->Update(formattedPic,currentDepthPic);
 
-        formattedPic = act.getImageWithROI();
+        formattedPic = ActivityRegion::instance()->getImageWithROI();
 
     }
 
@@ -168,7 +168,7 @@ void VideoArea::SegmentClassifyROI() {
     //probs.clear();
     //regions.push_back(rectROI);
 
-    Affordance roi = act.testManuallyROI(currentPic,rectROI);
+    Affordance roi = ActivityRegion::instance()->testManuallyROI(currentPic,rectROI);
     std::cout << roi << std::endl;
 
 

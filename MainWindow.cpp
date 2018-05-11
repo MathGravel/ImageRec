@@ -69,15 +69,41 @@ MainWindow::MainWindow()
 
     //show_all_children(true);*/
     cameraFeed = NULL;
+
+    isStopped.store(false);
+    start_thread();
 }
 
- MainWindow::~MainWindow() {
+MainWindow::~MainWindow() {
+    isStopped.store(true);
     if (cameraFeed != NULL)
         delete cameraFeed;
     if (kinTreat != NULL)
         delete kinTreat;
     cameraFeed = NULL;
     kinTreat = NULL;
+}
+
+void MainWindow::start_thread(){
+    std::thread affordanceThread(&MainWindow::start_affordance_check, this);
+    affordanceThread.detach();
+}
+
+void MainWindow::start_affordance_check(){
+    while(!isStopped.load()){
+        if(!ActivityRegion::instance()->currentAffordances.empty()){
+            AffordanceTime* aff = ActivityRegion::instance()->currentAffordances.top();
+            ActivityRegion::instance()->currentAffordances.pop();
+
+            p.update(aff->getAffordance());
+
+            mtx.lock();
+            activity.set_text(p.getNextAction().to_str());
+            mtx.unlock();
+
+            std::this_thread::sleep_for(std::chrono::seconds(1));
+        }
+    }
 }
 
 void  MainWindow::destroy (GdkEventAny* event)
@@ -144,6 +170,9 @@ void MainWindow::on_global_recognition(Glib::ustring data) {
     //video_area.SavePictures();
     Affordance aff = video_area.GetCurrentAffordance();
     p.update(aff);
+
+    mtx.lock();
     activity.set_text(p.getNextAction().to_str());
+    mtx.unlock();
 }
 

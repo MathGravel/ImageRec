@@ -25,8 +25,16 @@
 
 class ActivityRegion {
 
+    static ActivityRegion *ar_instance;
+
 public:
     ActivityRegion();
+
+    static ActivityRegion *instance(){
+        if(!ar_instance)
+            ar_instance = new ActivityRegion();
+        return ar_instance;
+    }
 
     cv::Mat getChosenRoi() {
         return chosenROI;

@@ -12,6 +12,11 @@
 #include <iostream>
 #include <cstdlib>
 #include <signal.h>
+#include <ctime>
+#include <atomic>
+#include <mutex>
+#include <thread>
+#include <chrono>
 #include <gtkmm/window.h>
 #include <gtkmm/frame.h>
 #include <gtkmm/button.h>
@@ -52,6 +57,8 @@ class MainWindow : public Gtk::Window
         Gtk::Box box;
         Gtk::ButtonBox bx ;
         Gtk::Label a;
+        void start_thread();
+        void start_affordance_check();
         void on_button_clicked(Glib::ustring data);
         void on_start_capture(Glib::ustring data);
         void on_stop_capture(Glib::ustring data);
@@ -64,6 +71,8 @@ class MainWindow : public Gtk::Window
 
 
 private:
+        std::mutex mtx;
+        std::atomic<bool> isStopped;
         VideoSource * cameraFeed;
         VideoSource * camNoTreatment;
         std::string previous;

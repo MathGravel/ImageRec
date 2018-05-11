@@ -51,12 +51,12 @@ public:
 
 
     bool hasNewAffordance() {
-        return act.AffordanceUpdated();
+        return ActivityRegion::instance()->AffordanceUpdated();
     }
 
     const Affordance GetCurrentAffordance()  {
-        AffordanceTime* aff =  act.currentAffordances.top();
-        act.currentAffordances.pop();
+        AffordanceTime* aff =  ActivityRegion::instance()->currentAffordances.top();
+        ActivityRegion::instance()->currentAffordances.pop();
         return aff->getAffordance();
     }
 
