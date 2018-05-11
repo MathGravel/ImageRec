@@ -100,9 +100,9 @@ void MainWindow::start_affordance_check(){
             mtx.lock();
             activity.set_text(p.getNextAction().to_str());
             mtx.unlock();
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
+
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 }
 
