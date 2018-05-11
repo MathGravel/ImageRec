@@ -30,10 +30,10 @@ class ActivityRegion {
 public:
     ActivityRegion();
 
-    static ActivityRegion *instance(){
-        if(!ar_instance)
-            ar_instance = new ActivityRegion();
-        return ar_instance;
+    static ActivityRegion* instance(){
+        if(!ActivityRegion::ar_instance)
+            ActivityRegion::ar_instance = new ActivityRegion();
+        return ActivityRegion::ar_instance;
     }
 
     cv::Mat getChosenRoi() {

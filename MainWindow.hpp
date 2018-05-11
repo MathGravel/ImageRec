@@ -28,6 +28,8 @@
 #include "ImageSegmentationManual.h"
 #include "KinectTreatment.h"
 #include "RealSense.h"
+#include "RealSenseVideo.h"
+
 #include "Policy.h"
 
 #include "Header files/CNN/CaffeCNN.h"
@@ -54,6 +56,7 @@ class MainWindow : public Gtk::Window
         Gtk::Button localRecButton;
         Gtk::Button globalRecButton;
         Gtk::Entry activity;
+        Gtk::Entry activity2;
         Gtk::Box box;
         Gtk::ButtonBox bx ;
         Gtk::Label a;
@@ -74,10 +77,10 @@ private:
         std::mutex mtx;
         std::atomic<bool> isStopped;
         VideoSource * cameraFeed;
-        VideoSource * camNoTreatment;
         std::string previous;
         KinectTreatment* kinTreat = NULL;
         Policy p;
+        ActivityRegion* act;
         bool segImg = false;
         void pack_View();
         void destroy (GdkEventAny* event);

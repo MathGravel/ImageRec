@@ -1,0 +1,33 @@
+digraph G
+{
+root [label="X (c) 1\lY (c,a) 0.333\lA (cg_c)\l" shape=doublecircle labeljust="l"];
+x0row1 [label="X (c)\lY (c,b) 0.333\lA (obs)\l"];
+x0row5 [label="X (c)\lY (c,finish) 1\lA (cg_c)\l"];
+x0row3 [label="X (c)\lY (i,d) 0.5\lA (cg_i)\l"];
+x0row2 [label="X (c)\lY (c,c) 1\lA (cg_c)\l"];
+x1row3 [label="X (i)\lY (i,e) 0.5\lA (cg_i)\l"];
+x1row4 [label="X (i)\lY (i,f) 0.5\lA (cg_i)\l"];
+x1row5 [label="X (i)\lY (i,g) 0.5\lA (obs)\l"];
+x1row6 [label="X (i)\lY (i,h) 1\lA (cg_i)\l"];
+x1row7 [label="X (i)\lY (k,j) 1\lA (cg_k)\l"];
+x1row9 [label="X (i)\lY (i,i) 1\lA (cg_i)\l"];
+x1row10 [label="X (i)\lY (i,finish) 1\lA (cg_i)\l"];
+x2row9 [label="X (k)\lY (k,k) 1\lA (cg_k)\l"];
+x2row10 [label="X (k)\lY (k,finish) 1\lA (cg_k)\l"];
+root -> x0row1 [label="X (c) 1\lo (none) 1\l"];
+x0row1 -> x0row2 [label="X (c) 1\lo (c) 0.333\l"];
+x0row1 -> x0row3 [label="X (c) 1\lo (d) 0.667\l"];
+x0row2 -> x0row5 [label="X (c) 1\lo (none) 1\l"];
+x0row5 -> x0row5 [label="X (c) 1\lo (none) 1\l"];
+x0row3 -> x1row3 [label="X (i) 1\lo (none) 1\l"];
+x1row3 -> x1row4 [label="X (i) 1\lo (none) 1\l"];
+x1row4 -> x1row5 [label="X (i) 1\lo (none) 1\l"];
+x1row5 -> x1row6 [label="X (i) 1\lo (h) 0.5\l"];
+x1row5 -> x1row7 [label="X (i) 1\lo (j) 0.5\l"];
+x1row6 -> x1row9 [label="X (i) 1\lo (none) 1\l"];
+x1row9 -> x1row10 [label="X (i) 1\lo (none) 1\l"];
+x1row10 -> x1row10 [label="X (i) 1\lo (none) 1\l"];
+x1row7 -> x2row9 [label="X (k) 1\lo (none) 1\l"];
+x2row9 -> x2row10 [label="X (k) 1\lo (none) 1\l"];
+x2row10 -> x2row10 [label="X (k) 1\lo (none) 1\l"];
+}

@@ -21,6 +21,7 @@ VideoArea::VideoArea() : cv_opened(false) {
     chosedROI = false;
     localRec = false;
     segmenting = false;
+    act = ActivityRegion::instance();
     this->add_events(Gdk::BUTTON_PRESS_MASK | Gdk::BUTTON_RELEASE_MASK | Gdk::BUTTON1_MOTION_MASK);
     Glib::signal_timeout().connect(sigc::mem_fun(*this, &VideoArea::on_timeout), 50);
     this->signal_button_press_event().connect(sigc::mem_fun(*this, &VideoArea::onMouseDown));
@@ -132,9 +133,9 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
     if (localRec) {
 
-        ActivityRegion::instance()->Update(formattedPic,currentDepthPic);
+        act->Update(formattedPic,currentDepthPic);
 
-        formattedPic = ActivityRegion::instance()->getImageWithROI();
+        formattedPic = act->getImageWithROI();
 
     }
 

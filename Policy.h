@@ -18,7 +18,9 @@ public:
 
     bool load(std::string policy) const;
     bool update(Affordance observation) const;
-    Affordance getNextAction() const;
+    std::string getNextAction() const;
+    std::string getCurrentPlan() const;
+
 private:
     PyObject* main;
     PyObject* solver;

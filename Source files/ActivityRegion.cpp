@@ -3,6 +3,7 @@
 //
 #include "ActivityRegion.h"
 
+ActivityRegion* ActivityRegion::ar_instance = NULL;
 
 ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true),
                                  objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false),

@@ -8,7 +8,7 @@ MainWindow::MainWindow()
     previous = "val";
 
     box = Gtk::Box(Gtk::ORIENTATION_VERTICAL);
-
+    act = ActivityRegion::instance();
 
     this->set_size_request(1920,1080);
     bx  = Gtk::ButtonBox(Gtk::ORIENTATION_HORIZONTAL);
@@ -43,9 +43,10 @@ MainWindow::MainWindow()
     bx.show();
 
     box.add(bx);
+    activity.set_text("Current Plan : \tProb:");
     box.add(activity);
 
-    //box.add(activity);
+    box.add(activity2);
     add(box);
     //bx = Gtk::HButtonBox(L);
 
@@ -91,18 +92,21 @@ void MainWindow::start_thread(){
 
 void MainWindow::start_affordance_check(){
     while(!isStopped.load()){
-        if(!ActivityRegion::instance()->currentAffordances.empty()){
-            AffordanceTime* aff = ActivityRegion::instance()->currentAffordances.top();
-            ActivityRegion::instance()->currentAffordances.pop();
+        if(!act->currentAffordances.empty()){
+            AffordanceTime* aff = act->currentAffordances.top();
+            act->currentAffordances.pop();
 
             p.update(aff->getAffordance());
-
+            std::string updated = aff->getAffordance().to_str() + " -> ";
+            updated = updated  + p.getCurrentPlan();
+            std::string acts = p.getNextAction();
             mtx.lock();
-            activity.set_text(p.getNextAction().to_str());
+            activity.set_text(updated);
+            activity2.set_text(acts);
             mtx.unlock();
 
-            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
+        std::this_thread::sleep_for(std::chrono::microseconds(15));
     }
 }
 
@@ -123,9 +127,11 @@ void MainWindow::on_start_capture(Glib::ustring data)
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     if (cameraFeed == NULL) {
         //cameraFeed = new Kinect();
-        cameraFeed = new RealSense();
-        camNoTreatment = cameraFeed;
+        //cameraFeed = new RealSense();
+        cameraFeed = new RealSenseVideo();
         video_area.StartCamera(cameraFeed);
+        video_area.showi = false;
+        video_area.setLocalSegmentation();
     } else
         video_area.RestartCamera();
 }
@@ -172,7 +178,7 @@ void MainWindow::on_global_recognition(Glib::ustring data) {
     p.update(aff);
 
     mtx.lock();
-    activity.set_text(p.getNextAction().to_str());
+    activity.set_text(p.getNextAction());
     mtx.unlock();
 }
 

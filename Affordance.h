@@ -16,9 +16,27 @@ public:
     Affordance(std::string obj = "teacup", double prob=76.7653) {
         objectName = obj;
         objProb = prob;
+        if (objectName == "teapot") {
+            objectName = "teakettle";
+        }
+        if(objectName == "chocolate")
+            objectName = "choco";
+        if (objectName == "pitcher")
+            objectName = "water";
+
+
     }
     Affordance(std::string obj,double pos,cv::Rect reg,double prob) :
-            objectName(obj),objectPos(pos),region(reg),objProb(prob){}
+            objectName(obj),objectPos(pos),region(reg),objProb(prob){
+        if (objectName == "teapot") {
+            objectName = "teakettle";
+        }
+        if(objectName == "chocolate")
+            objectName = "choco";
+        if (objectName == "pitcher")
+            objectName = "water";
+
+    }
 
 
     std::string getName() const {return objectName;};
@@ -28,7 +46,7 @@ public:
 
     std::string to_str() const {
         std::stringstream ss;
-        ss << *this;
+        ss << this->objectName << " " << this->objProb;
         return ss.str();
     };
 
@@ -44,7 +62,7 @@ private:
     //Si t'a aucune interaction envoie un objet void i.e un appel constructeur vide
 
     friend std::ostream& operator <<(std::ostream& o, const Affordance a) {
-        return o << "(" << a.objectName << ")(" << std::setprecision(4) << a.objProb << ")" << std::endl;
+        return o << a.objectName   << a.objProb  << std::endl;
     }
 
 

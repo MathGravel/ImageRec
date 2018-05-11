@@ -99,7 +99,7 @@ private:
     cv::Mat currentMappedPic;
     cv::Mat AddData();
     //MaskRCNN handDetector;
-    ActivityRegion act;
+    ActivityRegion* act;
 
 
 

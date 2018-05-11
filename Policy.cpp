@@ -27,7 +27,7 @@ Policy::Policy() {
     solver = PyObject_GetAttrString(main,"mainSolver");
 
     PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
-    PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
+    //PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
 
 
 
@@ -37,7 +37,8 @@ Policy::Policy() {
 bool Policy::update(Affordance observation) const {
 
     std::stringstream ss;
-    ss << "mainSolver.add(\"" << observation.getName() << " \"," << observation.getObjectProbability() << ")";
+    ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
+    std::cout << ss.str();
     PyRun_SimpleString(ss.str().c_str());
 
     return true;
@@ -51,16 +52,55 @@ bool Policy::load(std::string policyLocation) const {
     return true;
 }
 
-Affordance Policy::getNextAction() const {
+std::string Policy::getCurrentPlan() const {
 
 
     PyRun_SimpleString("ret = mainSolver.policy.currentPlan");
+    PyRun_SimpleString("pr = mainSolver.policy.currentPlanProb");
 
+    std::stringstream ss;
 
 
     PyObject* plan = PyObject_GetAttrString(main,"ret");
+    PyObject* prob = PyObject_GetAttrString(main,"pr");
+
     PyObject * temp_bytes = PyUnicode_AsEncodedString(plan, "UTF-8", "strict"); // Owned reference
-    Affordance aff = Affordance();
+    //PyObject * temp_bytesprob = PyUnicode_AsEncodedString(prob, "UTF-8", "strict"); // Owned
+    double a = PyFloat_AsDouble(prob);
+
+
+    if (temp_bytes != NULL) {
+        char * my_result = PyBytes_AsString(temp_bytes); // Borrowed pointer
+        my_result = strdup(my_result);
+        ss << "Current Plan : " << my_result << "\t";
+
+        //char * my_result1 = PyBytes_AsString(temp_bytesprob);
+        //my_result1 = strdup(my_result1);
+        ss << "Prob : " << a;
+        Py_DecRef(temp_bytes);
+        //Py_DecRef(temp_bytesprob);
+        Py_DecRef(plan);
+        Py_DecRef(prob);
+
+    } else {
+        ss << "Ca marche pas";
+    }
+
+    return ss.str();
+}
+
+std::string Policy::getNextAction() const {
+
+
+    PyRun_SimpleString("act = mainSolver.policy.nextPossibleAction()");
+
+
+    std::stringstream ss;
+
+    ss << "Next expected action(s) : ";
+
+    PyObject* plan = PyObject_GetAttrString(main,"act");
+    PyObject * temp_bytes = PyUnicode_AsEncodedString(plan, "UTF-8", "strict"); // Owned reference
 
     if (temp_bytes != NULL) {
         char * my_result = PyBytes_AsString(temp_bytes); // Borrowed pointer
@@ -68,12 +108,11 @@ Affordance Policy::getNextAction() const {
         Py_DecRef(temp_bytes);
         Py_DecRef(plan);
 
-        aff = Affordance(my_result,100);
-        std::cout << my_result << std::endl;
+        ss << my_result;
 
     } else {
-        std::cout << "Ca marche pas";
+        ss << "Ca marche pas";
     }
 
-    return aff;
+    return ss.str();
 }
