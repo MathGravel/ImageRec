@@ -20,10 +20,47 @@ public:
     bool update(Affordance observation) const;
     std::string getNextAction() const;
     std::string getCurrentPlan() const;
+    std::string getCurrentPlanProb() const;
+
+
+
 
 private:
     PyObject* main;
     PyObject* solver;
+
+    enum charTypeT{ other, alpha, digit};
+
+    charTypeT charType(char c) const{
+        if(isdigit(c))return digit;
+        if(isalpha(c))return alpha;
+        return other;
+    }
+
+    std::string separateThem(std::string inString) const{
+        std::string oString = "";charTypeT st=other;
+        for(auto c:inString){
+            if( (st==alpha && charType(c)==digit) || (st==digit && charType(c)==alpha) )
+                oString.push_back(' ');
+            oString.push_back(c);st=charType(c);
+        }
+        return oString;
+    }
+
+    std::string getFirst(std::string inString) const{
+        std::string oString = "";charTypeT st=other;
+        int i = 0;
+        for(auto c:inString){
+            if( (st==alpha && charType(c)==digit) || (st==digit && charType(c)==alpha) ) {
+                oString.push_back(' ');
+                i++;
+                if (i > 1)
+                    break;
+            }
+            oString.push_back(c);st=charType(c);
+        }
+        return oString;
+    }
 
 
 };

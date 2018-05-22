@@ -5,21 +5,10 @@
 
 ActivityRegion* ActivityRegion::ar_instance = NULL;
 
-ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true),
-                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false),
-                                 currentlySegmenting(false),newRegions(false),newAffordance(false) {
+ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true,0.5f),
+                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false,0.4f),
+                                 currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
-
-Affordance ActivityRegion::getCurrentAffordance() {
-    return currentAffordance->getAffordance();
-}
-
-std::string ActivityRegion::getAffordanceString() {
-    std::ostringstream oss;
-    oss << currentAffordance;
-    return oss.str();
-}
-
 
  std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic);
 
@@ -32,6 +21,8 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     std::vector<DetectedObject> hands;
     currentImage = vision;
     currentImageDepth = depthVision;
+    currentAffordance = NULL;
+    currentAffordanceR = NULL;
 
     if (newRegions) {
         if (!currentlySegmenting) {
@@ -60,14 +51,25 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     } else {
         detect = this->detectObjets(vision, depthVision);
         hands = this->detectHand(vision,depthVision);
-        if (!hands.empty())
+        if (!hands.empty()) {
             hand = cv::Rect(hands.front().getObjPos());
+            handR = cv::Rect(0,0,0,0);
+        }
         else
             hand = cv::Rect(0,0,0,0);
         if (!detect.empty() && !hands.empty()) {
             currentAffordance = affordances.findAffordance(detect, hands.front());
             if (currentAffordance != NULL) {
                 currentAffordances.push(currentAffordance);
+                oldName = currentAffordance->getAffordance().getName() ;
+
+            }
+            if (hands.size() > 1) {
+                handR = cv::Rect(hands.back().getObjPos());
+                currentAffordanceR = affordances.findAffordance(detect, hands.back());
+                if (currentAffordanceR != NULL) {
+                    currentAffordances.push(currentAffordanceR);
+                }
             }
         }
 
@@ -117,6 +119,83 @@ std::vector<DetectedObject> ActivityRegion::confirmAffordance(const std::vector<
         }
     }
     return classes;
+}
+
+
+cv::Mat ActivityRegion::getImageWithROI() const {
+    int fontface = cv::FONT_HERSHEY_SIMPLEX;
+    double scale = 1;
+    int thickness = 2;
+    int baseline = 0;
+    cv::Mat pic = currentImage.clone();
+    if (! regions.empty()) {
+        for (auto &reg : regions) {
+            cv::rectangle(pic, reg, cv::Scalar(100, 100, 100),3);
+        }
+    }
+    else if (!detect.empty()) {
+        for (auto &reg : detect) {
+            cv::rectangle(pic, reg.getObjPos(), cv::Scalar(0, 0, 250),4);
+            if (oldName == reg.getObjName()) {
+                cv::rectangle(pic, reg.getObjPos(), cv::Scalar(250, 0, 0),4);
+
+                std::string val = reg.getObjName() + " " + std::to_string((int)floor(reg.getProb() * 100)) + "%";
+
+                cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+                cv::Rect textBox(reg.getObjPos());
+                textBox.y += textBox.height;
+                textBox.height = text.height;
+                cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
+            }
+
+           /* std::string val = reg.getObjName() + " " + std::to_string((int)floor(reg.getProb() * 100)) + "%";
+
+            cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+            cv::Rect textBox(reg.getObjPos());
+            textBox.y += textBox.height;
+           textBox.height = text.height;
+            cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);*/
+        }
+    }
+    if (hand.x != 0 && hand.y != 0) {
+        cv::rectangle(pic, hand, cv::Scalar(125, 125, 0), 4);
+        //std::string val = "Mains";
+
+       // cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+       // cv::Rect textBox(hand);
+        //textBox.y += textBox.height;
+        //textBox.height = text.height;
+        //cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
+    }
+    if (handR.x != 0 && handR.y != 0) {
+        cv::rectangle(pic, handR, cv::Scalar(125, 125, 0), 4);
+    }
+    if (currentAffordance != NULL) {
+        Affordance & pos = currentAffordance->getAffordance();
+        cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0),4);
+
+        std::string val = pos.getName() + " " + std::to_string((int)floor(pos.getObjectProbability() * 100)) + "%";
+
+        cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+        cv::Rect textBox(pos.getRegion());
+        textBox.y += textBox.height;
+        textBox.height = text.height;
+        cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
+    }
+    if (currentAffordanceR != NULL) {
+        Affordance & pos = currentAffordanceR->getAffordance();
+        cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0),4);
+
+        std::string val = pos.getName() + " " + std::to_string((int)floor(pos.getObjectProbability() * 100)) + "%";
+
+        cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+        cv::Rect textBox(pos.getRegion());
+        textBox.y += textBox.height;
+        textBox.height = text.height;
+        cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
+    }
+
+    return pic;
 }
 
 

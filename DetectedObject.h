@@ -52,6 +52,13 @@ public:
         objPos = position;
         objName = name;
         dist = _dist;
+        if (objName == "teapot") {
+            objName = "teakettle";
+        }
+        if(objName == "chocolate")
+            objName = "choco";
+        if (objName == "pitcher")
+            objName = "water";
     }
 
     DetectedObject(cv::Rect position, std::string name, double _dist, double _prob) {
@@ -59,6 +66,13 @@ public:
         objName = name;
         dist = _dist;
         prob = _prob;
+        if (objName == "teapot") {
+            objName = "teakettle";
+        }
+        if(objName == "chocolate")
+            objName = "choco";
+        if (objName == "pitcher")
+            objName = "water";
     }
 
 

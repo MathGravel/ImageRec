@@ -29,7 +29,7 @@ AffordanceTime* ObjectAffordances::findAffordances(DetectedObjects &regions, Det
         AffordanceCheck regionsOverlap(obj,hand);
         if (regionsOverlap) {
             if (affordances.count(regionsOverlap.getObjectType()) > 0)
-                affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions();
+                affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb());
             else
                 affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
 
@@ -53,11 +53,11 @@ AffordanceTime* ObjectAffordances::findAffordance(std::vector<DetectedObject> &r
         AffordanceCheck regionsOverlap(obj,hand);
         if (regionsOverlap) {
             if (affordances.count(regionsOverlap.getObjectType()) > 0)
-                affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions();
+                affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb());
             else
                 affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
 
-            currentAffordance = &affordances[regionsOverlap.getObjectType()];
+            currentAffordance = &affordances.at(regionsOverlap.getObjectType());
             std::cout << *currentAffordance << std::endl;
 
         }

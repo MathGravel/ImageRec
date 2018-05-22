@@ -16,7 +16,7 @@ using namespace cv::dnn;
 class MaskRCNN {
 
 public:
-    MaskRCNN(std::string inference_path, int imgHeight,int imgWidth, bool estMain);
+    MaskRCNN(std::string inference_path, int imgHeight,int imgWidth, bool estMain,float _prob);
      ~MaskRCNN();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
 
@@ -26,20 +26,13 @@ private:
     std::vector<DetectedObject> objects;
     std::string network;
     std::string networkDef;
-    cv::Mat color_pic;
-    cv::Mat originalColor;
     bool main;
-    cv::Mat depth_pic;
     cv::dnn::Net neuralNetwork;
     cv::Size cropSize;
     int height;
     int width;
     float resizeRatio;
-    float meanRatio;
-    float scaleFactor;
-    //const char* classes[] = {"Cafetiere","Caffe","Theiere","The","Tasse","Chocolat","Filtre","Main"};
-    void classifyImage();
-    cv::Mat getProfondeurObjets(cv::Mat img_profon);
+    float confidenceThreshold;
     Rect crop;
     Point startingPos;
 

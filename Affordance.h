@@ -85,7 +85,8 @@ public:
 
 
 
-    void markCurrentInteractions() {
+    void markCurrentInteractions(double dist, cv::Rect pos,double prob) {
+        this->affordance = Affordance(this->affordance.getName(),dist,pos,prob);
         currentTime  = std::clock() / (double) CLOCKS_PER_SEC;
     }
 

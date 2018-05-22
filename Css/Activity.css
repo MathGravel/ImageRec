@@ -1,0 +1,35 @@
+/* Theme labels that are descendants of a window */
+GtkFrame {
+    background-color: #898989
+}
+GtkFrame {
+    background-color: #898989
+}
+
+/* Theme notebooks, and anything that's within these */
+GtkNotebook {
+    background-color: #a939f0
+}
+
+/* Theme combo boxes, and entries that
+ are direct children of a notebook */
+GtkComboBox,
+GtkNotebook > GtkEntry {
+    color: @fg_color;
+    background-color: #1209a2
+}
+
+/* Theme any widget within a GtkBin */
+GtkBin * {
+    font: Sans 20
+}
+
+/* Theme a label named title-label */
+GtkLabel#title-label {
+    font: Sans 15
+}
+
+/* Theme any widget named main-entry */
+#main-entry {
+    background-color: #f0a810
+}

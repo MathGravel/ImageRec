@@ -56,30 +56,45 @@ std::string Policy::getCurrentPlan() const {
 
 
     PyRun_SimpleString("ret = mainSolver.policy.currentPlan");
-    PyRun_SimpleString("pr = mainSolver.policy.currentPlanProb");
 
     std::stringstream ss;
 
 
     PyObject* plan = PyObject_GetAttrString(main,"ret");
-    PyObject* prob = PyObject_GetAttrString(main,"pr");
 
     PyObject * temp_bytes = PyUnicode_AsEncodedString(plan, "UTF-8", "strict"); // Owned reference
-    //PyObject * temp_bytesprob = PyUnicode_AsEncodedString(prob, "UTF-8", "strict"); // Owned
-    double a = PyFloat_AsDouble(prob);
+
 
 
     if (temp_bytes != NULL) {
         char * my_result = PyBytes_AsString(temp_bytes); // Borrowed pointer
         my_result = strdup(my_result);
-        ss << "Current Plan : " << my_result << "\t";
-
-        //char * my_result1 = PyBytes_AsString(temp_bytesprob);
-        //my_result1 = strdup(my_result1);
-        ss << "Prob : " << a;
+        ss  << my_result;
         Py_DecRef(temp_bytes);
-        //Py_DecRef(temp_bytesprob);
         Py_DecRef(plan);
+
+    } else {
+        ss << "Ca marche pas";
+    }
+
+    return ss.str();
+}
+
+std::string Policy::getCurrentPlanProb() const {
+
+
+    PyRun_SimpleString("pr = mainSolver.policy.currentPlanProb");
+
+    std::stringstream ss;
+
+
+    PyObject* prob = PyObject_GetAttrString(main,"pr");
+
+    double a = PyFloat_AsDouble(prob);
+
+
+    if (a != NULL) {
+        ss << "Prob : " << a;
         Py_DecRef(prob);
 
     } else {
@@ -89,15 +104,14 @@ std::string Policy::getCurrentPlan() const {
     return ss.str();
 }
 
+
+
 std::string Policy::getNextAction() const {
 
 
     PyRun_SimpleString("act = mainSolver.policy.nextPossibleAction()");
 
-
     std::stringstream ss;
-
-    ss << "Next expected action(s) : ";
 
     PyObject* plan = PyObject_GetAttrString(main,"act");
     PyObject * temp_bytes = PyUnicode_AsEncodedString(plan, "UTF-8", "strict"); // Owned reference
@@ -109,6 +123,11 @@ std::string Policy::getNextAction() const {
         Py_DecRef(plan);
 
         ss << my_result;
+        std::string temp = ss.str();
+        temp =getFirst(temp);
+        ss.str("");
+        ss << temp;
+
 
     } else {
         ss << "Ca marche pas";

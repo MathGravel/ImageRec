@@ -4,14 +4,13 @@
 
 #include "MaskRCNN.h"
 
-MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain) {
+MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain, float _prob) {
 
     width = 300;
     height = 300;
     resizeRatio = width / (float) height;
-    meanRatio = 127;
-    scaleFactor = 0.01f;
     network = inference_path + "/graph.pb";
+    confidenceThreshold = _prob;
     networkDef = inference_path + "/label.pbtxt";
     main = estMain;
     neuralNetwork = cv::dnn::readNetFromTensorflow(network,networkDef);
@@ -43,19 +42,7 @@ MaskRCNN::~MaskRCNN() {
 std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
     std::vector<DetectedObject> objets;
-  //  this->color_pic.release();
-    //this->depth_pic.release();
-    //this->originalColor.release();
-    //this->originalColor = color.clone();
 
-
-    //this->color_pic = color.clone();
-    //this->depth_pic = depth.clone();
-
-
-    //cv::resize(this->color_pic,this->color_pic,Size(1280,720));
-
-   // Mat blob = blobFromImage(this->color_pic,scaleFactor,Size(width,height),Scalar(),true);
     Mat blob = blobFromImage(color, 1/100.0,
                                   Size(300, 300),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
 
@@ -66,7 +53,6 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
     color = color(crop);
     depth = depth(crop);
 
-    float confidenceThreshold = 0.4f;
     for(int i = 0; i < matricesDet.rows; i++)
     {
         float confidence = matricesDet.at<float>(i, 2);
@@ -86,10 +72,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
             object = object  & cv::Rect(0, 0, depth.cols, depth.rows);
 
-            // Calculate mean depth inside the detection region
-            // This is a very naive way to estimate objects depth
-            // but it is intended to demonstrate how one might
-            // use depht data in general
+
             Scalar m = mean(depth(object));
             object.x += startingPos.x;
             object.y += startingPos.y;
