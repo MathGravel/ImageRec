@@ -11,6 +11,8 @@
 #include <gtkmm/drawingarea.h>
 #include <cairomm/context.h>
 #include "selectiveSearchDepth.h"
+#include <gdkmm/general.h>
+#include <glibmm/main.h>
 #include <opencv2/opencv.hpp>
 #include "Kinect.h"
 #include "ImageSegmentationManual.h"

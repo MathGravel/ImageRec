@@ -114,7 +114,7 @@ ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 #add_executable (ImageRec ${ImageRec_SOURCES} )
 #target_include_directories(ImageRec PRIVATE ${ImageRec_INCLUDE_DIRS})
 
-add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp  "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" "Source files/Items.cpp"  FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h  GoogleCNN.cpp GoogleCNN.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h ObjectAff.cpp ObjectAff.h Affordance.h "Header files/CNN/RCNN.h" "Source files/CNN/RCNN.cpp" "Header files/ActivityRegion.h" "Source files/ActivityRegion.cpp" Policy.cpp Policy.h RealSenseVideo.cpp RealSenseVideo.h)
+add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp  "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h ObjectAff.cpp ObjectAff.h Affordance.h "Header files/CNN/RCNN.h" "Source files/CNN/RCNN.cpp" "Header files/ActivityRegion.h" "Source files/ActivityRegion.cpp" Policy.cpp Policy.h RealSenseVideo.cpp RealSenseVideo.h)
 
 
 

@@ -1,15 +1,6 @@
 #include "VideoArea.hpp"
 
-#include <gdkmm/general.h>
-#include <glibmm/main.h>
-#include <gdkmm/pixbuf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <chrono>
-#include <ctime>
-#include <functional>     // std::ref
-#include <chrono>
-#include <thread>
+
 
 struct stat info;
 
