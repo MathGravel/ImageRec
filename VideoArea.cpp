@@ -63,10 +63,7 @@ bool VideoArea::onMouseMove(GdkEventMotion *event) {
         rectROI.y = (y1 < newY ? y1 : newY);
         rectROI.height = (y1 < newY ? newY - y1 : y1 - newY);
         rectROI.width = (x1 < newX ? newX - x1 : x1 - newX);
-        //if (cmird->forceSquare) {
-        //  zone.height = (zone.height > zone.width ? zone.height : zone.width);
-        // zone.width = (zone.width > zone.height ? zone.width : zone.height);
-        //}
+
     }
     return true;
 }
@@ -137,7 +134,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
     }
 
      cv::cvtColor(formattedPic, formattedPic, CV_BGR2RGB);
-
+    cv::resize(formattedPic,formattedPic,cv::Size(1280,720));
 
     Gdk::Cairo::set_source_pixbuf(cr,
                                   Gdk::Pixbuf::create_from_data(formattedPic.data, Gdk::COLORSPACE_RGB, false, 8,
@@ -156,14 +153,9 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 void VideoArea::SegmentClassifyROI() {
     if (!chosedROI)
         return;
-    //regions.clear();
-    //probs.clear();
-    //regions.push_back(rectROI);
 
     Affordance roi = ActivityRegion::instance()->testManuallyROI(currentPic,rectROI);
     std::cout << roi << std::endl;
-
-
 }
 
 

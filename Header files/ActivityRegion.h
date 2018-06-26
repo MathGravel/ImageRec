@@ -20,6 +20,8 @@
 //#include "CNN/CaffeCNN.h"
 #include "CNN/ImgSegCNN.h"
 #include "../MaskRCNN.h"
+#include "../Yolo.h"
+
 #include <stack>
 #include <math.h>
 
@@ -47,8 +49,8 @@ public:
 
 
 
-    std::vector<DetectedObject> detectHand(cv::Mat color, cv::Mat depth);
-    std::vector<DetectedObject> detectObjets(cv::Mat color, cv::Mat depth);
+    DetectedObjects detectHand(cv::Mat color, cv::Mat depth);
+    DetectedObjects detectObjets(cv::Mat color, cv::Mat depth);
 
 
     void Update(cv::Mat vision, cv::Mat depthVision);
@@ -59,22 +61,22 @@ public:
 private:
 
     void mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes);
-    std::vector<DetectedObject> confirmAffordance(const std::vector<cv::Rect>& objets,
-                                                   const DetectedObject& hand,const cv::Mat& picture, const cv::Mat& depth);
+    std::vector<DetectedObject> confirmAffordance(const std::vector<cv::Rect>& objets, const cv::Mat& picture, const cv::Mat& depth);
 
 
 
     ObjectAffordances affordances;
 
-    AffordanceTime* currentAffordance;
-    AffordanceTime* currentAffordanceR;
-     std::string oldName;
+    std::vector<AffordanceTime*> currentAffordance;
+    std::string oldName;
 
 
 
     std::vector<cv::Rect> regions;
-    cv::Rect hand;
-    cv::Rect handR;
+
+    DetectedObjects hands;
+    DetectedObjects items;
+
     ImgSegCNN caffe;
     MaskRCNN handDetector;
     MaskRCNN objectDetector;
@@ -89,7 +91,6 @@ private:
     bool newAffordance;
     cv::Mat currentImage;
     cv::Mat currentImageDepth;
-    std::vector<DetectedObject> detect;
     cv::Mat imageROI;
 
 

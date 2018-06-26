@@ -15,16 +15,16 @@ ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/
 void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 
     std::vector<cv::Rect> objects;
-    DetectedObjects objs;
-    detect.clear();
-    std::vector<DetectedObject> objets;
-    std::vector<DetectedObject> hands;
     currentImage = vision;
     currentImageDepth = depthVision;
-    currentAffordance = NULL;
-    currentAffordanceR = NULL;
+    currentAffordance.clear();
+    hands.clear();
+    items.clear();
+
 
     if (newRegions) {
+        std::vector<DetectedObject> objets;
+
         if (!currentlySegmenting) {
             resultSeg = std::async(std::launch::async, segmentPic, vision.clone(),depthVision.clone());
             currentlySegmenting = true;
@@ -37,40 +37,28 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
             }
         }
         hands = this->detectHand(vision,depthVision);
-        if (!hands.empty())
-            hand = cv::Rect(hands.front().getObjPos());
-        else
-            hand = cv::Rect(0,0,0,0);
 
         if (!objets.empty() && !hands.empty()) {
 
-            detect = confirmAffordance(objects,hands.front(),vision,depthVision);
-            objs = DetectedObjects(detect);
+            items = confirmAffordance(objects,vision,depthVision);
         }
 
     } else {
-        detect = this->detectObjets(vision, depthVision);
+        items = this->detectObjets(vision, depthVision);
         hands = this->detectHand(vision,depthVision);
-        if (!hands.empty()) {
-            hand = cv::Rect(hands.front().getObjPos());
-            handR = cv::Rect(0,0,0,0);
-        }
-        else
-            hand = cv::Rect(0,0,0,0);
-        if (!detect.empty() && !hands.empty()) {
-            currentAffordance = affordances.findAffordance(detect, hands.front());
-            if (currentAffordance != NULL) {
-                currentAffordances.push(currentAffordance);
-                oldName = currentAffordance->getAffordance().getName() ;
+
+
+        if (!items.empty() && !hands.empty()) {
+            currentAffordance = affordances.findAffordances(items, hands);
+            if (!currentAffordance.empty()) {
+
+                for (std::vector<AffordanceTime*>::iterator it = currentAffordance.begin();it != currentAffordance.end();++it)
+                    currentAffordances.push(*it);
+
+               // oldName = currentAffordance->getAffordance().getName() ;
 
             }
-            if (hands.size() > 1) {
-                handR = cv::Rect(hands.back().getObjPos());
-                currentAffordanceR = affordances.findAffordance(detect, hands.back());
-                if (currentAffordanceR != NULL) {
-                    currentAffordances.push(currentAffordanceR);
-                }
-            }
+
         }
 
     }
@@ -78,44 +66,38 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 }
 
 void ActivityRegion::updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI) {
-    std::vector<cv::Rect> objects;
-    DetectedObjects objs;
-    std::vector<DetectedObject> detect;
-    std::vector<DetectedObject> hands;
+
     currentImage = vision;
     currentImageDepth = depthVision;
-
+    hands.clear();
+    items.clear();
 
     regions.push_back(chosenROI);
 
     hands = this->detectHand(vision,depthVision);
-    hand = hands.front().getObjPos();
-    if (!objects.empty() && !hands.empty()) {
 
-        detect = confirmAffordance(objects,hands.front(),vision,depthVision);
-        objs = DetectedObjects(detect);
-    }
-    if (!detect.empty())
-        currentAffordance = affordances.findAffordances(objs,detect.front());
+    //A completer.
+
 }
 
 Affordance ActivityRegion::testManuallyROI(cv::Mat vision,  cv::Rect chosenROI) {
     std::pair<std::string,float> prediction = caffe.predict(vision(chosenROI)) ;
     Affordance aff(prediction.first,prediction.second,chosenROI,prediction.second);
-
     return aff;
 }
 
 
-std::vector<DetectedObject> ActivityRegion::confirmAffordance(const std::vector<cv::Rect>& objets, const DetectedObject& hand, const cv::Mat & picture, const cv::Mat & depth) {
+std::vector<DetectedObject> ActivityRegion::confirmAffordance(const std::vector<cv::Rect>& objets, const cv::Mat & picture, const cv::Mat & depth) {
 
     std::vector<DetectedObject> classes;
 
     for (auto & region : objets) {
+        for (auto& hand : hands) {
         if ( (region & hand.getObjPos()).area() > 0) {
-            std::pair<std::string,float> prediction = caffe.predict(picture(region)) ;
-            DetectedObject detected(region,prediction.first,mean(depth(region))[0],prediction.second);
+            std::pair<std::string, float> prediction = caffe.predict(picture(region));
+            DetectedObject detected(region, prediction.first, mean(depth(region))[0], prediction.second);
             classes.push_back(detected);
+        }
         }
     }
     return classes;
@@ -133,8 +115,8 @@ cv::Mat ActivityRegion::getImageWithROI() const {
             cv::rectangle(pic, reg, cv::Scalar(100, 100, 100),3);
         }
     }
-    else if (!detect.empty()) {
-        for (auto &reg : detect) {
+    else if (!items.empty()) {
+        for (auto &reg : items) {
             cv::rectangle(pic, reg.getObjPos(), cv::Scalar(0, 0, 250),4);
             if (oldName == reg.getObjName()) {
                 cv::rectangle(pic, reg.getObjPos(), cv::Scalar(250, 0, 0),4);
@@ -147,53 +129,40 @@ cv::Mat ActivityRegion::getImageWithROI() const {
                 textBox.height = text.height;
                 cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
             }
+      }
+    }
+    int ii = 0;
+    for (auto & hand : hands) {
 
-           /* std::string val = reg.getObjName() + " " + std::to_string((int)floor(reg.getProb() * 100)) + "%";
+        cv::rectangle(pic, hand.getObjPos(), cv::Scalar(125, 125, 0), 4);
+        std::string val = "Main " + std::to_string((int) floor(hand.getProb() * 100)) + "%";
+
+        cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
+        cv::Rect textBox(hand.getObjPos());
+        textBox.y += textBox.height;
+        textBox.height = text.height;
+        cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
+                    thickness, 8);
+
+    }
+
+    if (!currentAffordance.empty()) {
+        for (std::vector<AffordanceTime *>::const_iterator it = currentAffordance.begin(); it != currentAffordance.end();it++) {
+
+            Affordance &pos = (*it)->getAffordance();
+            cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0), 4);
+
+            std::string val = pos.getName() + " " + std::to_string((int) floor(pos.getObjectProbability() * 100)) + "%";
 
             cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
-            cv::Rect textBox(reg.getObjPos());
+            cv::Rect textBox(pos.getRegion());
             textBox.y += textBox.height;
-           textBox.height = text.height;
-            cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);*/
+            textBox.height = text.height;
+            cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
+                        thickness, 8);
         }
     }
-    if (hand.x != 0 && hand.y != 0) {
-        cv::rectangle(pic, hand, cv::Scalar(125, 125, 0), 4);
-        //std::string val = "Mains";
 
-       // cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
-       // cv::Rect textBox(hand);
-        //textBox.y += textBox.height;
-        //textBox.height = text.height;
-        //cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
-    }
-    if (handR.x != 0 && handR.y != 0) {
-        cv::rectangle(pic, handR, cv::Scalar(125, 125, 0), 4);
-    }
-    if (currentAffordance != NULL) {
-        Affordance & pos = currentAffordance->getAffordance();
-        cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0),4);
-
-        std::string val = pos.getName() + " " + std::to_string((int)floor(pos.getObjectProbability() * 100)) + "%";
-
-        cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
-        cv::Rect textBox(pos.getRegion());
-        textBox.y += textBox.height;
-        textBox.height = text.height;
-        cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
-    }
-    if (currentAffordanceR != NULL) {
-        Affordance & pos = currentAffordanceR->getAffordance();
-        cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0),4);
-
-        std::string val = pos.getName() + " " + std::to_string((int)floor(pos.getObjectProbability() * 100)) + "%";
-
-        cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
-        cv::Rect textBox(pos.getRegion());
-        textBox.y += textBox.height;
-        textBox.height = text.height;
-        cv::putText(pic,val,cv::Point(textBox.x,textBox.y + text.height),fontface, scale, CV_RGB(0,250,0), thickness, 8);
-    }
 
     return pic;
 }
@@ -239,35 +208,17 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic) {
 
 }
 
-void ActivityRegion::mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes)
-{
-    cv::Mat mask = cv::Mat::zeros(image.size(), CV_8UC1); // Mask of original image
-    cv::Size scaleFactor(10,10); // To expand rectangles, i.e. increase sensitivity to nearby rectangles. Doesn't have to be (10,10)--can be anything
-    for (int i = 0; i < inputBoxes.size(); i++)
-    {
-        cv::Rect box = inputBoxes.at(i) + scaleFactor;
-        cv::rectangle(mask, box, cv::Scalar(255), CV_FILLED); // Draw filled bounding boxes on mask
-    }
 
-    std::vector<std::vector<cv::Point>> contours;
-    // Find contours in mask
-    // If bounding boxes overlap, they will be joined by this function call
-    cv::findContours(mask, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
-    for (int j = 0; j < contours.size(); j++)
-    {
-        outputBoxes.push_back(cv::boundingRect(contours.at(j)));
-    }
-}
 
 template<typename Base, typename T>
 inline bool instanceof(const T*) {
     return std::is_base_of<Base, T>::value;
 }
 
-std::vector<DetectedObject> ActivityRegion::detectHand(cv::Mat color, cv::Mat depth) {
-    return handDetector.findObjects(color,depth) ;
+DetectedObjects ActivityRegion::detectHand(cv::Mat color, cv::Mat depth) {
+    return DetectedObjects(handDetector.findObjects(color,depth)) ;
 }
 
-std::vector<DetectedObject> ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {
-    return objectDetector.findObjects(color,depth) ;
+DetectedObjects ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {
+    return DetectedObjects(objectDetector.findObjects(color,depth)) ;
 }

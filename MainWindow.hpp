@@ -21,15 +21,10 @@
 #include <gtkmm/offscreenwindow.h>
 #include "FileManager.h"
 #include "ImageSegmentationManual.h"
-#include "KinectTreatment.h"
 #include "RealSense.h"
 #include "RealSenseVideo.h"
-
 #include "Policy.h"
-
 #include "Header files/CNN/CaffeCNN.h"
-
-
 #include "VideoArea.hpp"
 
 class MainWindow : public Gtk::Window {
@@ -121,7 +116,6 @@ private:
     std::atomic<bool> isStopped;
     VideoSource *cameraFeed;
     std::string previous;
-    KinectTreatment *kinTreat = NULL;
     Policy p;
     ActivityRegion *act;
     bool segImg = false;

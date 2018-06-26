@@ -174,10 +174,8 @@ MainWindow::~MainWindow() {
     isStopped.store(true);
     if (cameraFeed != NULL)
         delete cameraFeed;
-    if (kinTreat != NULL)
-        delete kinTreat;
+
     cameraFeed = NULL;
-    kinTreat = NULL;
 }
 
 void MainWindow::start_thread(){

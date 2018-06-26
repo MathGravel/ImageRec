@@ -7,13 +7,16 @@
 
 #include <opencv2/dnn.hpp>
 #include <vector>
+#include <iostream>
+#include <fstream>
 
 #include "DetectedObject.h"
+#include "Detector.h"
 
 using namespace cv;
 using namespace cv::dnn;
 
-class MaskRCNN {
+class MaskRCNN : public Detector {
 
 public:
     MaskRCNN(std::string inference_path, int imgHeight,int imgWidth, bool estMain,float _prob);
@@ -22,7 +25,7 @@ public:
 
 private:
 
-    std::string classNames[10]  = {"Background","teapot","can","chocolate","tea","coffee","coffeemaker","mug","pitcher","milk"};
+    std::string* classNames;
     std::vector<DetectedObject> objects;
     std::string network;
     std::string networkDef;

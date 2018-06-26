@@ -8,10 +8,7 @@
 #include <opencv2/opencv.hpp>
 #include <map>
 
-using namespace cv;
-
 typedef std::map<std::string, float> Predictions;
-
 
 class DetectedMatrice{
 public:
@@ -19,9 +16,10 @@ public:
         objPos = position;
         preds = pre;
         dist = _dist;
+
     }
 
-    const Rect &getObjPos() const {
+    const cv::Rect &getObjPos() const {
         return objPos;
     }
 
@@ -76,7 +74,7 @@ public:
     }
 
 
-    const Rect &getObjPos() const {
+    const cv::Rect &getObjPos() const {
         return objPos;
     }
 
@@ -98,6 +96,12 @@ private:
     std::string objName;
     double dist;
     double prob;
+
+    friend std::ostream& operator<<(std::ostream& o,const DetectedObject& obj){
+        o << obj.objName << " " << obj.prob << std::endl;
+        return o;
+    }
+
 
 };
 
@@ -121,23 +125,27 @@ public:
 
     }
 
-    DetectedObjects(std::vector<DetectedObject>& objets) {
+    DetectedObjects(std::vector<DetectedObject> objets) {
         objs = objets;
 
     };
 
 
-    DetectedObject * begin()
+    const DetectedObject * begin() const
     {
         return & (*objs.begin());
     }
-    DetectedObject * end()
+    const DetectedObject * end() const
     {
         return & (*objs.end());
     }
 
-    bool empty() {
+    bool empty() const {
         return objs.empty();
+    }
+
+    void clear()  {
+        objs.clear();
     }
 
 

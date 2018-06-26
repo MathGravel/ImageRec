@@ -8,14 +8,15 @@ MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool e
 
     width = 300;
     height = 300;
+    imgHeight = 480;
+    imgWidth = 640;
     resizeRatio = width / (float) height;
     network = inference_path + "/graph.pb";
     confidenceThreshold = _prob;
     networkDef = inference_path + "/label.pbtxt";
     main = estMain;
     neuralNetwork = cv::dnn::readNetFromTensorflow(network,networkDef);
-    //neuralNetwork.setPreferableBackend()
-    //cropSize = Size(static_cast<int>(imgHeight * resizeRatio),imgWidth);
+
 
     if (imgWidth/ (float)imgHeight > resizeRatio)
     {
@@ -32,26 +33,62 @@ MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool e
     //crop.height = crop.height + crop.y >= imgHeight ? crop.height - crop.y: crop.height;
 
     startingPos = Point( (imgWidth- cropSize.width) / 2, (imgHeight - cropSize.height) / 2);
+
+    std::ifstream inputFile(inference_path + "/classes.name");        // Input file stream object
+
+    // Check if exists and then open the file.
+    if (inputFile.good()) {
+        // Push items into a vector
+        int nbClasses = 0;
+        inputFile >> nbClasses;
+        classNames = new std::string[nbClasses + 1];
+        int i = 0;
+        std::string temp;
+        while (inputFile >> temp){
+            classNames[i] = temp;
+            i++;
+        }
+        // Close the file.
+        inputFile.close();
+
+    } else {
+        std::cerr << "The classes names file is not available";
+        exit(-1);
+    }
+
+
 }
 
 MaskRCNN::~MaskRCNN() {
-
+    delete classNames;
 }
-
 
 std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
     std::vector<DetectedObject> objets;
 
-    Mat blob = blobFromImage(color, 1/100.0,
-                                  Size(300, 300),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
+
+
+    Mat blob;
+
+    color = color(crop);
+    depth = depth(crop);
+
+
+    if (main)
+         blob = blobFromImage(color, 1.0/100.0f,
+                                  Size(256, 256),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
+    else
+         blob = blobFromImage(color, 1.0f/150.0f,
+                                 Size(256, 256),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
+
 
     neuralNetwork.setInput(blob);
     Mat detections = neuralNetwork.forward("detection_out");
     Mat matricesDet(detections.size[2],detections.size[3],CV_32F,detections.ptr<float>());
 
-    color = color(crop);
-    depth = depth(crop);
+
+    int mm = 0;
 
     for(int i = 0; i < matricesDet.rows; i++)
     {
@@ -59,6 +96,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
         if(confidence > confidenceThreshold)
         {
+
             size_t objectClass = (size_t)(matricesDet.at<float>(i, 1));
 
             int xLeftBottom = static_cast<int>(matricesDet.at<float>(i, 3) * color.cols);
@@ -69,6 +107,11 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
             Rect object((int)xLeftBottom, (int)yLeftBottom,
                         (int)(xRightTop - xLeftBottom),
                         (int)(yRightTop - yLeftBottom));
+
+            if (main) {
+                if (object.area() > 50000)
+                    continue;
+            }
 
             object = object  & cv::Rect(0, 0, depth.cols, depth.rows);
 
@@ -81,10 +124,12 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
             nom = main ? "Hand":classNames[objectClass];
 
             DetectedObject obj(object,nom,m[0],confidence);
+            std::cout << obj << std::endl;
             objets.push_back(obj);
 
         }
     }
+
     return objets;
 
 

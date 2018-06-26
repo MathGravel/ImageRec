@@ -50,6 +50,10 @@ set(Caffe_DEFINITIONS "-DUSE_OPENCV;-DUSE_LMDB;-DUSE_LEVELDB")
 
 
 
+add_library(libdarknet SHARED IMPORTED)
+set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /home/uqamportable/Documents/RobotLib/darknet/libdarknet.so)
+link_directories(/home/uqamportable/Documents/RobotLib/darknet/include)
+link_directories(/home/uqamportable/Documents/RobotLib/darknet)
 
 include_directories(${Caffe_INCLUDE_DIRS})
 link_directories(${Caffe_LIBRARY_DIRS})
@@ -114,7 +118,7 @@ ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 #add_executable (ImageRec ${ImageRec_SOURCES} )
 #target_include_directories(ImageRec PRIVATE ${ImageRec_INCLUDE_DIRS})
 
-add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp  "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" FileManager.cpp FileManager.h KinectTreatment.cpp KinectTreatment.h WebCam.cpp WebCam.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h ObjectAff.cpp ObjectAff.h Affordance.h "Header files/CNN/RCNN.h" "Source files/CNN/RCNN.cpp" "Header files/ActivityRegion.h" "Source files/ActivityRegion.cpp" Policy.cpp Policy.h RealSenseVideo.cpp RealSenseVideo.h)
+add_executable(ImageRec VideoArea.cpp MainWindow.cpp main.cpp  "Source files/ImageSegmentationManual.cpp" "Header files/ImageSegmentationManual.h" FileManager.cpp FileManager.h RealSense.cpp  Classifier.cpp "Source files/CNN/CaffeCNN.cpp" Socket.cpp "Header files/CNN/ImgSegCNN.h" "Source files/CNN/ImgSegCNN.cpp" selectiveSearchDepth.h MaskRCNN.cpp MaskRCNN.h DetectedObject.h ObjectAff.cpp ObjectAff.h Affordance.h "Header files/CNN/RCNN.h" "Source files/CNN/RCNN.cpp" "Header files/ActivityRegion.h" "Source files/ActivityRegion.cpp" Policy.cpp Policy.h RealSenseVideo.cpp RealSenseVideo.h Yolo.cpp Yolo.h Detector.h)
 
 
 
@@ -129,3 +133,6 @@ TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${freenect2_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${Caffe_LIBRARIES} -lglog -lprotobuf -lboost_system)
 target_link_libraries(${CMAKE_PROJECT_NAME} ${Protobuf_LIBRARIES})
 target_link_libraries(${CMAKE_PROJECT_NAME} ${PYTHON_LIBRARIES})
+target_link_libraries(${CMAKE_PROJECT_NAME} libdarknet)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /home/uqamportable/Documents/RobotLib/darknet/include)
+

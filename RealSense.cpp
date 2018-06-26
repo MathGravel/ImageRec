@@ -140,7 +140,5 @@ cv::Mat RealSense::depth_frame_limit(const rs2::pipeline& pipe, const rs2::depth
             .get_depth_scale();
     dm = dm * depth_scale;
 
-    std::cout << dm.at<Vec3b>(1,1) << std::endl;
-
     return dm;
 }
