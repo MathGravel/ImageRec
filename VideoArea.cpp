@@ -19,11 +19,13 @@ VideoArea::VideoArea() : cv_opened(false) {
     this->signal_motion_notify_event().connect(sigc::mem_fun(*this, &VideoArea::onMouseMove));
     this->signal_button_release_event().connect(sigc::mem_fun(*this, &VideoArea::onMouseUp));
     //this->add_events(Gdk::DRAG_ENTER | Gdk::DRAG_LEAVE | Gdk::DRAG_MOTION);
+    vidCap.open("trace/trace.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(640,480));
 }
 
 VideoArea::~VideoArea() {
     //if (sourceFeed != NULL)
     //  delete sourceFeed;
+    vidCap.release();
 }
 
 bool VideoArea::onMouseDown(GdkEventButton *event) {
@@ -44,7 +46,6 @@ bool VideoArea::onMouseDown(GdkEventButton *event) {
 }
 
 bool VideoArea::onMouseUp(GdkEventButton *event) {
-    std::cout << "OnMouseUp" << std::endl;
     if (on_dragged) {
         on_dragged = false;
     }
@@ -132,9 +133,12 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
         chosenROI = currentPic(rectROI);
 
     }
+    vidCap << formattedPic;
 
-     cv::cvtColor(formattedPic, formattedPic, CV_BGR2RGB);
+    cv::cvtColor(formattedPic, formattedPic, CV_BGR2RGB);
     cv::resize(formattedPic,formattedPic,cv::Size(1280,720));
+
+
 
     Gdk::Cairo::set_source_pixbuf(cr,
                                   Gdk::Pixbuf::create_from_data(formattedPic.data, Gdk::COLORSPACE_RGB, false, 8,
@@ -143,8 +147,7 @@ bool VideoArea::on_draw(const Cairo::RefPtr<Cairo::Context> &cr) {
 
 
     cr->paint();
-    skipframes++;
-    skipframes = skipframes % 10;
+
     //imgScreen.release();
 
     return true;
@@ -155,7 +158,6 @@ void VideoArea::SegmentClassifyROI() {
         return;
 
     Affordance roi = ActivityRegion::instance()->testManuallyROI(currentPic,rectROI);
-    std::cout << roi << std::endl;
 }
 
 

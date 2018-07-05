@@ -6,10 +6,11 @@
 
 MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain, float _prob) {
 
-    width = 300;
-    height = 300;
-    imgHeight = 480;
+    width = 640;
+    height = 480;
     imgWidth = 640;
+    imgHeight = 480;
+
     resizeRatio = width / (float) height;
     network = inference_path + "/graph.pb";
     confidenceThreshold = _prob;
@@ -34,7 +35,7 @@ MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool e
 
     startingPos = Point( (imgWidth- cropSize.width) / 2, (imgHeight - cropSize.height) / 2);
 
-    std::ifstream inputFile(inference_path + "/classes.name");        // Input file stream object
+     std::ifstream inputFile(inference_path + "/classes.name");        // Input file stream object
 
     // Check if exists and then open the file.
     if (inputFile.good()) {
@@ -56,7 +57,6 @@ MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool e
         exit(-1);
     }
 
-
 }
 
 MaskRCNN::~MaskRCNN() {
@@ -71,16 +71,16 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
     Mat blob;
 
-    color = color(crop);
-    depth = depth(crop);
+    //color = color(crop);
+    //depth = depth(crop);
 
 
     if (main)
          blob = blobFromImage(color, 1.0/100.0f,
                                   Size(256, 256),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
     else
-         blob = blobFromImage(color, 1.0f/150.0f,
-                                 Size(256, 256),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
+         blob = blobFromImage(color, 1.0f/200.0f,
+                                 Size(300, 300),Scalar(127.5,127.5,127.5),true,false); //Convert Mat to batch of images
 
 
     neuralNetwork.setInput(blob);
@@ -98,6 +98,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
         {
 
             size_t objectClass = (size_t)(matricesDet.at<float>(i, 1));
+
 
             int xLeftBottom = static_cast<int>(matricesDet.at<float>(i, 3) * color.cols);
             int yLeftBottom = static_cast<int>(matricesDet.at<float>(i, 4) * color.rows);
@@ -117,19 +118,17 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
 
             Scalar m = mean(depth(object));
-            object.x += startingPos.x;
-            object.y += startingPos.y;
+
+            //object.x += startingPos.x;
+           // object.y += startingPos.y;
 
             std::string nom = "";
-            nom = main ? "Hand":classNames[objectClass];
+            nom = classNames[objectClass-1];
 
             DetectedObject obj(object,nom,m[0],confidence);
-            std::cout << obj << std::endl;
             objets.push_back(obj);
-
         }
     }
-
     return objets;
 
 

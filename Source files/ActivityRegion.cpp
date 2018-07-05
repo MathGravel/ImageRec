@@ -6,7 +6,7 @@
 ActivityRegion* ActivityRegion::ar_instance = NULL;
 
 ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true,0.5f),
-                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false,0.4f),
+                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false,0.30f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 
@@ -45,8 +45,25 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 
     } else {
         items = this->detectObjets(vision, depthVision);
-        hands = this->detectHand(vision,depthVision);
+        //hands = this->detectHand(vision,depthVision);
 
+        //Test pour le corpus Kitchen ou les mains sont dans le meme systeme.
+        std::vector<DetectedObject> mains;
+        std::vector<DetectedObject> newit;
+
+        for (auto it : items) {
+            if (it.getObjName() == "Hand") {
+                mains.push_back(it);
+                //exit(-1);
+            }
+            else {
+                newit.push_back(it);
+            }
+
+        }
+
+        hands = DetectedObjects(mains);
+        items = DetectedObjects(newit);
 
         if (!items.empty() && !hands.empty()) {
             currentAffordance = affordances.findAffordances(items, hands);
@@ -107,7 +124,7 @@ std::vector<DetectedObject> ActivityRegion::confirmAffordance(const std::vector<
 cv::Mat ActivityRegion::getImageWithROI() const {
     int fontface = cv::FONT_HERSHEY_SIMPLEX;
     double scale = 1;
-    int thickness = 2;
+    int thickness = 1;
     int baseline = 0;
     cv::Mat pic = currentImage.clone();
     if (! regions.empty()) {
@@ -161,6 +178,7 @@ cv::Mat ActivityRegion::getImageWithROI() const {
             cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
                         thickness, 8);
         }
+
     }
 
 

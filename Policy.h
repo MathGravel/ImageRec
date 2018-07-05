@@ -9,15 +9,17 @@
 #include <string>
 #include "Affordance.h"
 #include <sstream>
+#include <iostream>
+#include <fstream>
 
 
 class Policy {
 
 public:
     Policy();
-
+    ~Policy();
     bool load(std::string policy) const;
-    bool update(Affordance observation) const;
+    bool update(Affordance observation);
     std::string getNextAction() const;
     std::string getCurrentPlan() const;
     std::string getCurrentPlanProb() const;
@@ -28,6 +30,8 @@ public:
 private:
     PyObject* main;
     PyObject* solver;
+    std::ofstream textFile;
+
 
     enum charTypeT{ other, alpha, digit};
 

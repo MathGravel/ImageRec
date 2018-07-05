@@ -102,7 +102,7 @@ private:
     cv::Mat AddData();
     //MaskRCNN handDetector;
     ActivityRegion* act;
-
+    cv::VideoWriter vidCap;
 
 
     std::vector<cv::Rect> regions;

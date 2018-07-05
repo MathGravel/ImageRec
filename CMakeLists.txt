@@ -36,9 +36,9 @@ endif()
 get_filename_component(Caffe_CMAKE_DIR "/home/uqamportable/Documents/RobotLib/caffe/build/cmake" PATH)
 message(${PYTHON_LIBRARIES})
 
-#if(NOT TARGET caffe AND NOT caffe_BINARY_DIR)
+if(NOT TARGET caffe AND NOT caffe_BINARY_DIR)
 include("//home/uqamportable/Documents/RobotLib/caffe/build/CaffeTargets.cmake")
-#endif()
+endif()
 
 # List of IMPORTED libs created by CaffeTargets.cmake
 #set(Caffe_LIBRARIES "/home/uqamportable/Documents/RobotLib/caffe/build/lib/libcaffe.so")

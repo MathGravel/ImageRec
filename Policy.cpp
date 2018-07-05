@@ -26,21 +26,32 @@ Policy::Policy() {
     PyRun_SimpleString("mainSolver = solver()");
     solver = PyObject_GetAttrString(main,"mainSolver");
 
-    PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
+    PyRun_SimpleString("mainSolver.loadPolicy(\"planBib.dot\")");
     //PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
 
+    textFile = std::ofstream("trace/trace.txt");
 
 
 
 }
 
-bool Policy::update(Affordance observation) const {
+Policy::~Policy() {
+    textFile.close();
+}
+
+bool Policy::update(Affordance observation)  {
 
     std::stringstream ss;
     ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
     std::cout << ss.str();
     PyRun_SimpleString(ss.str().c_str());
+    std::time_t t = std::time(0);
+    std::tm* now = std::localtime(&t);
+    std::stringstream sss;
 
+    sss  << now->tm_hour << ' ' << now->tm_min << ' ' << now->tm_sec  <<": ";
+    sss  << observation.getName() << " " << observation.getObjectProbability() << std::endl;
+    textFile << sss.str();
     return true;
 }
 

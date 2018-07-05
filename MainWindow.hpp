@@ -24,7 +24,6 @@
 #include "RealSense.h"
 #include "RealSenseVideo.h"
 #include "Policy.h"
-#include "Header files/CNN/CaffeCNN.h"
 #include "VideoArea.hpp"
 
 class MainWindow : public Gtk::Window {
