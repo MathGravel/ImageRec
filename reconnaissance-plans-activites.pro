@@ -11,8 +11,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        main.cpp \
-        src/fenetreprincipale.cpp
+        src/fenetreprincipale.cpp \
+    src/main.cpp
 
 HEADERS += \
         src/fenetreprincipale.h
