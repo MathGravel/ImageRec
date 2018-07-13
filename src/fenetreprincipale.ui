@@ -1,24 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>FenetrePrincipale</class>
- <widget class="QMainWindow" name="FenetrePrincipale" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="FenetrePrincipale">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>781</width>
+    <height>540</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>FenetrePrincipale</string>
+  <property name="windowTitle">
+   <string>Reconnaissance de plans et d'activités - UQAM</string>
   </property>
-  <widget class="QMenuBar" name="menuBar" />
-  <widget class="QToolBar" name="mainToolBar" />
-  <widget class="QWidget" name="centralWidget" />
-  <widget class="QStatusBar" name="statusBar" />
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/icone.png</normaloff>images/icone.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #ffffff;</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
  </widget>
- <layoutDefault spacing="6" margin="11" />
- <pixmapfunction></pixmapfunction>
+ <layoutdefault spacing="6" margin="11"/>
  <resources/>
  <connections/>
 </ui>
