@@ -12,10 +12,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        fenetreprincipale.cpp
+        src/fenetreprincipale.cpp
 
 HEADERS += \
-        fenetreprincipale.h
+        src/fenetreprincipale.h
 
 FORMS   += \
-        fenetreprincipale.ui
+        src/fenetreprincipale.ui
