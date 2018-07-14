@@ -4,8 +4,8 @@
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
-    FenetrePrincipale w;
-    w.show();
+    FenetrePrincipale fenetre;
+    fenetre.show();
 
     return app.exec();
 }

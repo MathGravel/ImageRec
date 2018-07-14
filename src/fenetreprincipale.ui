@@ -6,12 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>781</width>
-    <height>540</height>
+    <width>1024</width>
+    <height>580</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>580</height>
+   </size>
+  </property>
   <property name="windowTitle">
-   <string>Reconnaissance de plans et d'activités - UQAM</string>
+   <string>Reconnaissance de plans et d'activités</string>
   </property>
   <property name="windowIcon">
    <iconset>
@@ -20,7 +26,180 @@
   <property name="styleSheet">
    <string notr="true">background-color: #ffffff;</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="widgetprincipal">
+   <widget class="QFrame" name="video">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>654</width>
+      <height>397</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #ffffff;
+border: 2px solid #666666;
+margin: 5px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="media">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>7</y>
+       <width>640</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;
+border: none;
+margin: 0;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QFrame" name="indication">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>367</y>
+       <width>644</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #ffffff;
+border: 2px solid #666666;
+margin: 0;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <zorder>indication</zorder>
+    <zorder>media</zorder>
+   </widget>
+   <widget class="QFrame" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>0</y>
+      <width>351</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #eee;
+border: none;
+margin: 5px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="infos">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>1001</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #eee;
+border: none;
+margin: 5px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QFrame" name="activites">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ddd;
+border: none;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="planificateur">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ddd;
+border: none;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="feedback">
+       <property name="styleSheet">
+        <string notr="true">background-color: #ddd;
+border: none;</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="boutons">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>193</y>
+      <width>351</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #eee;
+border: none;
+margin: 5px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
