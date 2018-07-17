@@ -19,3 +19,9 @@ HEADERS += \
 
 FORMS   += \
         fenetreprincipale.ui
+
+DISTFILES +=
+
+RESOURCES += \
+    images.qrc \
+    icones.qrc

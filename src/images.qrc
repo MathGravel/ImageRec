@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/gdac.png</file>
+        <file>images/uqam.png</file>
+        <file>images/agewell.png</file>
+    </qresource>
+</RCC>
