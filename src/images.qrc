@@ -3,5 +3,7 @@
         <file>images/gdac.png</file>
         <file>images/uqam.png</file>
         <file>images/agewell.png</file>
+        <file>images/icone.png</file>
+        <file>images/logo.png</file>
     </qresource>
 </RCC>

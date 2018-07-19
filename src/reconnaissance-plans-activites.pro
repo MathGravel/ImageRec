@@ -24,4 +24,5 @@ DISTFILES +=
 
 RESOURCES += \
     images.qrc \
-    icones.qrc
+    icones.qrc \
+    fonts.qrc
