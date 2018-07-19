@@ -30,7 +30,7 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QGridLayout" name="gridLayout" rowstretch="8,8,10" columnstretch="2,1">
+   <layout class="QGridLayout" name="gridLayout" rowstretch="10,6,10" columnstretch="2,1">
     <property name="leftMargin">
      <number>15</number>
     </property>
@@ -223,7 +223,7 @@ border: none;</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="spacing">
-        <number>30</number>
+        <number>10</number>
        </property>
        <property name="sizeConstraint">
         <enum>QLayout::SetMaximumSize</enum>
@@ -232,16 +232,16 @@ border: none;</string>
         <number>10</number>
        </property>
        <property name="topMargin">
-        <number>30</number>
+        <number>10</number>
        </property>
        <property name="rightMargin">
         <number>10</number>
        </property>
        <property name="bottomMargin">
-        <number>30</number>
+        <number>10</number>
        </property>
        <item>
-        <widget class="QLabel" name="uqam">
+        <widget class="Image" name="uqam">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -250,26 +250,26 @@ border: none;</string>
          </property>
          <property name="minimumSize">
           <size>
-           <width>302</width>
-           <height>50</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>550</width>
-           <height>90</height>
+           <width>16777215</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="sizeIncrement">
           <size>
-           <width>1746</width>
-           <height>287</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="baseSize">
           <size>
-           <width>1746</width>
-           <height>287</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="layoutDirection">
@@ -308,7 +308,7 @@ border: none;</string>
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="gdac">
+        <widget class="Image" name="gdac">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -317,20 +317,20 @@ border: none;</string>
          </property>
          <property name="minimumSize">
           <size>
-           <width>302</width>
-           <height>47</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>550</width>
-           <height>85</height>
+           <width>16777215</width>
+           <height>16777215</height>
           </size>
          </property>
          <property name="baseSize">
           <size>
-           <width>738</width>
-           <height>114</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="mouseTracking">
@@ -350,6 +350,22 @@ border: none;</string>
          </property>
          <property name="pixmap">
           <pixmap resource="images.qrc">:/images/gdac.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Image" name="label">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="images.qrc">:/images/agewell.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -1653,9 +1669,16 @@ font-size: 14px;</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>Image</class>
+   <extends>QLabel</extends>
+   <header>image.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
-  <include location="images.qrc"/>
   <include location="icones.qrc"/>
+  <include location="images.qrc"/>
  </resources>
  <connections/>
 </ui>
