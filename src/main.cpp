@@ -5,7 +5,6 @@
 #include <QStyle>
 #include <QDesktopWidget>
 #include <QFontDatabase>
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {

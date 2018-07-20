@@ -1,7 +1,6 @@
 #include "image.h"
 
-Image::Image(QWidget *parent) :
-  QLabel(parent)
+Image::Image(QWidget *parent) : QLabel(parent)
 {
   this->setMinimumSize(1,1);
   setScaledContents(false);

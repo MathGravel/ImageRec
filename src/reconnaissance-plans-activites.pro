@@ -13,13 +13,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         fenetreprincipale.cpp \
         main.cpp \
-    image.cpp \
-    frame.cpp
+        image.cpp \
+        frame.cpp \
+        button.cpp \
+    video.cpp
 
 HEADERS += \
         fenetreprincipale.h \
-    image.h \
-    frame.h
+        image.h \
+        frame.h \
+        button.h \
+    video.h
 
 FORMS   += \
         fenetreprincipale.ui
@@ -27,6 +31,6 @@ FORMS   += \
 DISTFILES +=
 
 RESOURCES += \
-    images.qrc \
-    icones.qrc \
-    fonts.qrc
+        images.qrc \
+        icones.qrc \
+        fonts.qrc
