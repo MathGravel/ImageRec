@@ -5,8 +5,9 @@ Button::Button(QWidget *parent) : QPushButton(parent) {}
 void Button::resizeEvent(QResizeEvent *)
 {
     QFont f = font();
+    QSize appSize = qApp->topLevelWidgets()[0]->size();
 
-    if ((width() > 280) && (height() >= 55)) {
+    if ((appSize.width() >= 1250) && (appSize.height() >= 800)) {
         setIconSize(QSize(20,20));
         f.setPointSize(14);
         setFont(f);

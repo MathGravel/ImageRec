@@ -1,23 +1,26 @@
-#ifndef BUTTON_H
-#define BUTTON_H
+#ifndef LABEL_H
+#define LABEL_H
 
 #include <QWidget>
-#include <QPushButton>
+#include <QLabel>
 #include <QResizeEvent>
 #include <QApplication>
 #include <QDesktopWidget>
 #include <QFont>
 #include <QSize>
 
-class Button : public QPushButton
+class Label : public QLabel
 {
     Q_OBJECT
 
     public:
-        explicit Button(QWidget *parent = nullptr);
+        explicit Label(QWidget *parent = nullptr);
 
     public slots:
         void resizeEvent(QResizeEvent *);
+
+    private:
+        int fontSize;
 };
 
-#endif // BUTTON_H
+#endif // LABEL_H

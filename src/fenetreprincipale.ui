@@ -47,10 +47,9 @@
      <number>15</number>
     </property>
     <item row="0" column="0" rowspan="2">
-     <widget class="Frame" name="video">
+     <widget class="QFrame" name="video">
       <property name="styleSheet">
        <string notr="true">background-color: #ffffff;
-/*border: 0px solid #666666;*/
 border: none;</string>
       </property>
       <property name="frameShape">
@@ -72,11 +71,14 @@ border: none;</string>
        <property name="bottomMargin">
         <number>0</number>
        </property>
-       <property name="spacing">
+       <property name="horizontalSpacing">
         <number>0</number>
        </property>
+       <property name="verticalSpacing">
+        <number>5</number>
+       </property>
        <item row="0" column="0">
-        <widget class="Video" name="media">
+        <widget class="QFrame" name="media">
          <property name="minimumSize">
           <size>
            <width>640</width>
@@ -114,8 +116,7 @@ border: none;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background-color: #eee;
-border: none;
-/*border-top: 0px solid #666666;*/</string>
+border: none;</string>
          </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -172,6 +173,18 @@ border: none;
           </item>
           <item>
            <widget class="QPushButton" name="pleinEcran">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>16</width>
+              <height>16</height>
+             </size>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
@@ -595,12 +608,18 @@ border: none;</string>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>20</height>
+              <height>16777215</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <pointsize>14</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
             <property name="styleSheet">
-             <string notr="true">font-size: 18px;
-font-weight: bold;</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Activités</string>
@@ -703,8 +722,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -787,8 +806,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -898,8 +917,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -977,7 +996,7 @@ border: none;</string>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>20</height>
+              <height>16777215</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1085,8 +1104,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1169,8 +1188,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1253,8 +1272,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1332,7 +1351,7 @@ border: none;</string>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>20</height>
+              <height>16777215</height>
              </size>
             </property>
             <property name="styleSheet">
@@ -1443,8 +1462,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1527,8 +1546,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1611,8 +1630,8 @@ font-size: 14px;</string>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>60</width>
-                    <height>20</height>
+                    <width>16777215</width>
+                    <height>16777215</height>
                    </size>
                   </property>
                   <property name="text">
@@ -1662,23 +1681,14 @@ font-size: 14px;</string>
    <class>Button</class>
    <extends>QPushButton</extends>
    <header>button.h</header>
-  </customwidget>
-  <customwidget>
-   <class>Frame</class>
-   <extends>QFrame</extends>
-   <header>frame.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>Video</class>
-   <extends>QFrame</extends>
-   <header>video.h</header>
-   <container>1</container>
+   <slots>
+    <slot>ouvrirFenetreOptions()</slot>
+   </slots>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
   <include location="icones.qrc"/>
+  <include location="images.qrc"/>
  </resources>
  <connections/>
 </ui>

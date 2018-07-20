@@ -14,19 +14,22 @@ SOURCES += \
         fenetreprincipale.cpp \
         main.cpp \
         image.cpp \
-        frame.cpp \
         button.cpp \
-    video.cpp
+    video.cpp \
+    label.cpp \
+    fenetreparametres.cpp
 
 HEADERS += \
         fenetreprincipale.h \
         image.h \
-        frame.h \
         button.h \
-    video.h
+    video.h \
+    label.h \
+    fenetreparametres.h
 
 FORMS   += \
-        fenetreprincipale.ui
+        fenetreprincipale.ui \
+    fenetreparametres.ui
 
 DISTFILES +=
 
