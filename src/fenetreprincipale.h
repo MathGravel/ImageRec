@@ -15,6 +15,7 @@ class FenetrePrincipale : public QMainWindow
     public:
         explicit FenetrePrincipale(QWidget *parent = 0);
         ~FenetrePrincipale();
+        void closeEvent(QCloseEvent *event);
 
     public slots:
         void ouvrirFenetreParametres();

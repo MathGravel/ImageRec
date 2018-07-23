@@ -1,8 +1,6 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
-#include <QMessageBox>
-
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::FenetrePrincipale)
@@ -21,4 +19,14 @@ void FenetrePrincipale::ouvrirFenetreParametres()
 {
     fenetreParametres = new FenetreParametres();
     fenetreParametres->show();
+}
+
+void FenetrePrincipale::closeEvent(QCloseEvent *event)
+{
+    if (fenetreParametres != NULL) {
+        if (!fenetreParametres->close()) {
+            event->ignore();
+        }
+    }
+    event->accept();
 }

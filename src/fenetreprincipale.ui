@@ -622,7 +622,7 @@ border: none;</string>
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Activités</string>
+             <string>Reconnaissance d'activités</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1004,7 +1004,7 @@ border: none;</string>
 font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Planificateur</string>
+             <string>Reconnaissance de plan</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1359,7 +1359,7 @@ border: none;</string>
 font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Feed-back</string>
+             <string/>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1687,8 +1687,8 @@ font-size: 14px;</string>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="icones.qrc"/>
   <include location="images.qrc"/>
+  <include location="icones.qrc"/>
  </resources>
  <connections/>
 </ui>
