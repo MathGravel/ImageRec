@@ -1,9 +1,9 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
-FenetrePrincipale::FenetrePrincipale(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::FenetrePrincipale)
+#include <QDebug>
+
+FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(new Ui::FenetrePrincipale)
 {
     ui->setupUi(this);
 
@@ -17,16 +17,6 @@ FenetrePrincipale::~FenetrePrincipale()
 
 void FenetrePrincipale::ouvrirFenetreParametres()
 {
-    fenetreParametres = new FenetreParametres();
-    fenetreParametres->show();
-}
-
-void FenetrePrincipale::closeEvent(QCloseEvent *event)
-{
-    if (fenetreParametres != NULL) {
-        if (!fenetreParametres->close()) {
-            event->ignore();
-        }
-    }
-    event->accept();
+    fenetreParametres = new FenetreParametres(this);
+    fenetreParametres->exec();
 }

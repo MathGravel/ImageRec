@@ -149,7 +149,7 @@ background: #ccc;
 }
 
 QProgressBar::chunk {
-background: #0175C0;
+background: #bbb;
 border: none;
 }</string>
             </property>
@@ -463,7 +463,7 @@ background-color: #ddd;
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
+           <width>450</width>
            <height>60</height>
           </size>
          </property>
@@ -502,7 +502,7 @@ background-color: #ddd;
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
+           <width>450</width>
            <height>60</height>
           </size>
          </property>
@@ -613,13 +613,14 @@ border: none;</string>
             </property>
             <property name="font">
              <font>
-              <pointsize>14</pointsize>
+              <pointsize>-1</pointsize>
               <weight>75</weight>
               <bold>true</bold>
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">font-size: 18px;
+font-weight: bold;</string>
             </property>
             <property name="text">
              <string>Reconnaissance d'activités</string>
@@ -1359,7 +1360,7 @@ border: none;</string>
 font-weight: bold;</string>
             </property>
             <property name="text">
-             <string/>
+             <string>Feed-back</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>

@@ -15,6 +15,10 @@ class FenetreParametres : public QDialog
         explicit FenetreParametres(QWidget *parent = 0);
         ~FenetreParametres();
 
+    public slots:
+        void fermer();
+        void enregistrer();
+
     private:
         Ui::FenetreParametres *ui;
 };

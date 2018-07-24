@@ -6,13 +6,13 @@ Image::Image(QWidget *parent) : QLabel(parent)
   setScaledContents(false);
 }
 
-void Image::setPixmap ( const QPixmap & p)
+void Image::setPixmap(const QPixmap &p)
 {
   pix = p;
   QLabel::setPixmap(scaledPixmap());
 }
 
-int Image::heightForWidth( int width ) const
+int Image::heightForWidth(int width) const
 {
   return pix.isNull() ? this->height() : ((qreal)pix.height()*width)/pix.width();
 }
