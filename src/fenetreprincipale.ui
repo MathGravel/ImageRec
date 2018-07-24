@@ -149,7 +149,7 @@ background: #ccc;
 }
 
 QProgressBar::chunk {
-background: #bbb;
+background: #999;
 border: none;
 }</string>
             </property>
@@ -1005,7 +1005,7 @@ border: none;</string>
 font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Reconnaissance de plan</string>
+             <string>Reconnaissance de plans</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1360,7 +1360,7 @@ border: none;</string>
 font-weight: bold;</string>
             </property>
             <property name="text">
-             <string>Feed-back</string>
+             <string>Prédictions</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -1688,8 +1688,8 @@ font-size: 14px;</string>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="images.qrc"/>
   <include location="icones.qrc"/>
+  <include location="images.qrc"/>
  </resources>
  <connections/>
 </ui>

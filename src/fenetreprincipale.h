@@ -2,6 +2,10 @@
 #define FENETREPRINCIPALE_H
 
 #include <QMainWindow>
+#include <QApplication>
+#include <QStyle>
+#include <QDesktopWidget>
+#include <QFontDatabase>
 #include "fenetreparametres.h"
 
 namespace Ui {
@@ -15,9 +19,12 @@ class FenetrePrincipale : public QMainWindow
     public:
         explicit FenetrePrincipale(QWidget *parent = 0);
         ~FenetrePrincipale();
+        void configuration(QApplication *app);
 
     public slots:
+        void gestionVideo();
         void ouvrirFenetreParametres();
+        void pleinEcranVideo();
 
     private:
         Ui::FenetrePrincipale *ui;

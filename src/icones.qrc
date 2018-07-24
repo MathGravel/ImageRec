@@ -4,5 +4,8 @@
         <file>logos/play.png</file>
         <file>logos/expand.png</file>
         <file>logos/cup.png</file>
+        <file>logos/arrow-bottom.png</file>
+        <file>logos/check.png</file>
+        <file>logos/check-square.png</file>
     </qresource>
 </RCC>
