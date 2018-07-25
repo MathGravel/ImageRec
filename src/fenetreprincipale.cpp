@@ -28,7 +28,7 @@ void FenetrePrincipale::configuration(QApplication *app)
 
 void FenetrePrincipale::gestionVideo()
 {
-    qDebug() << "Lancement / arrêt de la vidéo !";
+    // Lancement / arrêt de la vidéo !
 }
 
 void FenetrePrincipale::ouvrirFenetreParametres()
@@ -39,5 +39,5 @@ void FenetrePrincipale::ouvrirFenetreParametres()
 
 void FenetrePrincipale::pleinEcranVideo()
 {
-    qDebug() << "Plein écran !";
+    // Plein écran !
 }

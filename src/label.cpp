@@ -1,5 +1,4 @@
 #include "label.h"
-#include <QDebug>
 
 Label::Label(QWidget *parent) : QLabel(parent)
 {

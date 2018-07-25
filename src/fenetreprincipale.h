@@ -1,12 +1,12 @@
 #ifndef FENETREPRINCIPALE_H
 #define FENETREPRINCIPALE_H
 
+#include "fenetreparametres.h"
 #include <QMainWindow>
 #include <QApplication>
 #include <QStyle>
 #include <QDesktopWidget>
 #include <QFontDatabase>
-#include "fenetreparametres.h"
 
 namespace Ui {
     class FenetrePrincipale;

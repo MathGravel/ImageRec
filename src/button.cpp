@@ -1,5 +1,4 @@
 #include "button.h"
-#include <QDebug>
 
 Button::Button(QWidget *parent) : QPushButton(parent) {}
 
