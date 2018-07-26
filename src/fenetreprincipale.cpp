@@ -1,6 +1,5 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
-#include <QDebug>
 
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(new Ui::FenetrePrincipale)
 {

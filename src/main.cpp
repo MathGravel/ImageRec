@@ -2,7 +2,8 @@
 #include "fenetreprincipale.h"
 #include <QApplication>
 
-// Variable globale
+// Variables globales
+string fichierConfiguration = "config.txt";
 Configuration parametres;
 
 int main(int argc, char *argv[])

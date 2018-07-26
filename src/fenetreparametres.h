@@ -1,7 +1,10 @@
 #ifndef FENETREPARAMETRES_H
 #define FENETREPARAMETRES_H
 
+#include "configuration.h"
 #include <QDialog>
+
+extern Configuration parametres;
 
 namespace Ui {
     class FenetreParametres;

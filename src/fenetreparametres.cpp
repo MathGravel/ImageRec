@@ -21,5 +21,6 @@ void FenetreParametres::fermer()
 
 void FenetreParametres::enregistrer()
 {
-
+    parametres.sauvegardeParametres();
+    close();
 }
