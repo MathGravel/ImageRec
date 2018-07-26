@@ -3,7 +3,7 @@
 #include <QApplication>
 
 // Variables globales
-string fichierConfiguration = "config.txt";
+string fichierConfiguration = "config/settings.ini";
 Configuration parametres;
 
 int main(int argc, char *argv[])

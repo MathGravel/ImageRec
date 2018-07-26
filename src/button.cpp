@@ -18,6 +18,7 @@ void Button::resizeEvent(QResizeEvent *)
                 f.setPointSize(10);
                 setFont(f);
             }
+            break;
         }
     }
 }

@@ -2,6 +2,16 @@
 
 Configuration::Configuration()
 {
+    // Paramètres par défaut
+    parametres["sourceType"] = "Vidéo locale";
+    parametres["sourceChemin"] = "/home/baptiste/Vidéos/demo.mp4";
+    parametres["affichageActions"] = "Zone, nom et pourcentage";
+    parametres["affichageObjets"] = "Zone";
+    parametres["affichageMains"] = "Zone et poucentage";
+    parametres["precisionTraitement"] = "75 %";
+    parametres["langue"] = "Français";
+
+    // Chargement des paramètres du fichier
     chargementParametres();
 }
 
@@ -13,9 +23,12 @@ void Configuration::chargementParametres()
         string ligne;
 
         while(getline(fichier, ligne)) {
-            //cout << ligne << endl;
-        }
 
+            string nom = ligne.substr(0, ligne.find("="));
+            string valeur = ligne.substr(ligne.find("=")+1);
+
+            parametres[nom] = valeur;
+        }
         fichier.close();
     }
     else {
@@ -25,82 +38,27 @@ void Configuration::chargementParametres()
 
 void Configuration::sauvegardeParametres()
 {
-    cout << "Sauvegarde..." << endl;
-}
+    ofstream fichier(fichierConfiguration, ios::out | ios::trunc);
 
-void Configuration::creationFichier(bool ecraser)
-{
-    if (ecraser) {
-        // ...
+    if (fichier) {
+
+        for(map<string,string>::iterator it=parametres.begin() ; it!=parametres.end() ; ++it) {
+            fichier << it->first << "=" << it->second << endl;
+        }
+
+        fichier.close();
+    }
+    else {
+        cout << "Impossible d'ouvrir le fichier de configuration !" << endl;
     }
 }
 
-string Configuration::getSourceType() const
+string Configuration::getParametre(string nom)
 {
-    return sourceType;
+    return parametres[nom];
 }
 
-void Configuration::setSourceType(const string &value)
+void Configuration::setParametre(string nom, string valeur)
 {
-    sourceType = value;
-}
-
-string Configuration::getSourceChemin() const
-{
-    return sourceChemin;
-}
-
-void Configuration::setSourceChemin(const string &value)
-{
-    sourceChemin = value;
-}
-
-string Configuration::getAffichageActions() const
-{
-    return affichageActions;
-}
-
-void Configuration::setAffichageActions(const string &value)
-{
-    affichageActions = value;
-}
-
-string Configuration::getAffichageObjets() const
-{
-    return affichageObjets;
-}
-
-void Configuration::setAffichageObjets(const string &value)
-{
-    affichageObjets = value;
-}
-
-string Configuration::getAffichageMains() const
-{
-    return affichageMains;
-}
-
-void Configuration::setAffichageMains(const string &value)
-{
-    affichageMains = value;
-}
-
-string Configuration::getPrecisionTraitement() const
-{
-    return precisionTraitement;
-}
-
-void Configuration::setPrecisionTraitement(string value)
-{
-    precisionTraitement = value;
-}
-
-string Configuration::getLangue() const
-{
-    return langue;
-}
-
-void Configuration::setLangue(const string &value)
-{
-    langue = value;
+    parametres[nom] = valeur;
 }

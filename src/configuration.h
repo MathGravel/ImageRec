@@ -2,8 +2,10 @@
 #define CONFIGURATION_H
 
 #include <iostream>
-#include <string>
 #include <fstream>
+#include <unistd.h>
+#include <string>
+#include <map>
 
 using namespace std;
 
@@ -15,30 +17,11 @@ class Configuration
         Configuration();
         void chargementParametres();
         void sauvegardeParametres();
-        void creationFichier(bool ecraser=false);
-        string getSourceType() const;
-        void setSourceType(const string &value);
-        string getSourceChemin() const;
-        void setSourceChemin(const string &value);
-        string getAffichageActions() const;
-        void setAffichageActions(const string &value);
-        string getAffichageObjets() const;
-        void setAffichageObjets(const string &value);
-        string getAffichageMains() const;
-        void setAffichageMains(const string &value);
-        string getPrecisionTraitement() const;
-        void setPrecisionTraitement(string value);
-        string getLangue() const;
-        void setLangue(const string &value);
+        string getParametre(string nom);
+        void setParametre(string nom, string valeur);
 
-private:
-        string sourceType = "Vidéo locale";
-        string sourceChemin = "/home/baptiste/Vidéos/demo.mp4";
-        string affichageActions = "Zone, nom et pourcentage";
-        string affichageObjets = "Zone";
-        string affichageMains = "Zone et poucentage";
-        string precisionTraitement = "75 %";
-        string langue = "Français";
+    private:
+        map <string, string> parametres;
 };
 
 #endif // CONFIGURATION_H
