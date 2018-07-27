@@ -15,13 +15,8 @@ FenetrePrincipale::~FenetrePrincipale()
     delete ui;
 }
 
-void FenetrePrincipale::configuration(QApplication *app)
+void FenetrePrincipale::configuration()
 {
-    int id = QFontDatabase::addApplicationFont(":/fonts/Ubuntu/Ubuntu-Regular.ttf");
-    QString ubuntuRegular = QFontDatabase::applicationFontFamilies(id).at(0);
-    QFont ubuntu(ubuntuRegular, 8);
-    app->setFont(ubuntu);
-
     setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), qApp->desktop()->availableGeometry()));
 }
 

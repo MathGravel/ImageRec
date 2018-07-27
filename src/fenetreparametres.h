@@ -3,6 +3,8 @@
 
 #include "configuration.h"
 #include <QDialog>
+#include <QString>
+#include <QFileDialog>
 
 extern Configuration parametres;
 
@@ -17,13 +19,24 @@ class FenetreParametres : public QDialog
     public:
         explicit FenetreParametres(QWidget *parent = 0);
         ~FenetreParametres();
+        void chargementParametres();
+        void sauvegardeParametres();
+        void selectionVideo();
 
     public slots:
         void fermer();
         void enregistrer();
+        void sourceChoix(QString valeur);
+        void message();
+        void actionsChoix(QString valeur);
+        void objetsChoix(QString valeur);
+        void mainsChoix(QString valeur);
+        void traitementChoix(QString valeur);
+        void langueChoix(QString valeur);
 
     private:
         Ui::FenetreParametres *ui;
+        map <QString, QString> parametresTemporaires;
 };
 
 #endif // FENETREPARAMETRES_H

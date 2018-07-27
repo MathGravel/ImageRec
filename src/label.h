@@ -3,11 +3,6 @@
 
 #include <QWidget>
 #include <QLabel>
-#include <QResizeEvent>
-#include <QApplication>
-#include <QDesktopWidget>
-#include <QFont>
-#include <QSize>
 
 class Label : public QLabel
 {
@@ -16,11 +11,11 @@ class Label : public QLabel
     public:
         explicit Label(QWidget *parent = nullptr);
 
-    public slots:
-        void resizeEvent(QResizeEvent *);
+    signals:
+        void clicked();
 
-    private:
-        int fontSize;
+    protected:
+        void mousePressEvent(QMouseEvent*);
 };
 
 #endif // LABEL_H

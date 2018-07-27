@@ -38,5 +38,4 @@ DISTFILES +=
 RESOURCES += \
         images.qrc \
         icones.qrc \
-        fonts.qrc \
-        fichiers.qrc
+        fonts.qrc

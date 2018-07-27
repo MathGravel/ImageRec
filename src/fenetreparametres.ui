@@ -783,24 +783,12 @@ color: #666666;</string>
       <property name="bottomMargin">
        <number>10</number>
       </property>
-      <property name="spacing">
+      <property name="horizontalSpacing">
+       <number>20</number>
+      </property>
+      <property name="verticalSpacing">
        <number>5</number>
       </property>
-      <item row="1" column="2">
-       <widget class="QLabel" name="message">
-        <property name="font">
-         <font>
-          <pointsize>-1</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">font-size: 11px;</string>
-        </property>
-        <property name="text">
-         <string>/home/baptiste/Vidéos/demo.mp4</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QComboBox" name="sourceChoix">
         <property name="maximumSize">
@@ -900,26 +888,35 @@ font-weight: bold;</string>
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="icone">
-        <property name="maximumSize">
-         <size>
-          <width>35</width>
-          <height>15</height>
-         </size>
+       <widget class="Label" name="message">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">margin-left: 20px;</string>
+         <string notr="true">font-size: 11px;</string>
         </property>
         <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="icones.qrc">:/logos/check.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
+         <string>/home/baptiste/Vidéos/demo.mp4</string>
         </property>
        </widget>
+      </item>
+      <item row="1" column="2">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
       </item>
      </layout>
     </widget>
@@ -1028,8 +1025,14 @@ background-color: #ddd;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Label</class>
+   <extends>QLabel</extends>
+   <header>label.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
-  <include location="icones.qrc"/>
   <include location="images.qrc"/>
  </resources>
  <connections/>

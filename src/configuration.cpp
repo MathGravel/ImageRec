@@ -4,7 +4,7 @@ Configuration::Configuration()
 {
     // Paramètres par défaut
     parametres["sourceType"] = "Vidéo locale";
-    parametres["sourceChemin"] = "/home/baptiste/Vidéos/demo.mp4";
+    parametres["sourceChemin"] = "/home/baptiste/Vidéos/";
     parametres["affichageActions"] = "Zone, nom et pourcentage";
     parametres["affichageObjets"] = "Zone";
     parametres["affichageMains"] = "Zone et poucentage";

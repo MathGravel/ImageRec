@@ -6,7 +6,6 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDesktopWidget>
-#include <QFontDatabase>
 
 namespace Ui {
     class FenetrePrincipale;
@@ -19,7 +18,7 @@ class FenetrePrincipale : public QMainWindow
     public:
         explicit FenetrePrincipale(QWidget *parent = 0);
         ~FenetrePrincipale();
-        void configuration(QApplication *app);
+        void configuration();
 
     public slots:
         void gestionVideo();
