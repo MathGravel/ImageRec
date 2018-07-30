@@ -31,7 +31,7 @@ L'application peut être lancée par la commande suivante :
 
    * Éric Beaudry, Professeur agrégé (UQAM, Canada)
    * Jean Massardi, Doctorant (UQAM, Canada)
-   * Mathieu Gravel, Maîtrise (UQAM, Canada)
+   * Mathieu Gravel, Étudiant en maîtrise (UQAM, Canada)
    * Baptiste Gauthier, Étudiant ingénieur (Polytech Nantes, France)
    * Philippe Billard, Étudiant ingénieur (Exia Cesi d'Orléans, France)
    * Guillaume Gosset, Étudiant (IUT d'Orsay, France)
