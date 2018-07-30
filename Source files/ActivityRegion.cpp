@@ -6,7 +6,7 @@
 ActivityRegion* ActivityRegion::ar_instance = NULL;
 
 ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/CLionProjects/ImageRec/handModel",720,1280,true,0.5f),
-                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel",720,1280,false,0.4f),
+                                 objectDetector("/home/uqamportable/CLionProjects/ImageRec/objectModel1",720,1280,false,0.6f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 

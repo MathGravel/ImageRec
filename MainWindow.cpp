@@ -258,8 +258,8 @@ void MainWindow::on_start_capture(Glib::ustring data)
     std::cout << "Hello World - " << data << " was pressed" << std::endl;
     if (cameraFeed == NULL) {
         //cameraFeed = new Kinect();
-        //cameraFeed = new RealSense();
-        cameraFeed = new RealSenseVideo();
+        cameraFeed = new RealSense();
+        //cameraFeed = new RealSenseVideo();
         video_area.StartCamera(cameraFeed);
         video_area.showi = false;
         video_area.setLocalSegmentation();

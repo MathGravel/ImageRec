@@ -1,0 +1,6 @@
+classes= 1
+train  = /home/troisiememathieu/Documents/AgeWell_DataSet_Tensorflow/nouvelles/mouvementmain/transform/train.txt
+valid  = /home/troisiememathieu/Documents/AgeWell_DataSet_Tensorflow/nouvelles/mouvementmain/transform/train.txt
+names = /home/troisiememathieu/Documents/AgeWell_DataSet_Tensorflow/nouvelles/mouvementmain/transform/classes.name
+backup = /home/troisiememathieu/Documents/AgeWell_DataSet_Tensorflow/nouvelles/mouvementmain/transform/backup
+

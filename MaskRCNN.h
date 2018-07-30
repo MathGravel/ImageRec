@@ -22,7 +22,9 @@ public:
 
 private:
 
-    std::string classNames[10]  = {"Background","teapot","can","chocolate","tea","coffee","coffeemaker","mug","pitcher","milk"};
+    //std::string classNames[10]  = {"Background","teapot","can","chocolate","tea","coffee","coffeemaker","mug","pitcher","milk"};
+    std::string classNames[10]  = {"Background","tea","teapot","mug","pitcher","milk","chocolate","coffee","coffeemaker","can"};
+
     std::vector<DetectedObject> objects;
     std::string network;
     std::string networkDef;

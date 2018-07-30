@@ -43,7 +43,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
     std::vector<DetectedObject> objets;
 
-    Mat blob = blobFromImage(color, 1/100.0,
+    Mat blob = blobFromImage(color, 1/255.0,
                                   Size(300, 300),Scalar(127.5,127.5,127.5),true,true); //Convert Mat to batch of images
 
     neuralNetwork.setInput(blob);

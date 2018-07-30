@@ -20,6 +20,8 @@
 //#include "CNN/CaffeCNN.h"
 #include "CNN/ImgSegCNN.h"
 #include "../MaskRCNN.h"
+#include "../YoloRCNN.h"
+
 #include <stack>
 #include <math.h>
 

@@ -19,7 +19,6 @@
 #include "Header files/CNN/CaffeCNN.h"
 #include "Header files/CNN/ImgSegCNN.h"
 
-#include "Socket.h"
 #include "MaskRCNN.h"
 #include "DetectedObject.h"
 #include "Header files/ActivityRegion.h"

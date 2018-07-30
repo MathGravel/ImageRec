@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<pomdpx version="0.1" id="undefined" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pomdpx.xsd"> 
+<Discount> 0.95 </Discount> 
+<Variable> 
+<StateVar vnamePrev="startAction" vnameCurr="nextAction" fullyObs="false"> 
+<ValueEnum> whisk Finish pot oil salt Start pan knife ham spatula wisk bowl plate egg </ValueEnum> 
+</StateVar> 
+<StateVar vnamePrev="startGoal" vnameCurr="nextGoal" fullyObs="false"> 
+<ValueEnum> boiled ham </ValueEnum> 
+</StateVar> 
+<StateVar vnamePrev="startEsGoal" vnameCurr="nextEsGoal" fullyObs="true"> 
+<ValueEnum> Unknown boiled ham </ValueEnum> 
+</StateVar> 
+<ActionVar vname = "Action"> 
+<ValueEnum> Obs None cg_boiled cg_ham </ValueEnum> 
+</ActionVar> 
+<ObsVar vname="ObsState"> 
+<ValueEnum> whisk Finish pot oil salt Start pan knife ham spatula wisk bowl plate egg None </ValueEnum> 
+</ObsVar> 
+<RewardVar vname="reward"/> 
+</Variable> 
+<InitialStateBelief> 
+<CondProb> 
+<Var>startAction</Var> 
+<Parent> null </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance>  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+<CondProb> 
+<Var>startGoal</Var> 
+<Parent> null </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance>  - </Instance> 
+<ProbTable>uniform </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+<CondProb> 
+<Var>startEsGoal</Var> 
+<Parent> null </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance>  - </Instance> 
+<ProbTable>1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+</InitialStateBelief> 
+<StateTransitionFunction> 
+<CondProb> 
+<Var>nextAction</Var> 
+<Parent> startAction startGoal startEsGoal </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance> whisk boiled Unknown  - </Instance> 
+<ProbTable>0.0 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.266666666667 0.0 0.133333333333 0.4 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot boiled Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start boiled Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan boiled Unknown  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula boiled Unknown  - </Instance> 
+<ProbTable>0.1875 0.1875 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.25 0.375 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl boiled Unknown  - </Instance> 
+<ProbTable>0.0681818181818 0.25 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0681818181818 0.0 0.0 0.113636363636 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate boiled Unknown  - </Instance> 
+<ProbTable>0.272727272727 0.227272727273 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.272727272727 0.0 0.227272727273 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg boiled Unknown  - </Instance> 
+<ProbTable>0.0454545454545 0.0 0.166666666667 0.0 0.0 0.0 0.166666666667 0.0 0.0 0.0454545454545 0.0 0.5 0.0757575757576 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> whisk boiled boiled  - </Instance> 
+<ProbTable>0.0 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.266666666667 0.0 0.133333333333 0.4 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot boiled boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start boiled boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan boiled boiled  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula boiled boiled  - </Instance> 
+<ProbTable>0.1875 0.1875 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.25 0.375 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl boiled boiled  - </Instance> 
+<ProbTable>0.0681818181818 0.25 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0681818181818 0.0 0.0 0.113636363636 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate boiled boiled  - </Instance> 
+<ProbTable>0.272727272727 0.227272727273 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.272727272727 0.0 0.227272727273 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg boiled boiled  - </Instance> 
+<ProbTable>0.0454545454545 0.0 0.166666666667 0.0 0.0 0.0 0.166666666667 0.0 0.0 0.0454545454545 0.0 0.5 0.0757575757576 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> whisk boiled ham  - </Instance> 
+<ProbTable>0.0 0.2 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.266666666667 0.0 0.133333333333 0.4 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot boiled ham  - </Instance> 
+<ProbTable>0.0 0.0 0.6 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.4 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start boiled ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan boiled ham  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula boiled ham  - </Instance> 
+<ProbTable>0.1875 0.1875 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.25 0.375 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl boiled ham  - </Instance> 
+<ProbTable>0.0681818181818 0.25 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0681818181818 0.0 0.0 0.113636363636 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate boiled ham  - </Instance> 
+<ProbTable>0.272727272727 0.227272727273 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.272727272727 0.0 0.227272727273 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg boiled ham  - </Instance> 
+<ProbTable>0.0454545454545 0.0 0.166666666667 0.0 0.0 0.0 0.166666666667 0.0 0.0 0.0454545454545 0.0 0.5 0.0757575757576 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> whisk ham Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish ham Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot ham Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.0 0.0 0.499979337989 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0740757746901 0.0 0.0740788357991 0.0740757746901 0.0 0.146397533971 0.0 0.240750094129 0.167522246609 0.149023965422 0.0 0.0740757746901 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.399990082481 0.133357576158 0.466652341361 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.166666666667 0.152782369146 0.0 0.124986225895 0.055564738292 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.628551233244 0.0 0.0 0.0 0.371448766756 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk ham Unknown  - </Instance> 
+<ProbTable>0.0 7.04017121696e-06 0.0 0.0 0.0 0.0 0.584108925529 0.0 0.0 0.0972670055336 0.148244885316 0.170372143451 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.166652892562 0.083347107438 0.0 0.25 0.0 0.0 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.499979337989 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.111129476584 0.0 0.0 0.888870523416 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> whisk ham boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish ham boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot ham boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.0 0.0 0.499979337989 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan ham boiled  - </Instance> 
+<ProbTable>0.0 0.0740757746901 0.0 0.0740788357991 0.0740757746901 0.0 0.146397533971 0.0 0.240750094129 0.167522246609 0.149023965422 0.0 0.0740757746901 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.399990082481 0.133357576158 0.466652341361 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.166666666667 0.152782369146 0.0 0.124986225895 0.055564738292 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.628551233244 0.0 0.0 0.0 0.371448766756 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk ham boiled  - </Instance> 
+<ProbTable>0.0 7.04017121696e-06 0.0 0.0 0.0 0.0 0.584108925529 0.0 0.0 0.0972670055336 0.148244885316 0.170372143451 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.166652892562 0.083347107438 0.0 0.25 0.0 0.0 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.499979337989 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.111129476584 0.0 0.0 0.888870523416 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> whisk ham ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Finish ham ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pot ham ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> oil ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> salt ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.0 0.0 0.499979337989 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Start ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> pan ham ham  - </Instance> 
+<ProbTable>0.0 0.0740757746901 0.0 0.0740788357991 0.0740757746901 0.0 0.146397533971 0.0 0.240750094129 0.167522246609 0.149023965422 0.0 0.0740757746901 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> knife ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.399990082481 0.133357576158 0.466652341361 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.5 0.166666666667 0.152782369146 0.0 0.124986225895 0.055564738292 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> spatula ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.628551233244 0.0 0.0 0.0 0.371448766756 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> wisk ham ham  - </Instance> 
+<ProbTable>0.0 7.04017121696e-06 0.0 0.0 0.0 0.0 0.584108925529 0.0 0.0 0.0972670055336 0.148244885316 0.170372143451 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> bowl ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.166652892562 0.083347107438 0.0 0.25 0.0 0.0 0.5 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> plate ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.500020662011 0.499979337989 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> egg ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.111129476584 0.0 0.0 0.888870523416 0.0 0.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+<CondProb> 
+<Var>nextEsGoal</Var> 
+<Parent> Action startEsGoal </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance> Obs Unknown  - </Instance> 
+<ProbTable>1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs ham  - </Instance> 
+<ProbTable>0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None Unknown  - </Instance> 
+<ProbTable>1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None ham  - </Instance> 
+<ProbTable>0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled Unknown  - </Instance> 
+<ProbTable>0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled boiled  - </Instance> 
+<ProbTable>0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled ham  - </Instance> 
+<ProbTable>0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham Unknown  - </Instance> 
+<ProbTable>0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham boiled  - </Instance> 
+<ProbTable>0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham ham  - </Instance> 
+<ProbTable>0.0 0.0 1.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+<CondProb> 
+<Var>nextGoal</Var> 
+<Parent> startGoal </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance> boiled  - </Instance> 
+<ProbTable>1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> ham  - </Instance> 
+<ProbTable>0.0 1.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+</StateTransitionFunction> 
+<ObsFunction><CondProb> 
+<Var>ObsState</Var> 
+<Parent> Action nextAction </Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance> Obs whisk  - </Instance> 
+<ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs Finish  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs pot  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs oil  - </Instance> 
+<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs salt  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs Start  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs pan  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs knife  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs spatula  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs wisk  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs bowl  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs plate  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs egg  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None whisk  - </Instance> 
+<ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None Finish  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None pot  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None oil  - </Instance> 
+<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None salt  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None Start  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None pan  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None knife  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None spatula  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None wisk  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None bowl  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None plate  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> None egg  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled whisk  - </Instance> 
+<ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled Finish  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled pot  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled oil  - </Instance> 
+<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled salt  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled Start  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled pan  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled knife  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled spatula  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled wisk  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled bowl  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled plate  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled egg  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham whisk  - </Instance> 
+<ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham Finish  - </Instance> 
+<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham pot  - </Instance> 
+<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham oil  - </Instance> 
+<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham salt  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham Start  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham pan  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham knife  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham ham  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham spatula  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham wisk  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham bowl  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham plate  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 </ProbTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham egg  - </Instance> 
+<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 </ProbTable> 
+</Entry> 
+</Parameter> 
+</CondProb> 
+</ObsFunction> 
+<RewardFunction> 
+<Func> 
+<Var>reward</Var> 
+<Parent> Action startGoal startEsGoal</Parent> 
+<Parameter type="TBL"> 
+<Entry> 
+<Instance> Obs boiled Unknown  </Instance> 
+<ValueTable>-11</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs boiled boiled  </Instance> 
+<ValueTable>9</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs boiled ham  </Instance> 
+<ValueTable>-11</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs ham Unknown  </Instance> 
+<ValueTable>-11</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs ham boiled  </Instance> 
+<ValueTable>-11</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> Obs ham ham  </Instance> 
+<ValueTable>9</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None boiled Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None boiled boiled  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None boiled ham  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None ham Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None ham boiled  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> None ham ham  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled boiled Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled boiled boiled  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled boiled ham  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled ham Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled ham boiled  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_boiled ham ham  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham boiled Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham boiled boiled  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham boiled ham  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham ham Unknown  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham ham boiled  </Instance> 
+<ValueTable>-10</ValueTable> 
+</Entry> 
+<Entry> 
+<Instance> cg_ham ham ham  </Instance> 
+<ValueTable>10</ValueTable> 
+</Entry> 
+</Parameter> 
+</Func> 
+</RewardFunction> 
+</pomdpx>
