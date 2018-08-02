@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<pomdpx version="0.1" id="rockSample"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="pomdpx.xsd">
+      <Description> 
+      	Test of the method using the Planning as Plan recogntion example
+      </Description>
+	<Discount>
+      	0.95
+      </Discount>
+      <Variable> 
+      	<StateVar vnamePrev="startPos" vnameCurr="nextPos">
+      		<ValueEnum>a b c d e f g h i j k finish</ValueEnum>
+      	</StateVar>
+      	<StateVar vnamePrev="startGoal" vnameCurr="nextGoal">
+      		<ValueEnum>c i k</ValueEnum>
+      	</StateVar>
+      	<StateVar vnamePrev="startH_Goal" vnameCurr="nextH_Goal"  fullyObs="true">
+      		<ValueEnum>c i k</ValueEnum>
+      	</StateVar>
+      	<ActionVar vname="robot_action">
+      		<ValueEnum>obs cg_c cg_i cg_k</ValueEnum>
+      	</ActionVar>
+	<ObsVar vname="E_state">
+		<ValueEnum>a b c d e f g h i j k finish none</ValueEnum>
+	</ObsVar>
+      	<RewardVar vname="reward"/>
+      </Variable>
+	<InitialStateBelief>  
+      	<CondProb>
+      		<Var>startPos</Var>
+      		<Parent>null</Parent>
+      		<Parameter type="TBL">
+                        <Entry>
+                            <Instance>-</Instance>
+                            <ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+                        </Entry>
+            </Parameter>
+      	</CondProb>
+      	<CondProb>
+      		<Var>startGoal</Var>
+      		<Parent>null</Parent>
+      		<Parameter type="TBL">
+                        <Entry>
+                            <Instance> - </Instance>
+                            <ProbTable>uniform</ProbTable>
+                        </Entry>
+            </Parameter>
+      	</CondProb>
+      	<CondProb>
+      		<Var>startH_Goal</Var>
+      		<Parent>null</Parent>
+      		<Parameter type="TBL">
+                        <Entry>
+                            <Instance> - </Instance>
+                            <ProbTable>1.0 0.0 0.0</ProbTable>
+                        </Entry>
+            </Parameter>
+      	</CondProb>
+      </InitialStateBelief>
+      <StateTransitionFunction> 
+      	<CondProb>
+      		<Var>nextPos</Var>
+      		<Parent>startPos startGoal</Parent>
+      		<Parameter type="TBL">
+      			<Entry> 
+      				<Instance> a * -</Instance>
+                     		<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> b c -</Instance>
+                     		<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> b k -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> b i -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+				<Entry> 
+      				<Instance> d * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> e * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> f * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> g i -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> g k -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> g c -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> h * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance> j * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</ProbTable>
+      			</Entry>
+			<Entry>
+				<Instance> c * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+			</Entry>
+			<Entry>
+				<Instance> i * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+			</Entry>
+			<Entry>
+				<Instance> k * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+			</Entry>
+			<Entry>
+				<Instance> finish * -</Instance>
+                     		<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+			</Entry>
+      		</Parameter>
+      	</CondProb>
+      	<CondProb>
+      		<Var>nextH_Goal</Var>
+      		<Parent>robot_action startH_Goal</Parent>
+      		<Parameter type="TBL">
+      			<Entry> 
+      				<Instance>cg_c * -</Instance>
+                     		<ProbTable>1.0 0.0 0.0</ProbTable>
+      			</Entry>
+      			<Entry> 
+      				<Instance>cg_k * -</Instance>
+                     		<ProbTable>0.0 0.0 1.0</ProbTable>
+      			</Entry>
+      			<Entry> 
+      				<Instance>cg_i * -</Instance>
+                     		<ProbTable>0.0 1.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance>obs c -</Instance>
+                     		<ProbTable>1.0 0.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance>obs i -</Instance>
+                     		<ProbTable>0.0 1.0 0.0</ProbTable>
+      			</Entry>
+			<Entry> 
+      				<Instance>obs k -</Instance>
+                     		<ProbTable>0.0 0.0 1.0</ProbTable>
+      			</Entry>
+      		</Parameter>
+      	</CondProb>
+	<CondProb>
+      		<Var>nextGoal</Var>
+      		<Parent>startGoal</Parent>
+      		<Parameter type="TBL">
+      			<Entry> 
+      				<Instance>c -</Instance>
+                     		<ProbTable>1.0 0.0 0.0</ProbTable>
+      			</Entry>
+      			<Entry> 
+      				<Instance>k -</Instance>
+                     		<ProbTable>0.0 0.0 1.0</ProbTable>
+      			</Entry>
+      			<Entry> 
+      				<Instance>i -</Instance>
+                     		<ProbTable>0.0 1.0 0.0</ProbTable>
+      			</Entry>
+      		</Parameter>
+      	</CondProb>
+      </StateTransitionFunction>
+	<ObsFunction>
+		<CondProb>
+			<Var>E_state</Var>
+			<Parent>robot_action nextPos</Parent>
+				<Parameter type = "TBL">
+					<Entry>
+					<Instance>obs a -</Instance>
+					<ProbTable>1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs b -</Instance>
+					<ProbTable>0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs c -</Instance>
+					<ProbTable>0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs d -</Instance>
+					<ProbTable>0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs e -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs f -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs g -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs h -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs i -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs j -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs k -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0</ProbTable>
+					</Entry>
+					<Entry>
+					<Instance>obs finish -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0 0.0</ProbTable>
+					</Entry>
+
+					<Entry>
+					<Instance>cg_c * -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+					</Entry>
+										<Entry>
+					<Instance>cg_i * -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+					</Entry>
+
+										<Entry>
+					<Instance>cg_k * -</Instance>
+					<ProbTable>0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0 1.0</ProbTable>
+					</Entry>
+
+				</Parameter>
+		</CondProb>
+	</ObsFunction>
+	<RewardFunction>    
+	<Func>
+            <Var>reward</Var>
+            <Parent>robot_action startGoal startH_Goal</Parent>
+            <Parameter type="TBL">
+		<Entry>
+                     <Instance>obs c c</Instance>
+                     <ValueTable>-1</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs c k</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs c i</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>obs k k</Instance>
+                     <ValueTable>-1</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs k c</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs k i</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>obs i i</Instance>
+                     <ValueTable>-1</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs i c</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>obs i k</Instance>
+                     <ValueTable>-11</ValueTable>
+                </Entry>
+
+				<Entry>
+                     <Instance>cg_c c c</Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c c k</Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c c i</Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_c k k</Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c k c</Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c k i</Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_c i i</Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c i c </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_c i k </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+
+						<Entry>
+                     <Instance>cg_i c c </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i c k </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i c i </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_i k k </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i k c </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i k i </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_i i i </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i i c </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_i i k </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+
+						<Entry>
+                     <Instance>cg_k c c </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k c k </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k c i </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_k k k </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k k c </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k k i </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+				<Entry>
+                     <Instance>cg_k i i </Instance>
+                     <ValueTable>0</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k i c </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+		<Entry>
+                     <Instance>cg_k i k </Instance>
+                     <ValueTable>-10</ValueTable>
+                </Entry>
+            </Parameter>
+        </Func>
+      </RewardFunction>		
+</pomdpx>

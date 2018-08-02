@@ -19,6 +19,7 @@ class Configuration
         void sauvegardeParametres();
         string getParametre(string nom);
         void setParametre(string nom, string valeur);
+        map<string,string> getParametres() {return parametres;}
 
     private:
         map <string, string> parametres;

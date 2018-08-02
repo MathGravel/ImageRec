@@ -1,5 +1,6 @@
 #include "configuration.h"
-
+#include <unistd.h>
+#include <limits.h>
 Configuration::Configuration()
 {
     // Paramètres par défaut

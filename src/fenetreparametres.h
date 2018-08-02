@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <QString>
 #include <QFileDialog>
+#include<opencv2/opencv.hpp>
 
 extern Configuration parametres;
 

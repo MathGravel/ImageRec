@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QStyle>
 #include <QDesktopWidget>
+#include "Header files/RecoManager.h"
 
 namespace Ui {
     class FenetrePrincipale;
@@ -32,6 +33,7 @@ class FenetrePrincipale : public QMainWindow
     private:
         Ui::FenetrePrincipale *ui;
         FenetreParametres *fenetreParametres;
+        RecoManager * rec;
 };
 
 #endif // FENETREPRINCIPALE_H
