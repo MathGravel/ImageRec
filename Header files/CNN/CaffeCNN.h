@@ -1,6 +1,8 @@
 #pragma once
 #include "CNN.h"
-#include "../../Classifier.h"
+#ifdef USE_OPENCV_CAFFE
+
+#include "../../OldFiles/Classifier.h"
 
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -56,4 +58,4 @@ private :
 
 
 };
-
+#endif

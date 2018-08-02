@@ -1,9 +1,10 @@
-#include <caffe/caffe.hpp>
 
-#ifdef USE_OPENCV
+#ifdef USE_OPENCV_CAFFE
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <caffe/caffe.hpp>
+
 #endif  // USE_OPENCV
 #include <algorithm>
 #include <iosfwd>
@@ -12,7 +13,7 @@
 #include <utility>
 #include <vector>
 
-#ifdef USE_OPENCV
+#ifdef USE_OPENCV_CAFFE
 using namespace caffe;  // NOLINT(build/namespaces)
 using std::string;
 
@@ -259,8 +260,5 @@ int main(int argc, char** argv) {
 			<< p.first << "\"" << std::endl;
 	}
 }
-#else
-int main(int argc, char** argv) {
-	LOG(FATAL) << "This example requires OpenCV; compile with USE_OPENCV.";
-}
+
 #endif  // USE_OPENCV

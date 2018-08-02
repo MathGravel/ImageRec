@@ -9,23 +9,24 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include "../Affordance.h"
-#include "../ObjectAff.h"
-#include "../DetectedObject.h"
-#include "../selectiveSearchDepth.h"
+#include "Affordance.h"
+#include "ObjectAff.h"
+#include "DetectedObject.h"
+#include "selectiveSearchDepth.h"
+#include "Serializable.h"
 #include <opencv2/opencv.hpp>
-#include "ImageSegmentationManual.h"
+#include "../OldFiles/ImageSegmentationManual.h"
+
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
 //#include "CNN/CaffeCNN.h"
 #include "CNN/ImgSegCNN.h"
-#include "../MaskRCNN.h"
-#include "../Yolo.h"
-
+#include "CNN/MaskRCNN.h"
+#include "CNN/YoloGPU.h"
 #include <stack>
-#include <math.h>
+#include <cmath>
 
-class ActivityRegion {
+class ActivityRegion : public Serializable  {
 
     static ActivityRegion *ar_instance;
 
@@ -37,6 +38,8 @@ public:
             ActivityRegion::ar_instance = new ActivityRegion();
         return ActivityRegion::ar_instance;
     }
+
+    void deserialize(std::map<std::string,std::string> stream){}
 
     std::stack<AffordanceTime*> currentAffordances;
 
@@ -54,15 +57,18 @@ public:
 
 
     void Update(cv::Mat vision, cv::Mat depthVision);
+    void UpdateROI(cv::Mat vision, cv::Mat depthVision) {};//A completer
+
+
     void updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI);
-    Affordance testManuallyROI(cv::Mat vision, cv::Rect chosenROI);
+   //A refaire avec celui de google
+    // Affordance testManuallyROI(cv::Mat vision, cv::Rect chosenROI);
 
 
 private:
-
-    void mergeOverlappingBoxes(std::vector<cv::Rect> &inputBoxes, cv::Mat &image, std::vector<cv::Rect> &outputBoxes);
+    /*
     std::vector<DetectedObject> confirmAffordance(const std::vector<cv::Rect>& objets, const cv::Mat& picture, const cv::Mat& depth);
-
+    */
 
 
     ObjectAffordances affordances;
@@ -77,7 +83,7 @@ private:
     DetectedObjects hands;
     DetectedObjects items;
 
-    ImgSegCNN caffe;
+    //ImgSegCNN caffe;
     MaskRCNN handDetector;
     MaskRCNN objectDetector;
 
@@ -92,14 +98,11 @@ private:
     cv::Mat currentImage;
     cv::Mat currentImageDepth;
     cv::Mat imageROI;
-
+    friend class ImageTreatment;
 
 
 
 
 
 };
-
-
-
 #endif //IMAGEREC_ACTIVITYREGION_H

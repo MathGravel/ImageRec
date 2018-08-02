@@ -1,25 +1,26 @@
+//
+// Created by uqamportable on 02/08/18.
+//
+#include "RecoManager.h"
+#include <map>
 
-// GTKmm and User interface includes
-#include "MainWindow.hpp"
-
-int main1(int argc, char** argv)
-{
-    Policy p;
-    p.update(Affordance());
-    p.getNextAction();
-    return 0;
-}
-
-
-
+using namespace std;
 int main(int argc, char** argv)
 {
-    Glib::RefPtr<Gtk::Application> app = Gtk::Application::create(argc, argv);
-
-    MainWindow mwindow;
-    app->run (mwindow);
-
+    map <string, string> parametres;
+    parametres["sourceType"] = "Realsense";
+    parametres["sourceChemin"] = "/home/uqamportable/Videos/vicColor.mp4";
+    parametres["sourceCheminDepth"] = "/home/uqamportable/Videos/vidDepth.mp4";
+    parametres["affichageActions"] = "Zone, nom et pourcentage";
+    parametres["affichageObjets"] = "Zone";
+    parametres["affichageMains"] = "Zone et poucentage";
+    parametres["precisionTraitement"] = "75 %";
+    parametres["Show Name"] = "1";
+    parametres["Show Zone"] = "1";
+    parametres["Show Percentage"] = "1";
+    parametres["langue"] = "Français";
+    RecoManager rec(parametres);
+    rec.update();
 
     return 0;
 }
-

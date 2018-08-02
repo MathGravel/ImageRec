@@ -36,6 +36,8 @@ sudo apt-get -y install realsense-uvcvideo
 sudo apt-get -y install librealsense2-utils
 sudo apt-get -y install librealsense2-dev
 sudo apt-get -y install librealsense2-dbg
+sudo apt-get -y install python3-pydot python-pydot-ng graphviz
+
 
 ### Compiling and installing previous git projects
 cd $ImageRecPath/opencv

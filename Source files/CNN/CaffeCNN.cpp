@@ -1,6 +1,7 @@
 #include "../../Header files/CNN/CaffeCNN.h"
 
 
+#ifdef USE_OPENCV_CAFFE
 
 
 using namespace caffe;  // NOLINT(build/namespaces)
@@ -103,3 +104,4 @@ void CaffeCNN::preparation(const cv::Mat & img, std::vector<cv::Mat>* input_chan
 {
 }
 
+#endif

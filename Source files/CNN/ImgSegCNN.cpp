@@ -1,3 +1,5 @@
+#ifdef USE_OPENCV_CAFFE
+
 #include "../../Header files/CNN/ImgSegCNN.h"
 #include <caffe/caffe.hpp>
 
@@ -199,3 +201,4 @@ std::vector<double> ImgSegCNN::getClassesProb(const Mat &probBloc) {
     fp.close();
     return classNames;
 }
+#endif
