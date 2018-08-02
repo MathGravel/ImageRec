@@ -25,6 +25,26 @@ void FenetrePrincipale::gestionVideo()
     // Lancement / arrêt de la vidéo !
 }
 
+void FenetrePrincipale::MiseAJourImage()
+{
+    // Changement de l'image du lecteur !
+}
+
+void FenetrePrincipale::MiseAJourHistogramme()
+{
+    // Mise à jour de l'histogramme !
+}
+
+void FenetrePrincipale::MiseAJourProgression()
+{
+    // Mise à jour du timer !
+}
+
+void FenetrePrincipale::MiseAJourInformations()
+{
+    // Mise à jour des inforamtions !
+}
+
 void FenetrePrincipale::ouvrirFenetreParametres()
 {
     fenetreParametres = new FenetreParametres(this);

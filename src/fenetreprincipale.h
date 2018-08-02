@@ -22,6 +22,10 @@ class FenetrePrincipale : public QMainWindow
 
     public slots:
         void gestionVideo();
+        void MiseAJourImage();
+        void MiseAJourHistogramme();
+        void MiseAJourProgression();
+        void MiseAJourInformations();
         void ouvrirFenetreParametres();
         void pleinEcranVideo();
 
