@@ -20,7 +20,7 @@
    <string>Reconnaissance de plans et d'activités</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="images.qrc">
+   <iconset>
     <normaloff>:/images/logo.png</normaloff>:/images/logo.png</iconset>
   </property>
   <property name="styleSheet">
@@ -195,7 +195,7 @@ border: none;
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="icones.qrc">
+             <iconset>
               <normaloff>:/logos/expand.png</normaloff>:/logos/expand.png</iconset>
             </property>
             <property name="iconSize">
@@ -305,7 +305,7 @@ border: none;</string>
           <enum>Qt::AutoText</enum>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/images/uqam.png</pixmap>
+          <pixmap>:/images/uqam.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -366,7 +366,7 @@ border: none;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/images/gdac.png</pixmap>
+          <pixmap>:/images/gdac.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -382,7 +382,7 @@ border: none;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/images/agewell.png</pixmap>
+          <pixmap>:/images/agewell.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -487,7 +487,7 @@ background-color: #ddd;
           <string>  Lancer l'acquisition de la vidéo</string>
          </property>
          <property name="icon">
-          <iconset resource="icones.qrc">
+          <iconset>
            <normaloff>:/logos/play.png</normaloff>:/logos/play.png</iconset>
          </property>
         </widget>
@@ -526,7 +526,7 @@ background-color: #ddd;
           <string>  Paramètres de l'application</string>
          </property>
          <property name="icon">
-          <iconset resource="icones.qrc">
+          <iconset>
            <normaloff>:/logos/cog.png</normaloff>:/logos/cog.png</iconset>
          </property>
         </widget>
@@ -696,7 +696,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -780,7 +780,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -891,7 +891,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1078,7 +1078,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1162,7 +1162,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1246,7 +1246,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1436,7 +1436,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1520,7 +1520,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1604,7 +1604,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap resource="icones.qrc">:/logos/cup.png</pixmap>
+                   <pixmap>:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1687,9 +1687,6 @@ font-size: 14px;</string>
    </slots>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="icones.qrc"/>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

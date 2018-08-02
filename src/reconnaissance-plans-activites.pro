@@ -36,6 +36,6 @@ FORMS   += \
 DISTFILES +=
 
 RESOURCES += \
-        ressources/images.qrc \
-        ressources/icones.qrc \
-        ressources/fonts.qrc
+        images.qrc \
+        icones.qrc \
+        fonts.qrc
