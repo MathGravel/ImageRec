@@ -11,33 +11,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += \
-        fenetreprincipale.cpp \
         main.cpp \
-        image.cpp \
-        button.cpp \
-        video.cpp \
-        label.cpp \
-        fenetreparametres.cpp \
-        configuration.cpp
+        interface/fenetreprincipale.cpp \
+        interface/fenetreparametres.cpp \
+        interface/image.cpp \
+        interface/button.cpp \
+        interface/video.cpp \
+        interface/label.cpp \
+        interface/configuration.cpp
 
 HEADERS += \
-        fenetreprincipale.h \
-        image.h \
-        button.h \
-        video.h \
-        label.h \
-        fenetreparametres.h \
-        configuration.h
+        interface/fenetreprincipale.h \
+        interface/fenetreparametres.h \
+        interface/image.h \
+        interface/button.h \
+        interface/video.h \
+        interface/label.h \
+        interface/configuration.h
 
 FORMS   += \
-        fenetreprincipale.ui \
-        fenetreparametres.ui
+        interface/fenetreprincipale.ui \
+        interface/fenetreparametres.ui
 
 DISTFILES +=
 
 RESOURCES += \
-        images.qrc \
-        icones.qrc \
-        fonts.qrc \
-    icones.qrc \
-    images.qrc
+        ressources/images.qrc \
+        ressources/icones.qrc \
+        ressources/fonts.qrc
