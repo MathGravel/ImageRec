@@ -8,7 +8,7 @@ Développée pour un projet de recherche du [Laboratoire de recherche en Gestion
 ## Dépendances
 
    * C++ 11
-   * Qt 5.9.6
+   * Qt 5
    * ...
 
 Les dépendances peuvent être installées en exécutant le script suivant :
