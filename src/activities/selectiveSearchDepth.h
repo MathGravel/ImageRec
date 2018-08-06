@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 17/02/18.
-//
-
-#if  !defined(IMAGEREC_SELECTIVESEARCH_HPP)
-#define IMAGEREC_SELECTIVESEARCH_HPP
+#if  !defined(SELECTIVESEARCH_HPP)
+#define SELECTIVESEARCH_HPP
 
 
 #include <algorithm>
@@ -857,4 +853,4 @@ namespace selectiveDepth
 
 
 
-#endif //IMAGEREC_SELECTIVESEARCH_HPP
+#endif //SELECTIVESEARCH_HPP

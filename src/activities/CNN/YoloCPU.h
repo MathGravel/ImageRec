@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
-#ifndef IMAGEREC_YOLOCPU_H
-#define IMAGEREC_YOLOCPU_H
+#ifndef YOLOCPU_H
+#define YOLOCPU_H
 
 #include <opencv2/dnn.hpp>
 #include <vector>
@@ -47,4 +43,4 @@ private:
 };
 
 
-#endif //IMAGEREC_YOLOCPU_H
+#endif //YOLOCPU_H

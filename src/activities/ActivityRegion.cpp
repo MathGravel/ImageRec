@@ -5,8 +5,8 @@
 
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
-ActivityRegion::ActivityRegion():handDetector("/home/uqamportable/Documents/ImageRec/handModel",720,1280,true,0.18f),
-                                 objectDetector("/home/uqamportable/Documents/ImageRec/objectModel",720,1280,false,0.30f),
+ActivityRegion::ActivityRegion():handDetector("./activities/Models/hand",640,480,true,0.18f),
+                                 objectDetector("./activities/Models/object",640,480,false,0.30f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 

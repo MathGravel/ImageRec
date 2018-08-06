@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 16/04/18.
-//
-
-#ifndef IMAGEREC_AFFORDANCE_H
-#define IMAGEREC_AFFORDANCE_H
+#ifndef AFFORDANCE_H
+#define AFFORDANCE_H
 
 #include <opencv2/opencv.hpp>
 #include <ctime>
@@ -121,4 +117,4 @@ private:
 };
 
 
-#endif //IMAGEREC_AFFORDANCE_H
+#endif //AFFORDANCE_H

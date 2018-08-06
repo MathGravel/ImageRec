@@ -1,5 +1,8 @@
-# Project files
+# Project
 reconnaissance-plans-activites
+reconnaissance-plans-activites.*
+!reconnaissance-plans-activites.pro
+reconnaissance-plans-activites_*/
 
 # OS generated files
 .DS_Store
@@ -39,6 +42,7 @@ object_script.*.Debug
 *.moc
 moc_*.cpp
 moc_*.h
+moc_*.cpp_parameters
 qrc_*.cpp
 ui_*.h
 *.qmlc
@@ -163,3 +167,14 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# CMake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake

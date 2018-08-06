@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
-#ifndef IMAGEREC_MASKRCNN_H
-#define IMAGEREC_MASKRCNN_H
+#ifndef MASKRCNN_H
+#define MASKRCNN_H
 
 #include <opencv2/dnn.hpp>
 #include <vector>
@@ -43,4 +39,4 @@ private:
 };
 
 
-#endif //IMAGEREC_MASKRCNN_H
+#endif //MASKRCNN_H

@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 26/04/18.
-//
-
-#ifndef IMAGEREC_ACTIVITYREGION_H
-#define IMAGEREC_ACTIVITYREGION_H
+#ifndef ACTIVITYREGION_H
+#define ACTIVITYREGION_H
 
 
 #include <string>
@@ -104,4 +100,4 @@ private:
 
 
 };
-#endif //IMAGEREC_ACTIVITYREGION_H
+#endif //ACTIVITYREGION_H

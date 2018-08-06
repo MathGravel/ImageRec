@@ -1,15 +1,10 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
 #include "CNN/MaskRCNN.h"
 
 MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain, float _prob) {
 
     width = 640;
     height = 480;
-    imgWidth = 640;
-    imgHeight = 480;
+
 
     resizeRatio = width / (float) height;
     network = inference_path + "/graph.pb";

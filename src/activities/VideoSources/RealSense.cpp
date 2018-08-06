@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 16/02/18.
-//
-
 #include "VideoSources/RealSense.h"
 
 #ifdef USE_REALSENSE

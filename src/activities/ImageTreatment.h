@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 02/08/18.
-//
-
-#ifndef IMAGEREC_IMAGETREATMENT_H
-#define IMAGEREC_IMAGETREATMENT_H
+#ifndef IMAGETREATMENT_H
+#define IMAGETREATMENT_H
 
 #include "Serializable.h"
 #include "VideoSources/VideoSource.h"
@@ -61,4 +57,4 @@ private:
 };
 
 
-#endif //IMAGEREC_IMAGETREATMENT_H
+#endif //IMAGETREATMENT_H

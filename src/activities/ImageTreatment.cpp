@@ -1,13 +1,9 @@
-    //
-    // Created by uqamportable on 02/08/18.
-    //
-
-    #include "ImageTreatment.h"
+#include "ImageTreatment.h"
 
 ImageTreatment::ImageTreatment(std::map<std::string,std::string> stream) :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true) {
     this->deserialize(stream);
-    screenSize = std::make_pair(1280,720);
-    originalSize = std::make_pair(1280,720);
+    screenSize = std::make_pair(640,480);
+    originalSize = std::make_pair(640,480);
 }
 
 ImageTreatment::~ImageTreatment() {
@@ -23,12 +19,14 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
     }
     if(stream["sourceType"] == "Local") {
         this->source = new RealSenseVideo(stream["sourceChemin"],stream["sourceCheminDepth"]);
-        originalSize = std::make_pair(1280,720);
+        originalSize = std::make_pair(640,480);
+        screenSize = std::make_pair(640,480);
+
 
     }
     else if (stream["sourceType"] == "Realsense") {
         this->source = new RealSense();
-        originalSize = std::make_pair(1280,720);
+        originalSize = std::make_pair(640,480);
 
 
     }else if (stream["sourceType"] == "Kinect") {
@@ -65,7 +63,6 @@ void ImageTreatment::update() {
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     this->colorFeed.push_back(this->colorPicture);
     this->depthFeed.push_back(this->depthPicture);
-    cv::imwrite("tt.png",this->colorPicture);
 
 
 }

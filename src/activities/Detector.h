@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 20/06/18.
-//
-
-#ifndef IMAGEREC_DETECTOR_H
-#define IMAGEREC_DETECTOR_H
+#ifndef DETECTOR_H
+#define DETECTOR_H
 
 #include <vector>
 #include "DetectedObject.h"
@@ -18,4 +14,4 @@ public :
 };
 
 
-#endif //IMAGEREC_DETECTOR_H
+#endif //DETECTOR_H

@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 19/01/18.
-//
-
 #include "VideoSources/Kinect.h"
 #ifdef USE_KINECT
 

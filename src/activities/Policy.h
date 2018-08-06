@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 29/04/18.
-//
-
-#ifndef IMAGEREC_POLICY_H
-#define IMAGEREC_POLICY_H
+#ifndef POLICY_H
+#define POLICY_H
 
 //#include <Python.h>
 #include <string>
@@ -70,4 +66,4 @@ private:
 };
 
 
-#endif //IMAGEREC_POLICY_H
+#endif //POLICY_H

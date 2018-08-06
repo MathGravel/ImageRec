@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 28/01/18.
-//
-
-#ifndef IMAGEREC_WEBCAM_H
-#define IMAGEREC_WEBCAM_H
+#ifndef WEBCAM_H
+#define WEBCAM_H
 
 
 #include "VideoSource.h"
@@ -28,4 +24,4 @@ private:
 };
 
 
-#endif //IMAGEREC_WEBCAM_H
+#endif //WEBCAM_H

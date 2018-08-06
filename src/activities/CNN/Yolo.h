@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 02/08/18.
-//
-
-#ifndef IMAGEREC_YOLO_H
-#define IMAGEREC_YOLO_H
+#ifndef YOLO_H
+#define YOLO_H
 
 #include <string>
 #include "../Detector.h"
@@ -14,4 +10,4 @@ class Yolo : public Detector {
 };
 
 
-#endif //IMAGEREC_YOLO_H
+#endif //YOLO_H

@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 01/08/18.
-//
-
 #include <RecoManager.h>
 #include "RecoManager.h"
 

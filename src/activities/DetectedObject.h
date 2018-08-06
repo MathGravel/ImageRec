@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
-#ifndef IMAGEREC_DETECTEDOBJECT_H
-#define IMAGEREC_DETECTEDOBJECT_H
+#ifndef DETECTEDOBJECT_H
+#define DETECTEDOBJECT_H
 
 #include <opencv2/opencv.hpp>
 #include <map>
@@ -184,4 +180,4 @@ private:
 };
 
 
-#endif //IMAGEREC_DETECTEDOBJECT_H
+#endif //DETECTEDOBJECT_H

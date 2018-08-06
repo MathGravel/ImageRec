@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 16/02/18.
-//
-
-#ifndef IMAGEREC_REALSENSE_H
-#define IMAGEREC_REALSENSE_H
+#ifndef REALSENSE_H
+#define REALSENSE_H
 #undef Q_FOREACH
 #include "VideoSource.h"
 #include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
@@ -51,4 +47,4 @@ private:
 
 };
 #endif
-#endif //IMAGEREC_REALSENSE_H
+#endif //REALSENSE_H

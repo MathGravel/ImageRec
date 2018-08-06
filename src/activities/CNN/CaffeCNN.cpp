@@ -1,4 +1,4 @@
-#include "../../Header files/CNN/CaffeCNN.h"
+#include "CaffeCNN.h"
 
 
 #ifdef USE_OPENCV_CAFFE
@@ -13,8 +13,6 @@ using std::string;
 CaffeCNN::CaffeCNN()
 {
 
-
-    //::google::InitGoogleLogging("ImageRec");
 
     string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
     string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/solver_iter_2000.caffemodel";

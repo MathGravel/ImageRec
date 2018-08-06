@@ -1,12 +1,4 @@
-//
-// Created by uqamportable on 11/05/18.
-//
-
 #include "VideoSources/RealSenseVideo.h"
-
-//
-// Created by uqamportable on 16/02/18.
-//
 
 
 RealSenseVideo::RealSenseVideo(std::string colorFile ,std::string depthFile ) : colorVideo(std::move(colorFile)),depthVideo(std::move(depthFile)) {

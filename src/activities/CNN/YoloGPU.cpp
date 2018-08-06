@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
 #include "YoloGPU.h"
 
 extern "C" {

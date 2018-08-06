@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 16/04/18.
-//
-
-#ifndef IMAGEREC_OBJECTAFF_H
-#define IMAGEREC_OBJECTAFF_H
+#ifndef OBJECTAFF_H
+#define OBJECTAFF_H
 
 #include <opencv2/opencv.hpp>
 #include <vector>
@@ -97,4 +93,4 @@ private:
 
 };
 
-#endif //IMAGEREC_OBJECTAFF_H
+#endif //OBJECTAFF_H

@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 11/05/18.
-//
-
-#ifndef IMAGEREC_REALSENSEVIDEO_H
-#define IMAGEREC_REALSENSEVIDEO_H
+#ifndef REALSENSEVIDEO_H
+#define REALSENSEVIDEO_H
 
 
 #include "VideoSource.h"
@@ -46,4 +42,4 @@ private:
 };
 
 
-#endif //IMAGEREC_REALSENSEVIDEO_H
+#endif //REALSENSEVIDEO_H

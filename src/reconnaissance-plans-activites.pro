@@ -10,6 +10,19 @@ TEMPLATE = app
 DEFINES += QT_DEPRECATED_WARNINGS
 
 
+DEPENDPATH += \
+        activities \
+        interface \
+        plans \
+        ressources
+
+INCLUDEPATH += \
+        activities \
+        interface \
+        plans \
+        ressources
+
+
 SOURCES += \
         main.cpp \
         interface/fenetreprincipale.cpp \
@@ -32,8 +45,6 @@ HEADERS += \
 FORMS   += \
         interface/fenetreprincipale.ui \
         interface/fenetreparametres.ui
-
-DISTFILES +=
 
 RESOURCES += \
         ressources/images.qrc \

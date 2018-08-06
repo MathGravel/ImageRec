@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 02/08/18.
-//
-
 #include "YoloCPU.h"
 
 

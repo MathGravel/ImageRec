@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 19/01/18.
-//
-
-#ifndef IMAGEREC_KINECT_H
-#define IMAGEREC_KINECT_H
+#ifndef KINECT_H
+#define KINECT_H
 #include <iostream>
 #include <cstdlib>
 #include <signal.h>
@@ -82,4 +78,4 @@ private:
 
 
 
-#endif //IMAGEREC_KINECT_H
+#endif //KINECT_H

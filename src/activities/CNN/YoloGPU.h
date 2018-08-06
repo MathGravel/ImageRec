@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 12/03/18.
-//
-
-#ifndef IMAGEREC_YOLOGPU_H
-#define IMAGEREC_YOLOGPU_H
+#ifndef YOLOGPU_H
+#define YOLOGPU_H
 
 
 #include "../DetectedObject.h"
@@ -41,4 +37,4 @@ private:
 };
 
 
-#endif //IMAGEREC_YOLOGPU_H
+#endif //YOLOGPU_H

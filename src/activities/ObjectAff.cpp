@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 16/04/18.
-//
-
 #include "ObjectAff.h"
 
 ObjectAffordances::ObjectAffordances(int numberClasses) {

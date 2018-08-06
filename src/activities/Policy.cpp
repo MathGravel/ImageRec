@@ -1,7 +1,3 @@
-//
-// Created by uqamportable on 29/04/18.
-//
-
 #include "Policy.h"
 
 Policy::Policy() {

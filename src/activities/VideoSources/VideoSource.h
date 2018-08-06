@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 28/01/18.
-//
-
-#ifndef IMAGEREC_VIDEOSOURCE_H
-#define IMAGEREC_VIDEOSOURCE_H
+#ifndef VIDEOSOURCE_H
+#define VIDEOSOURCE_H
 
 #include <opencv2/opencv.hpp>
 
@@ -25,4 +21,4 @@ public :
 };
 
 
-#endif //IMAGEREC_VIDEOSOURCE_H
+#endif //VIDEOSOURCE_H

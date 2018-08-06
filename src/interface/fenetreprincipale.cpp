@@ -19,14 +19,13 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(
        parametres["Show Zone"] = "1";
        parametres["Show Percentage"] = "1";
        parametres["langue"] = "Français";
-        //A changer icitte
-       parametres["sourceType"] = "Realsense";// Met Local
 
-       parametres["sourceChemin"] = "Chemin de la vid";
-       parametres["sourceCheminDepth"] = "Chemin de la vid.";
+       parametres["sourceType"] = "Local";
+       parametres["sourceChemin"] = "/home/baptiste/Documents/reconnaissance-plans-activites/src/ressources/videos/Boiled.mkv";
+       parametres["sourceCheminDepth"] = "/home/baptiste/Documents/reconnaissance-plans-activites/src/ressources/videos/BoiledDepth.mkv";
 
-       //rec = new RecoManager (parametres);
-       //rec->update();
+       reconnaissanceManager = new RecoManager (parametres);
+       reconnaissanceManager->update();
 
 }
 
@@ -37,6 +36,7 @@ FenetrePrincipale::~FenetrePrincipale()
 
 void FenetrePrincipale::configuration()
 {
+    // Chargement langue
     setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), qApp->desktop()->availableGeometry()));
 }
 
@@ -46,14 +46,14 @@ void FenetrePrincipale::gestionVideo()
 }
 
 void FenetrePrincipale::MiseAJourImage()
-{/*
-    rec->update();
-    cv::Mat img = rec->getCurrentFeed();
+{
+    reconnaissanceManager->update();
+    cv::Mat img = reconnaissanceManager->getCurrentFeed();
     cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
     ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
     //this->MiseAJourImage();
     ui->image->repaint();
-    qApp->processEvents();*/
+    qApp->processEvents();
 }
 
 void FenetrePrincipale::MiseAJourHistogramme()

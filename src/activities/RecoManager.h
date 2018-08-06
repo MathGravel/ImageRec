@@ -1,9 +1,5 @@
-//
-// Created by uqamportable on 01/08/18.
-//
-
-#ifndef IMAGEREC_RECOMANAGER_H
-#define IMAGEREC_RECOMANAGER_H
+#ifndef RECOMANAGER_H
+#define RECOMANAGER_H
 
 #include "VideoSources/VideoFeedTypes.h"
 #include "Serializable.h"
@@ -58,4 +54,4 @@ private:
 };
 
 
-#endif //IMAGEREC_RECOMANAGER_H
+#endif //RECOMANAGER_H
