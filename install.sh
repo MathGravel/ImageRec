@@ -47,14 +47,14 @@ cd /opt/darknet
 make -j8 all
 
 ### Rebooting computer
-echo "Your computer needs to restart to finish the installation, please save everything you're working on and press enter to reboot."
+echo "Your computer needs to restart to finish the installation. Please save everything you're working on and press enter to reboot."
 
 read -n 1 key
 while [[ $key != "" ]]; do
 	if [[ $key = "" ]]; then
 		shutdown -r now
 	else
-		echo "You pressed the wrong key, please press enter to restart your computer."
+		echo "You pressed the wrong key ! Please press enter to restart your computer."
 	fi
 	read -n 1 key
 done
