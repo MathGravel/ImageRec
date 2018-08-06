@@ -7,11 +7,15 @@ Développée pour un projet de recherche du [Laboratoire de recherche en Gestion
 
 ## Dépendances
 
-   * C++ 11
-   * Qt 5
-   * ...
+   - C++ 11
+   - CMake 3
+   - Python 3
+   - Qt 5
+   - OpenCV 3
+   - Intel RealSense 2
+   - Darknet
 
-Les dépendances peuvent être installées en exécutant le script suivant :
+Les dépendances peuvent être installées en exécutant le script suivant (10 Go seront nécessaires pendant l'installation) :
 
 ```
 sudo sh install.sh
