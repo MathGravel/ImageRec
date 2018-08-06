@@ -1,8 +1,8 @@
 # Project
 reconnaissance-plans-activites
 reconnaissance-plans-activites.*
-!reconnaissance-plans-activites.pro
 reconnaissance-plans-activites_*/
+!reconnaissance-plans-activites.pro
 
 # OS generated files
 .DS_Store
