@@ -6,7 +6,7 @@
 #define IMAGEREC_WEBCAM_H
 
 
-#include "VideoSources/VideoSource.h"
+#include "VideoSource.h"
 
 class WebCam  : public VideoSource{
 

@@ -6,7 +6,7 @@
 #define IMAGEREC_REALSENSEVIDEO_H
 
 
-#include "VideoSources/VideoSource.h"
+#include "VideoSource.h"
 
 #define GLFW_INCLUDE_GLU
 

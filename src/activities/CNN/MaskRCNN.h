@@ -10,8 +10,8 @@
 #include <iostream>
 #include <fstream>
 
-#include "DetectedObject.h"
-#include "Detector.h"
+#include "../DetectedObject.h"
+#include "../Detector.h"
 
 using namespace cv;
 using namespace cv::dnn;

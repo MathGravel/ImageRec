@@ -25,8 +25,8 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(
        parametres["sourceChemin"] = "Chemin de la vid";
        parametres["sourceCheminDepth"] = "Chemin de la vid.";
 
-       rec = new RecoManager (parametres);
-       rec->update();
+       //rec = new RecoManager (parametres);
+       //rec->update();
 
 }
 
@@ -46,14 +46,14 @@ void FenetrePrincipale::gestionVideo()
 }
 
 void FenetrePrincipale::MiseAJourImage()
-{
+{/*
     rec->update();
     cv::Mat img = rec->getCurrentFeed();
     cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
     ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
     //this->MiseAJourImage();
     ui->image->repaint();
-    qApp->processEvents();
+    qApp->processEvents();*/
 }
 
 void FenetrePrincipale::MiseAJourHistogramme()

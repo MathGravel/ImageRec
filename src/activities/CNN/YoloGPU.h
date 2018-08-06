@@ -6,8 +6,8 @@
 #define IMAGEREC_YOLOGPU_H
 
 
-#include "DetectedObject.h"
-#include "Detector.h"
+#include "../DetectedObject.h"
+#include "../Detector.h"
 #include "Yolo.h"
 
 class YoloGPU : public Yolo {

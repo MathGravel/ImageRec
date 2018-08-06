@@ -1,9 +1,9 @@
-#include "configuration.h"
-#include "fenetreprincipale.h"
+#include "interface/configuration.h"
+#include "interface/fenetreprincipale.h"
 #include <QApplication>
 
 // Variables globales
-string fichierConfiguration = "../settings/config.ini";
+string fichierConfiguration = "settings.ini";
 Configuration parametres;
 
 int main(int argc, char *argv[])

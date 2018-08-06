@@ -6,7 +6,7 @@
 #define IMAGEREC_YOLO_H
 
 #include <string>
-#include "Detector.h"
+#include "../Detector.h"
 
 class Yolo : public Detector {
 
