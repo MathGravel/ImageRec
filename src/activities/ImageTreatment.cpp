@@ -49,10 +49,8 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
 
 
 
-
-
-
 }
+
 
 void ImageTreatment::update() {
     if (source == nullptr)
@@ -63,10 +61,9 @@ void ImageTreatment::update() {
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     this->colorFeed.push_back(this->colorPicture);
     this->depthFeed.push_back(this->depthPicture);
-
-
+    timestamp = source->getTimeStamp();
+    timeposition = source->getTimePosition();
 }
-
 
 void ImageTreatment::saveVideos() {
     cv::VideoWriter col,dep,prog;

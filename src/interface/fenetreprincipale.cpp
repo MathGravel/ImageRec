@@ -1,5 +1,6 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
+#include <QDebug>
 
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(new Ui::FenetrePrincipale)
 {
@@ -53,9 +54,7 @@ void FenetrePrincipale::gestionVideo()
 
 void FenetrePrincipale::MiseAJourImage()
 {
-    ui->application->setText("  Arrêter l'acquisition de la vidéo");
-    ui->application->setIcon(QIcon(":/logos/stop.png"));
-    ui->application->repaint();
+    lectureVideo();
 
     while(true) {
         reconnaissanceManager->update();
@@ -63,17 +62,17 @@ void FenetrePrincipale::MiseAJourImage()
         cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
         ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
         ui->image->repaint();
+        ui->histogramme->setValue(reconnaissanceManager->getTimePosition());
+        ui->histogramme->repaint();
+        ui->progression->setText(QString::fromStdString(reconnaissanceManager->getTimeStamp()));
+        ui->progression->repaint();
         qApp->processEvents();
         if (!play) {
             break;
         }
     }
 
-    ui->image->setPixmap(QPixmap());
-    ui->image->clear();
-    ui->application->setText("  Lancer l'acquisition de la vidéo");
-    ui->application->setIcon(QIcon(":/logos/play.png"));
-    ui->application->repaint();
+    arretVideo();
 }
 
 void FenetrePrincipale::MiseAJourHistogramme()
@@ -93,6 +92,8 @@ void FenetrePrincipale::MiseAJourInformations()
 
 void FenetrePrincipale::ouvrirFenetreParametres()
 {
+    play = false;
+    arretVideo();
     fenetreParametres = new FenetreParametres(this);
     fenetreParametres->exec();
 }
@@ -100,4 +101,20 @@ void FenetrePrincipale::ouvrirFenetreParametres()
 void FenetrePrincipale::pleinEcranVideo()
 {
     // Plein écran !
+}
+
+void FenetrePrincipale::lectureVideo()
+{
+    ui->application->setText("  Arrêter l'acquisition de la vidéo");
+    ui->application->setIcon(QIcon(":/logos/stop.png"));
+    ui->application->repaint();
+}
+
+void FenetrePrincipale::arretVideo()
+{
+    ui->image->setPixmap(QPixmap());
+    ui->image->clear();
+    ui->application->setText("  Lancer l'acquisition de la vidéo");
+    ui->application->setIcon(QIcon(":/logos/play.png"));
+    ui->application->repaint();
 }

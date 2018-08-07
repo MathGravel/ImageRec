@@ -245,7 +245,7 @@ border: none;
 }</string>
             </property>
             <property name="value">
-             <number>70</number>
+             <number>0</number>
             </property>
             <property name="textVisible">
              <bool>false</bool>
@@ -258,7 +258,7 @@ border: none;
              <string notr="true">border:none;</string>
             </property>
             <property name="text">
-             <string>1:07 / 4:42</string>
+             <string>0:00 / 0:00</string>
             </property>
            </widget>
           </item>

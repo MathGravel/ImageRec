@@ -20,6 +20,8 @@ class FenetrePrincipale : public QMainWindow
         explicit FenetrePrincipale(QWidget *parent = 0);
         ~FenetrePrincipale();
         void configuration();
+        virtual void lectureVideo();
+        virtual void arretVideo();
 
     protected:
         void closeEvent(QCloseEvent *event) override;

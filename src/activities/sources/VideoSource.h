@@ -17,6 +17,7 @@ public :
 
     virtual bool hasDepthSource() {}
     virtual std::string getTimeStamp(){}
+    virtual int getTimePosition(){}
 
 };
 

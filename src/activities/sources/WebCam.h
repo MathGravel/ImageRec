@@ -15,6 +15,7 @@ public:
     void update();
     bool hasDepthSource(){ return false;};
     std::string getTimeStamp() {return "--/--";}
+    int getTimePosition() {return 0;}
 
 private:
     cv::VideoCapture cv_cap;

@@ -29,10 +29,16 @@ cv::Mat RealSenseVideo::getMappedFeed() {
 
 void RealSenseVideo::update() {
 
-
-    //depthMeters = this->depth_frame_to_meters(pipe,depth);
     *vid >> colorFeed;
     *vidDepth >> depthFeed;
+    // Pour accélérer
+    *vid >> colorFeed;
+    *vidDepth >> depthFeed;
+    *vid >> colorFeed;
+    *vidDepth >> depthFeed;
+    *vid >> colorFeed;
+    *vidDepth >> depthFeed;
+
     depthMeters = depth_frame_to_meters(depthFeed);
 
     if (colorFeed.empty()) {
@@ -45,14 +51,23 @@ void RealSenseVideo::update() {
         vidDepth = new cv::VideoCapture(depthVideo);
         *vidDepth >> depthFeed;
         depthMeters = depth_frame_to_meters(depthFeed);
-
-
     }
-
-
-
 }
 
+
+std::string RealSenseVideo::getTimeStamp()
+{
+    int current = (int) vid->get(cv::CAP_PROP_POS_FRAMES) / vid->get(cv::CAP_PROP_FPS);
+    int total = (int) vid->get(cv::CAP_PROP_FRAME_COUNT) / vid->get(cv::CAP_PROP_FPS);
+
+    std::stringstream currentSecond;
+    currentSecond << std::setw(2) << std::setfill('0') << std::to_string(current%60);
+
+    std::stringstream totalSecond;
+    totalSecond << std::setw(2) << std::setfill('0') << std::to_string(total%60);
+
+    return std::to_string(current/60) + ":" + currentSecond.str() + " / " + std::to_string(total/60) + ":" + totalSecond.str();
+}
 
 
 // Converts depth frame to a matrix of doubles with distances in meters

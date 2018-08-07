@@ -1,5 +1,4 @@
 #include "video.h"
-#include <QDebug>
 
 Video::Video(QWidget *parent) : QLabel(parent)
 {

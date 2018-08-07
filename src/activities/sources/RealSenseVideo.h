@@ -24,7 +24,8 @@ public:
     cv::Mat getMappedFeed();
     void update();
     bool hasDepthSource() {return depthVideo != "";}
-    std::string getTimeStamp() {return "--/--";}
+    std::string getTimeStamp();
+    int getTimePosition() {return ((int) (vid->get(cv::CAP_PROP_POS_FRAMES)*100) / vid->get(cv::CAP_PROP_FRAME_COUNT));}
 
 private:
     //A faire, ajouter les composants necessaire pour utiliser la camera realsense.

@@ -36,6 +36,7 @@ public:
     void update();
     bool hasDepthSource() {return true;}
     std::string getTimeStamp() {return "--/--";}
+    int getTimePosition() {return 0;}
 
 
 

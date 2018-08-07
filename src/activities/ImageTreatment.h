@@ -23,7 +23,8 @@ public:
 
      ~ImageTreatment();
      void deserialize(std::map<std::string,std::string> stream);
-     std::string getCurrentTimeStamp();
+     std::string getTimeStamp() {return timestamp;}
+     int getTimePosition() {return timeposition;}
 
      void update();
      void treatPicture(ActivityRegion* act);
@@ -53,6 +54,8 @@ private:
     bool showzone;
     VideoSource* source;
     bool videoSave;
+    std::string timestamp;
+    int timeposition;
 
 };
 
