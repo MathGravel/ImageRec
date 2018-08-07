@@ -1,4 +1,4 @@
-#include "VideoSources/WebCam.h"
+#include "sources/WebCam.h"
 
 
 WebCam::WebCam() {

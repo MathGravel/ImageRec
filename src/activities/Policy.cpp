@@ -12,7 +12,7 @@ Policy::Policy() {
     PyRun_SimpleString("import os");
 
     std::ostringstream python_path;
-    python_path<<"sys.path.append(\""<<"/home/uqamportable/Documents/ImageRec/PlanRecoByPolicy/\")";
+    python_path<<"sys.path.append(\""<<"../plans/\")";
     main = PyImport_AddModule("__main__");
     PyRun_SimpleString(python_path.str().c_str());
     PyRun_SimpleString("from GraphNavigator import Policy");

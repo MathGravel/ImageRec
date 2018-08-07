@@ -2,11 +2,11 @@
 #define IMAGETREATMENT_H
 
 #include "Serializable.h"
-#include "VideoSources/VideoSource.h"
-#include "VideoSources/RealSense.h"
-#include "VideoSources/RealSenseVideo.h"
-#include "VideoSources/Kinect.h"
-#include "VideoSources/WebCam.h"
+#include "sources/VideoSource.h"
+#include "sources/RealSense.h"
+#include "sources/RealSenseVideo.h"
+#include "sources/Kinect.h"
+#include "sources/WebCam.h"
 #include "ActivityRegion.h"
 
 #include <map>

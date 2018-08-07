@@ -1,16 +1,16 @@
 #ifdef USE_OPENCV_CAFFE
 
-#include "../../Header files/CNN/ImgSegCNN.h"
+#include "ImgSegCNN.h"
 #include <caffe/caffe.hpp>
 
 
 ImgSegCNN::ImgSegCNN()
 {
 
-    string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
-    string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/sol.caffemodel";
-    string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/agewell_mean.binaryproto";
-    string label_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt";
+    string model_file   = "./InfosCNN/deploy.prototxt";
+    string trained_file = "./InfosCNN/sol.caffemodel";
+    string mean_file    = "./InfosCNN/agewell_mean.binaryproto";
+    string label_file   = "./InfosCNN/det_synset_words.txt";
 
 
      neuralNet = readNetFromCaffe(model_file,trained_file);
@@ -24,7 +24,7 @@ ImgSegCNN::~ImgSegCNN()
 void ImgSegCNN::train()
 {
     caffe::BlobProto blob_proto;
-    caffe::ReadProtoFromBinaryFileOrDie("/home/uqamportable/CLionProjects/ImageRec/InfosCNN/agewell_mean.binaryproto", &blob_proto);
+    caffe::ReadProtoFromBinaryFileOrDie("./InfosCNN/agewell_mean.binaryproto", &blob_proto);
 
     /* Convert from BlobProto to Blob<float> */
     caffe::Blob<float> mean_blob;
@@ -84,7 +84,7 @@ std::map<std::string, float> ImgSegCNN::predictMatrix(const cv::Mat& picture) {
 
 
     //! [Print results]
-    std::vector<String> classNames = readClassNames("/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt");
+    std::vector<String> classNames = readClassNames("./InfosCNN/det_synset_words.txt");
 
     std::vector<double> t = getClassesProb(prob);
 
@@ -126,7 +126,7 @@ Prediction ImgSegCNN::predict(const cv::Mat & picture)
 
 
     //! [Print results]
-    std::vector<String> classNames = readClassNames("/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt");
+    std::vector<String> classNames = readClassNames("./InfosCNN/det_synset_words.txt");
 
     std::vector<double> t = getClassesProb(prob);
     int ii = 0;

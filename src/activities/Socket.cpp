@@ -16,7 +16,7 @@ void Socket::Send_Data(const char *data, int port_number){
 	int portNum = port_number;
 	bool isExit = false;
 	int bufsize = strlen(data);
-	char *ip = "127.0.0.1";
+    char const *ip = "127.0.0.1";
 
 	struct sockaddr_in server_addr;
 

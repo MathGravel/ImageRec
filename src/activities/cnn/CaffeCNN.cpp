@@ -14,11 +14,11 @@ CaffeCNN::CaffeCNN()
 {
 
 
-    string model_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/deploy.prototxt";
-    string trained_file = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/solver_iter_2000.caffemodel";
-    //string trained_file = "/home/uqamportable/CLionProjects/ImageRec/cnnModel/newcnn.caffemodel";
-    string mean_file    = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/agewell_mean.binaryproto";
-    string label_file   = "/home/uqamportable/CLionProjects/ImageRec/InfosCNN/det_synset_words.txt";
+    string model_file   = "./InfosCNN/deploy.prototxt";
+    string trained_file = "./InfosCNN/solver_iter_2000.caffemodel";
+    //string trained_file = "./ImageRec/cnnModel/newcnn.caffemodel";
+    string mean_file    = "./InfosCNN/agewell_mean.binaryproto";
+    string label_file   = "./InfosCNN/det_synset_words.txt";
     classifier = Classifier(model_file, trained_file, mean_file, label_file);
 
 

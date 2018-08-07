@@ -1,4 +1,4 @@
-#include "VideoSources/RealSenseVideo.h"
+#include "sources/RealSenseVideo.h"
 
 
 RealSenseVideo::RealSenseVideo(std::string colorFile ,std::string depthFile ) : colorVideo(std::move(colorFile)),depthVideo(std::move(depthFile)) {

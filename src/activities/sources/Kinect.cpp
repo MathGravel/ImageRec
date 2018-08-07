@@ -1,4 +1,4 @@
-#include "VideoSources/Kinect.h"
+#include "sources/Kinect.h"
 #ifdef USE_KINECT
 
 Kinect::Kinect()

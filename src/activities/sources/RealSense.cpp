@@ -1,4 +1,4 @@
-#include "VideoSources/RealSense.h"
+#include "sources/RealSense.h"
 
 #ifdef USE_REALSENSE
 

@@ -1,7 +1,7 @@
 #ifndef RECOMANAGER_H
 #define RECOMANAGER_H
 
-#include "VideoSources/VideoFeedTypes.h"
+#include "sources/VideoFeedTypes.h"
 #include "Serializable.h"
 #include "ActivityRegion.h"
 #include "ImageTreatment.h"

@@ -1,4 +1,4 @@
-#include "CNN/MaskRCNN.h"
+#include "cnn/MaskRCNN.h"
 
 MaskRCNN::MaskRCNN(std::string inference_path, int imgHeight,int imgWidth,bool estMain, float _prob) {
 

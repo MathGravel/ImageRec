@@ -1,12 +1,9 @@
-//
-// Created by uqamportable on 26/04/18.
-//
 #include "ActivityRegion.h"
 
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
-ActivityRegion::ActivityRegion():handDetector("./activities/Models/hand",640,480,true,0.18f),
-                                 objectDetector("./activities/Models/object",640,480,false,0.30f),
+ActivityRegion::ActivityRegion():handDetector("./activities/models/hand",640,480,true,0.18f),
+                                 objectDetector("./activities/models/object",640,480,false,0.30f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 

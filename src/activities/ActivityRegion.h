@@ -14,10 +14,10 @@
 
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
-//#include "CNN/CaffeCNN.h"
-#include "CNN/ImgSegCNN.h"
-#include "CNN/MaskRCNN.h"
-#include "CNN/YoloGPU.h"
+//#include "cnn/CaffeCNN.h"
+#include "cnn/ImgSegCNN.h"
+#include "cnn/MaskRCNN.h"
+#include "cnn/YoloGPU.h"
 #include <stack>
 #include <cmath>
 
