@@ -23,12 +23,17 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(
     parametres["sourceCheminDepth"] = "/home/baptiste/Vidéos/BoiledDepth.mkv";
 
     reconnaissanceManager = new RecoManager(parametres);
-    reconnaissanceManager->update();
 }
 
 FenetrePrincipale::~FenetrePrincipale()
 {
     delete ui;
+}
+
+void FenetrePrincipale::closeEvent(QCloseEvent *event)
+{
+    play = false;
+    event->accept();
 }
 
 void FenetrePrincipale::configuration()
@@ -39,17 +44,36 @@ void FenetrePrincipale::configuration()
 
 void FenetrePrincipale::gestionVideo()
 {
-    this->MiseAJourImage();
+    play = !play;
+
+    if (play) {
+        this->MiseAJourImage();
+    }
 }
 
 void FenetrePrincipale::MiseAJourImage()
 {
-    reconnaissanceManager->update();
-    cv::Mat img = reconnaissanceManager->getCurrentFeed();
-    cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
-    ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
-    ui->image->repaint();
-    qApp->processEvents();
+    ui->application->setText("  Arrêter l'acquisition de la vidéo");
+    ui->application->setIcon(QIcon(":/logos/stop.png"));
+    ui->application->repaint();
+
+    while(true) {
+        reconnaissanceManager->update();
+        cv::Mat img = reconnaissanceManager->getCurrentFeed();
+        cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
+        ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
+        ui->image->repaint();
+        qApp->processEvents();
+        if (!play) {
+            break;
+        }
+    }
+
+    ui->image->setPixmap(QPixmap());
+    ui->image->clear();
+    ui->application->setText("  Lancer l'acquisition de la vidéo");
+    ui->application->setIcon(QIcon(":/logos/play.png"));
+    ui->application->repaint();
 }
 
 void FenetrePrincipale::MiseAJourHistogramme()

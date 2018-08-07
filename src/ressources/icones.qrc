@@ -7,5 +7,6 @@
         <file>logos/arrow-bottom.png</file>
         <file>logos/check.png</file>
         <file>logos/check-square.png</file>
+        <file>logos/stop.png</file>
     </qresource>
 </RCC>

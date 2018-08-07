@@ -20,7 +20,7 @@
    <string>Reconnaissance de plans et d'activités</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../ressources/images.qrc">
     <normaloff>:/images/logo.png</normaloff>:/images/logo.png</iconset>
   </property>
   <property name="styleSheet">
@@ -89,7 +89,7 @@ border: none;</string>
           <enum>Qt::LeftToRight</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #eee;
+          <string notr="true">background-color: black;
 border: none;</string>
          </property>
          <property name="frameShape">
@@ -119,10 +119,13 @@ border: none;</string>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -132,10 +135,13 @@ border: none;</string>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -145,16 +151,19 @@ border: none;</string>
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
-              <height>40</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
           </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="image">
+          <item row="1" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+           <widget class="Video" name="image">
             <property name="text">
              <string/>
             </property>
@@ -168,10 +177,13 @@ border: none;</string>
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
-              <height>40</height>
+              <width>0</width>
+              <height>0</height>
              </size>
             </property>
            </spacer>
@@ -274,7 +286,7 @@ border: none;
              <string/>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../ressources/icones.qrc">
               <normaloff>:/logos/expand.png</normaloff>:/logos/expand.png</iconset>
             </property>
             <property name="iconSize">
@@ -384,7 +396,7 @@ border: none;</string>
           <enum>Qt::AutoText</enum>
          </property>
          <property name="pixmap">
-          <pixmap>:/images/uqam.png</pixmap>
+          <pixmap resource="../ressources/images.qrc">:/images/uqam.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -445,7 +457,7 @@ border: none;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/images/gdac.png</pixmap>
+          <pixmap resource="../ressources/images.qrc">:/images/gdac.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -461,7 +473,7 @@ border: none;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap>:/images/agewell.png</pixmap>
+          <pixmap resource="../ressources/images.qrc">:/images/agewell.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -566,7 +578,7 @@ background-color: #ddd;
           <string>  Lancer l'acquisition de la vidéo</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../ressources/icones.qrc">
            <normaloff>:/logos/play.png</normaloff>:/logos/play.png</iconset>
          </property>
         </widget>
@@ -605,7 +617,7 @@ background-color: #ddd;
           <string>  Paramètres de l'application</string>
          </property>
          <property name="icon">
-          <iconset>
+          <iconset resource="../ressources/icones.qrc">
            <normaloff>:/logos/cog.png</normaloff>:/logos/cog.png</iconset>
          </property>
         </widget>
@@ -775,7 +787,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -859,7 +871,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -970,7 +982,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1157,7 +1169,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1241,7 +1253,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1325,7 +1337,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1515,7 +1527,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1599,7 +1611,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1683,7 +1695,7 @@ font-size: 14px;</string>
                    <string/>
                   </property>
                   <property name="pixmap">
-                   <pixmap>:/logos/cup.png</pixmap>
+                   <pixmap resource="../ressources/icones.qrc">:/logos/cup.png</pixmap>
                   </property>
                   <property name="scaledContents">
                    <bool>true</bool>
@@ -1765,7 +1777,15 @@ font-size: 14px;</string>
     <slot>ouvrirFenetreOptions()</slot>
    </slots>
   </customwidget>
+  <customwidget>
+   <class>Video</class>
+   <extends>QLabel</extends>
+   <header>video.h</header>
+  </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../ressources/icones.qrc"/>
+  <include location="../ressources/images.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -21,6 +21,9 @@ class FenetrePrincipale : public QMainWindow
         ~FenetrePrincipale();
         void configuration();
 
+    protected:
+        void closeEvent(QCloseEvent *event) override;
+
     public slots:
         void gestionVideo();
         void MiseAJourImage();
@@ -34,6 +37,7 @@ class FenetrePrincipale : public QMainWindow
         Ui::FenetrePrincipale *ui;
         FenetreParametres *fenetreParametres;
         RecoManager *reconnaissanceManager;
+        bool play = false;
 };
 
 #endif // FENETREPRINCIPALE_H
