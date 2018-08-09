@@ -8,6 +8,8 @@
 #include <QDesktopWidget>
 #include "RecoManager.h"
 
+extern Configuration parametres;
+
 namespace Ui {
     class FenetrePrincipale;
 }
@@ -29,8 +31,8 @@ class FenetrePrincipale : public QMainWindow
     public slots:
         void gestionVideo();
         void MiseAJourImage();
-        void MiseAJourHistogramme();
-        void MiseAJourProgression();
+        void MiseAJourHistogramme(int position);
+        void MiseAJourProgression(string timer);
         void MiseAJourInformations();
         void ouvrirFenetreParametres();
         void pleinEcranVideo();

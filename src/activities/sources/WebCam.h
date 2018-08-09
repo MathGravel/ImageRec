@@ -13,9 +13,9 @@ public:
     cv::Mat getDepthFeed();
     cv::Mat getMappedFeed();
     void update();
-    bool hasDepthSource(){ return false;};
-    std::string getTimeStamp() {return "--/--";}
-    int getTimePosition() {return 0;}
+    bool hasDepthSource(){ return false;}
+    std::string getTimeStamp() {return "<font color=\"#CD2034\">&#149;</font> En direct";}
+    int getTimePosition() {return 100;}
 
 private:
     cv::VideoCapture cv_cap;

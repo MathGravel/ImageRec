@@ -254,11 +254,20 @@ border: none;
           </item>
           <item>
            <widget class="QLabel" name="progression">
+            <property name="minimumSize">
+             <size>
+              <width>71</width>
+              <height>15</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">border:none;</string>
             </property>
             <property name="text">
              <string>0:00 / 0:00</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>

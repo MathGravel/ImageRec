@@ -31,13 +31,16 @@ void RealSenseVideo::update() {
 
     *vid >> colorFeed;
     *vidDepth >> depthFeed;
-    // Pour accélérer
+
+    // Pour accélérer la vidéo...
+    /*
     *vid >> colorFeed;
     *vidDepth >> depthFeed;
     *vid >> colorFeed;
     *vidDepth >> depthFeed;
     *vid >> colorFeed;
     *vidDepth >> depthFeed;
+    */
 
     depthMeters = depth_frame_to_meters(depthFeed);
 

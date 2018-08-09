@@ -4,10 +4,14 @@ Configuration::Configuration()
 {
     // Paramètres par défaut
     parametres["sourceType"] = "Vidéo locale";
-    parametres["sourceChemin"] = "/home/baptiste/Vidéos/";
+    parametres["sourceChemin"] = "/home/baptiste/Vidéos/Boiled.mkv";
+    parametres["sourceCheminProfondeur"] = "/home/baptiste/Vidéos/BoiledDepth.mkv";
     parametres["affichageActions"] = "Zone, nom et pourcentage";
     parametres["affichageObjets"] = "Zone";
     parametres["affichageMains"] = "Zone et poucentage";
+    parametres["affichageNom"] = "1";
+    parametres["affichageZone"] = "1";
+    parametres["affichagePoucentage"] = "1";
     parametres["precisionTraitement"] = "75 %";
     parametres["langue"] = "Français";
 

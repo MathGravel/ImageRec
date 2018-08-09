@@ -1,6 +1,5 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
-#include <QDebug>
 
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(new Ui::FenetrePrincipale)
 {
@@ -9,21 +8,6 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(
     QObject::connect(ui->application, SIGNAL(clicked()), this, SLOT(gestionVideo()));
     QObject::connect(ui->parametres, SIGNAL(clicked()), this, SLOT(ouvrirFenetreParametres()));
     QObject::connect(ui->pleinEcran, SIGNAL(clicked()), this, SLOT(pleinEcranVideo()));
-
-    map <string, string> parametres;
-    parametres["affichageActions"] = "Zone, nom et pourcentage";
-    parametres["affichageObjets"] = "Zone";
-    parametres["affichageMains"] = "Zone et poucentage";
-    parametres["precisionTraitement"] = "75 %";
-    parametres["Show Name"] = "1";
-    parametres["Show Zone"] = "1";
-    parametres["Show Percentage"] = "1";
-    parametres["langue"] = "Français";
-    parametres["sourceType"] = "Local";
-    parametres["sourceChemin"] = "/home/baptiste/Vidéos/Boiled.mkv";
-    parametres["sourceCheminDepth"] = "/home/baptiste/Vidéos/BoiledDepth.mkv";
-
-    reconnaissanceManager = new RecoManager(parametres);
 }
 
 FenetrePrincipale::~FenetrePrincipale()
@@ -39,7 +23,6 @@ void FenetrePrincipale::closeEvent(QCloseEvent *event)
 
 void FenetrePrincipale::configuration()
 {
-    // Chargement langue
     setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), qApp->desktop()->availableGeometry()));
 }
 
@@ -62,10 +45,8 @@ void FenetrePrincipale::MiseAJourImage()
         cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
         ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
         ui->image->repaint();
-        ui->histogramme->setValue(reconnaissanceManager->getTimePosition());
-        ui->histogramme->repaint();
-        ui->progression->setText(QString::fromStdString(reconnaissanceManager->getTimeStamp()));
-        ui->progression->repaint();
+        MiseAJourHistogramme(reconnaissanceManager->getTimePosition());
+        MiseAJourProgression(reconnaissanceManager->getTimeStamp());
         qApp->processEvents();
         if (!play) {
             break;
@@ -75,14 +56,16 @@ void FenetrePrincipale::MiseAJourImage()
     arretVideo();
 }
 
-void FenetrePrincipale::MiseAJourHistogramme()
+void FenetrePrincipale::MiseAJourHistogramme(int position)
 {
-    // Mise à jour de l'histogramme !
+    ui->histogramme->setValue(position);
+    ui->histogramme->repaint();
 }
 
-void FenetrePrincipale::MiseAJourProgression()
+void FenetrePrincipale::MiseAJourProgression(string timer)
 {
-    // Mise à jour du timer !
+    ui->progression->setText(QString::fromStdString(timer));
+    ui->progression->repaint();
 }
 
 void FenetrePrincipale::MiseAJourInformations()
@@ -100,11 +83,16 @@ void FenetrePrincipale::ouvrirFenetreParametres()
 
 void FenetrePrincipale::pleinEcranVideo()
 {
-    // Plein écran !
+    if (isFullScreen()) {
+        showNormal();
+    } else {
+        showFullScreen();
+    }
 }
 
 void FenetrePrincipale::lectureVideo()
 {
+    reconnaissanceManager = new RecoManager(parametres.getParametres());
     ui->application->setText("  Arrêter l'acquisition de la vidéo");
     ui->application->setIcon(QIcon(":/logos/stop.png"));
     ui->application->repaint();
@@ -112,6 +100,9 @@ void FenetrePrincipale::lectureVideo()
 
 void FenetrePrincipale::arretVideo()
 {
+    reconnaissanceManager = NULL;
+    MiseAJourHistogramme(0);
+    MiseAJourProgression("0:00 / 0:00");
     ui->image->setPixmap(QPixmap());
     ui->image->clear();
     ui->application->setText("  Lancer l'acquisition de la vidéo");

@@ -10,7 +10,8 @@ FenetreParametres::FenetreParametres(QWidget *parent) : QDialog(parent), ui(new 
     QObject::connect(ui->annuler, SIGNAL(clicked()), this, SLOT(fermer()));
     QObject::connect(ui->valider, SIGNAL(clicked()), this, SLOT(enregistrer()));
     QObject::connect(ui->sourceChoix, SIGNAL(currentIndexChanged(QString)), this, SLOT(sourceChoix(QString)));
-    QObject::connect(ui->message, SIGNAL(clicked()), this, SLOT(message()));
+    QObject::connect(ui->messageCouleur, SIGNAL(clicked()), this, SLOT(messageCouleur()));
+    QObject::connect(ui->messageProfondeur, SIGNAL(clicked()), this, SLOT(messageProfondeur()));
     QObject::connect(ui->actionsChoix, SIGNAL(currentIndexChanged(QString)), this, SLOT(actionsChoix(QString)));
     QObject::connect(ui->objetsChoix, SIGNAL(currentIndexChanged(QString)), this, SLOT(objetsChoix(QString)));
     QObject::connect(ui->mainsChoix, SIGNAL(currentIndexChanged(QString)), this, SLOT(mainsChoix(QString)));
@@ -28,7 +29,14 @@ void FenetreParametres::chargementParametres()
     parametresTemporaires["sourceType"] = QString::fromStdString(parametres.getParametre("sourceType"));
     ui->sourceChoix->setCurrentText(parametresTemporaires["sourceType"]);
     parametresTemporaires["sourceChemin"] = QString::fromStdString(parametres.getParametre("sourceChemin"));
-    ui->message->setText(parametresTemporaires["sourceChemin"]);
+    parametresTemporaires["sourceCheminProfondeur"] = QString::fromStdString(parametres.getParametre("sourceCheminProfondeur"));
+    if (parametresTemporaires["sourceType"] == "Vidéo locale") {
+        ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + parametresTemporaires["sourceChemin"]);
+        ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+    } else {
+        ui->messageCouleur->setText("");
+        ui->messageProfondeur->setText("");
+    }
     parametresTemporaires["affichageActions"] = QString::fromStdString(parametres.getParametre("affichageActions"));
     ui->actionsChoix->setCurrentText(parametresTemporaires["affichageActions"]);
     parametresTemporaires["affichageObjets"] = QString::fromStdString(parametres.getParametre("affichageObjets"));
@@ -52,14 +60,33 @@ void FenetreParametres::sauvegardeParametres()
     parametres.setParametre("langue" , parametresTemporaires["langue"].toStdString());
 }
 
-void FenetreParametres::selectionVideo()
+void FenetreParametres::selectionVideoCouleur()
 {
-    QString dossier = QFileDialog::getExistingDirectory();
-    if (dossier != "") {
-        ui->message->setText(dossier);
-        parametresTemporaires["sourceChemin"] = dossier;
+    QString video = QFileDialog::getOpenFileName();
+    if (video != "") {
+        ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + video);
+        parametresTemporaires["sourceChemin"] = video;
     } else {
-        ui->message->setText("Attention ! Aucun dossier n'est sélectionné...");
+        if (parametresTemporaires["sourceCheminProfondeur"] != "") {
+            ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+        } else {
+            ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>Attention, aucune vidéo n'est sélectionné.");
+        }
+    }
+}
+
+void FenetreParametres::selectionVideoProfondeur()
+{
+    QString video = QFileDialog::getOpenFileName();
+    if (video != "") {
+        ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + video);
+        parametresTemporaires["sourceCheminProfondeur"] = video;
+    } else {
+        if (parametresTemporaires["sourceCheminProfondeur"] != "") {
+            ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+        } else {
+            ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>Attention, aucune vidéo n'est sélectionné.");
+        }
     }
 }
 
@@ -82,17 +109,24 @@ void FenetreParametres::enregistrer()
 void FenetreParametres::sourceChoix(QString valeur)
 {
     if (valeur == "Vidéo locale") {
-        selectionVideo();
+        ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + parametresTemporaires["sourceChemin"]);
+        ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
     } else {
-        ui->message->setText("");
+        ui->messageCouleur->setText("");
+        ui->messageProfondeur->setText("");
     }
 
     parametresTemporaires["sourceType"] = valeur;
 }
 
-void FenetreParametres::message()
+void FenetreParametres::messageCouleur()
 {
-    selectionVideo();
+    selectionVideoCouleur();
+}
+
+void FenetreParametres::messageProfondeur()
+{
+    selectionVideoProfondeur();
 }
 
 void FenetreParametres::actionsChoix(QString valeur)

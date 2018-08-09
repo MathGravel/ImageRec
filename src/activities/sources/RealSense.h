@@ -26,8 +26,8 @@ public:
     cv::Mat getMappedFeed();
     void update();
     bool hasDepthSource() {return true;}
-    std::string getTimeStamp() {return "--/--";}
-    int getTimePosition() {return 0;}
+    std::string getTimeStamp() {return "<font color=\"#CD2034\">&#149;</font> En direct";}
+    int getTimePosition() {return 100;}
 
 
 private:

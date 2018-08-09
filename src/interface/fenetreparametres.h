@@ -21,13 +21,15 @@ class FenetreParametres : public QDialog
         ~FenetreParametres();
         void chargementParametres();
         void sauvegardeParametres();
-        void selectionVideo();
+        void selectionVideoCouleur();
+        void selectionVideoProfondeur();
 
     public slots:
         void fermer();
         void enregistrer();
         void sourceChoix(QString valeur);
-        void message();
+        void messageCouleur();
+        void messageProfondeur();
         void actionsChoix(QString valeur);
         void objetsChoix(QString valeur);
         void mainsChoix(QString valeur);

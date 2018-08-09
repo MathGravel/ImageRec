@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>610</width>
-    <height>373</height>
+    <height>376</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>610</width>
-    <height>373</height>
+    <height>376</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>610</width>
-    <height>373</height>
+    <height>376</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -789,7 +789,38 @@ color: #666666;</string>
       <property name="verticalSpacing">
        <number>5</number>
       </property>
-      <item row="1" column="0">
+      <item row="1" column="1">
+       <widget class="Label" name="messageCouleur">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 11px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;font style=&quot;font-weight:600;&quot;&gt;Couleur : &lt;/font&gt;/home/baptiste/Vidéos/demo.mp4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" rowspan="3">
+       <spacer name="horizontalSpacer2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" rowspan="3">
        <widget class="QComboBox" name="sourceChoix">
         <property name="maximumSize">
          <size>
@@ -853,6 +884,11 @@ outline: 0px;
           <string>Vidéo locale</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>Webcam</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item row="0" column="0">
@@ -887,8 +923,21 @@ font-weight: bold;</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
-       <widget class="Label" name="message">
+      <item row="0" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <widget class="Label" name="messageProfondeur">
         <property name="font">
          <font>
           <pointsize>-1</pointsize>
@@ -901,22 +950,9 @@ font-weight: bold;</string>
          <string notr="true">font-size: 11px;</string>
         </property>
         <property name="text">
-         <string>/home/baptiste/Vidéos/demo.mp4</string>
+         <string>&lt;font style=&quot;font-weight:600;&quot;&gt;Profondeur : &lt;/font&gt;/home/baptiste/Vidéos/demo.mp4</string>
         </property>
        </widget>
-      </item>
-      <item row="1" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
       </item>
      </layout>
     </widget>

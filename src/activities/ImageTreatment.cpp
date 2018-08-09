@@ -17,19 +17,17 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
         delete source;
         source = nullptr;
     }
-    if(stream["sourceType"] == "Local") {
-        this->source = new RealSenseVideo(stream["sourceChemin"],stream["sourceCheminDepth"]);
+    if(stream["sourceType"] == "Vidéo locale") {
+        this->source = new RealSenseVideo(stream["sourceChemin"],stream["sourceCheminProfondeur"]);
         originalSize = std::make_pair(640,480);
         screenSize = std::make_pair(640,480);
-
-
     }
-    else if (stream["sourceType"] == "Realsense") {
+    else if (stream["sourceType"] == "Intel RealSense (D435)") {
         this->source = new RealSense();
         originalSize = std::make_pair(640,480);
 
 
-    }else if (stream["sourceType"] == "Kinect") {
+    }else if (stream["sourceType"] == "Microsoft Kinect (Xbox One)") {
         this->source = new Kinect();
 
     } else {
@@ -43,9 +41,9 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
         int height = std::atoi(temp.substr(pos+1).c_str());
         screenSize = std::make_pair(width,height);
     }
-    showName = (stream.at("Show Name") == "1");
-    showzone = (stream.at("Show Zone") == "1");
-    showPercentage = (stream.at("Show Percentage") == "1");
+    showName = (stream.at("affichageNom") == "1");
+    showzone = (stream.at("affichageZone") == "1");
+    showPercentage = (stream.at("affichagePoucentage") == "1");
 
 
 
@@ -159,6 +157,6 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     this->imageTreated = pic;
     cv::resize(this->imageTreated,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     programFeed.push_back(imageTreated);
-    cv::imwrite("tr.png",imageTreated);
+    //cv::imwrite("tr.png",imageTreated);
 }
 
