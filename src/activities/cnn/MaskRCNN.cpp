@@ -114,7 +114,7 @@ std::vector<DetectedObject> MaskRCNN::findObjects(cv::Mat color,cv::Mat depth) {
 
             std::string nom = classNames[objectClass-1];
 
-            DetectedObject obj(object,nom,m[0],0.8);
+            DetectedObject obj(object,nom,m[0],confidence);
             objets.push_back(obj);
         }
     }

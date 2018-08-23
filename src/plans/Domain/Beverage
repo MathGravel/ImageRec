@@ -1,9 +1,0 @@
-teamaking : teakettle water mug tea
-teamaking : teakettle water tea mug
-teamaking : pot water mug tea
-coffemaking : teakettle water mug coffe
-coffemaking : pot water mug coffe
-coffemaking : coffe coffemaker mug milk
-coffemaking : coffe coffemaker water mug
-chocomaking : teakettle water mug choco
-chocomaking : mug milk choco

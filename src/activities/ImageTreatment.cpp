@@ -24,7 +24,7 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
     }
     else if (stream["sourceType"] == "Intel RealSense (D435)") {
         this->source = new RealSense();
-        originalSize = std::make_pair(640,480);
+        originalSize = std::make_pair(1280,720);
 
 
     }else if (stream["sourceType"] == "Microsoft Kinect (Xbox One)") {
@@ -94,6 +94,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     int thickness = 1;
     int baseline = 0;
     cv::Mat pic = this->colorPicture.clone();
+
     if (!act->regions.empty()) {
         for (auto &reg : act->regions) {
             cv::rectangle(pic, reg, cv::Scalar(100, 100, 100), 3);
@@ -104,7 +105,6 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
             if (act->oldName == reg.getObjName()) {
                 if (showzone)
                     cv::rectangle(pic, reg.getObjPos(), cv::Scalar(250, 0, 0), 4);
-
                 std::string val = showName?  reg.getObjName() + " "  : "";
                 val += showPercentage ?  std::to_string((int) floor(reg.getProb() * 100)) + "%" : "";
 
