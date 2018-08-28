@@ -93,6 +93,7 @@ void FenetrePrincipale::pleinEcranVideo()
 void FenetrePrincipale::lectureVideo()
 {
     reconnaissanceManager = new RecoManager(parametres.getParametres());
+    reconnaissanceManager->start_thread();
     ui->application->setText("  Arrêter l'acquisition de la vidéo");
     ui->application->setIcon(QIcon(":/logos/stop.png"));
     ui->application->repaint();
@@ -100,7 +101,10 @@ void FenetrePrincipale::lectureVideo()
 
 void FenetrePrincipale::arretVideo()
 {
-    reconnaissanceManager = NULL;
+    if (play) {
+        reconnaissanceManager->setIsStopped(false);
+        reconnaissanceManager = NULL;
+    }
     MiseAJourHistogramme(0);
     MiseAJourProgression("0:00 / 0:00");
     ui->image->setPixmap(QPixmap());

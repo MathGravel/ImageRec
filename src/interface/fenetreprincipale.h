@@ -24,6 +24,7 @@ class FenetrePrincipale : public QMainWindow
         void configuration();
         virtual void lectureVideo();
         virtual void arretVideo();
+        bool getPlay() {return play;}
 
     protected:
         void closeEvent(QCloseEvent *event) override;

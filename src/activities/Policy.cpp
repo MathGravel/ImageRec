@@ -27,16 +27,17 @@ Policy::Policy() {
 
     textFile = std::ofstream("trace/trace.txt");*/
 
-
+    domain = SmallDomain::getSmallDomain();
+    solver = Solver(domain,1,500);
 
 }
 
 Policy::~Policy() {
-    textFile.close();
+    //textFile.close();
 }
 
 bool Policy::update(Affordance observation)  {
-
+solver.addObservation("hold(" + observation.getName() + ")");
     /*std::stringstream ss;
     ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
     std::cout << ss.str();
@@ -58,6 +59,41 @@ bool Policy::load(std::string policyLocation) const {
     PyRun_SimpleString(ss.str().c_str());
     return true;
     */
+}
+
+bool comp(const pair<string, float>& a1, const pair<string, float>& a2)
+{
+    return a1.second < a2.second;
+}
+
+std::vector<std::pair<std::string,float>> Policy::getNextActions()
+{
+    std::map<std::string, float> nextActions = solver.getNextActions();
+    std::vector<std::pair<std::string,float>> vec;
+    std::copy(nextActions.begin(), nextActions.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
+    std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
+        if (l.second != r.second)
+            return l.second > r.second;
+
+        return l.first > r.first;
+    });
+
+    return vec;
+}
+
+std::vector<std::pair<std::string,float>> Policy::getGoalsProba()
+{
+    std::map<std::string, float> goalsProba = solver.getGoalsProba();
+    std::vector<std::pair<std::string,float>> vec;
+    std::copy(goalsProba.begin(), goalsProba.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
+    std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
+        if (l.second != r.second)
+            return l.second > r.second;
+
+        return l.first > r.first;
+    });
+
+    return vec;
 }
 
 std::string Policy::getCurrentPlan() const {

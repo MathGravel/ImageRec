@@ -88,14 +88,21 @@ class Domain
         float getObsRate() const {return obsRate;};
         float getAddRate() const {return addRate;};
         float getMutRate() const {return mutRate;};
-    private:
-        PlanLibrary planLibrary;
         float obsRate;
         float mutRate;
         float addRate;
+    private:
+        PlanLibrary planLibrary;
+
         std::unordered_map<int,std::unordered_map<int,float>> decisionModel;
         std::unordered_map<int, float> priorProbability;
 };
 
+class SmallDomain
+{
+    public:
+        static Domain getSmallDomain();
+        int test();
+};
 
 #endif // DOMAIN_H

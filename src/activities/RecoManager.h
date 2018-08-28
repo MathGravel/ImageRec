@@ -25,6 +25,8 @@ class RecoManager : public Serializable
         cv::Mat getOriginalPicture() { return feedSource.getOriginalImage();}
         cv::Mat getCurrentFeed() { return colorPic;}
         cv::Mat getCurrentDepthFeed() { return depthPic;}
+        void setIsStopped(bool play) {isStopped = play;}
+        void start_thread();
 
     private:
         ActivityRegion* act;
@@ -33,11 +35,11 @@ class RecoManager : public Serializable
         cv::Mat colorPic;
         cv::Mat depthPic;
         std::mutex mtx;
-        std::atomic<bool> isStopped;
+        bool isStopped = false;
         std::thread * th;
         void updatePolicy();
-        void start_thread();
         void start_affordance_check();
+        std::map<std::string, std::map<std::string, std::string>> informations;
 };
 
 #endif //RECOMANAGER_H

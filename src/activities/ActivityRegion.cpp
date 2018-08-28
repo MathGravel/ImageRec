@@ -7,7 +7,8 @@ ActivityRegion::ActivityRegion():handDetector("./activities/models/hand",640,480
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 
- std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic);
+
+std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic);
 
 void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 

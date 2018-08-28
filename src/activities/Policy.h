@@ -1,13 +1,15 @@
 #ifndef POLICY_H
 #define POLICY_H
 
-//#include <Python.h>
 #include <string>
 #include "Affordance.h"
 #include <sstream>
 #include <iostream>
 #include <fstream>
+#include "../plans/include/Domain.h"
+#include "../plans/include/Solver.h"
 
+using namespace std;
 
 class Policy {
 
@@ -20,12 +22,14 @@ public:
     std::string getCurrentPlan() const;
     std::string getCurrentPlanProb() const;
 
-
+    std::vector<std::pair<std::string,float>> getNextActions();
+    std::vector<std::pair<std::string,float>> getGoalsProba();
 
 
 private:
-   // PyObject* main;
-    //PyObject* solver;
+    Domain domain;
+    Solver solver;
+/*
     std::ofstream textFile;
 
 
@@ -61,7 +65,7 @@ private:
         }
         return oString;
     }
-
+*/
 
 };
 
