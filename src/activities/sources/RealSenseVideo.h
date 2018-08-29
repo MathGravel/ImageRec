@@ -3,6 +3,7 @@
 
 
 #include "VideoSource.h"
+#include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
 
 #define GLFW_INCLUDE_GLU
 
@@ -30,6 +31,8 @@ public:
 private:
     //A faire, ajouter les composants necessaire pour utiliser la camera realsense.
     cv::Mat depth_frame_to_meters(cv::Mat depthPic);
+    bool LoadMatBinary(const std::string& filename, cv::Mat& output);
+    bool readMatBinary(std::ifstream& ifs, cv::Mat& in_mat);
 
     cv::Mat colorFeed;
     cv::Mat depthFeed;
@@ -39,6 +42,8 @@ private:
     cv::VideoCapture* vidDepth;
     std::string colorVideo;
     std::string depthVideo;
+    bool vidFolder;
+    std::string folder;
 
 };
 

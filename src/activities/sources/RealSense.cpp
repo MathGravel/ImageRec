@@ -9,11 +9,11 @@ RealSense::RealSense() :align_to(RS2_STREAM_COLOR) {
     //Add desired streams to configuration
     cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_BGR8, 30);
     cfg.enable_stream(RS2_STREAM_DEPTH,1280,720,RS2_FORMAT_Z16);
-    //pipe.start(cfg);
+    pipe.start(cfg);
     last_frame_number = 0;
-    auto config = pipe.start(cfg);
-    auto profile = config.get_stream(RS2_STREAM_COLOR)
-            .as<rs2::video_stream_profile>();
+    //auto config = pipe.start(cfg);
+    //auto profile = config.get_stream(RS2_STREAM_COLOR)
+    //        .as<rs2::video_stream_profile>();
 
     for(int i = 0; i < 30; i++)
     {
@@ -47,8 +47,8 @@ void RealSense::update() {
 
 
     auto color_frame = data.get_color_frame();
-    //auto depth_frame = data.get_depth_frame();
-    rs2::frame depth = color_map(data.get_depth_frame());
+    auto depth = data.get_depth_frame();
+    //rs2::frame depth = color_map.colorize(data.get_depth_frame());
 
     // If we only received new depth frame,
     // but the color did not update, contcolorFeedinue
@@ -60,8 +60,8 @@ void RealSense::update() {
 
 
     // Query frame size (width and height)
-    const int w = depth.as<rs2::video_frame>().get_width();
-    const int h = depth.as<rs2::video_frame>().get_height();
+    const int w = 1280;//depth.as<rs2::video_frame>().get_width();
+    const int h = 720;//depth.as<rs2::video_frame>().get_height();
 
     depthFeed.release();
 
@@ -80,8 +80,8 @@ cv::Mat RealSense::frame_to_mat(const rs2::frame& f)
 
 
     auto vf = f.as<video_frame>();
-    const int w = vf.get_width();
-    const int h = vf.get_height();
+    const int w = 1280;//vf.get_width();
+    const int h = 720;//vf.get_height();
 
     if (f.get_profile().format() == RS2_FORMAT_BGR8)
     {
@@ -140,4 +140,8 @@ cv::Mat RealSense::depth_frame_limit(const rs2::pipeline& pipe, const rs2::depth
 
     return dm;
 }
+
+
+
+
 #endif
