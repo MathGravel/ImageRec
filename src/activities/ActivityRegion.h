@@ -79,7 +79,7 @@ private:
     DetectedObjects items;
 
     //ImgSegCNN caffe;
-    MaskRCNN handDetector;
+    //MaskRCNN handDetector;
     YoloGPU objectDetector;
 
     std::future<std::vector<cv::Rect>> resultSeg;

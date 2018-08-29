@@ -2,7 +2,7 @@
 
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
-ActivityRegion::ActivityRegion():handDetector("./activities/models/hand",640,480,true,0.18f),
+ActivityRegion::ActivityRegion():
                                  objectDetector(0.30f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
@@ -20,7 +20,7 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     items.clear();
 
         items = this->detectObjets(vision, depthVision);
-        hands = this->detectHand(vision,depthVision);
+        //hands = this->detectHand(vision,depthVision);
 
         //Test pour le corpus Kitchen ou les mains sont dans le meme systeme.
         std::vector<DetectedObject> mains;
@@ -157,7 +157,7 @@ inline bool instanceof(const T*) {
 }
 
 DetectedObjects ActivityRegion::detectHand(cv::Mat color, cv::Mat depth) {
-    return DetectedObjects(handDetector.findObjects(color,depth)) ;
+    return DetectedObjects(objectDetector.findObjects(color,depth)) ;
 }
 
 DetectedObjects ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {

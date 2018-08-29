@@ -57,7 +57,7 @@ void ImageTreatment::update() {
     this->colorPicture = source->getColorFeed();
     this->depthPicture = source->getDepthFeed();
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
-    cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
+    //cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
 
     this->colorFeed.push_back(this->colorPicture);
     this->depthFeed.push_back(this->depthPicture);
@@ -93,7 +93,7 @@ cv::Mat ImageTreatment::getDepthImage(){return this->depthPicture;}
 void ImageTreatment::treatPicture(ActivityRegion *act) {
     int fontface = cv::FONT_HERSHEY_SIMPLEX;
     double scale = 1;
-    int thickness = 1;
+    int thickness = 2;
     int baseline = 0;
     cv::Mat pic = this->colorPicture.clone();
 
@@ -112,9 +112,13 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
 
                 cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
                 cv::Rect textBox(reg.getObjPos());
-                textBox.y += textBox.height;
+                textBox.y -= text.height;
+
                 textBox.height = text.height;
-                cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
+                textBox.width = text.width * 1.15;
+                cv::rectangle(pic,textBox,cv::Scalar(reg.getRed(),reg.getGreen(),reg.getBlue()),-1);
+
+                cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
                     thickness, 8);
          //   }
         }
@@ -130,9 +134,13 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
 
         cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
         cv::Rect textBox(hand.getObjPos());
-        textBox.y += textBox.height;
+        textBox.y -= text.height;
+
         textBox.height = text.height;
-        cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
+        textBox.width = text.width * 1.15;
+        cv::rectangle(pic,textBox,cv::Scalar(hand.getRed(),hand.getGreen(),hand.getBlue()),-1);
+
+        cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
             thickness, 8);
 
     }
@@ -149,9 +157,12 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
 
             cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
             cv::Rect textBox(pos.getRegion());
-            textBox.y += textBox.height;
+            textBox.y -= text.height;
+
             textBox.height = text.height;
-            cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
+            textBox.width = text.width * 1.15;
+            cv::rectangle(pic,textBox,cv::Scalar(255,255,255),-1);
+            cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
                 thickness, 8);
         }
 
@@ -159,6 +170,5 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     this->imageTreated = pic;
     cv::resize(this->imageTreated,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     programFeed.push_back(imageTreated);
-    //cv::imwrite("tr.png",imageTreated);
 }
 
