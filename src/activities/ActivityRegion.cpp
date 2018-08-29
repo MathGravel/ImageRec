@@ -3,7 +3,7 @@
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
 ActivityRegion::ActivityRegion():handDetector("./activities/models/hand",640,480,true,0.18f),
-                                 objectDetector("./activities/models/object",640,480,false,0.30f),
+                                 objectDetector(0.30f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 
@@ -19,7 +19,6 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     hands.clear();
     items.clear();
 
-
         items = this->detectObjets(vision, depthVision);
         hands = this->detectHand(vision,depthVision);
 
@@ -28,7 +27,7 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
         std::vector<DetectedObject> newit;
 
         for (const auto it : items) {
-            if (it.getObjName() == "Hand") {
+            if (it.getObjName() == "hand") {
                 mains.push_back(it);
                 //exit(-1);
             }
@@ -37,10 +36,23 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
             }
 
         }
+        /*for (const auto it : hands) {
+            if (it.getObjName() == "hand") {
+                mains.push_back(it);
+                //exit(-1);
+            }
+            else {
+                newit.push_back(it);
+            }
 
-        //hands = DetectedObjects(mains);
+        }*/
+
+
+        hands = DetectedObjects(mains);
         items = DetectedObjects(newit);
         int i  = hands.getObjects().size();
+        int tr  = hands.getObjects().size();
+
         if (!items.empty() && !hands.empty()) {
             currentAffordance = affordances.findAffordances(items, hands);
             if (!currentAffordance.empty()) {

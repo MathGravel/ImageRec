@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.5.1)
 project(reconnaissance-plans-activites)
 
 set(CMAKE_CXX_STANDARD 14)
@@ -15,9 +15,9 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 #set(Caffe_DEFINITIONS "-DUSE_OPENCV;-DUSE_LMDB;-DUSE_LEVELDB")
 
 add_library(libdarknet SHARED IMPORTED)
-set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /opt/darknet/libdarknet.so)
-link_directories(/opt/darknet/include)
-link_directories(/opt/darknet)
+set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /home/troisiememathieu/Music/YOLO/darknet/libdarknet.so)
+link_directories(//home/troisiememathieu/Music/YOLO/darknet/include)
+link_directories(/home/troisiememathieu/Music/YOLO/darknet)
 
 find_package(Threads REQUIRED)
 find_package(realsense2 REQUIRED)
@@ -37,7 +37,7 @@ include_directories("./plans/src")
 include_directories("./ressources")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOMOC ON)
 find_package(Qt5Widgets CONFIG REQUIRED)
 
 file(GLOB_RECURSE Activities_SOURCES "activities/*.cpp")
@@ -71,4 +71,4 @@ TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${Protobuf_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${PYTHON_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} libdarknet)
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} Qt5::Widgets)
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /opt/darknet/include)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /home/troisiememathieu/Music/YOLO/darknet/include)

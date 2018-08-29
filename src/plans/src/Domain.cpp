@@ -13,7 +13,7 @@ Domain::Domain(float obsRate, float mutRate, float addRate, PlanLibrary planLibr
 
 PlanLibrary Domain::getPlanLibrary() const
 {
-    return this->planLibrary;
+    return planLibrary;
 }
 
 ProductionRule Domain::getRandomProduction(int literal)

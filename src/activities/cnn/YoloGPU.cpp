@@ -1,5 +1,5 @@
 #include "YoloGPU.h"
-
+#include <unistd.h>
 extern "C" {
 #include <darknet.h>
 }
@@ -12,20 +12,26 @@ YoloGPU::YoloGPU( float _prob) {
     wei = weibuff;
     dat = datbuff;
     lbl = lblbuff;
-    strncpy(dat,"../Files-yolo/voc-hand.data",256);
-    strncpy(lbl,"../Files-yolo/classes.name",256);
-    strncpy(cfg,"../Files-yolo/yolov3-hand.cfg",256);
-    strncpy(wei,"../Files-yolo/yolov3-hand_final.weights",256);
 
+    strncpy(dat,"ressources/models/yolo.data",256);
+    strncpy(lbl,"ressources/models/classes.name",600);
+    strncpy(cfg,"ressources/models/yolov3.cfg",256);
+    strncpy(wei,"ressources/models/yolov3.backup",256);
     //options = read_data_cfg(dat);
-
+    char cwd[PATH_MAX];
+       if (getcwd(cwd, sizeof(cwd)) != NULL) {
+           std::cout << "Current working dir: " <<  cwd;
+       } else {
+           perror("getcwd() error");
+       }
     names = get_labels(lbl);
+
 
     net = load_network(cfg,wei, 0);
     set_batch_network((network*)net, 1);
     srand(2222222);
     nms =.45;
-    thresh = _prob;
+    thresh = 0.5;
 
 }
 
@@ -75,34 +81,80 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
     network_predict((network*)net, X);
     printf(" Predicted in %f seconds.\n",  what_time_is_it_now()-time);
     int nboxes = 0;
-    detection *dets = get_network_boxes((network*)net, im.w, im.h, 0.5, 0.5, 0, 1, &nboxes);
-    if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
+    detection *dets = get_network_boxes((network*)net, im.w, im.h, thresh, 0.5, 0, 1, &nboxes);
+    //if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
 
     std::vector<DetectedObject> objects;
 
 
-
-
     for (i = 0; i < nboxes;i++) {
-        if (dets[i].prob[0] > thresh) {
+        bool correct = false;
+        int pos = -1;
+        for (int j = 0; j <10;j++) {
+            if (dets[i].prob[j] > thresh) {
+                correct = true;
+                pos = j;
+            }
+        }
+        if (correct) {
             cv::Rect obj(0,0,0,0);
-            int temp = (dets[i].bbox.x - dets[i].bbox.w/2.) * im.w;
+            auto b = dets[i].bbox;
+            int left  = (b.x-b.w/2.)*im.w;
+            int right = (b.x+b.w/2.)*im.w;
+            int top   = (b.y-b.h/2.)*im.h;
+            int bot   = (b.y+b.h/2.)*im.h;
+
+            if(left < 0) left = 0;
+            if(right > im.w-1) right = im.w-1;
+            if(top < 0) top = 0;
+            if(bot > im.h-1) bot = im.h-1;
+            obj.x = left;
+            obj.y = top;
+            obj.width = right - left;
+            obj.height = bot - top;
+
+            /*int temp = (dets[i].bbox.x - dets[i].bbox.w/2.) * im.w;
             obj.x = temp > 0? temp : 0;
             temp = (dets[i].bbox.y - dets[i].bbox.h/2.) * im.h;
             obj.y = temp > 0? temp : 0;
             temp = (dets[i].bbox.x + dets[i].bbox.w/2.) * im.w;
             obj.width = temp < color.rows  ? temp - obj.x : color.rows-1;
             temp = (dets[i].bbox.y + dets[i].bbox.h/2.) * im.h;
-            obj.width = temp < color.cols  ? temp - obj.y : color.cols-1;
+            obj.height = temp < color.cols  ? temp - obj.y : color.cols-1;*/
+
+
+
+
             cv::Scalar m = mean(depth(obj));
-            objects.emplace_back(DetectedObject(obj,"main",m[0]));
+            std::string nom = names[pos];
+            int offset = pos*123457 % 10;
+            float red = get_color(2,offset,10);
+             float green = get_color(1,offset,10);
+             float blue = get_color(0,offset,10);
+              float rgb[3];
+              rgb[0] = red;
+              rgb[1] = green;
+              rgb[2] = blue;
+            objects.emplace_back(DetectedObject(obj,nom,m[0],dets[i].prob[pos],red,green,blue));
         }
     }
-
 
     free_detections(dets, nboxes);
     free_image(im);
     free_image(sized);
     //free_layer(l);
     return objects;
+}
+
+float colors[6][3] = { {255,0,255}, {0,0,255},{0,255,255},{0,255,0},{255,255,0},{255,0,0} };
+
+float YoloGPU::get_color(int c, int x, int max)
+{
+    float ratio = ((float)x/max)*5;
+    int i = floor(ratio);
+    int j = ceil(ratio);
+    ratio -= i;
+    float r = (1-ratio) * colors[i][c] + ratio*colors[j][c];
+    //printf("%f\n", r);
+    return r;
 }

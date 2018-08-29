@@ -49,6 +49,7 @@ void FenetrePrincipale::MiseAJourImage()
     while(true) {
         reconnaissanceManager->update();
         cv::Mat img = reconnaissanceManager->getCurrentFeed();
+
         cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
         ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
         ui->image->repaint();

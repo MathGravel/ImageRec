@@ -20,7 +20,7 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
     if(stream["sourceType"] == "Vidéo locale") {
         this->source = new RealSenseVideo(stream["sourceChemin"],stream["sourceCheminProfondeur"]);
         originalSize = std::make_pair(640,480);
-        screenSize = std::make_pair(640,480);
+        screenSize = std::make_pair(1280,720);
     }
     else if (stream["sourceType"] == "Intel RealSense (D435)") {
         this->source = new RealSense();
@@ -41,9 +41,9 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
         int height = std::atoi(temp.substr(pos+1).c_str());
         screenSize = std::make_pair(width,height);
     }
-    showName = (stream.at("affichageNom") == "1");
-    showzone = (stream.at("affichageZone") == "1");
-    showPercentage = (stream.at("affichagePoucentage") == "1");
+    //showName = (stream.at("affichageNom") == "1");
+    //showzone = (stream.at("affichageZone") == "1");
+    //showPercentage = (stream.at("affichagePoucentage") == "1");
 
 
 
@@ -57,6 +57,8 @@ void ImageTreatment::update() {
     this->colorPicture = source->getColorFeed();
     this->depthPicture = source->getDepthFeed();
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
+    cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
+
     this->colorFeed.push_back(this->colorPicture);
     this->depthFeed.push_back(this->depthPicture);
     timestamp = source->getTimeStamp();
@@ -101,10 +103,10 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
         }
     } else if (!act->items.empty()) {
         for (auto &reg :  act->items) {
-            cv::rectangle(pic, reg.getObjPos(), cv::Scalar(0, 0, 250), 4);
-            if (act->oldName == reg.getObjName()) {
-                if (showzone)
-                    cv::rectangle(pic, reg.getObjPos(), cv::Scalar(250, 0, 0), 4);
+           // cv::rectangle(pic, reg.getObjPos(), cv::Scalar(0, 0, 250), 4);
+   //         if (act->oldName == reg.getObjName()) {
+               // if (showzone)
+                    cv::rectangle(pic, reg.getObjPos(), cv::Scalar(reg.getRed(),reg.getGreen(),reg.getBlue()), 6);
                 std::string val = showName?  reg.getObjName() + " "  : "";
                 val += showPercentage ?  std::to_string((int) floor(reg.getProb() * 100)) + "%" : "";
 
@@ -114,14 +116,14 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
                 textBox.height = text.height;
                 cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 250, 0),
                     thickness, 8);
-            }
+         //   }
         }
     }
 
     int i  = act->hands.getObjects().size();
     for (auto & hand :  act->hands) {
-        if (showzone)
-            cv::rectangle(pic, hand.getObjPos(), cv::Scalar(125, 125, 0), 4);
+       // if (showzone)
+            cv::rectangle(pic, hand.getObjPos(), cv::Scalar(hand.getRed(),hand.getGreen(),hand.getBlue()), 6);
 
         std::string val = showName?  hand.getObjName() + " "  : "";
         val += showPercentage ?  std::to_string((int) floor(hand.getProb() * 100)) + "%" : "";

@@ -54,6 +54,9 @@ public:
             objName = "choco";
         if (objName == "pitcher")
             objName = "water";
+        _r = 0;
+        _g = 250;
+        _b = 0;
     }
 
     DetectedObject(cv::Rect position, std::string name, double _dist, double _prob) {
@@ -68,6 +71,25 @@ public:
             objName = "choco";
         if (objName == "pitcher")
             objName = "water";
+        _r = 0;
+        _g = 250;
+        _b = 0;
+    }
+    DetectedObject(cv::Rect position, std::string name, double _dist, double _prob,float r,float g,float b) {
+        objPos = position;
+        objName = name;
+        dist = _dist;
+        prob = _prob;
+        if (objName == "teapot") {
+            objName = "teakettle";
+        }
+        if(objName == "chocolate")
+            objName = "choco";
+        if (objName == "pitcher")
+            objName = "water";
+        _r = r;
+        _g = g;
+        _b = b;
     }
 
 
@@ -87,12 +109,25 @@ public:
         return prob;
     }
 
+    const float getRed() const {
+        return _r;
+    }
+    const float getGreen() const {
+        return _g;
+    }
+    const float getBlue() const {
+        return _b;
+    }
+
 
 private:
     cv::Rect objPos;
     std::string objName;
     double dist;
     double prob;
+    float _r;
+    float _g;
+    float _b;
 
     friend std::ostream& operator<<(std::ostream& o,const DetectedObject& obj){
         o << obj.objName << " " << obj.prob << std::endl;
@@ -120,7 +155,7 @@ public:
 
     DetectedObjects() = default;
 
-    DetectedObjects(std::vector<DetectedObject> objets) :objs(std::move(objets)) {};
+    DetectedObjects(std::vector<DetectedObject> objets) :objs(objets) {};
 
     const DetectedObject * begin() const
     {

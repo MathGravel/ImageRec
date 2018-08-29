@@ -20,8 +20,8 @@ public:
     ~YoloCPU();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
     std::string getDetectorType(){return "CPU";}
-    void serialize(std::ostream& stream);
-    void deserialize(std::istream& stream);
+    void deserialize(std::map<std::string,std::string> stream) {}
+
 
 
 private:

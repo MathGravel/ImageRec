@@ -28,7 +28,9 @@ Policy::Policy() {
     textFile = std::ofstream("trace/trace.txt");*/
 
     domain = SmallDomain::getSmallDomain();
+
     solver = Solver(domain,1,500);
+    solver.addObservation("hold(teakettle)");
 
 }
 
@@ -37,7 +39,10 @@ Policy::~Policy() {
 }
 
 bool Policy::update(Affordance observation)  {
+    std::cout << "hold(" + observation.getName() + ")" << std::endl;
 solver.addObservation("hold(" + observation.getName() + ")");
+std::cout << "Yup";
+
     /*std::stringstream ss;
     ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
     std::cout << ss.str();

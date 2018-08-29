@@ -27,10 +27,12 @@ RecoManager::~RecoManager() {
 
 void RecoManager::update(){
     this->feedSource.update();
-    this->act->Update(this->feedSource.getCurrentImage(),this->feedSource.getDepthImage());
-    this->feedSource.treatPicture(this->act);
     colorPic =this->feedSource.getCurrentImage();
     depthPic = this->feedSource.getDepthImage();
+    this->act->Update(this->feedSource.getCurrentImage(),this->feedSource.getDepthImage());
+    this->feedSource.treatPicture(this->act);
+    //cv::imwrite("ttt.png",colorPic);
+
     this->updatePolicy();
 
 }
@@ -69,7 +71,7 @@ void RecoManager::start_affordance_check(){
 
     while(isStopped){
 
-        /*
+
         std::time_t t = std::time(0);
         std::tm* now = std::localtime(&t);
 
@@ -84,7 +86,7 @@ void RecoManager::start_affordance_check(){
         cout << "Action Suivante 2 : " << informations["actionSuivante2"]["nom"] << " - " << informations["actionSuivante2"]["pourcentage"] << endl;
         cout << "Action Suivante 3 : " << informations["actionSuivante3"]["nom"] << " - " << informations["actionSuivante3"]["pourcentage"] << endl;
         cout << "***************************************************" << endl << endl;
-        */
+
 
         if(!act->currentAffordances.empty()){
             AffordanceTime* aff = act->currentAffordances.top();
@@ -102,7 +104,7 @@ void RecoManager::start_affordance_check(){
                 if (actionActuelleCompteur > 8) {
 
                     if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
-                        pol.update(aff->getAffordance());
+                        //pol.update(aff->getAffordance());
 
                         informations["actionPrecedente1"] = informations["actionPrecedente2"];
                         informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};

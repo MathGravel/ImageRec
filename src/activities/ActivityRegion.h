@@ -80,7 +80,7 @@ private:
 
     //ImgSegCNN caffe;
     MaskRCNN handDetector;
-    MaskRCNN objectDetector;
+    YoloGPU objectDetector;
 
     std::future<std::vector<cv::Rect>> resultSeg;
     cv::Mat chosenROI;

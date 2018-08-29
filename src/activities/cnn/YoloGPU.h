@@ -13,10 +13,11 @@ public:
     ~YoloGPU();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
     std::string getDetectorType(){return "GPU";}
-    void serialize(std::ostream& stream);
-    void deserialize(std::istream& stream);
+    void deserialize(std::map<std::string,std::string> stream) {}
+
 
 private:
+    float get_color(int c, int x, int max);
 
     char* cfg;
     char *fil ;

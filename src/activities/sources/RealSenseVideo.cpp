@@ -56,7 +56,6 @@ void RealSenseVideo::update() {
     */
 
     depthMeters = depth_frame_to_meters(depthFeed);
-    depthMeters = colorFeed;
     if (colorFeed.empty()) {
         vid->release();
         delete vid;
