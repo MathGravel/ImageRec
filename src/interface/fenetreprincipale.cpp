@@ -24,6 +24,10 @@ void FenetrePrincipale::closeEvent(QCloseEvent *event)
 void FenetrePrincipale::configuration()
 {
     setGeometry(QStyle::alignedRect(Qt::LeftToRight, Qt::AlignCenter, size(), qApp->desktop()->availableGeometry()));
+
+    ui->activites->setHidden(true);
+    ui->feedback->setHidden(true);
+    ui->planificateur->setHidden(true);
 }
 
 void FenetrePrincipale::gestionVideo()
@@ -32,6 +36,9 @@ void FenetrePrincipale::gestionVideo()
 
     if (play) {
         this->MiseAJourImage();
+    } else {
+        reconnaissanceManager->setIsStopped(false);
+        reconnaissanceManager = NULL;
     }
 }
 
@@ -47,6 +54,8 @@ void FenetrePrincipale::MiseAJourImage()
         ui->image->repaint();
         MiseAJourHistogramme(reconnaissanceManager->getTimePosition());
         MiseAJourProgression(reconnaissanceManager->getTimeStamp());
+        MiseAJourInformations(reconnaissanceManager->getInformations());
+
         qApp->processEvents();
         if (!play) {
             break;
@@ -68,9 +77,96 @@ void FenetrePrincipale::MiseAJourProgression(string timer)
     ui->progression->repaint();
 }
 
-void FenetrePrincipale::MiseAJourInformations()
+void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std::string, std::string>> informations)
 {
-    // Mise à jour des inforamtions !
+    if ((informations["actionPrecedente1"]["nom"] == "") && (informations["actionPrecedente2"]["nom"] == "")) {
+        ui->actionsPrecedentes->setHidden(true);
+    } else {
+        ui->actionsPrecedentes->setHidden(false);
+    }
+
+    if (informations["actionPrecedente1"]["nom"] != "") {
+        ui->actionsPrecedentesTitre->setText("Actions précédentes");
+        ui->actionsPrecedentes1->setHidden(false);
+        ui->actionPrecedente1Label->setText(getNomAction(informations["actionPrecedente1"]["nom"]));
+        ui->actionPrecedente1Logo->setPixmap(QPixmap(getLogo(informations["actionPrecedente1"]["nom"])));
+        ui->actionPrecedente1Pourcentage->setText(QString::fromStdString(informations["actionPrecedente1"]["pourcentage"]) + " %");
+    } else {
+        ui->actionsPrecedentesTitre->setText("Action précédente");
+        ui->actionsPrecedentes1->setHidden(true);
+    }
+
+    if (informations["actionPrecedente2"]["nom"] != "") {
+        ui->actionsPrecedentes2->setHidden(false);
+        ui->actionsPrecedentes2Label->setText(getNomAction(informations["actionPrecedente2"]["nom"]));
+        ui->actionsPrecedentes2Logo->setPixmap(QPixmap(getLogo(informations["actionPrecedente2"]["nom"])));
+        ui->actionsPrecedentes2Pourcentage->setText(QString::fromStdString(informations["actionPrecedente2"]["pourcentage"]) + " %");
+    } else {
+        ui->actionsPrecedentes2->setHidden(true);
+    }
+
+    ui->actionActuelle1Label->setText(getNomAction(informations["actionActuelle"]["nom"]));
+    ui->actionActuelle1Logo->setPixmap(QPixmap(getLogo(informations["actionActuelle"]["nom"])));
+    ui->actionActuelle1Pourcentage->setText(QString::fromStdString(informations["actionActuelle"]["pourcentage"]) + " %");
+
+    ui->plansCourants1Label->setText(getNomPlan(informations["planCourant1"]["nom"]));
+    ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
+    ui->plansCourants1Pourcentage->setText(QString::fromStdString(informations["planCourant1"]["pourcentage"]) + " %");
+
+    ui->plansCourants2Label->setText(getNomPlan(informations["planCourant2"]["nom"]));
+    ui->plansCourants2Logo->setPixmap(QPixmap(getLogo(informations["planCourant2"]["nom"])));
+    ui->plansCourants2Pourcentage->setText(QString::fromStdString(informations["planCourant2"]["pourcentage"]) + " %");
+
+    ui->plansCourants3Label->setText(getNomPlan(informations["planCourant3"]["nom"]));
+    ui->plansCourants3Logo->setPixmap(QPixmap(getLogo(informations["planCourant3"]["nom"])));
+    ui->plansCourants3Pourcentage->setText(QString::fromStdString(informations["planCourant3"]["pourcentage"]) + " %");
+
+    ui->actionsSuivantes1Label->setText(getNomAction(informations["actionSuivante1"]["nom"]));
+    ui->actionsSuivantes1Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante1"]["nom"])));
+    ui->actionsSuivantes1Pourcentage->setText(QString::fromStdString(informations["actionSuivante1"]["pourcentage"]) + " %");
+
+    ui->actionsSuivantes2Label->setText(getNomAction(informations["actionSuivante2"]["nom"]));
+    ui->actionsSuivantes2Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante2"]["nom"])));
+    ui->actionsSuivantes2Pourcentage->setText(QString::fromStdString(informations["actionSuivante2"]["pourcentage"]) + " %");
+
+    ui->actionsSuivantes3Label->setText(getNomAction(informations["actionSuivante3"]["nom"]));
+    ui->actionsSuivantes3Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante3"]["nom"])));
+    ui->actionsSuivantes3Pourcentage->setText(QString::fromStdString(informations["actionSuivante3"]["pourcentage"]) + " %");
+}
+
+QString FenetrePrincipale::getNomAction(string nom)
+{
+    if (nom == "teamaking") { return tr("Préparation de thé"); }
+    if (nom == "coffemaking") { return tr("Préparation de café"); }
+    if (nom == "chocomaking") { return tr("Préparation de chocolat"); }
+    if (nom == "teakettle") { return tr("Bouilloire"); }
+    if (nom == "water") { return tr("Pichet d'eau"); }
+    if (nom == "mug") { return tr("Tasse"); }
+    if (nom == "coffe") { return tr("Café"); }
+    if (nom == "pot") { return tr("Pot"); }
+    if (nom == "coffemaker") { return tr("Machine à café"); }
+    if (nom == "milk") { return tr("Lait"); }
+    if (nom == "choco") { return tr("Chocolat en poudre"); }
+    if (nom == "tea") { return tr("Thé"); }
+    if (nom == "egg") { return tr("Oeuf"); }
+
+    return tr("Action indéfinie");
+}
+
+QString FenetrePrincipale::getNomPlan(string nom)
+{
+    if (nom == "teamaking") { return tr("Préparation de thé"); }
+    if (nom == "coffemaking") { return tr("Préparation de café"); }
+    if (nom == "chocomaking") { return tr("Préparation de chocolat"); }
+
+    return tr("Plan indéfini");
+}
+
+QString FenetrePrincipale::getLogo(string nom)
+{
+    if (nom == "egg") { return ":/logos/cup.png"; }
+
+    return ":/logos/cup.png";
 }
 
 void FenetrePrincipale::ouvrirFenetreParametres()
@@ -92,7 +188,14 @@ void FenetrePrincipale::pleinEcranVideo()
 
 void FenetrePrincipale::lectureVideo()
 {
+    ui->informations->setHidden(true);
+    ui->actionsPrecedentes->setHidden(true);
+    ui->activites->setHidden(false);
+    ui->feedback->setHidden(false);
+    ui->planificateur->setHidden(false);
+
     reconnaissanceManager = new RecoManager(parametres.getParametres());
+    reconnaissanceManager->setIsStopped(true);
     reconnaissanceManager->start_thread();
     ui->application->setText("  Arrêter l'acquisition de la vidéo");
     ui->application->setIcon(QIcon(":/logos/stop.png"));
@@ -105,6 +208,12 @@ void FenetrePrincipale::arretVideo()
         reconnaissanceManager->setIsStopped(false);
         reconnaissanceManager = NULL;
     }
+
+    ui->activites->setHidden(true);
+    ui->feedback->setHidden(true);
+    ui->planificateur->setHidden(true);
+    ui->informations->setHidden(false);
+
     MiseAJourHistogramme(0);
     MiseAJourProgression("0:00 / 0:00");
     ui->image->setPixmap(QPixmap());

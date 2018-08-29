@@ -12,6 +12,7 @@
 #include <mutex>
 #include <thread>
 #include <chrono>
+#include <string>
 
 class RecoManager : public Serializable
 {
@@ -27,6 +28,7 @@ class RecoManager : public Serializable
         cv::Mat getCurrentDepthFeed() { return depthPic;}
         void setIsStopped(bool play) {isStopped = play;}
         void start_thread();
+        std::map<std::string, std::map<std::string, std::string>> getInformations() { return informations;}
 
     private:
         ActivityRegion* act;

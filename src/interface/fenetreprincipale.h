@@ -25,6 +25,9 @@ class FenetrePrincipale : public QMainWindow
         virtual void lectureVideo();
         virtual void arretVideo();
         bool getPlay() {return play;}
+        QString getNomAction(string nom);
+        QString getNomPlan(string nom);
+        QString getLogo(string nom);
 
     protected:
         void closeEvent(QCloseEvent *event) override;
@@ -34,7 +37,7 @@ class FenetrePrincipale : public QMainWindow
         void MiseAJourImage();
         void MiseAJourHistogramme(int position);
         void MiseAJourProgression(string timer);
-        void MiseAJourInformations();
+        void MiseAJourInformations(std::map<std::string, std::map<std::string, std::string>> informations);
         void ouvrirFenetreParametres();
         void pleinEcranVideo();
 

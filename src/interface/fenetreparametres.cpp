@@ -53,6 +53,7 @@ void FenetreParametres::sauvegardeParametres()
 {
     parametres.setParametre("sourceType" , parametresTemporaires["sourceType"].toStdString());
     parametres.setParametre("sourceChemin" , parametresTemporaires["sourceChemin"].toStdString());
+    parametres.setParametre("sourceCheminProfondeur" , parametresTemporaires["sourceCheminProfondeur"].toStdString());
     parametres.setParametre("affichageActions" , parametresTemporaires["affichageActions"].toStdString());
     parametres.setParametre("affichageObjets" , parametresTemporaires["affichageObjets"].toStdString());
     parametres.setParametre("affichageMains" , parametresTemporaires["affichageMains"].toStdString());

@@ -50,58 +50,85 @@ void RecoManager::start_thread(){
 }
 
 void RecoManager::start_affordance_check(){
-    while(!isStopped){
 
-        std::vector<std::pair<std::string,float>> tempActions =  pol.getNextActions();
-        std::vector<std::pair<std::string,float>> tempGoal = pol.getGoalsProba();
-        informations["planCourant1"] = {{"nom", tempGoal[0].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-        informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-        informations["planCourant3"] = {{"nom", tempGoal[2].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-        informations["actionSuivante1"] = {{"nom", tempActions[0].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-        informations["actionSuivante2"] = {{"nom", tempActions[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-        informations["actionSuivante3"] = {{"nom", tempActions[2].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+    string actionActuelleNom = "";
+    double actionActuellePourcentage = 0;
+    int actionActuelleCompteur = 1;
+
+    std::vector<std::pair<std::string,float>> tempActions =  pol.getNextActions();
+    std::vector<std::pair<std::string,float>> tempGoal = pol.getGoalsProba();
+    informations["planCourant1"] = {{"nom", tempGoal[0].first},{"pourcentage", to_string(tempGoal[0].second).substr(0,5)}};
+    informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+    informations["planCourant3"] = {{"nom", tempGoal[2].first},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
+    informations["actionSuivante1"] = {{"nom", (tempActions[0].first).erase(0,5)},{"pourcentage", to_string(tempGoal[0].second).substr(0,5)}};
+    informations["actionSuivante1"]["nom"].pop_back();
+    informations["actionSuivante2"] = {{"nom", (tempActions[1].first).erase(0,5)},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+    informations["actionSuivante2"]["nom"].pop_back();
+    informations["actionSuivante3"] = {{"nom", (tempActions[2].first).erase(0,5)},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
+    informations["actionSuivante3"]["nom"].pop_back();
+
+    while(isStopped){
+
+        /*
+        std::time_t t = std::time(0);
+        std::tm* now = std::localtime(&t);
+
+        cout << "**************** " << now->tm_mday << '/' << (now->tm_mon + 1) << '/' <<  (now->tm_year + 1900) << ':' << now->tm_hour << ':' << now->tm_min << ':' << now->tm_sec << " ****************" << endl;
+        cout << "Action Precedente 1 : " << informations["actionPrecedente1"]["nom"] << " - " << informations["actionPrecedente1"]["pourcentage"] << endl;
+        cout << "Action Precedente 2 : " << informations["actionPrecedente2"]["nom"] << " - " << informations["actionPrecedente2"]["pourcentage"] << endl;
+        cout << "Action Actuelle : " << informations["actionActuelle"]["nom"] << " - " << informations["actionActuelle"]["pourcentage"] << endl;
+        cout << "Plan Courant 1 : " << informations["planCourant1"]["nom"] << " - " << informations["planCourant1"]["pourcentage"] << endl;
+        cout << "Plan Courant 2 : " << informations["planCourant2"]["nom"] << " - " << informations["planCourant2"]["pourcentage"] << endl;
+        cout << "Plan Courant 3 : " << informations["planCourant3"]["nom"] << " - " << informations["planCourant3"]["pourcentage"] << endl;
+        cout << "Action Suivante 1 : " << informations["actionSuivante1"]["nom"] << " - " << informations["actionSuivante1"]["pourcentage"] << endl;
+        cout << "Action Suivante 2 : " << informations["actionSuivante2"]["nom"] << " - " << informations["actionSuivante2"]["pourcentage"] << endl;
+        cout << "Action Suivante 3 : " << informations["actionSuivante3"]["nom"] << " - " << informations["actionSuivante3"]["pourcentage"] << endl;
+        cout << "***************************************************" << endl << endl;
+        */
 
         if(!act->currentAffordances.empty()){
             AffordanceTime* aff = act->currentAffordances.top();
             act->currentAffordances.pop();
 
+            if (actionActuelleNom == aff->getAffordance().getName()) {
+
+                if (actionActuellePourcentage < (aff->getAffordance().getObjectProbability()*100)) {
+                    actionActuellePourcentage = aff->getAffordance().getObjectProbability()*100;
+                }
+                actionActuelleCompteur++;
+
+            } else {
+
+                if (actionActuelleCompteur > 8) {
+
+                    if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
+                        pol.update(aff->getAffordance());
+
+                        informations["actionPrecedente1"] = informations["actionPrecedente2"];
+                        informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
+                    } else {
+                        informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
+                    }
+                }
+
+                actionActuelleNom = aff->getAffordance().getName();
+                actionActuellePourcentage = aff->getAffordance().getObjectProbability()*100;
+                actionActuelleCompteur = 1;
+            }
+
             informations["actionActuelle"] = {{"nom", aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
-            pol.update(aff->getAffordance());
 
-
-
-            cout << informations["actionActuelle"]["nom"] << " - " << informations["actionActuelle"]["pourcentage"] << endl;
-
-
-/*
-            std::string old_text ="";
-            std::string old_prob = "";
-            std::string test = aff->getAffordance().getName();
-
-                std::stringstream ss;
-                std::time_t t = std::time(0);   // get time now
-                std::tm* now = std::localtime(&t);
-                ss << (now->tm_year + 1900) << '-'
-                   << (now->tm_mon + 1) << '-'
-                   <<  now->tm_mday
-                   << ' ' << now->tm_hour << ' ' << now->tm_min << ' ' << now->tm_sec  <<":\n";
-                ss << "Current Action : " << aff->getAffordance().getName() << " " << floor(aff->getAffordance().getObjectProbability() * 100) << std::endl;
-
-
-
-*/
-
-
-
-
-                std::vector<std::pair<std::string,float>> tempActions =  pol.getNextActions();
-                std::vector<std::pair<std::string,float>> tempGoal = pol.getGoalsProba();
-                informations["planCourant1"] = {{"nom", tempGoal[0].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-                informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-                informations["planCourant3"] = {{"nom", tempGoal[2].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-                informations["actionSuivante1"] = {{"nom", tempActions[0].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-                informations["actionSuivante2"] = {{"nom", tempActions[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-                informations["actionSuivante3"] = {{"nom", tempActions[2].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+            std::vector<std::pair<std::string,float>> tempActions =  pol.getNextActions();
+            std::vector<std::pair<std::string,float>> tempGoal = pol.getGoalsProba();
+            informations["planCourant1"] = {{"nom", tempGoal[0].first},{"pourcentage", to_string(tempGoal[0].second).substr(0,5)}};
+            informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+            informations["planCourant3"] = {{"nom", tempGoal[2].first},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
+            informations["actionSuivante1"] = {{"nom", (tempActions[0].first).erase(0,5)},{"pourcentage", to_string(tempGoal[0].second).substr(0,5)}};
+            informations["actionSuivante1"]["nom"].pop_back();
+            informations["actionSuivante2"] = {{"nom", (tempActions[1].first).erase(0,5)},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
+            informations["actionSuivante2"]["nom"].pop_back();
+            informations["actionSuivante3"] = {{"nom", (tempActions[2].first).erase(0,5)},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
+            informations["actionSuivante3"]["nom"].pop_back();
 
             mtx.lock();
             mtx.unlock();
@@ -109,5 +136,16 @@ void RecoManager::start_affordance_check(){
         }
         std::this_thread::sleep_for(std::chrono::microseconds(15));
     }
-    terminate();
+
+    informations = {
+        {"actionPrecedente1", {{"nom", ""},{"pourcentage", "0"}}},
+        {"actionPrecedente2", {{"nom", ""},{"pourcentage", "0"}}},
+        {"actionActuelle", {{"nom", ""},{"pourcentage", "0"}}},
+        {"planCourant1", {{"nom", ""},{"pourcentage", "0"}}},
+        {"planCourant2", {{"nom", ""},{"pourcentage", "0"}}},
+        {"planCourant3", {{"nom", ""},{"pourcentage", "0"}}},
+        {"actionSuivante1", {{"nom", ""},{"pourcentage", "0"}}},
+        {"actionSuivante2", {{"nom", ""},{"pourcentage", "0"}}},
+        {"actionSuivante3", {{"nom", ""},{"pourcentage", "0"}}}
+    };
 }
