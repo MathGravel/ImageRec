@@ -4,15 +4,28 @@
 RealSenseVideo::RealSenseVideo(std::string colorFile ,std::string depthFile ) : colorVideo(std::move(colorFile)),depthVideo(std::move(depthFile)) {
 
     vid = new cv::VideoCapture(colorVideo);
-    vidDepth = new cv::VideoCapture(depthVideo);
+    if (depthVideo.back() != 't') {
+        vidDepth = new cv::VideoCapture(depthVideo);
+        vidFolder = false;
+        folder = "";
+    }
+    else
+    {
+       depthVideo = depthVideo.substr(0, depthVideo.size()-7);
+       vidDepth = new cv::VideoCapture(depthVideo + "/%03d.txt");
+       vidFolder = true;
+       folder = depthVideo;
+    }
 
 }
 
 RealSenseVideo::~RealSenseVideo() {
     vid->release();
-    vidDepth->release();
     delete vid;
-    delete vidDepth;
+    if (vidDepth != NULL) {
+        vidDepth->release();
+        delete vidDepth;
+    }
 }
 
 cv::Mat RealSenseVideo::getColorFeed() {
@@ -43,7 +56,7 @@ void RealSenseVideo::update() {
     */
 
     depthMeters = depth_frame_to_meters(depthFeed);
-
+    depthMeters = colorFeed;
     if (colorFeed.empty()) {
         vid->release();
         delete vid;
@@ -51,7 +64,10 @@ void RealSenseVideo::update() {
         *vid >> colorFeed;
         vidDepth->release();
         delete vidDepth;
-        vidDepth = new cv::VideoCapture(depthVideo);
+        if (vidFolder)
+            vidDepth = new cv::VideoCapture(depthVideo + "/%03d.txt");
+        else
+            vidDepth = new cv::VideoCapture(depthVideo);
         *vidDepth >> depthFeed;
         depthMeters = depth_frame_to_meters(depthFeed);
     }
@@ -76,6 +92,30 @@ std::string RealSenseVideo::getTimeStamp()
 // Converts depth frame to a matrix of doubles with distances in meters
 cv::Mat RealSenseVideo::depth_frame_to_meters(cv::Mat depthPic) {
 
+    depthPic = depthPic * 0.00100000005;
+
+
+
+    return depthPic;
+   /*if (vidFolder) {
+        using namespace cv;
+        using namespace rs2;
+
+        depthPic.convertTo(depthPic, CV_64F);
+        auto depth_scale = pipe.get_active_profile()
+                .get_device()
+                .first<depth_sensor>()
+                .get_depth_scale();
+        depthPic = depthPic * depth_scale;
+
+
+
+        return depthPic;
+
+
+    }*/
+
+
     cv::Mat temp(depthPic.rows,depthPic.cols,CV_64FC1);
 
 
@@ -88,5 +128,38 @@ cv::Mat RealSenseVideo::depth_frame_to_meters(cv::Mat depthPic) {
     }
 
     return temp;
+}
+bool RealSenseVideo::readMatBinary(std::ifstream& ifs, cv::Mat& in_mat)
+{
+        using namespace cv;
+
+    if(!ifs.is_open()){
+        return false;
+    }
+
+    int rows, cols, type;
+    ifs.read((char*)(&rows), sizeof(int));
+    if(rows==0){
+        return true;
+    }
+    ifs.read((char*)(&cols), sizeof(int));
+    ifs.read((char*)(&type), sizeof(int));
+
+    in_mat.release();
+    in_mat.create(rows, cols, type);
+    ifs.read((char*)(in_mat.data), in_mat.elemSize() * in_mat.total());
+
+    return true;
+}
+
+
+//! Load cv::Mat as binary
+/*!
+\param[in] filename filaname to load
+\param[out] output loaded cv::Mat
+*/
+bool RealSenseVideo::LoadMatBinary(const std::string& filename, cv::Mat& output){
+    std::ifstream ifs(filename, std::ios::binary);
+    return readMatBinary(ifs, output);
 }
 

@@ -36,6 +36,8 @@ private:
     cv::Mat depth_frame_to_meters(const rs2::pipeline& pipe, const rs2::depth_frame& f);
     cv::Mat depth_frame_limit(const rs2::pipeline& pipe, const rs2::depth_frame& f);
 
+
+
     cv::Mat colorFeed;
     cv::Mat depthFeed;
     cv::Mat depthMeters;
