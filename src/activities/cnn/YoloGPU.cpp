@@ -17,13 +17,7 @@ YoloGPU::YoloGPU( float _prob) {
     strncpy(lbl,"ressources/models/classes.name",600);
     strncpy(cfg,"ressources/models/yolov3.cfg",256);
     strncpy(wei,"ressources/models/yolov3.backup",256);
-    //options = read_data_cfg(dat);
-    char cwd[PATH_MAX];
-       if (getcwd(cwd, sizeof(cwd)) != NULL) {
-           std::cout << "Current working dir: " <<  cwd;
-       } else {
-           perror("getcwd() error");
-       }
+
     names = get_labels(lbl);
 
 
@@ -82,7 +76,7 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
     printf(" Predicted in %f seconds.\n",  what_time_is_it_now()-time);
     int nboxes = 0;
     detection *dets = get_network_boxes((network*)net, im.w, im.h, thresh, 0.5, 0, 1, &nboxes);
-    //if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
+    if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
 
     std::vector<DetectedObject> objects;
 
@@ -138,12 +132,35 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
             objects.emplace_back(DetectedObject(obj,nom,m[0],dets[i].prob[pos],red,green,blue));
         }
     }
+    std::vector<bool> posi(objects.size());
+    std::fill(posi.begin(),posi.end(),true);
+
+    std::vector<DetectedObject> objs;
+    for (int i = 0; i < objects.size();i++) {
+        DetectedObject obj(objects[i]);
+        std::cout << obj.getObjName() << std::endl;
+        if (posi[i]) {
+            for (int j = i + 1; j < objects.size();j++) {
+                if (obj.getObjName() != objects[j].getObjName())
+                    continue;
+                int ar = (obj.getObjPos() & objects[j].getObjPos()).area();
+                if ((ar * 1.3 > obj.getObjPos().area() || ar * 1.3 > objects[j].getObjPos().area()) &&
+                        obj.getObjName() == objects[j].getObjName()) {
+                    posi[i] = false;
+                    posi[j] = false;
+                    obj.fusePosition(objects[j]);
+                }
+            }
+            objs.push_back(obj);
+        }
+
+    }
 
     free_detections(dets, nboxes);
     free_image(im);
     free_image(sized);
     //free_layer(l);
-    return objects;
+    return objs;
 }
 
 float colors[6][3] = { {255,0,255}, {0,0,255},{0,255,255},{0,255,0},{255,255,0},{255,0,0} };

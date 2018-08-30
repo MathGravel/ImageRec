@@ -44,6 +44,7 @@ private:
     std::string depthVideo;
     bool vidFolder;
     std::string folder;
+    int currentDepth;
 
 };
 

@@ -31,14 +31,13 @@ void RecoManager::update(){
     depthPic = this->feedSource.getDepthImage();
     this->act->Update(this->feedSource.getCurrentImage(),this->feedSource.getDepthImage());
     this->feedSource.treatPicture(this->act);
-    //cv::imwrite("ttt.png",colorPic);
 
     this->updatePolicy();
 
 }
 void RecoManager::deserialize(std::map<std::string,std::string> stream){
     feedSource.deserialize(stream);
-    act->deserialize(stream);
+    //act->deserialize(stream);
 }
 
 void RecoManager::updatePolicy() {
@@ -75,7 +74,7 @@ void RecoManager::start_affordance_check(){
         std::time_t t = std::time(0);
         std::tm* now = std::localtime(&t);
 
-        cout << "**************** " << now->tm_mday << '/' << (now->tm_mon + 1) << '/' <<  (now->tm_year + 1900) << ':' << now->tm_hour << ':' << now->tm_min << ':' << now->tm_sec << " ****************" << endl;
+        /*cout << "**************** " << now->tm_mday << '/' << (now->tm_mon + 1) << '/' <<  (now->tm_year + 1900) << ':' << now->tm_hour << ':' << now->tm_min << ':' << now->tm_sec << " ****************" << endl;
         cout << "Action Precedente 1 : " << informations["actionPrecedente1"]["nom"] << " - " << informations["actionPrecedente1"]["pourcentage"] << endl;
         cout << "Action Precedente 2 : " << informations["actionPrecedente2"]["nom"] << " - " << informations["actionPrecedente2"]["pourcentage"] << endl;
         cout << "Action Actuelle : " << informations["actionActuelle"]["nom"] << " - " << informations["actionActuelle"]["pourcentage"] << endl;

@@ -65,7 +65,6 @@ private:
             objectClass = obj.getObjName();
             dist = obj.getDist() - _hand.getDist();
             dist = abs(dist);
-
         }
 
         AffordanceCheck(Region obj, Region _hand) :dist(0)  {
@@ -75,7 +74,7 @@ private:
         }
 
         operator bool() const {
-            return ((object & hand).area() > 0) && dist < 1.1 ;
+            return ((object & hand).area() > 0) && dist < 0.8 ;
         }
         std::string getObjectType() const { return objectClass;}
 

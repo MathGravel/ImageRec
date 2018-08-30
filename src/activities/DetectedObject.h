@@ -3,6 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <map>
+#include <algorithm>    // std::max
 
 typedef std::map<std::string, float> Predictions;
 
@@ -91,6 +92,17 @@ public:
         _g = g;
         _b = b;
     }
+    DetectedObject(const DetectedObject& obj) {
+        objPos = obj.objPos;
+        objName = obj.objName;
+        dist = obj.dist;
+        prob = obj.prob;
+
+        _r = obj._r;
+        _g = obj._g;
+        _b = obj._b;
+    }
+
 
 
     const cv::Rect &getObjPos() const {
@@ -117,6 +129,13 @@ public:
     }
     const float getBlue() const {
         return _b;
+    }
+
+    void fusePosition(const DetectedObject & obj) {
+        this->objPos = this->objPos & obj.objPos;
+        this->prob = std::max(this->prob,obj.prob);
+        this->dist = std::max(this->dist,obj.dist);
+
     }
 
 
