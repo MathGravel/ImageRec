@@ -30,7 +30,7 @@ Policy::Policy() {
     domain = SmallDomain::getSmallDomain();
 
     solver = Solver(domain,1,500);
-    solver.addObservation("hold(teakettle)");
+    //solver.addObservation("hold(teakettle)");
 
 }
 

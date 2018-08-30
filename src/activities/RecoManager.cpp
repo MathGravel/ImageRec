@@ -71,7 +71,7 @@ void RecoManager::start_affordance_check(){
 
     while(isStopped){
 
-
+        /*
         std::time_t t = std::time(0);
         std::tm* now = std::localtime(&t);
 
@@ -86,7 +86,7 @@ void RecoManager::start_affordance_check(){
         cout << "Action Suivante 2 : " << informations["actionSuivante2"]["nom"] << " - " << informations["actionSuivante2"]["pourcentage"] << endl;
         cout << "Action Suivante 3 : " << informations["actionSuivante3"]["nom"] << " - " << informations["actionSuivante3"]["pourcentage"] << endl;
         cout << "***************************************************" << endl << endl;
-
+        */
 
         if(!act->currentAffordances.empty()){
             AffordanceTime* aff = act->currentAffordances.top();
