@@ -14,6 +14,14 @@ Output::Output(Domain* domain)
     //TODO :: multi-goal set
 
 }
+/*Output::Output()
+{
+    this->FOOutput = std::vector<int>();
+    this->timeDurationOutput = std::vector<std::pair<float, float>>();
+    this->POOutput = std::vector<int>();
+    this->Goals = std::vector<int>();
+    this->Goals.push_back(domain->getRandomGoal());
+}
 
 /*Output::Output(Output const &Output)
 {

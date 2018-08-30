@@ -54,7 +54,6 @@ void RealSenseVideo::update() {
         std::string name = folder;
         name += std::to_string(currentDepth) + ".txt";
         this->LoadMatBinary(depthVideo +"/" + name,depthMeters);
-       // depthMeters = depth_frame_to_meters(depthMeters);
     }
     // Pour accélérer la vidéo...
     /*
@@ -83,9 +82,11 @@ void RealSenseVideo::update() {
         *vidDepth >> depthFeed;
         depthMeters = depth_frame_to_meters(depthFeed);
         } else {
-            std::string name = "baptiste-tea-";
+            std::string name = folder;
             name += std::to_string(currentDepth) + ".txt";
             this->LoadMatBinary(depthVideo +"/" + name,depthMeters);
+
+            exit(-1);
         }
     }
 }
@@ -162,4 +163,5 @@ bool RealSenseVideo::LoadMatBinary(const std::string& filename, cv::Mat& output)
     std::ifstream ifs(filename, std::ios::binary);
     return readMatBinary(ifs, output);
 }
+
 

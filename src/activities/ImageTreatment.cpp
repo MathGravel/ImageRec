@@ -1,7 +1,7 @@
 #include "ImageTreatment.h"
 
-ImageTreatment::ImageTreatment(std::map<std::string,std::string> stream) :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true) {
-    this->deserialize(stream);
+ImageTreatment::ImageTreatment() :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true) {
+    //this->deserialize(stream);
     screenSize = std::make_pair(640,480);
     originalSize = std::make_pair(640,480);
 }
@@ -115,7 +115,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
                 textBox.y -= text.height;
 
                 textBox.height = text.height;
-                textBox.width = text.width * 1.15;
+                textBox.width = text.width * 1.04;
                 cv::rectangle(pic,textBox,cv::Scalar(reg.getRed(),reg.getGreen(),reg.getBlue()),-1);
 
                 cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
@@ -137,7 +137,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
         textBox.y -= text.height;
 
         textBox.height = text.height;
-        textBox.width = text.width * 1.15;
+        textBox.width = text.width * 1.04;
         cv::rectangle(pic,textBox,cv::Scalar(hand.getRed(),hand.getGreen(),hand.getBlue()),-1);
 
         cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
@@ -160,7 +160,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
             textBox.y -= text.height;
 
             textBox.height = text.height;
-            textBox.width = text.width * 1.15;
+            textBox.width = text.width * 1.04;
             cv::rectangle(pic,textBox,cv::Scalar(255,255,255),-1);
             cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
                 thickness, 8);

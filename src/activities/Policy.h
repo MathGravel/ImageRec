@@ -28,7 +28,7 @@ public:
 
 private:
     Domain domain;
-    Solver solver;
+    Solver s;
 /*
     std::ofstream textFile;
 

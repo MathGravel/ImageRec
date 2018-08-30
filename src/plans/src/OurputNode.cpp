@@ -98,7 +98,8 @@ OutputNode* OutputNode::selectValidSymbol()
         else
             listCandidate.erase(listCandidate.begin()+randomIndex);
     }
-    std::cout << "There is a problem here" << std::endl;
+    std::cout << "There is a problem here " + this->domain->getPlanLibrary().getLiteralName(this->getLiteral())+" "+std::to_string(this->getChildren().size()) + " " + std::to_string(this->getProduction().getConstraints().size()) <<std::endl;
+
 }
 
 bool OutputNode::isValid (int lit) const

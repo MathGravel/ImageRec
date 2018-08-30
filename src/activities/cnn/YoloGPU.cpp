@@ -14,15 +14,18 @@ YoloGPU::YoloGPU( float _prob) {
     lbl = lblbuff;
 
     strncpy(dat,"ressources/models/yolo.data",256);
-    strncpy(lbl,"ressources/models/classes.name",600);
+    strncpy(lbl,"ressources/models/classes.name",256);
     strncpy(cfg,"ressources/models/yolov3.cfg",256);
     strncpy(wei,"ressources/models/yolov3.backup",256);
+
 
     names = get_labels(lbl);
 
 
     net = load_network(cfg,wei, 0);
+
     set_batch_network((network*)net, 1);
+
     srand(2222222);
     nms =.45;
     thresh = 0.5;
@@ -39,9 +42,7 @@ YoloGPU::~YoloGPU() {
 std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     image im = make_image (color.size().width,color.size().height,color.channels());//= load_image_color(fil,0,0);
-
     layer l = ((network*)net)->layers[((network*)net)->n-1];
-
     int h = color.size().height;
         int w = color.size().width;
         int c = 3;
@@ -63,17 +64,10 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     image sized = letterbox_image(im, ((network*)net)->w, ((network*)net)->h);
 
-    //image sized = resize_image(im, net->w, net->h);
-    //image sized2 = resize_max(im, net->w);
-    //image sized = crop_image(sized2, -((net->w - sized2.w)/2), -((net->h - sized2.h)/2), net->w, net->h);
-    //resize_network(net, sized.w, sized.h);
-
-
-
     float *X = sized.data;
     time=what_time_is_it_now();
     network_predict((network*)net, X);
-    printf(" Predicted in %f seconds.\n",  what_time_is_it_now()-time);
+    //printf(" Predicted in %f seconds.\n",  what_time_is_it_now()-time);
     int nboxes = 0;
     detection *dets = get_network_boxes((network*)net, im.w, im.h, thresh, 0.5, 0, 1, &nboxes);
     if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
@@ -138,7 +132,6 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
     std::vector<DetectedObject> objs;
     for (int i = 0; i < objects.size();i++) {
         DetectedObject obj(objects[i]);
-        std::cout << obj.getObjName() << std::endl;
         if (posi[i]) {
             for (int j = i + 1; j < objects.size();j++) {
                 if (obj.getObjName() != objects[j].getObjName())

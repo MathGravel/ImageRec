@@ -5,6 +5,9 @@
 #include "Serializable.h"
 #include "ActivityRegion.h"
 #include "ImageTreatment.h"
+#include "../plans/include/Domain.h"
+#include "../plans/include/Solver.h"
+
 #include "Policy.h"
 #include <opencv2/opencv.hpp>
 #include <iostream>

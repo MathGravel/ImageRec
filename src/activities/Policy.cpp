@@ -28,10 +28,11 @@ Policy::Policy() {
     textFile = std::ofstream("trace/trace.txt");*/
 
     domain = SmallDomain::getSmallDomain();
-
-    solver = Solver(domain,1,500);
-    //solver.addObservation("hold(teakettle)");
-
+    //SmallDomain sm;
+    //sm.test();
+    s = Solver(domain,1,500);
+    //s.addObservation("hold(teakettle)");
+    int i = 0;
 }
 
 Policy::~Policy() {
@@ -39,10 +40,7 @@ Policy::~Policy() {
 }
 
 bool Policy::update(Affordance observation)  {
-//std::cout << "hold(" + observation.getName() + ")" << std::endl;
-solver.addObservation("hold(" + observation.getName() + ")");
-//std::cout << "Yup";
-
+    s.addObservation("hold(" + observation.getName() + ")");
     /*std::stringstream ss;
     ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
     std::cout << ss.str();
@@ -73,7 +71,7 @@ bool comp(const pair<string, float>& a1, const pair<string, float>& a2)
 
 std::vector<std::pair<std::string,float>> Policy::getNextActions()
 {
-    std::map<std::string, float> nextActions = solver.getNextActions();
+    std::map<std::string, float> nextActions = s.getNextActions();
     std::vector<std::pair<std::string,float>> vec;
     std::copy(nextActions.begin(), nextActions.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
     std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
@@ -88,7 +86,7 @@ std::vector<std::pair<std::string,float>> Policy::getNextActions()
 
 std::vector<std::pair<std::string,float>> Policy::getGoalsProba()
 {
-    std::map<std::string, float> goalsProba = solver.getGoalsProba();
+    std::map<std::string, float> goalsProba = s.getGoalsProba();
     std::vector<std::pair<std::string,float>> vec;
     std::copy(goalsProba.begin(), goalsProba.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
     std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {

@@ -12,7 +12,7 @@ public :
     virtual cv::Mat getDepthFeed(){}
     virtual cv::Mat getMappedFeed(){}
     virtual void update(){}
-
+    virtual bool isRunning() {return true;}
     virtual ~VideoSource() =default;
 
     virtual bool hasDepthSource() {}

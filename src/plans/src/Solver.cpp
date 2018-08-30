@@ -53,22 +53,24 @@ Solver::Solver(Domain domain, int depth, int siz)
     }
 }
 
-void Solver::addObservation (std::string observation)
+bool Solver::addObservation (std::string observation)
 {
-    this->addObservation(this->domain.getPlanLibrary().getLiteralId(observation));
+    return this->addObservation(this->domain.getPlanLibrary().getLiteralId(observation));
 }
 
-void Solver::addObservation(int lit)
+bool Solver::addObservation(int lit)
 {
+
     this->currentObservation = std::pair<int, int>(this->currentObservation.first +1 , lit);
     if(this->generators.count(lit) == 0)
     {
         std::cout << "non accessible observation"<<std::endl;
-        return;
+        return false;
     }
     std::vector<Output> currentOutput = this->generators[lit];
     int actualSize = currentOutput.size();
     //TODO improve selection with time distance;
+
     while(actualSize < this->siz)
     {
         int randomIndex = rand() % currentOutput.size();
@@ -81,7 +83,7 @@ void Solver::addObservation(int lit)
     for(std::vector<Output>::iterator it = currentOutput.begin(); it != currentOutput.end();++it)
     {
         bool ok = true;
-        while(it->getPOOutput().size() < this->depth + this->currentObservation.first && ok)
+        while((it->getPOOutput().size() < (this->depth + this->currentObservation.first)) && ok)
         {
             ok = it->expand();
         }
@@ -89,13 +91,14 @@ void Solver::addObservation(int lit)
         {
             if(this->generators.count(it->getLastActionPO())==0)
             {
-                this->generators[it->getLastActionPO()] = std::vector<Output>();
-                this->timeMap[it->getLastActionPO()] = std::vector<std::pair<float,float>>();
+                this->generators[it->getLastActionPO()]; //= std::vector<Output>();
+                this->timeMap[it->getLastActionPO()];//] = std::vector<std::pair<float,float>>();
             }
             this->generators[it->getLastActionPO()].push_back(*it);
             this->timeMap[it->getLastActionPO()].push_back((*it).getTimeDurationAction(0));
         }
     }
+    return true;
 }
 
 const std::map<std::string, float> Solver::getNextActions(int depth)const
@@ -127,4 +130,18 @@ const std::map<std::string, float> Solver::getGoalsProba (int depth) const
         it->second = it->second*100.0/(float)this->siz;
     }
     return out;
+}
+
+Solver& Solver::operator=(const Solver& other) // copy assignment
+{
+    if (this != &other) { // self-assignment check expected
+        this->domain = other.domain;
+        this->generators.insert(other.generators.begin(),other.generators.end());
+        this->depth = other.depth;
+        this->siz = other.siz;
+        this->currentObservation = std::pair<int,int>(other.currentObservation.first,other.currentObservation.second);
+        std::map<int,std::vector<std::pair<float,float>>> timeMap;
+        this->timeMap.insert(other.timeMap.begin(),other.timeMap.end());
+    }
+    return *this;
 }

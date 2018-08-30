@@ -26,8 +26,7 @@ ProductionRule PlanLibrary::getProductionRule(int id)
 void PlanLibrary::addLiteral(std::string name, bool isTerminal, bool isGoal)
 {
     if(this->getLiteralId(name) != -1)
-        //throw std::invalid_argument( "Already in the Plan library" );
-        return;
+        throw std::invalid_argument( "Already in the Plan library" );
     this->literalMap[this->literalMap.size()] = name;
     if(isTerminal)
         this->terminalActions.insert(this->literalMap.size()-1);

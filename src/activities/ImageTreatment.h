@@ -19,7 +19,7 @@
 class ImageTreatment : public Serializable {
 
 public:
-     ImageTreatment(std::map<std::string,std::string> stream);
+     ImageTreatment();
 
      ~ImageTreatment();
      void deserialize(std::map<std::string,std::string> stream);

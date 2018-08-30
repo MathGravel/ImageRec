@@ -80,13 +80,13 @@ void FenetrePrincipale::MiseAJourProgression(string timer)
 
 void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std::string, std::string>> informations)
 {
-    if ((informations["actionPrecedente1"]["nom"] == "") && (informations["actionPrecedente2"]["nom"] == "")) {
+    if ((informations["actionPrecedente1"]["nom"] == "NA") && (informations["actionPrecedente2"]["nom"] == "NA")) {
         ui->actionsPrecedentes->setHidden(true);
     } else {
         ui->actionsPrecedentes->setHidden(false);
     }
 
-    if (informations["actionPrecedente1"]["nom"] != "") {
+    if (informations["actionPrecedente1"]["nom"] != "NA") {
         ui->actionsPrecedentesTitre->setText("Actions précédentes");
         ui->actionsPrecedentes1->setHidden(false);
         ui->actionPrecedente1Label->setText(getNomAction(informations["actionPrecedente1"]["nom"]));
@@ -97,7 +97,7 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->actionsPrecedentes1->setHidden(true);
     }
 
-    if (informations["actionPrecedente2"]["nom"] != "") {
+    if (informations["actionPrecedente2"]["nom"] != "NA") {
         ui->actionsPrecedentes2->setHidden(false);
         ui->actionsPrecedentes2Label->setText(getNomAction(informations["actionPrecedente2"]["nom"]));
         ui->actionsPrecedentes2Logo->setPixmap(QPixmap(getLogo(informations["actionPrecedente2"]["nom"])));
@@ -106,10 +106,52 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->actionsPrecedentes2->setHidden(true);
     }
 
+
     ui->actionActuelle1Label->setText(getNomAction(informations["actionActuelle"]["nom"]));
     ui->actionActuelle1Logo->setPixmap(QPixmap(getLogo(informations["actionActuelle"]["nom"])));
     ui->actionActuelle1Pourcentage->setText(QString::fromStdString(informations["actionActuelle"]["pourcentage"]) + " %");
 
+    if (informations["planCourant1"]["nom"] != "NA") {
+        ui->plansCourants1Label->setText(getNomAction(informations["planCourant1"]["nom"]));
+        ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
+        ui->plansCourants1Pourcentage->setText(QString::fromStdString(informations["planCourant1"]["pourcentage"]) + " %");
+    }
+
+    if (informations["planCourant2"]["nom"] != "NA") {
+        ui->plansCourants2Label->setText(getNomAction(informations["planCourant2"]["nom"]));
+        ui->plansCourants2Logo->setPixmap(QPixmap(getLogo(informations["planCourant2"]["nom"])));
+        ui->plansCourants2Pourcentage->setText(QString::fromStdString(informations["planCourant2"]["pourcentage"]) + " %");
+    } else {
+        ui->plansCourants2->setHidden(true);
+    }
+    if (informations["planCourant3"]["nom"] != "NA") {
+        ui->plansCourants3Label->setText(getNomAction(informations["planCourant3"]["nom"]));
+        ui->plansCourants3Logo->setPixmap(QPixmap(getLogo(informations["planCourant3"]["nom"])));
+        ui->plansCourants3Pourcentage->setText(QString::fromStdString(informations["planCourant3"]["pourcentage"]) + " %");
+    } else {
+        ui->plansCourants3->setHidden(true);
+    }
+
+    if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA")
+        ui->plansCourantsTitre->setText("Plan courant");
+
+    if (informations["actionSuivante1"]["nom"] != "NA") {
+        ui->actionsSuivantes1Label->setText(getNomAction(informations["actionSuivante1"]["nom"]));
+        ui->actionsSuivantes1Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante1"]["nom"])));
+        ui->actionsSuivantes1Pourcentage->setText(QString::fromStdString(informations["actionSuivante1"]["pourcentage"]) + " %");
+    }
+    if (informations["actionSuivante2"]["nom"] != "NA") {
+        ui->actionsSuivantes2Label->setText(getNomAction(informations["actionSuivante2"]["nom"]));
+        ui->actionsSuivantes2Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante2"]["nom"])));
+        ui->actionsSuivantes2Pourcentage->setText(QString::fromStdString(informations["actionSuivante2"]["pourcentage"]) + " %");
+    }
+    if (informations["actionSuivante3"]["nom"] != "NA") {
+        ui->actionsSuivantes3Label->setText(getNomAction(informations["actionSuivante3"]["nom"]));
+        ui->actionsSuivantes3Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante3"]["nom"])));
+        ui->actionsSuivantes3Pourcentage->setText(QString::fromStdString(informations["actionSuivante3"]["pourcentage"]) + " %");
+    }
+
+    /*
     ui->plansCourants1Label->setText(getNomPlan(informations["planCourant1"]["nom"]));
     ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
     ui->plansCourants1Pourcentage->setText(QString::fromStdString(informations["planCourant1"]["pourcentage"]) + " %");
@@ -122,6 +164,8 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     ui->plansCourants3Logo->setPixmap(QPixmap(getLogo(informations["planCourant3"]["nom"])));
     ui->plansCourants3Pourcentage->setText(QString::fromStdString(informations["planCourant3"]["pourcentage"]) + " %");
 
+    */
+    /*
     ui->actionsSuivantes1Label->setText(getNomAction(informations["actionSuivante1"]["nom"]));
     ui->actionsSuivantes1Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante1"]["nom"])));
     ui->actionsSuivantes1Pourcentage->setText(QString::fromStdString(informations["actionSuivante1"]["pourcentage"]) + " %");
@@ -133,6 +177,7 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     ui->actionsSuivantes3Label->setText(getNomAction(informations["actionSuivante3"]["nom"]));
     ui->actionsSuivantes3Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante3"]["nom"])));
     ui->actionsSuivantes3Pourcentage->setText(QString::fromStdString(informations["actionSuivante3"]["pourcentage"]) + " %");
+    */
 }
 
 QString FenetrePrincipale::getNomAction(string nom)

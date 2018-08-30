@@ -31,13 +31,19 @@ class Output
 {
     public:
         Output(Domain* domain);
+        //Output();
         //Output(Output const &Output);
         bool expand();
         const std::vector<int>& getPOOutput()const {return this->POOutput;};
         const std::vector<int>& getFOOutput()const {return this->FOOutput;};
         std::pair<float, float> getTimeDurationAction(int i) {return this->timeDurationOutput[i];};
         int getLastActionFO(){return FOOutput[FOOutput.size()-1];};
-        int getLastActionPO(){return POOutput[POOutput.size()-1];};
+        int getLastActionPO()
+        {
+            if (POOutput.size()> 0)
+                return POOutput[POOutput.size()-1];
+            else
+                return -1;};
         const std::vector<int>& getGoals()const {return Goals;};
     private:
     	Domain* domain;
