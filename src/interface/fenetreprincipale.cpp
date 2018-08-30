@@ -58,7 +58,7 @@ void FenetrePrincipale::MiseAJourImage()
         MiseAJourInformations(reconnaissanceManager->getInformations());
 
         qApp->processEvents();
-        if (!play) {
+        if ((!play) || (reconnaissanceManager->getTimePosition() == 100)) {
             break;
         }
     }
@@ -165,9 +165,21 @@ QString FenetrePrincipale::getNomPlan(string nom)
 
 QString FenetrePrincipale::getLogo(string nom)
 {
-    if (nom == "egg") { return ":/logos/cup.png"; }
+    if (nom == "teamaking") { return ":/logos/teamaking.png"; }
+    if (nom == "coffemaking") { return ":/logos/coffeemaking.png"; }
+    if (nom == "chocomaking") { return ":/logos/chocomaking.png"; }
+    if (nom == "teakettle") { return ":/logos/teakettle.png"; }
+    if (nom == "water") { return ":/logos/pitcher.png"; }
+    if (nom == "mug") { return ":/logos/mug.png"; }
+    if (nom == "coffe") { return ":/logos/coffee.png"; }
+    if (nom == "pot") { return ":/logos/pot.png"; }
+    if (nom == "coffemaker") { return ":/logos/coffemaker.png"; }
+    if (nom == "milk") { return ":/logos/milk.png"; }
+    if (nom == "choco") { return ":/logos/chocolate.png"; }
+    if (nom == "tea") { return ":/logos/tea.png"; }
+    if (nom == "egg") { return ":/logos/egg.png"; }
 
-    return ":/logos/cup.png";
+    return ":/logos/question.png";
 }
 
 void FenetrePrincipale::ouvrirFenetreParametres()

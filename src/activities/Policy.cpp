@@ -39,9 +39,9 @@ Policy::~Policy() {
 }
 
 bool Policy::update(Affordance observation)  {
-    std::cout << "hold(" + observation.getName() + ")" << std::endl;
+//std::cout << "hold(" + observation.getName() + ")" << std::endl;
 solver.addObservation("hold(" + observation.getName() + ")");
-std::cout << "Yup";
+//std::cout << "Yup";
 
     /*std::stringstream ss;
     ss << "mainSolver.add(\"" << observation.getName() << "\"," << observation.getObjectProbability() << ")";
