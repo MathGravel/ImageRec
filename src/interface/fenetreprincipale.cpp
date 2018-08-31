@@ -115,7 +115,7 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
         ui->plansCourants1Pourcentage->setText(QString::fromStdString(informations["planCourant1"]["pourcentage"]) + " %");
     } else {
-        ui->plansCourants1Pourcentage->setText("100.00" + " %");
+        ui->plansCourants1Pourcentage->setText("100.00 %");
     }
 
     if (informations["planCourant2"]["nom"] != "NA") {
