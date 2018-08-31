@@ -70,7 +70,7 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
 
 
         blob = blobFromImage(color, 1.0f/200.0f,
-                             Size(300, 300),Scalar(127.5,127.5,127.5),true,false); //Convert Mat to batch of images
+                             Size(320, 320),Scalar(127.5,127.5,127.5),true,false); //Convert Mat to batch of images
 
 
     neuralNetwork.setInput(blob);
@@ -79,11 +79,12 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
 
 
     std::vector<Mat> outs;
-    std::vector<cv::String> outNames(3);
+    std::vector<cv::String> outNames(2);
         outNames[0] = "yolo_82";
         outNames[1] = "yolo_94";
-        outNames[2] = "yolo_106";
-            neuralNetwork.forward(outs, outNames);
+        //outNames[2] = "yolo_106";
+        neuralNetwork.forward(outs, getOutputsNames(neuralNetwork));
+            //neuralNetwork.forward(outs, outNames);
 
             std::vector<int> classIds;
             std::vector<float> confidences;
@@ -97,7 +98,8 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
                     double confidence;
                     Point maxLoc;
                     minMaxLoc(scores, 0, &confidence, 0, &maxLoc);
-
+                    if (confidence < 0.3)
+                        continue;
                     float* detection = out.ptr<float>(j);
                     double centerX = detection[0];
                     double centerY = detection[1];
@@ -138,4 +140,18 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
     return objets;
 
 
+}
+
+std::vector<String> YoloCPU::getOutputsNames(const Net& net)
+{
+    static std::vector<String> names;
+    if (names.empty())
+    {
+        std::vector<int> outLayers = net.getUnconnectedOutLayers();
+        std::vector<String> layersNames = net.getLayerNames();
+        names.resize(outLayers.size());
+        for (size_t i = 0; i < outLayers.size(); ++i)
+            names[i] = layersNames[outLayers[i] - 1];
+    }
+    return names;
 }

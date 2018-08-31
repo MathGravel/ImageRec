@@ -39,6 +39,7 @@ private:
     float confidenceThreshold;
     Rect crop;
     Point startingPos;
+    std::vector<String> getOutputsNames(const Net& net);
 
 };
 
