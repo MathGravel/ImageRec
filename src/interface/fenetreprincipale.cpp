@@ -166,6 +166,12 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->actionsSuivantes3->setHidden(true);
     }
 
+    if (informations["actionSuivante2"]["nom"] + informations["actionSuivante3"]["nom"] == "NANA") {
+        ui->actionsSuivantesTitre->setText("Action suivante");
+    } else {
+        ui->actionsSuivantesTitre->setText("Actions suivantes");
+    }
+
     /*
     ui->plansCourants1Label->setText(getNomPlan(informations["planCourant1"]["nom"]));
     ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
