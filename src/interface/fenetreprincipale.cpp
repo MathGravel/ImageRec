@@ -253,7 +253,7 @@ QString FenetrePrincipale::getLogo(string nom)
 void FenetrePrincipale::ouvrirFenetreParametres()
 {
     play = false;
-    arretVideo();
+    //arretVideo();
     fenetreParametres = new FenetreParametres(this);
     fenetreParametres->exec();
 }
