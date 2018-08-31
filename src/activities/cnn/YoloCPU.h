@@ -40,6 +40,9 @@ private:
     Rect crop;
     Point startingPos;
     std::vector<String> getOutputsNames(const Net& net);
+    float get_color(int c, int x, int max);
+    float colors[6][3] = { {255,0,255}, {0,0,255},{0,255,255},{0,255,0},{255,255,0},{255,0,0} };
+
 
 };
 

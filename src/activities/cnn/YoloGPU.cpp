@@ -156,7 +156,6 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
     return objs;
 }
 
-float colors[6][3] = { {255,0,255}, {0,0,255},{0,255,255},{0,255,0},{255,255,0},{255,0,0} };
 
 float YoloGPU::get_color(int c, int x, int max)
 {

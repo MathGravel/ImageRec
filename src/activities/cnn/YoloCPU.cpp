@@ -29,7 +29,7 @@ YoloCPU::YoloCPU(float _prob) {
 
     startingPos = Point( (width- cropSize.width) / 2, (height - cropSize.height) / 2);
 
-    std::ifstream inputFile( "/home/baptiste/Documents/reconnaissance-plans-activites/src/ressources/models/classes.name");        // Input file stream object
+    std::ifstream inputFile( "/home/troisiememathieu/Documents/codebaptiste/autre/reconnaissance-plans-activites/src/ressources/models/c.name");        // Input file stream object
 
     // Check if exists and then open the file.
     if (inputFile.good()) {
@@ -69,14 +69,14 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
     //depth = depth(crop);
 
 
-        blob = blobFromImage(color, 1.0f/200.0f,
-                             Size(320, 320),Scalar(127.5,127.5,127.5),true,false); //Convert Mat to batch of images
+        blob = blobFromImage(color, 1.0f/250.0f,
+                             Size(320, 320),Scalar(),true,false); //Convert Mat to batch of images
 
 
     neuralNetwork.setInput(blob);
    // Mat detections = neuralNetwork.forward();
    // Mat matricesDet(detections.size[2],detections.size[3],CV_32F,detections.ptr<float>());
-
+    neuralNetwork.setPreferableBackend(DNN_BACKEND_OPENCV);
 
     std::vector<Mat> outs;
     std::vector<cv::String> outNames(2);
@@ -129,15 +129,48 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
                     //object.x += startingPos.x;
                     // object.y += startingPos.y;
 
-                    std::string nom = classNames[maxLoc.x-1];
+                    std::string nom = classNames[maxLoc.x];
+                    int offset = maxLoc.x*123457 % 10;
+                    float red = get_color(2,offset,10);
+                     float green = get_color(1,offset,10);
+                     float blue = get_color(0,offset,10);
+                      float rgb[3];
+                      rgb[0] = red;
+                      rgb[1] = green;
+                      rgb[2] = blue;
+                    DetectedObject obbj(obj,nom,m[0],confidence,red,green,blue);
 
-                    DetectedObject obbj(obj,nom,m[0],confidence);
                     objets.push_back(obbj);
                 }
             }
 
+            std::vector<bool> posi(objets.size());
+            std::fill(posi.begin(),posi.end(),true);
 
-    return objets;
+            std::vector<DetectedObject> objs;
+            for (int i = 0; i < objets.size();i++) {
+                DetectedObject obj(objets[i]);
+                if (posi[i]) {
+                    for (int j = i + 1; j < objets.size();j++) {
+                        if (obj.getObjName() != objets[j].getObjName())
+                            continue;
+                        int ar = (obj.getObjPos() & objets[j].getObjPos()).area();
+                        if ((ar * 1.3 > obj.getObjPos().area() || ar * 1.3 > objets[j].getObjPos().area()) &&
+                                obj.getObjName() == objets[j].getObjName()) {
+                            posi[i] = false;
+                            posi[j] = false;
+                            obj.fusePosition(objets[j]);
+                        }
+                    }
+                    objs.push_back(obj);
+                }
+
+            }
+
+
+
+
+    return objs;
 
 
 }
@@ -154,4 +187,15 @@ std::vector<String> YoloCPU::getOutputsNames(const Net& net)
             names[i] = layersNames[outLayers[i] - 1];
     }
     return names;
+}
+
+float YoloCPU::get_color(int c, int x, int max)
+{
+    float ratio = ((float)x/max)*5;
+    int i = floor(ratio);
+    int j = ceil(ratio);
+    ratio -= i;
+    float r = (1-ratio) * colors[i][c] + ratio*colors[j][c];
+    //printf("%f\n", r);
+    return r;
 }
