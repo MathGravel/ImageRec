@@ -106,7 +106,6 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->actionsPrecedentes2->setHidden(true);
     }
 
-
     ui->actionActuelle1Label->setText(getNomAction(informations["actionActuelle"]["nom"]));
     ui->actionActuelle1Logo->setPixmap(QPixmap(getLogo(informations["actionActuelle"]["nom"])));
     ui->actionActuelle1Pourcentage->setText(QString::fromStdString(informations["actionActuelle"]["pourcentage"]) + " %");
@@ -115,16 +114,21 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->plansCourants1Label->setText(getNomAction(informations["planCourant1"]["nom"]));
         ui->plansCourants1Logo->setPixmap(QPixmap(getLogo(informations["planCourant1"]["nom"])));
         ui->plansCourants1Pourcentage->setText(QString::fromStdString(informations["planCourant1"]["pourcentage"]) + " %");
+    } else {
+        ui->plansCourants1Pourcentage->setText("100.00" + " %");
     }
 
     if (informations["planCourant2"]["nom"] != "NA") {
+        ui->plansCourants2->setHidden(false);
         ui->plansCourants2Label->setText(getNomAction(informations["planCourant2"]["nom"]));
         ui->plansCourants2Logo->setPixmap(QPixmap(getLogo(informations["planCourant2"]["nom"])));
         ui->plansCourants2Pourcentage->setText(QString::fromStdString(informations["planCourant2"]["pourcentage"]) + " %");
     } else {
         ui->plansCourants2->setHidden(true);
     }
+
     if (informations["planCourant3"]["nom"] != "NA") {
+        ui->plansCourants3->setHidden(false);
         ui->plansCourants3Label->setText(getNomAction(informations["planCourant3"]["nom"]));
         ui->plansCourants3Logo->setPixmap(QPixmap(getLogo(informations["planCourant3"]["nom"])));
         ui->plansCourants3Pourcentage->setText(QString::fromStdString(informations["planCourant3"]["pourcentage"]) + " %");
@@ -132,23 +136,34 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->plansCourants3->setHidden(true);
     }
 
-    if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA")
+    if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA") {
         ui->plansCourantsTitre->setText("Plan courant");
+    } else {
+        ui->plansCourantsTitre->setText("Plans courants");
+    }
 
     if (informations["actionSuivante1"]["nom"] != "NA") {
         ui->actionsSuivantes1Label->setText(getNomAction(informations["actionSuivante1"]["nom"]));
         ui->actionsSuivantes1Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante1"]["nom"])));
         ui->actionsSuivantes1Pourcentage->setText(QString::fromStdString(informations["actionSuivante1"]["pourcentage"]) + " %");
     }
+
     if (informations["actionSuivante2"]["nom"] != "NA") {
+        ui->actionsSuivantes2->setHidden(false);
         ui->actionsSuivantes2Label->setText(getNomAction(informations["actionSuivante2"]["nom"]));
         ui->actionsSuivantes2Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante2"]["nom"])));
         ui->actionsSuivantes2Pourcentage->setText(QString::fromStdString(informations["actionSuivante2"]["pourcentage"]) + " %");
+    } else {
+        ui->actionsSuivantes2->setHidden(true);
     }
+
     if (informations["actionSuivante3"]["nom"] != "NA") {
+        ui->actionsSuivantes3->setHidden(false);
         ui->actionsSuivantes3Label->setText(getNomAction(informations["actionSuivante3"]["nom"]));
         ui->actionsSuivantes3Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante3"]["nom"])));
         ui->actionsSuivantes3Pourcentage->setText(QString::fromStdString(informations["actionSuivante3"]["pourcentage"]) + " %");
+    } else {
+        ui->actionsSuivantes3->setHidden(true);
     }
 
     /*
