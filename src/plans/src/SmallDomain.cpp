@@ -26,7 +26,11 @@ Domain SmallDomain::teaDomain()
 
     std::vector<std::string> children = {"hold(teakettle)", "hold(water)", "hold(mug)", "hold(tea)"};
     std::vector<std::pair<std::string,std::string>> constraints = {make_pair("hold(teakettle)", "hold(water)"),make_pair("hold(water)", "hold(mug)"),make_pair("hold(water)", "hold(tea)")};
-    int idProd = domain.addRule("teamaking", children, constraints,1.0);
+    int idProd = domain.addRule("teamaking", children, constraints,0.5);
+
+    children = {"hold(teakettle)", "hold(water)", "hold(mug)", "hold(tea)"};
+    constraints = {make_pair("hold(tea)", "hold(teakettle)"),make_pair("hold(teakettle)", "hold(water)"),make_pair("hold(water)", "hold(mug)"),make_pair("hold(water)", "hold(tea)")};
+     idProd = domain.addRule("teamaking", children, constraints,0.5);
 
 
     children = {"hold(teakettle)", "hold(water)", "hold(mug)", "hold(coffe)"};

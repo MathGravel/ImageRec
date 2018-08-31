@@ -56,6 +56,9 @@ void RecoManager::start_affordance_check(){
     string actionActuelleNom = "";
     double actionActuellePourcentage = 0;
     int actionActuelleCompteur = 1;
+    string actionActuelleNomTemp = "";
+    double actionActuellePourcentageTemp = 0;
+    int actionActuelleCompteurTemp = 1;
     Domain domain = SmallDomain::getSmallDomain();
     //SmallDomain sm;
     //sm.test();
@@ -127,10 +130,20 @@ void RecoManager::start_affordance_check(){
                 }
                 actionActuelleCompteur++;
 
-            } else {
+            }
+            if (actionActuelleNomTemp == aff->getAffordance().getName()) {
 
-                if (actionActuelleCompteur > 5) {
+                if (actionActuellePourcentageTemp < (aff->getAffordance().getObjectProbability()*100)) {
+                    actionActuellePourcentageTemp = aff->getAffordance().getObjectProbability()*100;
+                }
+                actionActuelleCompteurTemp++;
 
+            }
+
+            else {
+
+                if (actionActuelleCompteur > 10) {
+                    std::cout <<informations["actionPrecedente2"]["nom"] << " " << actionActuelleNom << std::endl;
                     if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
                         sol.addObservation("hold(" + aff->getAffordance().getName() + ")");
                         //pol.update(aff->getAffordance());
@@ -141,13 +154,20 @@ void RecoManager::start_affordance_check(){
                         informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
                     }
                 }
+                if (actionActuelleCompteurTemp > 4) {
+                    actionActuelleNom = actionActuelleNomTemp;
+                    actionActuellePourcentage = actionActuellePourcentageTemp;
+                    actionActuelleCompteur = actionActuelleCompteurTemp ;
+                }
 
-                actionActuelleNom = aff->getAffordance().getName();
-                actionActuellePourcentage = aff->getAffordance().getObjectProbability()*100;
-                actionActuelleCompteur = 1;
+
+
+                actionActuelleNomTemp = aff->getAffordance().getName();
+                actionActuellePourcentageTemp = aff->getAffordance().getObjectProbability()*100;
+                actionActuelleCompteurTemp = 1;
             }
 
-            informations["actionActuelle"] = {{"nom", aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
+            informations["actionActuelle"] = {{"nom",actionActuelleNom},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
 
             //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
             //---------------------

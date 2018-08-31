@@ -36,10 +36,10 @@ void FenetrePrincipale::gestionVideo()
 
     if (play) {
         this->MiseAJourImage();
-    } else {
+    } /*else {
         reconnaissanceManager->setIsStopped(false);
         reconnaissanceManager = NULL;
-    }
+    }*/
 }
 
 void FenetrePrincipale::MiseAJourImage()
@@ -58,7 +58,9 @@ void FenetrePrincipale::MiseAJourImage()
         MiseAJourInformations(reconnaissanceManager->getInformations());
 
         qApp->processEvents();
-        if ((!play) || (reconnaissanceManager->getTimePosition() == 100)) {
+        if (reconnaissanceManager->getTimePosition() == 100)
+            play = false;
+        if ((!play) ) {
             break;
         }
     }
@@ -283,10 +285,9 @@ void FenetrePrincipale::lectureVideo()
 
 void FenetrePrincipale::arretVideo()
 {
-    if (play) {
-        reconnaissanceManager->setIsStopped(false);
-        reconnaissanceManager = NULL;
-    }
+     reconnaissanceManager->setIsStopped(false);
+     reconnaissanceManager = NULL;
+
 
     ui->activites->setHidden(true);
     ui->feedback->setHidden(true);

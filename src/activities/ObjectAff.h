@@ -74,7 +74,7 @@ private:
         }
 
         operator bool() const {
-            return ((object & hand).area() > 0) && dist < 0.8 ;
+            return ((object & hand).area() > 0) && dist < 0.9 ;
         }
         std::string getObjectType() const { return objectClass;}
 

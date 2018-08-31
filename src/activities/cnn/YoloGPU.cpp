@@ -28,7 +28,7 @@ YoloGPU::YoloGPU( float _prob) {
 
     srand(2222222);
     nms =.45;
-    thresh = 0.5;
+    thresh = 0.2;
 
 }
 

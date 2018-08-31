@@ -23,8 +23,10 @@ RealSenseVideo::RealSenseVideo(std::string colorFile ,std::string depthFile ) : 
 }
 
 RealSenseVideo::~RealSenseVideo() {
+    if (vid != NULL) {
     vid->release();
     delete vid;
+    }
     if (vidDepth != NULL) {
         vidDepth->release();
         delete vidDepth;
@@ -55,15 +57,7 @@ void RealSenseVideo::update() {
         name += std::to_string(currentDepth) + ".txt";
         this->LoadMatBinary(depthVideo +"/" + name,depthMeters);
     }
-    // Pour accélérer la vidéo...
-    /*
-    *vid >> colorFeed;
-    *vidDepth >> depthFeed;
-    *vid >> colorFeed;
-    *vidDepth >> depthFeed;
-    *vid >> colorFeed;
-    *vidDepth >> depthFeed;
-    */
+
     currentDepth++;
 
 
