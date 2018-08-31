@@ -16,7 +16,7 @@ using namespace cv::dnn;
 class YoloCPU : public Yolo {
 
 public:
-    YoloCPU(std::string inference_path, int imgHeight,int imgWidth, bool estMain,float _prob);
+    YoloCPU(float _prob);
     ~YoloCPU();
     std::vector<DetectedObject> findObjects(cv::Mat color,cv::Mat depth);
     std::string getDetectorType(){return "CPU";}

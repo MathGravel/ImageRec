@@ -18,6 +18,8 @@
 #include "cnn/ImgSegCNN.h"
 #include "cnn/MaskRCNN.h"
 #include "cnn/YoloGPU.h"
+#include "cnn/YoloCPU.h"
+
 #include <stack>
 #include <cmath>
 
@@ -80,7 +82,7 @@ private:
 
     //ImgSegCNN caffe;
     //MaskRCNN handDetector;
-    YoloGPU objectDetector;
+    YoloCPU objectDetector;
 
     std::future<std::vector<cv::Rect>> resultSeg;
     cv::Mat chosenROI;
