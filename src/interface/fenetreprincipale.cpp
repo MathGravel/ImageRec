@@ -145,6 +145,7 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     }
 
     if (informations["actionSuivante1"]["nom"] != "NA") {
+        ui->actionsSuivantes1Pourcentage->setHidden(false);
         ui->actionsSuivantes1Label->setText(getNomAction(informations["actionSuivante1"]["nom"]));
         ui->actionsSuivantes1Logo->setPixmap(QPixmap(getLogo(informations["actionSuivante1"]["nom"])));
         ui->actionsSuivantes1Pourcentage->setText(QString::fromStdString(informations["actionSuivante1"]["pourcentage"]) + " %");
@@ -169,6 +170,12 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     }
 
     if (informations["actionSuivante2"]["nom"] + informations["actionSuivante3"]["nom"] == "NANA") {
+        if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA") {
+            ui->actionsSuivantes1Pourcentage->setHidden(true);
+            ui->actionsSuivantes1Logo->setPixmap(QPixmap(":/logos/check.png"));
+            ui->actionsSuivantes1Label->setText("Aucune action attendue");
+
+        }
         ui->actionsSuivantesTitre->setText("Action suivante");
     } else {
         ui->actionsSuivantesTitre->setText("Actions suivantes");

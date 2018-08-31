@@ -12,12 +12,12 @@ RecoManager::RecoManager(std::map<std::string,std::string> stream) {
         {"actionPrecedente1", {{"nom", "NA"},{"pourcentage", "0"}}},
         {"actionPrecedente2", {{"nom", "NA"},{"pourcentage", "0"}}},
         {"actionActuelle", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant1", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant2", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant3", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante1", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante2", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante3", {{"nom", ""},{"pourcentage", "0"}}}
+        {"planCourant1", {{"nom", "NA"},{"pourcentage", "0"}}},
+        {"planCourant2", {{"nom", "NA"},{"pourcentage", "0"}}},
+        {"planCourant3", {{"nom", "NA"},{"pourcentage", "0"}}},
+        {"actionSuivante1", {{"nom", "NA"},{"pourcentage", "0"}}},
+        {"actionSuivante2", {{"nom", "NA"},{"pourcentage", "0"}}},
+        {"actionSuivante3", {{"nom", "NA"},{"pourcentage", "0"}}}
     };
 }
 
@@ -106,7 +106,7 @@ void RecoManager::start_affordance_check(){
         std::time_t t = std::time(0);
         std::tm* now = std::localtime(&t);
 
-        /*cout << "**************** " << now->tm_mday << '/' << (now->tm_mon + 1) << '/' <<  (now->tm_year + 1900) << ':' << now->tm_hour << ':' << now->tm_min << ':' << now->tm_sec << " ****************" << endl;
+        cout << "**************** " << now->tm_mday << '/' << (now->tm_mon + 1) << '/' <<  (now->tm_year + 1900) << ':' << now->tm_hour << ':' << now->tm_min << ':' << now->tm_sec << " ****************" << endl;
         cout << "Action Precedente 1 : " << informations["actionPrecedente1"]["nom"] << " - " << informations["actionPrecedente1"]["pourcentage"] << endl;
         cout << "Action Precedente 2 : " << informations["actionPrecedente2"]["nom"] << " - " << informations["actionPrecedente2"]["pourcentage"] << endl;
         cout << "Action Actuelle : " << informations["actionActuelle"]["nom"] << " - " << informations["actionActuelle"]["pourcentage"] << endl;
@@ -143,7 +143,6 @@ void RecoManager::start_affordance_check(){
             else {
 
                 if (actionActuelleCompteur > 10) {
-                    std::cout <<informations["actionPrecedente2"]["nom"] << " " << actionActuelleNom << std::endl;
                     if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
                         sol.addObservation("hold(" + aff->getAffordance().getName() + ")");
                         //pol.update(aff->getAffordance());
@@ -167,7 +166,7 @@ void RecoManager::start_affordance_check(){
                 actionActuelleCompteurTemp = 1;
             }
 
-            informations["actionActuelle"] = {{"nom",actionActuelleNom},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
+            informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
 
             //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
             //---------------------
