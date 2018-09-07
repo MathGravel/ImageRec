@@ -32,11 +32,13 @@ public:
     cv::Mat getColorFeed();
     cv::Mat getDepthFeed();
     cv::Mat getMappedFeed();
+    cv::Mat getOriginalDepth(){return cv::Mat();}
 
     void update();
     bool hasDepthSource() {return true;}
     std::string getTimeStamp() {return "<font color=\"#CD2034\">&#149;</font> En direct";}
     int getTimePosition() {return 100;}
+    double getExactTimePosition() {return 0;}
 
 
 

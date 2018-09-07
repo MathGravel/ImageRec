@@ -6,6 +6,7 @@ ObjectAffordances::ObjectAffordances(int numberClasses) {
     confMatrix = new double*[numClasses];
     for (int i  = 0; i < numClasses;i++)
         confMatrix[i] = new double[numClasses];
+    currentAff = false;
 }
 
 
@@ -18,19 +19,26 @@ void ObjectAffordances::clearCurrentAffordances() {
 
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions, DetectedObjects &hands) {
 
-
+    currentAff = false;
     std::vector<AffordanceTime*> currentAffordance;
     for (const auto obj : regions) {
 
         for (auto & hand : hands) {
             AffordanceCheck regionsOverlap(obj,hand);
+
             if (regionsOverlap) {
+                currentAff = true;
                 if (affordances.count(regionsOverlap.getObjectType()) > 0)
                     affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb());
                 else
                     affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
 
-                currentAffordance.push_back(&affordances[regionsOverlap.getObjectType()]);
+                affordances.at(regionsOverlap.getObjectType()).clean();
+
+                if (affordances.at(regionsOverlap.getObjectType()).getNumberOfOccurences() > 10) {
+                    affordances[regionsOverlap.getObjectType()].reset();
+                    currentAffordance.push_back(&affordances[regionsOverlap.getObjectType()]);
+                }
 
             }}
     }
@@ -38,31 +46,6 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
     //Ajoute un check que si c plus que 5 secondes tu marque l'interaction comme finit.
     return currentAffordance;
 }
-
-
-std::vector<AffordanceTime*> ObjectAffordances::findAffordances(std::vector<DetectedObject> &regions, DetectedObjects &hands) {
-
-
-    std::vector<AffordanceTime*> currentAffordance;
-    for (DetectedObject& obj : regions) {
-        for (auto & hand : hands) {
-
-            AffordanceCheck regionsOverlap(obj,hand);
-            if (regionsOverlap) {
-                if (affordances.count(regionsOverlap.getObjectType()) > 0)
-                    affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb());
-                else
-                    affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
-
-                currentAffordance.push_back(&affordances[regionsOverlap.getObjectType()]);
-
-            }}
-    }
-
-    //Ajoute un check que si c plus que 5 secondes tu marque l'interaction comme finit.
-    return currentAffordance;
-}
-
 
 //Fonction a completer.
 bool  ObjectAffordances::checkifNewInteraction(DetectedObject & obj) {

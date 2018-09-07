@@ -25,14 +25,10 @@ public:
 public:
 
     ObjectAffordances(int numberClasses = 10);
-
-
-
     std::vector<AffordanceTime*> findAffordances(DetectedObjects& regions,DetectedObjects& hands);
-    std::vector<AffordanceTime*> findAffordances(std::vector<DetectedObject> &regions, DetectedObjects &hands);
-
     void clearCurrentAffordances();
 
+    bool currentlyHasAffordances()const {return currentAff;}
     AffordanceTime getObjectAffordance(const std::string object) {
         return affordances.at(object);
     }
@@ -52,7 +48,7 @@ private:
 
     void setConfusionMatrix(int noClasses,double** matrix);
     bool checkifNewInteraction(DetectedObject & obj);
-
+    bool currentAff;
 
     int nbClasses;
 
@@ -65,6 +61,7 @@ private:
             objectClass = obj.getObjName();
             dist = obj.getDist() - _hand.getDist();
             dist = abs(dist);
+            gros = (object & hand).area();
         }
 
         AffordanceCheck(Region obj, Region _hand) :dist(0)  {
@@ -74,7 +71,7 @@ private:
         }
 
         operator bool() const {
-            return ((object & hand).area() > 0) && dist < 0.9 ;
+            return (gros > 300) && dist < 0.9 ;
         }
         std::string getObjectType() const { return objectClass;}
 
@@ -83,6 +80,7 @@ private:
         Region hand;
         std::string objectClass;
         double dist;
+        int gros;
 
 
     };

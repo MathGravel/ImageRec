@@ -5,8 +5,10 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QStyle>
+#include <QTranslator>
 #include <QDesktopWidget>
 #include "RecoManager.h"
+#include <ctime>
 
 extern Configuration parametres;
 
@@ -32,6 +34,7 @@ class FenetrePrincipale : public QMainWindow
     protected:
         void closeEvent(QCloseEvent *event) override;
 
+
     public slots:
         void gestionVideo();
         void MiseAJourImage();
@@ -42,10 +45,21 @@ class FenetrePrincipale : public QMainWindow
         void pleinEcranVideo();
 
     private:
+        void loadLanguage(const QString& rLanguage);
+
         Ui::FenetrePrincipale *ui;
         FenetreParametres *fenetreParametres;
         RecoManager *reconnaissanceManager;
         bool play = false;
+
+          // creates the language menu dynamically from the content of m_langPath
+
+          QTranslator m_translator; // contains the translations for this application
+          QTranslator m_translatorQt; // contains the translations for qt
+          QString m_currLang; // contains the currently loaded language
+          QString m_langPath; // Path of language files. This is always fixed to /languages.
+
+
 };
 
 #endif // FENETREPRINCIPALE_H

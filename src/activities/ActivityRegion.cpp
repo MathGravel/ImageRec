@@ -3,7 +3,7 @@
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
 ActivityRegion::ActivityRegion():
-                                 objectDetector(0.30f),
+                                 objectDetector(0.4f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
 }
 
@@ -162,4 +162,12 @@ DetectedObjects ActivityRegion::detectHand(cv::Mat color, cv::Mat depth) {
 
 DetectedObjects ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {
     return DetectedObjects(objectDetector.findObjects(color,depth)) ;
+}
+
+void ActivityRegion::reset() {
+    currentAffordance.clear();
+    this->affordances.clearCurrentAffordances();
+    this->hands.clear();
+    this->items.clear();
+    this->regions.clear();
 }

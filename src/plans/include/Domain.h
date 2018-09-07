@@ -103,9 +103,6 @@ class SmallDomain
     static Domain getSmallDomain();
     int test();
     std::string getMax(std::map<std::string, float> probDistribution);
-    Domain teaDomain();
-
-
 };
 
 #endif // DOMAIN_H

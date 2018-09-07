@@ -134,7 +134,7 @@ public:
     void fusePosition(const DetectedObject & obj) {
         this->objPos = this->objPos & obj.objPos;
         this->prob = std::max(this->prob,obj.prob);
-        this->dist = std::max(this->dist,obj.dist);
+        this->dist = (this->dist + obj.dist)/2;
 
     }
 

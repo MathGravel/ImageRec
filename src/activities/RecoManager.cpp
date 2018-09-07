@@ -1,12 +1,16 @@
 #include <RecoManager.h>
 #include "RecoManager.h"
 
-RecoManager::RecoManager(std::map<std::string,std::string> stream) {
+RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) {
 
     act = ActivityRegion::instance();
     //act->deserialize(stream);
     this->deserialize(stream);
     //this->start_thread();
+
+#ifdef USE_KITCHEN
+    trace = new TraceManager("traces",this->feedSource.getScreenSize());
+#endif
 
     informations = {
         {"actionPrecedente1", {{"nom", "NA"},{"pourcentage", "0"}}},
@@ -22,7 +26,13 @@ RecoManager::RecoManager(std::map<std::string,std::string> stream) {
 }
 
 RecoManager::~RecoManager() {
-    delete act;
+#ifdef USE_KITCHEN
+    this->feedSource.saveVideos();
+#endif
+    this->reset();
+    isStopped = false;
+    if (trace != NULL)
+        delete trace;
 }
 
 void RecoManager::update(){
@@ -33,17 +43,28 @@ void RecoManager::update(){
     this->act->Update(this->feedSource.getCurrentImage(),this->feedSource.getDepthImage());
     this->feedSource.treatPicture(this->act);
 
-    this->updatePolicy();
-
 }
 void RecoManager::deserialize(std::map<std::string,std::string> stream){
     feedSource.deserialize(stream);
     act->deserialize(stream);
 }
 
-void RecoManager::updatePolicy() {
-
+void RecoManager::saveVideos() {
+    this->feedSource.saveVideos();
 }
+
+void RecoManager::reset(){
+    isStopped = false;
+    int i = 0;
+    check.store(true);
+    while (check.load() && (i < 100000))
+        i++;
+    act->reset();
+#if USE_KITCHEN
+    trace->dumpBuffer();
+#endif
+}
+
 
 void RecoManager::start_thread(){
     std::thread affordanceThread(&RecoManager::start_affordance_check, this);
@@ -63,6 +84,11 @@ void RecoManager::start_affordance_check(){
     //SmallDomain sm;
     //sm.test();
     Solver sol = Solver(domain,1,500);
+    std::chrono::milliseconds startTime = std::chrono::duration_cast< std::chrono::milliseconds >(
+        std::chrono::system_clock::now().time_since_epoch());
+    std::chrono::milliseconds actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
+        std::chrono::system_clock::now().time_since_epoch());
+
 
     //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
     //---------------------
@@ -118,53 +144,34 @@ void RecoManager::start_affordance_check(){
         cout << "Action Suivante 3 : " << informations["actionSuivante3"]["nom"] << " - " << informations["actionSuivante3"]["pourcentage"] << endl;
         cout << "***************************************************" << endl << endl;
         */
-
+        actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
+                std::chrono::system_clock::now().time_since_epoch());
         if(!act->currentAffordances.empty()){
             AffordanceTime* aff = act->currentAffordances.top();
             act->currentAffordances.pop();
 
-            if (actionActuelleNom == aff->getAffordance().getName()) {
+            informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
 
-                if (actionActuellePourcentage < (aff->getAffordance().getObjectProbability()*100)) {
+                if (actionActuelleNom != aff->getAffordance().getName()) {
+                    actionActuelleNom = aff->getAffordance().getName();
                     actionActuellePourcentage = aff->getAffordance().getObjectProbability()*100;
-                }
-                actionActuelleCompteur++;
-
-            }
-            if (actionActuelleNomTemp == aff->getAffordance().getName()) {
-
-                if (actionActuellePourcentageTemp < (aff->getAffordance().getObjectProbability()*100)) {
-                    actionActuellePourcentageTemp = aff->getAffordance().getObjectProbability()*100;
-                }
-                actionActuelleCompteurTemp++;
-
-            }
-
-            else {
-
-                if (actionActuelleCompteur > 10) {
                     if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
-                        sol.addObservation("hold(" + aff->getAffordance().getName() + ")");
-                        //pol.update(aff->getAffordance());
+                        if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
+                            sol.addObservation("hold(" + aff->getAffordance().getName() + ")");
+                            std::cout << "hold(" + aff->getAffordance().getName() + ")" << std::endl;
 
+                            #ifdef USE_KITCHEN
+                            trace->addAffordance(aff,(actualTime - startTime).count());
+                            #endif
+                        }
                         informations["actionPrecedente1"] = informations["actionPrecedente2"];
                         informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
                     } else {
                         informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
                     }
                 }
-                if (actionActuelleCompteurTemp > 4) {
-                    actionActuelleNom = actionActuelleNomTemp;
-                    actionActuellePourcentage = actionActuellePourcentageTemp;
-                    actionActuelleCompteur = actionActuelleCompteurTemp ;
-                }
 
 
-
-                actionActuelleNomTemp = aff->getAffordance().getName();
-                actionActuellePourcentageTemp = aff->getAffordance().getObjectProbability()*100;
-                actionActuelleCompteurTemp = 1;
-            }
 
             informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
 
@@ -234,18 +241,15 @@ void RecoManager::start_affordance_check(){
             mtx.unlock();
 
         }
+#ifdef USE_KITCHEN
+        else if (!act->AffordanceUpdated()) {
+            int time = (actualTime - startTime).count();
+            trace->addAffordance(NULL,time);
+        }
+#endif
         std::this_thread::sleep_for(std::chrono::microseconds(15));
     }
 
-    informations = {
-        {"actionPrecedente1", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionPrecedente2", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionActuelle", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant1", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant2", {{"nom", ""},{"pourcentage", "0"}}},
-        {"planCourant3", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante1", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante2", {{"nom", ""},{"pourcentage", "0"}}},
-        {"actionSuivante3", {{"nom", ""},{"pourcentage", "0"}}}
-    };
+    std::cout << "Finished" << std::endl;
+    check.store(false);
 }

@@ -69,9 +69,9 @@ void FenetreParametres::selectionVideoCouleur()
         parametresTemporaires["sourceChemin"] = video;
     } else {
         if (parametresTemporaires["sourceCheminProfondeur"] != "") {
-            ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+            ui->messageCouleur->setText(tr("<font style=\"font-weight:600;\">Couleur : </font>") + parametresTemporaires["sourceCheminProfondeur"]);
         } else {
-            ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>Attention, aucune vidéo n'est sélectionné.");
+            ui->messageCouleur->setText(tr("<font style=\"font-weight:600;\">Couleur : </font>Attention, aucune vidéo n'est sélectionné."));
         }
     }
 }
@@ -84,9 +84,9 @@ void FenetreParametres::selectionVideoProfondeur()
         parametresTemporaires["sourceCheminProfondeur"] = video;
     } else {
         if (parametresTemporaires["sourceCheminProfondeur"] != "") {
-            ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+            ui->messageProfondeur->setText(tr("<font style=\"font-weight:600;\">Profondeur : </font>") + parametresTemporaires["sourceCheminProfondeur"]);
         } else {
-            ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>Attention, aucune vidéo n'est sélectionné.");
+            ui->messageProfondeur->setText(tr("<font style=\"font-weight:600;\">Profondeur : </font>Attention, aucune vidéo n'est sélectionné."));
         }
     }
 }
@@ -110,8 +110,8 @@ void FenetreParametres::enregistrer()
 void FenetreParametres::sourceChoix(QString valeur)
 {
     if (valeur == "Vidéo locale") {
-        ui->messageCouleur->setText("<font style=\"font-weight:600;\">Couleur : </font>" + parametresTemporaires["sourceChemin"]);
-        ui->messageProfondeur->setText("<font style=\"font-weight:600;\">Profondeur : </font>" + parametresTemporaires["sourceCheminProfondeur"]);
+        ui->messageCouleur->setText(tr("<font style=\"font-weight:600;\">Couleur : </font>") + parametresTemporaires["sourceChemin"]);
+        ui->messageProfondeur->setText(tr("<font style=\"font-weight:600;\">Profondeur : </font>") + parametresTemporaires["sourceCheminProfondeur"]);
     } else {
         ui->messageCouleur->setText("");
         ui->messageProfondeur->setText("");

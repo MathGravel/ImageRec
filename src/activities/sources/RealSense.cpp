@@ -5,7 +5,7 @@
 RealSense::RealSense() :align_to(RS2_STREAM_COLOR) {
 
     rs2::config cfg;
-
+    startTime = std::clock();
     //Add desired streams to configuration
     cfg.enable_stream(RS2_STREAM_COLOR, 1280, 720, RS2_FORMAT_BGR8, 30);
     cfg.enable_stream(RS2_STREAM_DEPTH,1280,720,RS2_FORMAT_Z16);

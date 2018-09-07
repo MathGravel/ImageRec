@@ -32,12 +32,17 @@ public:
      cv::Mat getOriginalImage();
      cv::Mat getCurrentImage();
      cv::Mat getDepthImage();
+     std::pair<int,int> getScreenSize() const {
+         return screenSize;
+     }
+     void saveVideos();
+
 
 
 private:
 
-    void saveVideos();
-
+    std::pair<int,int> screenSize;
+    std::pair<int,int> originalSize;
     cv::Mat colorPicture;
     cv::Mat depthPicture;
     cv::Mat imageTreated;
@@ -47,8 +52,7 @@ private:
     std::list<cv::Mat> colorFeed;
     std::list<cv::Mat> programFeed;
     std::list<cv::Mat> depthFeed;
-    std::pair<int,int> screenSize;
-    std::pair<int,int> originalSize;
+
     bool showPercentage;
     bool showName;
     bool showzone;
@@ -56,6 +60,8 @@ private:
     bool videoSave;
     std::string timestamp;
     int timeposition;
+    AffordanceTime * pastAffordance;
+
 
 };
 

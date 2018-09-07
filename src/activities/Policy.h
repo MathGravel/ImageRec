@@ -15,7 +15,6 @@ class Policy {
 
 public:
     Policy();
-    ~Policy();
     bool load(std::string policy) const;
     bool update(Affordance observation);
     std::string getNextAction() const;

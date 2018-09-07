@@ -1,6 +1,7 @@
 #include "ImageTreatment.h"
 
-ImageTreatment::ImageTreatment() :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true) {
+ImageTreatment::ImageTreatment() :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true),pastAffordance(NULL)
+ {
     //this->deserialize(stream);
     screenSize = std::make_pair(640,480);
     originalSize = std::make_pair(640,480);
@@ -59,17 +60,17 @@ void ImageTreatment::update() {
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     //cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
 
-    this->colorFeed.push_back(this->colorPicture);
-    this->depthFeed.push_back(this->depthPicture);
+    this->colorFeed.push_back(this->colorPicture.clone());
+    this->depthFeed.push_back(source->getOriginalDepth().clone());
     timestamp = source->getTimeStamp();
     timeposition = source->getTimePosition();
 }
 
 void ImageTreatment::saveVideos() {
     cv::VideoWriter col,dep,prog;
-    col.open("trace/traceCouleur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(originalSize.first,originalSize.second));
-    dep.open("trace/traceProfondeur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(originalSize.first,originalSize.second));
-    prog.open("trace/traceProgramme.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
+    col.open("traces/traceCouleur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
+    dep.open("traces/traceProfondeur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
+    prog.open("traces/traceProgramme.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
     for (const auto color : this->colorFeed) {
         col << color;
     }
@@ -103,12 +104,15 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
         }
     } else if (!act->items.empty()) {
         for (auto &reg :  act->items) {
-           // cv::rectangle(pic, reg.getObjPos(), cv::Scalar(0, 0, 250), 4);
-   //         if (act->oldName == reg.getObjName()) {
-               // if (showzone)
+
+                if (showzone)
                     cv::rectangle(pic, reg.getObjPos(), cv::Scalar(reg.getRed(),reg.getGreen(),reg.getBlue()), 6);
                 std::string val = showName?  reg.getObjName() + " "  : "";
                 val += showPercentage ?  std::to_string((int) floor(reg.getProb() * 100)) + "%" : "";
+                cv::Scalar color(reg.getRed(),reg.getGreen(),reg.getBlue());
+                if (pastAffordance != NULL && pastAffordance->getName() == reg.getObjName()) {
+                    color= cv::Scalar(255,255,255);
+                }
 
                 cv::Size text = cv::getTextSize(val, fontface, scale, thickness, &baseline);
                 cv::Rect textBox(reg.getObjPos());
@@ -116,11 +120,11 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
 
                 textBox.height = text.height;
                 textBox.width = text.width * 1.04;
-                cv::rectangle(pic,textBox,cv::Scalar(reg.getRed(),reg.getGreen(),reg.getBlue()),-1);
+                cv::rectangle(pic,textBox,color,-1);
 
                 cv::putText(pic, val, cv::Point(textBox.x, textBox.y + text.height), fontface, scale, CV_RGB(0, 0, 0),
                     thickness, 8);
-         //   }
+
         }
     }
 
@@ -149,6 +153,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
         for (std::vector<AffordanceTime *>::const_iterator it =  act->currentAffordance.begin(); it !=  act->currentAffordance.end();it++) {
 
             Affordance &pos = (*it)->getAffordance();
+            pastAffordance = *it;
             if (showzone)
                 cv::rectangle(pic, pos.getRegion(), cv::Scalar(250, 0, 0), 4);
 

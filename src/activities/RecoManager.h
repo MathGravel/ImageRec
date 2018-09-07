@@ -5,6 +5,7 @@
 #include "Serializable.h"
 #include "ActivityRegion.h"
 #include "ImageTreatment.h"
+#include "Tracemanager.h"
 #include "../plans/include/Domain.h"
 #include "../plans/include/Solver.h"
 
@@ -32,15 +33,21 @@ class RecoManager : public Serializable
         void setIsStopped(bool play) {isStopped = play;}
         void start_thread();
         std::map<std::string, std::map<std::string, std::string>> getInformations() { return informations;}
+        void reset();
+        void saveVideos();
+
 
     private:
         ActivityRegion* act;
         ImageTreatment feedSource;
-        Policy pol;
+        TraceManager* trace;
+        //Policy pol;
         cv::Mat colorPic;
         cv::Mat depthPic;
         std::mutex mtx;
         bool isStopped = false;
+        std::atomic_bool check;
+
         std::thread * th;
         void updatePolicy();
         void start_affordance_check();

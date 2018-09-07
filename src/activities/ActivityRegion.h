@@ -44,10 +44,8 @@ public:
 
 
     bool AffordanceUpdated() const {
-        return newAffordance;
+        return affordances.currentlyHasAffordances();
     };
-
-
 
     DetectedObjects detectHand(cv::Mat color, cv::Mat depth);
     DetectedObjects detectObjets(cv::Mat color, cv::Mat depth);
@@ -58,6 +56,7 @@ public:
 
 
     void updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI);
+    void reset();
    //A refaire avec celui de google
     // Affordance testManuallyROI(cv::Mat vision, cv::Rect chosenROI);
 
@@ -82,8 +81,11 @@ private:
 
     //ImgSegCNN caffe;
     //MaskRCNN handDetector;
-    YoloCPU objectDetector;
-
+    #ifdef USE_GPU
+        YoloGPU objectDetector;
+    #else
+        YoloCPU objectDetector;
+    #endif
     std::future<std::vector<cv::Rect>> resultSeg;
     cv::Mat chosenROI;
     bool chosedROI;
@@ -96,7 +98,6 @@ private:
     cv::Mat currentImageDepth;
     cv::Mat imageROI;
     friend class ImageTreatment;
-
 
 
 

@@ -5,13 +5,10 @@
 #include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
 
 #ifdef USE_REALSENSE
-
-#define GLFW_INCLUDE_GLU
-//#include <GLFW/glfw3.h>
-
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <ctime>
 
 class RealSense  : public VideoSource{
 
@@ -24,10 +21,14 @@ public:
     cv::Mat getColorFeed();
     cv::Mat getDepthFeed();
     cv::Mat getMappedFeed();
+    cv::Mat getOriginalDepth(){return depthFeed;}
+
+
     void update();
     bool hasDepthSource() {return true;}
     std::string getTimeStamp() {return "<font color=\"#CD2034\">&#149;</font> En direct";}
-    int getTimePosition() {return 100;}
+    int getTimePosition() {return (int)((std::clock() - startTime)/(double) CLOCKS_PER_SEC);}
+    double getExactTimePosition() {return (std::clock() - startTime)/(double) CLOCKS_PER_SEC;}
 
 
 private:
@@ -47,6 +48,7 @@ private:
     rs2::frameset data;
     rs2::align align_to;
     int last_frame_number;
+    double startTime;
 
 };
 #endif

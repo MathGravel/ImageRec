@@ -8,6 +8,8 @@ FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(
     QObject::connect(ui->application, SIGNAL(clicked()), this, SLOT(gestionVideo()));
     QObject::connect(ui->parametres, SIGNAL(clicked()), this, SLOT(ouvrirFenetreParametres()));
     QObject::connect(ui->pleinEcran, SIGNAL(clicked()), this, SLOT(pleinEcranVideo()));
+    this->reconnaissanceManager = NULL;
+
 }
 
 FenetrePrincipale::~FenetrePrincipale()
@@ -19,6 +21,14 @@ void FenetrePrincipale::closeEvent(QCloseEvent *event)
 {
     play = false;
     event->accept();
+
+#ifdef USE_KITCHEN
+    //this->reconnaissanceManager->reset();
+#endif
+    if (reconnaissanceManager != NULL) {
+        delete reconnaissanceManager;
+        reconnaissanceManager = NULL;
+    }
 }
 
 void FenetrePrincipale::configuration()
@@ -36,10 +46,7 @@ void FenetrePrincipale::gestionVideo()
 
     if (play) {
         this->MiseAJourImage();
-    } /*else {
-        reconnaissanceManager->setIsStopped(false);
-        reconnaissanceManager = NULL;
-    }*/
+    }
 }
 
 void FenetrePrincipale::MiseAJourImage()
@@ -47,6 +54,10 @@ void FenetrePrincipale::MiseAJourImage()
     lectureVideo();
 
     while(true) {
+        qApp->processEvents();
+
+        if(reconnaissanceManager == NULL)
+            break;
         reconnaissanceManager->update();
         cv::Mat img = reconnaissanceManager->getCurrentFeed();
 
@@ -57,7 +68,6 @@ void FenetrePrincipale::MiseAJourImage()
         MiseAJourProgression(reconnaissanceManager->getTimeStamp());
         MiseAJourInformations(reconnaissanceManager->getInformations());
 
-        qApp->processEvents();
         if (reconnaissanceManager->getTimePosition() == 100)
             play = false;
         if ((!play) ) {
@@ -89,13 +99,13 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     }
 
     if (informations["actionPrecedente1"]["nom"] != "NA") {
-        ui->actionsPrecedentesTitre->setText("Actions précédentes");
+        ui->actionsPrecedentesTitre->setText(tr("Actions précédentes"));
         ui->actionsPrecedentes1->setHidden(false);
         ui->actionPrecedente1Label->setText(getNomAction(informations["actionPrecedente1"]["nom"]));
         ui->actionPrecedente1Logo->setPixmap(QPixmap(getLogo(informations["actionPrecedente1"]["nom"])));
         ui->actionPrecedente1Pourcentage->setText(QString::fromStdString(informations["actionPrecedente1"]["pourcentage"]) + " %");
     } else {
-        ui->actionsPrecedentesTitre->setText("Action précédente");
+        ui->actionsPrecedentesTitre->setText(tr("Action précédente"));
         ui->actionsPrecedentes1->setHidden(true);
     }
 
@@ -139,9 +149,9 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     }
 
     if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA") {
-        ui->plansCourantsTitre->setText("Plan courant");
+        ui->plansCourantsTitre->setText(tr("Plan courant"));
     } else {
-        ui->plansCourantsTitre->setText("Plans courants");
+        ui->plansCourantsTitre->setText(tr("Plans courants"));
     }
 
     if (informations["actionSuivante1"]["nom"] != "NA") {
@@ -173,12 +183,12 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         if (informations["planCourant3"]["nom"] + informations["planCourant2"]["nom"] == "NANA") {
             ui->actionsSuivantes1Pourcentage->setHidden(true);
             ui->actionsSuivantes1Logo->setPixmap(QPixmap(":/logos/check.png"));
-            ui->actionsSuivantes1Label->setText("Aucune action attendue");
+            ui->actionsSuivantes1Label->setText(tr("Aucune action attendue"));
 
         }
-        ui->actionsSuivantesTitre->setText("Action suivante");
+        ui->actionsSuivantesTitre->setText(tr("Action suivante"));
     } else {
-        ui->actionsSuivantesTitre->setText("Actions suivantes");
+        ui->actionsSuivantesTitre->setText(tr("Actions suivantes"));
     }
 
     /*
@@ -213,14 +223,14 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
 QString FenetrePrincipale::getNomAction(string nom)
 {
     if (nom == "teamaking") { return tr("Préparation de thé"); }
-    if (nom == "coffemaking") { return tr("Préparation de café"); }
+    if (nom == "coffeemaking") { return tr("Préparation de café"); }
     if (nom == "chocomaking") { return tr("Préparation de chocolat"); }
     if (nom == "teakettle") { return tr("Bouilloire"); }
     if (nom == "water") { return tr("Pichet d'eau"); }
     if (nom == "mug") { return tr("Tasse"); }
-    if (nom == "coffe") { return tr("Café"); }
+    if (nom == "coffee") { return tr("Café"); }
     if (nom == "pot") { return tr("Pot"); }
-    if (nom == "coffemaker") { return tr("Machine à café"); }
+    if (nom == "coffeemaker") { return tr("Machine à café"); }
     if (nom == "milk") { return tr("Lait"); }
     if (nom == "choco") { return tr("Chocolat en poudre"); }
     if (nom == "tea") { return tr("Thé"); }
@@ -232,7 +242,7 @@ QString FenetrePrincipale::getNomAction(string nom)
 QString FenetrePrincipale::getNomPlan(string nom)
 {
     if (nom == "teamaking") { return tr("Préparation de thé"); }
-    if (nom == "coffemaking") { return tr("Préparation de café"); }
+    if (nom == "coffeemaking") { return tr("Préparation de café"); }
     if (nom == "chocomaking") { return tr("Préparation de chocolat"); }
 
     return tr("Plan indéfini");
@@ -241,14 +251,14 @@ QString FenetrePrincipale::getNomPlan(string nom)
 QString FenetrePrincipale::getLogo(string nom)
 {
     if (nom == "teamaking") { return ":/logos/teamaking.png"; }
-    if (nom == "coffemaking") { return ":/logos/coffeemaking.png"; }
+    if (nom == "coffeemaking") { return ":/logos/coffeemaking.png"; }
     if (nom == "chocomaking") { return ":/logos/chocomaking.png"; }
     if (nom == "teakettle") { return ":/logos/teakettle.png"; }
     if (nom == "water") { return ":/logos/pitcher.png"; }
     if (nom == "mug") { return ":/logos/mug.png"; }
-    if (nom == "coffe") { return ":/logos/coffee.png"; }
+    if (nom == "coffee") { return ":/logos/coffee.png"; }
     if (nom == "pot") { return ":/logos/pot.png"; }
-    if (nom == "coffemaker") { return ":/logos/coffemaker.png"; }
+    if (nom == "coffeemaker") { return ":/logos/coffemaker.png"; }
     if (nom == "milk") { return ":/logos/milk.png"; }
     if (nom == "choco") { return ":/logos/chocolate.png"; }
     if (nom == "tea") { return ":/logos/tea.png"; }
@@ -263,6 +273,22 @@ void FenetrePrincipale::ouvrirFenetreParametres()
     //arretVideo();
     fenetreParametres = new FenetreParametres(this);
     fenetreParametres->exec();
+    this->loadLanguage(QString::fromStdString(parametres.getParametre("langue")));
+}
+
+void FenetrePrincipale::loadLanguage(const QString &rLanguage) {
+
+
+    if (rLanguage.toStdString() == "Français" || rLanguage.toStdString() == "French" ) {
+        qApp->removeTranslator(&m_translator);
+    } else {
+        QString path = QApplication::applicationDirPath();
+        path.append("/lang_en");
+        m_translator.load(path);
+        qApp->installTranslator(&m_translator);
+    }
+    ui->retranslateUi(this);
+
 }
 
 void FenetrePrincipale::pleinEcranVideo()
@@ -285,16 +311,18 @@ void FenetrePrincipale::lectureVideo()
     reconnaissanceManager = new RecoManager(parametres.getParametres());
     reconnaissanceManager->setIsStopped(true);
     reconnaissanceManager->start_thread();
-    ui->application->setText("  Arrêter l'acquisition de la vidéo");
+    ui->application->setText(tr("  Arrêter l'acquisition de la vidéo"));
     ui->application->setIcon(QIcon(":/logos/stop.png"));
     ui->application->repaint();
 }
 
 void FenetrePrincipale::arretVideo()
 {
+    if (reconnaissanceManager != NULL) {
      reconnaissanceManager->setIsStopped(false);
+     delete reconnaissanceManager;
      reconnaissanceManager = NULL;
-
+    }
 
     ui->activites->setHidden(true);
     ui->feedback->setHidden(true);
@@ -305,7 +333,7 @@ void FenetrePrincipale::arretVideo()
     MiseAJourProgression("0:00 / 0:00");
     ui->image->setPixmap(QPixmap());
     ui->image->clear();
-    ui->application->setText("  Lancer l'acquisition de la vidéo");
+    ui->application->setText(tr("  Lancer l'acquisition de la vidéo"));
     ui->application->setIcon(QIcon(":/logos/play.png"));
     ui->application->repaint();
 }

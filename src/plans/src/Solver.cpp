@@ -16,6 +16,7 @@ Solver::Solver()
     this->currentObservation = std::pair<int, int>();
     this->generators = std::map<int, std::vector<Output>>();
     this->timeMap = std::map<int, std::vector<std::pair<float,float>>>();
+    this->TerminalGoal = "";
 }
 
 Solver::Solver(Domain domain, int depth, int siz)
@@ -98,6 +99,8 @@ bool Solver::addObservation(int lit)
             this->timeMap[it->getLastActionPO()].push_back((*it).getTimeDurationAction(0));
         }
     }
+    if(generators.empty())
+        TerminalGoal = this->domain.getPlanLibrary().getLiteralName(currentOutput.front().getGoals()[0]);
     return true;
 }
 
@@ -129,6 +132,8 @@ const std::map<std::string, float> Solver::getGoalsProba (int depth) const
     {
         it->second = it->second*100.0/(float)this->siz;
     }
+    if (out.empty())
+        out[TerminalGoal] = 100;
     return out;
 }
 

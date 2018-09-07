@@ -23,6 +23,7 @@ class Solver
         const std::map<std::string, float> getGoalsProba (int depth = 1) const;
         const std::map<int, std::vector<std::pair<float,float>>> getTimeMap() const {return timeMap;};
         Solver& operator=(const Solver& other);
+        std::string TerminalGoal;
 
 };
 

@@ -1,10 +1,23 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.5.1)
 project(reconnaissance-plans-activites)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_definitions(-DUSE_REALSENSE)
+add_definitions(-DUSE_GPU)
+add_definitions(-DUSE_KITCHEN)
+
+
+get_directory_property(MYDEFS COMPILE_DEFINITIONS)
+if(MYDEFS MATCHES "^USE_KITCHEN" OR MYDEFS MATCHES ";USE_KITCHEN")
+    if(EXISTS "traces")
+    else()
+        file(MAKE_DIRECTORY "traces")
+    endif()
+
+endif()
+
 
 find_package(PkgConfig REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -15,9 +28,9 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 #set(Caffe_DEFINITIONS "-DUSE_OPENCV;-DUSE_LMDB;-DUSE_LEVELDB")
 
 add_library(libdarknet SHARED IMPORTED)
-set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /opt/darknet/libdarknet.so)
-link_directories(/opt/darknet/include)
-link_directories(/opt/darknet)
+set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /home/troisiememathieu/Music/YOLO/darknet/libdarknet.so)
+link_directories(//home/troisiememathieu/Music/YOLO/darknet/include)
+link_directories(/home/troisiememathieu/Music/YOLO/darknet)
 
 find_package(Threads REQUIRED)
 find_package(realsense2 REQUIRED)
@@ -37,7 +50,7 @@ include_directories("./plans/src")
 include_directories("./ressources")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_AUTOMOC ON)
+#set(CMAKE_AUTOMOC ON)
 find_package(Qt5Widgets CONFIG REQUIRED)
 
 file(GLOB_RECURSE Activities_SOURCES "activities/*.cpp")
@@ -58,11 +71,36 @@ list(APPEND Activities_SOURCES ${ActivitiesCNN_SOURCES} ${ActivitiesVideoSources
 
 list(REMOVE_ITEM QtHeaders "interface/configuration.h")
 
+FIND_PACKAGE(Qt5LinguistTools)
+qt5_add_translation(QM_FILES ressources/languages/lang_en.ts)
+add_custom_target(translations DEPENDS ${QM_FILES})
+ qt5_create_translation(QM_FILES
+     interface/fenetreparametres.cpp interface/fenetreparametres.ui interface/fenetreprincipale.cpp interface/fenetreprincipale.ui
+     ressources/languages/lang_en.ts
+ )
+
+# Using a source directory:
+#qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} lang_fr.ts lang_en.ts)
+
+# The qm files are generated in the build tree, but the qrc file is inside the
+# source directory and fthe path to resources are relative to the location of
+# the qrc file itself. We use cdonfigure_file() to copy the qrc file in the build
+# directory such that it can find the qm translations files. The qrc file is
+# copied if it doesn't exist in the destination or if it is modified.
+#configure_file("ressources/translations.qrc" ${CMAKE_BINARY_DIR} COPYONLY)
+FILE(GLOB_RECURSE QTFen RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "interface/*.ui")
+list(APPEND QTFen "interface/fenetreparametres.cpp")
+list(APPEND QTFen "interface/fenetreprincipale.cpp")
+
+
+FILE(GLOB TS_FILES /resources/languages/lang_en.ts)
+#QT5_create_translation(QM_FILES ${QTFen} ${TS_FILES})
+
+
 QT5_WRAP_CPP(header_mocs ${QtHeaders})
 QT5_WRAP_UI(form_headers ${QtForms})
 qt5_add_resources(RCC_SOURCES ${QtRessources})
-
-add_executable(${CMAKE_PROJECT_NAME} main.cpp ${Activities_HEADERS} ${Activities_SOURCES} ${Plans_HEADERS} ${Plans_SOURCES} ${header_mocs} ${form_headers} ${RCC_SOURCES})
+add_executable(${CMAKE_PROJECT_NAME} main.cpp  ${Activities_HEADERS} ${Activities_SOURCES} ${Plans_HEADERS} ${Plans_SOURCES} ${header_mocs} ${form_headers} ${RCC_SOURCES} ${QM_FILES})
 
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${OpenCV_LIBS})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
@@ -71,4 +109,6 @@ TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${Protobuf_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${PYTHON_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} libdarknet)
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} Qt5::Widgets)
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /opt/darknet/include)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /home/troisiememathieu/Music/YOLO/darknet/include)
+
+

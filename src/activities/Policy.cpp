@@ -2,41 +2,11 @@
 
 Policy::Policy() {
 
-    /*Py_Initialize();
-    PyRun_SimpleString("import sys");
-    std::cout <<  Py_GetVersion() << std::endl;
-    PyRun_SimpleString("import numpy");
-    PyRun_SimpleString("import codecs");
-    PyRun_SimpleString("import pydot");
-    PyRun_SimpleString("import socket");
-    PyRun_SimpleString("import os");
-
-    std::ostringstream python_path;
-    python_path<<"sys.path.append(\""<<"../plans/\")";
-    main = PyImport_AddModule("__main__");
-    PyRun_SimpleString(python_path.str().c_str());
-    PyRun_SimpleString("from GraphNavigator import Policy");
-    PyRun_SimpleString("from PolicyGenerator import Domain");
-    PyRun_SimpleString("from subprocess import call");
-    PyRun_SimpleString("from Solver import *");
-    PyRun_SimpleString("mainSolver = solver()");
-    solver = PyObject_GetAttrString(main,"mainSolver");
-
-    PyRun_SimpleString("mainSolver.loadPolicy(\"planBib.dot\")");
-    //PyRun_SimpleString("mainSolver.loadPolicy(\"Beverage.dot\")");
-
-    textFile = std::ofstream("trace/trace.txt");*/
 
     domain = SmallDomain::getSmallDomain();
-    //SmallDomain sm;
-    //sm.test();
-    s = Solver(domain,1,500);
-    //s.addObservation("hold(teakettle)");
-    int i = 0;
-}
 
-Policy::~Policy() {
-    //textFile.close();
+    s = Solver(domain,1,500);
+    int i = 0;
 }
 
 bool Policy::update(Affordance observation)  {

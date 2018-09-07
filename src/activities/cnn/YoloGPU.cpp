@@ -18,7 +18,7 @@ YoloGPU::YoloGPU( float _prob) {
     strncpy(cfg,"ressources/models/yolov3.cfg",256);
     strncpy(wei,"ressources/models/yolov3.backup",256);
 
-
+    thresh = _prob;
     names = get_labels(lbl);
 
 
@@ -28,7 +28,7 @@ YoloGPU::YoloGPU( float _prob) {
 
     srand(2222222);
     nms =.45;
-    thresh = 0.2;
+    //thresh = 0.2;
 
 }
 
@@ -101,19 +101,14 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
             obj.width = right - left;
             obj.height = bot - top;
 
-            /*int temp = (dets[i].bbox.x - dets[i].bbox.w/2.) * im.w;
-            obj.x = temp > 0? temp : 0;
-            temp = (dets[i].bbox.y - dets[i].bbox.h/2.) * im.h;
-            obj.y = temp > 0? temp : 0;
-            temp = (dets[i].bbox.x + dets[i].bbox.w/2.) * im.w;
-            obj.width = temp < color.rows  ? temp - obj.x : color.rows-1;
-            temp = (dets[i].bbox.y + dets[i].bbox.h/2.) * im.h;
-            obj.height = temp < color.cols  ? temp - obj.y : color.cols-1;*/
+            cv::Rect2d central;
+            central.x = obj.x + obj.width/4;
+            central.y = obj.y + obj.height/4;
+            central.width = obj.width/2;
+            central.height = obj.height/2;
 
 
-
-
-            cv::Scalar m = mean(depth(obj));
+            cv::Scalar m = mean(depth(central));
             std::string nom = names[pos];
             int offset = pos*123457 % 10;
             float red = get_color(2,offset,10);

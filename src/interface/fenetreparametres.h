@@ -5,6 +5,7 @@
 #include <QDialog>
 #include <QString>
 #include <QFileDialog>
+#include <QCloseEvent>
 
 extern Configuration parametres;
 

@@ -4,7 +4,13 @@
 RealSenseVideo::RealSenseVideo(std::string colorFile ,std::string depthFile ) : colorVideo(std::move(colorFile)),depthVideo(std::move(depthFile)) {
 
     vid = new cv::VideoCapture(colorVideo);
-    if (depthVideo.back() != 't') {
+    if (depthVideo.back() != 't' && depthVideo.back() != 'g') {
+        vidDepth = new cv::VideoCapture(depthVideo);
+        vidFolder = false;
+        folder = "";
+    } else if (depthVideo.back() != 't') {
+        depthVideo = depthVideo.erase(depthVideo.find_last_of('-')+1);
+        depthVideo.append("%05d.png");
         vidDepth = new cv::VideoCapture(depthVideo);
         vidFolder = false;
         folder = "";
@@ -26,10 +32,12 @@ RealSenseVideo::~RealSenseVideo() {
     if (vid != NULL) {
     vid->release();
     delete vid;
+    vid = NULL;
     }
     if (vidDepth != NULL) {
         vidDepth->release();
         delete vidDepth;
+        vidDepth = NULL;
     }
 }
 
@@ -59,7 +67,6 @@ void RealSenseVideo::update() {
     }
 
     currentDepth++;
-
 
     if (colorFeed.empty()) {
         vid->release();

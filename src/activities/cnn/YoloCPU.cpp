@@ -54,7 +54,7 @@ YoloCPU::YoloCPU(float _prob) {
 }
 
 YoloCPU::~YoloCPU() {
-    delete classNames;
+    delete []classNames;
 }
 
 std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
@@ -98,7 +98,7 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
                     double confidence;
                     Point maxLoc;
                     minMaxLoc(scores, 0, &confidence, 0, &maxLoc);
-                    if (confidence < 0.3)
+                    if (confidence < confidenceThreshold)
                         continue;
                     float* detection = out.ptr<float>(j);
                     double centerX = detection[0];
@@ -124,7 +124,13 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
                                            w, h));
                     confidences.push_back(confidence);
                     classIds.push_back(maxLoc.x);
-                    Scalar m = mean(depth(obj));
+                    cv::Rect2d central;
+                    central.x = obj.x + obj.width/4;
+                    central.y = obj.y + obj.height/4;
+                    central.width = obj.width/2;
+                    central.height = obj.height/2;
+
+                    Scalar m = mean(depth(central));
 
                     //object.x += startingPos.x;
                     // object.y += startingPos.y;
