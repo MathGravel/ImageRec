@@ -27,7 +27,7 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
         std::vector<DetectedObject> newit;
 
         for (const auto it : items) {
-            if (it.getObjName() == "hand") {
+            if (it.getObjName() == "hand" || it.getObjName() == "Hand") {
                 mains.push_back(it);
                 //exit(-1);
             }
@@ -36,22 +36,9 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
             }
 
         }
-        /*for (const auto it : hands) {
-            if (it.getObjName() == "hand") {
-                mains.push_back(it);
-                //exit(-1);
-            }
-            else {
-                newit.push_back(it);
-            }
-
-        }*/
-
 
         hands = DetectedObjects(mains);
         items = DetectedObjects(newit);
-        int i  = hands.getObjects().size();
-        int tr  = hands.getObjects().size();
 
         if (!items.empty() && !hands.empty()) {
             currentAffordance = affordances.findAffordances(items, hands);
@@ -59,14 +46,8 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 
                 for (auto it : currentAffordance)
                     currentAffordances.push(it);
-
-               // oldName = currentAffordance->getAffordance().getName() ;
-
             }
-
         }
-
-
 
 }
 

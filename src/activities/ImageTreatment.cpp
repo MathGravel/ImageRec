@@ -20,7 +20,7 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
     }
     if(stream["sourceType"] == "Vidéo locale") {
         this->source = new RealSenseVideo(stream["sourceChemin"],stream["sourceCheminProfondeur"]);
-        originalSize = std::make_pair(640,480);
+        originalSize = this->source->getScreenSize();
         screenSize = std::make_pair(1280,720);
     }
     else if (stream["sourceType"] == "Intel RealSense (D435)") {
@@ -42,11 +42,6 @@ void ImageTreatment::deserialize(std::map<std::string,std::string> stream)
         int height = std::atoi(temp.substr(pos+1).c_str());
         screenSize = std::make_pair(width,height);
     }
-    //showName = (stream.at("affichageNom") == "1");
-    //showzone = (stream.at("affichageZone") == "1");
-    //showPercentage = (stream.at("affichagePoucentage") == "1");
-
-
 
 }
 
@@ -68,8 +63,8 @@ void ImageTreatment::update() {
 
 void ImageTreatment::saveVideos() {
     cv::VideoWriter col,dep,prog;
-    col.open("traces/traceCouleur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
-    dep.open("traces/traceProfondeur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
+    col.open("traces/traceCouleur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(originalSize.first,originalSize.second));
+    dep.open("traces/traceProfondeur.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(originalSize.first,originalSize.second));
     prog.open("traces/traceProgramme.mkv",cv::VideoWriter::fourcc('H','2','6','4'),30,cv::Size(screenSize.first,screenSize.second));
     for (const auto color : this->colorFeed) {
         col << color;
@@ -174,6 +169,6 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     }
     this->imageTreated = pic;
     cv::resize(this->imageTreated,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
-    programFeed.push_back(imageTreated);
+    programFeed.push_back(resizedPicture.clone());
 }
 

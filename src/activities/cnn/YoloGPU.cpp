@@ -13,10 +13,18 @@ YoloGPU::YoloGPU( float _prob) {
     dat = datbuff;
     lbl = lblbuff;
 
-    strncpy(dat,"ressources/models/yolo.data",256);
+#ifdef USE_KITCHEN
+    strncpy(dat,"ressources/models/yolo-kitchen.data",256);
+    strncpy(cfg,"ressources/models/yolov3-kitchen.cfg",256);
+    strncpy(wei,"ressources/models/yolov3-kitchen.backup",256);
+    strncpy(lbl,"ressources/models/classes-kitchen.name",256);
+#else
     strncpy(lbl,"ressources/models/classes.name",256);
+    strncpy(dat,"ressources/models/yolo.data",256);
     strncpy(cfg,"ressources/models/yolov3.cfg",256);
     strncpy(wei,"ressources/models/yolov3.backup",256);
+#endif
+
 
     thresh = _prob;
     names = get_labels(lbl);
@@ -42,7 +50,11 @@ YoloGPU::~YoloGPU() {
 std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     image im = make_image (color.size().width,color.size().height,color.channels());//= load_image_color(fil,0,0);
-    layer l = ((network*)net)->layers[((network*)net)->n-1];
+
+    int nbClasses = 10;
+#ifdef USE_KITCHEN
+    nbClasses = 20;
+#endif
     int h = color.size().height;
         int w = color.size().width;
         int c = 3;
@@ -70,15 +82,14 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
     //printf(" Predicted in %f seconds.\n",  what_time_is_it_now()-time);
     int nboxes = 0;
     detection *dets = get_network_boxes((network*)net, im.w, im.h, thresh, 0.5, 0, 1, &nboxes);
-    if (nms) do_nms_sort(dets, nboxes, l.classes, nms);
-
+    if (nms) do_nms_sort(dets, nboxes, nbClasses, nms);
     std::vector<DetectedObject> objects;
 
 
     for (i = 0; i < nboxes;i++) {
         bool correct = false;
         int pos = -1;
-        for (int j = 0; j <10;j++) {
+        for (int j = 0; j <nbClasses;j++) {
             if (dets[i].prob[j] > thresh) {
                 correct = true;
                 pos = j;

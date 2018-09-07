@@ -3,13 +3,21 @@
 
 YoloCPU::YoloCPU(float _prob) {
 
+    resizeRatio = width / (float) height;
+
+#ifdef USE_KITCHEN
+    network = "ressources/models/yolov3-kitchen.backup";
+    networkDef = "ressources/models/yolov3-kitchen.cfg";
+    width = 640;
+    height = 480;
+#else
+    network = "ressources/models/yolov3.backup";
+    networkDef = "ressources/models/yolov3.cfg";
     width = 1280;
     height = 720;
+#endif
 
-    resizeRatio = width / (float) height;
-    network = "ressources/models/yolov3.backup";
     confidenceThreshold = _prob;
-    networkDef = "ressources/models/yolov3.cfg";
     neuralNetwork = cv::dnn::readNetFromDarknet(networkDef,network);
 
 
@@ -29,8 +37,12 @@ YoloCPU::YoloCPU(float _prob) {
 
     startingPos = Point( (width- cropSize.width) / 2, (height - cropSize.height) / 2);
 
+#ifdef USE_KITCHEN
+    std::ifstream inputFile( "/home/troisiememathieu/Documents/codebaptiste/autre/reconnaissance-plans-activites/src/ressources/models/c-kitchen.name");
+#else
     std::ifstream inputFile( "/home/troisiememathieu/Documents/codebaptiste/autre/reconnaissance-plans-activites/src/ressources/models/c.name");        // Input file stream object
 
+#endif
     // Check if exists and then open the file.
     if (inputFile.good()) {
         // Push items into a vector
@@ -65,23 +77,25 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     Mat blob;
 
-    //color = color(crop);
-    //depth = depth(crop);
 
-
-        blob = blobFromImage(color, 1.0f/250.0f,
+    blob = blobFromImage(color, 1.0f/250.0f,
                              Size(320, 320),Scalar(),true,false); //Convert Mat to batch of images
 
 
     neuralNetwork.setInput(blob);
-   // Mat detections = neuralNetwork.forward();
-   // Mat matricesDet(detections.size[2],detections.size[3],CV_32F,detections.ptr<float>());
+
     neuralNetwork.setPreferableBackend(DNN_BACKEND_OPENCV);
 
     std::vector<Mat> outs;
     std::vector<cv::String> outNames(2);
+
+#ifdef USE_KITCHEN
+        outNames[0] = "yolo_90";
+        outNames[1] = "yolo_102";
+#else
         outNames[0] = "yolo_82";
         outNames[1] = "yolo_94";
+#endif
         //outNames[2] = "yolo_106";
         neuralNetwork.forward(outs, getOutputsNames(neuralNetwork));
             //neuralNetwork.forward(outs, outNames);

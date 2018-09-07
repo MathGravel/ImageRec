@@ -111,12 +111,11 @@ std::string RealSenseVideo::getTimeStamp()
 // Converts depth frame to a matrix of doubles with distances in meters
 cv::Mat RealSenseVideo::depth_frame_to_meters(cv::Mat depthPic) {
 
+#ifndef USE_KITCHEN
     depthPic.convertTo(depthPic, CV_64F);
     depthPic = depthPic * 0.00100000005;
 
-
-
-    return depthPic;
+#else
 
     cv::Mat temp(depthPic.rows,depthPic.cols,CV_64FC1);
 
@@ -128,8 +127,14 @@ cv::Mat RealSenseVideo::depth_frame_to_meters(cv::Mat depthPic) {
             temp.at<double>(i, j) = dist;
         }
     }
+    depthPic.release();
+    depthPic = temp;
 
-    return temp;
+#endif
+
+
+    return depthPic;
+
 }
 bool RealSenseVideo::readMatBinary(std::ifstream& ifs, cv::Mat& in_mat)
 {

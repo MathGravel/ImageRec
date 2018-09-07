@@ -2,7 +2,7 @@
 #define VIDEOSOURCE_H
 
 #include <opencv2/opencv.hpp>
-
+#include <utility>
 
 class VideoSource {
 
@@ -20,6 +20,7 @@ public :
     virtual std::string getTimeStamp(){}
     virtual int getTimePosition(){}
     virtual double getExactTimePosition(){}
+    virtual std::pair<int,int> getScreenSize(){}
 
 
 };

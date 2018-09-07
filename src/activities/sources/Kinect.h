@@ -39,6 +39,7 @@ public:
     std::string getTimeStamp() {return "<font color=\"#CD2034\">&#149;</font> En direct";}
     int getTimePosition() {return 100;}
     double getExactTimePosition() {return 0;}
+    std::pair<int,int> getScreenSize(){return std::pair<int,int>(1280,720);}
 
 
 

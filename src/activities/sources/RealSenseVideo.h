@@ -30,6 +30,7 @@ public:
     std::string getTimeStamp();
     int getTimePosition() {return ((int) (vid->get(cv::CAP_PROP_POS_FRAMES)*100) / vid->get(cv::CAP_PROP_FRAME_COUNT));}
     double getExactTimePosition() {return (int)(((vid->get(cv::CAP_PROP_POS_FRAMES)*100) / vid->get(cv::CAP_PROP_FRAME_COUNT))/0.01) * 0.01;}
+    std::pair<int,int> getScreenSize(){return std::make_pair((int)vid->get(cv::CAP_PROP_FRAME_WIDTH),(int)vid->get(cv::CAP_PROP_FRAME_HEIGHT));}
 
 
 private:

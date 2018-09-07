@@ -40,7 +40,7 @@ void RecoManager::update(){
     this->feedSource.update();
     colorPic =this->feedSource.getCurrentImage();
     depthPic = this->feedSource.getDepthImage();
-    this->act->Update(this->feedSource.getCurrentImage(),this->feedSource.getDepthImage());
+    this->act->Update(this->feedSource.getOriginalImage(),this->feedSource.getDepthImage());
     this->feedSource.treatPicture(this->act);
 
 }
