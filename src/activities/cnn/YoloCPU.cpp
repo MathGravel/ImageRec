@@ -79,7 +79,7 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
 
 
     blob = blobFromImage(color, 1.0f/250.0f,
-                             Size(320, 320),Scalar(),true,false); //Convert Mat to batch of images
+                             Size(288, 288),Scalar(),true,false); //Convert Mat to batch of images
 
 
     neuralNetwork.setInput(blob);
@@ -93,8 +93,8 @@ std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
         outNames[0] = "yolo_90";
         outNames[1] = "yolo_102";
 #else
-        outNames[0] = "yolo_82";
-        outNames[1] = "yolo_94";
+        outNames[0] = "yolo_90";
+        outNames[1] = "yolo_102";
 #endif
         //outNames[2] = "yolo_106";
         neuralNetwork.forward(outs, getOutputsNames(neuralNetwork));

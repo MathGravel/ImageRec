@@ -40,6 +40,7 @@ class FenetreParametres : public QDialog
     private:
         Ui::FenetreParametres *ui;
         map <QString, QString> parametresTemporaires;
+
 };
 
 #endif // FENETREPARAMETRES_H

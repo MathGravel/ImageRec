@@ -55,8 +55,8 @@ void ImageTreatment::update() {
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     //cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
 
-    this->colorFeed.push_back(this->colorPicture.clone());
-    this->depthFeed.push_back(source->getOriginalDepth().clone());
+    //this->colorFeed.push_back(this->colorPicture.clone());
+    //this->depthFeed.push_back(source->getOriginalDepth().clone());
     timestamp = source->getTimeStamp();
     timeposition = source->getTimePosition();
 }

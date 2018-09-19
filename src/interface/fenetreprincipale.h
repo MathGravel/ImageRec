@@ -58,7 +58,12 @@ class FenetrePrincipale : public QMainWindow
           QTranslator m_translatorQt; // contains the translations for qt
           QString m_currLang; // contains the currently loaded language
           QString m_langPath; // Path of language files. This is always fixed to /languages.
-
+          clock_t deltaTime = 0;
+          unsigned int frames = 0;
+          double  frameRate = 30;
+          double  averageFrameTimeMilliseconds = 33.333;
+          clock_t beginFrame ;
+          clock_t endFrame ;
 
 };
 

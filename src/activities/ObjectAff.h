@@ -49,6 +49,7 @@ private:
     void setConfusionMatrix(int noClasses,double** matrix);
     bool checkifNewInteraction(DetectedObject & obj);
     bool currentAff;
+    int frameCount;
 
     int nbClasses;
 
@@ -62,6 +63,7 @@ private:
             dist = obj.getDist() - _hand.getDist();
             dist = abs(dist);
             gros = (object & hand).area();
+            ens = std::min(hand.area(),object.area());
         }
 
         AffordanceCheck(Region obj, Region _hand) :dist(0)  {
@@ -71,7 +73,7 @@ private:
         }
 
         operator bool() const {
-            return (gros > 300) && dist < 0.9 ;
+            return (gros > 0.2 * ens) && dist < 0.9 ;
         }
         std::string getObjectType() const { return objectClass;}
 
@@ -81,6 +83,7 @@ private:
         std::string objectClass;
         double dist;
         int gros;
+        int ens;
 
 
     };

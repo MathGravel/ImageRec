@@ -51,37 +51,39 @@ AffordanceTime::AffordanceTime(){
     currentTime  = std::clock() / (double) CLOCKS_PER_SEC;
 }
 
-AffordanceTime::AffordanceTime(Affordance aff) {
+AffordanceTime::AffordanceTime(Affordance aff,int frameCount) {
     startTime = std::clock() / (double) CLOCKS_PER_SEC;
     affordance = aff;
     currentTime  = std::clock() / (double) CLOCKS_PER_SEC;
+    times.push_back(frameCount);
+
 }
 
 
-void AffordanceTime::markCurrentInteractions(double dist) {
+void AffordanceTime::markCurrentInteractions(double dist,int frameCount) {
     this->affordance.setDist(dist);
     currentTime  = std::clock() / (double) CLOCKS_PER_SEC;
-    times.push_back(currentTime);
+    times.push_back(frameCount);
 }
 
-void AffordanceTime::markCurrentInteractions(double dist, cv::Rect pos,double prob) {
+void AffordanceTime::markCurrentInteractions(double dist, cv::Rect pos,double prob,int frameCount) {
     this->affordance = Affordance(this->affordance.getName(),dist,pos,prob);
     currentTime  = std::clock() / (double) CLOCKS_PER_SEC;
-    times.push_back(currentTime);
+    times.push_back(frameCount);
 }
 
 void AffordanceTime::clean() {
     bool check = times.size() > 0;
     if (!check)
         return;
-    double lasttime = times.back();
+    int lasttime = times.back();
 
     while(check){
         if (times.empty())
             break;
-        double time = times.front();
-        double timeDiff = lasttime - time;
-        if (timeDiff > 4)
+        int time = times.front();
+        int timeDiff = lasttime - time;
+        if (timeDiff > 500)
             times.pop_front();
         else
             check = false;

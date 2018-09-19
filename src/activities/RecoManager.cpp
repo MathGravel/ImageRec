@@ -160,9 +160,9 @@ void RecoManager::start_affordance_check(){
                             sol.addObservation("hold(" + aff->getAffordance().getName() + ")");
                             std::cout << "hold(" + aff->getAffordance().getName() + ")" << std::endl;
 
-                            #ifdef USE_KITCHEN
+                           #ifdef USE_KITCHEN
                             trace->addAffordance(aff,(actualTime - startTime).count());
-                            #endif
+                           #endif
                         }
                         informations["actionPrecedente1"] = informations["actionPrecedente2"];
                         informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
@@ -213,6 +213,10 @@ void RecoManager::start_affordance_check(){
                 if (tempActions.size() > i) {
                     informations[actS] = {{"nom", (tempActions[i].first).erase(0,5)},{"pourcentage", to_string(tempActions[i].second).substr(0,5)}};
                     informations[actS]["nom"].pop_back();
+                    #ifdef USE_KITCHEN
+                    std::string temp = informations[actS]["nom"] + " " + informations[actS]["pourcentage"];
+                    trace->addFutureActivities(temp,i,(actualTime - startTime).count());
+                    #endif
                 } else {
                     //informations[actS] = {{"nom", ""},{"pourcentage", "0"}};
                     informations[actS]["nom"] = "NA";
@@ -220,6 +224,10 @@ void RecoManager::start_affordance_check(){
                 }
                 if (tempGoal.size() > i) {
                     informations[plaS] = {{"nom", tempGoal[i].first},{"pourcentage", to_string(tempGoal[i].second).substr(0,5)}};
+                    std::string temp = informations[plaS]["nom"] +" " + informations[plaS]["pourcentage"];
+                    #ifdef USE_KITCHEN
+                    trace->addCurrentPlan(temp,(actualTime - startTime).count());
+                    #endif
                 } else {
                     //informations[plaS] = {{"nom", ""},{"pourcentage", "0"}};
                     informations[plaS]["nom"] = "NA";
@@ -227,16 +235,7 @@ void RecoManager::start_affordance_check(){
 
 
             }
-            /*
-            informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
-            informations["planCourant3"] = {{"nom", tempGoal[2].first},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
-                                                 ;
 
-            informations["actionSuivante2"] = {{"nom", (tempActions[1].first).erase(0,5)},{"pourcentage", to_string(tempActions[1].second).substr(0,5)}};
-            informations["actionSuivante2"]["nom"].pop_back();
-            informations["actionSuivante3"] = {{"nom", (tempActions[2].first).erase(0,5)},{"pourcentage", to_string(tempActions[2].second).substr(0,5)}};
-            informations["actionSuivante3"]["nom"].pop_back();
-            */
             mtx.lock();
             mtx.unlock();
 

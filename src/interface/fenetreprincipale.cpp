@@ -58,9 +58,15 @@ void FenetrePrincipale::MiseAJourImage()
 
         if(reconnaissanceManager == NULL)
             break;
+        clock_t b = clock();
         reconnaissanceManager->update();
+        clock_t e = clock();
+        std::cout << to_string(((e - b)/(double)CLOCKS_PER_SEC)*1000.0 ) << std::endl;
+#if USE_KITCHEN
+        reconnaissanceManager->trace->addFrameCount(((e - b)/(double)CLOCKS_PER_SEC)*1000.0);
+#endif
         cv::Mat img = reconnaissanceManager->getCurrentFeed();
-
+        deltaTime += e - b;
         cv::cvtColor(img,img,cv::COLOR_BGR2RGB);
         ui->image->setPixmap(QPixmap::fromImage(QImage((unsigned char*) img.data,img.cols,img.rows,QImage::Format_RGB888)));
         ui->image->repaint();
@@ -302,6 +308,7 @@ void FenetrePrincipale::pleinEcranVideo()
 
 void FenetrePrincipale::lectureVideo()
 {
+    beginFrame = clock();
     ui->informations->setHidden(true);
     ui->actionsPrecedentes->setHidden(true);
     ui->activites->setHidden(false);
@@ -314,12 +321,22 @@ void FenetrePrincipale::lectureVideo()
     ui->application->setText(tr("  Arrêter l'acquisition de la vidéo"));
     ui->application->setIcon(QIcon(":/logos/stop.png"));
     ui->application->repaint();
+
+}
+
+double clockToMilliseconds(clock_t ticks){
+    // units/(units/time) => time (seconds) * 1000 = milliseconds
+    return (ticks/(double)CLOCKS_PER_SEC)*1000.0;
 }
 
 void FenetrePrincipale::arretVideo()
 {
+    endFrame = clock();
     if (reconnaissanceManager != NULL) {
      reconnaissanceManager->setIsStopped(false);
+#if USE_KITCHEN
+     this->reconnaissanceManager->trace->addTotalCount(beginFrame,endFrame);
+#endif
      delete reconnaissanceManager;
      reconnaissanceManager = NULL;
     }

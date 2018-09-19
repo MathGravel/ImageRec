@@ -2,6 +2,7 @@
 
 ObjectAffordances::ObjectAffordances(int numberClasses) {
     numClasses = numberClasses;
+    frameCount = 0;
     nbClasses = 0;
     confMatrix = new double*[numClasses];
     for (int i  = 0; i < numClasses;i++)
@@ -13,6 +14,7 @@ ObjectAffordances::ObjectAffordances(int numberClasses) {
 
 void ObjectAffordances::clearCurrentAffordances() {
     affordances.clear();
+    frameCount = 0;
 }
 
 
@@ -20,6 +22,7 @@ void ObjectAffordances::clearCurrentAffordances() {
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions, DetectedObjects &hands) {
 
     currentAff = false;
+    frameCount++;
     std::vector<AffordanceTime*> currentAffordance;
     for (const auto obj : regions) {
 
@@ -29,14 +32,15 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
             if (regionsOverlap) {
                 currentAff = true;
                 if (affordances.count(regionsOverlap.getObjectType()) > 0)
-                    affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb());
+                    affordances.at(regionsOverlap.getObjectType()).markCurrentInteractions(obj.getDist(),obj.getObjPos(),obj.getProb(),frameCount);
                 else
-                    affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()));
+                    affordances[regionsOverlap.getObjectType()] = AffordanceTime(Affordance(obj.getObjName(),obj.getDist(),obj.getObjPos(),obj.getProb()),frameCount);
 
                 affordances.at(regionsOverlap.getObjectType()).clean();
-
-                if (affordances.at(regionsOverlap.getObjectType()).getNumberOfOccurences() > 10) {
+                if (affordances.at(regionsOverlap.getObjectType()).getNumberOfOccurences() > 9) {
                     affordances[regionsOverlap.getObjectType()].reset();
+                    //for (auto aff : affordances)
+                     //   aff.second.reset();
                     currentAffordance.push_back(&affordances[regionsOverlap.getObjectType()]);
                 }
 

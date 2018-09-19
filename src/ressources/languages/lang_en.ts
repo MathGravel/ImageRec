@@ -264,15 +264,15 @@
         <translation>0:00 / 0:00</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="831"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="915"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1026"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1246"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1330"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1414"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1604"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1688"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1772"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="834"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="918"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1029"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1249"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1333"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1417"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1607"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1691"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1775"/>
         <source>0 %</source>
         <translation>0 %</translation>
     </message>
@@ -282,168 +282,168 @@
         <translation>Plan and activity recognition</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="587"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="336"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="590"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="348"/>
         <source>  Lancer l&apos;acquisition de la vidéo</source>
         <translation>Start data aquisition</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="626"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="629"/>
         <source>  Paramètres de l&apos;application</source>
         <translation>Parameters</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="726"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="729"/>
         <source>Reconnaissance d&apos;activités</source>
         <translation>Activity recognition</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="753"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="102"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="756"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="105"/>
         <source>Actions précédentes</source>
         <translation>Previous actions</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="809"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="893"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1004"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1582"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1666"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1750"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="239"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="812"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="896"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1007"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1585"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1669"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1753"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="242"/>
         <source>Action indéfinie</source>
         <translation>Unknown action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="948"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="951"/>
         <source>Action actuelle</source>
         <translation>Current action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1072"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1075"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Application de reconnaissance de plans et d&apos;activités pour un robot assistant.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/span&gt;Développée pour un projet de recherche du &lt;span style=&quot; font-style:italic;&quot;&gt;Laboratoire de recherche en Gestion, Diffusion et Acquisition des Connaissances&lt;/span&gt; (GDAC-LIA) de l&apos;&lt;span style=&quot; font-style:italic;&quot;&gt;Université du Québec à Montréal&lt;/span&gt; (UQAM). Le projet est porté par le réseau de recherche d&apos;&lt;span style=&quot; font-style:italic;&quot;&gt;AGE-WELL&lt;/span&gt; (Aging Gracefully across Environments using Technology to Support Wellness, Engagement and Long Life) financé par les &lt;span style=&quot; font-style:italic;&quot;&gt;Réseaux de Centres d&apos;Excellence du Canada&lt;/span&gt; (Gouvernement du Canada).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Plan and activity recognition for a cognitive mobile robotic assistant.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/span&gt;Develloped for an research project at &lt;span style=&quot; font-style:italic;&quot;&gt;Laboratoire de recherche en Gestion, Diffusion et Acquisition des Connaissances&lt;/span&gt; (GDAC-LIA) of l&apos;&lt;span style=&quot; font-style:italic;&quot;&gt;Université du Québec à Montréal&lt;/span&gt; (UQAM). The project is supported by d&apos;&lt;span style=&quot; font-style:italic;&quot;&gt;AGE-WELL&lt;/span&gt; (Aging Gracefully across Environments using Technology to Support Wellness, Engagement and Long Life) and financed by &lt;span style=&quot; font-style:italic;&quot;&gt;Réseaux de Centres d&apos;Excellence du Canada&lt;/span&gt; (Gouvernement du Canada).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1141"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1144"/>
         <source>Reconnaissance de plans</source>
         <translation>Plan recognition</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1168"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="154"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1171"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="157"/>
         <source>Plans courants</source>
         <translation>Current plans</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1224"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1308"/>
-        <location filename="../../interface/fenetreprincipale.ui" line="1392"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="248"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1227"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1311"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1395"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="251"/>
         <source>Plan indéfini</source>
         <translation>Unknown plan</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1496"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1499"/>
         <source>Prédictions</source>
         <translation>Predictions</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.ui" line="1526"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="191"/>
+        <location filename="../../interface/fenetreprincipale.ui" line="1529"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="194"/>
         <source>Actions suivantes</source>
         <translation>Next actions</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="108"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="111"/>
         <source>Action précédente</source>
         <translation>Previous action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="152"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="155"/>
         <source>Plan courant</source>
         <translation>Current plan</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="186"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="189"/>
         <source>Aucune action attendue</source>
         <translation>No action left</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="189"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="192"/>
         <source>Action suivante</source>
         <translation>Next action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="225"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="244"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="228"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="247"/>
         <source>Préparation de thé</source>
         <translation>Tea making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="226"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="245"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="229"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="248"/>
         <source>Préparation de café</source>
         <translation>Coffee making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="227"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="246"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="230"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="249"/>
         <source>Préparation de chocolat</source>
         <translation>Chocolate making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="228"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="231"/>
         <source>Bouilloire</source>
         <translation>Teakettle</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="229"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="232"/>
         <source>Pichet d&apos;eau</source>
         <translation>Water</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="230"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="233"/>
         <source>Tasse</source>
         <translation>Mug</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="231"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="234"/>
         <source>Café</source>
         <translation>Coffee</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="232"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="235"/>
         <source>Pot</source>
         <translation>Pot</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="233"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="236"/>
         <source>Machine à café</source>
         <translation>Coffeemaker</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="234"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="237"/>
         <source>Lait</source>
         <translation>Milk</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="235"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="238"/>
         <source>Chocolat en poudre</source>
         <translation>Chocolate</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="236"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="239"/>
         <source>Thé</source>
         <translation>Tea</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="237"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="240"/>
         <source>Oeuf</source>
         <translation>Egg</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="314"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="318"/>
         <source>  Arrêter l&apos;acquisition de la vidéo</source>
         <translation>Stop data aquisition</translation>
     </message>

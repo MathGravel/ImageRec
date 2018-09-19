@@ -35,12 +35,12 @@ class RecoManager : public Serializable
         std::map<std::string, std::map<std::string, std::string>> getInformations() { return informations;}
         void reset();
         void saveVideos();
-
+        TraceManager* trace;
 
     private:
         ActivityRegion* act;
         ImageTreatment feedSource;
-        TraceManager* trace;
+
         //Policy pol;
         cv::Mat colorPic;
         cv::Mat depthPic;

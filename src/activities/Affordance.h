@@ -58,12 +58,12 @@ public:
 
     AffordanceTime();
 
-    AffordanceTime(Affordance aff);
+    AffordanceTime(Affordance aff,int frameCount);
 
 
-    void markCurrentInteractions(double dist);
+    void markCurrentInteractions(double dist,int frameCount);
 
-    void markCurrentInteractions(double dist, cv::Rect pos,double prob);
+    void markCurrentInteractions(double dist, cv::Rect pos,double prob,int frameCount);
 
     double getInteractionTime() {
         return times.front() - times.back();
@@ -103,7 +103,7 @@ private:
     Affordance affordance;
     double startTime;
     double currentTime;
-    std::list<double> times;
+    std::list<int> times;
 
 
 
