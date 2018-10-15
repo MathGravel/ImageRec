@@ -21,8 +21,8 @@ YoloGPU::YoloGPU( float _prob) {
 #else
     strncpy(lbl,"ressources/models/classes.name",256);
     strncpy(dat,"ressources/models/yolo.data",256);
-    strncpy(cfg,"ressources/models/video.cfg",256);
-    strncpy(wei,"ressources/models/video.backup",256);
+    strncpy(cfg,"ressources/models/yolov3.cfg",256);
+    strncpy(wei,"ressources/models/yolov3.backup",256);
 #endif
 
 
