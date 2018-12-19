@@ -192,6 +192,9 @@ public:
     void clear()  {
         objs.clear();
     }
+    int size() {
+        return objs.size();
+    }
 
 
     const std::vector<DetectedObject>& getObjects() const {

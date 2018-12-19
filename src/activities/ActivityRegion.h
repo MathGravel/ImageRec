@@ -11,7 +11,7 @@
 #include "selectiveSearchDepth.h"
 #include "Serializable.h"
 #include <opencv2/opencv.hpp>
-
+#include <mutex>
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
 //#include "cnn/CaffeCNN.h"
@@ -49,6 +49,7 @@ public:
 
     DetectedObjects detectHand(cv::Mat color, cv::Mat depth);
     DetectedObjects detectObjets(cv::Mat color, cv::Mat depth);
+    std::mutex mtx;
 
 
     void Update(cv::Mat vision, cv::Mat depthVision);
@@ -57,6 +58,21 @@ public:
 
     void updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI);
     void reset();
+
+   /* #ifdef USE_KITCHEN_DIST
+    DetectedObjects hands;
+    DetectedObjects items;
+    #endif*/
+    DetectedObjects getHands() {
+        return hands;
+    }
+
+    DetectedObjects getItems() {
+        return items;
+    }
+
+
+
    //A refaire avec celui de google
     // Affordance testManuallyROI(cv::Mat vision, cv::Rect chosenROI);
 
@@ -76,9 +92,11 @@ private:
 
     std::vector<cv::Rect> regions;
 
-    DetectedObjects hands;
-    DetectedObjects items;
 
+   // #ifndef USE_KITCHEN_DIST
+        DetectedObjects hands;
+        DetectedObjects items;
+   // #endif
     //ImgSegCNN caffe;
     //MaskRCNN handDetector;
     #ifdef USE_GPU

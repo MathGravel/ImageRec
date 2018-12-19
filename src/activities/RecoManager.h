@@ -6,6 +6,8 @@
 #include "ActivityRegion.h"
 #include "ImageTreatment.h"
 #include "Tracemanager.h"
+#include "Tracedistances.h"
+
 #include "../plans/include/Domain.h"
 #include "../plans/include/Solver.h"
 
@@ -17,6 +19,7 @@
 #include <thread>
 #include <chrono>
 #include <string>
+#include <unordered_map>
 
 class RecoManager : public Serializable
 {
@@ -40,6 +43,11 @@ class RecoManager : public Serializable
     private:
         ActivityRegion* act;
         ImageTreatment feedSource;
+#ifdef USE_KITCHEN_DIST
+        std::unordered_map<std::string,cv::Rect> objects;
+        std::vector<std::string> names;
+        TraceDistances * traceD;
+#endif
 
         //Policy pol;
         cv::Mat colorPic;

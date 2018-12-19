@@ -2,7 +2,6 @@
 
 ImageTreatment::ImageTreatment() :videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true),pastAffordance(NULL)
  {
-    //this->deserialize(stream);
     screenSize = std::make_pair(640,480);
     originalSize = std::make_pair(640,480);
 }
@@ -53,10 +52,7 @@ void ImageTreatment::update() {
     this->colorPicture = source->getColorFeed();
     this->depthPicture = source->getDepthFeed();
     cv::resize(this->colorPicture,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
-    //cv::resize(this->depthPicture,this->depthPicture,cv::Size(screenSize.first,screenSize.second));
 
-    //this->colorFeed.push_back(this->colorPicture.clone());
-    //this->depthFeed.push_back(source->getOriginalDepth().clone());
     timestamp = source->getTimeStamp();
     timeposition = source->getTimePosition();
 }
@@ -92,7 +88,6 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     int thickness = 2;
     int baseline = 0;
     cv::Mat pic = this->colorPicture.clone();
-
     if (!act->regions.empty()) {
         for (auto &reg : act->regions) {
             cv::rectangle(pic, reg, cv::Scalar(100, 100, 100), 3);
@@ -170,5 +165,7 @@ void ImageTreatment::treatPicture(ActivityRegion *act) {
     this->imageTreated = pic;
     cv::resize(this->imageTreated,this->resizedPicture,cv::Size(screenSize.first,screenSize.second));
     programFeed.push_back(resizedPicture.clone());
+
+
 }
 

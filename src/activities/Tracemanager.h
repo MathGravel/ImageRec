@@ -8,6 +8,8 @@
 #include<fstream>
 
 #include "Affordance.h"
+#include "DetectedObject.h"
+
 
 class TraceManager
 {
@@ -18,6 +20,7 @@ public:
     void addFutureActivities(std::string ac1,int i,int time);
     void addCurrentPlan(std::string plan,int time);
     void addFrameCount(clock_t time);
+    void addHandDist(clock_t time,double distance, char hand);
     void addTotalCount(clock_t timeStart,clock_t timeEnd);
 
     void dumpBuffer();

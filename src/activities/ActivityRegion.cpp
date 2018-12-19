@@ -16,17 +16,15 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     currentImage = vision;
     currentImageDepth = depthVision;
     currentAffordance.clear();
-    hands.clear();
-    items.clear();
 
-        items = this->detectObjets(vision, depthVision);
-        //hands = this->detectHand(vision,depthVision);
+
+        auto ii = this->detectObjets(vision, depthVision);
 
         //Test pour le corpus Kitchen ou les mains sont dans le meme systeme.
         std::vector<DetectedObject> mains;
         std::vector<DetectedObject> newit;
 
-        for (const auto it : items) {
+        for (const auto it : ii) {
             if (it.getObjName() == "hand" || it.getObjName() == "Hand") {
                 mains.push_back(it);
                 //exit(-1);
@@ -36,9 +34,12 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
             }
 
         }
-
+        mtx.lock();
+        hands.clear();
+        items.clear();
         hands = DetectedObjects(mains);
         items = DetectedObjects(newit);
+        mtx.unlock();
 
         if (!items.empty() && !hands.empty()) {
             currentAffordance = affordances.findAffordances(items, hands);

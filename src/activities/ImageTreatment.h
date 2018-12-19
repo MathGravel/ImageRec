@@ -52,6 +52,11 @@ private:
     std::list<cv::Mat> colorFeed;
     std::list<cv::Mat> programFeed;
     std::list<cv::Mat> depthFeed;
+/*#ifdef USE_KITCHEN_DIST
+        std::unordered_map<std::string,cv::Rect> objects;
+        std::vector<std::string> names;
+        TraceDistances * traceD;
+#endif*/
 
     bool showPercentage;
     bool showName;

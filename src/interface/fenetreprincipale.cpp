@@ -61,7 +61,9 @@ void FenetrePrincipale::MiseAJourImage()
         clock_t b = clock();
         reconnaissanceManager->update();
         clock_t e = clock();
+#ifndef USE_KITCHEN_DIST
         std::cout << to_string(((e - b)/(double)CLOCKS_PER_SEC)*1000.0 ) << std::endl;
+#endif
 #if USE_KITCHEN
         reconnaissanceManager->trace->addFrameCount(((e - b)/(double)CLOCKS_PER_SEC)*1000.0);
 #endif

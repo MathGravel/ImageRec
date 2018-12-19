@@ -7,6 +7,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 add_definitions(-DUSE_REALSENSE)
 add_definitions(-DUSE_GPU)
 add_definitions(-DUSE_KITCHEN)
+add_definitions(-DUSE_KITCHEN_DIST)
 
 
 get_directory_property(MYDEFS COMPILE_DEFINITIONS)
@@ -17,6 +18,15 @@ if(MYDEFS MATCHES "^USE_KITCHEN" OR MYDEFS MATCHES ";USE_KITCHEN")
     endif()
 
 endif()
+
+if(MYDEFS MATCHES "^USE_KITCHEN_DIST" OR MYDEFS MATCHES ";USE_KITCHEN_DIST")
+    if(EXISTS "tracesDist")
+    else()
+        file(MAKE_DIRECTORY "tracesDist")
+    endif()
+
+endif()
+
 
 
 find_package(PkgConfig REQUIRED)
