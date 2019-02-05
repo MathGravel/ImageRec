@@ -1,9 +1,0 @@
-
-
-Confusion Matrix	| Accuracy
---------------------------------
-0	0	463	| 0.00 %
-0	0	369	| 0.00 %
-0	0	368	| 100.00 %
-Number of test samples: 1200 
-

@@ -1,8 +1,0 @@
-0 Cafetiere
-1 Caffe
-2 Can
-3 Chocolat
-4 Tasse
-5 TasseCaffe
-6 The
-7 Theiere
