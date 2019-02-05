@@ -1,0 +1,56 @@
+ 
+
+def noise(
+	obsrate(1.0)
+	mutrate(0.5)
+	addrate(0.5)
+)
+
+/*define observable parameter, in this example, objects*/
+
+def observables(	
+	teakettle(),
+	water(),
+	mug(),
+	tea(),
+	pot(),
+	coffe(),
+	coffemaker(),
+	milk(),
+	choco()
+)
+
+/*define primitive actions, in this example direct interaction with objects*/ 
+
+def primitives(
+	hold(X, ~n(1,0.25)),
+	dummyPrimitive(X,Y, ~u(1,2))
+)
+
+/*define sub-goals */
+
+def actions(
+	teamaking(
+		production( <hold(teakettle), hold(water), { hold(mug), hold(tea) } >,prob(1.0))	
+	)
+	coffemaking(
+		production( <hold(teakettle) , hold(water), hold(mug), hold(coffe)> , prob(0.25)),
+		production( <hold(pot), hold(water), hold(mug), hold(coffe)> , prob(0.25)),
+		production( <hold(coffe), hold(coffemaker), hold(mug), hold(milk)>, prob(0.25)),
+		production( <hold(coffe), hold(coffemaker), hold(water), hold(mug) > , prob(0.25))
+	)
+	chocomaking(
+		production(<hold(teakettle) ,hold(water) ,hold(mug) ,hold(choco)>, prob(0.5)),
+		production(<hold(mug), hold(milk), hold(choco)>, prob(0.5))
+	)
+	dummyAction(
+		parameters(X, Y),
+		production(<hold(X), hold(Y, ~e(1,0.5))>,prob(1.0))
+	)
+)
+
+def goals(
+	production(teamaking(), prob(0.25)),
+	production(coffemaking(), prob(0.5)),
+	production(chocomaking(), prob(0.25))
+)

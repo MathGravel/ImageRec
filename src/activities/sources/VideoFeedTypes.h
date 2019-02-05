@@ -1,0 +1,7 @@
+#ifndef VIDEOFEEDTYPES_H
+#define VIDEOFEEDTYPES_H
+
+enum class VideoFeedTypes {VIDEO=0,REALSENSE=1,KINECT=2,WEBCAM=3,NONE=4};
+
+
+#endif //VIDEOFEEDTYPES_H

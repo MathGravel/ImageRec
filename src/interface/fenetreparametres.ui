@@ -1,0 +1,1075 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FenetreParametres</class>
+ <widget class="QDialog" name="FenetreParametres">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>610</width>
+    <height>376</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>610</width>
+    <height>376</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>610</width>
+    <height>376</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Paramètres</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../ressources/images.qrc">
+    <normaloff>:/images/logo.png</normaloff>:/images/logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #ffffff;</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="5,5,5,1">
+   <property name="leftMargin">
+    <number>15</number>
+   </property>
+   <property name="topMargin">
+    <number>15</number>
+   </property>
+   <property name="rightMargin">
+    <number>15</number>
+   </property>
+   <property name="bottomMargin">
+    <number>15</number>
+   </property>
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <item row="1" column="0" colspan="2">
+    <widget class="QFrame" name="affichage">
+     <property name="styleSheet">
+      <string notr="true">background-color: #eee;
+border: none;
+color: #666666;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="affichageTitre">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Affichage</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="actions">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-style: italic;
+font-size: 12px;</string>
+        </property>
+        <property name="text">
+         <string>Actions</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="objets">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-style: italic;
+font-size: 12px;</string>
+        </property>
+        <property name="text">
+         <string>Objets</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QLabel" name="mains">
+        <property name="styleSheet">
+         <string notr="true">font-weight: bold;
+font-style: italic;
+font-size: 12px;</string>
+        </property>
+        <property name="text">
+         <string>Mains</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QComboBox" name="actionsChoix">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Zone, nom et pourcentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et nom</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et poucentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rien</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QComboBox" name="objetsChoix">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>3</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Zone, nom et pourcentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et nom</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et poucentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rien</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QComboBox" name="mainsChoix">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Zone, nom et pourcentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et nom</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone et poucentage</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Zone</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Rien</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QFrame" name="traitement">
+     <property name="styleSheet">
+      <string notr="true">background-color: #eee;
+border: none;
+color: #666666;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="traitementTitre">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Précision du traitement</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="traitementChoix">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>5</number>
+        </property>
+        <property name="maxVisibleItems">
+         <number>8</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>100 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>95 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>90 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>85 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>80 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>75 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>70 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>65 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>60 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>55 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>50 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>45 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>40 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>35 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>30 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>25 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>20 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>15 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>10 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>5 %</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>0 %</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QFrame" name="langue">
+     <property name="styleSheet">
+      <string notr="true">background-color: #eee;
+border: none;
+color: #666666;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>5</number>
+      </property>
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="langueTitre">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Langue</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="langueChoix">
+        <property name="minimumSize">
+         <size>
+          <width>180</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>140</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Français</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Anglais</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QFrame" name="source">
+     <property name="styleSheet">
+      <string notr="true">background-color: #eee;
+border: none;
+color: #666666;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="leftMargin">
+       <number>10</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>10</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <property name="horizontalSpacing">
+       <number>20</number>
+      </property>
+      <property name="verticalSpacing">
+       <number>5</number>
+      </property>
+      <item row="1" column="1">
+       <widget class="Label" name="messageCouleur">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 11px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;font style=&quot;font-weight:600;&quot;&gt;Couleur : &lt;/font&gt;/home/baptiste/Vidéos/demo.mp4</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2" rowspan="3">
+       <spacer name="horizontalSpacer2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="1" column="0" rowspan="3">
+       <widget class="QComboBox" name="sourceChoix">
+        <property name="maximumSize">
+         <size>
+          <width>180</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QComboBox {
+border: 2px solid #666666;
+background-color: #ffffff;
+padding: 5px;
+font-size: 11px;
+}
+
+QComboBox::drop-down {
+border: none;
+margin-right: 10px;
+subcontrol-origin: padding;
+subcontrol-position: top right;
+}
+
+QComboBox::down-arrow {
+image: url(&quot;:/logos/arrow-bottom.png&quot;);
+width: 15px;
+height: 15px;
+}
+
+QComboBox QAbstractItemView {
+border: none;
+selection-background-color: #ddd;
+margin: 0px;
+padding: 0px;
+outline: 0px;
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>2</number>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+        </property>
+        <property name="frame">
+         <bool>true</bool>
+        </property>
+        <item>
+         <property name="text">
+          <string>Intel RealSense (D435)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Microsoft Kinect (Xbox One)</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Vidéo locale</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Webcam</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="sourceTitre">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 16px;
+font-weight: bold;</string>
+        </property>
+        <property name="text">
+         <string>Source</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="1">
+       <widget class="Label" name="messageProfondeur">
+        <property name="font">
+         <font>
+          <pointsize>-1</pointsize>
+         </font>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 11px;</string>
+        </property>
+        <property name="text">
+         <string>&lt;font style=&quot;font-weight:600;&quot;&gt;Profondeur : &lt;/font&gt;/home/baptiste/Vidéos/demo.mp4</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="3" column="0" colspan="2">
+    <widget class="QFrame" name="boutons">
+     <property name="styleSheet">
+      <string notr="true">QFrame#boutons {
+background-color: #ffffff;
+border: none;
+text-align: center;
+}
+
+QPushButton {
+border: 2px solid black;
+border-bottom: 4px solid black;
+border-right: 4px solid black;
+background-color: #ffffff;
+padding: 5px;
+color: black;
+font-weight: bold;
+}
+
+QPushButton:hover:!pressed {
+background-color: #eee;
+}
+
+QPushButton:hover {
+background-color: #ddd;
+}</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <property name="leftMargin">
+       <number>30</number>
+      </property>
+      <property name="topMargin">
+       <number>10</number>
+      </property>
+      <property name="rightMargin">
+       <number>30</number>
+      </property>
+      <property name="bottomMargin">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="annuler">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 14px;</string>
+        </property>
+        <property name="text">
+         <string>Annuler</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="valider">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font-size: 14px;</string>
+        </property>
+        <property name="text">
+         <string>Valider</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Label</class>
+   <extends>QLabel</extends>
+   <header>label.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../ressources/images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
