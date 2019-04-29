@@ -1,3 +1,8 @@
+//Selective search Depth
+//  Code de l'algorithme selective search depth, base sur l'implementation de l'algorithme Selective Search
+//  La version originale est prise de
+//  https://github.com/watanika/selective-search-cpp
+
 #if  !defined(SELECTIVESEARCH_HPP)
 #define SELECTIVESEARCH_HPP
 
@@ -22,20 +27,6 @@
 #include <opencv2/ml.hpp>
 
 
-#define CV_VERSION_STR CVAUX_STR(CV_MAJOR_VERSION) CVAUX_STR(CV_MINOR_VERSION) CVAUX_STR(CV_SUBMINOR_VERSION)
-#ifdef _DEBUG
-#define CV_EXT_STR "d.lib"
-#else
-#define CV_EXT_STR ".lib"
-#endif
-
-
-#pragma comment(lib, "opencv_core"	CV_VERSION_STR CV_EXT_STR)
-#pragma comment(lib, "opencv_highgui"	CV_VERSION_STR CV_EXT_STR)
-#pragma comment(lib, "opencv_imgcodecs" CV_VERSION_STR CV_EXT_STR)
-#pragma comment(lib, "opencv_imgproc"	CV_VERSION_STR CV_EXT_STR)
-#pragma comment(lib, "opencv_objdetect"	CV_VERSION_STR CV_EXT_STR)
-#pragma comment(lib, "opencv_ml"	CV_VERSION_STR CV_EXT_STR)
 
 
 namespace std
@@ -56,10 +47,7 @@ namespace std
 namespace selectiveDepth
 {
 
-    inline double square( double a )
-    {
-        return a*a;
-    }
+    inline double square( double a ) {return a*a;}
 
 
     inline double diff( const cv::Mat &img, int x1, int y1, int x2, int y2 )
