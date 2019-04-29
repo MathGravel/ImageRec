@@ -11,7 +11,7 @@ class Affordance {
 
 public:
     Affordance(std::string obj = "teacup", double prob=76.7653);
-    Affordance(std::string obj,double pos,cv::Rect reg,double prob);
+    Affordance(std::string obj,double pos,cv::Rect reg,double prob,double _dist = 0);
 
 
     std::string getName() const {return objectName;}
@@ -20,6 +20,10 @@ public:
     double getObjectProbability() const {return objProb;}
     void setDist(double dist) {
         objectPos = dist;
+    }
+    void reset() {
+        objectPos = -1;
+        objProb = 0;
     }
 
     bool operator ==(const Affordance& autre);
@@ -39,6 +43,7 @@ private:
     double objectPos;
     cv::Rect region;
     double objProb;
+    double dist;
     //Date
     //To_String Format (obj)_(x.xx)
     //Si t'a aucune interaction envoie un objet void i.e un appel constructeur vide

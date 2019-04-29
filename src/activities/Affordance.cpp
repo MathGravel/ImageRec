@@ -14,8 +14,8 @@ Affordance::Affordance(std::string obj , double prob) {
 
 
 }
-Affordance::Affordance(std::string obj,double pos,cv::Rect reg,double prob) :
-        objectName(obj),objectPos(pos),region(reg),objProb(prob){
+Affordance::Affordance(std::string obj,double pos,cv::Rect reg,double prob, double _dist) :
+        objectName(obj),objectPos(pos),region(reg),objProb(prob),dist(_dist){
     if (objectName == "teapot") {
         objectName = "teakettle";
     }

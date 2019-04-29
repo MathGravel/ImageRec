@@ -44,13 +44,8 @@ public:
 
 
 private:
-
-
-    void setConfusionMatrix(int noClasses,double** matrix);
-    bool checkifNewInteraction(DetectedObject & obj);
     bool currentAff;
     int frameCount;
-
     int nbClasses;
 
     class AffordanceCheck {
@@ -87,10 +82,13 @@ private:
 
 
     };
+
+    void cleanMatrix();
+
+
     std::unordered_map<std::string,AffordanceTime> affordances;
     int numClasses;
-    double** confMatrix;
-
+    std::unordered_map<std::string,Affordance> confMatrix;
 };
 
 #endif //OBJECTAFF_H
