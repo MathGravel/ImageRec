@@ -38,9 +38,9 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 #set(Caffe_DEFINITIONS "-DUSE_OPENCV;-DUSE_LMDB;-DUSE_LEVELDB")
 
 add_library(libdarknet SHARED IMPORTED)
-set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /home/uqamportable/Documents/libRobot/darknet/libdarknet.so)
-link_directories(/home/uqamportable/Documents/libRobot/darknet/include)
-link_directories(/home/uqamportable/Documents/libRobot/darknet)
+set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION $ENV{DARKNET}/libdarknet.so)
+link_directories($ENV{DARKNET}/include)
+link_directories($ENV{DARKNET})
 
 
 find_package(Threads REQUIRED)
@@ -120,5 +120,5 @@ TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${Protobuf_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} ${PYTHON_LIBRARIES})
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} libdarknet)
 TARGET_LINK_LIBRARIES(${CMAKE_PROJECT_NAME} Qt5::Widgets)
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE /home/uqamportable/Documents/libRobot/darknet/include)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE $ENV{DARKNET}/include)
 
