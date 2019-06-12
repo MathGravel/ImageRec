@@ -53,8 +53,6 @@ public:
 
 
     void Update(cv::Mat vision, cv::Mat depthVision);
-    void UpdateROI(cv::Mat vision, cv::Mat depthVision) {};//A completer
-
 
     void updateManualROI(cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI);
     void reset();
@@ -72,6 +70,11 @@ public:
     }
 
 
+    DetectedObjects removeRedundantRegions(cv::Mat depth,DetectedObjects local,  std::list<DetectedObject> ssd, int confidence);
+    double leveshDist(const std::string& s1, const std::string& s2);
+    std::vector<float> calcDepthHist( const cv::Mat &imgDepth,cv::Rect region );
+    double calcSimofDepth( const std::vector<float> &r1, const std::vector<float> &r2  );
+    double calcSimofDistDepth( const Region &r1, const Region &r2, cv::Mat & depth );
 
    //A refaire avec celui de google
     // Affordance testManuallyROI(cv::Mat vision, cv::Rect chosenROI);

@@ -131,7 +131,103 @@ std::vector<cv::Rect> segmentPic(cv::Mat picture,const cv::Mat depthPic) {
 
 }
 
+DetectedObjects ActivityRegion::removeRedundantRegions(cv::Mat depth,DetectedObjects local,  std::list<DetectedObject> ssd, int confidence){
+    std::vector<DetectedObject> nouv;
+    DetectedObject* currentObj;
+    double ratio = 1;
+    for (auto  loc : local){
+        nouv.push_back(loc);
+        for (auto ss : ssd ) {
+            double val = (1/9)* leveshDist(ss.getObjName(),loc.getObjName()) +
+                    (2/9) * ss.getProb() + (2/9) * this->calcSimofDistDepth(ss.getObjPos(),loc.getObjPos(),depth) +
+                    (4/9) * this->calcSimofDepth(this->calcDepthHist(depth,ss.getObjPos()),this->calcDepthHist(depth,loc.getObjPos()));
+            ratio = std::min(ratio,val);
+            currentObj = &ss;
+        }
+        if (ratio > confidence){
+            nouv.push_back(*currentObj);
+        }
+        ratio = 1;
+    }
+    return DetectedObjects(nouv);
+}
 
+double ActivityRegion::leveshDist(const std::string& s1, const std::string& s2)
+{
+    int ln = s1.size();
+    int ln2 = s2.size();
+    std::vector<std::vector<unsigned int>> dist(ln + 1, std::vector<unsigned int>(ln2 + 1));
+
+    dist[0][0] = 0;
+    for(unsigned int i = 1; i <= ln; ++i) dist[i][0] = i;
+    for(unsigned int j = 1; j <= ln2; ++j) dist[0][j] = j;
+
+    for(unsigned int i = 1; i <= ln; ++i)
+        for(unsigned int j = 1; j <= ln2; ++j) {
+                    int check = (s1[i - 1] == s2[j - 1] ? 0 : 1);
+                      dist[i][j] = std::min({ dist[i - 1][j] + 1, dist[i][j - 1] + 1, dist[i - 1][j - 1] + check });
+        }
+    double levDist = dist[ln][ln2] / std::max(s1.length(),s1.length());
+    return levDist;
+}
+
+ std::vector<float> ActivityRegion::calcDepthHist( const cv::Mat &imgDepth,cv::Rect region )
+{
+
+    int channels[] = { 0 };
+    const int bins = 25;
+    int histSize[] = { bins };
+    float range[] = { 0, 256 };
+    const float *ranges[] = { range };
+
+    std::vector<float> features;
+
+        cv::Mat hist;
+
+        cv::Mat input = imgDepth(region);
+
+        cv::calcHist( &input, 1, channels, cv::Mat(), hist, 1, histSize, ranges, true, false );
+
+        cv::normalize( hist, hist, 1.0, 0.0, cv::NORM_L1 );
+
+        std::vector<float> histogram;
+        hist.copyTo( histogram );
+
+        if ( features.empty() )
+        {
+            features = std::move( histogram );
+        }
+        else
+        {
+            std::copy( histogram.begin(), histogram.end(), std::back_inserter( features ) );
+        }
+
+
+    return features;
+}
+
+ double ActivityRegion::calcSimofDepth( const std::vector<float> &r1, const std::vector<float> &r2  )
+{
+    assert( r1.size() == r2.size() );
+
+    float sum = 0.0;
+
+    for ( auto i1 = r1.cbegin(), i2 = r2.cbegin(); i1 != r1.cend(); i1++, i2++ )
+    {
+        sum += std::sqrt( *i1 * *i2 );
+    }
+
+    return sum;
+}
+
+ double ActivityRegion::calcSimofDistDepth( const cv::Rect &r1, const cv::Rect &r2, cv::Mat & depth )
+{
+    double minval, maxval;
+    cv::minMaxLoc(depth,&minval,&maxval);
+    double sum = cv::mean(depth(r1 & r2))[0] - cv::mean(depth(r1))[0] - cv::mean(depth(r2))[0];
+    sum = sum / maxval;
+    return sum;
+}
 
 template<typename Base, typename T>
 inline bool instanceof(const T*) {

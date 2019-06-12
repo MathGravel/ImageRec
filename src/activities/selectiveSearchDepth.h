@@ -390,6 +390,16 @@ namespace selectiveDepth
         return sum;
     }
 
+    inline double calcSimofDistDepth( const Region &r1, const Region &r2, cv::Mat & depth )
+    {
+        double minval, maxval;
+        cv::minMaxLoc(depth,&minval,&maxval);
+        double sum = cv::mean(depth(r1.rect & r2.rect))[0] - cv::mean(depth(r1.rect))[0] - cv::mean(depth(r2.rect))[0];
+        sum = sum / maxval;
+        return sum;
+    }
+
+
     inline double calcSimilarity( const Region &r1, const Region &r2, int imSize )
     {
         return ( calcSimOfColour( r1, r2 ) + calcSimOfTexture( r1, r2 ) +  calcSimOfSize( r1, r2, imSize ) + calcSimOfRect( r1, r2, imSize ) + calcSimofDepth(r1,r2,imSize) );
