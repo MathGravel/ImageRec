@@ -14,9 +14,6 @@
 #include <mutex>
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
-//#include "cnn/CaffeCNN.h"
-#include "cnn/ImgSegCNN.h"
-#include "cnn/MaskRCNN.h"
 #include "cnn/YoloGPU.h"
 #include "cnn/YoloCPU.h"
 
@@ -97,8 +94,6 @@ private:
         DetectedObjects hands;
         DetectedObjects items;
    // #endif
-    //ImgSegCNN caffe;
-    //MaskRCNN handDetector;
     #ifdef USE_GPU
         YoloGPU objectDetector;
     #else

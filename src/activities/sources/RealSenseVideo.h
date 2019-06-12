@@ -10,6 +10,7 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <fstream>
 
 
 class RealSenseVideo  : public VideoSource{
