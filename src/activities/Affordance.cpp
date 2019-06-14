@@ -3,8 +3,8 @@
 * \author Mathieu Gravel
 * \version 
 * \date 
-* \brief 
-* \details
+* \brief Evaluates the position between an Object and the Hand
+* \details Affordance is used to update regulary the position of the Object during an interaction. It evaluates the distance to the Hand of an Object and is used to add an interaction and its time in the AffordanceTime class.
 **/
 
 #include "Affordance.h"
