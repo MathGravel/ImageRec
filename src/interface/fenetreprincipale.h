@@ -1,3 +1,12 @@
+/**
+ * \file      fenetreprincipale.h
+ * \author    Mathieu Gravel
+ * \version   1.0
+ * \date      13 June 2019
+ * \brief     Create the main interface
+ * \details   Positions every layout of main interface and call other others functions
+ */
+
 #ifndef FENETREPRINCIPALE_H
 #define FENETREPRINCIPALE_H
 
@@ -21,30 +30,122 @@ class FenetrePrincipale : public QMainWindow
     Q_OBJECT
 
     public:
+        
+		/**
+		* \fn      explicit FenetrePrincipale(QWidget *parent = 0)
+		* \brief   Constructor of class FenetrePrincipale
+		* \details Create the window according to file : fenetreprincipale.ui
+		* 		   Associating button application, parameters, pleinEcran to functions
+		* \param   parent	the parent's adress of this program
+		*/
         explicit FenetrePrincipale(QWidget *parent = 0);
+		
+		/**
+		* \fn ~FenetrePrincipale()
+		* \brief Destructor of class FenetrePrincipale
+		*/
         ~FenetrePrincipale();
+		
+		/**
+		* \fn configuration()
+		* \brief Configure layout of the main window
+		* \details Positionning layouts and hiding some                  
+		*/
         void configuration();
+		
+		/**
+		* \fn lectureVideo()
+		* \brief  
+		* \details    
+		*/
         virtual void lectureVideo();
+		
+		/**
+		* \fn arretVideo()
+		* \brief  
+		* \details    
+		*/
         virtual void arretVideo();
+		
+		// Getters
         bool getPlay() {return play;}
         QString getNomAction(string nom);
         QString getNomPlan(string nom);
         QString getLogo(string nom);
 
     protected:
+        /**
+		* \fn arretVideo()
+		* \brief  
+		* \details                     
+		* \param   
+		*/
         void closeEvent(QCloseEvent *event) override;
 
 
     public slots:
+	
+		/**
+		* \fn gestionVideo()
+		* \brief Start or Stop to capture video
+		* \details if video capture is on, stop it (stop the loop in \a MiseAJourImage)
+		*	  	   else start it (start the loop in \a MiseAJourImage
+		*/
         void gestionVideo();
+		
+		/**
+		* \fn MiseAJourImage()
+		* \brief  when video start loop and update image (according to processor speed)
+		* \details 
+		*/
         void MiseAJourImage();
+		
+		/**
+		* \fn MiseAJourHistogramme()
+		* \brief  
+		* \details             
+		* \param   
+		*/
         void MiseAJourHistogramme(int position);
+		
+		/**
+		* \fn MiseAJourProgression()
+		* \brief  
+		* \details  
+		* \param
+		*/
         void MiseAJourProgression(string timer);
+		
+		/**
+		* \fn MiseAJourInformations()
+		* \brief  
+		* \details  
+		* \param
+		*/
         void MiseAJourInformations(std::map<std::string, std::map<std::string, std::string>> informations);
+		
+		/**
+		* \fn ouvrirFenetreParametres()
+		* \brief  
+		* \details
+		*/
         void ouvrirFenetreParametres();
+		
+		/**
+		* \fn pleinEcranVideo()
+		* \brief  
+		* \details
+		*/
         void pleinEcranVideo();
 
     private:
+	
+		/**
+		* \fn loadLanguage()
+		* \brief  
+		* \details           
+		* \param
+		*/
         void loadLanguage(const QString& rLanguage);
 
         Ui::FenetrePrincipale *ui;

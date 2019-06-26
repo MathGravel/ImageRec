@@ -1,3 +1,12 @@
+/**
+* \file      ImageTreatment.h
+* \author    Mathieu Gravel
+* \version   1.0
+* \date      13 June 2019
+* \brief     
+* \details  
+*/
+
 #ifndef IMAGETREATMENT_H
 #define IMAGETREATMENT_H
 
@@ -19,13 +28,25 @@
 class ImageTreatment : public Serializable {
 
 public:
+	/**
+	* \fn ImageTreatment()
+	* \brief Constructor of class ImageTreatment  
+	*/
      ImageTreatment();
 
+	/**
+	* \fn ~ImageTreatment()
+	* \brief Destructor of class ImageTreatment  
+	*/
      ~ImageTreatment();
      void deserialize(std::map<std::string,std::string> stream);
      std::string getTimeStamp() {return timestamp;}
      int getTimePosition() {return timeposition;}
 
+	/**
+	* \fn update()
+	* \brief 
+	*/
      void update();
      void treatPicture(ActivityRegion* act);
 

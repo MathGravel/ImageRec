@@ -7,6 +7,7 @@
 
 #include "Affordance.h"
 #include "DetectedObject.h"
+#include "ObjectsMat.h"
 
 using namespace cv;
 using namespace cv::dnn;
@@ -18,6 +19,7 @@ auto value_selector = [](auto pair){return pair.second;};
 
 
 
+
 class ObjectAffordances {
 public:
     virtual ~ObjectAffordances();
@@ -25,7 +27,9 @@ public:
 public:
 
     ObjectAffordances(int numberClasses = 10);
-    std::vector<AffordanceTime*> findAffordances(DetectedObjects& regions,DetectedObjects& hands);
+    std::vector<AffordanceTime*> findAffordances(DetectedObjects& regions,
+                                                 DetectedObjects& hands,
+                                                 ObjectsMat& ObjectsMat);
     void clearCurrentAffordances();
 
     bool currentlyHasAffordances()const {return currentAff;}
@@ -47,6 +51,7 @@ private:
     bool currentAff;
     int frameCount;
     int nbClasses;
+
 
     class AffordanceCheck {
 
@@ -90,5 +95,7 @@ private:
     int numClasses;
     std::unordered_map<std::string,Affordance> confMatrix;
 };
+
+
 
 #endif //OBJECTAFF_H

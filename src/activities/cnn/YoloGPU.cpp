@@ -19,10 +19,10 @@ YoloGPU::YoloGPU( float _prob) {
     strncpy(wei,"ressources/models/corpusKitchen.backup",256);
     strncpy(lbl,"ressources/models/classes-kitchen.name",256);
 #else
-    strncpy(lbl,"ressources/models/classes.name",256);
-    strncpy(dat,"ressources/models/yolo.data",256);
-    strncpy(cfg,"ressources/models/yolov3.cfg",256);
-    strncpy(wei,"ressources/models/yolov3.backup",256);
+    strncpy(lbl,"ressources/models/balls.name",256);
+    strncpy(dat,"ressources/models/balls.data",256);
+    strncpy(cfg,"ressources/models/balls.cfg",256);
+    strncpy(wei,"ressources/models/balls.backup",256);
 #endif
 
 
@@ -51,7 +51,7 @@ std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     image im = make_image (color.size().width,color.size().height,color.channels());//= load_image_color(fil,0,0);
 
-    int nbClasses = 10;
+    int nbClasses = 6;
 #ifdef USE_KITCHEN
     nbClasses = 20;
 #endif

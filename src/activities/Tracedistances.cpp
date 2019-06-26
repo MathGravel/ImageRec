@@ -1,3 +1,6 @@
+
+
+
 #include "Tracedistances.h"
 
 TraceDistances::TraceDistances(std::string traceLoc,std::vector<std::string> classes,std::pair<int,int> screen):fileLoc(std::move(traceLoc)),

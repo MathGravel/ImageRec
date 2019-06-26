@@ -1,3 +1,12 @@
+/**
+ * \file      RecoManager.h
+ * \author    Mathieu Gravel
+ * \version   1.0
+ * \date      13 June 2019
+ * \brief     
+ * \details   
+ */
+
 #ifndef RECOMANAGER_H
 #define RECOMANAGER_H
 
@@ -8,8 +17,8 @@
 #include "Tracemanager.h"
 #include "Tracedistances.h"
 
-#include "../plans/include/Domain.h"
 #include "../plans/include/Solver.h"
+#include "../plans/include/Domain.h"
 
 #include "Policy.h"
 #include <opencv2/opencv.hpp>
@@ -24,8 +33,26 @@
 class RecoManager : public Serializable
 {
     public:
+
+	/**
+	* \fn RecoManager(std::map<std::string,std::string> stream)
+	* \brief Constructor of class RecoManager  
+	* \details  Initialize act which is an Object of ActivityRegion if it wasn't created before (or pointer as been delete)  	
+	* \param stream 	2 string associated
+	*/
         RecoManager(std::map<std::string,std::string> stream);
+
+	/**
+	* \fn ~RecoManager()
+	* \brief Destructor of class RecoManager  
+	*/
         virtual ~RecoManager();
+
+	/**
+	* \fn update()
+	* \brief 
+	* \details    
+	*/
         void update();
         void deserialize(std::map<std::string,std::string> stream);
         std::string getTimeStamp() {return feedSource.getTimeStamp();}

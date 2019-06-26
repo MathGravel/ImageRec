@@ -1,6 +1,9 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
 
+
+const int ACTUAL_INFO=9;
+
 FenetrePrincipale::FenetrePrincipale(QWidget *parent) : QMainWindow(parent), ui(new Ui::FenetrePrincipale)
 {
     ui->setupUi(this);
@@ -52,7 +55,7 @@ void FenetrePrincipale::gestionVideo()
 void FenetrePrincipale::MiseAJourImage()
 {
     lectureVideo();
-
+    int frame= 0;
     while(true) {
         qApp->processEvents();
 
@@ -62,7 +65,7 @@ void FenetrePrincipale::MiseAJourImage()
         reconnaissanceManager->update();
         clock_t e = clock();
 #ifndef USE_KITCHEN_DIST
-        std::cout << to_string(((e - b)/(double)CLOCKS_PER_SEC)*1000.0 ) << std::endl;
+        //std::cout << to_string(((e - b)/(double)CLOCKS_PER_SEC)*1000.0 ) << std::endl;
 #endif
 #if USE_KITCHEN
         reconnaissanceManager->trace->addFrameCount(((e - b)/(double)CLOCKS_PER_SEC)*1000.0);
@@ -74,13 +77,20 @@ void FenetrePrincipale::MiseAJourImage()
         ui->image->repaint();
         MiseAJourHistogramme(reconnaissanceManager->getTimePosition());
         MiseAJourProgression(reconnaissanceManager->getTimeStamp());
-        MiseAJourInformations(reconnaissanceManager->getInformations());
+      //  if(frame<ACTUAL_INFO)
+        //{
+            MiseAJourInformations(reconnaissanceManager->getInformations());
+          //  frame=0;
+        //}
+        //else {
+           // frame++;
+        //}
 
-        if (reconnaissanceManager->getTimePosition() == 100)
+        /*if (reconnaissanceManager->getTimePosition() == 100)
             play = false;
         if ((!play) ) {
             break;
-        }
+        }*/
     }
 
     arretVideo();
@@ -125,8 +135,9 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     } else {
         ui->actionsPrecedentes2->setHidden(true);
     }
-
-    ui->actionActuelle1Label->setText(getNomAction(informations["actionActuelle"]["nom"]));
+    QString actionActuelleName = QString::fromStdString(informations["actionActuelle"]["nom"]);
+    //std::cout<<"2 : : "<<actionActuelleName<<std::endl;
+    ui->actionActuelle1Label->setText(actionActuelleName);
     ui->actionActuelle1Logo->setPixmap(QPixmap(getLogo(informations["actionActuelle"]["nom"])));
     ui->actionActuelle1Pourcentage->setText(QString::fromStdString(informations["actionActuelle"]["pourcentage"]) + " %");
 

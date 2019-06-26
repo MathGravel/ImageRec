@@ -5,6 +5,7 @@ ActivityRegion* ActivityRegion::ar_instance = nullptr;
 ActivityRegion::ActivityRegion():
                                  objectDetector(0.31f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
+       this->objectsMat.instance();
 }
 
 
@@ -15,7 +16,7 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
     std::vector<cv::Rect> objects;
     currentImage = vision;
     currentImageDepth = depthVision;
-    currentAffordance.clear();
+    currentAffordance.clear();///azerty2
 
 
         auto ii = this->detectObjets(vision, depthVision);
@@ -42,10 +43,9 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
         mtx.unlock();
 
         if (!items.empty() && !hands.empty()) {
-            currentAffordance = affordances.findAffordances(items, hands);
-            if (!currentAffordance.empty()) {
-
-                for (auto it : currentAffordance)
+            currentAffordance = affordances.findAffordances(items, hands, objectsMat);///azerty
+            if (!currentAffordance.empty()) {///azerty2
+                         for (auto it : currentAffordance)
                     currentAffordances.push(it);
             }
         }
@@ -147,7 +147,8 @@ DetectedObjects ActivityRegion::detectObjets(cv::Mat color, cv::Mat depth) {
 }
 
 void ActivityRegion::reset() {
-    currentAffordance.clear();
+    currentAffordance.clear();///azerty2
+
     this->affordances.clearCurrentAffordances();
     this->hands.clear();
     this->items.clear();

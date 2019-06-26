@@ -6,8 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 add_definitions(-DUSE_REALSENSE)
 add_definitions(-DUSE_GPU)
-add_definitions(-DUSE_KITCHEN)
-add_definitions(-DUSE_KITCHEN_DIST)
+#add_definitions(-DUSE_KITCHEN)
+#add_definitions(-DUSE_KITCHEN_DIST)
 
 
 get_directory_property(MYDEFS COMPILE_DEFINITIONS)
@@ -38,7 +38,7 @@ include_directories(${PYTHON_INCLUDE_DIRS})
 #set(Caffe_DEFINITIONS "-DUSE_OPENCV;-DUSE_LMDB;-DUSE_LEVELDB")
 
 add_library(libdarknet SHARED IMPORTED)
-set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /opt/darknet/libdarknet.so)
+set_target_properties(libdarknet PROPERTIES IMPORTED_LOCATION /home/erwan/Documents/libs/darknet/libdarknet.so)
 link_directories(/opt/darknet/include)
 link_directories(/opt/darknet)
 
@@ -58,6 +58,8 @@ include_directories("./interface")
 include_directories("./plans")
 include_directories("./plans/include")
 include_directories("./plans/src")
+include_directories("./plans/src/solver")
+include_directories("./plans/src/Plan_Library")
 include_directories("./ressources")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -72,6 +74,7 @@ file(GLOB_RECURSE ActivitiesVideoSources_SOURCES "activities/sources/*.cpp")
 file(GLOB_RECURSE ActivitiesVideoSources_HEADERS "activities/sources/*.h")
 file(GLOB_RECURSE Plans_HEADERS "plans/include/*.h")
 file(GLOB_RECURSE Plans_SOURCES "plans/src/*.cpp")
+FILE(GLOB_RECURSE PLSOURCES  "./plans/src/Plan_Library/*.cpp")
 FILE(GLOB_RECURSE QtHeaders RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "interface/*.h")
 FILE(GLOB_RECURSE QtSources RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "interface/*.cpp")
 FILE(GLOB_RECURSE QtForms RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "interface/*.ui")
@@ -79,13 +82,15 @@ FILE(GLOB_RECURSE QtRessources RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "ressources/
 
 list(APPEND Activities_HEADERS ${ActivitiesCNN_HEADERS} ${ActivitiesVideoSources_HEADERS} ${QtHeaders})
 list(APPEND Activities_SOURCES ${ActivitiesCNN_SOURCES} ${ActivitiesVideoSources_SOURCES} ${QtSources})
+list(APPEND HEADERS ${solver_HEADERS} ${PLHEADERS})
+list(APPEND SOURCES ${solver_SOURCES} ${PLSOURCES})
 
 list(REMOVE_ITEM QtHeaders "interface/configuration.h")
 
 FIND_PACKAGE(Qt5LinguistTools)
 qt5_add_translation(QM_FILES ressources/languages/lang_en.ts)
 add_custom_target(translations DEPENDS ${QM_FILES})
- qt5_create_translation(QM_FILES
+qt5_create_translation(QM_FILES
      interface/fenetreparametres.cpp interface/fenetreparametres.ui interface/fenetreprincipale.cpp interface/fenetreprincipale.ui
      ressources/languages/lang_en.ts
  )

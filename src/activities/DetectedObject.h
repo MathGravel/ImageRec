@@ -1,3 +1,20 @@
+/**
+ * \file      DetectedObject.h
+ * \author    Mathieu Gravel
+ * \version   1.0
+ * \date      13 June 2019
+ * \brief     3 class : DetectedMatrice, DetectedObject, DetectedObjects
+ * \details   
+ *		DetectedMatrice
+		    position of an object and prediction
+				
+		DetectedObject
+		    position of an object including his color and prediction
+			 
+		DetectedObjects
+		    vector of detected object
+ */
+
 #ifndef DETECTEDOBJECT_H
 #define DETECTEDOBJECT_H
 

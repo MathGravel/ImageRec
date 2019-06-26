@@ -1,3 +1,13 @@
+/**
+ * \file      ActivityRegion.h
+ * \author    Mathieu Gravel
+ * \version   1.0
+ * \date      13 June 2019
+ * \brief    
+ * \details
+ */
+
+
 #ifndef ACTIVITYREGION_H
 #define ACTIVITYREGION_H
 
@@ -7,6 +17,7 @@
 #include <sstream>
 #include "Affordance.h"
 #include "ObjectAff.h"
+#include "ObjectsMat.h"
 #include "DetectedObject.h"
 #include "selectiveSearchDepth.h"
 #include "Serializable.h"
@@ -14,6 +25,9 @@
 #include <mutex>
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
+//#include "cnn/CaffeCNN.h"
+#include "cnn/ImgSegCNN.h"
+#include "cnn/MaskRCNN.h"
 #include "cnn/YoloGPU.h"
 #include "cnn/YoloCPU.h"
 
@@ -25,8 +39,22 @@ class ActivityRegion : public Serializable  {
     static ActivityRegion *ar_instance;
 
 public:
+	
+    /**
+	* \fn ActivityRegion()
+    * \brief Constructor of class ActivityRegion  
+    * \details  Initialize composant of ActivityRegion
+    */
     ActivityRegion();
 
+    /**
+    * \fn ActivityRegion* instance()
+    * \brief check if ActivityRegion object exist, else create it, then return
+    * 	it  
+    * \details if it's the first step of the loop (MiseAJourImage) or pointer 
+    * 	of ActivityRegion as been delete 
+    * \return ActivityRegion::ar_instance	object of ActivityRegion
+    */
     static ActivityRegion* instance(){
         if(!ActivityRegion::ar_instance)
             ActivityRegion::ar_instance = new ActivityRegion();
@@ -48,7 +76,13 @@ public:
     DetectedObjects detectObjets(cv::Mat color, cv::Mat depth);
     std::mutex mtx;
 
-
+    /**
+    * \fn void Update(cv::Mat vision, cv::Mat depthVision)
+    * \brief 
+    * \details 
+    * \param vision : matrice which represent color of the picture
+    * \param depthVision : matrice which represent the depth in the picture
+    */
     void Update(cv::Mat vision, cv::Mat depthVision);
     void UpdateROI(cv::Mat vision, cv::Mat depthVision) {};//A completer
 
@@ -82,7 +116,8 @@ private:
 
     ObjectAffordances affordances;
 
-    std::vector<AffordanceTime*> currentAffordance;
+    std::vector<AffordanceTime*> currentAffordance;///azerty2
+
     std::string oldName;
 
 
@@ -94,6 +129,8 @@ private:
         DetectedObjects hands;
         DetectedObjects items;
    // #endif
+    //ImgSegCNN caffe;
+    //MaskRCNN handDetector;
     #ifdef USE_GPU
         YoloGPU objectDetector;
     #else
@@ -111,7 +148,7 @@ private:
     cv::Mat currentImageDepth;
     cv::Mat imageROI;
     friend class ImageTreatment;
-
+    ObjectsMat objectsMat;
 
 
 

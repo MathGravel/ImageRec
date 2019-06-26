@@ -109,6 +109,7 @@ void RecoManager::start_thread(){
 
 void RecoManager::start_affordance_check(){
 
+
     string actionActuelleNom = "";
     double actionActuellePourcentage = 0;
     int actionActuelleCompteur = 1;
@@ -167,9 +168,85 @@ while(isStopped){
     actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
 #ifndef USE_KITCHEN_DIST
-    if(!act->currentAffordances.empty()){
+    if(!act->currentAffordances.empty() /*&& act->currentAffordances.top->getInteractionTime()*/){
+        // On actualise l'action actuelle en fonction des 10 dernières actions enregistrées
+
+/*
+        vector<String> nameObject={};
+        vector<double> probObject={};
+        int j;
+        std::stack<AffordanceTime*> allAff= act->currentAffordances;
+        AffordanceTime* searchAff;
+        int rang;
+        for(int i=0;i<act->currentAffordances.size();i++){
+            searchAff=allAff.top();
+            allAff.pop();
+            j=0;
+            std::cout<<"TEST3"<<std::endl;
+            while(j<nameObject.size()){
+                std::cout<<"TEST2"<<std::endl;
+                if( nameObject.at(j)==searchAff->getAffordance().getName()){
+                    rang=j;
+                }
+                j++;
+
+            }
+            std::cout<<"TESTbis"<<std::endl;
+
+            if(j!=0 && nameObject[rang]==searchAff->getAffordance().getName()){
+                probObject[rang]=probObject[rang]+searchAff->getAffordance().getObjectProbability();
+            }
+            else{
+                while(nameObject.size()>10)
+                {nameObject.pop_back();
+                probObject.pop_back();}
+                nameObject.push_back(searchAff->getAffordance().getName());
+                probObject.push_back(searchAff->getAffordance().getObjectProbability());
+            }
+        }
+        // On a vérifié que currentAffordances != empty
+
+        int rangMax=0;
+        for(int a=1;a<probObject.size();a++){
+            if(probObject[rangMax]<probObject[a]){
+                rangMax=a;
+            }
+        }
+        Affordance* aff = new Affordance(nameObject[rangMax],0,cv::Rect(),probObject[rangMax]/act->currentAffordances.size(),0);
+        informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
+
+        if (actionActuelleNom != aff->getName()) {
+            actionActuelleNom = aff->getName();
+            actionActuellePourcentage = aff->getObjectProbability()*100;
+            if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
+                if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
+                    sol.addObservation("hold(" + aff->getName() + ")");
+                    std::cout << "hold(" + aff->getName() + ")" << std::endl;
+
+#if defined(USE_KITCHEN)
+                    trace->addAffordance(aff,(actualTime - startTime).count());
+#endif
+                }
+                informations["actionPrecedente1"] = informations["actionPrecedente2"];
+                informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
+            } else {
+                informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
+            }
+        }
+
+
+
+        informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
+*/
+        //
+
         AffordanceTime* aff = act->currentAffordances.top();
-        act->currentAffordances.pop();
+
+        //act->currentAffordances.pop();azerty
+        //std::cout<<aff->getAffordance().getName()<<std::endl;
+
+
+
 
         informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
 
@@ -195,6 +272,8 @@ while(isStopped){
 
 
         informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
+//
+        //std::cout<<aff->getAffordance().getName()<<std::endl;
 
         //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
         //---------------------

@@ -6,8 +6,8 @@
 #include <sstream>
 #include <iostream>
 #include <fstream>
-#include "../plans/include/Domain.h"
 #include "../plans/include/Solver.h"
+#include "../plans/include/Domain.h"
 
 using namespace std;
 

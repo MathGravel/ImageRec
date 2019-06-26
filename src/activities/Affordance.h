@@ -1,3 +1,13 @@
+
+/**
+* \file Affordance.cpp
+* \author Mathieu Gravel
+* \version 
+* \date 
+* \brief Evaluates the position between an Object and the Hand
+* \details Affordance is used to update regulary the position of the Object during *  an interaction. It evaluates the distance to the Hand of an Object and is used *  to add an interaction and its time in the AffordanceTime class.
+**/
+
 #ifndef AFFORDANCE_H
 #define AFFORDANCE_H
 
@@ -10,7 +20,25 @@
 class Affordance {
 
 public:
+
+    /**
+    * \fn	Affordance::Affordance(std::string obj , double prob)
+    * \brief	Constructor of Affordance	
+    * \param	obj	Name of the new Object
+    * \param	prob	Confidence rate on the object
+    **/
     Affordance(std::string obj = "teacup", double prob=76.7653);
+
+    /**
+    * \fn	Affordance::Affordance(std::string obj,double pos,cv::Rect reg,double prob,   double _dist)
+    * \brief	Constructor of Affordance
+    * \detail	
+    * \param	obj	String : Name of the new Object
+    * \param	pos	double : position of the Object at Creation
+    * \param	reg	cv::Rect : OpenCv class for 2D rectangles
+    * \param	prob	double : Confidence rate on the object
+    * \param	dist	double : Distance between the Hand and the Object 
+    **/
     Affordance(std::string obj,double pos,cv::Rect reg,double prob,double _dist = 0);
 
 
@@ -26,7 +54,18 @@ public:
         objProb = 0;
     }
 
+    /**
+    * \fn	bool Affordance::operator ==(const Affordance& autre)
+    * \brief	Overload of the '==' operator for two Affordance objects
+    * \return	True if this == 'autre'
+    **/
     bool operator ==(const Affordance& autre);
+
+    /**
+    * \fn	bool Affordance::operator <(const Affordance& autre)
+    * \brief	Overload of the '<' operator for two Affordance objects
+    * \return	True if this < 'autre'	
+    **/
     bool operator <(const Affordance& autre);
 
 
@@ -61,13 +100,39 @@ class AffordanceTime {
 
 public:
 
+    /**
+    * \fn	AffordanceTime::AffordanceTime()
+    * \brief	Constructor of AffordanceTime
+    **/
     AffordanceTime();
 
+    /**
+    * \fn	AffordanceTime::AffordanceTime(Affordance aff,int frameCount)
+    * \brief	Constructor of AffordanceTime
+    * \param	aff	Affordance : Object of type Affordance
+    * \param	frameCount	int : Frame time at the creation
+    **/
     AffordanceTime(Affordance aff,int frameCount);
 
-
+    /**
+    * \fn	AffordanceTime::markCurrentInteractions(double dist,int frameCount)
+    * \brief	Updates the Affordance object during an interaction
+    * \details	Updates the Affordance object, called during an interaction
+    *	Updates the current time and adds the frame time of the interaction
+    * \param	aff	Affordance : Object of type Affordance
+    * \param	frameCount	int : Frame time at the creation
+    **/
     void markCurrentInteractions(double dist,int frameCount);
 
+    /**
+    * \fn	AffordanceTime::markCurrentInteractions(double dist, cv::Rect  pos,double prob,int frameCount)
+    * \brief	Updates the Affordance object during an interaction
+    * \details	Updates the Affordance object, called during an interaction
+    *	Updates the current time and adds the frame time of the interaction
+    *	Sets the Affordance object's position and its probability to correspond
+    * \param	aff	Affordance : Object of type Affordance
+    * \param	frameCount	int : Frame time at the creation
+    **/
     void markCurrentInteractions(double dist, cv::Rect pos,double prob,int frameCount);
 
     double getInteractionTime() {
@@ -91,6 +156,10 @@ public:
         return times.size();
     }
 
+    /**
+    * \fn	AffordanceTime::clean()
+    * \brief	Cleans the time attribute
+    **/
     void clean();
     void reset() {times.clear();}
 
@@ -99,7 +168,18 @@ public:
         return affordance.getName() == className;
     }
 
+    /**
+    * \fn	AffordanceTime::operator ==(const AffordanceTime& autre)
+    * \brief	Overload of the '==' operator for two AffordanceTime objects
+    * \return	True if this == 'autre'
+    **/
     bool operator ==(const AffordanceTime& autre);
+
+    /**
+    * \fn	AffordanceTime::operator <(const AffordanceTime& autre)
+    * \brief	Overload of the '<' operator for two AffordanceTime objects
+    * \return	True if this < 'autre'
+    **/
     bool operator <(const AffordanceTime& autre) ;
 
 
