@@ -26,8 +26,6 @@
 #include <thread>         // std::thread
 #include <future>         // std::promise, std::future
 //#include "cnn/CaffeCNN.h"
-#include "cnn/ImgSegCNN.h"
-#include "cnn/MaskRCNN.h"
 #include "cnn/YoloGPU.h"
 #include "cnn/YoloCPU.h"
 

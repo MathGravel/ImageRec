@@ -77,20 +77,21 @@ void FenetrePrincipale::MiseAJourImage()
         ui->image->repaint();
         MiseAJourHistogramme(reconnaissanceManager->getTimePosition());
         MiseAJourProgression(reconnaissanceManager->getTimeStamp());
-      //  if(frame<ACTUAL_INFO)
-        //{
+ /*      if(frame<ACTUAL_INFO)
+        {
             MiseAJourInformations(reconnaissanceManager->getInformations());
-          //  frame=0;
-        //}
-        //else {
-           // frame++;
-        //}
-
+           frame=0;
+        }
+        else {
+            frame++;
+        }
+*/
         /*if (reconnaissanceManager->getTimePosition() == 100)
-            play = false;
+            play = false;*/
+MiseAJourInformations(reconnaissanceManager->getInformations());
         if ((!play) ) {
             break;
-        }*/
+        }
     }
 
     arretVideo();

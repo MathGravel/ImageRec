@@ -170,9 +170,9 @@ while(isStopped){
 #ifndef USE_KITCHEN_DIST
     if(!act->currentAffordances.empty() /*&& act->currentAffordances.top->getInteractionTime()*/){
         // On actualise l'action actuelle en fonction des 10 dernières actions enregistrées
+        //Affordance* aff = updateAffordance(act->currentAffordances);
 
-/*
-        vector<String> nameObject={};
+        /*vector<String> nameObject={};
         vector<double> probObject={};
         int j;
         std::stack<AffordanceTime*> allAff= act->currentAffordances;
@@ -212,7 +212,8 @@ while(isStopped){
                 rangMax=a;
             }
         }
-        Affordance* aff = new Affordance(nameObject[rangMax],0,cv::Rect(),probObject[rangMax]/act->currentAffordances.size(),0);
+        */
+        Affordance* aff = ObjectsMat::updateAffordance(act->currentAffordances);
         informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
 
         if (actionActuelleNom != aff->getName()) {
@@ -237,8 +238,8 @@ while(isStopped){
 
 
         informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
-*/
-        //
+
+        /*
 
         AffordanceTime* aff = act->currentAffordances.top();
 
@@ -272,7 +273,7 @@ while(isStopped){
 
 
         informations["actionActuelle"] = {{"nom",aff->getAffordance().getName()},{"pourcentage", to_string(aff->getAffordance().getObjectProbability()*100).substr(0,5)}};
-//
+*/
         //std::cout<<aff->getAffordance().getName()<<std::endl;
 
         //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();

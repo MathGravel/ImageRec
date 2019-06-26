@@ -16,6 +16,7 @@
 #include "ImageTreatment.h"
 #include "Tracemanager.h"
 #include "Tracedistances.h"
+#include "ObjectsMat.h"
 
 #include "../plans/include/Solver.h"
 #include "../plans/include/Domain.h"
