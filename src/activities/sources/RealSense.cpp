@@ -39,7 +39,7 @@ cv::Mat RealSense::getMappedFeed() {
     return this->depthMeters;
 }
 
-void RealSense::update() {
+inline void RealSense::update() {
 
      data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
     data = align_to.process(data);

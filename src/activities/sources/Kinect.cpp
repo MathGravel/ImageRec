@@ -140,7 +140,7 @@ cv::Mat Kinect::getMappedFeed(){
     return cv::Mat();
 }
 
-void Kinect::update() {
+inline void Kinect::update() {
 
 
 }

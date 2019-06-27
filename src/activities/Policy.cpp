@@ -18,7 +18,7 @@ bool Policy::load() {
     QTextStream in(&data);
     QString qs = in.readAll();
     std::string utf8_text = qs.toUtf8().constData();
-    extendedPlanLibrary ePL = extendedPlanLibrary(utf8_text.c_str());
+     ePL = extendedPlanLibrary(utf8_text.c_str());
        cout << ePL.toString()<<endl;
       gP = solver(&ePL,500);
       data.close();

@@ -104,15 +104,15 @@ map<int, int> solver::getParticles()
 map<std::string,float> solver::getProbGoals()
 {
     map<std::string,float> resu;
-    for(auto itObs : particles)
+    for(map<int,vector<solverParticle>>::iterator itObs = particles.begin(); itObs != particles.end(); ++itObs)
     {
-        for(auto itPar : itObs.second)
+        for(auto itPar : itObs->second)
         {
             if(resu.count(epl->revIds[itPar.goal]) > 0)
-                resu[epl->revIds[itPar.goal]]+=1.0/nbParticles;
+                resu[epl->revIds[itPar.goal]]+=1.0/(float)nbParticles;
             else
             {
-                resu[epl->revIds[itPar.goal]] = 1.0/nbParticles;
+                resu[epl->revIds[itPar.goal]] = 1.0/(float)nbParticles;
             }
         }
     }
@@ -122,9 +122,9 @@ map<std::string,float> solver::getProbGoals()
 map<std::string,float> solver::getProbParticles()
 {
     map<std::string,float> resu;
-    for(auto it: particles)
+    for(map<int, vector<solverParticle> >::iterator it = particles.begin(); it != particles.end();++it)
     {
-        resu[epl->revIds[it.first]] = it.second.size()/nbParticles;
+        resu[epl->revIds[it->first]] = (float)it->second.size()/(float)nbParticles;
     }
     return resu;
 }

@@ -82,7 +82,7 @@ cv::Mat ImageTreatment::getCurrentImage(){return this->resizedPicture;}
 cv::Mat ImageTreatment::getDepthImage(){return this->depthPicture;}
 
 
-void ImageTreatment::treatPicture(ActivityRegion *act) {
+ void ImageTreatment::treatPicture(ActivityRegion *act) {
     int fontface = cv::FONT_HERSHEY_SIMPLEX;
     double scale = 1;
     int thickness = 2;

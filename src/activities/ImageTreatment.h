@@ -53,7 +53,7 @@ public:
      cv::Mat getOriginalImage();
      cv::Mat getCurrentImage();
      cv::Mat getDepthImage();
-     std::pair<int,int> getScreenSize() const {
+     inline std::pair<int,int> getScreenSize() const {
          return screenSize;
      }
      void saveVideos();

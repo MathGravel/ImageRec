@@ -32,8 +32,7 @@ YoloCPU::YoloCPU(float _prob) {
                         static_cast<int>(width / resizeRatio));
     }
     crop = Rect(Point((width-cropSize.width) / 2, (height - cropSize.height) / 2),cropSize);
-    //crop.width = crop.width + crop.x >= imgWidth ? crop.width - crop.x: crop.width;
-    //crop.height = crop.height + crop.y >= imgHeight ? crop.height - crop.y: crop.height;
+
 
     startingPos = Point( (width- cropSize.width) / 2, (height - cropSize.height) / 2);
 
@@ -59,7 +58,7 @@ YoloCPU::~YoloCPU() {
     delete []classNames;
 }
 
-std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
+inline std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     std::vector<DetectedObject> objets;
 

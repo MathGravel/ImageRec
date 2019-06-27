@@ -47,7 +47,7 @@ YoloGPU::~YoloGPU() {
 }
 
 
-std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
+inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat depth) {
 
     image im = make_image (color.size().width,color.size().height,color.channels());//= load_image_color(fil,0,0);
 

@@ -53,7 +53,7 @@ cv::Mat RealSenseVideo::getMappedFeed() {
     return this->depthMeters;
 }
 
-void RealSenseVideo::update() {
+inline void RealSenseVideo::update() {
 
     *vid >> colorFeed;
     if (!vidFolder) {

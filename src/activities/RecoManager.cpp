@@ -1,4 +1,3 @@
-#include <RecoManager.h>
 #include "RecoManager.h"
 
 RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) {
@@ -122,7 +121,7 @@ void RecoManager::start_affordance_check(){
     std::chrono::milliseconds actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
 
-    std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
+ /*   std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
 
 
     std::vector<std::pair<std::string,float>> tempGoal = pl.getGoalsProba();
@@ -135,7 +134,7 @@ informations["actionSuivante1"]["nom"].pop_back();
 informations["actionSuivante2"] = {{"nom", (tempActions[1].first).erase(0,5)},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
 informations["actionSuivante2"]["nom"].pop_back();
 informations["actionSuivante3"] = {{"nom", (tempActions[2].first).erase(0,5)},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
-informations["actionSuivante3"]["nom"].pop_back();
+informations["actionSuivante3"]["nom"].pop_back();*/
 
 while(isStopped){
 
@@ -145,14 +144,16 @@ while(isStopped){
     if(!act->currentAffordances.empty() ){
 
         Affordance* aff = ObjectsMat::updateAffordance(act->currentAffordances);
-        informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
+        informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage",  to_string(actionActuellePourcentage).substr(0,5)}};
 
         if (actionActuelleNom != aff->getName()) {
             actionActuelleNom = aff->getName();
             actionActuellePourcentage = aff->getObjectProbability()*100;
             if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
                 if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
-                    pl.update(aff);
+                    if(aff->getName() != "NULL") {
+                        pl.update(aff);
+                    }
                     std::cout << "hold(" + aff->getName() + ")" << std::endl;
 
 #if defined(USE_KITCHEN)
@@ -219,7 +220,7 @@ while(isStopped){
             std::string actS = "actionSuivante" + std::to_string(i+1);
             std::string plaS = "planCourant" + std::to_string(i+1);
             if (tempActions.size() > i) {
-                informations[actS] = {{"nom", (tempActions[i].first).erase(0,5)},{"pourcentage", to_string(tempActions[i].second).substr(0,5)}};
+                informations[actS] = {{"nom", (tempActions[i].first)},{"pourcentage", to_string(tempActions[i].second).substr(0,5)}};
                 informations[actS]["nom"].pop_back();
 #ifdef USE_KITCHEN
                 std::string temp = informations[actS]["nom"] + " " + informations[actS]["pourcentage"];

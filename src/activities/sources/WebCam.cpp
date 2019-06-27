@@ -22,7 +22,7 @@ cv::Mat WebCam::getMappedFeed() {
 }
 
 
-void WebCam::update(){
+inline void WebCam::update(){
 
     cv::Mat cv_frame;
     cv_cap.read(cv_frame);
