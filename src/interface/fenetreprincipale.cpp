@@ -255,6 +255,13 @@ QString FenetrePrincipale::getNomAction(string nom)
     if (nom == "choco") { return tr("Chocolat en poudre"); }
     if (nom == "tea") { return tr("Thé"); }
     if (nom == "egg") { return tr("Oeuf"); }
+    if (nom == "red") { return tr("Rouge"); }
+    if (nom == "blue") { return tr("Bleu"); }
+    if (nom == "yellow") { return tr("Jaune"); }
+    if (nom == "green") { return tr("Vert"); }
+    if (nom == "orange") { return tr("Orange"); }
+
+
 
     return tr("Action indéfinie");
 }

@@ -11,8 +11,8 @@ YoloCPU::YoloCPU(float _prob) {
     width = 640;
     height = 480;
 #else
-    network = "ressources/models/yolov3.backup";
-    networkDef = "ressources/models/yolov3.cfg";
+    network = "ressources/models/balls.backup";
+    networkDef = "ressources/models/balls.cfg";
     width = 1280;
     height = 720;
 #endif
@@ -38,30 +38,20 @@ YoloCPU::YoloCPU(float _prob) {
     startingPos = Point( (width- cropSize.width) / 2, (height - cropSize.height) / 2);
 
 #ifdef USE_KITCHEN
-    std::ifstream inputFile( "/home/troisiememathieu/Documents/codebaptiste/autre/reconnaissance-plans-activites/src/ressources/models/c-kitchen.name");
+    QFile names(":/models/c-kitchen.name");
 #else
-    std::ifstream inputFile( "/home/troisiememathieu/Documents/codebaptiste/autre/reconnaissance-plans-activites/src/ressources/models/c.name");        // Input file stream object
-
+    QFile names(":/models/balls.name");
 #endif
-    // Check if exists and then open the file.
-    if (inputFile.good()) {
-        // Push items into a vector
-        int nbClasses = 0;
-        inputFile >> nbClasses;
-        classNames = new std::string[nbClasses + 1];
-        int i = 0;
-        std::string temp;
-        while (inputFile >> temp){
-            classNames[i] = temp;
-            i++;
-        }
-        // Close the file.
-        inputFile.close();
-
-    } else {
-        std::cerr << "The classes names file is not available";
-        exit(-1);
+    names.open(QIODevice::ReadOnly); //| QIODevice::Text)
+    QTextStream in(&names);
+        int line = in.readLine().toInt();
+        classNames = new std::string[line];
+        line = 0;
+    while( !in.atEnd())
+    {
+        classNames[line++]=in.readLine().toUtf8().constData();
     }
+    names.close();
 
 }
 

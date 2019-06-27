@@ -116,42 +116,16 @@ void RecoManager::start_affordance_check(){
     string actionActuelleNomTemp = "";
     double actionActuellePourcentageTemp = 0;
     int actionActuelleCompteurTemp = 1;
-    Domain domain = SmallDomain::getSmallDomain();
-    //SmallDomain sm;
-    //sm.test();
-
-    Solver sol = Solver(domain,1,500);
+    Policy pl;
     std::chrono::milliseconds startTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
     std::chrono::milliseconds actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
 
+    std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
 
-    //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
-    //---------------------
-    std::map<std::string, float> nextActions = sol.getNextActions();
-    std::vector<std::pair<std::string,float>> vec;
-    std::copy(nextActions.begin(), nextActions.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
-    std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
-        if (l.second != r.second)
-            return l.second > r.second;
 
-        return l.first > r.first;
-    });
-    std::vector<std::pair<std::string,float>> tempActions = vec;
-
-    //---------------------
-    //std::vector<std::pair<std::string,float>> tempGoal = sol.getGoalsProba();
-    vec.clear();
-    std::map<std::string, float> goalsProba = sol.getGoalsProba();
-    std::copy(goalsProba.begin(), goalsProba.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
-    std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
-        if (l.second != r.second)
-            return l.second > r.second;
-
-        return l.first > r.first;
-    });
-    std::vector<std::pair<std::string,float>> tempGoal = vec;
+    std::vector<std::pair<std::string,float>> tempGoal = pl.getGoalsProba();
 
     informations["planCourant1"] = {{"nom", tempGoal[0].first},{"pourcentage", to_string(tempGoal[0].second).substr(0,5)}};
 informations["planCourant2"] = {{"nom", tempGoal[1].first},{"pourcentage", to_string(tempGoal[1].second).substr(0,5)}};
@@ -168,51 +142,8 @@ while(isStopped){
     actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
 #ifndef USE_KITCHEN_DIST
-    if(!act->currentAffordances.empty() /*&& act->currentAffordances.top->getInteractionTime()*/){
-        // On actualise l'action actuelle en fonction des 10 dernières actions enregistrées
-        //Affordance* aff = updateAffordance(act->currentAffordances);
+    if(!act->currentAffordances.empty() ){
 
-        /*vector<String> nameObject={};
-        vector<double> probObject={};
-        int j;
-        std::stack<AffordanceTime*> allAff= act->currentAffordances;
-        AffordanceTime* searchAff;
-        int rang;
-        for(int i=0;i<act->currentAffordances.size();i++){
-            searchAff=allAff.top();
-            allAff.pop();
-            j=0;
-            std::cout<<"TEST3"<<std::endl;
-            while(j<nameObject.size()){
-                std::cout<<"TEST2"<<std::endl;
-                if( nameObject.at(j)==searchAff->getAffordance().getName()){
-                    rang=j;
-                }
-                j++;
-
-            }
-            std::cout<<"TESTbis"<<std::endl;
-
-            if(j!=0 && nameObject[rang]==searchAff->getAffordance().getName()){
-                probObject[rang]=probObject[rang]+searchAff->getAffordance().getObjectProbability();
-            }
-            else{
-                while(nameObject.size()>10)
-                {nameObject.pop_back();
-                probObject.pop_back();}
-                nameObject.push_back(searchAff->getAffordance().getName());
-                probObject.push_back(searchAff->getAffordance().getObjectProbability());
-            }
-        }
-        // On a vérifié que currentAffordances != empty
-
-        int rangMax=0;
-        for(int a=1;a<probObject.size();a++){
-            if(probObject[rangMax]<probObject[a]){
-                rangMax=a;
-            }
-        }
-        */
         Affordance* aff = ObjectsMat::updateAffordance(act->currentAffordances);
         informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage", to_string(aff->getObjectProbability()*100).substr(0,5)}};
 
@@ -221,7 +152,7 @@ while(isStopped){
             actionActuellePourcentage = aff->getObjectProbability()*100;
             if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
                 if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
-                    sol.addObservation("hold(" + aff->getName() + ")");
+                    pl.update(aff);
                     std::cout << "hold(" + aff->getName() + ")" << std::endl;
 
 #if defined(USE_KITCHEN)
@@ -279,34 +210,10 @@ while(isStopped){
         //std::vector<std::pair<std::string,float>> tempActions =  sol.getNextActions();
         //---------------------
 
-        std::map<std::string, float> goalsProba = sol.getNextActions();
 
-        vec.clear();
-        std::copy(goalsProba.begin(), goalsProba.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
-        std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
-            if (l.second != r.second)
-                return l.second > r.second;
+        std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
 
-            return l.first > r.first;
-        });
-        std::vector<std::pair<std::string,float>> tempActions = vec;
-
-        //---------------------
-
-        // std::vector<std::pair<std::string,float>> tempGoal = sol.getGoalsProba();
-
-        //----------
-
-        nextActions = sol.getGoalsProba();
-        vec.clear();
-        std::copy(nextActions.begin(), nextActions.end(), std::back_inserter<std::vector<std::pair<std::string,float>>>(vec));
-        std::sort(vec.begin(), vec.end(), [](const std::pair<std::string,float>& l, const std::pair<std::string,float>& r) {
-            if (l.second != r.second)
-                return l.second > r.second;
-
-            return l.first > r.first;
-        });
-        std::vector<std::pair<std::string,float>> tempGoal = vec;
+        std::vector<std::pair<std::string,float>> tempGoal = pl.getGoalsProba();
         //---------
         for(int i = 0; i < 3; i++) {
             std::string actS = "actionSuivante" + std::to_string(i+1);

@@ -17,10 +17,6 @@
 #include "Tracemanager.h"
 #include "Tracedistances.h"
 #include "ObjectsMat.h"
-
-#include "../plans/include/Solver.h"
-#include "../plans/include/Domain.h"
-
 #include "Policy.h"
 #include <opencv2/opencv.hpp>
 #include <iostream>

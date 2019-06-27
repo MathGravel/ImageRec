@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>domains/smallDomain</file>
+        <file>domains/smallDomain.txt</file>
+	<file>models/balls.name</file>
     </qresource>
 </RCC>

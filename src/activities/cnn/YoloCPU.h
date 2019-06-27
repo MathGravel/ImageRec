@@ -5,7 +5,9 @@
 #include <vector>
 #include <iostream>
 #include <fstream>
-
+#include <QFile>
+#include <stdio.h>
+#include <QTextStream>
 #include "DetectedObject.h"
 #include "Detector.h"
 #include "Yolo.h"

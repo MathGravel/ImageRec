@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.ui" line="590"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="355"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="374"/>
         <source>  Lancer l&apos;acquisition de la vidéo</source>
         <translation>Start data aquisition</translation>
     </message>
@@ -299,7 +299,7 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.ui" line="756"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="110"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="121"/>
         <source>Actions précédentes</source>
         <translation>Previous actions</translation>
     </message>
@@ -310,7 +310,7 @@
         <location filename="../../interface/fenetreprincipale.ui" line="1585"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1669"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1753"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="247"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="266"/>
         <source>Action indéfinie</source>
         <translation>Unknown action</translation>
     </message>
@@ -331,7 +331,7 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.ui" line="1171"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="162"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="174"/>
         <source>Plans courants</source>
         <translation>Current plans</translation>
     </message>
@@ -339,7 +339,7 @@
         <location filename="../../interface/fenetreprincipale.ui" line="1227"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1311"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1395"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="256"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="275"/>
         <source>Plan indéfini</source>
         <translation>Unknown plan</translation>
     </message>
@@ -350,100 +350,125 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.ui" line="1529"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="199"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="211"/>
         <source>Actions suivantes</source>
         <translation>Next actions</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="116"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="127"/>
         <source>Action précédente</source>
         <translation>Previous action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="160"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="172"/>
         <source>Plan courant</source>
         <translation>Current plan</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="194"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="206"/>
         <source>Aucune action attendue</source>
         <translation>No action left</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="197"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="209"/>
         <source>Action suivante</source>
         <translation>Next action</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="233"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="252"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="245"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="271"/>
         <source>Préparation de thé</source>
         <translation>Tea making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="234"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="253"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="246"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="272"/>
         <source>Préparation de café</source>
         <translation>Coffee making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="235"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="254"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="247"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="273"/>
         <source>Préparation de chocolat</source>
         <translation>Chocolate making</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="236"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="248"/>
         <source>Bouilloire</source>
         <translation>Teakettle</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="237"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="249"/>
         <source>Pichet d&apos;eau</source>
         <translation>Water</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="238"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="250"/>
         <source>Tasse</source>
         <translation>Mug</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="239"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="251"/>
         <source>Café</source>
         <translation>Coffee</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="240"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="252"/>
         <source>Pot</source>
         <translation>Pot</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="241"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="253"/>
         <source>Machine à café</source>
         <translation>Coffeemaker</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="242"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="254"/>
         <source>Lait</source>
         <translation>Milk</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="243"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="255"/>
         <source>Chocolat en poudre</source>
         <translation>Chocolate</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="244"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="256"/>
         <source>Thé</source>
         <translation>Tea</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="245"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="257"/>
         <source>Oeuf</source>
         <translation>Egg</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="323"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="258"/>
+        <source>Rouge</source>
+        <translation>Red</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="259"/>
+        <source>Bleu</source>
+        <translation>Blue</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="260"/>
+        <source>Jaune</source>
+        <translation>Yellow</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="261"/>
+        <source>Vert</source>
+        <translation>Green</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="262"/>
+        <source>Orange</source>
+        <translation>Orange</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="342"/>
         <source>  Arrêter l&apos;acquisition de la vidéo</source>
         <translation>Stop data aquisition</translation>
     </message>
