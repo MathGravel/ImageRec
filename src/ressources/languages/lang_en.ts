@@ -283,7 +283,7 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.ui" line="590"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="374"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="383"/>
         <source>  Lancer l&apos;acquisition de la vidéo</source>
         <translation>Start data aquisition</translation>
     </message>
@@ -310,7 +310,7 @@
         <location filename="../../interface/fenetreprincipale.ui" line="1585"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1669"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1753"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="266"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="269"/>
         <source>Action indéfinie</source>
         <translation>Unknown action</translation>
     </message>
@@ -339,7 +339,7 @@
         <location filename="../../interface/fenetreprincipale.ui" line="1227"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1311"/>
         <location filename="../../interface/fenetreprincipale.ui" line="1395"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="275"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="284"/>
         <source>Plan indéfini</source>
         <translation>Unknown plan</translation>
     </message>
@@ -376,19 +376,19 @@
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.cpp" line="245"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="271"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="274"/>
         <source>Préparation de thé</source>
         <translation>Tea making</translation>
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.cpp" line="246"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="272"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="275"/>
         <source>Préparation de café</source>
         <translation>Coffee making</translation>
     </message>
     <message>
         <location filename="../../interface/fenetreprincipale.cpp" line="247"/>
-        <location filename="../../interface/fenetreprincipale.cpp" line="273"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="276"/>
         <source>Préparation de chocolat</source>
         <translation>Chocolate making</translation>
     </message>
@@ -468,7 +468,57 @@
         <translation>Orange</translation>
     </message>
     <message>
-        <location filename="../../interface/fenetreprincipale.cpp" line="342"/>
+        <location filename="../../interface/fenetreprincipale.cpp" line="263"/>
+        <source>Rouge-2</source>
+        <translation>Red-2</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="264"/>
+        <source>Bleu-2</source>
+        <translation>Blue-2</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="265"/>
+        <source>Jaune-2</source>
+        <translation>Yellow-2</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="266"/>
+        <source>Vert-2</source>
+        <translation>Green-2</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="267"/>
+        <source>Orange-2</source>
+        <translation>Orange-2</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="277"/>
+        <source>Plan A</source>
+        <translation>Plan A</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="278"/>
+        <source>Plan B</source>
+        <translation>Plan B</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="279"/>
+        <source>Plan C</source>
+        <translation>Plan C</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="280"/>
+        <source>Plan D</source>
+        <translation>Plan D</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="281"/>
+        <source>Plan E</source>
+        <translation>Plan E</translation>
+    </message>
+    <message>
+        <location filename="../../interface/fenetreprincipale.cpp" line="351"/>
         <source>  Arrêter l&apos;acquisition de la vidéo</source>
         <translation>Stop data aquisition</translation>
     </message>

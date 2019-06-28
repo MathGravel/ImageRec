@@ -260,8 +260,11 @@ QString FenetrePrincipale::getNomAction(string nom)
     if (nom == "yellow") { return tr("Jaune"); }
     if (nom == "green") { return tr("Vert"); }
     if (nom == "orange") { return tr("Orange"); }
-
-
+    if (nom == "redA") { return tr("Rouge-2"); }
+    if (nom == "blueA") { return tr("Bleu-2"); }
+    if (nom == "yellowA") { return tr("Jaune-2"); }
+    if (nom == "greenA") { return tr("Vert-2"); }
+    if (nom == "orangeA") { return tr("Orange-2"); }
 
     return tr("Action indéfinie");
 }
@@ -271,6 +274,12 @@ QString FenetrePrincipale::getNomPlan(string nom)
     if (nom == "teamaking") { return tr("Préparation de thé"); }
     if (nom == "coffeemaking") { return tr("Préparation de café"); }
     if (nom == "chocomaking") { return tr("Préparation de chocolat"); }
+    if (nom == "GoalA") { return tr("Plan A"); }
+    if (nom == "GoalB") { return tr("Plan B"); }
+    if (nom == "GoalC") { return tr("Plan C"); }
+    if (nom == "GoalD") { return tr("Plan D"); }
+    if (nom == "GoalE") { return tr("Plan E"); }
+
 
     return tr("Plan indéfini");
 }
