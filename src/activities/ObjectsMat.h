@@ -2,6 +2,8 @@
 #define OBJECTSMAT_H
 
 #include <opencv2/opencv.hpp>
+#include <opencv2/dnn.hpp>
+
 #include <vector>
 #include <unordered_map>
 #include <stack>

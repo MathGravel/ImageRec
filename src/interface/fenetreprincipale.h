@@ -49,14 +49,14 @@ class FenetrePrincipale : public QMainWindow
 		/**
 		* \fn configuration()
 		* \brief Configure layout of the main window
-		* \details Positionning layouts and hiding some                  
+        * \details Positionnin       errorPlan_noEndg layouts and hiding some
 		*/
         void configuration();
 		
 		/**
-		* \fn lectureVideo()
+        * \fn lectureVideo()       errorPlan_noEnd
 		* \brief  
-		* \details    
+        * \details    errorPlan_noEnd
 		*/
         virtual void lectureVideo();
 		
@@ -66,7 +66,7 @@ class FenetrePrincipale : public QMainWindow
 		* \details    
 		*/
         virtual void arretVideo();
-		
+
 		// Getters
         bool getPlay() {return play;}
         QString getNomAction(string nom);
@@ -92,7 +92,6 @@ class FenetrePrincipale : public QMainWindow
 		*	  	   else start it (start the loop in \a MiseAJourImage
 		*/
         void gestionVideo();
-		
 		/**
 		* \fn MiseAJourImage()
 		* \brief  when video start loop and update image (according to processor speed)
@@ -105,7 +104,7 @@ class FenetrePrincipale : public QMainWindow
 		* \brief  
 		* \details             
 		* \param   
-		*/
+        */
         void MiseAJourHistogramme(int position);
 		
 		/**
@@ -113,7 +112,7 @@ class FenetrePrincipale : public QMainWindow
 		* \brief  
 		* \details  
 		* \param
-		*/
+        */
         void MiseAJourProgression(string timer);
 		
 		/**
@@ -137,7 +136,6 @@ class FenetrePrincipale : public QMainWindow
 		* \details
 		*/
         void pleinEcranVideo();
-
     private:
 	
 		/**

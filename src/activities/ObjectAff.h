@@ -10,7 +10,6 @@
 #include "ObjectsMat.h"
 
 using namespace cv;
-using namespace cv::dnn;
 
 typedef cv::Rect Region;
 

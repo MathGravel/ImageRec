@@ -2,6 +2,8 @@
 #define YOLOCPU_H
 
 #include <opencv2/dnn.hpp>
+#include <opencv2/opencv.hpp>
+
 #include <vector>
 #include <iostream>
 #include <fstream>

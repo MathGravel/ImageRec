@@ -1,4 +1,13 @@
 #include "RecoManager.h"
+#include <QDialog>;
+
+
+#include <QMainWindow>
+#include <QApplication>
+#include <QStyle>
+#include <QTranslator>
+#include <QDesktopWidget>
+#include <ctime>
 
 RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) {
 
@@ -96,7 +105,7 @@ void RecoManager::reset(){
     //delete traceD;
     //traceD = new TraceDistances("tracesDist",names,this->feedSource.getScreenSize());
 
-#endif
+#endif#include "NotifyMessageBox.h"
 }
 
 
@@ -108,7 +117,7 @@ void RecoManager::start_thread(){
 
 void RecoManager::start_affordance_check(){
 
-
+    const std::chrono::milliseconds TIME_BEFORE_ALERT{15000};
     string actionActuelleNom = "";
     double actionActuellePourcentage = 0;
     int actionActuelleCompteur = 1;
@@ -120,7 +129,7 @@ void RecoManager::start_affordance_check(){
                 std::chrono::system_clock::now().time_since_epoch());
     std::chrono::milliseconds actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
                 std::chrono::system_clock::now().time_since_epoch());
-
+#include "NotifyMessageBox.h"
  /*   std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
 
 
@@ -135,7 +144,8 @@ informations["actionSuivante2"] = {{"nom", (tempActions[1].first).erase(0,5)},{"
 informations["actionSuivante2"]["nom"].pop_back();
 informations["actionSuivante3"] = {{"nom", (tempActions[2].first).erase(0,5)},{"pourcentage", to_string(tempGoal[2].second).substr(0,5)}};
 informations["actionSuivante3"]["nom"].pop_back();*/
-
+    std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
+    std::vector<std::pair<std::string,float>> tempGoal = pl.getGoalsProba();
 while(isStopped){
 
     actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(
@@ -146,9 +156,11 @@ while(isStopped){
         Affordance* aff = ObjectsMat::updateAffordance(act->currentAffordances);
         informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage",  to_string(actionActuellePourcentage).substr(0,5)}};
 
-        if (actionActuelleNom != aff->getName()) {
+       if (actionActuelleNom != aff->getName() || aff->getName()!="NULL") {
+			
             actionActuelleNom = aff->getName();
             actionActuellePourcentage = aff->getObjectProbability()*100;
+
             if (informations["actionPrecedente2"]["nom"] != actionActuelleNom) {
                 if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
                     if(aff->getName() != "NULL") {
@@ -165,7 +177,46 @@ while(isStopped){
             } else {
                 informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
             }
-        }
+			
+			// Check if the new Action was planned
+            int i=0;
+            while(i<tempActions.size() && tempActions[i].first!=aff->getName())
+			{
+				i++;
+			}
+            if(tempActions[i].first!=aff->getName() && aff->getName()!="NULL")
+			{
+                informations["erreurPlan"] = {{"erreur", "You did an unexpected action :"+aff->getName()+" \nWe expected you to do : "+tempActions[0].first}};
+
+            }else{
+                informations["erreurPlan"] = {{"erreur", "Fine"}};
+            }
+				
+			startTime = std::chrono::duration_cast< std::chrono::milliseconds >(
+                std::chrono::system_clock::now().time_since_epoch());
+			
+			
+            tempActions = pl.getNextActions();
+            tempGoal = pl.getGoalsProba();
+
+
+				if(tempActions.empty()){
+					std::cout<<"tempActions empty"<<std::endl;
+				}
+				if(tempGoal.empty()){
+					std::cout<<"tempGoal empty"<<std::endl;
+                }
+		}
+			else{
+                if (actualTime-startTime<TIME_BEFORE_ALERT){
+					startTime = std::chrono::duration_cast< std::chrono::milliseconds >(
+					std::chrono::system_clock::now().time_since_epoch());	
+                    informations["erreurPlan"] = {{"erreur", "You didn't finish the goal :"+ tempGoal[0].first+" \nWe expected you to do : "+tempActions[0].first}};
+
+                }else{
+                     informations["erreurPlan"] = {{"erreur", "Fine"}};
+                }
+}
 
 
 

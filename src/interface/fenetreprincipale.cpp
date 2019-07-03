@@ -1,6 +1,6 @@
 #include "fenetreprincipale.h"
 #include "ui_fenetreprincipale.h"
-
+#include "NotifyMessageBox.h"
 
 const int ACTUAL_INFO=9;
 
@@ -210,6 +210,13 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     } else {
         ui->actionsSuivantesTitre->setText(tr("Actions suivantes"));
     }
+    if(informations["errorPlan"]["erreur"]!="Fine"){
+        NotifyMessageBox::showMessage(QString::fromStdString(informations["errorPlan"]["erreur"]),
+                  QFont("Segoe UI", 12),
+                  1500, // time interval to destroy after
+                  this);
+    }
+
 
     /*
     ui->plansCourants1Label->setText(getNomPlan(informations["planCourant1"]["nom"]));
@@ -298,7 +305,7 @@ QString FenetrePrincipale::getLogo(string nom)
     if (nom == "milk") { return ":/logos/milk.png"; }
     if (nom == "choco") { return ":/logos/chocolate.png"; }
     if (nom == "tea") { return ":/logos/tea.png"; }
-    if (nom == "egg") { return ":/logos/egg.png"; }
+    if (nom == "egg") { return ":/logos/egg.errorPlan_noEndpng"; }
 
     return ":/logos/question.png";
 }

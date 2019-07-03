@@ -10,6 +10,7 @@
 #ifndef RECOMANAGER_H
 #define RECOMANAGER_H
 
+#include "NotifyMessageBox.h"
 #include "sources/VideoFeedTypes.h"
 #include "Serializable.h"
 #include "ActivityRegion.h"

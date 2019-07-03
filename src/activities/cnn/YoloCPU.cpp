@@ -73,7 +73,7 @@ inline std::vector<DetectedObject> YoloCPU::findObjects(cv::Mat color,cv::Mat de
 
     neuralNetwork.setInput(blob);
 
-    neuralNetwork.setPreferableBackend(DNN_BACKEND_OPENCV);
+    //neuralNetwork.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
 
     std::vector<Mat> outs;
     std::vector<cv::String> outNames(2);
