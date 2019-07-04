@@ -74,7 +74,7 @@ class RecoManager : public Serializable
         TraceDistances * traceD;
 #endif
 
-        Policy pl;
+       // Policy pl;
         cv::Mat colorPic;
         cv::Mat depthPic;
         std::mutex mtx;

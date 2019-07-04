@@ -19,7 +19,6 @@ RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) 
     //this->start_thread();
 
     // Initialization of Policy and timer.
-    pl= Policy();
     timeLectureStart=std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
     timeSinceStart=std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
 #ifdef USE_KITCHEN
@@ -135,7 +134,7 @@ void RecoManager::start_affordance_check(){
 
 
 
-
+    Policy pl;
 
 
 
