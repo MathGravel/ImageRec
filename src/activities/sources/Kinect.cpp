@@ -84,7 +84,7 @@ cv::Mat Kinect::getMappedFeed(){
     return rgbd2;
 }
 
-void Kinect::update() {
+void Kinect::update(bool supATime) {
 
     this->acquire();
     libfreenect2::FrameMap frames;

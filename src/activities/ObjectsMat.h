@@ -19,7 +19,7 @@ using namespace cv;
 using namespace cv::dnn;
 
 class ObjectsMat {
-    const int MAXFRAMES = 20;
+    //const int MAXFRAMES = 20;
     const String NULLNAME = "NULL";
 public:
     ObjectsMat() {
@@ -79,12 +79,12 @@ public:
         return new Affordance(nameObject[rangMax],0,cv::Rect(),probObject[rangMax]/std::min((int)matrice.size(),10),0);
     }
 
-    void update(std::vector<AffordanceTime*> objs/*const DetectedObjects& obj, const DetectedObjects& _hand, int frame*/){
+    void update(std::vector<AffordanceTime*> objs, bool supAtime/*const DetectedObjects& obj, const DetectedObjects& _hand, int frame*/){
         //mat_mains.push_back(_hand);
         mat_objets.push_back(objs);
         //vect_Frame.push_back(frame);
 
-        while(this->mat_objets.size()>MAXFRAMES)
+        if(supAtime)
         {
            // this->mat_mains.erase(mat_mains.begin());
             this->mat_objets.erase(mat_objets.begin());

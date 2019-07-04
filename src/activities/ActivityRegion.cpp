@@ -11,7 +11,7 @@ ActivityRegion::ActivityRegion():
 
 std::vector<cv::Rect> segmentPic(cv::Mat picture,cv::Mat depthPic);
 
-void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
+void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision, bool supAtime) {
 
     std::vector<cv::Rect> objects;
     currentImage = vision;
@@ -43,7 +43,7 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
         mtx.unlock();
 
         if (!items.empty() && !hands.empty()) {
-            currentAffordance = affordances.findAffordances(items, hands, objectsMat);///azerty
+            currentAffordance = affordances.findAffordances(items, hands, objectsMat,supAtime);///azerty
             if (!currentAffordance.empty()) {///azerty2
                          for (auto it : currentAffordance)
                     currentAffordances.push(it);

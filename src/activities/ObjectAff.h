@@ -28,7 +28,8 @@ public:
     ObjectAffordances(int numberClasses = 10);
     std::vector<AffordanceTime*> findAffordances(DetectedObjects& regions,
                                                  DetectedObjects& hands,
-                                                 ObjectsMat& ObjectsMat);
+                                                 ObjectsMat& ObjectsMat,
+                                                 bool supAtime);
     void clearCurrentAffordances();
 
     bool currentlyHasAffordances()const {return currentAff;}

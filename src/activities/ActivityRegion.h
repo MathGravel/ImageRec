@@ -81,7 +81,7 @@ public:
     * \param vision : matrice which represent color of the picture
     * \param depthVision : matrice which represent the depth in the picture
     */
-    void Update(cv::Mat vision, cv::Mat depthVision);
+    void Update(cv::Mat vision, cv::Mat depthVision,bool supAtime);
     void UpdateROI(cv::Mat vision, cv::Mat depthVision) {};//A completer
 
 

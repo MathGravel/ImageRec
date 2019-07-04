@@ -55,7 +55,8 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
     **/
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions,
                                                                 DetectedObjects &hands,
-                                                                ObjectsMat &objectMat) {
+                                                                ObjectsMat &objectMat,
+                                                                bool supAtime) {
 
     double VAL = 100;
     String NULLNAME = "NULL";
@@ -93,7 +94,7 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
         currentAffordances.push_back(currentAffordance);
     }
 
-    objectMat.update(currentAffordances);
+    objectMat.update(currentAffordances, supAtime);
 
     return currentAffordances;
 }

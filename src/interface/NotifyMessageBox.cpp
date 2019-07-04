@@ -22,6 +22,7 @@ NotifyMessageBox::NotifyMessageBox(const QString& text, const QFont& font, int m
     , m_opacity(1.0)
     , m_milliseconds(milliseconds)
 {
+    std::cout<<"constructor"<<std::endl;
     setFont(font);
 
     m_label.prepare(QTransform(), font);

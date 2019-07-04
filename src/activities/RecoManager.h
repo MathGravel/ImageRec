@@ -74,7 +74,7 @@ class RecoManager : public Serializable
         TraceDistances * traceD;
 #endif
 
-        //Policy pol;
+        Policy pl;
         cv::Mat colorPic;
         cv::Mat depthPic;
         std::mutex mtx;
@@ -85,6 +85,9 @@ class RecoManager : public Serializable
         void updatePolicy();
         void start_affordance_check();
         std::map<std::string, std::map<std::string, std::string>> informations;
+
+        std::chrono::milliseconds timeLectureStart;
+        std::chrono::milliseconds timeSinceStart;
 };
 
 #endif //RECOMANAGER_H

@@ -211,6 +211,7 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
         ui->actionsSuivantesTitre->setText(tr("Actions suivantes"));
     }
     if(informations["errorPlan"]["erreur"]!="Fine"){
+        std::cout<<informations["errorPlan"]["erreur"]<<std::endl;
         NotifyMessageBox::showMessage(QString::fromStdString(informations["errorPlan"]["erreur"]),
                   QFont("Segoe UI", 12),
                   1500, // time interval to destroy after
@@ -273,7 +274,7 @@ QString FenetrePrincipale::getNomAction(string nom)
     if (nom == "greenA") { return tr("Vert-2"); }
     if (nom == "orangeA") { return tr("Orange-2"); }
 
-    return tr("Action indéfinie");
+    return QString::fromStdString(nom);
 }
 
 QString FenetrePrincipale::getNomPlan(string nom)
@@ -288,7 +289,8 @@ QString FenetrePrincipale::getNomPlan(string nom)
     if (nom == "GoalE") { return tr("Plan E"); }
 
 
-    return tr("Plan indéfini");
+    return QString::fromStdString(nom);
+
 }
 
 QString FenetrePrincipale::getLogo(string nom)
