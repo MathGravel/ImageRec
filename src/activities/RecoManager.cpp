@@ -82,7 +82,7 @@ void RecoManager::update(){
     this->feedSource.update();
     colorPic =this->feedSource.getCurrentImage();
     depthPic = this->feedSource.getDepthImage();
-    this->act->Update(this->feedSource.getOriginalImage(),this->feedSource.getDepthImage(),timeSinceStart.count()>TIME_LAST_AFFORDANCE);
+    this->act->Update(this->feedSource.getOriginalImage(),this->feedSource.getDepthImage(),(timeSinceStart-timeLectureStart).count()>TIME_LAST_AFFORDANCE);
 //#ifndef USE_KITCHEN_DIST
     this->feedSource.treatPicture(this->act);
 //#endif
@@ -125,6 +125,7 @@ void RecoManager::start_affordance_check(){
 
 
         const int TIME_BEFORE_ALERT=30000;
+
         string actionActuelleNom = "";
         double actionActuellePourcentage = 0;
         int actionActuelleCompteur = 1;
@@ -164,6 +165,8 @@ void RecoManager::start_affordance_check(){
                 actionActuelleNom = aff->getName();
                 actionActuellePourcentage = aff->getObjectProbability()*100;
                 informations["actionActuelle"] = {{"nom",actionActuelleNom},{"pourcentage",  to_string(actionActuellePourcentage).substr(0,5)}};
+                std::cout<<actionActuelleNom<<std::endl;
+
                 if (informations["actionPrecedente2"]["nom"] != actionActuelleNom){
                     if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
                         pl.update(aff);
@@ -206,14 +209,18 @@ void RecoManager::start_affordance_check(){
                     }
                 }else{
                     std::cout<<"tempActions empty"<<std::endl;
+                    pl = Policy();
+                    if(!tempGoal.empty()){
+                        std::cout<<"tempGoal empty"<<std::endl;
+                        pl = Policy();
+
+                    }
 
                 }
                 tempActions = pl.getNextActions();
                 tempGoal = pl.getGoalsProba();
 
-                if(!tempGoal.empty()){
-                    std::cout<<"tempGoal empty"<<std::endl;
-                }
+
             }else{
 
                     if ((actualTime-startTime).count()<TIME_BEFORE_ALERT){
@@ -221,10 +228,8 @@ void RecoManager::start_affordance_check(){
                         startTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
                         std::cout<<(actualTime-startTime).count()<<std::endl;
                         std::cout<<""<<std::endl;
+                        informations["erreurPlan"] = {{"erreur", "You didn't finish the goal :"+ tempGoal[0].first+" \nWe expected you to do : "+tempActions[0].first}};
 
-                        if(!tempActions.empty()){
-                            informations["erreurPlan"] = {{"erreur", "You didn't finish the goal :"+ tempGoal[0].first+" \nWe expected you to do : "+tempActions[0].first}};
-                        }
                     }else{
                          informations["erreurPlan"] = {{"erreur", "Fine"}};
                     }

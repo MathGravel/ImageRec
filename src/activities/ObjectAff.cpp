@@ -62,7 +62,6 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
     String NULLNAME = "NULL";
     currentAff = false;
     frameCount++;
-    std::vector<AffordanceTime*> currentAffordanc;
     std::vector<AffordanceTime*> currentAffordances;///azerty2
     for (const auto obj : regions) {
         for (auto & hand : hands) {
