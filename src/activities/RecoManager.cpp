@@ -10,7 +10,7 @@
 #include <QDesktopWidget>
 #include <ctime>
 
-const int TIME_LAST_AFFORDANCE=500;
+const int TIME_LAST_AFFORDANCE=800;
 RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) {
 
     act = ActivityRegion::instance();
@@ -151,21 +151,25 @@ void RecoManager::start_affordance_check(){
     while(isStopped){
 
         actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
+        std::cout<<(actualTime-startTime).count()<<std::endl;
 
         #ifndef USE_KITCHEN_DIST
+
+        std::cout<<"taille afftab"+act->currentAffordances.size()<<std::endl;
 
         // if we have at least one affordance
         if(!act->currentAffordances.empty() ){
 
            Affordance* aff = ObjectsMat::updateAffordance(act->currentAffordances);
+           if(aff->getName()!="NULL")
+                informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage",  to_string(aff->getObjectProbability()*100).substr(0,5)}};
 
 
            if (actionActuelleNom != aff->getName() && aff->getName()!="NULL") {
 
                 actionActuelleNom = aff->getName();
                 actionActuellePourcentage = aff->getObjectProbability()*100;
-                informations["actionActuelle"] = {{"nom",actionActuelleNom},{"pourcentage",  to_string(actionActuellePourcentage).substr(0,5)}};
-                std::cout<<actionActuelleNom<<std::endl;
+
 
                 if (informations["actionPrecedente2"]["nom"] != actionActuelleNom){
                     if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
@@ -223,10 +227,9 @@ void RecoManager::start_affordance_check(){
 
             }else{
 
-                    if ((actualTime-startTime).count()<TIME_BEFORE_ALERT){
+                    if ((actualTime-startTime).count()>TIME_BEFORE_ALERT){
 
                         startTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
-                        std::cout<<(actualTime-startTime).count()<<std::endl;
                         std::cout<<""<<std::endl;
                         informations["erreurPlan"] = {{"erreur", "You didn't finish the goal :"+ tempGoal[0].first+" \nWe expected you to do : "+tempActions[0].first}};
 

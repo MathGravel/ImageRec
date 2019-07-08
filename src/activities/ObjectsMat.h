@@ -41,6 +41,7 @@ public:
     }
 
     static Affordance* updateAffordance(const std::stack<AffordanceTime*> matrice){
+        //std::cout<<"TEST"<<std::endl;
         vector<String> nameObject={};
         vector<double> probObject={};
         int j;

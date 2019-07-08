@@ -212,10 +212,10 @@ void FenetrePrincipale::MiseAJourInformations(std::map<std::string, std::map<std
     }
     if(informations["errorPlan"]["erreur"]!="Fine"){
         std::cout<<informations["errorPlan"]["erreur"]<<std::endl;
-        NotifyMessageBox::showMessage(QString::fromStdString(informations["errorPlan"]["erreur"]),
+       /* NotifyMessageBox::showMessage(QString::fromStdString(informations["errorPlan"]["erreur"]),
                   QFont("Segoe UI", 12),
                   1500, // time interval to destroy after
-                  this);
+                  this);*/
     }
 
 

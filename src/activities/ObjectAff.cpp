@@ -89,7 +89,7 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
         double nullFreq = objectMat.getFrequence(NULLNAME);
         Affordance* aff = new Affordance(NULLNAME,0,cv::Rect(),nullFreq,0);
         AffordanceTime* currentAffordance = new AffordanceTime(*aff,frameCount);
-        //std::cout<<"Il y a une affordance avec : "<<aff->getName()<< " avec une proba : "<<aff->getObjectProbability() <<std::endl;
+        std::cout<<"Il y a une affordance avec : "<<aff->getName()<< " avec une proba : "<<aff->getObjectProbability() <<std::endl;
         currentAffordances.push_back(currentAffordance);
     }
 
