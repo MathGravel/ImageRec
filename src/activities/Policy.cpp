@@ -10,6 +10,12 @@ bool Policy::update(Affordance* observation)  {
     return gP.addObservation(observation->getName());
 }
 
+void Policy::Reset() {
+
+      gP = solver(&ePL,500);
+}
+
+
 bool Policy::load() {
 
 

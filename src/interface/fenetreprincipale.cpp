@@ -268,6 +268,11 @@ QString FenetrePrincipale::getNomAction(string nom)
     if (nom == "yellow") { return tr("Jaune"); }
     if (nom == "green") { return tr("Vert"); }
     if (nom == "orange") { return tr("Orange"); }
+    if (nom == "Red") { return tr("Rouge"); }
+    if (nom == "Blue") { return tr("Bleu"); }
+    if (nom == "Yellow") { return tr("Jaune"); }
+    if (nom == "Green") { return tr("Vert"); }
+    if (nom == "Orange") { return tr("Orange"); }
     if (nom == "redA") { return tr("Rouge-2"); }
     if (nom == "blueA") { return tr("Bleu-2"); }
     if (nom == "yellowA") { return tr("Jaune-2"); }

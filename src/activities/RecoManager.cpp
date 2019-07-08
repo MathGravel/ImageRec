@@ -10,6 +10,7 @@
 #include <QDesktopWidget>
 #include <ctime>
 
+const int TIME_BEFORE_ALERT=5000;
 const int TIME_LAST_AFFORDANCE=800;
 RecoManager::RecoManager(std::map<std::string,std::string> stream): trace(NULL) {
 
@@ -124,7 +125,7 @@ void RecoManager::start_thread(){
 void RecoManager::start_affordance_check(){
 
 
-        const int TIME_BEFORE_ALERT=30000;
+        
 
         string actionActuelleNom = "";
         double actionActuellePourcentage = 0;
@@ -141,21 +142,20 @@ void RecoManager::start_affordance_check(){
 
     std::chrono::milliseconds startTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
     std::chrono::milliseconds actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
-
-
+    std::chrono::milliseconds delay = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
+	bool stop = false;
 
 
         std::vector<std::pair<std::string,float>> tempActions = pl.getNextActions();
         std::vector<std::pair<std::string,float>> tempGoal = pl.getGoalsProba();
-
+	
+	bool reAffordance;
     while(isStopped){
 
+	
         actualTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
-        std::cout<<(actualTime-startTime).count()<<std::endl;
 
         #ifndef USE_KITCHEN_DIST
-
-        std::cout<<"taille afftab"+act->currentAffordances.size()<<std::endl;
 
         // if we have at least one affordance
         if(!act->currentAffordances.empty() ){
@@ -165,27 +165,42 @@ void RecoManager::start_affordance_check(){
                 informations["actionActuelle"] = {{"nom",aff->getName()},{"pourcentage",  to_string(aff->getObjectProbability()*100).substr(0,5)}};
 
 
-           if (actionActuelleNom != aff->getName() && aff->getName()!="NULL") {
+           if ((actualTime-delay).count()> TIME_BEFORE_ALERT && aff->getName()!="NULL") {
+		
+		delay = actualTime;
 
                 actionActuelleNom = aff->getName();
                 actionActuellePourcentage = aff->getObjectProbability()*100;
 
 
-                if (informations["actionPrecedente2"]["nom"] != actionActuelleNom){
-                    if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
+                if (true/*informations["actionPrecedente2"]["nom"] != actionActuelleNom*/){
+                   /* if (informations["actionPrecedente1"]["nom"] != actionActuelleNom) {
                         pl.update(aff);
 
                         std::cout << "hold(" + aff->getName() + ")" << std::endl;
     #if defined(USE_KITCHEN)
                         trace->addAffordance(aff,(actualTime - startTime).count());
     #endif
-                    }
+                    }*/
                     informations["actionPrecedente1"] = informations["actionPrecedente2"];
                     informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
                 } else {
-                    informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
+                   informations["actionPrecedente2"] = {{"nom", actionActuelleNom},{"pourcentage", to_string(actionActuellePourcentage).substr(0,5)}};
                 }
+		
+		auto checking = pl.update(aff);
 
+		if (!checking){
+					
+			pl.Reset();
+		}
+                        std::cout << "hold(" + aff->getName() + ")" << std::endl;
+    #if defined(USE_KITCHEN)
+                        trace->addAffordance(aff,(actualTime - startTime).count());
+    #endif
+			
+			stop = true;
+		
 
                 // Check if the new Action was plannedstartTime
                 int i=0;
@@ -203,7 +218,7 @@ void RecoManager::start_affordance_check(){
 
                         startTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
 
-                        pl = Policy();
+                        pl.Reset();
                     }else{
                         std::cout<<"nouvelle action dans le plan de reconnaissance"<<std::endl;
 
@@ -213,28 +228,25 @@ void RecoManager::start_affordance_check(){
                     }
                 }else{
                     std::cout<<"tempActions empty"<<std::endl;
-                    pl = Policy();
-                    if(!tempGoal.empty()){
-                        std::cout<<"tempGoal empty"<<std::endl;
-                        pl = Policy();
-
-                    }
+                    pl.Reset();
 
                 }
                 tempActions = pl.getNextActions();
                 tempGoal = pl.getGoalsProba();
 
+		reAffordance= false;
 
             }else{
 
                     if ((actualTime-startTime).count()>TIME_BEFORE_ALERT){
-
+			reAffordance= true;
                         startTime = std::chrono::duration_cast< std::chrono::milliseconds >(std::chrono::system_clock::now().time_since_epoch());
-                        std::cout<<""<<std::endl;
+                        std::cout<<"Test"<<std::endl;
                         informations["erreurPlan"] = {{"erreur", "You didn't finish the goal :"+ tempGoal[0].first+" \nWe expected you to do : "+tempActions[0].first}};
 
                     }else{
                          informations["erreurPlan"] = {{"erreur", "Fine"}};
+			 reAffordance= false;
                     }
                 }
 
@@ -243,7 +255,7 @@ void RecoManager::start_affordance_check(){
                 std::string actS = "actionSuivante" + std::to_string(i+1);
                 std::string plaS = "planCourant" + std::to_string(i+1);
                 if (tempActions.size() > i) {
-                    informations[actS] = {{"nom", (tempActions[i].first)},{"pourcentage", to_string(tempActions[i].second).substr(0,5)}};
+                    informations[actS] = {{"nom", (tempActions[i].first + " ")},{"pourcentage", to_string(tempActions[i].second*100).substr(0,5)}};
                     informations[actS]["nom"].pop_back();
     #ifdef USE_KITCHEN
                     std::string temp = informations[actS]["nom"] + " " + informations[actS]["pourcentage"];
@@ -255,7 +267,7 @@ void RecoManager::start_affordance_check(){
                     informations[actS]["pourcentage"] = "0";
                 }
                 if (tempGoal.size() > i) {
-                    informations[plaS] = {{"nom", tempGoal[i].first},{"pourcentage", to_string(tempGoal[i].second).substr(0,5)}};
+                    informations[plaS] = {{"nom", tempGoal[i].first},{"pourcentage", to_string(tempGoal[i].second*100).substr(0,5)}};
                     std::string temp = informations[plaS]["nom"] +" " + informations[plaS]["pourcentage"];
     #ifdef USE_KITCHEN
                     trace->addCurrentPlan(temp,(actualTime - startTime).count());

@@ -20,7 +20,7 @@ class Policy {
 public:
     Policy();
     bool update(Affordance* observation);
-
+    void Reset();
     std::vector<std::pair<std::string,float>> getNextActions();
     std::vector<std::pair<std::string,float>> getGoalsProba();
 

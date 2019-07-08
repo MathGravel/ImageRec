@@ -3,7 +3,7 @@
 ActivityRegion* ActivityRegion::ar_instance = nullptr;
 
 ActivityRegion::ActivityRegion():
-                                 objectDetector(0.31f),
+                                 objectDetector(0.41f),
                                  currentlySegmenting(false),newRegions(false),newAffordance(false),oldName("") {
        this->objectsMat.instance();
 }

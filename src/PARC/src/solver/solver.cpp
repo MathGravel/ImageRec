@@ -1,7 +1,5 @@
 #include "solver.h"
 
-solver::solver(){}
-
 solver::solver(extendedPlanLibrary* _epl, int _nbParticle):epl(_epl), nbParticles(_nbParticle)
 {
     int currentNbParticle = 0;
@@ -22,6 +20,12 @@ solver::solver(extendedPlanLibrary* _epl, int _nbParticle):epl(_epl), nbParticle
         currentNbParticle++;
     }
 }
+
+solver::solver()
+{
+    //dtor
+}
+
 
 solver::~solver()
 {
@@ -104,9 +108,9 @@ map<int, int> solver::getParticles()
 map<std::string,float> solver::getProbGoals()
 {
     map<std::string,float> resu;
-    for(map<int,vector<solverParticle>>::iterator itObs = particles.begin(); itObs != particles.end(); ++itObs)
+    for(auto itObs : particles)
     {
-        for(auto itPar : itObs->second)
+        for(auto itPar : itObs.second)
         {
             if(resu.count(epl->revIds[itPar.goal]) > 0)
                 resu[epl->revIds[itPar.goal]]+=1.0/(float)nbParticles;
@@ -122,9 +126,9 @@ map<std::string,float> solver::getProbGoals()
 map<std::string,float> solver::getProbParticles()
 {
     map<std::string,float> resu;
-    for(map<int, vector<solverParticle> >::iterator it = particles.begin(); it != particles.end();++it)
+    for(auto it: particles)
     {
-        resu[epl->revIds[it->first]] = (float)it->second.size()/(float)nbParticles;
+        resu[epl->revIds[it.first]] = (float)it.second.size()/(float)nbParticles;
     }
     return resu;
 }
@@ -145,6 +149,17 @@ pair<int,vector<int>> solver::generatePlan()
         int PO = epl->noise.RNC(nextAction);
         if(PO > -1)
             resu.push_back(PO);
+        if (PO < -1)
+        {
+            int init = resu.size();
+            while(resu.size() - init + PO -1 < -1)
+            {
+                int temp = epl->noise.RNC(nextAction);
+                if(temp >= 0)
+                    resu.push_back(temp);
+            }
+        }
+
         nextAction = t.updateFO();
     }
     return make_pair(t.root.symbol,resu);
@@ -261,7 +276,7 @@ vector<int> tree::update()
     {
         while(resu.size() + PO < -1)
         {
-            int temp = epl->decisionModel.RNC(FO);
+            int temp = epl->noise.RNC(FO);
             if(temp >= 0)
                 resu.push_back(temp);
         }

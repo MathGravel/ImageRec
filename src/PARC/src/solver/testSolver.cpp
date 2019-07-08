@@ -26,7 +26,7 @@ void testSolver::run()
         {
             cout << current_plan.second[obs] << " ";
         }*/
-        cout << endl;
+        //cout << endl;
         for(int j = 0; j < solvers.size(); j++)
         {
             solvers[i].clear();
@@ -54,7 +54,7 @@ void testSolver::run()
         {
             cout << results[j][i] << " ";
         }
-        cout << endl;
+        //cout << endl;
 
     }
 
