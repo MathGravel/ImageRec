@@ -206,14 +206,14 @@ extendedPlanLibrary::extendedPlanLibrary(const char* spl)
     {
         if(get<1>(it) == "miss")
         {
-            decisionModel.setProb(ids[get<0>(it)], -1, get<2>(it));
+            noise.setProb(ids[get<0>(it)], -1, get<2>(it));
         }
         else if(get<1>(it) == "ext")
         {
-            decisionModel.setProb(ids[get<0>(it)], -2, get<2>(it));
+            noise.setProb(ids[get<0>(it)], -2, get<2>(it));
         }
         else
-            decisionModel.setProb(ids[get<0>(it)], ids[get<1>(it)], get<2>(it));
+            noise.setProb(ids[get<0>(it)], ids[get<1>(it)], get<2>(it));
     }
 
 }
@@ -472,7 +472,12 @@ const string extendedPlanLibrary::toString()
         for (auto itSym : itN.second)
         {
             cnt2++;
-            resu +=  revIds[itSym.first] + "(" + std::to_string(itSym.second) +")";
+            if(itSym.first == -1)
+                resu +=  "miss(" + std::to_string(itSym.second) +")";
+            else if(itSym.first == -2)
+                resu +=  "ext(" + std::to_string(itSym.second) +")";
+            else
+                resu +=  revIds[itSym.first] + "(" + std::to_string(itSym.second) +")";
             if(cnt2 < itN.second.size())
             {
                 resu+=",";
