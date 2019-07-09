@@ -191,20 +191,20 @@ void RecoManager::start_affordance_check(){
 		auto checking = pl.update(aff);
 
 		if (!checking){
-					
+			std::cout << "L'action a retourne False" << std::endl;
 			pl.Reset();
-		}
+		} else {
                         std::cout << "hold(" + aff->getName() + ")" << std::endl;
     #if defined(USE_KITCHEN)
                         trace->addAffordance(aff,(actualTime - startTime).count());
     #endif
 			
 			stop = true;
-		
+		}
 
                 // Check if the new Action was plannedstartTime
                 int i=0;
-                if(!tempActions.empty()){
+               /* if(!tempActions.empty()){
 
                 while(i<tempActions.size() && tempActions[i].first!=aff->getName())
                 {
@@ -230,7 +230,7 @@ void RecoManager::start_affordance_check(){
                     std::cout<<"tempActions empty"<<std::endl;
                     pl.Reset();
 
-                }
+                }*/
                 tempActions = pl.getNextActions();
                 tempGoal = pl.getGoalsProba();
 

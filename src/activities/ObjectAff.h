@@ -29,7 +29,10 @@ public:
     std::vector<AffordanceTime*> findAffordances(DetectedObjects& regions,
                                                  DetectedObjects& hands,
                                                  ObjectsMat& ObjectsMat,
-                                                 bool supAtime);
+						bool supAtime);
+
+
+    std::vector<AffordanceTime*> addNull(ObjectsMat &objectMat, bool supAtime);
     void clearCurrentAffordances();
 
     bool currentlyHasAffordances()const {return currentAff;}

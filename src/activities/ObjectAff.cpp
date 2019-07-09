@@ -1,4 +1,5 @@
 #include "ObjectAff.h"
+const String NULLNAME = "NULL";
 
 ObjectAffordances::ObjectAffordances(int numberClasses) {
     numClasses = numberClasses;
@@ -59,7 +60,7 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
                                                                 bool supAtime) {
 
     double VAL = 100;
-    String NULLNAME = "NULL";
+    
     currentAff = false;
     frameCount++;
     std::vector<AffordanceTime*> currentAffordances;///azerty2
@@ -96,6 +97,16 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
     objectMat.update(currentAffordances, supAtime);
 
     return currentAffordances;
+}
+
+std::vector<AffordanceTime*> ObjectAffordances::addNull(ObjectsMat &objectMat, bool supAtime){
+    	std::vector<AffordanceTime*> currentAffordances;///azerty2
+        double nullFreq = objectMat.getFrequence(NULLNAME);
+        Affordance* aff = new Affordance(NULLNAME,0,cv::Rect(),nullFreq,0);
+        AffordanceTime* currentAffordance = new AffordanceTime(*aff,frameCount);
+               currentAffordances.push_back(currentAffordance);
+    	objectMat.update(currentAffordances, supAtime);
+return currentAffordances;
 }
 
 ObjectAffordances::~ObjectAffordances() {}

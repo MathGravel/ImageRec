@@ -49,6 +49,11 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision, bool supAtime) {
                     currentAffordances.push(it);
             }
         }
+	else{currentAffordance=affordances.addNull(objectsMat,supAtime);
+		if (!currentAffordance.empty()) {///azerty2
+                         for (auto it : currentAffordance)
+                    currentAffordances.push(it);
+            }}
 
 }
 

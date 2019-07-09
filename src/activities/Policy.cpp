@@ -7,6 +7,7 @@ Policy::Policy() {
 }
 
 bool Policy::update(Affordance* observation)  {
+        std::cout << observation->getName() << std::endl;
     return gP.addObservation(observation->getName());
 }
 

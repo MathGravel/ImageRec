@@ -93,6 +93,9 @@ public:
         }
     }
 
+
+
+
     double getFrequence(String name)
     {   bool trouve=false;
         int nb=0;
