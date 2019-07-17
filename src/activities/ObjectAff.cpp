@@ -53,12 +53,13 @@ void ObjectAffordances::cleanMatrix(){
 /**
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions,
                                                                 DetectedObjects &hands) {
-    **/
+**/
+
+
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions,
                                                                 DetectedObjects &hands,
                                                                 ObjectsMat &objectMat,
                                                                 bool supAtime) {
-
     double VAL = 100;
     
     currentAff = false;
