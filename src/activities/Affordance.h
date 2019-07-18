@@ -1,6 +1,6 @@
 
 /**
-* \file Affordance.cpp
+* \file Affordance.h
 * \author Mathieu Gravel
 * \version 
 * \date 

@@ -66,9 +66,9 @@ public:
     cv::Mat getImageWithROI() const;
 
 
-    bool AffordanceUpdated() const {
+    /*bool AffordanceUpdated() const {
         return affordances.currentlyHasAffordances();
-    };
+    };*/
 
     DetectedObjects detectHand(cv::Mat color, cv::Mat depth);
     DetectedObjects detectObjets(cv::Mat color, cv::Mat depth);
