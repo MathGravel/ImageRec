@@ -41,14 +41,41 @@ public:
     **/
     Affordance(std::string obj,double pos,cv::Rect reg,double prob,double _dist = 0);
 
-
+    /**
+     * @brief getName
+     * @return
+     */
     std::string getName() const {return objectName;}
+
+    /**
+     * @brief getObjectPosition
+     * @return
+     */
     double getObjectPosition() const {return objectPos;}
+
+    /**
+     * @brief getRegion
+     * @return
+     */
     const cv::Rect& getRegion() const {return region;}
+
+    /**
+     * @brief getObjectProbability
+     * @return
+     */
     double getObjectProbability() const {return objProb;}
+
+    /**
+     * @brief setDist
+     * @param dist
+     */
     void setDist(double dist) {
         objectPos = dist;
     }
+
+    /**
+     * @brief reset
+     */
     void reset() {
         objectPos = -1;
         objProb = 0;
@@ -68,7 +95,10 @@ public:
     **/
     bool operator <(const Affordance& autre);
 
-
+    /**
+     * @brief to_str
+     * @return
+     */
     std::string to_str() const {
         std::stringstream ss;
         ss << this->objectName << " " << this->objProb;
@@ -135,23 +165,43 @@ public:
     **/
     void markCurrentInteractions(double dist, cv::Rect pos,double prob,int frameCount);
 
+    /**
+     * @brief getInteractionTime
+     * @return
+     */
     double getInteractionTime() {
         return times.front() - times.back();
     }
 
+    /**
+     * @brief getStartTime
+     * @return
+     */
     double getStartTime() {
         return times.front();
     }
 
 
+    /**
+     * @brief getAffordance
+     * @return
+     */
     Affordance& getAffordance() {
         return affordance;
     }
 
+    /**
+     * @brief getName
+     * @return
+     */
     std::string getName() const {
         return affordance.getName();
     }
 
+    /**
+     * @brief getNumberOfOccurences
+     * @return
+     */
     int getNumberOfOccurences() {
         return times.size();
     }
@@ -163,7 +213,11 @@ public:
     void clean();
     void reset() {times.clear();}
 
-
+    /**
+     * @brief checkAffName
+     * @param className
+     * @return
+     */
     bool checkAffName(const std::string className) const {
         return affordance.getName() == className;
     }
