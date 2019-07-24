@@ -8,7 +8,8 @@ solver::solver(extendedPlanLibrary* _epl, int _nbParticle):epl(_epl), nbParticle
         solverParticle newParticle = solverParticle(epl);
 
 //        assert(newParticle.expNextObs[0]);
-
+        if(newParticle.planTree.root.status)
+            continue;
         if(particles.count(newParticle.expNextObs[0]) > 0)
             particles[newParticle.expNextObs[0]].push_back(newParticle);
         else
@@ -31,29 +32,48 @@ solver::~solver()
 {
     //dtor
 }
-
 bool solver::addObservation(int obs)
 {
+
     previousObservations.push_back(obs);
     vector<solverParticle> validParticles = particles[obs];
+
+
+    int test =0;
+    for(auto it :validParticles)
+    {
+        if(it.goal == epl->ids["A"])
+        test++;
+    }
+    std::cout << test << std::endl;
+
     if(validParticles.size() == 0)
     {
         particles.clear();
         return false;
     }
-
+    int cnt = 0;
     while(validParticles.size() < nbParticles)
     {
-        solverParticle newParticle = particles[obs][rand() % particles[obs].size()];
-        validParticles.push_back(newParticle);
+        cnt++;
+         solverParticle newParticle = particles[obs][rand() % particles[obs].size()];
+         bool ok = newParticle.update();
+         if (ok && !newParticle.expNextObs.empty())
+         {
+            cnt =0;
+            validParticles.push_back(newParticle);
+         }
+         if (cnt > nbParticles)
+         {
+            break;
+         }
     }
-
     particles.clear();
+
+
     for(auto it : validParticles)
     {
 
-        if(it.update())
-        {
             if(particles.count(it.expNextObs[0]) >0)
                 particles[it.expNextObs[0]].push_back(it);
             else
@@ -61,9 +81,11 @@ bool solver::addObservation(int obs)
                 particles[it.expNextObs[0]] = vector<solverParticle>();
                 particles[it.expNextObs[0]].push_back(it);
             }
-        }
+
 
     }
+	if(particles.empty())
+		return false;
     return status();
 }
 
@@ -154,7 +176,13 @@ pair<int,vector<int>> solver::generatePlan()
             int init = resu.size();
             while(resu.size() - init + PO -1 < -1)
             {
-                int temp = epl->noise.RNC(nextAction);
+		auto it = epl->ePlanLibrary->getTerminals().begin();
+		int rnd  = rand() % epl->ePlanLibrary->getTerminals().size();
+		for(int i =0; i<rnd;i++)
+		{
+			it++;
+		}
+                int temp = *(it);
                 if(temp >= 0)
                     resu.push_back(temp);
             }
@@ -276,7 +304,13 @@ vector<int> tree::update()
     {
         while(resu.size() + PO < -1)
         {
-            int temp = epl->noise.RNC(FO);
+            	auto it = epl->ePlanLibrary->getTerminals().begin();
+		int rnd  = rand() % epl->ePlanLibrary->getTerminals().size();
+		for(int i =0; i<rnd;i++)
+		{
+			it++;
+		}
+                int temp = *(it);
             if(temp >= 0)
                 resu.push_back(temp);
         }

@@ -142,7 +142,7 @@ extendedPlanLibrary::extendedPlanLibrary(const char* spl)
     letter.Add('A','Z');
 
     Lexem number = !Token("-") + 1*digit;
-    Lexem val = !Token("-") + Token('0') + Token('.') +1*digit;
+    Lexem val = !Token("-") + Token('0') + Token('.') +1*digit | Token('1') + Token('.') + 1*Token('0');
     Lexem name = 1*letter;
 
     Lexem goals = "Goals";
@@ -368,6 +368,17 @@ extendedPlanLibrary::~extendedPlanLibrary()
 {
     //delete ePlanLibrary;
 }
+
+int extendedPlanLibrary::extra()
+{
+    int rnd = rand() % ePlanLibrary->getTerminals().size();
+    auto it = ePlanLibrary->getTerminals().begin();
+    for(int i = 0; i < rnd; i++)
+    {
+        ++it;
+    }
+    return *it;
+} 
 
 const string extendedPlanLibrary::toString()
 {

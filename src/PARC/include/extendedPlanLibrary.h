@@ -24,7 +24,8 @@ class extendedPlanLibrary
         map<string,int> ids;
         map<int, string> revIds;
 
-        const string toString();
+	int extra();
+        const string toString();	
 };
 
 #endif // EXTENDEDPLANLIBRARY_H
