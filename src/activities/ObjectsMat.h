@@ -1,3 +1,12 @@
+/**
+* \file ObjectsMat.h
+* \author Mathieu Gravel
+* \version
+* \date
+* \brief
+* \details
+**/
+
 #ifndef OBJECTSMAT_H
 #define OBJECTSMAT_H
 
@@ -19,36 +28,54 @@ using namespace cv;
 using namespace cv::dnn;
 
 class ObjectsMat {
+
     //const int MAXFRAMES = 20;
     const String NULLNAME = "NULL";
 public:
+
+    /**
+    * \fn	ObjectsMat()
+    * \brief	Constructor of ObjectsMat
+    * \details initializes mat_objets, matrix of objects
+    **/
     ObjectsMat() {
         mat_objets = {};
         //mat_mains = {};
         //vect_Frame = {};
     }
 
+    /**
+     * \fn reset()
+     * \brief removes all the elements from mat_objects
+     */
     void reset(){
         //this->mat_mains.clear();
         this->mat_objets.clear();
         //this->vect_Frame.clear();
     }
 
+    /**
+     * \fn instance()
+     */
     void instance(){
         mat_objets = {};
         //mat_mains = {};
         //vect_Frame = {};
     }
 
+    /**
+     * \fn updateAffordance(const std::stack<AffordanceTime*> matrice)
+     * \brief updates the matrix of current affordances
+     * \param const std::stack<AffordanceTime*> matrice : matrix of affordances
+     */
     static Affordance* updateAffordance(const std::stack<AffordanceTime*> matrice){
-        //std::cout<<"TEST"<<std::endl;
         vector<String> nameObject={};
         vector<double> probObject={};
         int j;
         std::stack<AffordanceTime*> allAff= matrice;
         AffordanceTime* searchAff;
         int rang;
-        for(int i=0;i<std::min((int)matrice.size(),10);i++){
+        for(int i=0;i<std::min((int)matrice.size(),10);i++){//loop in every elements of the matrix
             searchAff=allAff.top();
             allAff.pop();
             j=0;
@@ -58,9 +85,7 @@ public:
                     rang=j;
                 }
                 j++;
-
             }
-
             if(rang !=-1 && nameObject[rang]==searchAff->getAffordance().getName()){
                 probObject[rang]=probObject[rang]+searchAff->getAffordance().getObjectProbability();
             }
@@ -80,6 +105,11 @@ public:
         return new Affordance(nameObject[rangMax],0,cv::Rect(),probObject[rangMax]/std::min((int)matrice.size(),10),0);
     }
 
+    /**
+     * @brief update(std::vector<AffordanceTime*> objs, bool supAtime)
+     * @param std::vector<AffordanceTime*> objs : vector of objects to add to the matrix
+     * @param bool supAtime : indicates if the time since the start is great enough
+     */
     void update(std::vector<AffordanceTime*> objs, bool supAtime/*const DetectedObjects& obj, const DetectedObjects& _hand, int frame*/){
         //mat_mains.push_back(_hand);
         mat_objets.push_back(objs);
@@ -95,7 +125,11 @@ public:
 
 
 
-
+    /**
+     * \fn getFrequence(String name)
+     * \brief returns the frequence of the object in the last images
+     * \param name : Name of the  class of the object to check
+     */
     double getFrequence(String name)
     {   bool trouve=false;
         int nb=0;
@@ -126,6 +160,10 @@ public:
     std::vector<int> get_vectFrame() const { return vect_Frame;}
 
 */
+
+    /**
+     * \fn get_affordances()
+     */
     std::vector<std::vector<AffordanceTime*>> get_affordances() const { return mat_objets;}
 private:
     /*

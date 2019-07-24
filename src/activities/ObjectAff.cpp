@@ -5,7 +5,7 @@ ObjectAffordances::ObjectAffordances(int numberClasses) {
     numClasses = numberClasses;
     frameCount = 0;
     nbClasses = 0;
-    currentAff = false;
+    //currentAff = false;
 }
 
 
@@ -50,24 +50,26 @@ void ObjectAffordances::cleanMatrix(){
         this->confMatrix[it.first].reset();
     }
 }*/
+
 /**
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions,
                                                                 DetectedObjects &hands) {
-    **/
+**/
+
+
 std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects &regions,
                                                                 DetectedObjects &hands,
                                                                 ObjectsMat &objectMat,
                                                                 bool supAtime) {
-
     double VAL = 100;
     
-    currentAff = false;
+    //currentAff = false;
     frameCount++;
-    std::vector<AffordanceTime*> currentAffordances;///azerty2
-    for (const auto obj : regions) {
+    std::vector<AffordanceTime*> currentAffordances;//vector of AffordanceTime in which the times of affordance will be stored.
+    for (const auto & obj : regions) {
         for (auto & hand : hands) {
 
-            double objFreq = objectMat.getFrequence(obj.getObjName());
+            //double objFreq = objectMat.getFrequence(obj.getObjName());
             double dist = sqrt( pow( ( (obj.getObjPos().y+obj.getObjPos().height/2) - (hand.getObjPos().y+hand.getObjPos().height/2) ),2) +
                              pow( ( (obj.getObjPos().x+obj.getObjPos().width/2) - (hand.getObjPos().x+hand.getObjPos().width/2) ),2));
 
@@ -100,7 +102,7 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
 }
 
 std::vector<AffordanceTime*> ObjectAffordances::addNull(ObjectsMat &objectMat, bool supAtime){
-    	std::vector<AffordanceTime*> currentAffordances;///azerty2
+        std::vector<AffordanceTime*> currentAffordances;
         double nullFreq = objectMat.getFrequence(NULLNAME);
         Affordance* aff = new Affordance(NULLNAME,0,cv::Rect(),nullFreq,0);
         AffordanceTime* currentAffordance = new AffordanceTime(*aff,frameCount);
