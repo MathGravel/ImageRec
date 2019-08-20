@@ -1,6 +1,0 @@
-classes= 20
-train  = /home/troisiememathieu/Music/YOLO/Kinshi/maniscrambled.txt
-valid  = /home/troisiememathieu/Music/YOLO/Kinshi/maniscrambled.txt
-names = /home/troisiememathieu/Music/YOLO/convert2Yolo/classes.name
-backup = /home/troisiememathieu/Music/YOLO/convert2Yolo/backup
-

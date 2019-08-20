@@ -1,6 +1,0 @@
-classes= 10
-train  = /home/troisiememathieu/Documents/Robot_Dataset/manifinal.txt
-valid  = /home/troisiememathieu/Documents/Robot_Dataset/manitest.txt
-names = /home/troisiememathieu/Documents/Robot_Dataset/classes.name
-backup = /home/troisiememathieu/Documents/Robot_Dataset/backup-final
-
