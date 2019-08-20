@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_real_sense_video" kind="class" language="C++" prot="public">
+    <compoundname>RealSenseVideo</compoundname>
+    <basecompoundref refid="class_video_source" prot="public" virt="non-virtual">VideoSource</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_real_sense_video_1aa1b05d54c659fe8a813eed7a95d8d724" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::colorFeed</definition>
+        <argsstring></argsstring>
+        <name>colorFeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="43" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1ac491a39d1a4d80ab2872b2538cf91b7e" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::depthFeed</definition>
+        <argsstring></argsstring>
+        <name>depthFeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="44" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1a3ce3747fd177f12286d71a68f78fbdaf" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::depthMeters</definition>
+        <argsstring></argsstring>
+        <name>depthMeters</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="45" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1a4cd6464aeb2bbbc23416b6f1fa0ff439" prot="private" static="no" mutable="no">
+        <type>cv::VideoCapture *</type>
+        <definition>cv::VideoCapture* RealSenseVideo::vid</definition>
+        <argsstring></argsstring>
+        <name>vid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="47" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1ab23fafed74ed2e1ba79b6274a697b669" prot="private" static="no" mutable="no">
+        <type>cv::VideoCapture *</type>
+        <definition>cv::VideoCapture* RealSenseVideo::vidDepth</definition>
+        <argsstring></argsstring>
+        <name>vidDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="48" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1ab1a462e074e2401a924431fb39ae8d76" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string RealSenseVideo::colorVideo</definition>
+        <argsstring></argsstring>
+        <name>colorVideo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="49" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1abbac381c98489f10933f9ec19affa148" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string RealSenseVideo::depthVideo</definition>
+        <argsstring></argsstring>
+        <name>depthVideo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="50" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1a72eb56d11f3d8d703c5f2dc3389cc7a4" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RealSenseVideo::vidFolder</definition>
+        <argsstring></argsstring>
+        <name>vidFolder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="51" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1ad0b02a5a7b6b28ca292ddeb86131d48a" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string RealSenseVideo::folder</definition>
+        <argsstring></argsstring>
+        <name>folder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="52" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_real_sense_video_1a3b251cd76ae841b9eaf4d65dd8b08be8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RealSenseVideo::currentDepth</definition>
+        <argsstring></argsstring>
+        <name>currentDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="53" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_sense_video_1a76e741fc745150c5d8b1dd7c0964d8ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RealSenseVideo::RealSenseVideo</definition>
+        <argsstring>(std::string colorFile=&quot;&quot;, std::string depthFile=&quot;&quot;)</argsstring>
+        <name>RealSenseVideo</name>
+        <param>
+          <type>std::string</type>
+          <declname>colorFile</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>depthFile</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="19" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="4" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a4733b0ddcfe21e0f1d02ea59e70a022e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>RealSenseVideo::~RealSenseVideo</definition>
+        <argsstring>()</argsstring>
+        <name>~RealSenseVideo</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="21" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="31" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a59df1d401a21f7ec2a353bf5bac922dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::getColorFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getColorFeed</name>
+        <reimplements refid="class_video_source_1ae18f07760d917884b62d0da6ea2efaee">getColorFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="24" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a59f27190cfe07d833752275e2181ca2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::getDepthFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getDepthFeed</name>
+        <reimplements refid="class_video_source_1aba297efc2b09e3534490bf1d02eb84c3">getDepthFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="25" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="48" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1abb5ab3b64e7996e2af0f60157ca59423" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::getMappedFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getMappedFeed</name>
+        <reimplements refid="class_video_source_1a96e2fde5f81c19163831070c34b6d2c8">getMappedFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="26" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="52" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1af308dfa5dfaaca687c202d2c566739df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::getOriginalDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getOriginalDepth</name>
+        <reimplements refid="class_video_source_1a9ee8f65394d627443b41f7765f20e20e">getOriginalDepth</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="27" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a18936f35d354d3fa5702b016018682d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void RealSenseVideo::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <reimplements refid="class_video_source_1ab5090a635efeb4e8087ba57405f08f32">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="29" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="56" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a82c9c5a3bc99df19cd0d26031f67d235" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool RealSenseVideo::hasDepthSource</definition>
+        <argsstring>()</argsstring>
+        <name>hasDepthSource</name>
+        <reimplements refid="class_video_source_1a5adefd9f8be29bb4e0dda8acfd8b7b34">hasDepthSource</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="30" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="30" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a116ba72253f5c99ea97b03b08d0d5152" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string RealSenseVideo::getTimeStamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimeStamp</name>
+        <reimplements refid="class_video_source_1a4afeab48c5bd2d1d2f07e6a2df0d28f5">getTimeStamp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="31" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="96" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a132141fd5d9fc85881606e29292dd141" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int RealSenseVideo::getTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getTimePosition</name>
+        <reimplements refid="class_video_source_1a99713fa4a77b086b70c5383966288ab9">getTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="32" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1add6fb9e7b923a848672767c2a6bef56b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double RealSenseVideo::getExactTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getExactTimePosition</name>
+        <reimplements refid="class_video_source_1a8f9438a3d5a1599d330bc4bfe1610984">getExactTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="33" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a3ac4729a8746898de82a373badb4ab69" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; RealSenseVideo::getScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenSize</name>
+        <reimplements refid="class_video_source_1a47b9dfa3b2719769e514f3360cabb84d">getScreenSize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="34" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_sense_video_1ab7782aaf99011f5d96ce7bf6fc5c69f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat RealSenseVideo::depth_frame_to_meters</definition>
+        <argsstring>(cv::Mat depthPic)</argsstring>
+        <name>depth_frame_to_meters</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>depthPic</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="39" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="112" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1a337f6723e833a1d94f7e57060d8c28da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RealSenseVideo::LoadMatBinary</definition>
+        <argsstring>(const std::string &amp;filename, cv::Mat &amp;output)</argsstring>
+        <name>LoadMatBinary</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Load cv::Mat as binary. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>filaname to load </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>loaded cv::Mat </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="40" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="168" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_sense_video_1aefb9f1572f8c5761d767369a81e20714" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool RealSenseVideo::readMatBinary</definition>
+        <argsstring>(std::ifstream &amp;ifs, cv::Mat &amp;in_mat)</argsstring>
+        <name>readMatBinary</name>
+        <param>
+          <type>std::ifstream &amp;</type>
+          <declname>ifs</declname>
+        </param>
+        <param>
+          <type>cv::Mat &amp;</type>
+          <declname>in_mat</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="41" column="1" bodyfile="controller/sources/RealSenseVideo.cpp" bodystart="139" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="98">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="97">
+        <label>RealSenseVideo</label>
+        <link refid="class_real_sense_video"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="100">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="99">
+        <label>RealSenseVideo</label>
+        <link refid="class_real_sense_video"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="controller/sources/RealSenseVideo.h" line="16" column="1" bodyfile="controller/sources/RealSenseVideo.h" bodystart="16" bodyend="55"/>
+    <listofallmembers>
+      <member refid="class_real_sense_video_1aa1b05d54c659fe8a813eed7a95d8d724" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>colorFeed</name></member>
+      <member refid="class_real_sense_video_1ab1a462e074e2401a924431fb39ae8d76" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>colorVideo</name></member>
+      <member refid="class_real_sense_video_1a3b251cd76ae841b9eaf4d65dd8b08be8" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>currentDepth</name></member>
+      <member refid="class_real_sense_video_1ab7782aaf99011f5d96ce7bf6fc5c69f2" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>depth_frame_to_meters</name></member>
+      <member refid="class_real_sense_video_1ac491a39d1a4d80ab2872b2538cf91b7e" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>depthFeed</name></member>
+      <member refid="class_real_sense_video_1a3ce3747fd177f12286d71a68f78fbdaf" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>depthMeters</name></member>
+      <member refid="class_real_sense_video_1abbac381c98489f10933f9ec19affa148" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>depthVideo</name></member>
+      <member refid="class_real_sense_video_1ad0b02a5a7b6b28ca292ddeb86131d48a" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>folder</name></member>
+      <member refid="class_real_sense_video_1a59df1d401a21f7ec2a353bf5bac922dd" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getColorFeed</name></member>
+      <member refid="class_real_sense_video_1a59f27190cfe07d833752275e2181ca2a" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getDepthFeed</name></member>
+      <member refid="class_real_sense_video_1add6fb9e7b923a848672767c2a6bef56b" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getExactTimePosition</name></member>
+      <member refid="class_real_sense_video_1abb5ab3b64e7996e2af0f60157ca59423" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getMappedFeed</name></member>
+      <member refid="class_real_sense_video_1af308dfa5dfaaca687c202d2c566739df" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getOriginalDepth</name></member>
+      <member refid="class_real_sense_video_1a3ac4729a8746898de82a373badb4ab69" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getScreenSize</name></member>
+      <member refid="class_real_sense_video_1a132141fd5d9fc85881606e29292dd141" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getTimePosition</name></member>
+      <member refid="class_real_sense_video_1a116ba72253f5c99ea97b03b08d0d5152" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>getTimeStamp</name></member>
+      <member refid="class_real_sense_video_1a82c9c5a3bc99df19cd0d26031f67d235" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>hasDepthSource</name></member>
+      <member refid="class_video_source_1a6b15d80d574803453f5fec377de02bb4" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>isRunning</name></member>
+      <member refid="class_real_sense_video_1a337f6723e833a1d94f7e57060d8c28da" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>LoadMatBinary</name></member>
+      <member refid="class_real_sense_video_1aefb9f1572f8c5761d767369a81e20714" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>readMatBinary</name></member>
+      <member refid="class_real_sense_video_1a76e741fc745150c5d8b1dd7c0964d8ee" prot="public" virt="non-virtual"><scope>RealSenseVideo</scope><name>RealSenseVideo</name></member>
+      <member refid="class_real_sense_video_1a18936f35d354d3fa5702b016018682d9" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>update</name></member>
+      <member refid="class_real_sense_video_1a4cd6464aeb2bbbc23416b6f1fa0ff439" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>vid</name></member>
+      <member refid="class_real_sense_video_1ab23fafed74ed2e1ba79b6274a697b669" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>vidDepth</name></member>
+      <member refid="class_real_sense_video_1a72eb56d11f3d8d703c5f2dc3389cc7a4" prot="private" virt="non-virtual"><scope>RealSenseVideo</scope><name>vidFolder</name></member>
+      <member refid="class_real_sense_video_1a4733b0ddcfe21e0f1d02ea59e70a022e" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>~RealSenseVideo</name></member>
+      <member refid="class_video_source_1a16d36d7c9baedd74ea8528b36a2ae273" prot="public" virt="virtual"><scope>RealSenseVideo</scope><name>~VideoSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,53 @@
+.TH "extendedPlanLibrary" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+extendedPlanLibrary
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBextendedPlanLibrary\fP (const char *spl)"
+.br
+.ti -1c
+.RI "\fBextendedPlanLibrary\fP (\fBplanLibrary\fP *_ePlanLibrary)"
+.br
+.ti -1c
+.RI "\fBextendedPlanLibrary\fP (const \fBextendedPlanLibrary\fP &epl)"
+.br
+.ti -1c
+.RI "\fBextendedPlanLibrary\fP (bool rnd=true, float noisePRCT=0\&.0, int goal=5, int _size=10, int depth=2, int widthAND=3, int widthOR=2, bool DM=false)"
+.br
+.ti -1c
+.RI "int \fBextra\fP ()"
+.br
+.ti -1c
+.RI "const string \fBtoString\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBplanLibrary\fP * \fBePlanLibrary\fP"
+.br
+.ti -1c
+.RI "\fBprobabilityDistribution\fP \fBdecisionModel\fP"
+.br
+.ti -1c
+.RI "\fBprobabilityDistribution\fP \fBnoise\fP"
+.br
+.ti -1c
+.RI "map< string, int > \fBids\fP"
+.br
+.ti -1c
+.RI "map< int, string > \fBrevIds\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

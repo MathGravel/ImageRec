@@ -1,0 +1,6 @@
+classes= 6
+train  = /home/troisiememathieu/Documents/Robot_Dataset/maninewball.txt
+valid  = /home/troisiememathieu/Documents/Robot_Dataset/maniballstest.txt
+names = /home/troisiememathieu/Documents/Robot_Dataset/classesballs.txt
+backup = /home/troisiememathieu/Documents/Robot_Dataset/backup-final
+

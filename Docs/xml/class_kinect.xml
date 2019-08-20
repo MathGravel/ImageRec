@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_kinect" kind="class" language="C++" prot="public">
+    <compoundname>Kinect</compoundname>
+    <basecompoundref refid="class_video_source" prot="public" virt="non-virtual">VideoSource</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_kinect_1ac8bc5a4f85759a3b6d802ef5d9a00a3e" prot="private" static="no" mutable="no">
+        <type>pthread_mutex_t</type>
+        <definition>pthread_mutex_t Kinect::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <initializer>= PTHREAD_MUTEX_INITIALIZER</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="64" column="1" bodyfile="controller/sources/Kinect.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_kinect_1ac12aa3329404d3a533232fc11ae7d312" prot="private" static="no" mutable="no">
+        <type>BOOLEAN</type>
+        <definition>BOOLEAN Kinect::thread_initialized</definition>
+        <argsstring></argsstring>
+        <name>thread_initialized</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="65" column="1" bodyfile="controller/sources/Kinect.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_kinect_1ab05389f710b912abff1d001edd77d847" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinect::Kinect</definition>
+        <argsstring>()</argsstring>
+        <name>Kinect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="28" column="1" bodyfile="controller/sources/Kinect.cpp" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a3f417dc4deed8106a97f217c26326e12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Kinect::~Kinect</definition>
+        <argsstring>()</argsstring>
+        <name>~Kinect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a006fb9582a33bbc026834d34850c598c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Kinect::getColorFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getColorFeed</name>
+        <reimplements refid="class_video_source_1ae18f07760d917884b62d0da6ea2efaee">getColorFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="32" column="1" bodyfile="controller/sources/Kinect.cpp" bodystart="132" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a2bc9f0dfe1117b46d1eb3740440a3a17" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Kinect::getDepthFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getDepthFeed</name>
+        <reimplements refid="class_video_source_1aba297efc2b09e3534490bf1d02eb84c3">getDepthFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="33" column="1" bodyfile="controller/sources/Kinect.cpp" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a0fab505f071a67d74b5124b1b8ef4fa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Kinect::getMappedFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getMappedFeed</name>
+        <reimplements refid="class_video_source_1a96e2fde5f81c19163831070c34b6d2c8">getMappedFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="34" column="1" bodyfile="controller/sources/Kinect.cpp" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a8ff1afb85ee20e7bab9de5e13c3a9575" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat Kinect::getOriginalDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getOriginalDepth</name>
+        <reimplements refid="class_video_source_1a9ee8f65394d627443b41f7765f20e20e">getOriginalDepth</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="35" column="1" bodyfile="controller/sources/Kinect.h" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a4b5ae8c02d4bfacff8a23fe2902da4b5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void Kinect::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <reimplements refid="class_video_source_1ab5090a635efeb4e8087ba57405f08f32">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="37" column="1" bodyfile="controller/sources/Kinect.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1abd18c649734b641a762fe33ec1df5836" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool Kinect::hasDepthSource</definition>
+        <argsstring>()</argsstring>
+        <name>hasDepthSource</name>
+        <reimplements refid="class_video_source_1a5adefd9f8be29bb4e0dda8acfd8b7b34">hasDepthSource</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="38" column="1" bodyfile="controller/sources/Kinect.h" bodystart="38" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a3ed4b60fa61c3d5061a959d6b49b0851" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string Kinect::getTimeStamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimeStamp</name>
+        <reimplements refid="class_video_source_1a4afeab48c5bd2d1d2f07e6a2df0d28f5">getTimeStamp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="39" column="1" bodyfile="controller/sources/Kinect.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a1181d62f878e3eb681e76e7d8b7300f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int Kinect::getTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getTimePosition</name>
+        <reimplements refid="class_video_source_1a99713fa4a77b086b70c5383966288ab9">getTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="40" column="1" bodyfile="controller/sources/Kinect.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a2588ce6e74cf51ffaa3fe3829042dff2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double Kinect::getExactTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getExactTimePosition</name>
+        <reimplements refid="class_video_source_1a8f9438a3d5a1599d330bc4bfe1610984">getExactTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="41" column="1" bodyfile="controller/sources/Kinect.h" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a39e9733b24bf29059fc36fbd7accc24c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; Kinect::getScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenSize</name>
+        <reimplements refid="class_video_source_1a47b9dfa3b2719769e514f3360cabb84d">getScreenSize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="42" column="1" bodyfile="controller/sources/Kinect.h" bodystart="42" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1a895813d18b5feb49ec0aa5358d3479df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinect::acquire</definition>
+        <argsstring>()</argsstring>
+        <name>acquire</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="72" column="1" bodyfile="controller/sources/Kinect.h" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_kinect_1ab7736670c3d00426cb9ea12691eeb27f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinect::release</definition>
+        <argsstring>()</argsstring>
+        <name>release</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="76" column="1" bodyfile="controller/sources/Kinect.h" bodystart="76" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_kinect_1a457f622bfbe0c8ed6515942741194c60" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Kinect::initThread</definition>
+        <argsstring>()</argsstring>
+        <name>initThread</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/Kinect.h" line="66" column="1" bodyfile="controller/sources/Kinect.h" bodystart="66" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="71">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="70">
+        <label>Kinect</label>
+        <link refid="class_kinect"/>
+        <childnode refid="71" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="73">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="72">
+        <label>Kinect</label>
+        <link refid="class_kinect"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="controller/sources/Kinect.h" line="26" column="1" bodyfile="controller/sources/Kinect.h" bodystart="26" bodyend="81"/>
+    <listofallmembers>
+      <member refid="class_kinect_1a895813d18b5feb49ec0aa5358d3479df" prot="public" virt="non-virtual"><scope>Kinect</scope><name>acquire</name></member>
+      <member refid="class_kinect_1a006fb9582a33bbc026834d34850c598c" prot="public" virt="virtual"><scope>Kinect</scope><name>getColorFeed</name></member>
+      <member refid="class_kinect_1a2bc9f0dfe1117b46d1eb3740440a3a17" prot="public" virt="virtual"><scope>Kinect</scope><name>getDepthFeed</name></member>
+      <member refid="class_kinect_1a2588ce6e74cf51ffaa3fe3829042dff2" prot="public" virt="virtual"><scope>Kinect</scope><name>getExactTimePosition</name></member>
+      <member refid="class_kinect_1a0fab505f071a67d74b5124b1b8ef4fa1" prot="public" virt="virtual"><scope>Kinect</scope><name>getMappedFeed</name></member>
+      <member refid="class_kinect_1a8ff1afb85ee20e7bab9de5e13c3a9575" prot="public" virt="virtual"><scope>Kinect</scope><name>getOriginalDepth</name></member>
+      <member refid="class_kinect_1a39e9733b24bf29059fc36fbd7accc24c" prot="public" virt="virtual"><scope>Kinect</scope><name>getScreenSize</name></member>
+      <member refid="class_kinect_1a1181d62f878e3eb681e76e7d8b7300f5" prot="public" virt="virtual"><scope>Kinect</scope><name>getTimePosition</name></member>
+      <member refid="class_kinect_1a3ed4b60fa61c3d5061a959d6b49b0851" prot="public" virt="virtual"><scope>Kinect</scope><name>getTimeStamp</name></member>
+      <member refid="class_kinect_1abd18c649734b641a762fe33ec1df5836" prot="public" virt="virtual"><scope>Kinect</scope><name>hasDepthSource</name></member>
+      <member refid="class_kinect_1a457f622bfbe0c8ed6515942741194c60" prot="private" virt="non-virtual"><scope>Kinect</scope><name>initThread</name></member>
+      <member refid="class_video_source_1a6b15d80d574803453f5fec377de02bb4" prot="public" virt="virtual"><scope>Kinect</scope><name>isRunning</name></member>
+      <member refid="class_kinect_1ab05389f710b912abff1d001edd77d847" prot="public" virt="non-virtual"><scope>Kinect</scope><name>Kinect</name></member>
+      <member refid="class_kinect_1ac8bc5a4f85759a3b6d802ef5d9a00a3e" prot="private" virt="non-virtual"><scope>Kinect</scope><name>mutex</name></member>
+      <member refid="class_kinect_1ab7736670c3d00426cb9ea12691eeb27f" prot="public" virt="non-virtual"><scope>Kinect</scope><name>release</name></member>
+      <member refid="class_kinect_1ac12aa3329404d3a533232fc11ae7d312" prot="private" virt="non-virtual"><scope>Kinect</scope><name>thread_initialized</name></member>
+      <member refid="class_kinect_1a4b5ae8c02d4bfacff8a23fe2902da4b5" prot="public" virt="virtual"><scope>Kinect</scope><name>update</name></member>
+      <member refid="class_kinect_1a3f417dc4deed8106a97f217c26326e12" prot="public" virt="non-virtual"><scope>Kinect</scope><name>~Kinect</name></member>
+      <member refid="class_video_source_1a16d36d7c9baedd74ea8528b36a2ae273" prot="public" virt="virtual"><scope>Kinect</scope><name>~VideoSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

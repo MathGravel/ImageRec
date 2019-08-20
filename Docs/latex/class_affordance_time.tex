@@ -1,0 +1,214 @@
+\section{Affordance\+Time Class Reference}
+\label{class_affordance_time}\index{Affordance\+Time@{Affordance\+Time}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_affordance_time_abe21e5e6200ceca2a4fd61498b1c5640}} 
+\textbf{ Affordance\+Time} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Affordance\+Time}{p.}{class_affordance_time}. \end{DoxyCompactList}\item 
+\textbf{ Affordance\+Time} (\textbf{ Affordance} aff, int frame\+Count)
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Affordance\+Time}{p.}{class_affordance_time}. \end{DoxyCompactList}\item 
+void \textbf{ mark\+Current\+Interactions} (double dist, int frame\+Count)
+\begin{DoxyCompactList}\small\item\em Updates the \doxyref{Affordance}{p.}{class_affordance} object during an interaction. \end{DoxyCompactList}\item 
+void \textbf{ mark\+Current\+Interactions} (double dist, cv\+::\+Rect pos, double prob, int frame\+Count)
+\begin{DoxyCompactList}\small\item\em Updates the \doxyref{Affordance}{p.}{class_affordance} object during an interaction. \end{DoxyCompactList}\item 
+double \textbf{ get\+Interaction\+Time} ()
+\begin{DoxyCompactList}\small\item\em get\+Interaction\+Time \end{DoxyCompactList}\item 
+double \textbf{ get\+Start\+Time} ()
+\begin{DoxyCompactList}\small\item\em get\+Start\+Time \end{DoxyCompactList}\item 
+\textbf{ Affordance} \& \textbf{ get\+Affordance} ()
+\begin{DoxyCompactList}\small\item\em get\+Affordance \end{DoxyCompactList}\item 
+std\+::string \textbf{ get\+Name} () const
+\begin{DoxyCompactList}\small\item\em get\+Name \end{DoxyCompactList}\item 
+int \textbf{ get\+Number\+Of\+Occurences} ()
+\begin{DoxyCompactList}\small\item\em get\+Number\+Of\+Occurences \end{DoxyCompactList}\item 
+\mbox{\label{class_affordance_time_ae822b9a1dd506d239476a71f1a4140c2}} 
+void \textbf{ clean} ()
+\begin{DoxyCompactList}\small\item\em Cleans the time attribute. \end{DoxyCompactList}\item 
+\mbox{\label{class_affordance_time_a53f4750b6f9376cb38c4c88597a0e930}} 
+void {\bfseries reset} ()
+\item 
+bool \textbf{ check\+Aff\+Name} (const std\+::string class\+Name) const
+\begin{DoxyCompactList}\small\item\em check\+Aff\+Name \end{DoxyCompactList}\item 
+bool \textbf{ operator==} (const \textbf{ Affordance\+Time} \&autre)
+\begin{DoxyCompactList}\small\item\em Overload of the \textquotesingle{}==\textquotesingle{} operator for two \doxyref{Affordance\+Time}{p.}{class_affordance_time} objects. \end{DoxyCompactList}\item 
+bool \textbf{ operator$<$} (const \textbf{ Affordance\+Time} \&autre)
+\begin{DoxyCompactList}\small\item\em Overload of the \textquotesingle{}$<$\textquotesingle{} operator for two \doxyref{Affordance\+Time}{p.}{class_affordance_time} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_affordance_time_ac4311c6b3409799833f5855b9c10b18f}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&o, const \textbf{ Affordance\+Time} a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_affordance_time_a550d81ec8dc01717f6f3906d40022398}} 
+\index{Affordance\+Time@{Affordance\+Time}!Affordance\+Time@{Affordance\+Time}}
+\index{Affordance\+Time@{Affordance\+Time}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{Affordance\+Time()}
+{\footnotesize\ttfamily Affordance\+Time\+::\+Affordance\+Time (\begin{DoxyParamCaption}\item[{\textbf{ Affordance}}]{aff,  }\item[{int}]{frame\+Count }\end{DoxyParamCaption})}
+
+
+
+Constructor of \doxyref{Affordance\+Time}{p.}{class_affordance_time}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aff} & \doxyref{Affordance}{p.}{class_affordance} \+: Object of type \doxyref{Affordance}{p.}{class_affordance} \\
+\hline
+{\em frame\+Count} & int \+: Frame time at the creation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_affordance_time_a115480f9cced506f442f100e1f3ca77d}} 
+\index{Affordance\+Time@{Affordance\+Time}!check\+Aff\+Name@{check\+Aff\+Name}}
+\index{check\+Aff\+Name@{check\+Aff\+Name}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{check\+Aff\+Name()}
+{\footnotesize\ttfamily bool Affordance\+Time\+::check\+Aff\+Name (\begin{DoxyParamCaption}\item[{const std\+::string}]{class\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+check\+Aff\+Name 
+
+
+\begin{DoxyParams}{Parameters}
+{\em class\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_a4fcf18832933872e1a8a272fc089a97a}} 
+\index{Affordance\+Time@{Affordance\+Time}!get\+Affordance@{get\+Affordance}}
+\index{get\+Affordance@{get\+Affordance}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{get\+Affordance()}
+{\footnotesize\ttfamily \textbf{ Affordance}\& Affordance\+Time\+::get\+Affordance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Affordance 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_a058273ed5117818c10adc82c1c489412}} 
+\index{Affordance\+Time@{Affordance\+Time}!get\+Interaction\+Time@{get\+Interaction\+Time}}
+\index{get\+Interaction\+Time@{get\+Interaction\+Time}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{get\+Interaction\+Time()}
+{\footnotesize\ttfamily double Affordance\+Time\+::get\+Interaction\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Interaction\+Time 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_af439cdc87988e29bbae0a036c37dc626}} 
+\index{Affordance\+Time@{Affordance\+Time}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{get\+Name()}
+{\footnotesize\ttfamily std\+::string Affordance\+Time\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Name 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_a3290159565dbab9f17e94a59c3e9ffcf}} 
+\index{Affordance\+Time@{Affordance\+Time}!get\+Number\+Of\+Occurences@{get\+Number\+Of\+Occurences}}
+\index{get\+Number\+Of\+Occurences@{get\+Number\+Of\+Occurences}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{get\+Number\+Of\+Occurences()}
+{\footnotesize\ttfamily int Affordance\+Time\+::get\+Number\+Of\+Occurences (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Number\+Of\+Occurences 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_aef9d493b599b2d559a654e4a83596d3a}} 
+\index{Affordance\+Time@{Affordance\+Time}!get\+Start\+Time@{get\+Start\+Time}}
+\index{get\+Start\+Time@{get\+Start\+Time}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{get\+Start\+Time()}
+{\footnotesize\ttfamily double Affordance\+Time\+::get\+Start\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Start\+Time 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_ad8af5d283df25c5d3cfff186cde9abcf}} 
+\index{Affordance\+Time@{Affordance\+Time}!mark\+Current\+Interactions@{mark\+Current\+Interactions}}
+\index{mark\+Current\+Interactions@{mark\+Current\+Interactions}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{mark\+Current\+Interactions()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Affordance\+Time\+::mark\+Current\+Interactions (\begin{DoxyParamCaption}\item[{double}]{dist,  }\item[{int}]{frame\+Count }\end{DoxyParamCaption})}
+
+
+
+Updates the \doxyref{Affordance}{p.}{class_affordance} object during an interaction. 
+
+Updates the \doxyref{Affordance}{p.}{class_affordance} object, called during an interaction Updates the current time and adds the frame time of the interaction 
+\begin{DoxyParams}{Parameters}
+{\em aff} & \doxyref{Affordance}{p.}{class_affordance} \+: Object of type \doxyref{Affordance}{p.}{class_affordance} \\
+\hline
+{\em frame\+Count} & int \+: Frame time at the creation \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_affordance_time_a8a3c00c202045f18c7a0f50beb049916}} 
+\index{Affordance\+Time@{Affordance\+Time}!mark\+Current\+Interactions@{mark\+Current\+Interactions}}
+\index{mark\+Current\+Interactions@{mark\+Current\+Interactions}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{mark\+Current\+Interactions()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Affordance\+Time\+::mark\+Current\+Interactions (\begin{DoxyParamCaption}\item[{double}]{dist,  }\item[{cv\+::\+Rect}]{pos,  }\item[{double}]{prob,  }\item[{int}]{frame\+Count }\end{DoxyParamCaption})}
+
+
+
+Updates the \doxyref{Affordance}{p.}{class_affordance} object during an interaction. 
+
+Updates the \doxyref{Affordance}{p.}{class_affordance} object, called during an interaction Updates the current time and adds the frame time of the interaction Sets the \doxyref{Affordance}{p.}{class_affordance} object\textquotesingle{}s position and its probability to correspond 
+\begin{DoxyParams}{Parameters}
+{\em aff} & \doxyref{Affordance}{p.}{class_affordance} \+: Object of type \doxyref{Affordance}{p.}{class_affordance} \\
+\hline
+{\em frame\+Count} & int \+: Frame time at the creation \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_affordance_time_a2b8943725f1f144369530490599ea421}} 
+\index{Affordance\+Time@{Affordance\+Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily Affordance\+Time\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ Affordance\+Time} \&}]{autre }\end{DoxyParamCaption})}
+
+
+
+Overload of the \textquotesingle{}$<$\textquotesingle{} operator for two \doxyref{Affordance\+Time}{p.}{class_affordance_time} objects. 
+
+\begin{DoxyReturn}{Returns}
+True if this $<$ \textquotesingle{}autre\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\label{class_affordance_time_af4afa25a0a0b19c51f206f7a568d458a}} 
+\index{Affordance\+Time@{Affordance\+Time}!operator==@{operator==}}
+\index{operator==@{operator==}!Affordance\+Time@{Affordance\+Time}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily Affordance\+Time\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Affordance\+Time} \&}]{autre }\end{DoxyParamCaption})}
+
+
+
+Overload of the \textquotesingle{}==\textquotesingle{} operator for two \doxyref{Affordance\+Time}{p.}{class_affordance_time} objects. 
+
+\begin{DoxyReturn}{Returns}
+True if this == \textquotesingle{}autre\textquotesingle{} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Activite/reco\+Affordance/\textbf{ Affordance.\+h}\item 
+model/reco\+Activite/reco\+Affordance/Affordance.\+cpp\end{DoxyCompactItemize}

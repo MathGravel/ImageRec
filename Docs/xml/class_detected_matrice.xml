@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detected_matrice" kind="class" language="C++" prot="public">
+    <compoundname>DetectedMatrice</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detected_matrice_1a3b23455ffabecb914a1865f295d0a142" prot="private" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect DetectedMatrice::objPos</definition>
+        <argsstring></argsstring>
+        <name>objPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="53" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_matrice_1a78356630f7e23fe757f345bd8f3e2e15" prot="private" static="no" mutable="no">
+        <type>Predictions</type>
+        <definition>Predictions DetectedMatrice::preds</definition>
+        <argsstring></argsstring>
+        <name>preds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="54" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_matrice_1a3fbb3e0b0870ef85312abc555e30b1e5" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectedMatrice::dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="55" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detected_matrice_1af524c8a91c61e074871d33ed102e2961" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedMatrice::DetectedMatrice</definition>
+        <argsstring>(cv::Rect position, Predictions &amp;pre, double _dist)</argsstring>
+        <name>DetectedMatrice</name>
+        <param>
+          <type>cv::Rect</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>Predictions &amp;</type>
+          <declname>pre</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_dist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="29" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="29" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_matrice_1af30ec5c5e2ade42dbb6cf6456cf7e18a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const cv::Rect &amp;</type>
+        <definition>const cv::Rect&amp; DetectedMatrice::getObjPos</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="36" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="36" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_matrice_1a5e31961c1ddef7e5c07bcabe30ddfb0e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const Predictions &amp;</type>
+        <definition>const Predictions&amp; DetectedMatrice::getPredictions</definition>
+        <argsstring>() const</argsstring>
+        <name>getPredictions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="40" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_matrice_1ad53cda7581f0bb7a1e5b1adce9e540fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float DetectedMatrice::getClassPrediction</definition>
+        <argsstring>(const std::string &amp;className) const</argsstring>
+        <name>getClassPrediction</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>className</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="44" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="44" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_matrice_1a225c1388ee3f92420fd21efd09ad7a53" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const double &amp;</type>
+        <definition>const double&amp; DetectedMatrice::getDist</definition>
+        <argsstring>() const</argsstring>
+        <name>getDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="48" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="48" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/DetectedObject.h" line="27" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="27" bodyend="57"/>
+    <listofallmembers>
+      <member refid="class_detected_matrice_1af524c8a91c61e074871d33ed102e2961" prot="public" virt="non-virtual"><scope>DetectedMatrice</scope><name>DetectedMatrice</name></member>
+      <member refid="class_detected_matrice_1a3fbb3e0b0870ef85312abc555e30b1e5" prot="private" virt="non-virtual"><scope>DetectedMatrice</scope><name>dist</name></member>
+      <member refid="class_detected_matrice_1ad53cda7581f0bb7a1e5b1adce9e540fa" prot="public" virt="non-virtual"><scope>DetectedMatrice</scope><name>getClassPrediction</name></member>
+      <member refid="class_detected_matrice_1a225c1388ee3f92420fd21efd09ad7a53" prot="public" virt="non-virtual"><scope>DetectedMatrice</scope><name>getDist</name></member>
+      <member refid="class_detected_matrice_1af30ec5c5e2ade42dbb6cf6456cf7e18a" prot="public" virt="non-virtual"><scope>DetectedMatrice</scope><name>getObjPos</name></member>
+      <member refid="class_detected_matrice_1a5e31961c1ddef7e5c07bcabe30ddfb0e" prot="public" virt="non-virtual"><scope>DetectedMatrice</scope><name>getPredictions</name></member>
+      <member refid="class_detected_matrice_1a3b23455ffabecb914a1865f295d0a142" prot="private" virt="non-virtual"><scope>DetectedMatrice</scope><name>objPos</name></member>
+      <member refid="class_detected_matrice_1a78356630f7e23fe757f345bd8f3e2e15" prot="private" virt="non-virtual"><scope>DetectedMatrice</scope><name>preds</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

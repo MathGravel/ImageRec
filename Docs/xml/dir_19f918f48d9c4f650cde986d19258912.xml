@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_19f918f48d9c4f650cde986d19258912" kind="dir">
+    <compoundname>model/recoPlan/PARC/include</compoundname>
+    <innerfile refid="bnflite_8h">bnflite.h</innerfile>
+    <innerfile refid="extended_plan_library_8h">extendedPlanLibrary.h</innerfile>
+    <innerfile refid="plan_library_8h">planLibrary.h</innerfile>
+    <innerfile refid="probability_distribution_8h">probabilityDistribution.h</innerfile>
+    <innerfile refid="rule_8h">rule.h</innerfile>
+    <innerfile refid="solver_8h">solver.h</innerfile>
+    <innerfile refid="test_solver_8h">testSolver.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/"/>
+  </compounddef>
+</doxygen>

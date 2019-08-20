@@ -1,0 +1,88 @@
+.TH "main.cpp" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.cpp \- \fBmain\&.cpp\fP : Function launching the entire project  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <map>\fP
+.br
+\fC#include 'model/RecognitionManager\&.h'\fP
+.br
+\fC#include 'view/PrimaryWindow\&.h'\fP
+.br
+\fC#include 'controller/ManageSourceVideo\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "map< string, string > \fBloadingSetting\fP (string fileSetting)"
+.br
+.RI "Model\&. "
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBmain\&.cpp\fP : Function launching the entire project 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Mathieu Gravel - Edited by Alexandre Gonzalvez 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+25 June 2019
+.RE
+.PP
+Function launching the entire project Create Model, View and Controller Take configuration files in argument 
+.SH "Function Documentation"
+.PP 
+.SS "loadingSetting (string fileSetting)"
+
+.PP
+Model\&. View Controller Function
+.PP
+load setting 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfileSetting\fP : name of the file which contains the setting, he as to be in the same folder than the \fBmain\&.cpp\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+setting : map<string,string> which contain every path and information to use (fisrt String = name_of_information, second String = information) 
+.RE
+.PP
+
+.SS "int main (int argc, char * argv[])"
+Load settings
+.PP
+Display setting in console
+.PP
+Start video acquisition
+.PP
+Create View object (Window if boolean is true) TODO: Window create \fBRecognitionManager\fP when button play is handle (require create a complex window)
+.PP
+Initalize reconnaissance
+.PP
+Start main loop 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

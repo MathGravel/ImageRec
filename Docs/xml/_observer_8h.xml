@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_observer_8h" kind="file" language="C++">
+    <compoundname>Observer.h</compoundname>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includedby refid="_subject_8h" local="yes">controller/Subject.h</includedby>
+    <includedby refid="_manage_source_video_8h" local="yes">controller/ManageSourceVideo.h</includedby>
+    <includedby refid="_recognition_manager_8h" local="yes">model/RecognitionManager.h</includedby>
+    <incdepgraph>
+      <node id="222">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="221">
+        <label>model/Observer.h</label>
+        <link refid="_observer_8h"/>
+        <childnode refid="222" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="224">
+        <label>controller/Subject.h</label>
+        <link refid="_subject_8h_source"/>
+        <childnode refid="225" relation="include">
+        </childnode>
+      </node>
+      <node id="227">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="223">
+        <label>model/Observer.h</label>
+        <link refid="_observer_8h"/>
+        <childnode refid="224" relation="include">
+        </childnode>
+        <childnode refid="225" relation="include">
+        </childnode>
+        <childnode refid="226" relation="include">
+        </childnode>
+      </node>
+      <node id="226">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>controller/ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="226" relation="include">
+        </childnode>
+        <childnode refid="227" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_observer" prot="public">Observer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight></codeline>
+<codeline lineno="7" refid="class_observer" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_observer" kindref="compound">Observer</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_observer_1a88fce56285a1da63ebc78300e4d5fcd4" kindref="member">updateByObservee</ref>(cv::Mat<sp/>imageColor,cv::Mat<sp/>imageDepth)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="model/Observer.h"/>
+  </compounddef>
+</doxygen>

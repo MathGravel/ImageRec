@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Reconnaissance<sp/>de<sp/>plans<sp/>et<sp/>d&apos;activités</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Application<sp/>de<sp/>reconnaissance<sp/>de<sp/>plans<sp/>et<sp/>d&apos;activités<sp/>pour<sp/>un<sp/>robot<sp/>assistant.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Développée<sp/>pour<sp/>un<sp/>projet<sp/>de<sp/>recherche<sp/>du<sp/>[Laboratoire<sp/>de<sp/>recherche<sp/>en<sp/>Gestion,<sp/>Diffusion<sp/>et<sp/>Acquisition<sp/>des<sp/>Connaissances](http://gdac.uqam.ca/)<sp/>(GDAC-LIA)<sp/>de<sp/>l&apos;[Université<sp/>du<sp/>Québec<sp/>à<sp/>Montréal](https://uqam.ca/)<sp/>(UQAM).<sp/>Le<sp/>projet<sp/>est<sp/>porté<sp/>par<sp/>le<sp/>réseau<sp/>de<sp/>recherche<sp/>d&apos;[AGE-WELL](http://agewell-nce.ca/)<sp/>(Aging<sp/>Gracefully<sp/>across<sp/>Environments<sp/>using<sp/>Technology<sp/>to<sp/>Support<sp/>Wellness,<sp/>Engagement<sp/>and<sp/>Long<sp/>Life)<sp/>financé<sp/>par<sp/>les<sp/>[Réseaux<sp/>de<sp/>Centres<sp/>d&apos;Excellence<sp/>du<sp/>Canada](http://www.nce-rce.gc.ca/)<sp/>(Gouvernement<sp/>du<sp/>Canada).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Dépendances</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>C++<sp/>11</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>CMake<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Python<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Qt<sp/>5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>OpenCV<sp/>3</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Intel<sp/>RealSense<sp/>2</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Darknet</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Les<sp/>dépendances<sp/>peuvent<sp/>être<sp/>installées<sp/>en<sp/>exécutant<sp/>le<sp/>script<sp/>suivant<sp/>(10<sp/>Go<sp/>seront<sp/>nécessaires<sp/>pendant<sp/>l&apos;installation)<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>sh<sp/>install.sh</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ce<sp/>programme<sp/>peut<sp/>être<sp/>compilé<sp/>et<sp/>testé<sp/>par<sp/>les<sp/>commandes<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```mkdir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal"><sp/>./ImageRec</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>References</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">...</highlight></codeline>
+<codeline><highlight class="normal">=======</highlight></codeline>
+<codeline><highlight class="normal">L&apos;application<sp/>peut<sp/>être<sp/>lancée<sp/>par<sp/>la<sp/>commande<sp/>suivante<sp/>:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">./src/reconnaissance-plans-activites</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Remerciements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Éric<sp/>Beaudry,<sp/>Professeur<sp/>agrégé<sp/>(UQAM,<sp/>Canada)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Jean<sp/>Massardi,<sp/>Doctorant<sp/>(UQAM,<sp/>Canada)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Mathieu<sp/>Gravel,<sp/>Étudiant<sp/>en<sp/>maîtrise<sp/>(UQAM,<sp/>Canada)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Baptiste<sp/>Gauthier,<sp/>Étudiant<sp/>ingénieur<sp/>(Polytech<sp/>Nantes,<sp/>France)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Philippe<sp/>Billard,<sp/>Étudiant<sp/>ingénieur<sp/>(Exia<sp/>Cesi<sp/>d&apos;Orléans,<sp/>France)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>*<sp/>Guillaume<sp/>Gosset,<sp/>Étudiant<sp/>(IUT<sp/>d&apos;Orsay,<sp/>France)</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

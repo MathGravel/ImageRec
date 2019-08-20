@@ -1,0 +1,70 @@
+\section{bnf\+:\+:\+\_\+\+Parser$<$ U $>$ Class Template Reference}
+\label{classbnf_1_1___parser}\index{bnf\+::\+\_\+\+Parser$<$ U $>$@{bnf\+::\+\_\+\+Parser$<$ U $>$}}
+
+
+Inheritance diagram for bnf\+:\+:\+\_\+\+Parser$<$ U $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classbnf_1_1___parser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for bnf\+:\+:\+\_\+\+Parser$<$ U $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classbnf_1_1___parser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___parser_ac57c83f59cec66d464ddbafd3b9b1347}} 
+{\bfseries \+\_\+\+Parser} (const char $\ast$($\ast$f)(const char $\ast$), std\+::vector$<$ U $>$ $\ast$v)
+\item 
+\mbox{\label{classbnf_1_1___parser_a7b311aedf21877c4b11d13ac5c31a047}} 
+int {\bfseries \+\_\+get\+\_\+result} (U \&u)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___parser_a754b79ca6995630f49a825882c27236f}} 
+void {\bfseries \+\_\+erase} (int low, int up=0)
+\item 
+\mbox{\label{classbnf_1_1___parser_a6d889544a678ade59c9c815fe0f4996a}} 
+virtual std\+::pair$<$ void $\ast$, int $>$ {\bfseries \+\_\+pre\+\_\+call} (void $\ast$callback)
+\item 
+\mbox{\label{classbnf_1_1___parser_a9ec77b1775499d4027944409c5d76d53}} 
+virtual void {\bfseries \+\_\+post\+\_\+call} (std\+::pair$<$ void $\ast$, int $>$ up)
+\item 
+\mbox{\label{classbnf_1_1___parser_a8a7b530150d6d1d47394ac3d722cdc45}} 
+virtual void {\bfseries \+\_\+do\+\_\+call} (std\+::pair$<$ void $\ast$, int $>$ up, void $\ast$callback, const char $\ast$begin, const char $\ast$end, const char $\ast$name)
+\item 
+\mbox{\label{classbnf_1_1___parser_a37cb39a6c1a50c12520b3305e373e898}} 
+virtual void {\bfseries \+\_\+stub\+\_\+call} (const char $\ast$begin, const char $\ast$end, const char $\ast$name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___parser_a3f445fa7138af0c8636db4ff88d3e810}} 
+std\+::vector$<$ U $>$ $\ast$ {\bfseries cntxU}
+\item 
+\mbox{\label{classbnf_1_1___parser_a02e8109a611bf1157929b5c90df08a06}} 
+unsigned int {\bfseries off}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___parser_ad8e6fd2316a4d552ad378a676daf243b}} 
+{\footnotesize template$<$class W $>$ }\\\textbf{ Rule} \& {\bfseries Bind} (\textbf{ Rule} \&\textbf{ rule}, W($\ast$callback)(std\+::vector$<$ W $>$ \&))
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\+P\+A\+R\+C/include/bnflite.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1_lexem" kind="class" language="C++" prot="public">
+    <compoundname>bnf::Lexem</compoundname>
+    <basecompoundref refid="classbnf_1_1___tie" prot="public" virt="non-virtual">bnf::_Tie</basecompoundref>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1_lexem_1ab555bd08f573aad86ad95feb76007c15" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Tie</definition>
+        <argsstring></argsstring>
+        <name>_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="432" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="432" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classbnf_1_1_lexem_1afc4c7e5c2008c9ee50819f5be1e36e30" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+        <definition>Lexem&amp; bnf::Lexem::operator=</definition>
+        <argsstring>(const class Rule &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const class <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="430" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a91f50a15916eb5e84959cdaa671484a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Lexem::Lexem</definition>
+        <argsstring>(const Rule &amp;rule)</argsstring>
+        <name>Lexem</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="431" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1_lexem_1adc34732c5794c9dc0e7287b215d1aefb" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Lexem::Lexem</definition>
+        <argsstring>(Lexem *lxm)</argsstring>
+        <name>Lexem</name>
+        <param>
+          <type><ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> *</type>
+          <declname>lxm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="433" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="433" bodyend="434"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1ad8d44651fcf8e326d3064f76392fa4fd" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int bnf::Lexem::_parse</definition>
+        <argsstring>(_Base *parser) const</argsstring>
+        <name>_parse</name>
+        <reimplements refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8">_parse</reimplements>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="435" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="435" bodyend="450"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a6001a7f84ee1921163fde124d26cb041" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Lexem::Lexem</definition>
+        <argsstring>(const char *literal, bool cs=0)</argsstring>
+        <name>Lexem</name>
+        <param>
+          <type>const char *</type>
+          <declname>literal</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>cs</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="452" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="452" bodyend="462"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a6906f0d7794d8e05b8d5c582fabaf969" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Lexem::Lexem</definition>
+        <argsstring>()</argsstring>
+        <name>Lexem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="463" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="463" bodyend="464"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a2f5fc73ce2bd31e636daea51b80af95d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual bnf::Lexem::~Lexem</definition>
+        <argsstring>()</argsstring>
+        <name>~Lexem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="465" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="465" bodyend="466"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a1fadc96def543467f41dc371adbfad06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Lexem::Lexem</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>Lexem</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="467" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="467" bodyend="468"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1afd4583e3492fddeea0d9a53914a976f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+        <definition>Lexem&amp; bnf::Lexem::operator=</definition>
+        <argsstring>(const Lexem &amp;lexem)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+          <declname>lexem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="469" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="469" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_lexem_1a06fead13730b94041d9487c707bbbd4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+        <definition>Lexem&amp; bnf::Lexem::operator=</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="472" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="472" bodyend="473"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="75">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+      <node id="74">
+        <label>bnf::Lexem</label>
+        <link refid="classbnf_1_1_lexem"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="77">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+      <node id="76">
+        <label>bnf::Lexem</label>
+        <link refid="classbnf_1_1_lexem"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="429" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="428" bodyend="474"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1_lexem_1ad8d44651fcf8e326d3064f76392fa4fd" prot="protected" virt="virtual"><scope>bnf::Lexem</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1_lexem_1ab555bd08f573aad86ad95feb76007c15" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Lexem</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Lexem</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Lexem</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>getName</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>inner</name></member>
+      <member refid="classbnf_1_1_lexem_1a91f50a15916eb5e84959cdaa671484a6" prot="private" virt="non-virtual"><scope>bnf::Lexem</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1_lexem_1adc34732c5794c9dc0e7287b215d1aefb" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1_lexem_1a6001a7f84ee1921163fde124d26cb041" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1_lexem_1a6906f0d7794d8e05b8d5c582fabaf969" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1_lexem_1a1fadc96def543467f41dc371adbfad06" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1_lexem_1afc4c7e5c2008c9ee50819f5be1e36e30" prot="private" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1_lexem_1afd4583e3492fddeea0d9a53914a976f9" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1_lexem_1a06fead13730b94041d9487c707bbbd4e" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::Lexem</scope><name>setName</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::Lexem</scope><name>use</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::Lexem</scope><name>~_Tie</name></member>
+      <member refid="classbnf_1_1_lexem_1a2f5fc73ce2bd31e636daea51b80af95d" prot="public" virt="virtual"><scope>bnf::Lexem</scope><name>~Lexem</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_da6a2f17ea3fc470b7105bb51ec105b1" kind="dir">
+    <compoundname>model/recoActivite/recoAffordance</compoundname>
+    <innerfile refid="_affordance_8cpp">Affordance.cpp</innerfile>
+    <innerfile refid="_affordance_8h">Affordance.h</innerfile>
+    <innerfile refid="_matrice_affordance_8cpp">MatriceAffordance.cpp</innerfile>
+    <innerfile refid="_matrice_affordance_8h">MatriceAffordance.h</innerfile>
+    <innerfile refid="_object_aff_8cpp">ObjectAff.cpp</innerfile>
+    <innerfile refid="_object_aff_8h">ObjectAff.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/"/>
+  </compounddef>
+</doxygen>

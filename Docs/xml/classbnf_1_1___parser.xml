@@ -1,0 +1,295 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1___parser" kind="class" language="C++" prot="public">
+    <compoundname>bnf::_Parser</compoundname>
+    <basecompoundref refid="classbnf_1_1___base" prot="public" virt="non-virtual">bnf::_Base</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>class</type>
+        <declname>U</declname>
+        <defname>U</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classbnf_1_1___parser_1a3f445fa7138af0c8636db4ff88d3e810" prot="protected" static="no" mutable="no">
+        <type>std::vector&lt; U &gt; *</type>
+        <definition>std::vector&lt;U&gt;* bnf::_Parser&lt; U &gt;::cntxU</definition>
+        <argsstring></argsstring>
+        <name>cntxU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="568" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="568" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___parser_1a02e8109a611bf1157929b5c90df08a06" prot="protected" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int bnf::_Parser&lt; U &gt;::off</definition>
+        <argsstring></argsstring>
+        <name>off</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="569" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="569" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1___parser_1a754b79ca6995630f49a825882c27236f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void bnf::_Parser&lt; U &gt;::_erase</definition>
+        <argsstring>(int low, int up=0)</argsstring>
+        <name>_erase</name>
+        <reimplements refid="classbnf_1_1___base_1a24b2c70e93327da9f342c11f7a8a61d1">_erase</reimplements>
+        <param>
+          <type>int</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>up</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="570" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="570" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1a6d889544a678ade59c9c815fe0f4996a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; void *, int &gt;</type>
+        <definition>virtual std::pair&lt;void*, int&gt; bnf::_Parser&lt; U &gt;::_pre_call</definition>
+        <argsstring>(void *callback)</argsstring>
+        <name>_pre_call</name>
+        <reimplements refid="classbnf_1_1___base_1a00e146f614347f5cd256da4972b2b021">_pre_call</reimplements>
+        <param>
+          <type>void *</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="575" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="575" bodyend="579"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1a9ec77b1775499d4027944409c5d76d53" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void bnf::_Parser&lt; U &gt;::_post_call</definition>
+        <argsstring>(std::pair&lt; void *, int &gt; up)</argsstring>
+        <name>_post_call</name>
+        <reimplements refid="classbnf_1_1___base_1ab1a1132dd9a8294a9ec7ae9e9d908f2b">_post_call</reimplements>
+        <param>
+          <type>std::pair&lt; void *, int &gt;</type>
+          <declname>up</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="580" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="580" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1a8a7b530150d6d1d47394ac3d722cdc45" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void bnf::_Parser&lt; U &gt;::_do_call</definition>
+        <argsstring>(std::pair&lt; void *, int &gt; up, void *callback, const char *begin, const char *end, const char *name)</argsstring>
+        <name>_do_call</name>
+        <reimplements refid="classbnf_1_1___base_1ac63cafa36d2b032f030950622b59bde7">_do_call</reimplements>
+        <param>
+          <type>std::pair&lt; void *, int &gt;</type>
+          <declname>up</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="585" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="585" bodyend="593"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1a37cb39a6c1a50c12520b3305e373e898" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void bnf::_Parser&lt; U &gt;::_stub_call</definition>
+        <argsstring>(const char *begin, const char *end, const char *name)</argsstring>
+        <name>_stub_call</name>
+        <reimplements refid="classbnf_1_1___base_1a088e0841175a63af7d6867728fb67857">_stub_call</reimplements>
+        <param>
+          <type>const char *</type>
+          <declname>begin</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>end</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="594" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="594" bodyend="596"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1___parser_1ac57c83f59cec66d464ddbafd3b9b1347" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Parser&lt; U &gt;::_Parser</definition>
+        <argsstring>(const char *(*f)(const char *), std::vector&lt; U &gt; *v)</argsstring>
+        <name>_Parser</name>
+        <param>
+          <type>const char *(*)(const char *)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; U &gt; *</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="598" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="598" bodyend="599"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1aefb21e4a3ac0dbce9cd5d8457afa4a97" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual bnf::_Parser&lt; U &gt;::~_Parser</definition>
+        <argsstring>()</argsstring>
+        <name>~_Parser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="600" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="600" bodyend="601"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___parser_1a7b311aedf21877c4b11d13ac5c31a047" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int bnf::_Parser&lt; U &gt;::_get_result</definition>
+        <argsstring>(U &amp;u)</argsstring>
+        <name>_get_result</name>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="602" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="602" bodyend="604"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1___parser_1ad8e6fd2316a4d552ad378a676daf243b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class W</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule&amp; Bind</definition>
+        <argsstring>(Rule &amp;rule, W(*callback)(std::vector&lt; W &gt; &amp;))</argsstring>
+        <name>Bind</name>
+        <param>
+          <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>W(*)(std::vector&lt; W &gt; &amp;)</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="605" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="19">
+        <label>bnf::_Parser&lt; U &gt;</label>
+        <link refid="classbnf_1_1___parser"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>bnf::_Base</label>
+        <link refid="classbnf_1_1___base"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="21">
+        <label>bnf::_Parser&lt; U &gt;</label>
+        <link refid="classbnf_1_1___parser"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>bnf::_Base</label>
+        <link refid="classbnf_1_1___base"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="566" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="565" bodyend="606"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___base_1aefdb796fdec5b4172924717aa934dc4a" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>_analyze</name></member>
+      <member refid="classbnf_1_1___base_1aabf499c8688286f6be285b89f101b720" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>_Base</name></member>
+      <member refid="classbnf_1_1___parser_1a8a7b530150d6d1d47394ac3d722cdc45" prot="protected" virt="virtual"><scope>bnf::_Parser</scope><name>_do_call</name></member>
+      <member refid="classbnf_1_1___parser_1a754b79ca6995630f49a825882c27236f" prot="protected" virt="virtual"><scope>bnf::_Parser</scope><name>_erase</name></member>
+      <member refid="classbnf_1_1___parser_1a7b311aedf21877c4b11d13ac5c31a047" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>_get_result</name></member>
+      <member refid="classbnf_1_1___parser_1ac57c83f59cec66d464ddbafd3b9b1347" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>_Parser</name></member>
+      <member refid="classbnf_1_1___parser_1a9ec77b1775499d4027944409c5d76d53" prot="protected" virt="virtual"><scope>bnf::_Parser</scope><name>_post_call</name></member>
+      <member refid="classbnf_1_1___parser_1a6d889544a678ade59c9c815fe0f4996a" prot="protected" virt="virtual"><scope>bnf::_Parser</scope><name>_pre_call</name></member>
+      <member refid="classbnf_1_1___parser_1a37cb39a6c1a50c12520b3305e373e898" prot="protected" virt="virtual"><scope>bnf::_Parser</scope><name>_stub_call</name></member>
+      <member refid="classbnf_1_1___base_1a2f5856c7ff0791a7d9b9dbc0fc2c0fa7" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>base_error</name></member>
+      <member refid="classbnf_1_1___base_1a3e28ced9cdb3f0443bcee04031fc49c9" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>base_parser</name></member>
+      <member refid="classbnf_1_1___parser_1ad8e6fd2316a4d552ad378a676daf243b" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>Bind</name></member>
+      <member refid="classbnf_1_1___base_1afbb5aeec84c9cea8874db4d3f6911ce9" prot="protected" virt="non-virtual"><scope>bnf::_Parser</scope><name>catch_error</name></member>
+      <member refid="classbnf_1_1___parser_1a3f445fa7138af0c8636db4ff88d3e810" prot="protected" virt="non-virtual"><scope>bnf::_Parser</scope><name>cntxU</name></member>
+      <member refid="classbnf_1_1___base_1a305816876d6e007b3216289fa5cb763b" prot="public" virt="non-virtual"><scope>bnf::_Parser</scope><name>cntxV</name></member>
+      <member refid="classbnf_1_1___base_1a453778efab1591833f58f9e87ce1847c" prot="protected" virt="non-virtual"><scope>bnf::_Parser</scope><name>level</name></member>
+      <member refid="classbnf_1_1___parser_1a02e8109a611bf1157929b5c90df08a06" prot="protected" virt="non-virtual"><scope>bnf::_Parser</scope><name>off</name></member>
+      <member refid="classbnf_1_1___base_1a2c4c10392aceaaae362f05a10c76ee95" prot="protected" virt="non-virtual"><scope>bnf::_Parser</scope><name>zero_parse</name></member>
+      <member refid="classbnf_1_1___base_1a4ab7c2cf0c4f3422f5bb44763ff41626" prot="public" virt="virtual"><scope>bnf::_Parser</scope><name>~_Base</name></member>
+      <member refid="classbnf_1_1___parser_1aefb21e4a3ac0dbce9cd5d8457afa4a97" prot="public" virt="virtual"><scope>bnf::_Parser</scope><name>~_Parser</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,8 @@
+<map id="model/recoPlan/Policy.h" name="model/recoPlan/Policy.h">
+<area shape="rect" id="node3" href="$_affordance_8h.html" title="Evaluates the position between an Object and the Hand. " alt="" coords="176,80,371,121"/>
+<area shape="rect" id="node10" href="$extended_plan_library_8h_source.html" title="PARC/include/extendedPlan\lLibrary.h" alt="" coords="795,169,983,211"/>
+<area shape="rect" id="node11" href="$plan_library_8h.html" title="planLibrary.h" alt="" coords="596,333,692,360"/>
+<area shape="rect" id="node19" href="$solver_8h_source.html" title="PARC/include/solver.h" alt="" coords="1045,87,1200,114"/>
+<area shape="rect" id="node18" href="$probability_distribution_8h_source.html" title="probabilityDistribution.h" alt="" coords="701,259,859,285"/>
+<area shape="rect" id="node14" href="$rule_8h_source.html" title="rule.h" alt="" coords="903,408,958,435"/>
+</map>

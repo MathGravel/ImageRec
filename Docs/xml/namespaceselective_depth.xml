@@ -1,0 +1,672 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespaceselective_depth" kind="namespace" language="C++">
+    <compoundname>selectiveDepth</compoundname>
+    <innerclass refid="structselective_depth_1_1edge" prot="public">selectiveDepth::edge</innerclass>
+    <innerclass refid="structselective_depth_1_1_region" prot="public">selectiveDepth::Region</innerclass>
+    <innerclass refid="classselective_depth_1_1_universe" prot="public">selectiveDepth::Universe</innerclass>
+    <innerclass refid="structselective_depth_1_1_universe_element" prot="public">selectiveDepth::UniverseElement</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="selective_search_depth_8h_1a162bc66dc9b03cb0ffd84b0054fa7633" prot="public" static="no">
+        <type>std::pair&lt; int, <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &gt;</type>
+        <definition>using selectiveDepth::LabelRegion = typedef std::pair&lt;int, Region&gt;</definition>
+        <argsstring></argsstring>
+        <name>LabelRegion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="683" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="683" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="selective_search_depth_8h_1a4afaf51cb631f792038e112883a70e35" prot="public" static="no">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>using selectiveDepth::Neighbour = typedef std::pair&lt;int, int&gt;</definition>
+        <argsstring></argsstring>
+        <name>Neighbour</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="684" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="684" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="selective_search_depth_8h_1a49d46a2cbb2a606c06203a6e65cf0538" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::square</definition>
+        <argsstring>(double a)</argsstring>
+        <name>square</name>
+        <param>
+          <type>double</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="51" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a52655cdcca012aaa00ab08fbbb7d23d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::diff</definition>
+        <argsstring>(const cv::Mat &amp;img, int x1, int y1, int x2, int y2)</argsstring>
+        <name>diff</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y1</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="54" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1abfde23658adfe0bcc54f7ac3b38f91da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool selectiveDepth::operator&lt;</definition>
+        <argsstring>(const edge &amp;a, const edge &amp;b)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1edge" kindref="compound">edge</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1edge" kindref="compound">edge</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="136" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="136" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a72ec3387fd0a232d3a65f3c2c7fc8dea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calThreshold</definition>
+        <argsstring>(int size, double scale)</argsstring>
+        <name>calThreshold</name>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="142" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="142" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a67ab619fd4ee23fa3f451d3e8dd3fb22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Universe&gt; selectiveDepth::segmentGraph</definition>
+        <argsstring>(int numVertices, int numEdges, std::vector&lt; edge &gt; &amp;edges, double scale)</argsstring>
+        <name>segmentGraph</name>
+        <param>
+          <type>int</type>
+          <declname>numVertices</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numEdges</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structselective_depth_1_1edge" kindref="compound">edge</ref> &gt; &amp;</type>
+          <declname>edges</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="148" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="148" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a9f3b918a44c79448ab48c566cc22734d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Universe&gt; selectiveDepth::segmentation</definition>
+        <argsstring>(const cv::Mat &amp;img, double scale, double sigma, int minSize)</argsstring>
+        <name>segmentation</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigma</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="177" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="177" bodyend="243"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a4f2d11e863bb899c4bdf16c6c08fb0df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void selectiveDepth::visualize</definition>
+        <argsstring>(const cv::Mat &amp;img, std::shared_ptr&lt; Universe &gt; universe)</argsstring>
+        <name>visualize</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="246" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="246" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1aced00e8204193801c8ea1d4ee699ef92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;Universe&gt; selectiveDepth::generateSegments</definition>
+        <argsstring>(const cv::Mat &amp;img, double scale, double sigma, int minSize)</argsstring>
+        <name>generateSegments</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigma</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="329" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="329" bodyend="336"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a211fcf384fbb32f84c41e8979d6848af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimOfColour</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2)</argsstring>
+        <name>calcSimOfColour</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="339" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="339" bodyend="351"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a971e5df3ff10b87a5991fe9e42e903de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimOfTexture</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2)</argsstring>
+        <name>calcSimOfTexture</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="354" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="354" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a3ea7077c88985d3bbddd4232a35cdaec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimOfSize</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2, int imSize)</argsstring>
+        <name>calcSimOfSize</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>imSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="369" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="369" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1af7b6a258d05e064e1a1bcd98637caefc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimOfRect</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2, int imSize)</argsstring>
+        <name>calcSimOfRect</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>imSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="375" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="375" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1ae83c614bad63d831412f4ba4ccd5c082" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimofDepth</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2, int imSize)</argsstring>
+        <name>calcSimofDepth</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>imSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="380" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="380" bodyend="392"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a4e2e226a71920b45c0fdd8dcb2a158f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double selectiveDepth::calcSimilarity</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2, int imSize)</argsstring>
+        <name>calcSimilarity</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>imSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="394" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="394" bodyend="397"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a18d92d3674dd97ba27f49a30e94e0dfb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::calcColourHist</definition>
+        <argsstring>(const cv::Mat &amp;img, std::shared_ptr&lt; Universe &gt; universe, int label)</argsstring>
+        <name>calcColourHist</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="401" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="401" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1af0a6c7c8f6e0b675a7c59e7d3d35dba3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int selectiveDepth::calcSize</definition>
+        <argsstring>(const cv::Mat &amp;img, std::shared_ptr&lt; Universe &gt; universe, int label)</argsstring>
+        <name>calcSize</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="461" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="461" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1ad6646eeba1ac0847b946758cdaaed4a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat selectiveDepth::calcTextureGradient</definition>
+        <argsstring>(const cv::Mat &amp;img)</argsstring>
+        <name>calcTextureGradient</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="480" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="480" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a83b895f3b17d6d4af5d0d09b8a6f6120" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::calcTextureHist</definition>
+        <argsstring>(const cv::Mat &amp;img, const cv::Mat &amp;gradient, std::shared_ptr&lt; Universe &gt; universe, int label)</argsstring>
+        <name>calcTextureHist</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>gradient</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="494" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="494" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1afc62667ccc666a4669cffb6ce281ace7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::calcDepthHist</definition>
+        <argsstring>(const cv::Mat &amp;imgDepth, std::shared_ptr&lt; Universe &gt; universe, int label)</argsstring>
+        <name>calcDepthHist</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>imgDepth</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="563" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="563" bodyend="620"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a1aa57dc1c3de27011522230a48e81d93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::map&lt; int, <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &gt;</type>
+        <definition>std::map&lt;int, Region&gt; selectiveDepth::extractRegions</definition>
+        <argsstring>(const cv::Mat &amp;img, const cv::Mat &amp;depthImg, std::shared_ptr&lt; Universe &gt; universe)</argsstring>
+        <name>extractRegions</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depthImg</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classselective_depth_1_1_universe" kindref="compound">Universe</ref> &gt;</type>
+          <declname>universe</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="623" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="623" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a0c22ff70bc633a8d4965f9a70a05e49c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool selectiveDepth::isIntersecting</definition>
+        <argsstring>(const Region &amp;a, const Region &amp;b)</argsstring>
+        <name>isIntersecting</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="677" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="677" bodyend="680"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1a7ae7ddaca2c19b83b4e29c6a5c223574" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; Neighbour &gt;</type>
+        <definition>std::vector&lt;Neighbour&gt; selectiveDepth::extractNeighbours</definition>
+        <argsstring>(const std::map&lt; int, Region &gt; &amp;R)</argsstring>
+        <name>extractNeighbours</name>
+        <param>
+          <type>const std::map&lt; int, <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &gt; &amp;</type>
+          <declname>R</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="687" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="687" bodyend="707"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1abaaa62034c153d35164cb58fc4f474de" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::merge</definition>
+        <argsstring>(const std::vector&lt; float &gt; &amp;a, const std::vector&lt; float &gt; &amp;b, int asize, int bsize)</argsstring>
+        <name>merge</name>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>asize</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="710" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="710" bodyend="721"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1aceaf55ec40299dd64f3bed9506e54fbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref></type>
+        <definition>Region selectiveDepth::mergeRegions</definition>
+        <argsstring>(const Region &amp;r1, const Region &amp;r2)</argsstring>
+        <name>mergeRegions</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r1</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>r2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="724" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="724" bodyend="741"/>
+      </memberdef>
+      <memberdef kind="function" id="selective_search_depth_8h_1adce14067984af8b11c5d64824a7f14bf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; cv::Rect &gt;</type>
+        <definition>std::vector&lt;cv::Rect&gt; selectiveDepth::selectiveSearchDepth</definition>
+        <argsstring>(const cv::Mat &amp;img, const cv::Mat &amp;depth, double scale=1.0, double sigma=0.8, int minSize=50, int smallest=1000, int largest=270000, double distorted=5.0)</argsstring>
+        <name>selectiveSearchDepth</name>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type>const cv::Mat &amp;</type>
+          <declname>depth</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>scale</declname>
+          <defval>1.0</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>sigma</declname>
+          <defval>0.8</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>minSize</declname>
+          <defval>50</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>smallest</declname>
+          <defval>1000</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>largest</declname>
+          <defval>270000</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>distorted</declname>
+          <defval>5.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="744" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="744" bodyend="840"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="49" column="1"/>
+  </compounddef>
+</doxygen>

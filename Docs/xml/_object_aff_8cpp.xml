@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_object_aff_8cpp" kind="file" language="C++">
+    <compoundname>ObjectAff.cpp</compoundname>
+    <includes refid="_object_aff_8h" local="yes">ObjectAff.h</includes>
+    <incdepgraph>
+      <node id="283">
+        <label>list</label>
+      </node>
+      <node id="287">
+        <label>MatriceAffordance.h</label>
+        <link refid="_matrice_affordance_8h"/>
+        <childnode refid="288" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+      </node>
+      <node id="290">
+        <label>cmath</label>
+      </node>
+      <node id="277">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="284">
+        <label>../recoImage/DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="285" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+      </node>
+      <node id="285">
+        <label>map</label>
+      </node>
+      <node id="275">
+        <label>model/recoActivite/recoAffordance/ObjectAff.cpp</label>
+        <link refid="_object_aff_8cpp"/>
+        <childnode refid="276" relation="include">
+        </childnode>
+      </node>
+      <node id="276">
+        <label>ObjectAff.h</label>
+        <link refid="_object_aff_8h"/>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+        <childnode refid="287" relation="include">
+        </childnode>
+      </node>
+      <node id="281">
+        <label>ctime</label>
+      </node>
+      <node id="289">
+        <label>stack</label>
+      </node>
+      <node id="278">
+        <label>vector</label>
+      </node>
+      <node id="282">
+        <label>sstream</label>
+      </node>
+      <node id="288">
+        <label>iostream</label>
+      </node>
+      <node id="279">
+        <label>unordered_map</label>
+      </node>
+      <node id="280">
+        <label>Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="283" relation="include">
+        </childnode>
+      </node>
+      <node id="286">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_object_aff_8cpp_1ac788d23fd25e97b5fefde6e70d157f39" prot="public" static="no" mutable="no">
+        <type>const String</type>
+        <definition>const String NULLNAME</definition>
+        <argsstring></argsstring>
+        <name>NULLNAME</name>
+        <initializer>= &quot;NULL&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.cpp" line="2" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="2" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_object_aff_8cpp_1a9a5eda267e9500a0729f430e20a8ed54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::istream &amp;</type>
+        <definition>std::istream&amp; operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;is, ObjectAffordances &amp;objaff)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref> &amp;</type>
+          <declname>objaff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.cpp" line="73" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_object_aff_8h" kindref="compound">ObjectAff.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>String<sp/>NULLNAME<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;NULL&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_object_affordances_1a5b542eef939819cd120bbe0a63b32182" kindref="member">ObjectAffordances::ObjectAffordances</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numberClasses)<sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>numClasses<sp/>=<sp/>numberClasses;<sp/></highlight><highlight class="comment">//what<sp/>is<sp/>classes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>frameCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>nbClasses<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//what<sp/>is<sp/>classes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//currentAff<sp/>=<sp/>false;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_object_affordances_1a9bd8059744b50263d97fde3409d7fde9" kindref="member">ObjectAffordances::clearCurrentAffordances</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>affordances.clear();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>frameCount<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">std::vector&lt;AffordanceTime*&gt;<sp/><ref refid="class_object_affordances_1af8acefd33e80ca5566171e9590fac2e5" kindref="member">ObjectAffordances::findAffordances</ref>(<ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>&amp;regions,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>&amp;hands,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref><sp/>&amp;objectMat,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeLastValue)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>VAL<sp/>=<sp/>100;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//currentAff<sp/>=<sp/>false;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>frameCount++;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AffordanceTime*&gt;<sp/>currentAffordances;</highlight><highlight class="comment">//vector<sp/>of<sp/>AffordanceTime<sp/>in<sp/>which<sp/>the<sp/>times<sp/>of<sp/>affordance<sp/>will<sp/>be<sp/>stored.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>obj<sp/>:<sp/>regions)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>hand<sp/>:<sp/>hands)<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>objFreq<sp/>=<sp/>objectMat.getFrequence(obj.getObjName());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>dist<sp/>=<sp/>sqrt(<sp/>pow(<sp/>(<sp/>(obj.getObjPos().y+obj.getObjPos().height/2)<sp/>-<sp/>(hand.getObjPos().y+hand.getObjPos().height/2)<sp/>),2)<sp/>+<sp/>pow(<sp/>(<sp/>(obj.getObjPos().x+obj.getObjPos().width/2)<sp/>-<sp/>(hand.getObjPos().x+hand.getObjPos().width/2)<sp/>),2));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((obj.getObjPos()<sp/>&amp;<sp/>hand.getObjPos()).area()<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>abs(obj.getDist()-hand.getDist())&lt;0.01<sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*||<sp/>dist&lt;VAL*/</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>prob=objectMat.getFrequence(obj.getObjName());</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>prob=objectMat.<ref refid="class_matrice_affordance_1a8627ac21309fadc468b7f00941166043" kindref="member">probCalculation</ref>(obj.getObjName(),obj.getProb());</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>aff<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>(obj.getObjName(),0,obj.getObjPos(),prob,obj.getDist());</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>*<sp/>currentAffordance<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>(*aff,frameCount);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordances.push_back(currentAffordance);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(currentAffordances.empty())</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>nullFreq<sp/>=<sp/>objectMat.getFrequence(NULLNAME);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nullFreq<sp/>=<sp/>objectMat.<ref refid="class_matrice_affordance_1a8627ac21309fadc468b7f00941166043" kindref="member">probCalculation</ref>(NULLNAME,0.45);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>aff<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>(NULLNAME,0,cv::Rect(),nullFreq,0);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>*<sp/>currentAffordance<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>(*aff,frameCount);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout&lt;&lt;&quot;Il<sp/>y<sp/>a<sp/>une<sp/>affordance<sp/>avec<sp/>:<sp/>&quot;&lt;&lt;aff-&gt;getName()&lt;&lt;<sp/>&quot;<sp/>avec<sp/>une<sp/>proba<sp/>:<sp/>&quot;&lt;&lt;aff-&gt;getObjectProbability()<sp/>&lt;&lt;std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordances.push_back(currentAffordance);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>objectMat.<ref refid="class_matrice_affordance_1a8c313fa68aa813a1b4e3f40521098774" kindref="member">update</ref>(currentAffordances,<sp/>removeLastValue);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>currentAffordances;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">std::vector&lt;AffordanceTime*&gt;<sp/><ref refid="class_object_affordances_1a61c42ae31ceaac32ccfb86200b75a6a3" kindref="member">ObjectAffordances::addNull</ref>(<ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref><sp/>&amp;objectMat,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeLastValue){</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;AffordanceTime*&gt;<sp/>currentAffordances;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>nullFreq<sp/>=<sp/>objectMat.<ref refid="class_matrice_affordance_1a8627ac21309fadc468b7f00941166043" kindref="member">probCalculation</ref>(NULLNAME,0.40);<sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>aff<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>(NULLNAME,0,cv::Rect(),nullFreq,0);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>*<sp/>currentAffordance<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>(*aff,frameCount);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordances.push_back(currentAffordance);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objectMat.<ref refid="class_matrice_affordance_1a8c313fa68aa813a1b4e3f40521098774" kindref="member">update</ref>(currentAffordances,<sp/>removeLastValue);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>currentAffordances;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">ObjectAffordances::~ObjectAffordances()<sp/>{}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal">std::istream<sp/>&amp;<ref refid="class_object_affordances_1aa3b4883534360440aa3e598a3da82eb0" kindref="member">operator&gt;&gt;</ref>(std::istream<sp/>&amp;is,<sp/><ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref><sp/>&amp;objaff)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>is;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="model/recoActivite/recoAffordance/ObjectAff.cpp"/>
+  </compounddef>
+</doxygen>

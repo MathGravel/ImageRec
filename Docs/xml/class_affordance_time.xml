@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_affordance_time" kind="class" language="C++" prot="public">
+    <compoundname>AffordanceTime</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_affordance_time_1a64e7d74dc6288f0fe8d80ae18d1b6f0c" prot="private" static="no" mutable="no">
+        <type><ref refid="class_affordance" kindref="compound">Affordance</ref></type>
+        <definition>Affordance AffordanceTime::affordance</definition>
+        <argsstring></argsstring>
+        <name>affordance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="238" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_time_1a70112c688cd30bbdf70fe592c6271b8c" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double AffordanceTime::startTime</definition>
+        <argsstring></argsstring>
+        <name>startTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="239" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_time_1a055563d4086b3cf9ceb39ae4d14a1151" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double AffordanceTime::currentTime</definition>
+        <argsstring></argsstring>
+        <name>currentTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="240" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="240" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_time_1af6a087e78157c4525ecc9c33696ed29c" prot="private" static="no" mutable="no">
+        <type>std::list&lt; int &gt;</type>
+        <definition>std::list&lt;int&gt; AffordanceTime::times</definition>
+        <argsstring></argsstring>
+        <name>times</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="241" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_affordance_time_1abe21e5e6200ceca2a4fd61498b1c5640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AffordanceTime::AffordanceTime</definition>
+        <argsstring>()</argsstring>
+        <name>AffordanceTime</name>
+        <briefdescription>
+<para>Constructor of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="133" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a550d81ec8dc01717f6f3906d40022398" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>AffordanceTime::AffordanceTime</definition>
+        <argsstring>(Affordance aff, int frameCount)</argsstring>
+        <name>AffordanceTime</name>
+        <param>
+          <type><ref refid="class_affordance" kindref="compound">Affordance</ref></type>
+          <declname>aff</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frameCount</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_affordance" kindref="compound">Affordance</ref> : Object of type <ref refid="class_affordance" kindref="compound">Affordance</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>frameCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int : Frame time at the creation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="141" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1ad8af5d283df25c5d3cfff186cde9abcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>AffordanceTime::markCurrentInteractions</definition>
+        <argsstring>(double dist, int frameCount)</argsstring>
+        <name>markCurrentInteractions</name>
+        <param>
+          <type>double</type>
+          <declname>dist</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frameCount</declname>
+        </param>
+        <briefdescription>
+<para>Updates the <ref refid="class_affordance" kindref="compound">Affordance</ref> object during an interaction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the <ref refid="class_affordance" kindref="compound">Affordance</ref> object, called during an interaction Updates the current time and adds the frame time of the interaction <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_affordance" kindref="compound">Affordance</ref> : Object of type <ref refid="class_affordance" kindref="compound">Affordance</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>frameCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int : Frame time at the creation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="151" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="63" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a8a3c00c202045f18c7a0f50beb049916" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>AffordanceTime::markCurrentInteractions</definition>
+        <argsstring>(double dist, cv::Rect pos, double prob, int frameCount)</argsstring>
+        <name>markCurrentInteractions</name>
+        <param>
+          <type>double</type>
+          <declname>dist</declname>
+        </param>
+        <param>
+          <type>cv::Rect</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>prob</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>frameCount</declname>
+        </param>
+        <briefdescription>
+<para>Updates the <ref refid="class_affordance" kindref="compound">Affordance</ref> object during an interaction. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the <ref refid="class_affordance" kindref="compound">Affordance</ref> object, called during an interaction Updates the current time and adds the frame time of the interaction Sets the <ref refid="class_affordance" kindref="compound">Affordance</ref> object&apos;s position and its probability to correspond <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_affordance" kindref="compound">Affordance</ref> : Object of type <ref refid="class_affordance" kindref="compound">Affordance</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>frameCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>int : Frame time at the creation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="162" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="69" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a058273ed5117818c10adc82c1c489412" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double AffordanceTime::getInteractionTime</definition>
+        <argsstring>()</argsstring>
+        <name>getInteractionTime</name>
+        <briefdescription>
+<para>getInteractionTime </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="168" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="168" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1aef9d493b599b2d559a654e4a83596d3a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double AffordanceTime::getStartTime</definition>
+        <argsstring>()</argsstring>
+        <name>getStartTime</name>
+        <briefdescription>
+<para>getStartTime </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="176" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="176" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a4fcf18832933872e1a8a272fc089a97a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_affordance" kindref="compound">Affordance</ref> &amp;</type>
+        <definition>Affordance&amp; AffordanceTime::getAffordance</definition>
+        <argsstring>()</argsstring>
+        <name>getAffordance</name>
+        <briefdescription>
+<para>getAffordance </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="185" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="185" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1af439cdc87988e29bbae0a036c37dc626" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string AffordanceTime::getName</definition>
+        <argsstring>() const</argsstring>
+        <name>getName</name>
+        <briefdescription>
+<para>getName </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="193" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="193" bodyend="195"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a3290159565dbab9f17e94a59c3e9ffcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int AffordanceTime::getNumberOfOccurences</definition>
+        <argsstring>()</argsstring>
+        <name>getNumberOfOccurences</name>
+        <briefdescription>
+<para>getNumberOfOccurences </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="201" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="201" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1ae822b9a1dd506d239476a71f1a4140c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>AffordanceTime::clean</definition>
+        <argsstring>()</argsstring>
+        <name>clean</name>
+        <briefdescription>
+<para>Cleans the time attribute. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="209" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="75" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a53f4750b6f9376cb38c4c88597a0e930" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void AffordanceTime::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="210" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="210" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a115480f9cced506f442f100e1f3ca77d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool AffordanceTime::checkAffName</definition>
+        <argsstring>(const std::string className) const</argsstring>
+        <name>checkAffName</name>
+        <param>
+          <type>const std::string</type>
+          <declname>className</declname>
+        </param>
+        <briefdescription>
+<para>checkAffName </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>className</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="217" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1af4afa25a0a0b19c51f206f7a568d458a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>AffordanceTime::operator==</definition>
+        <argsstring>(const AffordanceTime &amp;autre)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> &amp;</type>
+          <declname>autre</declname>
+        </param>
+        <briefdescription>
+<para>Overload of the &apos;==&apos; operator for two <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if this == &apos;autre&apos; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="226" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="93" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_time_1a2b8943725f1f144369530490599ea421" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>AffordanceTime::operator&lt;</definition>
+        <argsstring>(const AffordanceTime &amp;autre)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> &amp;</type>
+          <declname>autre</declname>
+        </param>
+        <briefdescription>
+<para>Overload of the &apos;&lt;&apos; operator for two <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if this &lt; &apos;autre&apos; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="233" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="99" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_affordance_time_1ac4311c6b3409799833f5855b9c10b18f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;o, const AffordanceTime a)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="246" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="246" bodyend="248"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/Affordance.h" line="125" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="125" bodyend="250"/>
+    <listofallmembers>
+      <member refid="class_affordance_time_1a64e7d74dc6288f0fe8d80ae18d1b6f0c" prot="private" virt="non-virtual"><scope>AffordanceTime</scope><name>affordance</name></member>
+      <member refid="class_affordance_time_1abe21e5e6200ceca2a4fd61498b1c5640" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>AffordanceTime</name></member>
+      <member refid="class_affordance_time_1a550d81ec8dc01717f6f3906d40022398" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>AffordanceTime</name></member>
+      <member refid="class_affordance_time_1a115480f9cced506f442f100e1f3ca77d" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>checkAffName</name></member>
+      <member refid="class_affordance_time_1ae822b9a1dd506d239476a71f1a4140c2" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>clean</name></member>
+      <member refid="class_affordance_time_1a055563d4086b3cf9ceb39ae4d14a1151" prot="private" virt="non-virtual"><scope>AffordanceTime</scope><name>currentTime</name></member>
+      <member refid="class_affordance_time_1a4fcf18832933872e1a8a272fc089a97a" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>getAffordance</name></member>
+      <member refid="class_affordance_time_1a058273ed5117818c10adc82c1c489412" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>getInteractionTime</name></member>
+      <member refid="class_affordance_time_1af439cdc87988e29bbae0a036c37dc626" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>getName</name></member>
+      <member refid="class_affordance_time_1a3290159565dbab9f17e94a59c3e9ffcf" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>getNumberOfOccurences</name></member>
+      <member refid="class_affordance_time_1aef9d493b599b2d559a654e4a83596d3a" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>getStartTime</name></member>
+      <member refid="class_affordance_time_1ad8af5d283df25c5d3cfff186cde9abcf" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>markCurrentInteractions</name></member>
+      <member refid="class_affordance_time_1a8a3c00c202045f18c7a0f50beb049916" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>markCurrentInteractions</name></member>
+      <member refid="class_affordance_time_1a2b8943725f1f144369530490599ea421" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>operator&lt;</name></member>
+      <member refid="class_affordance_time_1ac4311c6b3409799833f5855b9c10b18f" prot="private" virt="non-virtual"><scope>AffordanceTime</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_affordance_time_1af4afa25a0a0b19c51f206f7a568d458a" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>operator==</name></member>
+      <member refid="class_affordance_time_1a53f4750b6f9376cb38c4c88597a0e930" prot="public" virt="non-virtual"><scope>AffordanceTime</scope><name>reset</name></member>
+      <member refid="class_affordance_time_1a70112c688cd30bbdf70fe592c6271b8c" prot="private" virt="non-virtual"><scope>AffordanceTime</scope><name>startTime</name></member>
+      <member refid="class_affordance_time_1af6a087e78157c4525ecc9c33696ed29c" prot="private" virt="non-virtual"><scope>AffordanceTime</scope><name>times</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

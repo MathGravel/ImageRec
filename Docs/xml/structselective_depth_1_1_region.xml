@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structselective_depth_1_1_region" kind="struct" language="C++" prot="public">
+    <compoundname>selectiveDepth::Region</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1a11936f5e3d03b380f1595f49420e39ed" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int selectiveDepth::Region::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="279" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="279" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1acd1a7d83bb4732aa745f86717bdeb680" prot="public" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect selectiveDepth::Region::rect</definition>
+        <argsstring></argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="280" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="280" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1a1f2e7d85d30ddfb0a8705796ff2afaea" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; int &gt;</type>
+        <definition>std::vector&lt;int&gt; selectiveDepth::Region::labels</definition>
+        <argsstring></argsstring>
+        <name>labels</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="281" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1a56fe4fb764ef369ef10559807663a4d8" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::Region::colourHist</definition>
+        <argsstring></argsstring>
+        <name>colourHist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="282" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="282" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1a423f4dd693b66de386f4a7470c567557" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::Region::depthHist</definition>
+        <argsstring></argsstring>
+        <name>depthHist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="283" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="283" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1_region_1a60db1050fdd57c5803c50405fdb3ea1d" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; float &gt;</type>
+        <definition>std::vector&lt;float&gt; selectiveDepth::Region::textureHist</definition>
+        <argsstring></argsstring>
+        <name>textureHist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="284" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="284" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structselective_depth_1_1_region_1a495f38d228220b0041e4ba9843827592" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Region::Region</definition>
+        <argsstring>()</argsstring>
+        <name>Region</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="286" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="286" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="structselective_depth_1_1_region_1a5d659fccd0750c226b4fc63821ced175" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Region::Region</definition>
+        <argsstring>(const cv::Rect &amp;rect, int label)</argsstring>
+        <name>Region</name>
+        <param>
+          <type>const cv::Rect &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>label</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="288" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="288" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="structselective_depth_1_1_region_1aac63503bd4bb216501ea003277d83147" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Region::Region</definition>
+        <argsstring>(const cv::Rect &amp;rect, int size, const std::vector&lt; float &gt; &amp;&amp;colourHist, const std::vector&lt; float &gt; &amp;&amp;textureHist, const std::vector&lt; float &gt; &amp;&amp;depthHist, const std::vector&lt; int &gt; &amp;&amp;labels)</argsstring>
+        <name>Region</name>
+        <param>
+          <type>const cv::Rect &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;&amp;</type>
+          <declname>colourHist</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;&amp;</type>
+          <declname>textureHist</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;&amp;</type>
+          <declname>depthHist</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; int &gt; &amp;&amp;</type>
+          <declname>labels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="293" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="293" bodyend="302"/>
+      </memberdef>
+      <memberdef kind="function" id="structselective_depth_1_1_region_1aa8b1558d6089c3f1a4b57fef0f7b388e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+        <definition>Region&amp; selectiveDepth::Region::operator=</definition>
+        <argsstring>(const Region &amp;region)=default</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="304" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structselective_depth_1_1_region_1a77d71d191f85c9d85406531fd77278b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;</type>
+        <definition>Region&amp; selectiveDepth::Region::operator=</definition>
+        <argsstring>(Region &amp;&amp;region) noexcept</argsstring>
+        <name>operator=</name>
+        <param>
+          <type><ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;&amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="306" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="306" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="structselective_depth_1_1_region_1ad51caeb8db9aaa3f1b4bc29190fbd4be" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Region::Region</definition>
+        <argsstring>(Region &amp;&amp;region) noexcept</argsstring>
+        <name>Region</name>
+        <param>
+          <type><ref refid="structselective_depth_1_1_region" kindref="compound">Region</ref> &amp;&amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="322" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="322" bodyend="325"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="278" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="277" bodyend="326"/>
+    <listofallmembers>
+      <member refid="structselective_depth_1_1_region_1a56fe4fb764ef369ef10559807663a4d8" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>colourHist</name></member>
+      <member refid="structselective_depth_1_1_region_1a423f4dd693b66de386f4a7470c567557" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>depthHist</name></member>
+      <member refid="structselective_depth_1_1_region_1a1f2e7d85d30ddfb0a8705796ff2afaea" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>labels</name></member>
+      <member refid="structselective_depth_1_1_region_1aa8b1558d6089c3f1a4b57fef0f7b388e" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>operator=</name></member>
+      <member refid="structselective_depth_1_1_region_1a77d71d191f85c9d85406531fd77278b8" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>operator=</name></member>
+      <member refid="structselective_depth_1_1_region_1acd1a7d83bb4732aa745f86717bdeb680" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>rect</name></member>
+      <member refid="structselective_depth_1_1_region_1a495f38d228220b0041e4ba9843827592" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>Region</name></member>
+      <member refid="structselective_depth_1_1_region_1a5d659fccd0750c226b4fc63821ced175" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>Region</name></member>
+      <member refid="structselective_depth_1_1_region_1aac63503bd4bb216501ea003277d83147" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>Region</name></member>
+      <member refid="structselective_depth_1_1_region_1ad51caeb8db9aaa3f1b4bc29190fbd4be" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>Region</name></member>
+      <member refid="structselective_depth_1_1_region_1a11936f5e3d03b380f1595f49420e39ed" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>size</name></member>
+      <member refid="structselective_depth_1_1_region_1a60db1050fdd57c5803c50405fdb3ea1d" prot="public" virt="non-virtual"><scope>selectiveDepth::Region</scope><name>textureHist</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

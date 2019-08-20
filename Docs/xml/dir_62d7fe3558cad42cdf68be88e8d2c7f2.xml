@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_62d7fe3558cad42cdf68be88e8d2c7f2" kind="dir">
+    <compoundname>model/recoPlan/PARC/Plan_Library</compoundname>
+    <innerfile refid="extended_plan_library_8cpp">extendedPlanLibrary.cpp</innerfile>
+    <innerfile refid="plan_library_8cpp">planLibrary.cpp</innerfile>
+    <innerfile refid="probability_distribution_8cpp">probabilityDistribution.cpp</innerfile>
+    <innerfile refid="rule_8cpp">rule.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/Plan_Library/"/>
+  </compounddef>
+</doxygen>

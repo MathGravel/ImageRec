@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_video_feed_types_8h" kind="file" language="C++">
+    <compoundname>VideoFeedTypes.h</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4" prot="public" static="no">
+        <name>VideoFeedTypes</name>
+        <enumvalue id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4ae60ae31f67ab883c746bb71c7a145c18" prot="public">
+          <name>VIDEO</name>
+          <initializer>=0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4a70791f2e967e6178b27cfea0f11b7652" prot="public">
+          <name>REALSENSE</name>
+          <initializer>=1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4a5501604c0f58e7776dbbc194b507a683" prot="public">
+          <name>KINECT</name>
+          <initializer>=2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4aa00da19991b570b11fb3b5d435a5d1cc" prot="public">
+          <name>WEBCAM</name>
+          <initializer>=3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="_video_feed_types_8h_1ad4c8227cbf21bdf3977f9f885dd197e4ab50339a10e1de285ac99d4c3990b8693" prot="public">
+          <name>NONE</name>
+          <initializer>=4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoFeedTypes.h" line="4" column="1" bodyfile="controller/sources/VideoFeedTypes.h" bodystart="4" bodyend="4"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VIDEOFEEDTYPES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VIDEOFEEDTYPES_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>VideoFeedTypes<sp/>{VIDEO=0,REALSENSE=1,KINECT=2,WEBCAM=3,NONE=4};</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//VIDEOFEEDTYPES_H</highlight></codeline>
+    </programlisting>
+    <location file="controller/sources/VideoFeedTypes.h"/>
+  </compounddef>
+</doxygen>

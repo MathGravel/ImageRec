@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="probability_distribution_8h" kind="file" language="C++">
+    <compoundname>probabilityDistribution.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="no">unordered_map</includes>
+    <includes refid="plan_library_8h" local="yes">planLibrary.h</includes>
+    <includedby refid="extended_plan_library_8h" local="yes">model/recoPlan/PARC/include/extendedPlanLibrary.h</includedby>
+    <includedby refid="probability_distribution_8cpp" local="yes">model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp</includedby>
+    <incdepgraph>
+      <node id="694">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="695" relation="include">
+        </childnode>
+        <childnode refid="696" relation="include">
+        </childnode>
+        <childnode refid="697" relation="include">
+        </childnode>
+      </node>
+      <node id="692">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="693" relation="include">
+        </childnode>
+        <childnode refid="694" relation="include">
+        </childnode>
+      </node>
+      <node id="693">
+        <label>string</label>
+      </node>
+      <node id="696">
+        <label>map</label>
+      </node>
+      <node id="690">
+        <label>unordered_set</label>
+      </node>
+      <node id="695">
+        <label>vector</label>
+      </node>
+      <node id="697">
+        <label>utility</label>
+      </node>
+      <node id="688">
+        <label>model/recoPlan/PARC/include/probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h"/>
+        <childnode refid="689" relation="include">
+        </childnode>
+        <childnode refid="690" relation="include">
+        </childnode>
+        <childnode refid="691" relation="include">
+        </childnode>
+        <childnode refid="692" relation="include">
+        </childnode>
+      </node>
+      <node id="689">
+        <label>iostream</label>
+      </node>
+      <node id="691">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="703">
+        <label>model/recoPlan/PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+      </node>
+      <node id="700">
+        <label>model/recoPlan/Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="701" relation="include">
+        </childnode>
+      </node>
+      <node id="699">
+        <label>model/recoPlan/PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h_source"/>
+        <childnode refid="700" relation="include">
+        </childnode>
+        <childnode refid="703" relation="include">
+        </childnode>
+        <childnode refid="704" relation="include">
+        </childnode>
+      </node>
+      <node id="702">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="698">
+        <label>model/recoPlan/PARC/include/probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h"/>
+        <childnode refid="699" relation="include">
+        </childnode>
+      </node>
+      <node id="704">
+        <label>model/recoPlan/PARC/include/testSolver.h</label>
+        <link refid="test_solver_8h_source"/>
+      </node>
+      <node id="701">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="702" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classprobability_distribution" prot="public">probabilityDistribution</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="10"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_set&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unordered_map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="plan_library_8h" kindref="compound">planLibrary.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PROBABILITYDISTRIBUTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROBABILITYDISTRIBUTION_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classprobability_distribution" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref>(unordered_map&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>unordered_map&lt;int,float&gt;&gt;<sp/>_distribution);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref>(<ref refid="classplan_library" kindref="compound">planLibrary</ref>&amp;<sp/>_pl);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref>(unordered_set&lt;int&gt;<sp/>_terminals,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>noise<sp/>=0.0);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isValid()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>RNC(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setProb(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>primitive,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>element,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>probability);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setNoise(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Prct);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>unordered_map&lt;int,<sp/>unordered_map&lt;int,float&gt;&gt;&amp;<sp/>getDistribution()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distribution;};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unordered_map&lt;int,<sp/>unordered_map&lt;int,float&gt;&gt;<sp/>distribution;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>PROBABILITYDISTRIBUTION_H</highlight></codeline>
+    </programlisting>
+    <location file="model/recoPlan/PARC/include/probabilityDistribution.h"/>
+  </compounddef>
+</doxygen>

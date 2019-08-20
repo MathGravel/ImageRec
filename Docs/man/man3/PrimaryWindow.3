@@ -1,0 +1,69 @@
+.TH "PrimaryWindow" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+PrimaryWindow
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPrimaryWindow\fP (bool display)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "void \fBupdateView\fP (\fBActivityRegion\fP *act, std::vector< \fBAffordanceTime\fP *> currentAffordance)"
+.br
+.RI "update View "
+.ti -1c
+.RI "void \fBtreatPicture\fP (\fBActivityRegion\fP *act, std::vector< \fBAffordanceTime\fP *> currentAffordance)"
+.br
+.RI "draw rectangle over hands and "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "PrimaryWindow::PrimaryWindow (bool display)"
+
+.PP
+Constructor\&. enable all composant only if display is true 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdisplay\fP : send by configuration file | without one display is ON 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "PrimaryWindow::treatPicture (\fBActivityRegion\fP * act, std::vector< \fBAffordanceTime\fP *> currentAffordance)"
+
+.PP
+draw rectangle over hands and called by updateView 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIact\fP : Object of \fBActivityRegion\fP: contains imageColor, position of hands and objects 
+.br
+\fIcurrentAffordance\fP : vector of Object of \fBAffordanceTime\fP contain position of hands and objects 
+.RE
+.PP
+
+.SS "PrimaryWindow::updateView (\fBActivityRegion\fP * act, std::vector< \fBAffordanceTime\fP *> currentAffordance)"
+
+.PP
+update View called by \fBRecognitionManager\fP at each course of the loop call treatPicture which draw rectangle over the initial picture 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIact\fP : Object of \fBActivityRegion\fP: contains imageColor, position of hands and objects 
+.br
+\fIcurrentAffordance\fP : vector of Object of \fBAffordanceTime\fP contain position of hands and objects 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

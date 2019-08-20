@@ -1,0 +1,145 @@
+.TH "RecognitionManager" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+RecognitionManager
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBObserver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRecognitionManager\fP (\fBPrimaryWindow\fP *p_view, \fBManageSourceVideo\fP *p_controller, map< string, string > setting)"
+.br
+.RI "Constructor\&. "
+.ti -1c
+.RI "virtual \fB~RecognitionManager\fP ()"
+.br
+.RI "Destructor\&. "
+.ti -1c
+.RI "void \fBrecognitionLoop\fP (\fBManageSourceVideo\fP *p_controller, \fBPrimaryWindow\fP *p_view)"
+.br
+.RI "main loop of recognition which update every composant of the program "
+.ti -1c
+.RI "void \fBupdateInternVar\fP ()"
+.br
+.RI "Update variable\&. "
+.ti -1c
+.RI "void \fBaskToQuit\fP ()"
+.br
+.RI "Exit way (absolutly not necessary) | Unused\&. "
+.ti -1c
+.RI "void \fBupdateByObservee\fP (Mat imageColor, Mat imageDepth)"
+.br
+.RI "Called by Observee (ImageTreatment) "
+.ti -1c
+.RI "void \fBupdateAffordanceSeen\fP (\fBDetectedObjects\fP items, \fBDetectedObjects\fP hands, bool removeLastValue)"
+.br
+.RI "With hands and objects position, and last affordances found the current one then check it\&. "
+.ti -1c
+.RI "void \fBupdatePlanRecognition\fP (\fBAffordance\fP *checkedActAffordance)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "RecognitionManager::RecognitionManager (\fBPrimaryWindow\fP * p_view, \fBManageSourceVideo\fP * p_controller, map< string, string > setting)"
+
+.PP
+Constructor\&. Initialize recoImage, recoActivity and recoPlan 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp_controller\fP : pointer on Object of \fBManageSourceVideo\fP created in \fBmain\&.cpp\fP 
+.br
+\fIp_view\fP : pointer on Object of PrimaryView created in \fBmain\&.cpp\fP 
+.br
+\fIsetting\fP : map<string,string> which contain every path and information to use (fisrt String = name_of_information, second String = information) 
+.RE
+.PP
+Add setting to his attribute
+.PP
+add this object as a listener of this object of ImageTreatment
+.PP
+Initialize image recognition
+.PP
+Initialize activities/affordance recognition
+.PP
+Initialize plan recognition if path of Domain gived in config 
+.SH "Member Function Documentation"
+.PP 
+.SS "RecognitionManager::askToQuit ()"
+
+.PP
+Exit way (absolutly not necessary) | Unused\&. Ask if exit after TIME_BEFORE_ASKING_CLOSURE seconds | UNUSED\&.
+.PP
+not usefull and never call for now (we prefer let program run indefinitely) However : Could be useful in many ways (things which can be seen after the main loop) 
+.SS "RecognitionManager::recognitionLoop (\fBManageSourceVideo\fP * p_controller, \fBPrimaryWindow\fP * p_view)"
+
+.PP
+main loop of recognition which update every composant of the program take information(image) from controller then update model activities recognition return the affordance(When a hand interact with an object) then update recognition plan finally update view 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIp_controller\fP : adress of main object of controller to add this to listenner and ask for update 
+.br
+\fIp_view\fP : adress of main object of view to show to user 
+.RE
+.PP
+Update variable and display information on console
+.PP
+Update input (Camera)
+.PP
+Update image recognition (send to YOLO which update vectors of hands and objects)
+.PP
+Boolean which say if we start to remove the oldest frame keeped in memory
+.PP
+Update affordance recognition
+.PP
+Send information to View : OUTPUT
+.PP
+Ask if exit after TIME_BEFORE_ASKING_CLOSURE seconds 
+.SS "RecognitionManager::updateAffordanceSeen (\fBDetectedObjects\fP items, \fBDetectedObjects\fP hands, bool removeLastValue)"
+
+.PP
+With hands and objects position, and last affordances found the current one then check it\&. Update a vector of \fBAffordance\fP sort by their probability (\fBMatriceAffordance\fP) Could have an affordance with nothing If we don't see any hands or objects only affordance is NULL with 1 for probability Then in function to former image (TIME_LAST_AFFORDANCE) tell what is the most likely affordance Can say NULL Then look on the average one Then check it 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIitems\fP : \fBDetectedObjects\fP basically a vector of objects 
+.br
+\fIhands\fP : \fBDetectedObjects\fP basically a vector of hands 
+.br
+\fIremoveLastValue\fP : boolean which say if we have to remove the first affordance of the vector | after TIME_LAST_AFFORDANCE we start to supress this one 
+.RE
+.PP
+To see an affordance from each frame
+.PP
+check if aff not null and (doesn't = the 2 before except if more than 5 sec ) and 3 time in last 0\&.8 s 
+.SS "RecognitionManager::updateByObservee (Mat imageColor, Mat imageDepth)"
+
+.PP
+Called by Observee (ImageTreatment) update colorMatrix and DepthMatrix
+.PP
+belongs to \fBObserver\fP routine (called by controller) TODO : just past a pointer of an unconstant matrix because it's use for see and modify 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIimageColor\fP : 3 matrix which represent RGB of the last image ~ Not sure 
+.br
+\fIimageDepth\fP : a matrix which represent the depth of last image 
+.RE
+.PP
+
+.SS "RecognitionManager::updateInternVar ()"
+
+.PP
+Update variable\&. Update variable and display information on console\&. Update display and information each seconds 
+.SS "void RecognitionManager::updatePlanRecognition (\fBAffordance\fP * checkedActAffordance)"
+Update plan recognition 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

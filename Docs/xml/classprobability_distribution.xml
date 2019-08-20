@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classprobability_distribution" kind="class" language="C++" prot="public">
+    <compoundname>probabilityDistribution</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classprobability_distribution_1a8322cc9c68034740e6228942c7f98fb0" prot="private" static="no" mutable="no">
+        <type>unordered_map&lt; int, unordered_map&lt; int, float &gt; &gt;</type>
+        <definition>unordered_map&lt;int, unordered_map&lt;int,float&gt; &gt; probabilityDistribution::distribution</definition>
+        <argsstring></argsstring>
+        <name>distribution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="39" column="1" bodyfile="model/recoPlan/PARC/include/probabilityDistribution.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classprobability_distribution_1a8789bdf6491cce5396cb3de4e4f6e9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>probabilityDistribution::probabilityDistribution</definition>
+        <argsstring>()</argsstring>
+        <name>probabilityDistribution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="24" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a2a995499889b4264a99eb5d4c929c560" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>probabilityDistribution::probabilityDistribution</definition>
+        <argsstring>(unordered_map&lt; int, unordered_map&lt; int, float &gt;&gt; _distribution)</argsstring>
+        <name>probabilityDistribution</name>
+        <param>
+          <type>unordered_map&lt; int, unordered_map&lt; int, float &gt;&gt;</type>
+          <declname>_distribution</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="25" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="8" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a701b32e41142bc9f298e516e4e422be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>probabilityDistribution::probabilityDistribution</definition>
+        <argsstring>(planLibrary &amp;_pl)</argsstring>
+        <name>probabilityDistribution</name>
+        <param>
+          <type><ref refid="classplan_library" kindref="compound">planLibrary</ref> &amp;</type>
+          <declname>_pl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="26" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="13" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a7b482f50162c74e33558e911fa1d0cda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>probabilityDistribution::probabilityDistribution</definition>
+        <argsstring>(unordered_set&lt; int &gt; _terminals, float noise=0.0)</argsstring>
+        <name>probabilityDistribution</name>
+        <param>
+          <type>unordered_set&lt; int &gt;</type>
+          <declname>_terminals</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>noise</declname>
+          <defval>0.0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="27" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="33" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1ae6c668b28b304d432cf5e64af9ac66d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>probabilityDistribution::~probabilityDistribution</definition>
+        <argsstring>()</argsstring>
+        <name>~probabilityDistribution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="28" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a430d2970d87e8e928ae00cb346d5400a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool probabilityDistribution::isValid</definition>
+        <argsstring>() const</argsstring>
+        <name>isValid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="30" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="60" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a08eb703110c0c00ec2425e23311446c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int probabilityDistribution::RNC</definition>
+        <argsstring>(int i) const</argsstring>
+        <name>RNC</name>
+        <param>
+          <type>int</type>
+          <declname>i</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="31" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="76" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a760246a89973b3cdcb3e56716251530c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void probabilityDistribution::setProb</definition>
+        <argsstring>(int primitive, int element, float probability)</argsstring>
+        <name>setProb</name>
+        <param>
+          <type>int</type>
+          <declname>primitive</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>element</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>probability</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="33" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/probabilityDistribution.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a09394253f3ca51cc426b4c666619003f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void probabilityDistribution::setNoise</definition>
+        <argsstring>(int Prct)</argsstring>
+        <name>setNoise</name>
+        <param>
+          <type>int</type>
+          <declname>Prct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="34" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classprobability_distribution_1a5cf179f2819de49f2d6524f4ff8efd35" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const unordered_map&lt; int, unordered_map&lt; int, float &gt; &gt; &amp;</type>
+        <definition>const unordered_map&lt;int, unordered_map&lt;int,float&gt; &gt;&amp; probabilityDistribution::getDistribution</definition>
+        <argsstring>() const</argsstring>
+        <name>getDistribution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="36" column="1" bodyfile="model/recoPlan/PARC/include/probabilityDistribution.h" bodystart="36" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/probabilityDistribution.h" line="22" column="1" bodyfile="model/recoPlan/PARC/include/probabilityDistribution.h" bodystart="21" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classprobability_distribution_1a8322cc9c68034740e6228942c7f98fb0" prot="private" virt="non-virtual"><scope>probabilityDistribution</scope><name>distribution</name></member>
+      <member refid="classprobability_distribution_1a5cf179f2819de49f2d6524f4ff8efd35" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>getDistribution</name></member>
+      <member refid="classprobability_distribution_1a430d2970d87e8e928ae00cb346d5400a" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>isValid</name></member>
+      <member refid="classprobability_distribution_1a8789bdf6491cce5396cb3de4e4f6e9bc" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>probabilityDistribution</name></member>
+      <member refid="classprobability_distribution_1a2a995499889b4264a99eb5d4c929c560" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>probabilityDistribution</name></member>
+      <member refid="classprobability_distribution_1a701b32e41142bc9f298e516e4e422be4" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>probabilityDistribution</name></member>
+      <member refid="classprobability_distribution_1a7b482f50162c74e33558e911fa1d0cda" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>probabilityDistribution</name></member>
+      <member refid="classprobability_distribution_1a08eb703110c0c00ec2425e23311446c9" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>RNC</name></member>
+      <member refid="classprobability_distribution_1a09394253f3ca51cc426b4c666619003f" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>setNoise</name></member>
+      <member refid="classprobability_distribution_1a760246a89973b3cdcb3e56716251530c" prot="public" virt="non-virtual"><scope>probabilityDistribution</scope><name>setProb</name></member>
+      <member refid="classprobability_distribution_1ae6c668b28b304d432cf5e64af9ac66d9" prot="public" virt="virtual"><scope>probabilityDistribution</scope><name>~probabilityDistribution</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

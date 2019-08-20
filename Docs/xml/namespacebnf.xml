@@ -1,0 +1,624 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacebnf" kind="namespace" language="C++">
+    <compoundname>bnf</compoundname>
+    <innerclass refid="classbnf_1_1___and" prot="public">bnf::_And</innerclass>
+    <innerclass refid="classbnf_1_1___base" prot="public">bnf::_Base</innerclass>
+    <innerclass refid="classbnf_1_1___ctrl" prot="public">bnf::_Ctrl</innerclass>
+    <innerclass refid="classbnf_1_1___cycle" prot="public">bnf::_Cycle</innerclass>
+    <innerclass refid="classbnf_1_1___or" prot="public">bnf::_Or</innerclass>
+    <innerclass refid="classbnf_1_1___parser" prot="public">bnf::_Parser</innerclass>
+    <innerclass refid="classbnf_1_1___tie" prot="public">bnf::_Tie</innerclass>
+    <innerclass refid="classbnf_1_1_action" prot="public">bnf::Action</innerclass>
+    <innerclass refid="structbnf_1_1_interface" prot="public">bnf::Interface</innerclass>
+    <innerclass refid="classbnf_1_1_lexem" prot="public">bnf::Lexem</innerclass>
+    <innerclass refid="classbnf_1_1_rule" prot="public">bnf::Rule</innerclass>
+    <innerclass refid="classbnf_1_1_token" prot="public">bnf::Token</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="bnflite_8h_1ac1fcc3f5fbf9d5234465ee43a27766ed" prot="public" static="no">
+        <name>Limits</name>
+        <enumvalue id="bnflite_8h_1ac1fcc3f5fbf9d5234465ee43a27766edafab58adc0f2af3f0342457fb187adeaf" prot="public">
+          <name>maxCharNum</name>
+          <initializer>= 256</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1ac1fcc3f5fbf9d5234465ee43a27766eda6fa94c1f2a55c56add95b198b339a874" prot="public">
+          <name>maxLexemLength</name>
+          <initializer>= 1024</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1ac1fcc3f5fbf9d5234465ee43a27766eda1a74ae08970bd70fb92a86e18781f568" prot="public">
+          <name>maxIterate</name>
+          <initializer>= 0x4096</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="58" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="58" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="enum" id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32" prot="public" static="no">
+        <name>Status</name>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a9c8d67076f6060fb548fc63c4bcd2f17" prot="public">
+          <name>eNone</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32acd9172f0582ac4c6d88c62200bdfcf5c" prot="public">
+          <name>eOk</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a273f3a19abdabf8df6ebb3bbe617eee7" prot="public">
+          <name>eRet</name>
+          <initializer>= 0x8</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32ad8c3a8635a10ed44da806029ceb5a3aa" prot="public">
+          <name>e1st</name>
+          <initializer>= 0x10</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32af44ca1c018ab15156080eaa4b52d0f94" prot="public">
+          <name>eSkip</name>
+          <initializer>= 0x20</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32aa5bb716c508d24caf313029f15845414" prot="public">
+          <name>eTry</name>
+          <initializer>= 0x40</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a351b096d6a2c66b0ae2c63fe7c88a0ae" prot="public">
+          <name>eNull</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a5df61e1a373bd681859ca9c31461c81a" prot="public">
+          <name>eRest</name>
+          <initializer>= 0x0100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32aeef57fba0f3ca50632a9977811c6261e" prot="public">
+          <name>eNoData</name>
+          <initializer>= 0x0200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a09ca00478825cf79fcc6490017495b2b" prot="public">
+          <name>eOver</name>
+          <initializer>= 0x0400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a9746264b49fc64d41a48089451a55510" prot="public">
+          <name>eEof</name>
+          <initializer>= 0x0800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a531de87ef960a17d0a22c7290c3ac917" prot="public">
+          <name>eBadRule</name>
+          <initializer>= 0x1000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a95c1d67d13d22c7ef60a78535abcf309" prot="public">
+          <name>eBadLexem</name>
+          <initializer>= 0x2000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32a0599adeed67a872966f6e2033ce576ed" prot="public">
+          <name>eSyntax</name>
+          <initializer>= 0x4000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="bnflite_8h_1a8b7971b5ebeb816dd87df4ce81c88e32aab6b125f5639de4c075e2cdf0cae1871" prot="public">
+          <name>eError</name>
+          <initializer>= ((~(unsigned int)0) &gt;&gt; 1) + 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="60" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="60" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="bnflite_8h_1ac3a7ad8adbf4c4f59bd46c9403649deb" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; eOk, &apos;N&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;eOk, &apos;N&apos;&gt; bnf::Null</definition>
+        <argsstring></argsstring>
+        <name>Null</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="224" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="224" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="bnflite_8h_1aa9216861615584f713342218c26f5fee" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; eOk|eRet, &apos;R&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;eOk|eRet, &apos;R&apos;&gt; bnf::Return</definition>
+        <argsstring></argsstring>
+        <name>Return</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="227" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="227" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="bnflite_8h_1ac0257c49382c5a2473c4eaad8ca209d5" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; e1st, &apos;1&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;e1st, &apos;1&apos;&gt; bnf::AcceptFirst</definition>
+        <argsstring></argsstring>
+        <name>AcceptFirst</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="230" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="230" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="bnflite_8h_1aac49d7a27321b741341129ffe7a54ff7" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; eOk|eTry, &apos;T&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;eOk|eTry, &apos;T&apos;&gt; bnf::Try</definition>
+        <argsstring></argsstring>
+        <name>Try</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="233" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="bnflite_8h_1acc0d4d27ef836f666926a2a1aaf902df" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; eOk|eSkip, &apos;S&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;eOk|eSkip, &apos;S&apos;&gt; bnf::Skip</definition>
+        <argsstring></argsstring>
+        <name>Skip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="236" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="bnflite_8h_1a047315e2277312e3157644a6058d2451" prot="public" static="no">
+        <type><ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref>&lt; eError|eSyntax, &apos;E&apos;&gt;</type>
+        <definition>typedef _Ctrl&lt;eError|eSyntax, &apos;E&apos;&gt; bnf::Syntax</definition>
+        <argsstring></argsstring>
+        <name>Syntax</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="239" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="239" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="bnflite_8h_1ac2a98736639c637f9f350df25b3ff813" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And bnf::operator+</definition>
+        <argsstring>(const char *s, const _Tie &amp;link)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="367" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="367" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1a0a7a3e92cc57cd02f524dc27e52b205f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And bnf::operator+</definition>
+        <argsstring>(bool(*f)(const char *, size_t), const _Tie &amp;link)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="369" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="369" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1a64c1e0bacbc259d0592513a82c7022cc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or bnf::operator|</definition>
+        <argsstring>(const char *s, const _Tie &amp;link)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="419" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="419" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1ae54174c2cb2e9b2d0b6d06d1723e8db2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or bnf::operator|</definition>
+        <argsstring>(bool(*f)(const char *, size_t), const _Tie &amp;link)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="421" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="421" bodyend="422"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1adf27c070d2a9bc9c807b7658d1b40083" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::operator*</definition>
+        <argsstring>(int x, const _Tie &amp;link)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="555" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="555" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1a1cd58f05162bab34a5c0c7743062091f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::Repeat</definition>
+        <argsstring>(int at_least, const Rule &amp;rule, int total, int limit)</argsstring>
+        <name>Repeat</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="557" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="557" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1aaea89411e3a889f62c71466cdfdb8121" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::Iterate</definition>
+        <argsstring>(int at_least, const Lexem &amp;lexem, int total, int limit)</argsstring>
+        <name>Iterate</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+          <declname>lexem</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="559" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="559" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1ab2677c5c1382adea6a7bd80ee82f8a52" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::Series</definition>
+        <argsstring>(int at_least, const Token &amp;token, int total, int limit)</argsstring>
+        <name>Series</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+          <declname>token</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="561" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="561" bodyend="562"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1a36f813ea8de37c29e0e0bad12c8e1575" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int bnf::_Analyze</definition>
+        <argsstring>(_Tie &amp;root, U &amp;u, const char *(*pre_parse)(const char *))</argsstring>
+        <name>_Analyze</name>
+        <param>
+          <type><ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>const char *(*)(const char *)</type>
+          <declname>pre_parse</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="648" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="648" bodyend="652"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1adcfe76733afe10ad6b9e49bbacbe1a85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int bnf::Analyze</definition>
+        <argsstring>(_Tie &amp;root, const char *text, const char **pstop, U &amp;u, const char *(*pre_parse)(const char *)=0)</argsstring>
+        <name>Analyze</name>
+        <param>
+          <type><ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>pstop</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>const char *(*)(const char *)</type>
+          <declname>pre_parse</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="655" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="655" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1ab7a65d6aa4ff0dfac28fb1394186c59e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>int</type>
+        <definition>int bnf::Analyze</definition>
+        <argsstring>(_Tie &amp;root, const char *text, U &amp;u, const char *(*pre_parse)(const char *)=0)</argsstring>
+        <name>Analyze</name>
+        <param>
+          <type><ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>U &amp;</type>
+          <declname>u</declname>
+        </param>
+        <param>
+          <type>const char *(*)(const char *)</type>
+          <declname>pre_parse</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="657" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="657" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1afb9733efd8169a215470a03c18ba0437" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int bnf::Analyze</definition>
+        <argsstring>(_Tie &amp;root, const char *text, const char **pstop=0, const char *(*pre_parse)(const char *)=0)</argsstring>
+        <name>Analyze</name>
+        <param>
+          <type><ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>pstop</declname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>const char *(*)(const char *)</type>
+          <declname>pre_parse</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="659" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="659" bodyend="660"/>
+      </memberdef>
+      <memberdef kind="function" id="bnflite_8h_1a7d546f8da91d03c4bb8d2f2d37363bfe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule&amp; bnf::Bind</definition>
+        <argsstring>(Rule &amp;rule, U(*callback)(std::vector&lt; U &gt; &amp;))</argsstring>
+        <name>Bind</name>
+        <param>
+          <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>U(*)(std::vector&lt; U &gt; &amp;)</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="664" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="664" bodyend="665"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="38" column="1"/>
+  </compounddef>
+</doxygen>

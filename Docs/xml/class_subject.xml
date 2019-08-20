@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_subject" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Subject</compoundname>
+    <derivedcompoundref refid="class_manage_source_video" prot="public" virt="non-virtual">ManageSourceVideo</derivedcompoundref>
+    <includes refid="_subject_8h" local="no">Subject.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_subject_1ae3f8d320b19b7d0fe695a3b4e7660002" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Subject::registerObserver</definition>
+        <argsstring>(Observer *observer)=0</argsstring>
+        <name>registerObserver</name>
+        <reimplementedby refid="class_manage_source_video_1a15dea65edbe41f3f58279a3ed291fce9">registerObserver</reimplementedby>
+        <param>
+          <type><ref refid="class_observer" kindref="compound">Observer</ref> *</type>
+          <declname>observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register an observer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>observer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer object to be registered </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/Subject.h" line="16" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_subject_1a86699df0364a9091d1887f344255e9ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Subject::removeObserver</definition>
+        <argsstring>(Observer *observer)=0</argsstring>
+        <name>removeObserver</name>
+        <reimplementedby refid="class_manage_source_video_1a7b6316cf6df23315705d4eb9bc0e07ff">removeObserver</reimplementedby>
+        <param>
+          <type><ref refid="class_observer" kindref="compound">Observer</ref> *</type>
+          <declname>observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregister an observer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>observer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer object to be unregistered </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/Subject.h" line="22" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_subject_1adb3adcf5638dda8dbd4b1d4356d02453" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Subject::notifyObservers</definition>
+        <argsstring>()=0</argsstring>
+        <name>notifyObservers</name>
+        <reimplementedby refid="class_manage_source_video_1a199cb436b1ca354c8a3723a33b2dd8d8">notifyObservers</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notify all the registered observers when a change happens </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/Subject.h" line="27" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Interface for the <ref refid="class_subject" kindref="compound">Subject</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="123">
+        <label>ManageSourceVideo</label>
+        <link refid="class_manage_source_video"/>
+        <childnode refid="122" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="122">
+        <label>Subject</label>
+        <link refid="class_subject"/>
+      </node>
+    </inheritancegraph>
+    <location file="controller/Subject.h" line="8" column="1" bodyfile="controller/Subject.h" bodystart="8" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_subject_1adb3adcf5638dda8dbd4b1d4356d02453" prot="public" virt="pure-virtual"><scope>Subject</scope><name>notifyObservers</name></member>
+      <member refid="class_subject_1ae3f8d320b19b7d0fe695a3b4e7660002" prot="public" virt="pure-virtual"><scope>Subject</scope><name>registerObserver</name></member>
+      <member refid="class_subject_1a86699df0364a9091d1887f344255e9ff" prot="public" virt="pure-virtual"><scope>Subject</scope><name>removeObserver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

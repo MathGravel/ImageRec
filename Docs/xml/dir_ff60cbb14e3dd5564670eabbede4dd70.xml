@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_ff60cbb14e3dd5564670eabbede4dd70" kind="dir">
+    <compoundname>model/recoPlan/PARC/src</compoundname>
+    <innerdir refid="dir_87b411145155cb4bff526852a40b2e0a">model/recoPlan/PARC/src/solver</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_detector_8h" kind="file" language="C++">
+    <compoundname>Detector.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes refid="_detected_object_8h" local="yes">DetectedObject.h</includes>
+    <includedby refid="_yolo_g_p_u_8h" local="yes">model/recoActivite/recoImage/cnn/YoloGPU.h</includedby>
+    <includedby refid="_yolo_8h" local="yes">model/recoActivite/recoImage/cnn/Yolo.h</includedby>
+    <includedby refid="_yolo_c_p_u_8h" local="yes">model/recoActivite/recoImage/cnn/YoloCPU.h</includedby>
+    <incdepgraph>
+      <node id="478">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="477">
+        <label>DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="478" relation="include">
+        </childnode>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+      </node>
+      <node id="479">
+        <label>map</label>
+      </node>
+      <node id="476">
+        <label>vector</label>
+      </node>
+      <node id="475">
+        <label>model/recoActivite/recoImage/Detector.h</label>
+        <link refid="_detector_8h"/>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+      </node>
+      <node id="480">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="482">
+        <label>model/recoActivite/recoImage/cnn/YoloGPU.h</label>
+        <link refid="_yolo_g_p_u_8h_source"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+      <node id="483">
+        <label>model/recoActivite/recoImage/ActivityRegion.h</label>
+        <link refid="_activity_region_8h"/>
+        <childnode refid="484" relation="include">
+        </childnode>
+        <childnode refid="485" relation="include">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="487">
+        <label>model/recoActivite/recoImage/cnn/Yolo.h</label>
+        <link refid="_yolo_8h_source"/>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+      <node id="481">
+        <label>model/recoActivite/recoImage/Detector.h</label>
+        <link refid="_detector_8h"/>
+        <childnode refid="482" relation="include">
+        </childnode>
+        <childnode refid="487" relation="include">
+        </childnode>
+        <childnode refid="488" relation="include">
+        </childnode>
+      </node>
+      <node id="485">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="486" relation="include">
+        </childnode>
+      </node>
+      <node id="484">
+        <label>view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="485" relation="include">
+        </childnode>
+        <childnode refid="486" relation="include">
+        </childnode>
+      </node>
+      <node id="488">
+        <label>model/recoActivite/recoImage/cnn/YoloCPU.h</label>
+        <link refid="_yolo_c_p_u_8h_source"/>
+        <childnode refid="483" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_detector" prot="public">Detector</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DETECTOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_detected_object_8h" kindref="compound">DetectedObject.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="class_detector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_detector" kindref="compound">Detector</ref><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">public<sp/>:</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>std::vector&lt;DetectedObject&gt;<sp/>findObjects(cv::Mat<sp/>color,<sp/>cv::Mat<sp/>depth)<sp/>{}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//DETECTOR_H</highlight></codeline>
+    </programlisting>
+    <location file="model/recoActivite/recoImage/Detector.h"/>
+  </compounddef>
+</doxygen>

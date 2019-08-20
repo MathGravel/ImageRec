@@ -1,0 +1,4 @@
+<map id="YoloGPU" name="YoloGPU">
+<area shape="rect" id="node2" href="$class_yolo.html" title="Yolo" alt="" coords="20,80,68,107"/>
+<area shape="rect" id="node3" href="$class_detector.html" title="Detector" alt="" coords="8,5,80,32"/>
+</map>

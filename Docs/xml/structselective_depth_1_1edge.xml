@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structselective_depth_1_1edge" kind="struct" language="C++" prot="public">
+    <compoundname>selectiveDepth::edge</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structselective_depth_1_1edge_1ab45be8e09e44fa7757805524f0603235" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int selectiveDepth::edge::a</definition>
+        <argsstring></argsstring>
+        <name>a</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="130" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1edge_1a156de118dc10a5d81c9783c42b9ff76b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int selectiveDepth::edge::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="131" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structselective_depth_1_1edge_1a1c6abe5af206afd831d5654c232c21b0" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double selectiveDepth::edge::w</definition>
+        <argsstring></argsstring>
+        <name>w</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="132" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="129" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="128" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structselective_depth_1_1edge_1ab45be8e09e44fa7757805524f0603235" prot="public" virt="non-virtual"><scope>selectiveDepth::edge</scope><name>a</name></member>
+      <member refid="structselective_depth_1_1edge_1a156de118dc10a5d81c9783c42b9ff76b" prot="public" virt="non-virtual"><scope>selectiveDepth::edge</scope><name>b</name></member>
+      <member refid="structselective_depth_1_1edge_1a1c6abe5af206afd831d5654c232c21b0" prot="public" virt="non-virtual"><scope>selectiveDepth::edge</scope><name>w</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

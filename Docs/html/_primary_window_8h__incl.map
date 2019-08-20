@@ -1,0 +1,10 @@
+<map id="view/PrimaryWindow.h" name="view/PrimaryWindow.h">
+<area shape="rect" id="node6" href="$_activity_region_8h.html" title="interact with YOLO which gives detected objects and hands " alt="" coords="2637,80,2824,121"/>
+<area shape="rect" id="node39" href="$_affordance_8h.html" title="Evaluates the position between an Object and the Hand. " alt="" coords="3177,80,3369,121"/>
+<area shape="rect" id="node9" href="$_detected_object_8h.html" title="3 class : DetectedMatrice, DetectedObject, DetectedObjects " alt="" coords="2634,393,2758,420"/>
+<area shape="rect" id="node12" href="$selective_search_depth_8h_source.html" title="selectiveSearchDepth.h" alt="" coords="1262,169,1423,196"/>
+<area shape="rect" id="node31" href="$_yolo_g_p_u_8h_source.html" title="cnn/YoloGPU.h" alt="" coords="2513,169,2626,196"/>
+<area shape="rect" id="node34" href="$_yolo_c_p_u_8h_source.html" title="cnn/YoloCPU.h" alt="" coords="2375,169,2489,196"/>
+<area shape="rect" id="node32" href="$_detector_8h_source.html" title="../Detector.h" alt="" coords="2649,319,2743,345"/>
+<area shape="rect" id="node33" href="$_yolo_8h_source.html" title="Yolo.h" alt="" coords="2648,244,2707,271"/>
+</map>

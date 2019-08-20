@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_yolo_g_p_u" kind="class" language="C++" prot="public">
+    <compoundname>YoloGPU</compoundname>
+    <basecompoundref refid="class_yolo" prot="public" virt="non-virtual">Yolo</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a17a15f3ce9666f5ffa54ac9f5e7a0db8" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float YoloGPU::colors[6][3]</definition>
+        <argsstring>[6][3]</argsstring>
+        <name>colors</name>
+        <initializer>= { {255,0,255}, {0,0,255},{0,255,255},{0,255,0},{255,255,0},{255,0,0} }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="23" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1ab4962e974887c7fd2de382eda343fc25" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* YoloGPU::cfg</definition>
+        <argsstring></argsstring>
+        <name>cfg</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="25" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1afef919c28d8ac0c5b0d34bb60e4f75d0" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* YoloGPU::fil</definition>
+        <argsstring></argsstring>
+        <name>fil</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="26" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a201beda3001090022ccad0fdbd372312" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* YoloGPU::wei</definition>
+        <argsstring></argsstring>
+        <name>wei</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="27" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a14c788fba984574ea7c4ea0116a7a81d" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* YoloGPU::dat</definition>
+        <argsstring></argsstring>
+        <name>dat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="28" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a7ccdb5b92739af4d48067d28e1f88969" prot="private" static="no" mutable="no">
+        <type>char *</type>
+        <definition>char* YoloGPU::lbl</definition>
+        <argsstring></argsstring>
+        <name>lbl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="29" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a59abd1f6150434b1f7b5763e192f1abe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float YoloGPU::nms</definition>
+        <argsstring></argsstring>
+        <name>nms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="30" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a03247fa79bf2caf0972ca424654f45f5" prot="private" static="no" mutable="no">
+        <type>char **</type>
+        <definition>char** YoloGPU::names</definition>
+        <argsstring></argsstring>
+        <name>names</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="31" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a722e03d81b18edabd85d47eda89b15f4" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char YoloGPU::cfgbuff[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>cfgbuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="33" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1aa3b708f297239833be1c2bf26c607b42" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char YoloGPU::filbuff[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>filbuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="34" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1aa278589100df5ed5d7dbf5f80d893f45" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char YoloGPU::weibuff[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>weibuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="35" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1aa345d70cc16437c26d67ecb1c0a297c5" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char YoloGPU::datbuff[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>datbuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="36" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a8d884fa1e6db2a87a2158b20602d951c" prot="private" static="no" mutable="no">
+        <type>char</type>
+        <definition>char YoloGPU::lblbuff[256]</definition>
+        <argsstring>[256]</argsstring>
+        <name>lblbuff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="37" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1ac76576649101095d65a717dede2cbc43" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double YoloGPU::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="38" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1a45da990e21eefeb5bafaa4b008e0b23a" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* YoloGPU::net</definition>
+        <argsstring></argsstring>
+        <name>net</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="39" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_yolo_g_p_u_1aff605916f5a98e8a04a974f0d6e510b6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double YoloGPU::thresh</definition>
+        <argsstring></argsstring>
+        <name>thresh</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="40" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_yolo_g_p_u_1a64a5bed90f906a31b6b63eb1efca8024" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>YoloGPU::YoloGPU</definition>
+        <argsstring>(float _prob, std::map&lt; std::string, std::string &gt; setting)</argsstring>
+        <name>YoloGPU</name>
+        <param>
+          <type>float</type>
+          <declname>_prob</declname>
+        </param>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt;</type>
+          <declname>setting</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="14" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.cpp" bodystart="7" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_yolo_g_p_u_1abbff4192766f59f3cdeea1b1209f7a79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>YoloGPU::~YoloGPU</definition>
+        <argsstring>()</argsstring>
+        <name>~YoloGPU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="15" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.cpp" bodystart="52" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_yolo_g_p_u_1af6542f94980b65ed5adcfee54256cee9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &gt;</type>
+        <definition>std::vector&lt; DetectedObject &gt; YoloGPU::findObjects</definition>
+        <argsstring>(cv::Mat color, cv::Mat depth)</argsstring>
+        <name>findObjects</name>
+        <reimplements refid="class_detector_1a608942d93773419f166a499be33bb7c1">findObjects</reimplements>
+        <param>
+          <type>cv::Mat</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>cv::Mat</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="16" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.cpp" bodystart="59" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_yolo_g_p_u_1a567132c86a6e9be7e1103cecbceb7915" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string YoloGPU::getDetectorType</definition>
+        <argsstring>()</argsstring>
+        <name>getDetectorType</name>
+        <reimplements refid="class_yolo_1a64972761d816598e5964dbd2b652bf83">getDetectorType</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="17" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_yolo_g_p_u_1adb678816bd5a47b6ad8b2461a358d5fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void YoloGPU::deserialize</definition>
+        <argsstring>(std::map&lt; std::string, std::string &gt; stream)</argsstring>
+        <name>deserialize</name>
+        <param>
+          <type>std::map&lt; std::string, std::string &gt;</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="18" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_yolo_g_p_u_1a238db491e65c9993bbe7dfc2ad2c1dc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float YoloGPU::get_color</definition>
+        <argsstring>(int c, int x, int max)</argsstring>
+        <name>get_color</name>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>max</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="22" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.cpp" bodystart="181" bodyend="190"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="169">
+        <label>Detector</label>
+        <link refid="class_detector"/>
+      </node>
+      <node id="168">
+        <label>Yolo</label>
+        <link refid="class_yolo"/>
+        <childnode refid="169" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>YoloGPU</label>
+        <link refid="class_yolo_g_p_u"/>
+        <childnode refid="168" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="172">
+        <label>Detector</label>
+        <link refid="class_detector"/>
+      </node>
+      <node id="171">
+        <label>Yolo</label>
+        <link refid="class_yolo"/>
+        <childnode refid="172" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="170">
+        <label>YoloGPU</label>
+        <link refid="class_yolo_g_p_u"/>
+        <childnode refid="171" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoActivite/recoImage/cnn/YoloGPU.h" line="11" column="1" bodyfile="model/recoActivite/recoImage/cnn/YoloGPU.h" bodystart="11" bodyend="41"/>
+    <listofallmembers>
+      <member refid="class_yolo_g_p_u_1ab4962e974887c7fd2de382eda343fc25" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>cfg</name></member>
+      <member refid="class_yolo_g_p_u_1a722e03d81b18edabd85d47eda89b15f4" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>cfgbuff</name></member>
+      <member refid="class_yolo_g_p_u_1a17a15f3ce9666f5ffa54ac9f5e7a0db8" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>colors</name></member>
+      <member refid="class_yolo_g_p_u_1a14c788fba984574ea7c4ea0116a7a81d" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>dat</name></member>
+      <member refid="class_yolo_g_p_u_1aa345d70cc16437c26d67ecb1c0a297c5" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>datbuff</name></member>
+      <member refid="class_yolo_g_p_u_1adb678816bd5a47b6ad8b2461a358d5fe" prot="public" virt="non-virtual"><scope>YoloGPU</scope><name>deserialize</name></member>
+      <member refid="class_yolo_g_p_u_1afef919c28d8ac0c5b0d34bb60e4f75d0" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>fil</name></member>
+      <member refid="class_yolo_g_p_u_1aa3b708f297239833be1c2bf26c607b42" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>filbuff</name></member>
+      <member refid="class_yolo_g_p_u_1af6542f94980b65ed5adcfee54256cee9" prot="public" virt="virtual"><scope>YoloGPU</scope><name>findObjects</name></member>
+      <member refid="class_yolo_g_p_u_1a238db491e65c9993bbe7dfc2ad2c1dc0" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>get_color</name></member>
+      <member refid="class_yolo_g_p_u_1a567132c86a6e9be7e1103cecbceb7915" prot="public" virt="virtual"><scope>YoloGPU</scope><name>getDetectorType</name></member>
+      <member refid="class_yolo_g_p_u_1a7ccdb5b92739af4d48067d28e1f88969" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>lbl</name></member>
+      <member refid="class_yolo_g_p_u_1a8d884fa1e6db2a87a2158b20602d951c" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>lblbuff</name></member>
+      <member refid="class_yolo_g_p_u_1a03247fa79bf2caf0972ca424654f45f5" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>names</name></member>
+      <member refid="class_yolo_g_p_u_1a45da990e21eefeb5bafaa4b008e0b23a" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>net</name></member>
+      <member refid="class_yolo_g_p_u_1a59abd1f6150434b1f7b5763e192f1abe" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>nms</name></member>
+      <member refid="class_yolo_g_p_u_1aff605916f5a98e8a04a974f0d6e510b6" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>thresh</name></member>
+      <member refid="class_yolo_g_p_u_1ac76576649101095d65a717dede2cbc43" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>time</name></member>
+      <member refid="class_yolo_g_p_u_1a201beda3001090022ccad0fdbd372312" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>wei</name></member>
+      <member refid="class_yolo_g_p_u_1aa278589100df5ed5d7dbf5f80d893f45" prot="private" virt="non-virtual"><scope>YoloGPU</scope><name>weibuff</name></member>
+      <member refid="class_yolo_g_p_u_1a64a5bed90f906a31b6b63eb1efca8024" prot="public" virt="non-virtual"><scope>YoloGPU</scope><name>YoloGPU</name></member>
+      <member refid="class_yolo_g_p_u_1abbff4192766f59f3cdeea1b1209f7a79" prot="public" virt="non-virtual"><scope>YoloGPU</scope><name>~YoloGPU</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,59 @@
+.TH "DetectedObject" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectedObject
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectedObject\fP (cv::Rect position, std::string name, double _dist)"
+.br
+.ti -1c
+.RI "\fBDetectedObject\fP (cv::Rect position, std::string name, double _dist, double _prob)"
+.br
+.ti -1c
+.RI "\fBDetectedObject\fP (cv::Rect position, std::string name, double _dist, double _prob, float r, float g, float b)"
+.br
+.ti -1c
+.RI "\fBDetectedObject\fP (const \fBDetectedObject\fP &obj)"
+.br
+.ti -1c
+.RI "const cv::Rect & \fBgetObjPos\fP () const"
+.br
+.ti -1c
+.RI "const std::string & \fBgetObjName\fP () const"
+.br
+.ti -1c
+.RI "const double & \fBgetDist\fP () const"
+.br
+.ti -1c
+.RI "const double \fBgetProb\fP () const"
+.br
+.ti -1c
+.RI "const float \fBgetRed\fP () const"
+.br
+.ti -1c
+.RI "const float \fBgetGreen\fP () const"
+.br
+.ti -1c
+.RI "const float \fBgetBlue\fP () const"
+.br
+.ti -1c
+.RI "void \fBfusePosition\fP (const \fBDetectedObject\fP &obj)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBDetectedObject\fP &obj)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

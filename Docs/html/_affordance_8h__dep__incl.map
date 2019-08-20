@@ -1,0 +1,8 @@
+<map id="model/recoActivite/recoAffordance/Affordance.h" name="model/recoActivite/recoAffordance/Affordance.h">
+<area shape="rect" id="node2" href="$_primary_window_8h.html" title="interface of the program " alt="" coords="5,191,161,218"/>
+<area shape="rect" id="node5" href="$_object_aff_8h.html" title="select critere to tell if it&#39;s could be an affordance " alt="" coords="186,184,370,225"/>
+<area shape="rect" id="node6" href="$_matrice_affordance_8h.html" title="keep in memory the last affordances seen (frame in the last 800ms : in version 2.0) PUT in cpp ..." alt="" coords="171,95,406,136"/>
+<area shape="rect" id="node7" href="$_policy_8h.html" title="model/recoPlan/Policy.h" alt="" coords="430,102,593,129"/>
+<area shape="rect" id="node3" href="$_recognition_manager_8h.html" title="Manage all project. " alt="" coords="183,273,373,300"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main.cpp : Function launching the entire project " alt="" coords="158,348,233,375"/>
+</map>

@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_real_sense_video_8h" kind="file" language="C++">
+    <compoundname>RealSenseVideo.h</compoundname>
+    <includes refid="_video_source_8h" local="yes">VideoSource.h</includes>
+    <includes local="no">librealsense2/rs.hpp</includes>
+    <includes local="no">string</includes>
+    <includes local="no">sstream</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">fstream</includes>
+    <includedby refid="_manage_source_video_8h" local="yes">controller/ManageSourceVideo.h</includedby>
+    <includedby refid="_real_sense_video_8cpp" local="yes">controller/sources/RealSenseVideo.cpp</includedby>
+    <incdepgraph>
+      <node id="108">
+        <label>controller/sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h"/>
+        <childnode refid="109" relation="include">
+        </childnode>
+        <childnode refid="112" relation="include">
+        </childnode>
+        <childnode refid="113" relation="include">
+        </childnode>
+        <childnode refid="114" relation="include">
+        </childnode>
+        <childnode refid="115" relation="include">
+        </childnode>
+        <childnode refid="116" relation="include">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="113">
+        <label>string</label>
+      </node>
+      <node id="116">
+        <label>fstream</label>
+      </node>
+      <node id="109">
+        <label>VideoSource.h</label>
+        <link refid="_video_source_8h_source"/>
+        <childnode refid="110" relation="include">
+        </childnode>
+        <childnode refid="111" relation="include">
+        </childnode>
+      </node>
+      <node id="111">
+        <label>utility</label>
+      </node>
+      <node id="114">
+        <label>sstream</label>
+      </node>
+      <node id="112">
+        <label>librealsense2/rs.hpp</label>
+      </node>
+      <node id="115">
+        <label>iostream</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="117">
+        <label>controller/sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h"/>
+        <childnode refid="118" relation="include">
+        </childnode>
+      </node>
+      <node id="120">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="119">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+      <node id="118">
+        <label>controller/ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="119" relation="include">
+        </childnode>
+        <childnode refid="120" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_real_sense_video" prot="public">RealSenseVideo</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_real_sense_video_8h_1a6dffe048b17f1b91890ca2fd4dc52ccf" prot="public" static="no">
+        <name>GLFW_INCLUDE_GLU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/RealSenseVideo.h" line="8" column="9" bodyfile="controller/sources/RealSenseVideo.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>REALSENSEVIDEO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>REALSENSEVIDEO_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;VideoSource.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;librealsense2/rs.hpp&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Include<sp/>RealSense<sp/>Cross<sp/>Platform<sp/>API</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>GLFW_INCLUDE_GLU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;fstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_real_sense_video" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_real_sense_video" kindref="compound">RealSenseVideo</ref><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_video_source" kindref="compound">VideoSource</ref>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_real_sense_video" kindref="compound">RealSenseVideo</ref>(std::string<sp/>colorFile<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,std::string<sp/>depthFile<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_real_sense_video" kindref="compound">RealSenseVideo</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>getColorFeed();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>getDepthFeed();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>getMappedFeed();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>getOriginalDepth(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>depthFeed;}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>update();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasDepthSource()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>depthVideo<sp/>!=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>getTimeStamp();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getTimePosition()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>(vid-&gt;get(cv::CAP_PROP_POS_FRAMES)*100)<sp/>/<sp/>vid-&gt;get(cv::CAP_PROP_FRAME_COUNT));}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>getExactTimePosition()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)(((vid-&gt;get(cv::CAP_PROP_POS_FRAMES)*100)<sp/>/<sp/>vid-&gt;get(cv::CAP_PROP_FRAME_COUNT))/0.01)<sp/>*<sp/>0.01;}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>std::pair&lt;int,int&gt;<sp/>getScreenSize(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::make_pair((</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)vid-&gt;get(cv::CAP_PROP_FRAME_WIDTH),(int)vid-&gt;get(cv::CAP_PROP_FRAME_HEIGHT));}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//A<sp/>faire,<sp/>ajouter<sp/>les<sp/>composants<sp/>necessaire<sp/>pour<sp/>utiliser<sp/>la<sp/>camera<sp/>realsense.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>depth_frame_to_meters(cv::Mat<sp/>depthPic);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>LoadMatBinary(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename,<sp/>cv::Mat&amp;<sp/>output);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readMatBinary(std::ifstream&amp;<sp/>ifs,<sp/>cv::Mat&amp;<sp/>in_mat);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>colorFeed;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>depthFeed;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::Mat<sp/>depthMeters;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::VideoCapture*<sp/>vid;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::VideoCapture*<sp/>vidDepth;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>colorVideo;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>depthVideo;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>vidFolder;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::string<sp/>folder;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>currentDepth;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//REALSENSEVIDEO_H</highlight></codeline>
+    </programlisting>
+    <location file="controller/sources/RealSenseVideo.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+.TH "YoloCPU" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+YoloCPU
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBYolo\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBYoloCPU\fP (float _prob, std::map< std::string, std::string > setting)"
+.br
+.ti -1c
+.RI "std::vector< \fBDetectedObject\fP > \fBfindObjects\fP (cv::Mat color, cv::Mat depth)"
+.br
+.ti -1c
+.RI "std::string \fBgetDetectorType\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeserialize\fP (std::map< std::string, std::string > stream)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

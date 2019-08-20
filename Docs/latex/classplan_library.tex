@@ -1,0 +1,44 @@
+\section{plan\+Library Class Reference}
+\label{classplan_library}\index{plan\+Library@{plan\+Library}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classplan_library_ad32fd62936aacfd6a66ba0788789589c}} 
+{\bfseries plan\+Library} (const \textbf{ plan\+Library} \&\+\_\+pl)
+\item 
+\mbox{\label{classplan_library_ac23c498458f325de21c20ea810ccf609}} 
+{\bfseries plan\+Library} (const char $\ast$spl)
+\item 
+\mbox{\label{classplan_library_a6f995fa1200fb6ff4fcfe7e77d7e969d}} 
+bool {\bfseries is\+Terminal} (int symbol) const
+\item 
+\mbox{\label{classplan_library_a10dd4ab4e6ac92771e14420682a8cc82}} 
+bool {\bfseries is\+Goal} (int symbol) const
+\item 
+\mbox{\label{classplan_library_adde959ef183ee7f55d47792682383f6b}} 
+int {\bfseries add\+Symbol} (int s, bool t, bool g)
+\item 
+\mbox{\label{classplan_library_af9e0b63486499c9025f5ad4e094f8c42}} 
+int {\bfseries add\+Rule} (\textbf{ rule} r)
+\item 
+\mbox{\label{classplan_library_afd0d1ddca9bff437cf43d13ee6fa8a1b}} 
+const string {\bfseries to\+String} ()
+\item 
+\mbox{\label{classplan_library_a09f0bcb6a4afe166e62e2a28f95d4562}} 
+const unordered\+\_\+set$<$ int $>$ \& {\bfseries get\+Terminals} () const
+\item 
+\mbox{\label{classplan_library_ad60232fcae8cc2b5f9b4d10d25aca244}} 
+const unordered\+\_\+set$<$ int $>$ \& {\bfseries get\+Non\+Terminals} () const
+\item 
+\mbox{\label{classplan_library_adc221719b20bbd5d3de332b11177de54}} 
+const unordered\+\_\+set$<$ int $>$ \& {\bfseries get\+Goals} () const
+\item 
+\mbox{\label{classplan_library_aedd683affefeaac850d80183881f7103}} 
+const unordered\+\_\+map$<$ int, \textbf{ rule} $>$ \& {\bfseries get\+Rules} () const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\+P\+A\+R\+C/include/\textbf{ plan\+Library.\+h}\item 
+model/reco\+Plan/\+P\+A\+R\+C/\+Plan\+\_\+\+Library/plan\+Library.\+cpp\end{DoxyCompactItemize}

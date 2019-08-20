@@ -1,0 +1,5 @@
+<map id="Detector" name="Detector">
+<area shape="rect" id="node2" href="$class_yolo.html" title="Yolo" alt="" coords="71,80,119,107"/>
+<area shape="rect" id="node3" href="$class_yolo_c_p_u.html" title="YoloCPU" alt="" coords="5,155,83,181"/>
+<area shape="rect" id="node4" href="$class_yolo_g_p_u.html" title="YoloGPU" alt="" coords="107,155,184,181"/>
+</map>

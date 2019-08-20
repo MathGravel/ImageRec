@@ -1,0 +1,92 @@
+.TH "bnf::_Base" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::_Base
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBbnf::_Parser< U >\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fB_analyze\fP (\fB_Tie\fP &root, const char *text, size_t *)"
+.br
+.ti -1c
+.RI "\fB_Base\fP (const char *(*pre)(const char *))"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static const char * \fBbase_parser\fP (const char *ptr)"
+.br
+.ti -1c
+.RI "static int \fBbase_error\fP (const char *ptr)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< const char * > \fBcntxV\fP"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fB_erase\fP (int low, int up=0)"
+.br
+.ti -1c
+.RI "virtual std::pair< void *, int > \fB_pre_call\fP (void *callback)"
+.br
+.ti -1c
+.RI "virtual void \fB_post_call\fP (std::pair< void *, int > up)"
+.br
+.ti -1c
+.RI "virtual void \fB_do_call\fP (std::pair< void *, int > up, void *callback, const char *begin, const char *end, const char *name)"
+.br
+.ti -1c
+.RI "virtual void \fB_stub_call\fP (const char *begin, const char *end, const char *name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBlevel\fP"
+.br
+.ti -1c
+.RI "const char *(* \fBzero_parse\fP )(const char *)"
+.br
+.ti -1c
+.RI "int(* \fBcatch_error\fP )(const char *ptr)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBToken\fP"
+.br
+.ti -1c
+.RI "class \fBLexem\fP"
+.br
+.ti -1c
+.RI "class \fBRule\fP"
+.br
+.ti -1c
+.RI "class \fB_And\fP"
+.br
+.ti -1c
+.RI "class \fB_Or\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

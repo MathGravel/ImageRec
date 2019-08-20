@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structbnf_1_1_interface" kind="struct" language="C++" prot="public">
+    <compoundname>bnf::Interface</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>Data</declname>
+        <defname>Data</defname>
+        <defval>bool</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structbnf_1_1_interface_1aa58c913cebaaea8dfde2955386358b00" prot="public" static="no" mutable="no">
+        <type>Data</type>
+        <definition>Data bnf::Interface&lt; Data &gt;::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="620" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="620" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbnf_1_1_interface_1ac72ee5bc4b029637854bcb6589b8485b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* bnf::Interface&lt; Data &gt;::text</definition>
+        <argsstring></argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="621" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="621" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbnf_1_1_interface_1af60c723b2583fd7be6bfd39c95db44fa" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t bnf::Interface&lt; Data &gt;::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="622" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="622" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structbnf_1_1_interface_1ad1692efc0dca5a71a0a2c1b417d22459" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* bnf::Interface&lt; Data &gt;::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="623" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="623" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structbnf_1_1_interface_1a3ba100a5958043abd670dee6ef03f270" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Interface&lt; Data &gt;::Interface</definition>
+        <argsstring>(const Interface &amp;ifc, const char *text, size_t length, const char *name)</argsstring>
+        <name>Interface</name>
+        <param>
+          <type>const <ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref> &amp;</type>
+          <declname>ifc</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="624" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="624" bodyend="626"/>
+      </memberdef>
+      <memberdef kind="function" id="structbnf_1_1_interface_1ad1e1e4c8bb31ff77f9d4788c79474aec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Interface&lt; Data &gt;::Interface</definition>
+        <argsstring>(const char *text, size_t length, const char *name)</argsstring>
+        <name>Interface</name>
+        <param>
+          <type>const char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="627" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="627" bodyend="629"/>
+      </memberdef>
+      <memberdef kind="function" id="structbnf_1_1_interface_1a236a916bae10e78128bc491b098b4d14" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Interface&lt; Data &gt;::Interface</definition>
+        <argsstring>(Data data, std::vector&lt; Interface &gt; &amp;res, const char *name=&quot;&quot;)</argsstring>
+        <name>Interface</name>
+        <param>
+          <type>Data</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref> &gt; &amp;</type>
+          <declname>res</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="630" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="630" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="structbnf_1_1_interface_1a170e2e3bcecc0ba84db1c3f38c52e146" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Interface&lt; Data &gt;::Interface</definition>
+        <argsstring>(const Interface &amp;front, const Interface &amp;back, const char *name=&quot;&quot;)</argsstring>
+        <name>Interface</name>
+        <param>
+          <type>const <ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref> &amp;</type>
+          <declname>front</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref> &amp;</type>
+          <declname>back</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="635" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="635" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="structbnf_1_1_interface_1ac165df54f3f68f7ae0a2f7f14df01626" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Interface&lt; Data &gt;::Interface</definition>
+        <argsstring>()</argsstring>
+        <name>Interface</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="638" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="638" bodyend="639"/>
+      </memberdef>
+      <memberdef kind="function" id="structbnf_1_1_interface_1af5eb2a2b7f6f30b45a1de94a9c611914" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int bnf::Interface&lt; Data &gt;::_get_pstop</definition>
+        <argsstring>(const char **pstop)</argsstring>
+        <name>_get_pstop</name>
+        <param>
+          <type>const char **</type>
+          <declname>pstop</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="642" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="642" bodyend="644"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="structbnf_1_1_interface_1ace4d9c561d2dd98ab3c4adbc7649596a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref></type>
+        <definition>static Interface bnf::Interface&lt; Data &gt;::ByPass</definition>
+        <argsstring>(std::vector&lt; Interface &gt; &amp;res)</argsstring>
+        <name>ByPass</name>
+        <param>
+          <type>std::vector&lt; <ref refid="structbnf_1_1_interface" kindref="compound">Interface</ref> &gt; &amp;</type>
+          <declname>res</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="640" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="640" bodyend="641"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="619" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="618" bodyend="645"/>
+    <listofallmembers>
+      <member refid="structbnf_1_1_interface_1af5eb2a2b7f6f30b45a1de94a9c611914" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>_get_pstop</name></member>
+      <member refid="structbnf_1_1_interface_1ace4d9c561d2dd98ab3c4adbc7649596a" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>ByPass</name></member>
+      <member refid="structbnf_1_1_interface_1aa58c913cebaaea8dfde2955386358b00" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>data</name></member>
+      <member refid="structbnf_1_1_interface_1a3ba100a5958043abd670dee6ef03f270" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>Interface</name></member>
+      <member refid="structbnf_1_1_interface_1ad1e1e4c8bb31ff77f9d4788c79474aec" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>Interface</name></member>
+      <member refid="structbnf_1_1_interface_1a236a916bae10e78128bc491b098b4d14" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>Interface</name></member>
+      <member refid="structbnf_1_1_interface_1a170e2e3bcecc0ba84db1c3f38c52e146" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>Interface</name></member>
+      <member refid="structbnf_1_1_interface_1ac165df54f3f68f7ae0a2f7f14df01626" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>Interface</name></member>
+      <member refid="structbnf_1_1_interface_1af60c723b2583fd7be6bfd39c95db44fa" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>length</name></member>
+      <member refid="structbnf_1_1_interface_1ad1692efc0dca5a71a0a2c1b417d22459" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>name</name></member>
+      <member refid="structbnf_1_1_interface_1ac72ee5bc4b029637854bcb6589b8485b" prot="public" virt="non-virtual"><scope>bnf::Interface</scope><name>text</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

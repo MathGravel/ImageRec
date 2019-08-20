@@ -1,0 +1,58 @@
+.TH "bnf::_And" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::_And
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbnf::_Tie\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_And\fP & \fBoperator+\fP (const \fB_Tie\fP &rule2)"
+.br
+.ti -1c
+.RI "\fB_And\fP & \fBoperator+\fP (const char *s)"
+.br
+.ti -1c
+.RI "\fB_And\fP & \fBoperator+\fP (bool(*f)(const char *, size_t))"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_And\fP (const \fB_Tie\fP &b1, const \fB_Tie\fP &b2)"
+.br
+.ti -1c
+.RI "\fB_And\fP (const \fB_And\fP *rl)"
+.br
+.ti -1c
+.RI "virtual int \fB_parse\fP (\fB_Base\fP *parser) const  throw ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Tie\fP"
+.br
+.ti -1c
+.RI "class \fBLexem\fP"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (const char *s, const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (bool(*f)(const char *, size_t), const \fB_Tie\fP &link)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

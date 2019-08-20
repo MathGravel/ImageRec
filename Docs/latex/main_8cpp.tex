@@ -1,0 +1,81 @@
+\section{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+
+
+\doxyref{main.\+cpp}{p.}{main_8cpp} \+: Function launching the entire project  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include \char`\"{}model/\+Recognition\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}view/\+Primary\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}controller/\+Manage\+Source\+Video.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, string $>$ \textbf{ loading\+Setting} (string file\+Setting)
+\begin{DoxyCompactList}\small\item\em Model. \end{DoxyCompactList}\item 
+int \textbf{ main} (int argc, char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{main.\+cpp}{p.}{main_8cpp} \+: Function launching the entire project 
+
+\begin{DoxyAuthor}{Author}
+Mathieu Gravel -\/ Edited by Alexandre Gonzalvez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+25 June 2019
+\end{DoxyDate}
+Function launching the entire project Create Model, View and Controller Take configuration files in argument 
+
+\subsection{Function Documentation}
+\mbox{\label{main_8cpp_ad56b994e44d328f3cd6ae3850d527d74}} 
+\index{main.\+cpp@{main.\+cpp}!loading\+Setting@{loading\+Setting}}
+\index{loading\+Setting@{loading\+Setting}!main.\+cpp@{main.\+cpp}}
+\subsubsection{loading\+Setting()}
+{\footnotesize\ttfamily loading\+Setting (\begin{DoxyParamCaption}\item[{string}]{file\+Setting }\end{DoxyParamCaption})}
+
+
+
+Model. 
+
+View Controller Function
+
+load setting 
+\begin{DoxyParams}{Parameters}
+{\em file\+Setting} & \+: name of the file which contains the setting, he as to be in the same folder than the \doxyref{main.\+cpp}{p.}{main_8cpp} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+setting \+: map$<$string,string$>$ which contain every path and information to use (fisrt String = name\+\_\+of\+\_\+information, second String = information) 
+\end{DoxyReturn}
+\mbox{\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv[$\,$] }\end{DoxyParamCaption})}
+
+Load settings
+
+Display setting in console
+
+Start video acquisition
+
+Create View object (Window if boolean is true) T\+O\+DO\+: Window create \doxyref{Recognition\+Manager}{p.}{class_recognition_manager} when button play is handle (require create a complex window)
+
+Initalize reconnaissance
+
+Start main loop 

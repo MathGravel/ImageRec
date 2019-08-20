@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e489200c4e40348e64df31662ab1cc1c" kind="dir">
+    <compoundname>controller/sources</compoundname>
+    <innerfile refid="_kinect_8cpp">Kinect.cpp</innerfile>
+    <innerfile refid="_kinect_8h">Kinect.h</innerfile>
+    <innerfile refid="_real_sense_8cpp">RealSense.cpp</innerfile>
+    <innerfile refid="_real_sense_8h">RealSense.h</innerfile>
+    <innerfile refid="_real_sense_video_8cpp">RealSenseVideo.cpp</innerfile>
+    <innerfile refid="_real_sense_video_8h">RealSenseVideo.h</innerfile>
+    <innerfile refid="_video_feed_types_8h">VideoFeedTypes.h</innerfile>
+    <innerfile refid="_video_source_8h">VideoSource.h</innerfile>
+    <innerfile refid="_web_cam_8cpp">WebCam.cpp</innerfile>
+    <innerfile refid="_web_cam_8h">WebCam.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="controller/sources/"/>
+  </compounddef>
+</doxygen>

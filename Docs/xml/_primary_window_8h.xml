@@ -1,0 +1,337 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_primary_window_8h" kind="file" language="C++">
+    <compoundname>PrimaryWindow.h</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes local="no">opencv2/core/core.hpp</includes>
+    <includes local="no">opencv2/highgui/highgui.hpp</includes>
+    <includes refid="_activity_region_8h" local="yes">../model/recoActivite/recoImage/ActivityRegion.h</includes>
+    <includes refid="_affordance_8h" local="yes">../model/recoActivite/recoAffordance/Affordance.h</includes>
+    <includedby refid="_recognition_manager_8h" local="yes">model/RecognitionManager.h</includedby>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_primary_window_8cpp" local="yes">view/PrimaryWindow.cpp</includedby>
+    <incdepgraph>
+      <node id="966">
+        <label>list</label>
+      </node>
+      <node id="943">
+        <label>iterator</label>
+      </node>
+      <node id="956">
+        <label>cnn/YoloGPU.h</label>
+        <link refid="_yolo_g_p_u_8h_source"/>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="957" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+      </node>
+      <node id="951">
+        <label>opencv2/objdetect.hpp</label>
+      </node>
+      <node id="941">
+        <label>cmath</label>
+      </node>
+      <node id="939">
+        <label>cassert</label>
+      </node>
+      <node id="952">
+        <label>opencv2/ml.hpp</label>
+      </node>
+      <node id="929">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="950">
+        <label>opencv2/imgproc.hpp</label>
+      </node>
+      <node id="928">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="932">
+        <label>string</label>
+      </node>
+      <node id="934">
+        <label>DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+      </node>
+      <node id="935">
+        <label>map</label>
+      </node>
+      <node id="931">
+        <label>../model/recoActivite/recoImage/ActivityRegion.h</label>
+        <link refid="_activity_region_8h"/>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="953" relation="include">
+        </childnode>
+        <childnode refid="954" relation="include">
+        </childnode>
+        <childnode refid="955" relation="include">
+        </childnode>
+        <childnode refid="956" relation="include">
+        </childnode>
+        <childnode refid="959" relation="include">
+        </childnode>
+        <childnode refid="963" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+      </node>
+      <node id="960">
+        <label>opencv2/dnn.hpp</label>
+      </node>
+      <node id="961">
+        <label>fstream</label>
+      </node>
+      <node id="949">
+        <label>opencv2/imgcodecs.hpp</label>
+      </node>
+      <node id="945">
+        <label>random</label>
+      </node>
+      <node id="955">
+        <label>future</label>
+      </node>
+      <node id="965">
+        <label>ctime</label>
+      </node>
+      <node id="937">
+        <label>selectiveSearchDepth.h</label>
+        <link refid="selective_search_depth_8h_source"/>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+        <childnode refid="948" relation="include">
+        </childnode>
+        <childnode refid="949" relation="include">
+        </childnode>
+        <childnode refid="950" relation="include">
+        </childnode>
+        <childnode refid="951" relation="include">
+        </childnode>
+        <childnode refid="952" relation="include">
+        </childnode>
+      </node>
+      <node id="947">
+        <label>opencv2/core.hpp</label>
+      </node>
+      <node id="963">
+        <label>stack</label>
+      </node>
+      <node id="927">
+        <label>vector</label>
+      </node>
+      <node id="958">
+        <label>Yolo.h</label>
+        <link refid="_yolo_8h_source"/>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="957" relation="include">
+        </childnode>
+      </node>
+      <node id="957">
+        <label>../Detector.h</label>
+        <link refid="_detector_8h_source"/>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+      </node>
+      <node id="938">
+        <label>array</label>
+      </node>
+      <node id="933">
+        <label>sstream</label>
+      </node>
+      <node id="948">
+        <label>opencv2/highgui.hpp</label>
+      </node>
+      <node id="930">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="942">
+        <label>iostream</label>
+      </node>
+      <node id="946">
+        <label>unordered_map</label>
+      </node>
+      <node id="964">
+        <label>../model/recoActivite/recoAffordance/Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="965" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="966" relation="include">
+        </childnode>
+      </node>
+      <node id="953">
+        <label>mutex</label>
+      </node>
+      <node id="940">
+        <label>chrono</label>
+      </node>
+      <node id="954">
+        <label>thread</label>
+      </node>
+      <node id="926">
+        <label>view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="964" relation="include">
+        </childnode>
+      </node>
+      <node id="959">
+        <label>cnn/YoloCPU.h</label>
+        <link refid="_yolo_c_p_u_8h_source"/>
+        <childnode refid="960" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="957" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+      </node>
+      <node id="936">
+        <label>algorithm</label>
+      </node>
+      <node id="962">
+        <label>stdio.h</label>
+      </node>
+      <node id="944">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="969">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="968">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="969" relation="include">
+        </childnode>
+      </node>
+      <node id="967">
+        <label>view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="968" relation="include">
+        </childnode>
+        <childnode refid="969" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_primary_window" prot="public">PrimaryWindow</innerclass>
+    <briefdescription>
+<para>interface of the program </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Mathieu Gravel Edited by Alexandre Gonzalvez </para></simplesect>
+<simplesect kind="version"><para>2.0 </para></simplesect>
+<simplesect kind="date"><para>8 August 2019</para></simplesect>
+If boolean = True take a the matrix of color, position of hands and objects in input draw rectangle over it int the matrix and display it Else do nothing TO ADD : DISPLAY display current action and 2 previous or more display next action (most likely) (like 3) display current plan (most likely) (like 3) Alert when the user do an action which is unlikely BUTTON To start the program To choose option (controller(realSense/webcam/video/kinect), ect ... (maybe FPS, GPU/CPU, langage)) AGEWELL &amp; GDAC/UQAM &amp; author (J.Massardi/M.Gravel/E.Beaudry) </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="24"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor">#include<sp/>&lt;opencv2/core/core.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/highgui/highgui.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor">#include<sp/>&quot;../model/recoActivite/recoImage/ActivityRegion.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../model/recoActivite/recoAffordance/Affordance.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacecv" kindref="compound">cv</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="class_primary_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>public<sp/>:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>display);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>(){}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateView(<ref refid="class_activity_region" kindref="compound">ActivityRegion</ref><sp/>*act,std::vector&lt;AffordanceTime*&gt;<sp/>currentAffordance);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>treatPicture(<ref refid="class_activity_region" kindref="compound">ActivityRegion</ref>*<sp/>act,std::vector&lt;AffordanceTime*&gt;<sp/>currentAffordance);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>private<sp/>:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref><sp/>*<sp/>pastAffordance;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>display;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="view/PrimaryWindow.h"/>
+  </compounddef>
+</doxygen>

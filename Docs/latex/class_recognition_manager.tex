@@ -1,0 +1,178 @@
+\section{Recognition\+Manager Class Reference}
+\label{class_recognition_manager}\index{Recognition\+Manager@{Recognition\+Manager}}
+
+
+Inheritance diagram for Recognition\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_recognition_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Recognition\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_recognition_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Recognition\+Manager} (\textbf{ Primary\+Window} $\ast$p\+\_\+view, \textbf{ Manage\+Source\+Video} $\ast$p\+\_\+controller, map$<$ string, string $>$ setting)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\label{class_recognition_manager_af23137fcb979eadc69a872723fd5648c}} 
+virtual \textbf{ $\sim$\+Recognition\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \textbf{ recognition\+Loop} (\textbf{ Manage\+Source\+Video} $\ast$p\+\_\+controller, \textbf{ Primary\+Window} $\ast$p\+\_\+view)
+\begin{DoxyCompactList}\small\item\em main loop of recognition which update every composant of the program \end{DoxyCompactList}\item 
+void \textbf{ update\+Intern\+Var} ()
+\begin{DoxyCompactList}\small\item\em Update variable. \end{DoxyCompactList}\item 
+void \textbf{ ask\+To\+Quit} ()
+\begin{DoxyCompactList}\small\item\em Exit way (absolutly not necessary) $\vert$ Unused. \end{DoxyCompactList}\item 
+void \textbf{ update\+By\+Observee} (Mat image\+Color, Mat image\+Depth)
+\begin{DoxyCompactList}\small\item\em Called by Observee (Image\+Treatment) \end{DoxyCompactList}\item 
+void \textbf{ update\+Affordance\+Seen} (\textbf{ Detected\+Objects} items, \textbf{ Detected\+Objects} hands, bool remove\+Last\+Value)
+\begin{DoxyCompactList}\small\item\em With hands and objects position, and last affordances found the current one then check it. \end{DoxyCompactList}\item 
+void \textbf{ update\+Plan\+Recognition} (\textbf{ Affordance} $\ast$checked\+Act\+Affordance)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_recognition_manager_afd771fe50a86dc604338f5b47405357e}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!Recognition\+Manager@{Recognition\+Manager}}
+\index{Recognition\+Manager@{Recognition\+Manager}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{Recognition\+Manager()}
+{\footnotesize\ttfamily Recognition\+Manager\+::\+Recognition\+Manager (\begin{DoxyParamCaption}\item[{\textbf{ Primary\+Window} $\ast$}]{p\+\_\+view,  }\item[{\textbf{ Manage\+Source\+Video} $\ast$}]{p\+\_\+controller,  }\item[{map$<$ string, string $>$}]{setting }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Initialize reco\+Image, reco\+Activity and reco\+Plan 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & \+: pointer on Object of \doxyref{Manage\+Source\+Video}{p.}{class_manage_source_video} created in \doxyref{main.\+cpp}{p.}{main_8cpp} \\
+\hline
+{\em p\+\_\+view} & \+: pointer on Object of Primary\+View created in \doxyref{main.\+cpp}{p.}{main_8cpp} \\
+\hline
+{\em setting} & \+: map$<$string,string$>$ which contain every path and information to use (fisrt String = name\+\_\+of\+\_\+information, second String = information) \\
+\hline
+\end{DoxyParams}
+Add setting to his attribute
+
+add this object as a listener of this object of Image\+Treatment
+
+Initialize image recognition
+
+Initialize activities/affordance recognition
+
+Initialize plan recognition if path of Domain gived in config 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_recognition_manager_a4441f77ce8103c10fabe9a25a77fe799}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!ask\+To\+Quit@{ask\+To\+Quit}}
+\index{ask\+To\+Quit@{ask\+To\+Quit}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{ask\+To\+Quit()}
+{\footnotesize\ttfamily Recognition\+Manager\+::ask\+To\+Quit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Exit way (absolutly not necessary) $\vert$ Unused. 
+
+Ask if exit after T\+I\+M\+E\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+A\+S\+K\+I\+N\+G\+\_\+\+C\+L\+O\+S\+U\+RE seconds $\vert$ U\+N\+U\+S\+ED.
+
+not usefull and never call for now (we prefer let program run indefinitely) However \+: Could be useful in many ways (things which can be seen after the main loop) \mbox{\label{class_recognition_manager_a5dbeab3f91f5b2dc65e6f25589f3200c}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!recognition\+Loop@{recognition\+Loop}}
+\index{recognition\+Loop@{recognition\+Loop}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{recognition\+Loop()}
+{\footnotesize\ttfamily Recognition\+Manager\+::recognition\+Loop (\begin{DoxyParamCaption}\item[{\textbf{ Manage\+Source\+Video} $\ast$}]{p\+\_\+controller,  }\item[{\textbf{ Primary\+Window} $\ast$}]{p\+\_\+view }\end{DoxyParamCaption})}
+
+
+
+main loop of recognition which update every composant of the program 
+
+take information(image) from controller then update model activities recognition return the affordance(\+When a hand interact with an object) then update recognition plan finally update view 
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+controller} & \+: adress of main object of controller to add this to listenner and ask for update \\
+\hline
+{\em p\+\_\+view} & \+: adress of main object of view to show to user \\
+\hline
+\end{DoxyParams}
+Update variable and display information on console
+
+Update input (Camera)
+
+Update image recognition (send to Y\+O\+LO which update vectors of hands and objects)
+
+Boolean which say if we start to remove the oldest frame keeped in memory
+
+Update affordance recognition
+
+Send information to View \+: O\+U\+T\+P\+UT
+
+Ask if exit after T\+I\+M\+E\+\_\+\+B\+E\+F\+O\+R\+E\+\_\+\+A\+S\+K\+I\+N\+G\+\_\+\+C\+L\+O\+S\+U\+RE seconds \mbox{\label{class_recognition_manager_af82e3ed84598f8e4ff3c99e1f68ae25e}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!update\+Affordance\+Seen@{update\+Affordance\+Seen}}
+\index{update\+Affordance\+Seen@{update\+Affordance\+Seen}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{update\+Affordance\+Seen()}
+{\footnotesize\ttfamily Recognition\+Manager\+::update\+Affordance\+Seen (\begin{DoxyParamCaption}\item[{\textbf{ Detected\+Objects}}]{items,  }\item[{\textbf{ Detected\+Objects}}]{hands,  }\item[{bool}]{remove\+Last\+Value }\end{DoxyParamCaption})}
+
+
+
+With hands and objects position, and last affordances found the current one then check it. 
+
+Update a vector of \doxyref{Affordance}{p.}{class_affordance} sort by their probability (\doxyref{Matrice\+Affordance}{p.}{class_matrice_affordance}) Could have an affordance with nothing If we don\textquotesingle{}t see any hands or objects only affordance is N\+U\+LL with 1 for probability Then in function to former image (T\+I\+M\+E\+\_\+\+L\+A\+S\+T\+\_\+\+A\+F\+F\+O\+R\+D\+A\+N\+CE) tell what is the most likely affordance Can say N\+U\+LL Then look on the average one Then check it 
+\begin{DoxyParams}{Parameters}
+{\em items} & \+: \doxyref{Detected\+Objects}{p.}{class_detected_objects} basically a vector of objects \\
+\hline
+{\em hands} & \+: \doxyref{Detected\+Objects}{p.}{class_detected_objects} basically a vector of hands \\
+\hline
+{\em remove\+Last\+Value} & \+: boolean which say if we have to remove the first affordance of the vector $\vert$ after T\+I\+M\+E\+\_\+\+L\+A\+S\+T\+\_\+\+A\+F\+F\+O\+R\+D\+A\+N\+CE we start to supress this one \\
+\hline
+\end{DoxyParams}
+To see an affordance from each frame
+
+check if aff not null and (doesn\textquotesingle{}t = the 2 before except if more than 5 sec ) and 3 time in last 0.\+8 s \mbox{\label{class_recognition_manager_a229cf0650eeeb6f218f8816f0bb76b46}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!update\+By\+Observee@{update\+By\+Observee}}
+\index{update\+By\+Observee@{update\+By\+Observee}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{update\+By\+Observee()}
+{\footnotesize\ttfamily Recognition\+Manager\+::update\+By\+Observee (\begin{DoxyParamCaption}\item[{Mat}]{image\+Color,  }\item[{Mat}]{image\+Depth }\end{DoxyParamCaption})}
+
+
+
+Called by Observee (Image\+Treatment) 
+
+update color\+Matrix and Depth\+Matrix
+
+belongs to \doxyref{Observer}{p.}{class_observer} routine (called by controller) T\+O\+DO \+: just past a pointer of an unconstant matrix because it\textquotesingle{}s use for see and modify 
+\begin{DoxyParams}{Parameters}
+{\em image\+Color} & \+: 3 matrix which represent R\+GB of the last image $\sim$ Not sure \\
+\hline
+{\em image\+Depth} & \+: a matrix which represent the depth of last image \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_recognition_manager_a8c134aced9268cf0f9e184f387b64aeb}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!update\+Intern\+Var@{update\+Intern\+Var}}
+\index{update\+Intern\+Var@{update\+Intern\+Var}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{update\+Intern\+Var()}
+{\footnotesize\ttfamily Recognition\+Manager\+::update\+Intern\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Update variable. 
+
+Update variable and display information on console. Update display and information each seconds \mbox{\label{class_recognition_manager_a4b2ae89b18760f1008530ed81205b5ec}} 
+\index{Recognition\+Manager@{Recognition\+Manager}!update\+Plan\+Recognition@{update\+Plan\+Recognition}}
+\index{update\+Plan\+Recognition@{update\+Plan\+Recognition}!Recognition\+Manager@{Recognition\+Manager}}
+\subsubsection{update\+Plan\+Recognition()}
+{\footnotesize\ttfamily void Recognition\+Manager\+::update\+Plan\+Recognition (\begin{DoxyParamCaption}\item[{\textbf{ Affordance} $\ast$}]{checked\+Act\+Affordance }\end{DoxyParamCaption})}
+
+Update plan recognition 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/\textbf{ Recognition\+Manager.\+h}\item 
+model/Recognition\+Manager.\+cpp\end{DoxyCompactItemize}

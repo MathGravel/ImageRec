@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacestd" kind="namespace" language="C++">
+    <compoundname>std</compoundname>
+    <innerclass refid="structstd_1_1hash_3_01rule_01_4" prot="public">std::hash&lt; rule &gt;</innerclass>
+    <innerclass refid="classstd_1_1hash_3_01std_1_1pair_3_01int_00_01int_01_4_01_4" prot="public">std::hash&lt; std::pair&lt; int, int &gt; &gt;</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Selective search Depth Code de l&apos;algorithme selective search depth, base sur l&apos;implementation de l&apos;algorithme Selective Search La version originale est prise de <ulink url="https://github.com/watanika/selective-search-cpp">https://github.com/watanika/selective-search-cpp</ulink> </para>    </detaileddescription>
+    <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="34" column="1"/>
+  </compounddef>
+</doxygen>

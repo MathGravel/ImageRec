@@ -1,0 +1,213 @@
+.TH "AffordanceTime" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+AffordanceTime
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAffordanceTime\fP ()"
+.br
+.RI "Constructor of \fBAffordanceTime\fP\&. "
+.ti -1c
+.RI "\fBAffordanceTime\fP (\fBAffordance\fP aff, int frameCount)"
+.br
+.RI "Constructor of \fBAffordanceTime\fP\&. "
+.ti -1c
+.RI "void \fBmarkCurrentInteractions\fP (double dist, int frameCount)"
+.br
+.RI "Updates the \fBAffordance\fP object during an interaction\&. "
+.ti -1c
+.RI "void \fBmarkCurrentInteractions\fP (double dist, cv::Rect pos, double prob, int frameCount)"
+.br
+.RI "Updates the \fBAffordance\fP object during an interaction\&. "
+.ti -1c
+.RI "double \fBgetInteractionTime\fP ()"
+.br
+.RI "getInteractionTime "
+.ti -1c
+.RI "double \fBgetStartTime\fP ()"
+.br
+.RI "getStartTime "
+.ti -1c
+.RI "\fBAffordance\fP & \fBgetAffordance\fP ()"
+.br
+.RI "getAffordance "
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.RI "getName "
+.ti -1c
+.RI "int \fBgetNumberOfOccurences\fP ()"
+.br
+.RI "getNumberOfOccurences "
+.ti -1c
+.RI "void \fBclean\fP ()"
+.br
+.RI "Cleans the time attribute\&. "
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckAffName\fP (const std::string className) const"
+.br
+.RI "checkAffName "
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBAffordanceTime\fP &autre)"
+.br
+.RI "Overload of the '==' operator for two \fBAffordanceTime\fP objects\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBAffordanceTime\fP &autre)"
+.br
+.RI "Overload of the '<' operator for two \fBAffordanceTime\fP objects\&. "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBAffordanceTime\fP a)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "AffordanceTime::AffordanceTime (\fBAffordance\fP aff, int frameCount)"
+
+.PP
+Constructor of \fBAffordanceTime\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaff\fP \fBAffordance\fP : Object of type \fBAffordance\fP 
+.br
+\fIframeCount\fP int : Frame time at the creation 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool AffordanceTime::checkAffName (const std::string className) const\fC [inline]\fP"
+
+.PP
+checkAffName 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclassName\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+.SS "\fBAffordance\fP& AffordanceTime::getAffordance ()\fC [inline]\fP"
+
+.PP
+getAffordance 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "double AffordanceTime::getInteractionTime ()\fC [inline]\fP"
+
+.PP
+getInteractionTime 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "std::string AffordanceTime::getName () const\fC [inline]\fP"
+
+.PP
+getName 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "int AffordanceTime::getNumberOfOccurences ()\fC [inline]\fP"
+
+.PP
+getNumberOfOccurences 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "double AffordanceTime::getStartTime ()\fC [inline]\fP"
+
+.PP
+getStartTime 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "AffordanceTime::markCurrentInteractions (double dist, int frameCount)"
+
+.PP
+Updates the \fBAffordance\fP object during an interaction\&. Updates the \fBAffordance\fP object, called during an interaction Updates the current time and adds the frame time of the interaction 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaff\fP \fBAffordance\fP : Object of type \fBAffordance\fP 
+.br
+\fIframeCount\fP int : Frame time at the creation 
+.RE
+.PP
+
+.SS "AffordanceTime::markCurrentInteractions (double dist, cv::Rect pos, double prob, int frameCount)"
+
+.PP
+Updates the \fBAffordance\fP object during an interaction\&. Updates the \fBAffordance\fP object, called during an interaction Updates the current time and adds the frame time of the interaction Sets the \fBAffordance\fP object's position and its probability to correspond 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIaff\fP \fBAffordance\fP : Object of type \fBAffordance\fP 
+.br
+\fIframeCount\fP int : Frame time at the creation 
+.RE
+.PP
+
+.SS "AffordanceTime::operator< (const \fBAffordanceTime\fP & autre)"
+
+.PP
+Overload of the '<' operator for two \fBAffordanceTime\fP objects\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if this < 'autre' 
+.RE
+.PP
+
+.SS "AffordanceTime::operator== (const \fBAffordanceTime\fP & autre)"
+
+.PP
+Overload of the '==' operator for two \fBAffordanceTime\fP objects\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if this == 'autre' 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

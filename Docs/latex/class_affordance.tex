@@ -1,0 +1,126 @@
+\section{Affordance Class Reference}
+\label{class_affordance}\index{Affordance@{Affordance}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Affordance} (std\+::string obj=\char`\"{}teacup\char`\"{}, double prob=76.\+7653)
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Affordance}{p.}{class_affordance}. \end{DoxyCompactList}\item 
+\textbf{ Affordance} (std\+::string obj, double pos, cv\+::\+Rect reg, double prob, double \+\_\+dist=0)
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Affordance}{p.}{class_affordance}. \end{DoxyCompactList}\item 
+\mbox{\label{class_affordance_a1df2b93a131f51a9ec09543c3e90a973}} 
+std\+::string {\bfseries get\+Name} () const
+\item 
+\mbox{\label{class_affordance_ae0af285b48f141b9a562be0dce29c118}} 
+double {\bfseries get\+Object\+Position} () const
+\item 
+\mbox{\label{class_affordance_a946913b09e3996204b38e6ec95760927}} 
+const cv\+::\+Rect \& {\bfseries get\+Region} () const
+\item 
+\mbox{\label{class_affordance_a0d994c5c809aba784d58eb855db218e0}} 
+double {\bfseries get\+Object\+Probability} () const
+\item 
+\mbox{\label{class_affordance_acb92606601365f5fc88cd35d95fe9ef5}} 
+void {\bfseries set\+Dist} (double dist)
+\item 
+\mbox{\label{class_affordance_a9ac80d93d6e91a45ac4167f0e59d6672}} 
+void {\bfseries reset} ()
+\item 
+bool \textbf{ operator==} (const \textbf{ Affordance} \&autre)
+\begin{DoxyCompactList}\small\item\em Overload of the \textquotesingle{}==\textquotesingle{} operator for two \doxyref{Affordance}{p.}{class_affordance} objects. \end{DoxyCompactList}\item 
+bool \textbf{ operator$<$} (const \textbf{ Affordance} \&autre)
+\begin{DoxyCompactList}\small\item\em Overload of the \textquotesingle{}$<$\textquotesingle{} operator for two \doxyref{Affordance}{p.}{class_affordance} objects. \end{DoxyCompactList}\item 
+std\+::string \textbf{ to\+\_\+str} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_affordance_a1d761ec04ad58029e54101c201c15d89}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&o, const \textbf{ Affordance} a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_affordance_af5eb0d211b08c5e74bda3d278f4c0c36}} 
+\index{Affordance@{Affordance}!Affordance@{Affordance}}
+\index{Affordance@{Affordance}!Affordance@{Affordance}}
+\subsubsection{Affordance()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Affordance\+::\+Affordance (\begin{DoxyParamCaption}\item[{std\+::string}]{obj = {\ttfamily \char`\"{}teacup\char`\"{}},  }\item[{double}]{prob = {\ttfamily 76.7653} }\end{DoxyParamCaption})}
+
+
+
+Constructor of \doxyref{Affordance}{p.}{class_affordance}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & Name of the new Object \\
+\hline
+{\em prob} & Confidence rate on the object \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_affordance_a7a5b691f83565f6905dabd64b80f8312}} 
+\index{Affordance@{Affordance}!Affordance@{Affordance}}
+\index{Affordance@{Affordance}!Affordance@{Affordance}}
+\subsubsection{Affordance()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Affordance\+::\+Affordance (\begin{DoxyParamCaption}\item[{std\+::string}]{obj,  }\item[{double}]{pos,  }\item[{cv\+::\+Rect}]{reg,  }\item[{double}]{prob,  }\item[{double}]{\+\_\+dist = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Constructor of \doxyref{Affordance}{p.}{class_affordance}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & String \+: Name of the new Object \\
+\hline
+{\em pos} & double \+: position of the Object at Creation \\
+\hline
+{\em reg} & cv\+::\+Rect \+: Open\+Cv class for 2D rectangles \\
+\hline
+{\em prob} & double \+: Confidence rate on the object \\
+\hline
+{\em dist} & double \+: Distance between the Hand and the Object \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_affordance_af080e51eb9ea5965c2cb0bee6caa4ff0}} 
+\index{Affordance@{Affordance}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Affordance@{Affordance}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily bool Affordance\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ Affordance} \&}]{autre }\end{DoxyParamCaption})}
+
+
+
+Overload of the \textquotesingle{}$<$\textquotesingle{} operator for two \doxyref{Affordance}{p.}{class_affordance} objects. 
+
+\begin{DoxyReturn}{Returns}
+True if this $<$ \textquotesingle{}autre\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\label{class_affordance_a4f7ff7d10b07287cb73c519689c60678}} 
+\index{Affordance@{Affordance}!operator==@{operator==}}
+\index{operator==@{operator==}!Affordance@{Affordance}}
+\subsubsection{operator==()}
+{\footnotesize\ttfamily bool Affordance\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ Affordance} \&}]{autre }\end{DoxyParamCaption})}
+
+
+
+Overload of the \textquotesingle{}==\textquotesingle{} operator for two \doxyref{Affordance}{p.}{class_affordance} objects. 
+
+\begin{DoxyReturn}{Returns}
+True if this == \textquotesingle{}autre\textquotesingle{} 
+\end{DoxyReturn}
+\mbox{\label{class_affordance_a0e999f7c0a400f4f1936c392843b5051}} 
+\index{Affordance@{Affordance}!to\+\_\+str@{to\+\_\+str}}
+\index{to\+\_\+str@{to\+\_\+str}!Affordance@{Affordance}}
+\subsubsection{to\+\_\+str()}
+{\footnotesize\ttfamily Affordance\+::to\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Activite/reco\+Affordance/\textbf{ Affordance.\+h}\item 
+model/reco\+Activite/reco\+Affordance/Affordance.\+cpp\end{DoxyCompactItemize}

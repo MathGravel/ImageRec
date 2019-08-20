@@ -1,0 +1,23 @@
+<map id="model/RecognitionManager.h" name="model/RecognitionManager.h">
+<area shape="rect" id="node5" href="$_manage_source_video_8h.html" title="Select the good source video including size and handle update. " alt="" coords="1204,169,1383,211"/>
+<area shape="rect" id="node24" href="$_observer_8h_source.html" title="../model/Observer.h" alt="" coords="1720,348,1857,375"/>
+<area shape="rect" id="node25" href="$_primary_window_8h.html" title="interface of the program " alt="" coords="2335,87,2503,114"/>
+<area shape="rect" id="node28" href="$_activity_region_8h.html" title="interact with YOLO which gives detected objects and hands " alt="" coords="2750,169,2936,211"/>
+<area shape="rect" id="node45" href="$_object_aff_8h.html" title="select critere to tell if it&#39;s could be an affordance " alt="" coords="2745,80,2928,121"/>
+<area shape="rect" id="node46" href="$_matrice_affordance_8h.html" title="keep in memory the last affordances seen (frame in the last 800ms : in version 2.0) PUT in cpp ..." alt="" coords="3398,177,3536,203"/>
+<area shape="rect" id="node47" href="$_policy_8h.html" title="recoPlan/Policy.h" alt="" coords="385,87,509,114"/>
+<area shape="rect" id="node6" href="$_video_source_8h_source.html" title="sources/VideoSource.h" alt="" coords="923,348,1080,375"/>
+<area shape="rect" id="node9" href="$_real_sense_8h_source.html" title="sources/RealSense.h" alt="" coords="968,266,1115,293"/>
+<area shape="rect" id="node11" href="$_real_sense_video_8h_source.html" title="sources/RealSenseVideo.h" alt="" coords="1140,266,1320,293"/>
+<area shape="rect" id="node15" href="$_kinect_8h_source.html" title="sources/Kinect.h" alt="" coords="611,266,731,293"/>
+<area shape="rect" id="node19" href="$_web_cam_8h_source.html" title="sources/WebCam.h" alt="" coords="755,266,894,293"/>
+<area shape="rect" id="node23" href="$_subject_8h_source.html" title="Subject.h" alt="" coords="1547,266,1624,293"/>
+<area shape="rect" id="node43" href="$_affordance_8h.html" title="Evaluates the position between an Object and the Hand. " alt="" coords="1902,259,2094,300"/>
+<area shape="rect" id="node29" href="$_detected_object_8h.html" title="3 class : DetectedMatrice, DetectedObject, DetectedObjects " alt="" coords="2689,348,2813,375"/>
+<area shape="rect" id="node30" href="$selective_search_depth_8h_source.html" title="selectiveSearchDepth.h" alt="" coords="3146,266,3308,293"/>
+<area shape="rect" id="node40" href="$_yolo_g_p_u_8h_source.html" title="cnn/YoloGPU.h" alt="" coords="2713,266,2826,293"/>
+<area shape="rect" id="node41" href="$_yolo_c_p_u_8h_source.html" title="cnn/YoloCPU.h" alt="" coords="2473,266,2586,293"/>
+<area shape="rect" id="node48" href="$extended_plan_library_8h_source.html" title="PARC/include/extendedPlan\lLibrary.h" alt="" coords="145,259,333,300"/>
+<area shape="rect" id="node49" href="$plan_library_8h.html" title="planLibrary.h" alt="" coords="190,348,286,375"/>
+<area shape="rect" id="node50" href="$solver_8h_source.html" title="PARC/include/solver.h" alt="" coords="370,177,524,203"/>
+</map>

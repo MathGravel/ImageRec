@@ -1,0 +1,258 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classextended_plan_library" kind="class" language="C++" prot="public">
+    <compoundname>extendedPlanLibrary</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classextended_plan_library_1adfdeadb3a9690edfca909654225be623" prot="public" static="no" mutable="no">
+        <type><ref refid="classplan_library" kindref="compound">planLibrary</ref> *</type>
+        <definition>planLibrary* extendedPlanLibrary::ePlanLibrary</definition>
+        <argsstring></argsstring>
+        <name>ePlanLibrary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="28" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classextended_plan_library_1a1101073d7204ead7bc74adc82a60883b" prot="public" static="no" mutable="no">
+        <type><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref></type>
+        <definition>probabilityDistribution extendedPlanLibrary::decisionModel</definition>
+        <argsstring></argsstring>
+        <name>decisionModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="29" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classextended_plan_library_1a912a4990ef0413b38d12db23216297b6" prot="public" static="no" mutable="no">
+        <type><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref></type>
+        <definition>probabilityDistribution extendedPlanLibrary::noise</definition>
+        <argsstring></argsstring>
+        <name>noise</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="30" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classextended_plan_library_1a2bcd4077b34545e5dba7d988ec299eca" prot="public" static="no" mutable="no">
+        <type>map&lt; string, int &gt;</type>
+        <definition>map&lt;string,int&gt; extendedPlanLibrary::ids</definition>
+        <argsstring></argsstring>
+        <name>ids</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="32" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classextended_plan_library_1a57548009a05ac7723e2fab4df9212eee" prot="public" static="no" mutable="no">
+        <type>map&lt; int, string &gt;</type>
+        <definition>map&lt;int, string&gt; extendedPlanLibrary::revIds</definition>
+        <argsstring></argsstring>
+        <name>revIds</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="33" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classextended_plan_library_1ab11fbde77535d6bc627ec3df451c3f11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>extendedPlanLibrary::extendedPlanLibrary</definition>
+        <argsstring>(const char *spl)</argsstring>
+        <name>extendedPlanLibrary</name>
+        <param>
+          <type>const char *</type>
+          <declname>spl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="22" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="123" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1a0d19981e96203b01bf6707bef31b9f34" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>extendedPlanLibrary::extendedPlanLibrary</definition>
+        <argsstring>(planLibrary *_ePlanLibrary)</argsstring>
+        <name>extendedPlanLibrary</name>
+        <param>
+          <type><ref refid="classplan_library" kindref="compound">planLibrary</ref> *</type>
+          <declname>_ePlanLibrary</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="23" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="221" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1a70a6870f3d6a25c5d42668f384c9493d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>extendedPlanLibrary::extendedPlanLibrary</definition>
+        <argsstring>(const extendedPlanLibrary &amp;epl)</argsstring>
+        <name>extendedPlanLibrary</name>
+        <param>
+          <type>const <ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> &amp;</type>
+          <declname>epl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="24" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="232" bodyend="241"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1a0d31668984ad5bc8e7c0993cf0c45651" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>extendedPlanLibrary::extendedPlanLibrary</definition>
+        <argsstring>(bool rnd=true, float noisePRCT=0.0, int goal=5, int _size=10, int depth=2, int widthAND=3, int widthOR=2, bool DM=false)</argsstring>
+        <name>extendedPlanLibrary</name>
+        <param>
+          <type>bool</type>
+          <declname>rnd</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>noisePRCT</declname>
+          <defval>0.0</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>goal</declname>
+          <defval>5</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_size</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>depth</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>widthAND</declname>
+          <defval>3</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>widthOR</declname>
+          <defval>2</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>DM</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="25" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="243" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1ac614f4c99164e9282b6e08c9c872d6ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>extendedPlanLibrary::~extendedPlanLibrary</definition>
+        <argsstring>()</argsstring>
+        <name>~extendedPlanLibrary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="26" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="367" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1a804ea71b83f1c288d6beab0caad7fec3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int extendedPlanLibrary::extra</definition>
+        <argsstring>()</argsstring>
+        <name>extra</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="35" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="372" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="classextended_plan_library_1ab28011e80bd6b2bdbd5dbeb0ad0852c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const string</type>
+        <definition>const string extendedPlanLibrary::toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="36" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp" bodystart="383" bodyend="507"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="63">
+        <label>planLibrary</label>
+        <link refid="classplan_library"/>
+      </node>
+      <node id="61">
+        <label>extendedPlanLibrary</label>
+        <link refid="classextended_plan_library"/>
+        <childnode refid="62" relation="usage">
+          <edgelabel>noise</edgelabel>
+          <edgelabel>decisionModel</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>ePlanLibrary</edgelabel>
+        </childnode>
+      </node>
+      <node id="62">
+        <label>probabilityDistribution</label>
+        <link refid="classprobability_distribution"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h" line="19" column="1" bodyfile="model/recoPlan/PARC/include/extendedPlanLibrary.h" bodystart="18" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classextended_plan_library_1a1101073d7204ead7bc74adc82a60883b" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>decisionModel</name></member>
+      <member refid="classextended_plan_library_1adfdeadb3a9690edfca909654225be623" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>ePlanLibrary</name></member>
+      <member refid="classextended_plan_library_1ab11fbde77535d6bc627ec3df451c3f11" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>extendedPlanLibrary</name></member>
+      <member refid="classextended_plan_library_1a0d19981e96203b01bf6707bef31b9f34" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>extendedPlanLibrary</name></member>
+      <member refid="classextended_plan_library_1a70a6870f3d6a25c5d42668f384c9493d" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>extendedPlanLibrary</name></member>
+      <member refid="classextended_plan_library_1a0d31668984ad5bc8e7c0993cf0c45651" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>extendedPlanLibrary</name></member>
+      <member refid="classextended_plan_library_1a804ea71b83f1c288d6beab0caad7fec3" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>extra</name></member>
+      <member refid="classextended_plan_library_1a2bcd4077b34545e5dba7d988ec299eca" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>ids</name></member>
+      <member refid="classextended_plan_library_1a912a4990ef0413b38d12db23216297b6" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>noise</name></member>
+      <member refid="classextended_plan_library_1a57548009a05ac7723e2fab4df9212eee" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>revIds</name></member>
+      <member refid="classextended_plan_library_1ab28011e80bd6b2bdbd5dbeb0ad0852c4" prot="public" virt="non-virtual"><scope>extendedPlanLibrary</scope><name>toString</name></member>
+      <member refid="classextended_plan_library_1ac614f4c99164e9282b6e08c9c872d6ee" prot="public" virt="virtual"><scope>extendedPlanLibrary</scope><name>~extendedPlanLibrary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

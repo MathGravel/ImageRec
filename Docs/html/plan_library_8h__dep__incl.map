@@ -1,0 +1,9 @@
+<map id="model/recoPlan/PARC/include/planLibrary.h" name="model/recoPlan/PARC/include/planLibrary.h">
+<area shape="rect" id="node2" href="$extended_plan_library_8h_source.html" title="model/recoPlan/PARC\l/include/extendedPlanLibrary.h" alt="" coords="73,184,273,225"/>
+<area shape="rect" id="node3" href="$_policy_8h.html" title="model/recoPlan/Policy.h" alt="" coords="207,370,369,397"/>
+<area shape="rect" id="node8" href="$probability_distribution_8h_source.html" title="model/recoPlan/PARC\l/include/probabilityDistribution.h" alt="" coords="94,95,301,136"/>
+<area shape="rect" id="node6" href="$solver_8h_source.html" title="model/recoPlan/PARC\l/include/solver.h" alt="" coords="96,273,251,315"/>
+<area shape="rect" id="node7" href="$test_solver_8h_source.html" title="model/recoPlan/PARC\l/include/testSolver.h" alt="" coords="5,363,160,404"/>
+<area shape="rect" id="node4" href="$_recognition_manager_8h.html" title="Manage all project. " alt="" coords="193,452,383,479"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp : Function launching the entire project " alt="" coords="251,527,325,553"/>
+</map>

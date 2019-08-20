@@ -1,0 +1,139 @@
+.TH "MatriceAffordance" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MatriceAffordance
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMatriceAffordance\fP ()"
+.br
+.RI "Constructor of \fBMatriceAffordance\fP\&. "
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "removes all the elements from mat_objects "
+.ti -1c
+.RI "void \fBinstance\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddnewAff\fP (\fBAffordance\fP *aff, bool removeLastValue)"
+.br
+.RI "update vector of last aff "
+.ti -1c
+.RI "void \fBupdate\fP (std::vector< \fBAffordanceTime\fP *> objs, bool removeLastValue)"
+.br
+.RI "add last \fBAffordanceTime\fP(vector of \fBAffordance\fP = every affordance possible for one frame) and suppress the oldest one if time since the start is great enough "
+.ti -1c
+.RI "double \fBgetFrequence\fP (string name)"
+.br
+.RI "returns the frequence of the affordance with an object in the last images | Never Used "
+.ti -1c
+.RI "double \fBprobCalculation\fP (string name, double prob_object)"
+.br
+.RI "Calculation of the average probability : weighted average\&. "
+.ti -1c
+.RI "bool \fBmoreThanAffFrame\fP (string nom_aff, int that)"
+.br
+.ti -1c
+.RI "std::vector< std::vector< \fBAffordanceTime\fP * > > \fBget_affordances\fP () const"
+.br
+.ti -1c
+.RI "std::vector< \fBAffordance\fP * > \fBget_Mat_prec_act\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBAffordance\fP * \fBupdateAffordance\fP (const std::stack< \fBAffordanceTime\fP *> matrice)"
+.br
+.RI "from the stack of AffordanceTime* return the most likely affordance of the last frame "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MatriceAffordance::MatriceAffordance ()\fC [inline]\fP"
+
+.PP
+Constructor of \fBMatriceAffordance\fP\&. initializes mat_objets, matrix of objects 
+.SH "Member Function Documentation"
+.PP 
+.SS "MatriceAffordance::addnewAff (\fBAffordance\fP * aff, bool removeLastValue)\fC [inline]\fP"
+
+.PP
+update vector of last aff 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBAffordance\fP\fP aff : last affordance seen 
+.br
+\fIbool\fP removeLastValue : indicates if the time since the start is great enough for start to delete the oldest vector of affordance 
+.RE
+.PP
+
+.SS "MatriceAffordance::getFrequence (string name)\fC [inline]\fP"
+
+.PP
+returns the frequence of the affordance with an object in the last images | Never Used 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP : Name of the class of the object to check 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the frequence of the object in the last images and itself 
+.RE
+.PP
+
+.SS "MatriceAffordance::probCalculation (string name, double prob_object)\fC [inline]\fP"
+
+.PP
+Calculation of the average probability : weighted average\&. (prob_of_object + sum(for i=2 to n) of (i/n) * prob_same_object_affordance_at_i_frame_of_vector )/ sum(for i=1 to n) of i/n 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP : Name of the class of the object to check 
+.br
+\fIprob_object\fP : probabilty of image recognition of the object (probability written on the screen in treadPicture 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+double : probabilty of the affordance 
+.RE
+.PP
+
+.SS "MatriceAffordance::update (std::vector< \fBAffordanceTime\fP *> objs, bool removeLastValue)\fC [inline]\fP"
+
+.PP
+add last \fBAffordanceTime\fP(vector of \fBAffordance\fP = every affordance possible for one frame) and suppress the oldest one if time since the start is great enough 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstd::vector<AffordanceTime*>\fP objs : \fBAffordanceTime\fP(vector of \fBAffordance\fP = every affordance possible for one frame) 
+.br
+\fIbool\fP removeLastValue : indicates if the time since the start is great enough for start to delete the oldest vector of affordance 
+.RE
+.PP
+
+.SS "MatriceAffordance::updateAffordance (const std::stack< \fBAffordanceTime\fP *> matrice)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+from the stack of AffordanceTime* return the most likely affordance of the last frame with vector of each affordance order by probability for each frame 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIconst\fP std::stack<AffordanceTime*> matrice : vector/stack of vector of affordanceTime (first : each frame, second : each possibility for this frame 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

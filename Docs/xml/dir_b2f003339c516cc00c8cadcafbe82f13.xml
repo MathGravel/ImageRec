@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_b2f003339c516cc00c8cadcafbe82f13" kind="dir">
+    <compoundname>view</compoundname>
+    <innerfile refid="_primary_window_8cpp">PrimaryWindow.cpp</innerfile>
+    <innerfile refid="_primary_window_8h">PrimaryWindow.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="view/"/>
+  </compounddef>
+</doxygen>

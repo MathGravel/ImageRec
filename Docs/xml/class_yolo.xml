@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_yolo" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Yolo</compoundname>
+    <basecompoundref refid="class_detector" prot="public" virt="non-virtual">Detector</basecompoundref>
+    <derivedcompoundref refid="class_yolo_c_p_u" prot="public" virt="non-virtual">YoloCPU</derivedcompoundref>
+    <derivedcompoundref refid="class_yolo_g_p_u" prot="public" virt="non-virtual">YoloGPU</derivedcompoundref>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_yolo_1a64972761d816598e5964dbd2b652bf83" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::string</type>
+        <definition>virtual std::string Yolo::getDetectorType</definition>
+        <argsstring>()=0</argsstring>
+        <name>getDetectorType</name>
+        <reimplementedby refid="class_yolo_g_p_u_1a567132c86a6e9be7e1103cecbceb7915">getDetectorType</reimplementedby>
+        <reimplementedby refid="class_yolo_c_p_u_1a96e2dd036015132b351e0ce28376e5fe">getDetectorType</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/cnn/Yolo.h" line="9" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="156">
+        <label>Detector</label>
+        <link refid="class_detector"/>
+      </node>
+      <node id="155">
+        <label>Yolo</label>
+        <link refid="class_yolo"/>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>YoloCPU</label>
+        <link refid="class_yolo_c_p_u"/>
+        <childnode refid="155" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>YoloGPU</label>
+        <link refid="class_yolo_g_p_u"/>
+        <childnode refid="155" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="160">
+        <label>Detector</label>
+        <link refid="class_detector"/>
+      </node>
+      <node id="159">
+        <label>Yolo</label>
+        <link refid="class_yolo"/>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoActivite/recoImage/cnn/Yolo.h" line="7" column="1" bodyfile="model/recoActivite/recoImage/cnn/Yolo.h" bodystart="7" bodyend="10"/>
+    <listofallmembers>
+      <member refid="class_detector_1a608942d93773419f166a499be33bb7c1" prot="public" virt="virtual"><scope>Yolo</scope><name>findObjects</name></member>
+      <member refid="class_yolo_1a64972761d816598e5964dbd2b652bf83" prot="private" virt="pure-virtual"><scope>Yolo</scope><name>getDetectorType</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

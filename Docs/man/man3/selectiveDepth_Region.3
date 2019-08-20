@@ -1,0 +1,53 @@
+.TH "selectiveDepth::Region" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+selectiveDepth::Region
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRegion\fP (const cv::Rect &rect, int label)"
+.br
+.ti -1c
+.RI "\fBRegion\fP (const cv::Rect &rect, int size, const std::vector< float > &&colourHist, const std::vector< float > &&textureHist, const std::vector< float > &&depthHist, const std::vector< int > &&labels)"
+.br
+.ti -1c
+.RI "\fBRegion\fP & \fBoperator=\fP (const \fBRegion\fP &region)=default"
+.br
+.ti -1c
+.RI "\fBRegion\fP & \fBoperator=\fP (\fBRegion\fP &&region) noexcept"
+.br
+.ti -1c
+.RI "\fBRegion\fP (\fBRegion\fP &&region) noexcept"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBsize\fP"
+.br
+.ti -1c
+.RI "cv::Rect \fBrect\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBlabels\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBcolourHist\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBdepthHist\fP"
+.br
+.ti -1c
+.RI "std::vector< float > \fBtextureHist\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

@@ -1,0 +1,535 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_manage_source_video" kind="class" language="C++" prot="public">
+    <compoundname>ManageSourceVideo</compoundname>
+    <basecompoundref refid="class_subject" prot="public" virt="non-virtual">Subject</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_manage_source_video_1a9dfd620113ab2f2f2149e4a45db76ba1" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; ManageSourceVideo::screenSize</definition>
+        <argsstring></argsstring>
+        <name>screenSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="78" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1aa2f92ef4ec501a0d8e2342b0a1c442d2" prot="private" static="no" mutable="no">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; ManageSourceVideo::originalSize</definition>
+        <argsstring></argsstring>
+        <name>originalSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="79" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a9b70fd26fa5fcc4d18b2025a796fbe78" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::colorPicture</definition>
+        <argsstring></argsstring>
+        <name>colorPicture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="80" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a7651ab1f4f0ecda1367f717e4744ffba" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::depthPicture</definition>
+        <argsstring></argsstring>
+        <name>depthPicture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="81" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a785d9d7e11ba50477846c7b14fec68b0" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::imageTreated</definition>
+        <argsstring></argsstring>
+        <name>imageTreated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="82" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a355ce8f63002e13fefa4b78a1b7aec90" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::resizedPicture</definition>
+        <argsstring></argsstring>
+        <name>resizedPicture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="83" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1aa3f7995ca5a44ce46cccacd0025ce3d1" prot="private" static="no" mutable="no">
+        <type>std::list&lt; cv::Mat &gt;</type>
+        <definition>std::list&lt;cv::Mat&gt; ManageSourceVideo::colorFeed</definition>
+        <argsstring></argsstring>
+        <name>colorFeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="86" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a84a84384ef21a47bb97046a52061c4fa" prot="private" static="no" mutable="no">
+        <type>std::list&lt; cv::Mat &gt;</type>
+        <definition>std::list&lt;cv::Mat&gt; ManageSourceVideo::programFeed</definition>
+        <argsstring></argsstring>
+        <name>programFeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="87" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1af488ca46c500cf81a0592c02115e8c8f" prot="private" static="no" mutable="no">
+        <type>std::list&lt; cv::Mat &gt;</type>
+        <definition>std::list&lt;cv::Mat&gt; ManageSourceVideo::depthFeed</definition>
+        <argsstring></argsstring>
+        <name>depthFeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="88" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a7029cbd7e37e98910db6a9f1c2fd8228" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_observer" kindref="compound">Observer</ref> * &gt;</type>
+        <definition>std::vector&lt;Observer *&gt; ManageSourceVideo::observers</definition>
+        <argsstring></argsstring>
+        <name>observers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="95" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1aead740523abdc5cb18aa272325815c0e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ManageSourceVideo::showPercentage</definition>
+        <argsstring></argsstring>
+        <name>showPercentage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="97" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a48d5a7f87463658fb45ed0e11c107501" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ManageSourceVideo::showName</definition>
+        <argsstring></argsstring>
+        <name>showName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="98" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a9316e78ff1ab29b3eb4da5092783c5ae" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ManageSourceVideo::showzone</definition>
+        <argsstring></argsstring>
+        <name>showzone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="99" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1ac323c90082b21a8e07c69ac01a39dc07" prot="private" static="no" mutable="no">
+        <type><ref refid="class_video_source" kindref="compound">VideoSource</ref> *</type>
+        <definition>VideoSource* ManageSourceVideo::source</definition>
+        <argsstring></argsstring>
+        <name>source</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="100" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a404355589acacd89003a71449017fb1c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ManageSourceVideo::videoSave</definition>
+        <argsstring></argsstring>
+        <name>videoSave</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="101" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1ae6b486ee40905cd53169460fd4433cfe" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ManageSourceVideo::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="102" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_manage_source_video_1a1d68671b3558b5fb27ed55ab1a377975" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ManageSourceVideo::timeposition</definition>
+        <argsstring></argsstring>
+        <name>timeposition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="103" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_manage_source_video_1abdd3c50b750d59e5c801483e8e038be4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ManageSourceVideo::ManageSourceVideo</definition>
+        <argsstring>(map&lt; string, string &gt; setting)</argsstring>
+        <name>ManageSourceVideo</name>
+        <param>
+          <type>map&lt; string, string &gt;</type>
+          <declname>setting</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of class <ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>setting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: map&lt;string,string&gt;* which contain every path and information to use (fisrt String = name_of_information, second String = information) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="40" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1abb3cbceed45f55e2974ab26b576c4855" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ManageSourceVideo::~ManageSourceVideo</definition>
+        <argsstring>()</argsstring>
+        <name>~ManageSourceVideo</name>
+        <briefdescription>
+<para>Destructor of class <ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="46" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a8b09bcb16decf02fa4d15616cf8f4f72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string ManageSourceVideo::getTimeStamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimeStamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="47" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a390ec99cffdddd8883b3cc5944f39e1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int ManageSourceVideo::getTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getTimePosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="48" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1aa89ee19a989a075c9a83174f08fb21e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ManageSourceVideo::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="54" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="48" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a2c5bbbc4be945c8c4bbfc055110c51dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageSourceVideo::chooseInputVideo</definition>
+        <argsstring>(string typeInputVideo, int width, int height, string pathSourceVideo, string pathSourceVideoDepth)</argsstring>
+        <name>chooseInputVideo</name>
+        <param>
+          <type>string</type>
+          <declname>typeInputVideo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pathSourceVideo</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pathSourceVideoDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="56" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="14" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a9e06741cecf33127bb3d525e641c8886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::getOriginalImage</definition>
+        <argsstring>()</argsstring>
+        <name>getOriginalImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="59" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="83" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a917bdd64974a58c8ee83637f772bab5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::getCurrentImage</definition>
+        <argsstring>()</argsstring>
+        <name>getCurrentImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="60" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="84" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a9c80e87b3f6dad8f9cddbf91afdaf207" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat ManageSourceVideo::getDepthImage</definition>
+        <argsstring>()</argsstring>
+        <name>getDepthImage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="61" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="85" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a93f2104b868fc8b3e19f812becf8bab4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; ManageSourceVideo::getScreenSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getScreenSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="62" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a103709220e4fe8367a4e0c7e8bd1e3eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ManageSourceVideo::saveVideos</definition>
+        <argsstring>()</argsstring>
+        <name>saveVideos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="65" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="63" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a15dea65edbe41f3f58279a3ed291fce9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ManageSourceVideo::registerObserver</definition>
+        <argsstring>(Observer *observer) override</argsstring>
+        <name>registerObserver</name>
+        <reimplements refid="class_subject_1ae3f8d320b19b7d0fe695a3b4e7660002">registerObserver</reimplements>
+        <param>
+          <type><ref refid="class_observer" kindref="compound">Observer</ref> *</type>
+          <declname>observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Register an observer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>observer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer object to be registered </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="68" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a7b6316cf6df23315705d4eb9bc0e07ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ManageSourceVideo::removeObserver</definition>
+        <argsstring>(Observer *observer) override</argsstring>
+        <name>removeObserver</name>
+        <reimplements refid="class_subject_1a86699df0364a9091d1887f344255e9ff">removeObserver</reimplements>
+        <param>
+          <type><ref refid="class_observer" kindref="compound">Observer</ref> *</type>
+          <declname>observer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Unregister an observer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>observer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the observer object to be unregistered </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="70" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="91" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_manage_source_video_1a199cb436b1ca354c8a3723a33b2dd8d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ManageSourceVideo::notifyObservers</definition>
+        <argsstring>() override</argsstring>
+        <name>notifyObservers</name>
+        <reimplements refid="class_subject_1adb3adcf5638dda8dbd4b1d4356d02453">notifyObservers</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notify all the registered observers when a change happens </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/ManageSourceVideo.h" line="72" column="1" bodyfile="controller/ManageSourceVideo.cpp" bodystart="100" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="78">
+        <label>ManageSourceVideo</label>
+        <link refid="class_manage_source_video"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>Subject</label>
+        <link refid="class_subject"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="80">
+        <label>ManageSourceVideo</label>
+        <link refid="class_manage_source_video"/>
+        <childnode refid="81" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>Subject</label>
+        <link refid="class_subject"/>
+      </node>
+    </collaborationgraph>
+    <location file="controller/ManageSourceVideo.h" line="32" column="1" bodyfile="controller/ManageSourceVideo.h" bodystart="32" bodyend="107"/>
+    <listofallmembers>
+      <member refid="class_manage_source_video_1a2c5bbbc4be945c8c4bbfc055110c51dd" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>chooseInputVideo</name></member>
+      <member refid="class_manage_source_video_1aa3f7995ca5a44ce46cccacd0025ce3d1" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>colorFeed</name></member>
+      <member refid="class_manage_source_video_1a9b70fd26fa5fcc4d18b2025a796fbe78" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>colorPicture</name></member>
+      <member refid="class_manage_source_video_1af488ca46c500cf81a0592c02115e8c8f" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>depthFeed</name></member>
+      <member refid="class_manage_source_video_1a7651ab1f4f0ecda1367f717e4744ffba" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>depthPicture</name></member>
+      <member refid="class_manage_source_video_1a917bdd64974a58c8ee83637f772bab5e" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getCurrentImage</name></member>
+      <member refid="class_manage_source_video_1a9c80e87b3f6dad8f9cddbf91afdaf207" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getDepthImage</name></member>
+      <member refid="class_manage_source_video_1a9e06741cecf33127bb3d525e641c8886" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getOriginalImage</name></member>
+      <member refid="class_manage_source_video_1a93f2104b868fc8b3e19f812becf8bab4" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getScreenSize</name></member>
+      <member refid="class_manage_source_video_1a390ec99cffdddd8883b3cc5944f39e1f" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getTimePosition</name></member>
+      <member refid="class_manage_source_video_1a8b09bcb16decf02fa4d15616cf8f4f72" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>getTimeStamp</name></member>
+      <member refid="class_manage_source_video_1a785d9d7e11ba50477846c7b14fec68b0" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>imageTreated</name></member>
+      <member refid="class_manage_source_video_1abdd3c50b750d59e5c801483e8e038be4" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>ManageSourceVideo</name></member>
+      <member refid="class_manage_source_video_1a199cb436b1ca354c8a3723a33b2dd8d8" prot="public" virt="virtual"><scope>ManageSourceVideo</scope><name>notifyObservers</name></member>
+      <member refid="class_manage_source_video_1a7029cbd7e37e98910db6a9f1c2fd8228" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>observers</name></member>
+      <member refid="class_manage_source_video_1aa2f92ef4ec501a0d8e2342b0a1c442d2" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>originalSize</name></member>
+      <member refid="class_manage_source_video_1a84a84384ef21a47bb97046a52061c4fa" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>programFeed</name></member>
+      <member refid="class_manage_source_video_1a15dea65edbe41f3f58279a3ed291fce9" prot="public" virt="virtual"><scope>ManageSourceVideo</scope><name>registerObserver</name></member>
+      <member refid="class_manage_source_video_1a7b6316cf6df23315705d4eb9bc0e07ff" prot="public" virt="virtual"><scope>ManageSourceVideo</scope><name>removeObserver</name></member>
+      <member refid="class_manage_source_video_1a355ce8f63002e13fefa4b78a1b7aec90" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>resizedPicture</name></member>
+      <member refid="class_manage_source_video_1a103709220e4fe8367a4e0c7e8bd1e3eb" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>saveVideos</name></member>
+      <member refid="class_manage_source_video_1a9dfd620113ab2f2f2149e4a45db76ba1" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>screenSize</name></member>
+      <member refid="class_manage_source_video_1a48d5a7f87463658fb45ed0e11c107501" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>showName</name></member>
+      <member refid="class_manage_source_video_1aead740523abdc5cb18aa272325815c0e" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>showPercentage</name></member>
+      <member refid="class_manage_source_video_1a9316e78ff1ab29b3eb4da5092783c5ae" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>showzone</name></member>
+      <member refid="class_manage_source_video_1ac323c90082b21a8e07c69ac01a39dc07" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>source</name></member>
+      <member refid="class_manage_source_video_1a1d68671b3558b5fb27ed55ab1a377975" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>timeposition</name></member>
+      <member refid="class_manage_source_video_1ae6b486ee40905cd53169460fd4433cfe" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>timestamp</name></member>
+      <member refid="class_manage_source_video_1aa89ee19a989a075c9a83174f08fb21e8" prot="public" virt="non-virtual"><scope>ManageSourceVideo</scope><name>update</name></member>
+      <member refid="class_manage_source_video_1a404355589acacd89003a71449017fb1c" prot="private" virt="non-virtual"><scope>ManageSourceVideo</scope><name>videoSave</name></member>
+      <member refid="class_manage_source_video_1abb3cbceed45f55e2974ab26b576c4855" prot="public" virt="virtual"><scope>ManageSourceVideo</scope><name>~ManageSourceVideo</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

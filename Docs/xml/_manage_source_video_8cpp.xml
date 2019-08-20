@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_manage_source_video_8cpp" kind="file" language="C++">
+    <compoundname>ManageSourceVideo.cpp</compoundname>
+    <includes refid="_manage_source_video_8h" local="yes">ManageSourceVideo.h</includes>
+    <incdepgraph>
+      <node id="26">
+        <label>list</label>
+      </node>
+      <node id="8">
+        <label>controller/ManageSourceVideo.cpp</label>
+        <link refid="_manage_source_video_8cpp"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>sources/Kinect.h</label>
+        <link refid="_kinect_8h_source"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="16">
+        <label>string</label>
+      </node>
+      <node id="25">
+        <label>map</label>
+      </node>
+      <node id="19">
+        <label>fstream</label>
+      </node>
+      <node id="13">
+        <label>sources/RealSense.h</label>
+        <link refid="_real_sense_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>sources/WebCam.h</label>
+        <link refid="_web_cam_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Subject.h</label>
+        <link refid="_subject_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>sources/VideoSource.h</label>
+        <link refid="_video_source_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>vector</label>
+      </node>
+      <node id="22">
+        <label>signal.h</label>
+      </node>
+      <node id="12">
+        <label>utility</label>
+      </node>
+      <node id="17">
+        <label>sstream</label>
+      </node>
+      <node id="14">
+        <label>librealsense2/rs.hpp</label>
+      </node>
+      <node id="30">
+        <label>../model/Observer.h</label>
+        <link refid="_observer_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>time.h</label>
+      </node>
+      <node id="21">
+        <label>cstdlib</label>
+      </node>
+      <node id="18">
+        <label>iostream</label>
+      </node>
+      <node id="9">
+        <label>ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>algorithm</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_manage_source_video_8h" kindref="compound">ManageSourceVideo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_manage_source_video_1abdd3c50b750d59e5c801483e8e038be4" kindref="member">ManageSourceVideo::ManageSourceVideo</ref>(map&lt;string,string&gt;<sp/>setting)<sp/>:videoSave(false),source(nullptr),showPercentage(true),showName(true),showzone(true)</highlight><highlight class="comment">/*,pastAffordance(NULL)*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>chooseInputVideo(setting[</highlight><highlight class="stringliteral">&quot;Input_Video&quot;</highlight><highlight class="normal">],stoi(setting[</highlight><highlight class="stringliteral">&quot;Webcam_Width&quot;</highlight><highlight class="normal">]),stoi(setting[</highlight><highlight class="stringliteral">&quot;Webcam_Height&quot;</highlight><highlight class="normal">]),setting[</highlight><highlight class="stringliteral">&quot;pathSourceVideo&quot;</highlight><highlight class="normal">],setting[</highlight><highlight class="stringliteral">&quot;pathSourceVideoDepth&quot;</highlight><highlight class="normal">]);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_manage_source_video_1abb3cbceed45f55e2974ab26b576c4855" kindref="member">ManageSourceVideo::~ManageSourceVideo</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>source;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>add<sp/>sourceChemin<sp/>and<sp/>sourceCheminProfondeur<sp/>to<sp/>use<sp/>LOCALvIDEO<sp/>|<sp/>THEN<sp/>REFONT<sp/>KINECT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>width<sp/>and<sp/>height<sp/>only<sp/>use<sp/>if<sp/>it&apos;s<sp/>a<sp/>webcam<sp/>cause<sp/>resolution<sp/>depend<sp/>of<sp/>the<sp/>webcam</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ManageSourceVideo::chooseInputVideo(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>typeInputVideo,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>width,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>height,</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pathSourceVideo,</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pathSourceVideoDepth){</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(source<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>source;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>source<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(typeInputVideo<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;LocalVideo&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;source<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_real_sense_video" kindref="compound">RealSenseVideo</ref>(pathSourceVideo,pathSourceVideoDepth);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>originalSize<sp/>=<sp/>this-&gt;source-&gt;getScreenSize();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenSize<sp/>=<sp/>std::make_pair(1280,720);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Possible<sp/>that<sp/>don&apos;t<sp/>work<sp/>|<sp/>Cause<sp/>:<sp/>LocalVideo<sp/>was<sp/>never<sp/>tested\n&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//It&apos;s<sp/>possible<sp/>that&apos;s<sp/>not<sp/>actual<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(typeInputVideo<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;RealSense&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;source<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RealSense();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>originalSize<sp/>=<sp/>std::make_pair(1280,720);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenSize<sp/>=<sp/>std::make_pair(1280,720);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(typeInputVideo<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Kinect&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this-&gt;source<sp/>=<sp/>new<sp/>Kinect();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Kinect<sp/>don&apos;t<sp/>work<sp/>(Not<sp/>implemented<sp/>yet)<sp/>|<sp/>TODO<sp/>change<sp/>chooseInputVideo<sp/>in<sp/>controller/ImageTreatment.cpp<sp/>and<sp/>then<sp/>controller/source/Kinect<sp/>\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(typeInputVideo<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Webcam&quot;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;source<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_web_cam" kindref="compound">WebCam</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>originalSize<sp/>=<sp/>std::make_pair(width,height);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenSize<sp/>=<sp/>std::make_pair(width,height);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Input<sp/>specified<sp/>don&apos;t<sp/>match<sp/>with<sp/>anyone\n<sp/>RealSense<sp/>chosen\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;source<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>RealSense();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>originalSize<sp/>=<sp/>std::make_pair(1280,720);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>screenSize<sp/>=<sp/>std::make_pair(1280,720);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ManageSourceVideo::update()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(source<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>source-&gt;update();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;colorPicture<sp/>=<sp/>source-&gt;getColorFeed();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;depthPicture<sp/>=<sp/>source-&gt;getDepthFeed();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::resize(this-&gt;colorPicture,this-&gt;resizedPicture,cv::Size(screenSize.first,screenSize.second));</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>timestamp<sp/>=<sp/>source-&gt;getTimeStamp();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>timeposition<sp/>=<sp/>source-&gt;getTimePosition();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>notifyObservers();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//Not<sp/>use</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>ManageSourceVideo::saveVideos()<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>cv::VideoWriter<sp/>col,dep,prog;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>col.open(</highlight><highlight class="stringliteral">&quot;traces/traceCouleur.mkv&quot;</highlight><highlight class="normal">,cv::VideoWriter::fourcc(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;6&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">),30,cv::Size(originalSize.first,originalSize.second));</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>dep.open(</highlight><highlight class="stringliteral">&quot;traces/traceProfondeur.mkv&quot;</highlight><highlight class="normal">,cv::VideoWriter::fourcc(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;6&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">),30,cv::Size(originalSize.first,originalSize.second));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>prog.open(</highlight><highlight class="stringliteral">&quot;traces/traceProgramme.mkv&quot;</highlight><highlight class="normal">,cv::VideoWriter::fourcc(</highlight><highlight class="charliteral">&apos;H&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;2&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;6&apos;</highlight><highlight class="normal">,</highlight><highlight class="charliteral">&apos;4&apos;</highlight><highlight class="normal">),30,cv::Size(screenSize.first,screenSize.second));</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>color<sp/>:<sp/>this-&gt;colorFeed)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>col<sp/>&lt;&lt;<sp/>color;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>depth:<sp/>this-&gt;depthFeed)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dep<sp/>&lt;&lt;<sp/>depth;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pr<sp/>:<sp/>this-&gt;programFeed)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>prog<sp/>&lt;&lt;<sp/>pr;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>col.release();</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>dep.release();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>prog.release();</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">cv::Mat<sp/>ManageSourceVideo::getOriginalImage()<sp/>{</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;colorPicture;}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">cv::Mat<sp/>ManageSourceVideo::getCurrentImage(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;resizedPicture;}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">cv::Mat<sp/>ManageSourceVideo::getDepthImage(){</highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;depthPicture;}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_manage_source_video_1a15dea65edbe41f3f58279a3ed291fce9" kindref="member">ManageSourceVideo::registerObserver</ref>(<ref refid="class_observer" kindref="compound">Observer</ref><sp/>*observer)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>observers.push_back(observer);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_manage_source_video_1a7b6316cf6df23315705d4eb9bc0e07ff" kindref="member">ManageSourceVideo::removeObserver</ref>(<ref refid="class_observer" kindref="compound">Observer</ref><sp/>*observer)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>find<sp/>the<sp/>observer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>iterator<sp/>=<sp/>std::find(observers.begin(),<sp/>observers.end(),<sp/>observer);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(iterator<sp/>!=<sp/>observers.end())<sp/>{<sp/></highlight><highlight class="comment">//<sp/>observer<sp/>found</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observers.erase(iterator);<sp/></highlight><highlight class="comment">//<sp/>remove<sp/>the<sp/>observer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_manage_source_video_1a199cb436b1ca354c8a3723a33b2dd8d8" kindref="member">ManageSourceVideo::notifyObservers</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_observer" kindref="compound">Observer</ref><sp/>*observer<sp/>:<sp/>observers)<sp/>{<sp/></highlight><highlight class="comment">//<sp/>notify<sp/>all<sp/>observers</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>observer-&gt;<ref refid="class_observer_1a88fce56285a1da63ebc78300e4d5fcd4" kindref="member">updateByObservee</ref>(this-&gt;getOriginalImage(),this-&gt;getDepthImage());</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="controller/ManageSourceVideo.cpp"/>
+  </compounddef>
+</doxygen>

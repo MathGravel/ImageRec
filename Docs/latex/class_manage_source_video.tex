@@ -1,0 +1,130 @@
+\section{Manage\+Source\+Video Class Reference}
+\label{class_manage_source_video}\index{Manage\+Source\+Video@{Manage\+Source\+Video}}
+
+
+Inheritance diagram for Manage\+Source\+Video\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_manage_source_video__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Manage\+Source\+Video\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_manage_source_video__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Manage\+Source\+Video} (map$<$ string, string $>$ setting)
+\begin{DoxyCompactList}\small\item\em Constructor of class \doxyref{Manage\+Source\+Video}{p.}{class_manage_source_video}. \end{DoxyCompactList}\item 
+\mbox{\label{class_manage_source_video_abb3cbceed45f55e2974ab26b576c4855}} 
+virtual \textbf{ $\sim$\+Manage\+Source\+Video} ()
+\begin{DoxyCompactList}\small\item\em Destructor of class \doxyref{Manage\+Source\+Video}{p.}{class_manage_source_video}. \end{DoxyCompactList}\item 
+\mbox{\label{class_manage_source_video_a8b09bcb16decf02fa4d15616cf8f4f72}} 
+std\+::string {\bfseries get\+Time\+Stamp} ()
+\item 
+\mbox{\label{class_manage_source_video_a390ec99cffdddd8883b3cc5944f39e1f}} 
+int {\bfseries get\+Time\+Position} ()
+\item 
+\mbox{\label{class_manage_source_video_aa89ee19a989a075c9a83174f08fb21e8}} 
+void {\bfseries update} ()
+\item 
+\mbox{\label{class_manage_source_video_a2c5bbbc4be945c8c4bbfc055110c51dd}} 
+void {\bfseries choose\+Input\+Video} (string type\+Input\+Video, int width, int height, string path\+Source\+Video, string path\+Source\+Video\+Depth)
+\item 
+\mbox{\label{class_manage_source_video_a9e06741cecf33127bb3d525e641c8886}} 
+cv\+::\+Mat {\bfseries get\+Original\+Image} ()
+\item 
+\mbox{\label{class_manage_source_video_a917bdd64974a58c8ee83637f772bab5e}} 
+cv\+::\+Mat {\bfseries get\+Current\+Image} ()
+\item 
+\mbox{\label{class_manage_source_video_a9c80e87b3f6dad8f9cddbf91afdaf207}} 
+cv\+::\+Mat {\bfseries get\+Depth\+Image} ()
+\item 
+\mbox{\label{class_manage_source_video_a93f2104b868fc8b3e19f812becf8bab4}} 
+std\+::pair$<$ int, int $>$ {\bfseries get\+Screen\+Size} () const
+\item 
+\mbox{\label{class_manage_source_video_a103709220e4fe8367a4e0c7e8bd1e3eb}} 
+void {\bfseries save\+Videos} ()
+\item 
+void \textbf{ register\+Observer} (\textbf{ Observer} $\ast$observer) override
+\item 
+void \textbf{ remove\+Observer} (\textbf{ Observer} $\ast$observer) override
+\item 
+void \textbf{ notify\+Observers} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_manage_source_video_abdd3c50b750d59e5c801483e8e038be4}} 
+\index{Manage\+Source\+Video@{Manage\+Source\+Video}!Manage\+Source\+Video@{Manage\+Source\+Video}}
+\index{Manage\+Source\+Video@{Manage\+Source\+Video}!Manage\+Source\+Video@{Manage\+Source\+Video}}
+\subsubsection{Manage\+Source\+Video()}
+{\footnotesize\ttfamily Manage\+Source\+Video\+::\+Manage\+Source\+Video (\begin{DoxyParamCaption}\item[{map$<$ string, string $>$}]{setting }\end{DoxyParamCaption})}
+
+
+
+Constructor of class \doxyref{Manage\+Source\+Video}{p.}{class_manage_source_video}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & \+: map$<$string,string$>$$\ast$ which contain every path and information to use (fisrt String = name\+\_\+of\+\_\+information, second String = information) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_manage_source_video_a199cb436b1ca354c8a3723a33b2dd8d8}} 
+\index{Manage\+Source\+Video@{Manage\+Source\+Video}!notify\+Observers@{notify\+Observers}}
+\index{notify\+Observers@{notify\+Observers}!Manage\+Source\+Video@{Manage\+Source\+Video}}
+\subsubsection{notify\+Observers()}
+{\footnotesize\ttfamily void Manage\+Source\+Video\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Notify all the registered observers when a change happens 
+
+Implements \textbf{ Subject} \doxyref{}{p.}{class_subject_adb3adcf5638dda8dbd4b1d4356d02453}.
+
+\mbox{\label{class_manage_source_video_a15dea65edbe41f3f58279a3ed291fce9}} 
+\index{Manage\+Source\+Video@{Manage\+Source\+Video}!register\+Observer@{register\+Observer}}
+\index{register\+Observer@{register\+Observer}!Manage\+Source\+Video@{Manage\+Source\+Video}}
+\subsubsection{register\+Observer()}
+{\footnotesize\ttfamily void Manage\+Source\+Video\+::register\+Observer (\begin{DoxyParamCaption}\item[{\textbf{ Observer} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Register an observer 
+\begin{DoxyParams}{Parameters}
+{\em observer} & the observer object to be registered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Subject} \doxyref{}{p.}{class_subject_ae3f8d320b19b7d0fe695a3b4e7660002}.
+
+\mbox{\label{class_manage_source_video_a7b6316cf6df23315705d4eb9bc0e07ff}} 
+\index{Manage\+Source\+Video@{Manage\+Source\+Video}!remove\+Observer@{remove\+Observer}}
+\index{remove\+Observer@{remove\+Observer}!Manage\+Source\+Video@{Manage\+Source\+Video}}
+\subsubsection{remove\+Observer()}
+{\footnotesize\ttfamily void Manage\+Source\+Video\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\textbf{ Observer} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Unregister an observer 
+\begin{DoxyParams}{Parameters}
+{\em observer} & the observer object to be unregistered \\
+\hline
+\end{DoxyParams}
+
+
+Implements \textbf{ Subject} \doxyref{}{p.}{class_subject_a86699df0364a9091d1887f344255e9ff}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+controller/\textbf{ Manage\+Source\+Video.\+h}\item 
+controller/Manage\+Source\+Video.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+<map id="model/recoActivite/recoImage/DetectedObject.h" name="model/recoActivite/recoImage/DetectedObject.h">
+<area shape="rect" id="node2" href="$_activity_region_8h.html" title="interact with YOLO which gives detected objects and hands " alt="" coords="132,363,318,404"/>
+<area shape="rect" id="node6" href="$_yolo_g_p_u_8h_source.html" title="model/recoActivite\l/recoImage/cnn/YoloGPU.h" alt="" coords="40,273,223,315"/>
+<area shape="rect" id="node7" href="$_detector_8h_source.html" title="model/recoActivite\l/recoImage/Detector.h" alt="" coords="145,95,297,136"/>
+<area shape="rect" id="node9" href="$_yolo_c_p_u_8h_source.html" title="model/recoActivite\l/recoImage/cnn/YoloCPU.h" alt="" coords="247,273,430,315"/>
+<area shape="rect" id="node10" href="$_object_aff_8h.html" title="select critere to tell if it&#39;s could be an affordance " alt="" coords="424,184,608,225"/>
+<area shape="rect" id="node3" href="$_primary_window_8h.html" title="interface of the program " alt="" coords="147,452,303,479"/>
+<area shape="rect" id="node4" href="$_recognition_manager_8h.html" title="Manage all project. " alt="" coords="255,527,446,553"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="main.cpp : Function launching the entire project " alt="" coords="246,601,321,628"/>
+<area shape="rect" id="node8" href="$_yolo_8h_source.html" title="model/recoActivite\l/recoImage/cnn/Yolo.h" alt="" coords="144,184,298,225"/>
+</map>

@@ -1,0 +1,114 @@
+.TH "ObjectAffordances" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ObjectAffordances
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectAffordances\fP (int numberClasses=10)"
+.br
+.RI "Constructor of \fBObjectAffordances\fP\&. "
+.ti -1c
+.RI "void \fBclearCurrentAffordances\fP ()"
+.br
+.RI "clears current affordances of the object "
+.ti -1c
+.RI "std::vector< \fBAffordanceTime\fP * > \fBfindAffordances\fP (\fBDetectedObjects\fP &regions, \fBDetectedObjects\fP &hands, \fBMatriceAffordance\fP &ObjectsMat, bool removeLastValue)"
+.br
+.RI "finds the affordances between the hands and the different objects "
+.ti -1c
+.RI "std::vector< \fBAffordanceTime\fP * > \fBaddNull\fP (\fBMatriceAffordance\fP &objectMat, bool removeLastValue)"
+.br
+.RI "adds a null affordance if no hands and no objects are detected "
+.ti -1c
+.RI "\fBAffordanceTime\fP \fBgetObjectAffordance\fP (const std::string object)"
+.br
+.ti -1c
+.RI "std::vector< \fBAffordanceTime\fP > \fBgetAffordances\fP ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::istream & \fBoperator>>\fP (std::istream &is, \fBObjectAffordances\fP &objaff)"
+.br
+.RI "operator >> "
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ObjectAffordances::ObjectAffordances (int numberClasses = \fC10\fP)"
+
+.PP
+Constructor of \fBObjectAffordances\fP\&. initializes numClasses with the given parameter, sets frameCount and nbClasses to 0, sets currentAff to false 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIint\fP numberClasses 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "ObjectAffordances::addNull (\fBMatriceAffordance\fP & objectMat, bool supAtime)"
+
+.PP
+adds a null affordance if no hands and no objects are detected Creates a null affordance, adds it to the vector of affordances currentAffordances, updates objectMat with the updated vector of affordances and returns currentAffordances 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI\fBMatriceAffordance\fP\fP &objectMat : object from the class ObjectMat 
+.br
+\fIbool\fP supAtime : boolean, indicates if more than a certain time passed since the start of the video 
+.RE
+.PP
+
+.SS "ObjectAffordances::clearCurrentAffordances ()"
+
+.PP
+clears current affordances of the object calls the clear() method of affordances, sets frameCount to 0 
+.SS "ObjectAffordances::findAffordances (\fBDetectedObjects\fP & regions, \fBDetectedObjects\fP & hands, \fBMatriceAffordance\fP & ObjectsMat, bool removeLastValue)"
+
+.PP
+finds the affordances between the hands and the different objects Compares the distance between each objects and the hands\&. If their are affordances, returnes the vector of \fBAffordanceTime\fP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDetectedObjects&\fP regions : object from the class \fBDetectedObjects\fP, vector of objects detected on the screen besides Hands 
+.br
+\fIDetectedObjects&\fP hands : object from the class \fBDetectedObjects\fP, vector of hands detected on the screen 
+.br
+\fIMatriceAffordance&\fP ObjectsMat : object having a vector of \fBAffordanceTime\fP 
+.br
+\fIbool\fP supAtime : boolean, indicates if more than a certain time passed since the start of the video 
+.RE
+.PP
+
+.SH "Friends And Related Function Documentation"
+.PP 
+.SS "std::istream & operator>> (std::istream & is, \fBObjectAffordances\fP & objaff)\fC [friend]\fP"
+
+.PP
+operator >> 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIis\fP 
+.br
+\fIobjaff\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

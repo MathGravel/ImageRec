@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detected_objects" kind="class" language="C++" prot="public">
+    <compoundname>DetectedObjects</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detected_objects_1ac3cafd332440b04a3420bd8a7d07ab7c" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &gt;</type>
+        <definition>std::vector&lt;DetectedObject&gt; DetectedObjects::objs</definition>
+        <argsstring></argsstring>
+        <name>objs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="253" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detected_objects_1ab9a823ab54dd79f3dd352e6a903d6179" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObjects::DetectedObjects</definition>
+        <argsstring>()=default</argsstring>
+        <name>DetectedObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="192" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1a0b0fc86edd07c4e8e75a7069eb4b376f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObjects::DetectedObjects</definition>
+        <argsstring>(std::vector&lt; DetectedObject &gt; objets)</argsstring>
+        <name>DetectedObjects</name>
+        <param>
+          <type>std::vector&lt; <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &gt;</type>
+          <declname>objets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="194" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="194" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1a2675c99fc27ef17dc8547de9a58da1e7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> *</type>
+        <definition>const DetectedObject* DetectedObjects::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="196" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1a56c516282f25b98e22c3c35cc4dc4d53" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> *</type>
+        <definition>const DetectedObject* DetectedObjects::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="200" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="200" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1a128ebdafe5de2c20bdbe4fc306245436" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DetectedObjects::empty</definition>
+        <argsstring>() const</argsstring>
+        <name>empty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="205" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="205" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1a5eb71da55a0cdd1f364748d2a97981c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectedObjects::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="209" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="209" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1aed07916370fe8104a3c419a23cca7b34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int DetectedObjects::size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="212" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="212" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1af41f73cccb545ccf93eda34f18f7f674" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt;DetectedObject&gt;&amp; DetectedObjects::getObjects</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjects</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="217" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="217" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1af1cd79ebf80618057ac72f4638dc5d0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref></type>
+        <definition>const DetectedObject DetectedObjects::getObject</definition>
+        <argsstring>(std::string objName) const</argsstring>
+        <name>getObject</name>
+        <param>
+          <type>std::string</type>
+          <declname>objName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="221" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="221" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_objects_1ac476a3d452009abc2f0e3efbf21e1aac" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref></type>
+        <definition>const DetectedObject DetectedObjects::getObject</definition>
+        <argsstring>(cv::Rect &amp;region) const</argsstring>
+        <name>getObject</name>
+        <param>
+          <type>cv::Rect &amp;</type>
+          <declname>region</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="232" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="232" bodyend="241"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/DetectedObject.h" line="189" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="189" bodyend="254"/>
+    <listofallmembers>
+      <member refid="class_detected_objects_1a2675c99fc27ef17dc8547de9a58da1e7" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>begin</name></member>
+      <member refid="class_detected_objects_1a5eb71da55a0cdd1f364748d2a97981c1" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>clear</name></member>
+      <member refid="class_detected_objects_1ab9a823ab54dd79f3dd352e6a903d6179" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>DetectedObjects</name></member>
+      <member refid="class_detected_objects_1a0b0fc86edd07c4e8e75a7069eb4b376f" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>DetectedObjects</name></member>
+      <member refid="class_detected_objects_1a128ebdafe5de2c20bdbe4fc306245436" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>empty</name></member>
+      <member refid="class_detected_objects_1a56c516282f25b98e22c3c35cc4dc4d53" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>end</name></member>
+      <member refid="class_detected_objects_1af1cd79ebf80618057ac72f4638dc5d0a" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>getObject</name></member>
+      <member refid="class_detected_objects_1ac476a3d452009abc2f0e3efbf21e1aac" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>getObject</name></member>
+      <member refid="class_detected_objects_1af41f73cccb545ccf93eda34f18f7f674" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>getObjects</name></member>
+      <member refid="class_detected_objects_1ac3cafd332440b04a3420bd8a7d07ab7c" prot="private" virt="non-virtual"><scope>DetectedObjects</scope><name>objs</name></member>
+      <member refid="class_detected_objects_1aed07916370fe8104a3c419a23cca7b34" prot="public" virt="non-virtual"><scope>DetectedObjects</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_87b411145155cb4bff526852a40b2e0a" kind="dir">
+    <compoundname>model/recoPlan/PARC/src/solver</compoundname>
+    <innerfile refid="solver_8cpp">solver.cpp</innerfile>
+    <innerfile refid="test_solver_8cpp">testSolver.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/src/solver/"/>
+  </compounddef>
+</doxygen>

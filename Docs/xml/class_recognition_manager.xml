@@ -1,0 +1,671 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_recognition_manager" kind="class" language="C++" prot="public">
+    <compoundname>RecognitionManager</compoundname>
+    <basecompoundref refid="class_observer" prot="public" virt="non-virtual">Observer</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_recognition_manager_1a832e542f5682602fbe0bae24095910a5" prot="private" static="no" mutable="no">
+        <type>map&lt; string, string &gt;</type>
+        <definition>map&lt;string,string&gt; RecognitionManager::setting</definition>
+        <argsstring></argsstring>
+        <name>setting</name>
+        <briefdescription>
+<para>---<mdash/><mdash/>Variables----<mdash/><mdash/> </para>        </briefdescription>
+        <detaileddescription>
+<para>Setting of this application </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="129" column="1" bodyfile="model/RecognitionManager.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a708d32acb09e4b1bdd97fbdbab190f04" prot="private" static="no" mutable="no">
+        <type>chrono::milliseconds</type>
+        <definition>chrono::milliseconds RecognitionManager::startTime</definition>
+        <argsstring></argsstring>
+        <name>startTime</name>
+        <briefdescription>
+<para>time variable </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="132" column="1" bodyfile="model/RecognitionManager.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a1cc095cb306f25773309dc26b56b2282" prot="private" static="no" mutable="no">
+        <type>chrono::milliseconds</type>
+        <definition>chrono::milliseconds RecognitionManager::actualTime</definition>
+        <argsstring></argsstring>
+        <name>actualTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="133" column="1" bodyfile="model/RecognitionManager.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1acec87b386157b9c64325d9abc4600c99" prot="private" static="no" mutable="no">
+        <type>chrono::milliseconds</type>
+        <definition>chrono::milliseconds RecognitionManager::lastsecondTime</definition>
+        <argsstring></argsstring>
+        <name>lastsecondTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="134" column="1" bodyfile="model/RecognitionManager.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a03ecf02fb26d138c933b0deb64707681" prot="private" static="no" mutable="no">
+        <type>chrono::milliseconds</type>
+        <definition>chrono::milliseconds RecognitionManager::delay</definition>
+        <argsstring></argsstring>
+        <name>delay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="135" column="1" bodyfile="model/RecognitionManager.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1ac5f8313763891ce894115d8da986b064" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RecognitionManager::play</definition>
+        <argsstring></argsstring>
+        <name>play</name>
+        <initializer>=true</initializer>
+        <briefdescription>
+<para>Initialize play. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="139" column="1" bodyfile="model/RecognitionManager.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a563457e042143fc8ceb921607ad51a60" prot="private" static="no" mutable="no">
+        <type>long long int</type>
+        <definition>long long int RecognitionManager::countFrame</definition>
+        <argsstring></argsstring>
+        <name>countFrame</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Count. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="142" column="1" bodyfile="model/RecognitionManager.h" bodystart="142" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1aa13d6cf8c988bd4b5629c1750b0f36b8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecognitionManager::countSeconds</definition>
+        <argsstring></argsstring>
+        <name>countSeconds</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="143" column="1" bodyfile="model/RecognitionManager.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a72aeccbe54df1c7125f33546beaace6e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecognitionManager::countFPS</definition>
+        <argsstring></argsstring>
+        <name>countFPS</name>
+        <initializer>=0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="144" column="1" bodyfile="model/RecognitionManager.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1aa4e8f3991c04c05c70cf92552e047858" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int RecognitionManager::fps</definition>
+        <argsstring></argsstring>
+        <name>fps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="145" column="1" bodyfile="model/RecognitionManager.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a6ad890f8b7e80ff12e6158f357035b07" prot="private" static="no" mutable="no">
+        <type>Mat</type>
+        <definition>Mat RecognitionManager::imageColor</definition>
+        <argsstring></argsstring>
+        <name>imageColor</name>
+        <briefdescription>
+<para>feedSource from Controller </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="148" column="1" bodyfile="model/RecognitionManager.h" bodystart="148" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1aee9db87483c31847e24d94ba8e6c4f83" prot="private" static="no" mutable="no">
+        <type>Mat</type>
+        <definition>Mat RecognitionManager::imageDepth</definition>
+        <argsstring></argsstring>
+        <name>imageDepth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="149" column="1" bodyfile="model/RecognitionManager.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a336bdbb9fd47bfb57f7eee5d550b4513" prot="private" static="no" mutable="no">
+        <type><ref refid="class_activity_region" kindref="compound">ActivityRegion</ref> *</type>
+        <definition>ActivityRegion* RecognitionManager::act</definition>
+        <argsstring></argsstring>
+        <name>act</name>
+        <briefdescription>
+<para>ImageRecognition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="152" column="1" bodyfile="model/RecognitionManager.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a144f585e41cec13e148770453ac8bbd2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref></type>
+        <definition>MatriceAffordance RecognitionManager::objectsMat</definition>
+        <argsstring></argsstring>
+        <name>objectsMat</name>
+        <briefdescription>
+<para>ActivityRecognition | AffordanceRecognition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="156" column="1" bodyfile="model/RecognitionManager.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a69a80f978e62661e7749c880281f1fee" prot="private" static="no" mutable="no">
+        <type><ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref></type>
+        <definition>ObjectAffordances RecognitionManager::affordances</definition>
+        <argsstring></argsstring>
+        <name>affordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="157" column="1" bodyfile="model/RecognitionManager.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1acec8e6b7d0b10e73ba1a76925d2422c9" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt;</type>
+        <definition>std::vector&lt;AffordanceTime*&gt; RecognitionManager::currentAffordance</definition>
+        <argsstring></argsstring>
+        <name>currentAffordance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="158" column="1" bodyfile="model/RecognitionManager.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1ab793ffbd6279ffca4d2882816f33b31a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+        <definition>Affordance* RecognitionManager::checkedActAffordance</definition>
+        <argsstring></argsstring>
+        <name>checkedActAffordance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="159" column="1" bodyfile="model/RecognitionManager.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a15ffa6c01b2ee8c5dfc9cc8b56652fed" prot="private" static="no" mutable="no">
+        <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+        <definition>Affordance* RecognitionManager::checkedPrecAffordance</definition>
+        <argsstring></argsstring>
+        <name>checkedPrecAffordance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="160" column="1" bodyfile="model/RecognitionManager.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1ace227f7f677ebfd12510a41574499249" prot="private" static="no" mutable="no">
+        <type>std::stack&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt;</type>
+        <definition>std::stack&lt;AffordanceTime*&gt; RecognitionManager::currentAffordances</definition>
+        <argsstring></argsstring>
+        <name>currentAffordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="161" column="1" bodyfile="model/RecognitionManager.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a5031b6beb141c8ccd16fa2432f0e6d17" prot="private" static="no" mutable="no">
+        <type>thread *</type>
+        <definition>thread* RecognitionManager::threadth</definition>
+        <argsstring></argsstring>
+        <name>threadth</name>
+        <briefdescription>
+<para>thread </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="164" column="1" bodyfile="model/RecognitionManager.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a7107370a45724647436e92f0738148c9" prot="private" static="no" mutable="no">
+        <type>mutex</type>
+        <definition>mutex RecognitionManager::mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <briefdescription>
+<para>mutex for thread protection </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="166" column="1" bodyfile="model/RecognitionManager.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a1767944d3cdd3587fa982962d6257c0b" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RecognitionManager::isStopped</definition>
+        <argsstring></argsstring>
+        <name>isStopped</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Boolean. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="169" column="1" bodyfile="model/RecognitionManager.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1ac2c653be0394cb1b0fb571d4fa056720" prot="private" static="no" mutable="no">
+        <type>atomic_bool</type>
+        <definition>atomic_bool RecognitionManager::check</definition>
+        <argsstring></argsstring>
+        <name>check</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="170" column="1" bodyfile="model/RecognitionManager.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a7d3659fbcfa7884d048408f9cf291c56" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool RecognitionManager::newCheckedAff</definition>
+        <argsstring></argsstring>
+        <name>newCheckedAff</name>
+        <initializer>=false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="171" column="1" bodyfile="model/RecognitionManager.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a35d41b117f7207a3d1dbcb66597d0b34" prot="private" static="no" mutable="no">
+        <type><ref refid="class_policy" kindref="compound">Policy</ref></type>
+        <definition>Policy RecognitionManager::pl</definition>
+        <argsstring></argsstring>
+        <name>pl</name>
+        <briefdescription>
+<para>Plan Recognition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="174" column="1" bodyfile="model/RecognitionManager.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a00fc02442a9b510cbe32ae5a0fbc824e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; std::string, float &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;std::string,float&gt; &gt; RecognitionManager::tempActions</definition>
+        <argsstring></argsstring>
+        <name>tempActions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="175" column="1" bodyfile="model/RecognitionManager.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a1f746a8ab50138637bbfd46a3045d13e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::pair&lt; std::string, float &gt; &gt;</type>
+        <definition>std::vector&lt;std::pair&lt;std::string,float&gt; &gt; RecognitionManager::tempGoal</definition>
+        <argsstring></argsstring>
+        <name>tempGoal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="176" column="1" bodyfile="model/RecognitionManager.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_recognition_manager_1a86d35396be43047936db3d6cce2cc78d" prot="private" static="no" mutable="no">
+        <type>map&lt; string, map&lt; string, string &gt; &gt;</type>
+        <definition>map&lt;string, map&lt;string,string&gt; &gt; RecognitionManager::informations</definition>
+        <argsstring></argsstring>
+        <name>informations</name>
+        <briefdescription>
+<para>Every information to display on the view. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="181" column="1" bodyfile="model/RecognitionManager.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_recognition_manager_1afd771fe50a86dc604338f5b47405357e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RecognitionManager::RecognitionManager</definition>
+        <argsstring>(PrimaryWindow *p_view, ManageSourceVideo *p_controller, map&lt; string, string &gt; setting)</argsstring>
+        <name>RecognitionManager</name>
+        <param>
+          <type><ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref> *</type>
+          <declname>p_view</declname>
+        </param>
+        <param>
+          <type><ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref> *</type>
+          <declname>p_controller</declname>
+        </param>
+        <param>
+          <type>map&lt; string, string &gt;</type>
+          <declname>setting</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>Initialize recoImage, recoActivity and recoPlan <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_controller</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointer on Object of <ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref> created in <ref refid="main_8cpp" kindref="compound">main.cpp</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: pointer on Object of PrimaryView created in <ref refid="main_8cpp" kindref="compound">main.cpp</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>setting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: map&lt;string,string&gt; which contain every path and information to use (fisrt String = name_of_information, second String = information) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Add setting to his attribute</para><para>add this object as a listener of this object of ImageTreatment</para><para>Initialize image recognition</para><para>Initialize activities/affordance recognition</para><para>Initialize plan recognition if path of Domain gived in config </para>        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="56" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="12" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1af23137fcb979eadc69a872723fd5648c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>RecognitionManager::~RecognitionManager</definition>
+        <argsstring>()</argsstring>
+        <name>~RecognitionManager</name>
+        <briefdescription>
+<para>Destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="62" column="1" bodyfile="model/RecognitionManager.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1a5dbeab3f91f5b2dc65e6f25589f3200c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>RecognitionManager::recognitionLoop</definition>
+        <argsstring>(ManageSourceVideo *p_controller, PrimaryWindow *p_view)</argsstring>
+        <name>recognitionLoop</name>
+        <param>
+          <type><ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref> *</type>
+          <declname>p_controller</declname>
+        </param>
+        <param>
+          <type><ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref> *</type>
+          <declname>p_view</declname>
+        </param>
+        <briefdescription>
+<para>main loop of recognition which update every composant of the program </para>        </briefdescription>
+        <detaileddescription>
+<para>take information(image) from controller then update model activities recognition return the affordance(When a hand interact with an object) then update recognition plan finally update view <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_controller</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: adress of main object of controller to add this to listenner and ask for update </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_view</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: adress of main object of view to show to user </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Update variable and display information on console</para><para>Update input (Camera)</para><para>Update image recognition (send to YOLO which update vectors of hands and objects)</para><para>Boolean which say if we start to remove the oldest frame keeped in memory</para><para>Update affordance recognition</para><para>Send information to View : OUTPUT</para><para>Ask if exit after TIME_BEFORE_ASKING_CLOSURE seconds </para>        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="76" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="43" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1a8c134aced9268cf0f9e184f387b64aeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>RecognitionManager::updateInternVar</definition>
+        <argsstring>()</argsstring>
+        <name>updateInternVar</name>
+        <briefdescription>
+<para>Update variable. </para>        </briefdescription>
+        <detaileddescription>
+<para>Update variable and display information on console. </para>        </detaileddescription>
+        <inbodydescription>
+<para>Update display and information each seconds </para>        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="82" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="90" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1a4441f77ce8103c10fabe9a25a77fe799" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>RecognitionManager::askToQuit</definition>
+        <argsstring>()</argsstring>
+        <name>askToQuit</name>
+        <briefdescription>
+<para>Exit way (absolutly not necessary) | Unused. </para>        </briefdescription>
+        <detaileddescription>
+<para>Ask if exit after TIME_BEFORE_ASKING_CLOSURE seconds | UNUSED.</para><para>not usefull and never call for now (we prefer let program run indefinitely) However : Could be useful in many ways (things which can be seen after the main loop) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="91" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="107" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1a229cf0650eeeb6f218f8816f0bb76b46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>RecognitionManager::updateByObservee</definition>
+        <argsstring>(Mat imageColor, Mat imageDepth)</argsstring>
+        <name>updateByObservee</name>
+        <param>
+          <type>Mat</type>
+          <declname>imageColor</declname>
+        </param>
+        <param>
+          <type>Mat</type>
+          <declname>imageDepth</declname>
+        </param>
+        <briefdescription>
+<para>Called by Observee (ImageTreatment) </para>        </briefdescription>
+        <detaileddescription>
+<para>update colorMatrix and DepthMatrix</para><para>belongs to <ref refid="class_observer" kindref="compound">Observer</ref> routine (called by controller) TODO : just past a pointer of an unconstant matrix because it&apos;s use for see and modify <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>imageColor</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: 3 matrix which represent RGB of the last image ~ Not sure </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>imageDepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: a matrix which represent the depth of last image </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="101" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="126" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1af82e3ed84598f8e4ff3c99e1f68ae25e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>RecognitionManager::updateAffordanceSeen</definition>
+        <argsstring>(DetectedObjects items, DetectedObjects hands, bool removeLastValue)</argsstring>
+        <name>updateAffordanceSeen</name>
+        <param>
+          <type><ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref></type>
+          <declname>items</declname>
+        </param>
+        <param>
+          <type><ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref></type>
+          <declname>hands</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removeLastValue</declname>
+        </param>
+        <briefdescription>
+<para>With hands and objects position, and last affordances found the current one then check it. </para>        </briefdescription>
+        <detaileddescription>
+<para>Update a vector of <ref refid="class_affordance" kindref="compound">Affordance</ref> sort by their probability (<ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref>) Could have an affordance with nothing If we don&apos;t see any hands or objects only affordance is NULL with 1 for probability Then in function to former image (TIME_LAST_AFFORDANCE) tell what is the most likely affordance Can say NULL Then look on the average one Then check it <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>items</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: <ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref> basically a vector of objects </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hands</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: <ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref> basically a vector of hands </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>removeLastValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: boolean which say if we have to remove the first affordance of the vector | after TIME_LAST_AFFORDANCE we start to supress this one </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>To see an affordance from each frame</para><para>check if aff not null and (doesn&apos;t = the 2 before except if more than 5 sec ) and 3 time in last 0.8 s </para>        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="117" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="133" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_recognition_manager_1a4b2ae89b18760f1008530ed81205b5ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RecognitionManager::updatePlanRecognition</definition>
+        <argsstring>(Affordance *checkedActAffordance)</argsstring>
+        <name>updatePlanRecognition</name>
+        <param>
+          <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+          <declname>checkedActAffordance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Update plan recognition </para>        </inbodydescription>
+        <location file="model/RecognitionManager.h" line="120" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="166" bodyend="194"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="101">
+        <label>RecognitionManager</label>
+        <link refid="class_recognition_manager"/>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="102">
+        <label>Observer</label>
+        <link refid="class_observer"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="103">
+        <label>RecognitionManager</label>
+        <link refid="class_recognition_manager"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>Observer</label>
+        <link refid="class_observer"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/RecognitionManager.h" line="44" column="1" bodyfile="model/RecognitionManager.h" bodystart="44" bodyend="185"/>
+    <listofallmembers>
+      <member refid="class_recognition_manager_1a336bdbb9fd47bfb57f7eee5d550b4513" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>act</name></member>
+      <member refid="class_recognition_manager_1a1cc095cb306f25773309dc26b56b2282" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>actualTime</name></member>
+      <member refid="class_recognition_manager_1a69a80f978e62661e7749c880281f1fee" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>affordances</name></member>
+      <member refid="class_recognition_manager_1a4441f77ce8103c10fabe9a25a77fe799" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>askToQuit</name></member>
+      <member refid="class_recognition_manager_1ac2c653be0394cb1b0fb571d4fa056720" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>check</name></member>
+      <member refid="class_recognition_manager_1ab793ffbd6279ffca4d2882816f33b31a" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>checkedActAffordance</name></member>
+      <member refid="class_recognition_manager_1a15ffa6c01b2ee8c5dfc9cc8b56652fed" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>checkedPrecAffordance</name></member>
+      <member refid="class_recognition_manager_1a72aeccbe54df1c7125f33546beaace6e" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>countFPS</name></member>
+      <member refid="class_recognition_manager_1a563457e042143fc8ceb921607ad51a60" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>countFrame</name></member>
+      <member refid="class_recognition_manager_1aa13d6cf8c988bd4b5629c1750b0f36b8" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>countSeconds</name></member>
+      <member refid="class_recognition_manager_1acec8e6b7d0b10e73ba1a76925d2422c9" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>currentAffordance</name></member>
+      <member refid="class_recognition_manager_1ace227f7f677ebfd12510a41574499249" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>currentAffordances</name></member>
+      <member refid="class_recognition_manager_1a03ecf02fb26d138c933b0deb64707681" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>delay</name></member>
+      <member refid="class_recognition_manager_1aa4e8f3991c04c05c70cf92552e047858" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>fps</name></member>
+      <member refid="class_recognition_manager_1a6ad890f8b7e80ff12e6158f357035b07" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>imageColor</name></member>
+      <member refid="class_recognition_manager_1aee9db87483c31847e24d94ba8e6c4f83" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>imageDepth</name></member>
+      <member refid="class_recognition_manager_1a86d35396be43047936db3d6cce2cc78d" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>informations</name></member>
+      <member refid="class_recognition_manager_1a1767944d3cdd3587fa982962d6257c0b" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>isStopped</name></member>
+      <member refid="class_recognition_manager_1acec87b386157b9c64325d9abc4600c99" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>lastsecondTime</name></member>
+      <member refid="class_recognition_manager_1a7107370a45724647436e92f0738148c9" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>mtx</name></member>
+      <member refid="class_recognition_manager_1a7d3659fbcfa7884d048408f9cf291c56" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>newCheckedAff</name></member>
+      <member refid="class_recognition_manager_1a144f585e41cec13e148770453ac8bbd2" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>objectsMat</name></member>
+      <member refid="class_recognition_manager_1a35d41b117f7207a3d1dbcb66597d0b34" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>pl</name></member>
+      <member refid="class_recognition_manager_1ac5f8313763891ce894115d8da986b064" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>play</name></member>
+      <member refid="class_recognition_manager_1a5dbeab3f91f5b2dc65e6f25589f3200c" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>recognitionLoop</name></member>
+      <member refid="class_recognition_manager_1afd771fe50a86dc604338f5b47405357e" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>RecognitionManager</name></member>
+      <member refid="class_recognition_manager_1a832e542f5682602fbe0bae24095910a5" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>setting</name></member>
+      <member refid="class_recognition_manager_1a708d32acb09e4b1bdd97fbdbab190f04" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>startTime</name></member>
+      <member refid="class_recognition_manager_1a00fc02442a9b510cbe32ae5a0fbc824e" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>tempActions</name></member>
+      <member refid="class_recognition_manager_1a1f746a8ab50138637bbfd46a3045d13e" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>tempGoal</name></member>
+      <member refid="class_recognition_manager_1a5031b6beb141c8ccd16fa2432f0e6d17" prot="private" virt="non-virtual"><scope>RecognitionManager</scope><name>threadth</name></member>
+      <member refid="class_recognition_manager_1af82e3ed84598f8e4ff3c99e1f68ae25e" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>updateAffordanceSeen</name></member>
+      <member refid="class_recognition_manager_1a229cf0650eeeb6f218f8816f0bb76b46" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>updateByObservee</name></member>
+      <member refid="class_observer_1a88fce56285a1da63ebc78300e4d5fcd4" prot="public" virt="pure-virtual" ambiguityscope="Observer::"><scope>RecognitionManager</scope><name>updateByObservee</name></member>
+      <member refid="class_recognition_manager_1a8c134aced9268cf0f9e184f387b64aeb" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>updateInternVar</name></member>
+      <member refid="class_recognition_manager_1a4b2ae89b18760f1008530ed81205b5ec" prot="public" virt="non-virtual"><scope>RecognitionManager</scope><name>updatePlanRecognition</name></member>
+      <member refid="class_recognition_manager_1af23137fcb979eadc69a872723fd5648c" prot="public" virt="virtual"><scope>RecognitionManager</scope><name>~RecognitionManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,83 @@
+\section{Policy Class Reference}
+\label{class_policy}\index{Policy@{Policy}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_policy_a0a3f02e2e3b1e5ffc1296b7f3a66c755}} 
+\textbf{ Policy} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Policy}{p.}{class_policy}. \end{DoxyCompactList}\item 
+bool \textbf{ update} (\textbf{ Affordance} $\ast$observation)
+\begin{DoxyCompactList}\small\item\em adds the current observation in gP \end{DoxyCompactList}\item 
+\mbox{\label{class_policy_a424474d6fe98df78b29a25b892ff8253}} 
+void \textbf{ Reset} ()
+\begin{DoxyCompactList}\small\item\em gP becomes a new solver \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$ $>$ \textbf{ get\+Next\+Actions} ()
+\begin{DoxyCompactList}\small\item\em get\+Next\+Actions \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$ $>$ \textbf{ get\+Goals\+Proba} ()
+\begin{DoxyCompactList}\small\item\em get\+Goals\+Proba \end{DoxyCompactList}\item 
+bool \textbf{ load} (string path\+Domain)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_policy_aac733f255b894c3329d26d3a4f43e27d}} 
+\index{Policy@{Policy}!get\+Goals\+Proba@{get\+Goals\+Proba}}
+\index{get\+Goals\+Proba@{get\+Goals\+Proba}!Policy@{Policy}}
+\subsubsection{get\+Goals\+Proba()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$ $>$ Policy\+::get\+Goals\+Proba (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Goals\+Proba 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_policy_a31a8e9b98126f1eced73813741813c30}} 
+\index{Policy@{Policy}!get\+Next\+Actions@{get\+Next\+Actions}}
+\index{get\+Next\+Actions@{get\+Next\+Actions}!Policy@{Policy}}
+\subsubsection{get\+Next\+Actions()}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ std\+::string, float $>$ $>$ Policy\+::get\+Next\+Actions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Next\+Actions 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\label{class_policy_ac8d437da61da38bffe406c3e1cb281fd}} 
+\index{Policy@{Policy}!load@{load}}
+\index{load@{load}!Policy@{Policy}}
+\subsubsection{load()}
+{\footnotesize\ttfamily Policy\+::load (\begin{DoxyParamCaption}\item[{string}]{path\+Domain }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\+Domain} & \+: string =$>$ path to choose Domain \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\mbox{\label{class_policy_a295b12845fb3f830ac9218e212222973}} 
+\index{Policy@{Policy}!update@{update}}
+\index{update@{update}!Policy@{Policy}}
+\subsubsection{update()}
+{\footnotesize\ttfamily Policy\+::update (\begin{DoxyParamCaption}\item[{\textbf{ Affordance} $\ast$}]{observation }\end{DoxyParamCaption})}
+
+
+
+adds the current observation in gP 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observation} & \+: Affordance$\ast$ observation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\textbf{ Policy.\+h}\item 
+model/reco\+Plan/Policy.\+cpp\end{DoxyCompactItemize}

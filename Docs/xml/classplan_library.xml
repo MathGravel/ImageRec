@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classplan_library" kind="class" language="C++" prot="public">
+    <compoundname>planLibrary</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classplan_library_1a714c1432a09ee354919fede6524b39bc" prot="private" static="no" mutable="no">
+        <type>unordered_set&lt; int &gt;</type>
+        <definition>unordered_set&lt;int&gt; planLibrary::terminals</definition>
+        <argsstring></argsstring>
+        <name>terminals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="44" column="1" bodyfile="model/recoPlan/PARC/include/planLibrary.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classplan_library_1af0f8ee8538fc2d8dd539b0c0080b72d8" prot="private" static="no" mutable="no">
+        <type>unordered_set&lt; int &gt;</type>
+        <definition>unordered_set&lt;int&gt; planLibrary::nonTerminals</definition>
+        <argsstring></argsstring>
+        <name>nonTerminals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="45" column="1" bodyfile="model/recoPlan/PARC/include/planLibrary.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classplan_library_1ad805ab7edea8dd5a0b0bb57134f5a72e" prot="private" static="no" mutable="no">
+        <type>unordered_set&lt; int &gt;</type>
+        <definition>unordered_set&lt;int&gt; planLibrary::goals</definition>
+        <argsstring></argsstring>
+        <name>goals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="46" column="1" bodyfile="model/recoPlan/PARC/include/planLibrary.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classplan_library_1ad4d7ee7c38c5581c874649f9538bbeea" prot="private" static="no" mutable="no">
+        <type>unordered_map&lt; int, <ref refid="classrule" kindref="compound">rule</ref> &gt;</type>
+        <definition>unordered_map&lt;int,rule&gt; planLibrary::rules</definition>
+        <argsstring></argsstring>
+        <name>rules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="47" column="1" bodyfile="model/recoPlan/PARC/include/planLibrary.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classplan_library_1a2c153779d2bf9c23d3752864cb307b28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>planLibrary::planLibrary</definition>
+        <argsstring>()</argsstring>
+        <name>planLibrary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="25" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1ad32fd62936aacfd6a66ba0788789589c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>planLibrary::planLibrary</definition>
+        <argsstring>(const planLibrary &amp;_pl)</argsstring>
+        <name>planLibrary</name>
+        <param>
+          <type>const <ref refid="classplan_library" kindref="compound">planLibrary</ref> &amp;</type>
+          <declname>_pl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1ac23c498458f325de21c20ea810ccf609" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>planLibrary::planLibrary</definition>
+        <argsstring>(const char *spl)</argsstring>
+        <name>planLibrary</name>
+        <param>
+          <type>const char *</type>
+          <declname>spl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="27" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1a0a4e235557e31d47ba5b62b3100a5c33" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>planLibrary::~planLibrary</definition>
+        <argsstring>()</argsstring>
+        <name>~planLibrary</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="28" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1a6f995fa1200fb6ff4fcfe7e77d7e969d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool planLibrary::isTerminal</definition>
+        <argsstring>(int symbol) const</argsstring>
+        <name>isTerminal</name>
+        <param>
+          <type>int</type>
+          <declname>symbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="30" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1a10dd4ab4e6ac92771e14420682a8cc82" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool planLibrary::isGoal</definition>
+        <argsstring>(int symbol) const</argsstring>
+        <name>isGoal</name>
+        <param>
+          <type>int</type>
+          <declname>symbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="31" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1adde959ef183ee7f55d47792682383f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int planLibrary::addSymbol</definition>
+        <argsstring>(int s, bool t, bool g)</argsstring>
+        <name>addSymbol</name>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>g</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="33" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="133" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1af9e0b63486499c9025f5ad4e094f8c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int planLibrary::addRule</definition>
+        <argsstring>(rule r)</argsstring>
+        <name>addRule</name>
+        <param>
+          <type><ref refid="classrule" kindref="compound">rule</ref></type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="34" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="120" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1afd0d1ddca9bff437cf43d13ee6fa8a1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const string</type>
+        <definition>const string planLibrary::toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="36" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="143" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1a09f0bcb6a4afe166e62e2a28f95d4562" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const unordered_set&lt; int &gt; &amp;</type>
+        <definition>const unordered_set&lt; int &gt; &amp; planLibrary::getTerminals</definition>
+        <argsstring>() const</argsstring>
+        <name>getTerminals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="38" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1ad60232fcae8cc2b5f9b4d10d25aca244" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const unordered_set&lt; int &gt; &amp;</type>
+        <definition>const unordered_set&lt; int &gt; &amp; planLibrary::getNonTerminals</definition>
+        <argsstring>() const</argsstring>
+        <name>getNonTerminals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="39" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="212" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1adc221719b20bbd5d3de332b11177de54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const unordered_set&lt; int &gt; &amp;</type>
+        <definition>const unordered_set&lt; int &gt; &amp; planLibrary::getGoals</definition>
+        <argsstring>() const</argsstring>
+        <name>getGoals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="40" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="217" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classplan_library_1aedd683affefeaac850d80183881f7103" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const unordered_map&lt; int, <ref refid="classrule" kindref="compound">rule</ref> &gt; &amp;</type>
+        <definition>const unordered_map&lt; int, rule &gt; &amp; planLibrary::getRules</definition>
+        <argsstring>() const</argsstring>
+        <name>getRules</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/planLibrary.h" line="41" column="1" bodyfile="model/recoPlan/PARC/Plan_Library/planLibrary.cpp" bodystart="222" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/planLibrary.h" line="23" column="1" bodyfile="model/recoPlan/PARC/include/planLibrary.h" bodystart="22" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classplan_library_1af9e0b63486499c9025f5ad4e094f8c42" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>addRule</name></member>
+      <member refid="classplan_library_1adde959ef183ee7f55d47792682383f6b" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>addSymbol</name></member>
+      <member refid="classplan_library_1adc221719b20bbd5d3de332b11177de54" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>getGoals</name></member>
+      <member refid="classplan_library_1ad60232fcae8cc2b5f9b4d10d25aca244" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>getNonTerminals</name></member>
+      <member refid="classplan_library_1aedd683affefeaac850d80183881f7103" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>getRules</name></member>
+      <member refid="classplan_library_1a09f0bcb6a4afe166e62e2a28f95d4562" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>getTerminals</name></member>
+      <member refid="classplan_library_1ad805ab7edea8dd5a0b0bb57134f5a72e" prot="private" virt="non-virtual"><scope>planLibrary</scope><name>goals</name></member>
+      <member refid="classplan_library_1a10dd4ab4e6ac92771e14420682a8cc82" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>isGoal</name></member>
+      <member refid="classplan_library_1a6f995fa1200fb6ff4fcfe7e77d7e969d" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>isTerminal</name></member>
+      <member refid="classplan_library_1af0f8ee8538fc2d8dd539b0c0080b72d8" prot="private" virt="non-virtual"><scope>planLibrary</scope><name>nonTerminals</name></member>
+      <member refid="classplan_library_1a2c153779d2bf9c23d3752864cb307b28" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>planLibrary</name></member>
+      <member refid="classplan_library_1ad32fd62936aacfd6a66ba0788789589c" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>planLibrary</name></member>
+      <member refid="classplan_library_1ac23c498458f325de21c20ea810ccf609" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>planLibrary</name></member>
+      <member refid="classplan_library_1ad4d7ee7c38c5581c874649f9538bbeea" prot="private" virt="non-virtual"><scope>planLibrary</scope><name>rules</name></member>
+      <member refid="classplan_library_1a714c1432a09ee354919fede6524b39bc" prot="private" virt="non-virtual"><scope>planLibrary</scope><name>terminals</name></member>
+      <member refid="classplan_library_1afd0d1ddca9bff437cf43d13ee6fa8a1b" prot="public" virt="non-virtual"><scope>planLibrary</scope><name>toString</name></member>
+      <member refid="classplan_library_1a0a4e235557e31d47ba5b62b3100a5c33" prot="public" virt="virtual"><scope>planLibrary</scope><name>~planLibrary</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

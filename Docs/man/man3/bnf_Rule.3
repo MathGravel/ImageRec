@@ -1,0 +1,55 @@
+.TH "bnf::Rule" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::Rule
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbnf::_Tie\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRule\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fBRule\fP & \fBoperator=\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fBRule\fP & \fBoperator=\fP (const \fBRule\fP &\fBrule\fP)"
+.br
+.ti -1c
+.RI "template<class U > \fBRule\fP & \fBoperator[]\fP (U(*callback)(std::vector< U > &))"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBRule\fP (const \fBRule\fP *rl)"
+.br
+.ti -1c
+.RI "virtual int \fB_parse\fP (\fB_Base\fP *parser) const  throw ()"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Tie\fP"
+.br
+.ti -1c
+.RI "class \fB_And\fP"
+.br
+.ti -1c
+.RI "template<class U > \fBRule\fP & \fBBind\fP (\fBRule\fP &\fBrule\fP, U(*callback)(std::vector< U > &))"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

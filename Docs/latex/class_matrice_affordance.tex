@@ -1,0 +1,143 @@
+\section{Matrice\+Affordance Class Reference}
+\label{class_matrice_affordance}\index{Matrice\+Affordance@{Matrice\+Affordance}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Matrice\+Affordance} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Matrice\+Affordance}{p.}{class_matrice_affordance}. \end{DoxyCompactList}\item 
+\mbox{\label{class_matrice_affordance_a940661edba2a036c235db4c69b925407}} 
+void \textbf{ reset} ()
+\begin{DoxyCompactList}\small\item\em removes all the elements from mat\+\_\+objects \end{DoxyCompactList}\item 
+\mbox{\label{class_matrice_affordance_a198c11b0b8429bc9a5cc417e294ca496}} 
+void {\bfseries instance} ()
+\item 
+void \textbf{ addnew\+Aff} (\textbf{ Affordance} $\ast$aff, bool remove\+Last\+Value)
+\begin{DoxyCompactList}\small\item\em update vector of last aff \end{DoxyCompactList}\item 
+void \textbf{ update} (std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$ objs, bool remove\+Last\+Value)
+\begin{DoxyCompactList}\small\item\em add last \doxyref{Affordance\+Time}{p.}{class_affordance_time}(vector of \doxyref{Affordance}{p.}{class_affordance} = every affordance possible for one frame) and suppress the oldest one if time since the start is great enough \end{DoxyCompactList}\item 
+double \textbf{ get\+Frequence} (string name)
+\begin{DoxyCompactList}\small\item\em returns the frequence of the affordance with an object in the last images $\vert$ Never Used \end{DoxyCompactList}\item 
+double \textbf{ prob\+Calculation} (string name, double prob\+\_\+object)
+\begin{DoxyCompactList}\small\item\em Calculation of the average probability \+: weighted average. \end{DoxyCompactList}\item 
+\mbox{\label{class_matrice_affordance_a30ec6965bc564f64fa4c21c70cb7bdc9}} 
+bool {\bfseries more\+Than\+Aff\+Frame} (string nom\+\_\+aff, int that)
+\item 
+\mbox{\label{class_matrice_affordance_a6e87fc1af407ea5e08187d9a282fcffc}} 
+std\+::vector$<$ std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$ $>$ $>$ {\bfseries get\+\_\+affordances} () const
+\item 
+\mbox{\label{class_matrice_affordance_a59553d4970376643f93668045ffc6fe7}} 
+std\+::vector$<$ \textbf{ Affordance} $\ast$ $>$ {\bfseries get\+\_\+\+Mat\+\_\+prec\+\_\+act} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Affordance} $\ast$ \textbf{ update\+Affordance} (const std\+::stack$<$ \textbf{ Affordance\+Time} $\ast$$>$ matrice)
+\begin{DoxyCompactList}\small\item\em from the stack of Affordance\+Time$\ast$ return the most likely affordance of the last frame \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_matrice_affordance_aa3814661eb661cab07fdfc9001a1d427}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!Matrice\+Affordance@{Matrice\+Affordance}}
+\index{Matrice\+Affordance@{Matrice\+Affordance}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{Matrice\+Affordance()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::\+Matrice\+Affordance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of \doxyref{Matrice\+Affordance}{p.}{class_matrice_affordance}. 
+
+initializes mat\+\_\+objets, matrix of objects 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_matrice_affordance_aa115589d909a394b21237e77daad8bcb}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!addnew\+Aff@{addnew\+Aff}}
+\index{addnew\+Aff@{addnew\+Aff}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{addnew\+Aff()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::addnew\+Aff (\begin{DoxyParamCaption}\item[{\textbf{ Affordance} $\ast$}]{aff,  }\item[{bool}]{remove\+Last\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+update vector of last aff 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \doxyref{Affordance}{p.}{class_affordance}} & aff \+: last affordance seen \\
+\hline
+{\em bool} & remove\+Last\+Value \+: indicates if the time since the start is great enough for start to delete the oldest vector of affordance \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_matrice_affordance_ad2f6f6e0f926492a34707c723a8dd45c}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!get\+Frequence@{get\+Frequence}}
+\index{get\+Frequence@{get\+Frequence}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{get\+Frequence()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::get\+Frequence (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+returns the frequence of the affordance with an object in the last images $\vert$ Never Used 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: Name of the class of the object to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the frequence of the object in the last images and itself 
+\end{DoxyReturn}
+\mbox{\label{class_matrice_affordance_a8627ac21309fadc468b7f00941166043}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!prob\+Calculation@{prob\+Calculation}}
+\index{prob\+Calculation@{prob\+Calculation}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{prob\+Calculation()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::prob\+Calculation (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{prob\+\_\+object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculation of the average probability \+: weighted average. 
+
+(prob\+\_\+of\+\_\+object + sum(for i=2 to n) of (i/n) $\ast$ prob\+\_\+same\+\_\+object\+\_\+affordance\+\_\+at\+\_\+i\+\_\+frame\+\_\+of\+\_\+vector )/ sum(for i=1 to n) of i/n 
+\begin{DoxyParams}{Parameters}
+{\em name} & \+: Name of the class of the object to check \\
+\hline
+{\em prob\+\_\+object} & \+: probabilty of image recognition of the object (probability written on the screen in tread\+Picture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double \+: probabilty of the affordance 
+\end{DoxyReturn}
+\mbox{\label{class_matrice_affordance_a8c313fa68aa813a1b4e3f40521098774}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!update@{update}}
+\index{update@{update}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{update()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::update (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$}]{objs,  }\item[{bool}]{remove\+Last\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add last \doxyref{Affordance\+Time}{p.}{class_affordance_time}(vector of \doxyref{Affordance}{p.}{class_affordance} = every affordance possible for one frame) and suppress the oldest one if time since the start is great enough 
+
+
+\begin{DoxyParams}{Parameters}
+{\em std\+::vector$<$\+Affordance\+Time$\ast$$>$} & objs \+: \doxyref{Affordance\+Time}{p.}{class_affordance_time}(vector of \doxyref{Affordance}{p.}{class_affordance} = every affordance possible for one frame) \\
+\hline
+{\em bool} & remove\+Last\+Value \+: indicates if the time since the start is great enough for start to delete the oldest vector of affordance \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_matrice_affordance_ac9892b6441386d2ad01347c14840df67}} 
+\index{Matrice\+Affordance@{Matrice\+Affordance}!update\+Affordance@{update\+Affordance}}
+\index{update\+Affordance@{update\+Affordance}!Matrice\+Affordance@{Matrice\+Affordance}}
+\subsubsection{update\+Affordance()}
+{\footnotesize\ttfamily Matrice\+Affordance\+::update\+Affordance (\begin{DoxyParamCaption}\item[{const std\+::stack$<$ \textbf{ Affordance\+Time} $\ast$$>$}]{matrice }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+from the stack of Affordance\+Time$\ast$ return the most likely affordance of the last frame 
+
+with vector of each affordance order by probability for each frame 
+\begin{DoxyParams}{Parameters}
+{\em const} & std\+::stack$<$\+Affordance\+Time$\ast$$>$ matrice \+: vector/stack of vector of affordance\+Time (first \+: each frame, second \+: each possibility for this frame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Activite/reco\+Affordance/\textbf{ Matrice\+Affordance.\+h}\end{DoxyCompactItemize}

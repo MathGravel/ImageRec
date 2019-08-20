@@ -1,0 +1,254 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_policy_8cpp" kind="file" language="C++">
+    <compoundname>Policy.cpp</compoundname>
+    <includes refid="_policy_8h" local="yes">Policy.h</includes>
+    <incdepgraph>
+      <node id="845">
+        <label>list</label>
+      </node>
+      <node id="852">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="846" relation="include">
+        </childnode>
+        <childnode refid="840" relation="include">
+        </childnode>
+        <childnode refid="853" relation="include">
+        </childnode>
+        <childnode refid="854" relation="include">
+        </childnode>
+        <childnode refid="855" relation="include">
+        </childnode>
+      </node>
+      <node id="849">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="846" relation="include">
+        </childnode>
+        <childnode refid="850" relation="include">
+        </childnode>
+        <childnode refid="851" relation="include">
+        </childnode>
+        <childnode refid="840" relation="include">
+        </childnode>
+        <childnode refid="852" relation="include">
+        </childnode>
+      </node>
+      <node id="842">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="840">
+        <label>string</label>
+      </node>
+      <node id="857">
+        <label>PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="848" relation="include">
+        </childnode>
+        <childnode refid="852" relation="include">
+        </childnode>
+        <childnode refid="853" relation="include">
+        </childnode>
+        <childnode refid="854" relation="include">
+        </childnode>
+        <childnode refid="846" relation="include">
+        </childnode>
+      </node>
+      <node id="854">
+        <label>map</label>
+      </node>
+      <node id="850">
+        <label>unordered_set</label>
+      </node>
+      <node id="847">
+        <label>fstream</label>
+      </node>
+      <node id="839">
+        <label>Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="840" relation="include">
+        </childnode>
+        <childnode refid="841" relation="include">
+        </childnode>
+        <childnode refid="844" relation="include">
+        </childnode>
+        <childnode refid="846" relation="include">
+        </childnode>
+        <childnode refid="847" relation="include">
+        </childnode>
+        <childnode refid="848" relation="include">
+        </childnode>
+        <childnode refid="849" relation="include">
+        </childnode>
+        <childnode refid="857" relation="include">
+        </childnode>
+      </node>
+      <node id="843">
+        <label>ctime</label>
+      </node>
+      <node id="848">
+        <label>PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h_source"/>
+        <childnode refid="849" relation="include">
+        </childnode>
+        <childnode refid="856" relation="include">
+        </childnode>
+        <childnode refid="855" relation="include">
+        </childnode>
+        <childnode refid="854" relation="include">
+        </childnode>
+      </node>
+      <node id="853">
+        <label>vector</label>
+      </node>
+      <node id="855">
+        <label>utility</label>
+      </node>
+      <node id="838">
+        <label>model/recoPlan/Policy.cpp</label>
+        <link refid="_policy_8cpp"/>
+        <childnode refid="839" relation="include">
+        </childnode>
+      </node>
+      <node id="844">
+        <label>sstream</label>
+      </node>
+      <node id="856">
+        <label>probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h_source"/>
+        <childnode refid="846" relation="include">
+        </childnode>
+        <childnode refid="850" relation="include">
+        </childnode>
+        <childnode refid="851" relation="include">
+        </childnode>
+        <childnode refid="849" relation="include">
+        </childnode>
+      </node>
+      <node id="846">
+        <label>iostream</label>
+      </node>
+      <node id="851">
+        <label>unordered_map</label>
+      </node>
+      <node id="841">
+        <label>../recoActivite/recoAffordance/Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="842" relation="include">
+        </childnode>
+        <childnode refid="843" relation="include">
+        </childnode>
+        <childnode refid="844" relation="include">
+        </childnode>
+        <childnode refid="845" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_policy_8cpp_1a3000fabb3dcc633d9d9e71f183be7809" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool comp</definition>
+        <argsstring>(const pair&lt; string, float &gt; &amp;a1, const pair&lt; string, float &gt; &amp;a2)</argsstring>
+        <name>comp</name>
+        <param>
+          <type>const pair&lt; string, float &gt; &amp;</type>
+          <declname>a1</declname>
+        </param>
+        <param>
+          <type>const pair&lt; string, float &gt; &amp;</type>
+          <declname>a2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.cpp" line="42" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_policy_8h" kindref="compound">Policy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_policy_1a0a3f02e2e3b1e5ffc1296b7f3a66c755" kindref="member">Policy::Policy</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//this-&gt;load(pathDomain);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_policy_1a295b12845fb3f830ac9218e212222973" kindref="member">Policy::update</ref>(<ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>observation)<sp/><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>observation-&gt;getName()<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gP.addObservation(observation-&gt;getName());</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_policy_1a424474d6fe98df78b29a25b892ff8253" kindref="member">Policy::Reset</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>gP<sp/>=<sp/><ref refid="classsolver" kindref="compound">solver</ref>(&amp;ePL,500);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_policy_1ac8d437da61da38bffe406c3e1cb281fd" kindref="member">Policy::load</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pathDomain)<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::ifstream<sp/>inputFile(pathDomain);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>if<sp/>exists<sp/>and<sp/>then<sp/>open<sp/>the<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(inputFile.good())<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>temp;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>insideText=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(inputFile<sp/>&gt;&gt;<sp/>temp){</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>insideText+=temp;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Close<sp/>the<sp/>file.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ePL<sp/>=<sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>(insideText.c_str());</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout<sp/>&lt;&lt;<sp/>ePL.toString()&lt;&lt;endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gP<sp/>=<sp/><ref refid="classsolver" kindref="compound">solver</ref>(&amp;ePL,500);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>inputFile.close();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cerr<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Coulnd&apos;t<sp/>open<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;pathDomain;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit(-1);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>comp(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pair&lt;string,<sp/>float&gt;&amp;<sp/>a1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>pair&lt;string,<sp/>float&gt;&amp;<sp/>a2)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>a1.second<sp/>&lt;<sp/>a2.second;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/><ref refid="class_policy_1a31a8e9b98126f1eced73813741813c30" kindref="member">Policy::getNextActions</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>nextAct<sp/>=<sp/>gP.getProbParticles();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/>vec;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>std::copy(nextAct.begin(),<sp/>nextAct.end(),<sp/>std::back_inserter&lt;std::vector&lt;std::pair&lt;std::string,float&gt;&gt;&gt;(vec));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(vec.begin(),<sp/>vec.end(),<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;std::string,float&gt;&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;std::string,float&gt;&amp;<sp/>r)<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(l.second<sp/>!=<sp/>r.second)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l.second<sp/>&gt;<sp/>r.second;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l.first<sp/>&gt;<sp/>r.first;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vec;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/><ref refid="class_policy_1aac733f255b894c3329d26d3a4f43e27d" kindref="member">Policy::getGoalsProba</ref>()</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>goalsProba<sp/>=<sp/>gP.getProbGoals();</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/>vec;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>std::copy(goalsProba.begin(),<sp/>goalsProba.end(),<sp/>std::back_inserter&lt;std::vector&lt;std::pair&lt;std::string,float&gt;&gt;&gt;(vec));</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>std::sort(vec.begin(),<sp/>vec.end(),<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;std::string,float&gt;&amp;<sp/>l,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::pair&lt;std::string,float&gt;&amp;<sp/>r)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(l.second<sp/>!=<sp/>r.second)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l.second<sp/>&gt;<sp/>r.second;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>l.first<sp/>&gt;<sp/>r.first;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>vec;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="model/recoPlan/Policy.cpp"/>
+  </compounddef>
+</doxygen>

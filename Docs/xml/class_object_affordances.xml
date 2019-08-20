@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_object_affordances" kind="class" language="C++" prot="public">
+    <compoundname>ObjectAffordances</compoundname>
+    <innerclass refid="class_object_affordances_1_1_affordance_check" prot="private">ObjectAffordances::AffordanceCheck</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_object_affordances_1a6eb29ecfbb31959a2fe884373f0b1798" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectAffordances::frameCount</definition>
+        <argsstring></argsstring>
+        <name>frameCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="103" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1acd2f897ca9c7f167b3028b7040fa58a5" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectAffordances::nbClasses</definition>
+        <argsstring></argsstring>
+        <name>nbClasses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="104" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1aca503bf1be5c17fbdf47466154424795" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string,AffordanceTime&gt; ObjectAffordances::affordances</definition>
+        <argsstring></argsstring>
+        <name>affordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="169" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1a1f3e4b591b4e1688020ad7d4d04dadf3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectAffordances::numClasses</definition>
+        <argsstring></argsstring>
+        <name>numClasses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="170" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="170" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1ae963a27ae07d1e1e956bf4f545423fee" prot="private" static="no" mutable="no">
+        <type>std::unordered_map&lt; std::string, <ref refid="class_affordance" kindref="compound">Affordance</ref> &gt;</type>
+        <definition>std::unordered_map&lt;std::string,Affordance&gt; ObjectAffordances::confMatrix</definition>
+        <argsstring></argsstring>
+        <name>confMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="171" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_object_affordances_1a00eeeefcb9e35c7c5b7fdece20cb754a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ObjectAffordances::~ObjectAffordances</definition>
+        <argsstring>()</argsstring>
+        <name>~ObjectAffordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="31" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1a5b542eef939819cd120bbe0a63b32182" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ObjectAffordances::ObjectAffordances</definition>
+        <argsstring>(int numberClasses=10)</argsstring>
+        <name>ObjectAffordances</name>
+        <param>
+          <type>int</type>
+          <declname>numberClasses</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>Constructor of <ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>initializes numClasses with the given parameter, sets frameCount and nbClasses to 0, sets currentAff to false <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>numberClasses </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="40" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1a9bd8059744b50263d97fde3409d7fde9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ObjectAffordances::clearCurrentAffordances</definition>
+        <argsstring>()</argsstring>
+        <name>clearCurrentAffordances</name>
+        <briefdescription>
+<para>clears current affordances of the object </para>        </briefdescription>
+        <detaileddescription>
+<para>calls the clear() method of affordances, sets frameCount to 0 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="47" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1af8acefd33e80ca5566171e9590fac2e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt;</type>
+        <definition>ObjectAffordances::findAffordances</definition>
+        <argsstring>(DetectedObjects &amp;regions, DetectedObjects &amp;hands, MatriceAffordance &amp;ObjectsMat, bool removeLastValue)</argsstring>
+        <name>findAffordances</name>
+        <param>
+          <type><ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref> &amp;</type>
+          <declname>regions</declname>
+        </param>
+        <param>
+          <type><ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref> &amp;</type>
+          <declname>hands</declname>
+        </param>
+        <param>
+          <type><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref> &amp;</type>
+          <declname>ObjectsMat</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removeLastValue</declname>
+        </param>
+        <briefdescription>
+<para>finds the affordances between the hands and the different objects </para>        </briefdescription>
+        <detaileddescription>
+<para>Compares the distance between each objects and the hands. If their are affordances, returnes the vector of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>DetectedObjects&amp;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>regions : object from the class <ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref>, vector of objects detected on the screen besides Hands </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>DetectedObjects&amp;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>hands : object from the class <ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref>, vector of hands detected on the screen </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>MatriceAffordance&amp;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>ObjectsMat : object having a vector of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>supAtime : boolean, indicates if more than a certain time passed since the start of the video </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="58" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="18" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1a61c42ae31ceaac32ccfb86200b75a6a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt;</type>
+        <definition>ObjectAffordances::addNull</definition>
+        <argsstring>(MatriceAffordance &amp;objectMat, bool removeLastValue)</argsstring>
+        <name>addNull</name>
+        <param>
+          <type><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref> &amp;</type>
+          <declname>objectMat</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removeLastValue</declname>
+          <defname>supAtime</defname>
+        </param>
+        <briefdescription>
+<para>adds a null affordance if no hands and no objects are detected </para>        </briefdescription>
+        <detaileddescription>
+<para>Creates a null affordance, adds it to the vector of affordances currentAffordances, updates objectMat with the updated vector of affordances and returns currentAffordances <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>&amp;objectMat : object from the class ObjectMat </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>supAtime : boolean, indicates if more than a certain time passed since the start of the video </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="71" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="60" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1acc72750bd4f0a062af9ae5ae96eeda8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref></type>
+        <definition>ObjectAffordances::getObjectAffordance</definition>
+        <argsstring>(const std::string object)</argsstring>
+        <name>getObjectAffordance</name>
+        <param>
+          <type>const std::string</type>
+          <declname>object</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="78" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="78" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1ab8b3bb3d0d33186a100572ead48a5c46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> &gt;</type>
+        <definition>ObjectAffordances::getAffordances</definition>
+        <argsstring>()</argsstring>
+        <name>getAffordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="85" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="85" bodyend="89"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_object_affordances_1aa3b4883534360440aa3e598a3da82eb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::istream &amp;</type>
+        <definition>std::istream &amp; operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;is, ObjectAffordances &amp;objaff)</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <declname>is</declname>
+        </param>
+        <param>
+          <type><ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref> &amp;</type>
+          <declname>objaff</declname>
+        </param>
+        <briefdescription>
+<para>operator &gt;&gt; </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>is</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>objaff</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="98" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.cpp" bodystart="73" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_object_affordances_1ac24d9f4033813615fa0b584f5ee56874" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>ObjectAffordances::cleanMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>cleanMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="166" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="29" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="29" bodyend="172"/>
+    <listofallmembers>
+      <member refid="class_object_affordances_1a61c42ae31ceaac32ccfb86200b75a6a3" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>addNull</name></member>
+      <member refid="class_object_affordances_1aca503bf1be5c17fbdf47466154424795" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>affordances</name></member>
+      <member refid="class_object_affordances_1ac24d9f4033813615fa0b584f5ee56874" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>cleanMatrix</name></member>
+      <member refid="class_object_affordances_1a9bd8059744b50263d97fde3409d7fde9" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>clearCurrentAffordances</name></member>
+      <member refid="class_object_affordances_1ae963a27ae07d1e1e956bf4f545423fee" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>confMatrix</name></member>
+      <member refid="class_object_affordances_1af8acefd33e80ca5566171e9590fac2e5" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>findAffordances</name></member>
+      <member refid="class_object_affordances_1a6eb29ecfbb31959a2fe884373f0b1798" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>frameCount</name></member>
+      <member refid="class_object_affordances_1ab8b3bb3d0d33186a100572ead48a5c46" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>getAffordances</name></member>
+      <member refid="class_object_affordances_1acc72750bd4f0a062af9ae5ae96eeda8f" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>getObjectAffordance</name></member>
+      <member refid="class_object_affordances_1acd2f897ca9c7f167b3028b7040fa58a5" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>nbClasses</name></member>
+      <member refid="class_object_affordances_1a1f3e4b591b4e1688020ad7d4d04dadf3" prot="private" virt="non-virtual"><scope>ObjectAffordances</scope><name>numClasses</name></member>
+      <member refid="class_object_affordances_1a5b542eef939819cd120bbe0a63b32182" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>ObjectAffordances</name></member>
+      <member refid="class_object_affordances_1aa3b4883534360440aa3e598a3da82eb0" prot="public" virt="non-virtual"><scope>ObjectAffordances</scope><name>operator&gt;&gt;</name></member>
+      <member refid="class_object_affordances_1a00eeeefcb9e35c7c5b7fdece20cb754a" prot="public" virt="virtual"><scope>ObjectAffordances</scope><name>~ObjectAffordances</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

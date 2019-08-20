@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_62834f59ae7dae1faae8057cc420622b" kind="dir">
+    <compoundname>model/recoActivite</compoundname>
+    <innerdir refid="dir_da6a2f17ea3fc470b7105bb51ec105b1">model/recoActivite/recoAffordance</innerdir>
+    <innerdir refid="dir_0186d757af6f5c9e73a37d3a83d36168">model/recoActivite/recoImage</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_policy" kind="class" language="C++" prot="public">
+    <compoundname>Policy</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_policy_1a1ceee6824ab09c8ae6a46c5a92d38733" prot="private" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref></type>
+        <definition>extendedPlanLibrary Policy::ePL</definition>
+        <argsstring></argsstring>
+        <name>ePL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="67" column="1" bodyfile="model/recoPlan/Policy.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_policy_1a1a4d96be496a7ebe6f20c238bba3618e" prot="private" static="no" mutable="no">
+        <type><ref refid="classsolver" kindref="compound">solver</ref></type>
+        <definition>solver Policy::gP</definition>
+        <argsstring></argsstring>
+        <name>gP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="68" column="1" bodyfile="model/recoPlan/Policy.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_policy_1a0a3f02e2e3b1e5ffc1296b7f3a66c755" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Policy::Policy</definition>
+        <argsstring>()</argsstring>
+        <name>Policy</name>
+        <briefdescription>
+<para>Constructor of <ref refid="class_policy" kindref="compound">Policy</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="31" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="3" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_policy_1a295b12845fb3f830ac9218e212222973" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>Policy::update</definition>
+        <argsstring>(Affordance *observation)</argsstring>
+        <name>update</name>
+        <param>
+          <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+          <declname>observation</declname>
+        </param>
+        <briefdescription>
+<para>adds the current observation in gP </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>observation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Affordance* observation </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="38" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="9" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_policy_1a424474d6fe98df78b29a25b892ff8253" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>Policy::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+<para>gP becomes a new solver </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="44" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_policy_1a31a8e9b98126f1eced73813741813c30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; std::string, float &gt; &gt;</type>
+        <definition>std::vector&lt; std::pair&lt; std::string, float &gt; &gt; Policy::getNextActions</definition>
+        <argsstring>()</argsstring>
+        <name>getNextActions</name>
+        <briefdescription>
+<para>getNextActions </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="50" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="47" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_policy_1aac733f255b894c3329d26d3a4f43e27d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; std::string, float &gt; &gt;</type>
+        <definition>std::vector&lt; std::pair&lt; std::string, float &gt; &gt; Policy::getGoalsProba</definition>
+        <argsstring>()</argsstring>
+        <name>getGoalsProba</name>
+        <briefdescription>
+<para>getGoalsProba </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="56" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="62" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="class_policy_1ac8d437da61da38bffe406c3e1cb281fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>Policy::load</definition>
+        <argsstring>(string pathDomain)</argsstring>
+        <name>load</name>
+        <param>
+          <type>string</type>
+          <declname>pathDomain</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathDomain</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: string =&gt; path to choose Domain </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>boolean </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/Policy.h" line="64" column="1" bodyfile="model/recoPlan/Policy.cpp" bodystart="20" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/Policy.h" line="24" column="1" bodyfile="model/recoPlan/Policy.h" bodystart="24" bodyend="70"/>
+    <listofallmembers>
+      <member refid="class_policy_1a1ceee6824ab09c8ae6a46c5a92d38733" prot="private" virt="non-virtual"><scope>Policy</scope><name>ePL</name></member>
+      <member refid="class_policy_1aac733f255b894c3329d26d3a4f43e27d" prot="public" virt="non-virtual"><scope>Policy</scope><name>getGoalsProba</name></member>
+      <member refid="class_policy_1a31a8e9b98126f1eced73813741813c30" prot="public" virt="non-virtual"><scope>Policy</scope><name>getNextActions</name></member>
+      <member refid="class_policy_1a1a4d96be496a7ebe6f20c238bba3618e" prot="private" virt="non-virtual"><scope>Policy</scope><name>gP</name></member>
+      <member refid="class_policy_1ac8d437da61da38bffe406c3e1cb281fd" prot="public" virt="non-virtual"><scope>Policy</scope><name>load</name></member>
+      <member refid="class_policy_1a0a3f02e2e3b1e5ffc1296b7f3a66c755" prot="public" virt="non-virtual"><scope>Policy</scope><name>Policy</name></member>
+      <member refid="class_policy_1a424474d6fe98df78b29a25b892ff8253" prot="public" virt="non-virtual"><scope>Policy</scope><name>Reset</name></member>
+      <member refid="class_policy_1a295b12845fb3f830ac9218e212222973" prot="public" virt="non-virtual"><scope>Policy</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

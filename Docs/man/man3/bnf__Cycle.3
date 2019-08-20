@@ -1,0 +1,51 @@
+.TH "bnf::_Cycle" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::_Cycle
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbnf::_Tie\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_Cycle\fP (const \fB_Cycle\fP *cl)"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP (const \fB_Cycle\fP &cycle)"
+.br
+.ti -1c
+.RI "int \fB_parse\fP (\fB_Base\fP *parser) const  throw ()"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP (int at_least, const \fB_Tie\fP &link, int total=maxIterate, int limit=maxIterate)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Tie\fP"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBoperator*\fP (int x, const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBRepeat\fP (int at_least, const \fBRule\fP &\fBrule\fP, int total=maxLexemLength, int limit=maxLexemLength)"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBIterate\fP (int at_least, const \fBLexem\fP &lexem, int total=maxLexemLength, int limit=maxLexemLength)"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBSeries\fP (int at_least, const \fBToken\fP &token, int total=maxLexemLength, int limit=maxLexemLength)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

@@ -1,0 +1,819 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_recognition_manager_8cpp" kind="file" language="C++">
+    <compoundname>RecognitionManager.cpp</compoundname>
+    <includes refid="_recognition_manager_8h" local="yes">RecognitionManager.h</includes>
+    <incdepgraph>
+      <node id="534">
+        <label>list</label>
+      </node>
+      <node id="570">
+        <label>MatriceAffordance.h</label>
+        <link refid="_matrice_affordance_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="566" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+      </node>
+      <node id="513">
+        <label>model/RecognitionManager.cpp</label>
+        <link refid="_recognition_manager_8cpp"/>
+        <childnode refid="514" relation="include">
+        </childnode>
+      </node>
+      <node id="547">
+        <label>iterator</label>
+      </node>
+      <node id="575">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+      </node>
+      <node id="560">
+        <label>cnn/YoloGPU.h</label>
+        <link refid="_yolo_g_p_u_8h_source"/>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="573">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="575" relation="include">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>opencv2/objdetect.hpp</label>
+      </node>
+      <node id="524">
+        <label>sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h_source"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+      </node>
+      <node id="546">
+        <label>cmath</label>
+      </node>
+      <node id="545">
+        <label>cassert</label>
+      </node>
+      <node id="556">
+        <label>opencv2/ml.hpp</label>
+      </node>
+      <node id="528">
+        <label>sources/Kinect.h</label>
+        <link refid="_kinect_8h_source"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="530" relation="include">
+        </childnode>
+        <childnode refid="531" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="519" relation="include">
+        </childnode>
+      </node>
+      <node id="539">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="554">
+        <label>opencv2/imgproc.hpp</label>
+      </node>
+      <node id="520">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="525">
+        <label>string</label>
+      </node>
+      <node id="577">
+        <label>PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="572" relation="include">
+        </childnode>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+      </node>
+      <node id="542">
+        <label>DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+      </node>
+      <node id="533">
+        <label>map</label>
+      </node>
+      <node id="541">
+        <label>../model/recoActivite/recoImage/ActivityRegion.h</label>
+        <link refid="_activity_region_8h"/>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="543" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+        <childnode refid="566" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="574">
+        <label>unordered_set</label>
+      </node>
+      <node id="564">
+        <label>opencv2/dnn.hpp</label>
+      </node>
+      <node id="527">
+        <label>fstream</label>
+      </node>
+      <node id="522">
+        <label>sources/RealSense.h</label>
+        <link refid="_real_sense_8h_source"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="523" relation="include">
+        </childnode>
+      </node>
+      <node id="569">
+        <label>recoActivite/recoAffordance/ObjectAff.h</label>
+        <link refid="_object_aff_8h"/>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="570" relation="include">
+        </childnode>
+      </node>
+      <node id="532">
+        <label>sources/WebCam.h</label>
+        <link refid="_web_cam_8h_source"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+      </node>
+      <node id="571">
+        <label>recoPlan/Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="572" relation="include">
+        </childnode>
+        <childnode refid="573" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+      </node>
+      <node id="553">
+        <label>opencv2/imgcodecs.hpp</label>
+      </node>
+      <node id="549">
+        <label>random</label>
+      </node>
+      <node id="536">
+        <label>Subject.h</label>
+        <link refid="_subject_8h_source"/>
+        <childnode refid="537" relation="include">
+        </childnode>
+      </node>
+      <node id="559">
+        <label>future</label>
+      </node>
+      <node id="568">
+        <label>ctime</label>
+      </node>
+      <node id="572">
+        <label>PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h_source"/>
+        <childnode refid="573" relation="include">
+        </childnode>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="543">
+        <label>selectiveSearchDepth.h</label>
+        <link refid="selective_search_depth_8h_source"/>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="544" relation="include">
+        </childnode>
+        <childnode refid="545" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="546" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="547" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+      </node>
+      <node id="519">
+        <label>sources/VideoSource.h</label>
+        <link refid="_video_source_8h_source"/>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="521" relation="include">
+        </childnode>
+      </node>
+      <node id="551">
+        <label>opencv2/core.hpp</label>
+      </node>
+      <node id="566">
+        <label>stack</label>
+      </node>
+      <node id="516">
+        <label>vector</label>
+      </node>
+      <node id="562">
+        <label>Yolo.h</label>
+        <link refid="_yolo_8h_source"/>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+      </node>
+      <node id="530">
+        <label>signal.h</label>
+      </node>
+      <node id="561">
+        <label>../Detector.h</label>
+        <link refid="_detector_8h_source"/>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>utility</label>
+      </node>
+      <node id="544">
+        <label>array</label>
+      </node>
+      <node id="526">
+        <label>sstream</label>
+      </node>
+      <node id="576">
+        <label>probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h_source"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="573" relation="include">
+        </childnode>
+      </node>
+      <node id="523">
+        <label>librealsense2/rs.hpp</label>
+      </node>
+      <node id="537">
+        <label>../model/Observer.h</label>
+        <link refid="_observer_8h_source"/>
+        <childnode refid="520" relation="include">
+        </childnode>
+      </node>
+      <node id="531">
+        <label>time.h</label>
+      </node>
+      <node id="552">
+        <label>opencv2/highgui.hpp</label>
+      </node>
+      <node id="540">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="529">
+        <label>cstdlib</label>
+      </node>
+      <node id="515">
+        <label>iostream</label>
+      </node>
+      <node id="550">
+        <label>unordered_map</label>
+      </node>
+      <node id="567">
+        <label>../model/recoActivite/recoAffordance/Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="568" relation="include">
+        </childnode>
+        <childnode refid="526" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+      </node>
+      <node id="557">
+        <label>mutex</label>
+      </node>
+      <node id="517">
+        <label>chrono</label>
+      </node>
+      <node id="514">
+        <label>RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="517" relation="include">
+        </childnode>
+        <childnode refid="518" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="538" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="569" relation="include">
+        </childnode>
+        <childnode refid="570" relation="include">
+        </childnode>
+        <childnode refid="571" relation="include">
+        </childnode>
+      </node>
+      <node id="558">
+        <label>thread</label>
+      </node>
+      <node id="518">
+        <label>../controller/ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="519" relation="include">
+        </childnode>
+        <childnode refid="522" relation="include">
+        </childnode>
+        <childnode refid="524" relation="include">
+        </childnode>
+        <childnode refid="528" relation="include">
+        </childnode>
+        <childnode refid="532" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+        <childnode refid="525" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="534" relation="include">
+        </childnode>
+        <childnode refid="529" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="535" relation="include">
+        </childnode>
+        <childnode refid="536" relation="include">
+        </childnode>
+        <childnode refid="537" relation="include">
+        </childnode>
+      </node>
+      <node id="538">
+        <label>../view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="539" relation="include">
+        </childnode>
+        <childnode refid="540" relation="include">
+        </childnode>
+        <childnode refid="541" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+      </node>
+      <node id="563">
+        <label>cnn/YoloCPU.h</label>
+        <link refid="_yolo_c_p_u_8h_source"/>
+        <childnode refid="564" relation="include">
+        </childnode>
+        <childnode refid="520" relation="include">
+        </childnode>
+        <childnode refid="516" relation="include">
+        </childnode>
+        <childnode refid="515" relation="include">
+        </childnode>
+        <childnode refid="527" relation="include">
+        </childnode>
+        <childnode refid="565" relation="include">
+        </childnode>
+        <childnode refid="542" relation="include">
+        </childnode>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="533" relation="include">
+        </childnode>
+      </node>
+      <node id="535">
+        <label>algorithm</label>
+      </node>
+      <node id="565">
+        <label>stdio.h</label>
+      </node>
+      <node id="548">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1a2ef26b9bd73c75fdd7273937e6119473" prot="public" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double MAX_FPS_PERFORMANCE</definition>
+        <argsstring></argsstring>
+        <name>MAX_FPS_PERFORMANCE</name>
+        <initializer>= 60.0</initializer>
+        <briefdescription>
+<para>Constant. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="5" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1a0382fd3745598737559f73b9055770b7" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int NUMBER_SECONDS_BEFORE_UPDATE_FPS</definition>
+        <argsstring></argsstring>
+        <name>NUMBER_SECONDS_BEFORE_UPDATE_FPS</name>
+        <initializer>=1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="6" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1adce5327ce0af3084095b12624f28c489" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TIME_BEFORE_NEW_AFFORDANCE</definition>
+        <argsstring></argsstring>
+        <name>TIME_BEFORE_NEW_AFFORDANCE</name>
+        <initializer>=5000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="7" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1a8153c4c266e6784ede138aac0371e2ed" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TIME_LAST_AFFORDANCE</definition>
+        <argsstring></argsstring>
+        <name>TIME_LAST_AFFORDANCE</name>
+        <initializer>=1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="8" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1a31abc75ea730e25052634fafdbadc412" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TIME_BEFORE_ALERT</definition>
+        <argsstring></argsstring>
+        <name>TIME_BEFORE_ALERT</name>
+        <initializer>=30000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="9" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1aebf6333bac0ef397a26be066d76a97af" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int TIME_BEFORE_ASKING_CLOSURE</definition>
+        <argsstring></argsstring>
+        <name>TIME_BEFORE_ASKING_CLOSURE</name>
+        <initializer>=300000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="10" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_recognition_manager_8cpp_1a3ed00fe224e5f8074fe339a6b555fea3" prot="public" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string EXIT_LOOP_WORD</definition>
+        <argsstring></argsstring>
+        <name>EXIT_LOOP_WORD</name>
+        <initializer>=&quot;STOP&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/RecognitionManager.cpp" line="11" column="1" bodyfile="model/RecognitionManager.cpp" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_recognition_manager_8h" kindref="compound">RecognitionManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>:<sp/>include<sp/>in<sp/>config<sp/>files<sp/>and<sp/>prepare<sp/>their<sp/>implementation</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>MAX_FPS_PERFORMANCE<sp/>=<sp/>60.0;<sp/></highlight><highlight class="comment">//<sp/>60<sp/>FPS<sp/>MAX<sp/>(NOT<sp/>IMPLEMENTED<sp/>YET)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>NUMBER_SECONDS_BEFORE_UPDATE_FPS=1;<sp/></highlight><highlight class="comment">//in<sp/>seconds<sp/>|<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TIME_BEFORE_NEW_AFFORDANCE=5000;<sp/></highlight><highlight class="comment">//in<sp/>millisecond<sp/>|<sp/>Time<sp/>lapse<sp/>between<sp/>2<sp/>differents<sp/>affordances<sp/>on<sp/>the<sp/>same<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TIME_LAST_AFFORDANCE=1000;<sp/></highlight><highlight class="comment">//<sp/>in<sp/>milliseconds<sp/>|<sp/>Time<sp/>during<sp/>we<sp/>check<sp/>the<sp/>average<sp/>affordance</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TIME_BEFORE_ALERT=30000;<sp/></highlight><highlight class="comment">//<sp/>in<sp/>milliseconds<sp/>|<sp/>Time<sp/>without<sp/>any<sp/>action<sp/>before<sp/>the<sp/>system<sp/>turn<sp/>on<sp/>an<sp/>alarm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TIME_BEFORE_ASKING_CLOSURE<sp/>=300000;<sp/></highlight><highlight class="comment">//<sp/>in<sp/>milliseconds<sp/>(=300s=5min)<sp/>|<sp/>DISABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>EXIT_LOOP_WORD=</highlight><highlight class="stringliteral">&quot;STOP&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>EXIT_LOOP_WORD<sp/>=<sp/>&quot;STOP&quot;<sp/>|<sp/>DISABLE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="class_recognition_manager_1afd771fe50a86dc604338f5b47405357e" kindref="member">RecognitionManager::RecognitionManager</ref>(<ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>*<sp/>p_view,<ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref>*<sp/>p_controller,map&lt;string,string&gt;<sp/>setting){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;setting=setting;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>p_controller-&gt;<ref refid="class_manage_source_video_1a15dea65edbe41f3f58279a3ed291fce9" kindref="member">registerObserver</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>:<sp/>MAYBE<sp/>(I<sp/>don&apos;t<sp/>know<sp/>what<sp/>is<sp/>the<sp/>best)<sp/>replace<sp/>this<sp/>singleton<sp/>to<sp/>normal<sp/>definition<sp/>=&gt;<sp/>remove<sp/>instance<sp/>and<sp/>use<sp/>a<sp/>constructor</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>act<sp/>=<sp/><ref refid="class_activity_region_1a92a746c743f639a177c4f3a48b39420c" kindref="member">ActivityRegion::instance</ref>(setting);<sp/></highlight><highlight class="comment">//instance<sp/>ActivityRegion<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;image<sp/>recognition<sp/>initialize\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;objectsMat.instance();<sp/></highlight><highlight class="comment">//instance<sp/>ObjectsMat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>checkedActAffordance=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>(</highlight><highlight class="stringliteral">&quot;None&quot;</highlight><highlight class="normal">,0,cv::Rect(),0,0);<sp/></highlight><highlight class="comment">//Initialize<sp/>an<sp/>Object<sp/>of<sp/>Affordance<sp/>to<sp/>avoid<sp/>crash<sp/>when<sp/>comparaison</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>checkedPrecAffordance=</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>(</highlight><highlight class="stringliteral">&quot;None&quot;</highlight><highlight class="normal">,0,cv::Rect(),0,0);<sp/></highlight><highlight class="comment">//Initialize<sp/>an<sp/>Object<sp/>of<sp/>Affordance<sp/>to<sp/>avoid<sp/>crash<sp/>when<sp/>comparaison</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;affordance<sp/>recognition<sp/>initialize\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>pathDomain_planRecognition=setting[</highlight><highlight class="stringliteral">&quot;plan_recognition&quot;</highlight><highlight class="normal">];</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(pathDomain_planRecognition!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pl.<ref refid="class_policy_1ac8d437da61da38bffe406c3e1cb281fd" kindref="member">load</ref>(pathDomain_planRecognition);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;plan<sp/>recognition<sp/>initialize&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;plan<sp/>recognition<sp/>disabled&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1a5dbeab3f91f5b2dc65e6f25589f3200c" kindref="member">RecognitionManager::recognitionLoop</ref>(<ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref><sp/>*p_controller,<ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref><sp/>*p_view){<sp/></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>startTime<sp/>=<sp/>chrono::duration_cast&lt;<sp/>chrono::milliseconds<sp/>&gt;(chrono::system_clock::now().time_since_epoch());<sp/></highlight><highlight class="comment">//<sp/>time<sp/>when<sp/>program<sp/>has<sp/>begun</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>actualTime<sp/>=<sp/>chrono::duration_cast&lt;<sp/>chrono::milliseconds<sp/>&gt;(chrono::system_clock::now().time_since_epoch());<sp/></highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>at<sp/>each<sp/>course<sp/>of<sp/>the<sp/>main<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>lastsecondTime<sp/>=<sp/>chrono::duration_cast&lt;<sp/>chrono::milliseconds<sp/>&gt;(chrono::system_clock::now().time_since_epoch());<sp/></highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>at<sp/>each<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>delay<sp/>=<sp/>chrono::duration_cast&lt;<sp/>chrono::milliseconds<sp/>&gt;(chrono::system_clock::now().time_since_epoch());<sp/></highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>each<sp/>time<sp/>a<sp/>new<sp/>real<sp/>affordance<sp/>is<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;MAIN<sp/>LOOP&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(play){</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_recognition_manager_1a8c134aced9268cf0f9e184f387b64aeb" kindref="member">updateInternVar</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_controller-&gt;update();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;act-&gt;<ref refid="class_activity_region_1aad8005109904e86239656d558720b198" kindref="member">Update</ref>(imageColor,imageDepth);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeLastValue=(actualTime-startTime).count()&gt;TIME_LAST_AFFORDANCE;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;&quot;Boolean<sp/>=<sp/>&quot;&lt;&lt;removeLastValue&lt;&lt;endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_recognition_manager_1af82e3ed84598f8e4ff3c99e1f68ae25e" kindref="member">updateAffordanceSeen</ref>(this-&gt;act-&gt;getItems(),this-&gt;act-&gt;<ref refid="class_activity_region_1a6bd9e8a428ebb079fd1d747ba5498b2a" kindref="member">getHands</ref>(),removeLastValue);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setting[</highlight><highlight class="stringliteral">&quot;plan_recognition&quot;</highlight><highlight class="normal">]!=</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>newCheckedAff){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_recognition_manager_1a4b2ae89b18760f1008530ed81205b5ec" kindref="member">updatePlanRecognition</ref>(checkedActAffordance);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newCheckedAff=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p_view-&gt;<ref refid="class_primary_window_1a81d64431709d41e7f3e5583cc494e65a" kindref="member">updateView</ref>(this-&gt;act,this-&gt;currentAffordance);<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DISABLED<sp/>|<sp/>if<sp/>you<sp/>want<sp/>to<sp/>limit<sp/>time<sp/>during<sp/>loop<sp/>is<sp/>running<sp/>or<sp/>you<sp/>want<sp/>to<sp/>see<sp/>end<sp/>display<sp/></highlight></codeline>
+<codeline lineno="84"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//askToQuit();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1a8c134aced9268cf0f9e184f387b64aeb" kindref="member">RecognitionManager::updateInternVar</ref>(){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countFrame++;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countFPS++;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>actualTime<sp/>=<sp/>chrono::duration_cast&lt;<sp/>chrono::milliseconds<sp/>&gt;(chrono::system_clock::now().time_since_epoch());</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((actualTime-lastsecondTime).count()&gt;NUMBER_SECONDS_BEFORE_UPDATE_FPS*1000<sp/>){</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countSeconds+=NUMBER_SECONDS_BEFORE_UPDATE_FPS;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fps=countFPS/NUMBER_SECONDS_BEFORE_UPDATE_FPS;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;&quot;\nTime:<sp/>&quot;&lt;&lt;countSeconds&lt;&lt;&quot;<sp/>seconds\n&quot;;<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;&quot;FPS:<sp/>&quot;&lt;&lt;fps&lt;&lt;&quot;\n\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>countFPS=0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>lastsecondTime<sp/>=<sp/>actualTime;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1a4441f77ce8103c10fabe9a25a77fe799" kindref="member">RecognitionManager::askToQuit</ref>(){<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>answer;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((actualTime-startTime).count()<sp/>&gt;<sp/>TIME_BEFORE_ASKING_CLOSURE){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Write<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;EXIT_LOOP_WORD&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>to<sp/>exit<sp/>the<sp/>loop<sp/>:&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cin&gt;&gt;answer;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(answer!=EXIT_LOOP_WORD){</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Reload&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>startTime=actualTime;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>play=!play;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>:<sp/>change<sp/>to<sp/>give<sp/>only<sp/>a<sp/>pointer</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1a229cf0650eeeb6f218f8816f0bb76b46" kindref="member">RecognitionManager::updateByObservee</ref>(cv::Mat<sp/>imageColor,cv::Mat<sp/>imageDepth){</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;imageColor=imageColor;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;imageDepth=imageDepth;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;feedMatrixColor&lt;&lt;endl;<sp/>//display<sp/>matrix<sp/>of<sp/>colors<sp/>RGB<sp/>with<sp/>number<sp/>on<sp/>console</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//TO<sp/>UPGRADE<sp/>(to<sp/>many<sp/>check<sp/>here<sp/>could<sp/>gain<sp/>some<sp/>time<sp/>and<sp/>the<sp/>method<sp/>is<sp/>not<sp/>good<sp/>enough)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1af82e3ed84598f8e4ff3c99e1f68ae25e" kindref="member">RecognitionManager::updateAffordanceSeen</ref>(<ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>items,<ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>hands,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeLastValue){</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!items.empty()<sp/>&amp;&amp;<sp/>!hands.empty())<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordance<sp/>=<sp/>affordances.<ref refid="class_object_affordances_1af8acefd33e80ca5566171e9590fac2e5" kindref="member">findAffordances</ref>(items,<sp/>hands,<sp/>objectsMat,removeLastValue);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentAffordance.empty())<sp/>{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>:<sp/>currentAffordance)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordances.push(it);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordance=affordances.<ref refid="class_object_affordances_1a61c42ae31ceaac32ccfb86200b75a6a3" kindref="member">addNull</ref>(objectsMat,removeLastValue);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentAffordance.empty())<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>:<sp/>currentAffordance)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentAffordances.push(it);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>newAffordance=<ref refid="class_matrice_affordance_1ac9892b6441386d2ad01347c14840df67" kindref="member">MatriceAffordance::updateAffordance</ref>(currentAffordances);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>objectsMat.<ref refid="class_matrice_affordance_1aa115589d909a394b21237e77daad8bcb" kindref="member">addnewAff</ref>(newAffordance,removeLastValue);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;&quot;New<sp/>affordance<sp/>is<sp/>:<sp/>&quot;&lt;&lt;newAffordance-&gt;getName()&lt;&lt;&quot;<sp/>|<sp/>Probability<sp/>:<sp/>&quot;&lt;&lt;newAffordance-&gt;getObjectProbability()*100&lt;&lt;&quot;%\n&quot;;</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(newAffordance-&gt;getName()!=</highlight><highlight class="stringliteral">&quot;NULL&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>(<sp/>((newAffordance-&gt;getName()!=checkedActAffordance-&gt;getName())<sp/>&amp;&amp;<sp/>(newAffordance-&gt;getName()!=checkedPrecAffordance-&gt;getName()))<sp/>||<sp/>((actualTime-delay).count()&gt;<sp/>TIME_BEFORE_NEW_AFFORDANCE)<sp/>)<sp/>&amp;&amp;<sp/>objectsMat.moreThanAffFrame(newAffordance-&gt;getName(),(int)((fps/8.0)+1))){</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>checkedPrecAffordance=checkedActAffordance;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>checkedActAffordance=newAffordance;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newCheckedAff=</highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay=actualTime;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//cout&lt;&lt;&quot;Previous<sp/>affordance<sp/>was<sp/>with<sp/>:<sp/>&quot;&lt;&lt;checkedPrecAffordance-&gt;getName()&lt;&lt;&quot;\n&quot;;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Current<sp/>affordance<sp/>with<sp/>:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;checkedActAffordance-&gt;getName()&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1a4b2ae89b18760f1008530ed81205b5ec" kindref="member">RecognitionManager::updatePlanRecognition</ref>(<ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>checkedActAffordance){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>checking<sp/>=<sp/>pl.<ref refid="class_policy_1a295b12845fb3f830ac9218e212222973" kindref="member">update</ref>(checkedActAffordance);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!checking){</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;L&apos;action<sp/>a<sp/>retourne<sp/>False&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pl.<ref refid="class_policy_1a424474d6fe98df78b29a25b892ff8253" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempActions<sp/>=<sp/>pl.<ref refid="class_policy_1a31a8e9b98126f1eced73813741813c30" kindref="member">getNextActions</ref>();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tempGoal<sp/>=<sp/>pl.<ref refid="class_policy_1aac733f255b894c3329d26d3a4f43e27d" kindref="member">getGoalsProba</ref>();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n\nAction_predicted<sp/>:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;i&lt;tempActions.size();i++)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Action<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;i+1&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tempActions[i].first&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>|<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tempActions[i].second*100&lt;&lt;</highlight><highlight class="stringliteral">&quot;%\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\nGoal_predicted<sp/>:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i=0;i&lt;tempGoal.size();i++)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Goal<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;i+1&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>:<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tempGoal[i].first&lt;&lt;</highlight><highlight class="stringliteral">&quot;<sp/>|<sp/>&quot;</highlight><highlight class="normal">&lt;&lt;tempGoal[i].second*100&lt;&lt;</highlight><highlight class="stringliteral">&quot;%\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="model/RecognitionManager.cpp"/>
+  </compounddef>
+</doxygen>

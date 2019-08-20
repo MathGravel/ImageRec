@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_video_source" kind="class" language="C++" prot="public">
+    <compoundname>VideoSource</compoundname>
+    <derivedcompoundref refid="class_kinect" prot="public" virt="non-virtual">Kinect</derivedcompoundref>
+    <derivedcompoundref refid="class_real_sense_video" prot="public" virt="non-virtual">RealSenseVideo</derivedcompoundref>
+    <derivedcompoundref refid="class_web_cam" prot="public" virt="non-virtual">WebCam</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_video_source_1ae18f07760d917884b62d0da6ea2efaee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>virtual cv::Mat VideoSource::getColorFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getColorFeed</name>
+        <reimplementedby refid="class_web_cam_1afe33019aa4a2cbf492c67d70ec95a9be">getColorFeed</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a59df1d401a21f7ec2a353bf5bac922dd">getColorFeed</reimplementedby>
+        <reimplementedby refid="class_kinect_1a006fb9582a33bbc026834d34850c598c">getColorFeed</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="11" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1aba297efc2b09e3534490bf1d02eb84c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>virtual cv::Mat VideoSource::getDepthFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getDepthFeed</name>
+        <reimplementedby refid="class_web_cam_1a0c177c80bb84d41f2a79240f1e15989b">getDepthFeed</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a59f27190cfe07d833752275e2181ca2a">getDepthFeed</reimplementedby>
+        <reimplementedby refid="class_kinect_1a2bc9f0dfe1117b46d1eb3740440a3a17">getDepthFeed</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="12" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a9ee8f65394d627443b41f7765f20e20e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>virtual cv::Mat VideoSource::getOriginalDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getOriginalDepth</name>
+        <reimplementedby refid="class_web_cam_1acf080531c8633a52566f09e5c4c33f74">getOriginalDepth</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1af308dfa5dfaaca687c202d2c566739df">getOriginalDepth</reimplementedby>
+        <reimplementedby refid="class_kinect_1a8ff1afb85ee20e7bab9de5e13c3a9575">getOriginalDepth</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="13" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="13" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a96e2fde5f81c19163831070c34b6d2c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>virtual cv::Mat VideoSource::getMappedFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getMappedFeed</name>
+        <reimplementedby refid="class_web_cam_1ab2192287069a02c760b1f097e552ad1f">getMappedFeed</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1abb5ab3b64e7996e2af0f60157ca59423">getMappedFeed</reimplementedby>
+        <reimplementedby refid="class_kinect_1a0fab505f071a67d74b5124b1b8ef4fa1">getMappedFeed</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="14" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1ab5090a635efeb4e8087ba57405f08f32" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void VideoSource::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <reimplementedby refid="class_web_cam_1a2edeaf1bb8cd9f8cb32bd59b79a2d94a">update</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a18936f35d354d3fa5702b016018682d9">update</reimplementedby>
+        <reimplementedby refid="class_kinect_1a4b5ae8c02d4bfacff8a23fe2902da4b5">update</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="15" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="15" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a6b15d80d574803453f5fec377de02bb4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool VideoSource::isRunning</definition>
+        <argsstring>()</argsstring>
+        <name>isRunning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="16" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="16" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a16d36d7c9baedd74ea8528b36a2ae273" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual VideoSource::~VideoSource</definition>
+        <argsstring>()=default</argsstring>
+        <name>~VideoSource</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="17" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a5adefd9f8be29bb4e0dda8acfd8b7b34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool VideoSource::hasDepthSource</definition>
+        <argsstring>()</argsstring>
+        <name>hasDepthSource</name>
+        <reimplementedby refid="class_web_cam_1a369f819e5e6c38b6bb918e5eaefe4913">hasDepthSource</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a82c9c5a3bc99df19cd0d26031f67d235">hasDepthSource</reimplementedby>
+        <reimplementedby refid="class_kinect_1abd18c649734b641a762fe33ec1df5836">hasDepthSource</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="19" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a4afeab48c5bd2d1d2f07e6a2df0d28f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>virtual std::string VideoSource::getTimeStamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimeStamp</name>
+        <reimplementedby refid="class_web_cam_1ad34c9510ff27c2bb7c612b1354dcb0a5">getTimeStamp</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a116ba72253f5c99ea97b03b08d0d5152">getTimeStamp</reimplementedby>
+        <reimplementedby refid="class_kinect_1a3ed4b60fa61c3d5061a959d6b49b0851">getTimeStamp</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="20" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a99713fa4a77b086b70c5383966288ab9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int VideoSource::getTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getTimePosition</name>
+        <reimplementedby refid="class_web_cam_1a33019db4995dfa30539d8992b0a91a2b">getTimePosition</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a132141fd5d9fc85881606e29292dd141">getTimePosition</reimplementedby>
+        <reimplementedby refid="class_kinect_1a1181d62f878e3eb681e76e7d8b7300f5">getTimePosition</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="21" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a8f9438a3d5a1599d330bc4bfe1610984" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>virtual double VideoSource::getExactTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getExactTimePosition</name>
+        <reimplementedby refid="class_web_cam_1aa2e19da066a26f14dbb4a0533750f691">getExactTimePosition</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1add6fb9e7b923a848672767c2a6bef56b">getExactTimePosition</reimplementedby>
+        <reimplementedby refid="class_kinect_1a2588ce6e74cf51ffaa3fe3829042dff2">getExactTimePosition</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="22" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_source_1a47b9dfa3b2719769e514f3360cabb84d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>virtual std::pair&lt;int,int&gt; VideoSource::getScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenSize</name>
+        <reimplementedby refid="class_web_cam_1a59eda3f925331c7011830f8da46a45f5">getScreenSize</reimplementedby>
+        <reimplementedby refid="class_real_sense_video_1a3ac4729a8746898de82a373badb4ab69">getScreenSize</reimplementedby>
+        <reimplementedby refid="class_kinect_1a39e9733b24bf29059fc36fbd7accc24c">getScreenSize</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/VideoSource.h" line="23" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="23" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="146">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="147">
+        <label>Kinect</label>
+        <link refid="class_kinect"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>RealSenseVideo</label>
+        <link refid="class_real_sense_video"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>WebCam</label>
+        <link refid="class_web_cam"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="controller/sources/VideoSource.h" line="7" column="1" bodyfile="controller/sources/VideoSource.h" bodystart="7" bodyend="26"/>
+    <listofallmembers>
+      <member refid="class_video_source_1ae18f07760d917884b62d0da6ea2efaee" prot="public" virt="virtual"><scope>VideoSource</scope><name>getColorFeed</name></member>
+      <member refid="class_video_source_1aba297efc2b09e3534490bf1d02eb84c3" prot="public" virt="virtual"><scope>VideoSource</scope><name>getDepthFeed</name></member>
+      <member refid="class_video_source_1a8f9438a3d5a1599d330bc4bfe1610984" prot="public" virt="virtual"><scope>VideoSource</scope><name>getExactTimePosition</name></member>
+      <member refid="class_video_source_1a96e2fde5f81c19163831070c34b6d2c8" prot="public" virt="virtual"><scope>VideoSource</scope><name>getMappedFeed</name></member>
+      <member refid="class_video_source_1a9ee8f65394d627443b41f7765f20e20e" prot="public" virt="virtual"><scope>VideoSource</scope><name>getOriginalDepth</name></member>
+      <member refid="class_video_source_1a47b9dfa3b2719769e514f3360cabb84d" prot="public" virt="virtual"><scope>VideoSource</scope><name>getScreenSize</name></member>
+      <member refid="class_video_source_1a99713fa4a77b086b70c5383966288ab9" prot="public" virt="virtual"><scope>VideoSource</scope><name>getTimePosition</name></member>
+      <member refid="class_video_source_1a4afeab48c5bd2d1d2f07e6a2df0d28f5" prot="public" virt="virtual"><scope>VideoSource</scope><name>getTimeStamp</name></member>
+      <member refid="class_video_source_1a5adefd9f8be29bb4e0dda8acfd8b7b34" prot="public" virt="virtual"><scope>VideoSource</scope><name>hasDepthSource</name></member>
+      <member refid="class_video_source_1a6b15d80d574803453f5fec377de02bb4" prot="public" virt="virtual"><scope>VideoSource</scope><name>isRunning</name></member>
+      <member refid="class_video_source_1ab5090a635efeb4e8087ba57405f08f32" prot="public" virt="virtual"><scope>VideoSource</scope><name>update</name></member>
+      <member refid="class_video_source_1a16d36d7c9baedd74ea8528b36a2ae273" prot="public" virt="virtual"><scope>VideoSource</scope><name>~VideoSource</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="struct_detected_matrices" kind="struct" language="C++" prot="public">
+    <compoundname>DetectedMatrices</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="struct_detected_matrices_1a51826fb16af29b4f39c01ea4cdc1a70f" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_detected_matrice" kindref="compound">DetectedMatrice</ref> &gt;</type>
+        <definition>std::vector&lt;DetectedMatrice&gt; DetectedMatrices::objs</definition>
+        <argsstring></argsstring>
+        <name>objs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="186" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_detected_matrices_1ab144467e2fdba2b97d35e3cc467354eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedMatrices::DetectedMatrices</definition>
+        <argsstring>(std::vector&lt; DetectedMatrice &gt; &amp;objets)</argsstring>
+        <name>DetectedMatrices</name>
+        <param>
+          <type>std::vector&lt; <ref refid="class_detected_matrice" kindref="compound">DetectedMatrice</ref> &gt; &amp;</type>
+          <declname>objets</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="177" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="177" bodyend="179"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_detected_matrices_1a92729e0ed87c40a65d545f85a454ddcb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::vector&lt; <ref refid="class_detected_matrice" kindref="compound">DetectedMatrice</ref> &gt; &amp;</type>
+        <definition>const std::vector&lt;DetectedMatrice&gt;&amp; DetectedMatrices::getMatrices</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatrices</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="181" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="181" bodyend="183"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/DetectedObject.h" line="176" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="176" bodyend="187"/>
+    <listofallmembers>
+      <member refid="struct_detected_matrices_1ab144467e2fdba2b97d35e3cc467354eb" prot="public" virt="non-virtual"><scope>DetectedMatrices</scope><name>DetectedMatrices</name></member>
+      <member refid="struct_detected_matrices_1a92729e0ed87c40a65d545f85a454ddcb" prot="public" virt="non-virtual"><scope>DetectedMatrices</scope><name>getMatrices</name></member>
+      <member refid="struct_detected_matrices_1a51826fb16af29b4f39c01ea4cdc1a70f" prot="private" virt="non-virtual"><scope>DetectedMatrices</scope><name>objs</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

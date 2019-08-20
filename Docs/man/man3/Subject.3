@@ -1,0 +1,60 @@
+.TH "Subject" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Subject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Subject\&.h>\fP
+.PP
+Inherited by \fBManageSourceVideo\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBregisterObserver\fP (\fBObserver\fP *observer)=0"
+.br
+.ti -1c
+.RI "virtual void \fBremoveObserver\fP (\fBObserver\fP *observer)=0"
+.br
+.ti -1c
+.RI "virtual void \fBnotifyObservers\fP ()=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for the \fBSubject\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void Subject::notifyObservers ()\fC [pure virtual]\fP"
+Notify all the registered observers when a change happens 
+.PP
+Implemented in \fBManageSourceVideo\fP\&.
+.SS "virtual void Subject::registerObserver (\fBObserver\fP * observer)\fC [pure virtual]\fP"
+Register an observer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobserver\fP the observer object to be registered 
+.RE
+.PP
+
+.PP
+Implemented in \fBManageSourceVideo\fP\&.
+.SS "virtual void Subject::removeObserver (\fBObserver\fP * observer)\fC [pure virtual]\fP"
+Unregister an observer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobserver\fP the observer object to be unregistered 
+.RE
+.PP
+
+.PP
+Implemented in \fBManageSourceVideo\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

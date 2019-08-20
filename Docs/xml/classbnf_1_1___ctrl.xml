@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1___ctrl" kind="class" language="C++" prot="public">
+    <compoundname>bnf::_Ctrl</compoundname>
+    <basecompoundref refid="classbnf_1_1___tie" prot="public" virt="non-virtual">bnf::_Tie</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>const int</type>
+        <declname>flg</declname>
+        <defname>flg</defname>
+      </param>
+      <param>
+        <type>const char</type>
+        <declname>cc</declname>
+        <defname>cc</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1___ctrl_1ab555bd08f573aad86ad95feb76007c15" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Tie</definition>
+        <argsstring></argsstring>
+        <name>_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="209" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="209" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1___ctrl_1adbaef05a183046207b717abbc5e3e815" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int bnf::_Ctrl&lt; flg, cc &gt;::_parse</definition>
+        <argsstring>(_Base *parser) const</argsstring>
+        <name>_parse</name>
+        <reimplements refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8">_parse</reimplements>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="210" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="210" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___ctrl_1a176955339cc1cac3ce06070a3d2f3d90" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Ctrl&lt; flg, cc &gt;::_Ctrl</definition>
+        <argsstring>(const _Ctrl *ctrl)</argsstring>
+        <name>_Ctrl</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref> *</type>
+          <declname>ctrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="212" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="212" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___ctrl_1aa6195bf31c3d0c9496d7e2e83cc923c4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Ctrl&lt; flg, cc &gt;::_Ctrl</definition>
+        <argsstring>(const _Ctrl &amp;control)</argsstring>
+        <name>_Ctrl</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___ctrl" kindref="compound">_Ctrl</ref> &amp;</type>
+          <declname>control</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="214" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="214" bodyend="215"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1___ctrl_1ae67d399f876a890e7de7b95bf1c594d7" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Ctrl&lt; flg, cc &gt;::_Ctrl</definition>
+        <argsstring>()</argsstring>
+        <name>_Ctrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="217" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="217" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___ctrl_1a9cca2c36adc207dfeff52c0318ba64a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Ctrl&lt; flg, cc &gt;::~_Ctrl</definition>
+        <argsstring>()</argsstring>
+        <name>~_Ctrl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="219" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="219" bodyend="220"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+      <node id="7">
+        <label>bnf::_Ctrl&lt; flg, cc &gt;</label>
+        <link refid="classbnf_1_1___ctrl"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="10">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+      <node id="9">
+        <label>bnf::_Ctrl&lt; flg, cc &gt;</label>
+        <link refid="classbnf_1_1___ctrl"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="208" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="207" bodyend="221"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1___ctrl_1a176955339cc1cac3ce06070a3d2f3d90" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_Ctrl</name></member>
+      <member refid="classbnf_1_1___ctrl_1aa6195bf31c3d0c9496d7e2e83cc923c4" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_Ctrl</name></member>
+      <member refid="classbnf_1_1___ctrl_1ae67d399f876a890e7de7b95bf1c594d7" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_Ctrl</name></member>
+      <member refid="classbnf_1_1___ctrl_1adbaef05a183046207b717abbc5e3e815" prot="protected" virt="virtual"><scope>bnf::_Ctrl</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1___ctrl_1ab555bd08f573aad86ad95feb76007c15" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Ctrl</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Ctrl</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Ctrl</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>getName</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>inner</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>setName</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>use</name></member>
+      <member refid="classbnf_1_1___ctrl_1a9cca2c36adc207dfeff52c0318ba64a7" prot="public" virt="non-virtual"><scope>bnf::_Ctrl</scope><name>~_Ctrl</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::_Ctrl</scope><name>~_Tie</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

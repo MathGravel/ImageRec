@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_web_cam" kind="class" language="C++" prot="public">
+    <compoundname>WebCam</compoundname>
+    <basecompoundref refid="class_video_source" prot="public" virt="non-virtual">VideoSource</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_web_cam_1aa41ea64105bcffc2e8d15d2411eabf43" prot="private" static="no" mutable="no">
+        <type>cv::VideoCapture</type>
+        <definition>cv::VideoCapture WebCam::cv_cap</definition>
+        <argsstring></argsstring>
+        <name>cv_cap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="26" column="1" bodyfile="controller/sources/WebCam.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_web_cam_1a06c55ee441aa0981a91a519b6b3fcaf1" prot="private" static="no" mutable="no">
+        <type>cv::Mat</type>
+        <definition>cv::Mat WebCam::feed</definition>
+        <argsstring></argsstring>
+        <name>feed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="27" column="1" bodyfile="controller/sources/WebCam.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_web_cam_1a9379016bffa8c592fe6136e5c3e1169c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WebCam::WebCam</definition>
+        <argsstring>()</argsstring>
+        <name>WebCam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="10" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="4" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1aaf1c93e655f88429180747b2e248201b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WebCam::~WebCam</definition>
+        <argsstring>()</argsstring>
+        <name>~WebCam</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="11" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1afe33019aa4a2cbf492c67d70ec95a9be" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat WebCam::getColorFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getColorFeed</name>
+        <reimplements refid="class_video_source_1ae18f07760d917884b62d0da6ea2efaee">getColorFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="12" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1a0c177c80bb84d41f2a79240f1e15989b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat WebCam::getDepthFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getDepthFeed</name>
+        <reimplements refid="class_video_source_1aba297efc2b09e3534490bf1d02eb84c3">getDepthFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="13" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1acf080531c8633a52566f09e5c4c33f74" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat WebCam::getOriginalDepth</definition>
+        <argsstring>()</argsstring>
+        <name>getOriginalDepth</name>
+        <reimplements refid="class_video_source_1a9ee8f65394d627443b41f7765f20e20e">getOriginalDepth</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="14" column="1" bodyfile="controller/sources/WebCam.h" bodystart="14" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1ab2192287069a02c760b1f097e552ad1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>cv::Mat</type>
+        <definition>cv::Mat WebCam::getMappedFeed</definition>
+        <argsstring>()</argsstring>
+        <name>getMappedFeed</name>
+        <reimplements refid="class_video_source_1a96e2fde5f81c19163831070c34b6d2c8">getMappedFeed</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="16" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1a2edeaf1bb8cd9f8cb32bd59b79a2d94a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void WebCam::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <reimplements refid="class_video_source_1ab5090a635efeb4e8087ba57405f08f32">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="17" column="1" bodyfile="controller/sources/WebCam.cpp" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1a369f819e5e6c38b6bb918e5eaefe4913" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>bool</type>
+        <definition>bool WebCam::hasDepthSource</definition>
+        <argsstring>()</argsstring>
+        <name>hasDepthSource</name>
+        <reimplements refid="class_video_source_1a5adefd9f8be29bb4e0dda8acfd8b7b34">hasDepthSource</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="18" column="1" bodyfile="controller/sources/WebCam.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1ad34c9510ff27c2bb7c612b1354dcb0a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::string</type>
+        <definition>std::string WebCam::getTimeStamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimeStamp</name>
+        <reimplements refid="class_video_source_1a4afeab48c5bd2d1d2f07e6a2df0d28f5">getTimeStamp</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="19" column="1" bodyfile="controller/sources/WebCam.h" bodystart="19" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1a33019db4995dfa30539d8992b0a91a2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int WebCam::getTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getTimePosition</name>
+        <reimplements refid="class_video_source_1a99713fa4a77b086b70c5383966288ab9">getTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="20" column="1" bodyfile="controller/sources/WebCam.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1aa2e19da066a26f14dbb4a0533750f691" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>double</type>
+        <definition>double WebCam::getExactTimePosition</definition>
+        <argsstring>()</argsstring>
+        <name>getExactTimePosition</name>
+        <reimplements refid="class_video_source_1a8f9438a3d5a1599d330bc4bfe1610984">getExactTimePosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="21" column="1" bodyfile="controller/sources/WebCam.h" bodystart="21" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_cam_1a59eda3f925331c7011830f8da46a45f5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt;int,int&gt; WebCam::getScreenSize</definition>
+        <argsstring>()</argsstring>
+        <name>getScreenSize</name>
+        <reimplements refid="class_video_source_1a47b9dfa3b2719769e514f3360cabb84d">getScreenSize</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="controller/sources/WebCam.h" line="22" column="1" bodyfile="controller/sources/WebCam.h" bodystart="22" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="152">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="151">
+        <label>WebCam</label>
+        <link refid="class_web_cam"/>
+        <childnode refid="152" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="154">
+        <label>VideoSource</label>
+        <link refid="class_video_source"/>
+      </node>
+      <node id="153">
+        <label>WebCam</label>
+        <link refid="class_web_cam"/>
+        <childnode refid="154" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="controller/sources/WebCam.h" line="7" column="1" bodyfile="controller/sources/WebCam.h" bodystart="7" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_web_cam_1aa41ea64105bcffc2e8d15d2411eabf43" prot="private" virt="non-virtual"><scope>WebCam</scope><name>cv_cap</name></member>
+      <member refid="class_web_cam_1a06c55ee441aa0981a91a519b6b3fcaf1" prot="private" virt="non-virtual"><scope>WebCam</scope><name>feed</name></member>
+      <member refid="class_web_cam_1afe33019aa4a2cbf492c67d70ec95a9be" prot="public" virt="virtual"><scope>WebCam</scope><name>getColorFeed</name></member>
+      <member refid="class_web_cam_1a0c177c80bb84d41f2a79240f1e15989b" prot="public" virt="virtual"><scope>WebCam</scope><name>getDepthFeed</name></member>
+      <member refid="class_web_cam_1aa2e19da066a26f14dbb4a0533750f691" prot="public" virt="virtual"><scope>WebCam</scope><name>getExactTimePosition</name></member>
+      <member refid="class_web_cam_1ab2192287069a02c760b1f097e552ad1f" prot="public" virt="virtual"><scope>WebCam</scope><name>getMappedFeed</name></member>
+      <member refid="class_web_cam_1acf080531c8633a52566f09e5c4c33f74" prot="public" virt="virtual"><scope>WebCam</scope><name>getOriginalDepth</name></member>
+      <member refid="class_web_cam_1a59eda3f925331c7011830f8da46a45f5" prot="public" virt="virtual"><scope>WebCam</scope><name>getScreenSize</name></member>
+      <member refid="class_web_cam_1a33019db4995dfa30539d8992b0a91a2b" prot="public" virt="virtual"><scope>WebCam</scope><name>getTimePosition</name></member>
+      <member refid="class_web_cam_1ad34c9510ff27c2bb7c612b1354dcb0a5" prot="public" virt="virtual"><scope>WebCam</scope><name>getTimeStamp</name></member>
+      <member refid="class_web_cam_1a369f819e5e6c38b6bb918e5eaefe4913" prot="public" virt="virtual"><scope>WebCam</scope><name>hasDepthSource</name></member>
+      <member refid="class_video_source_1a6b15d80d574803453f5fec377de02bb4" prot="public" virt="virtual"><scope>WebCam</scope><name>isRunning</name></member>
+      <member refid="class_web_cam_1a2edeaf1bb8cd9f8cb32bd59b79a2d94a" prot="public" virt="virtual"><scope>WebCam</scope><name>update</name></member>
+      <member refid="class_web_cam_1a9379016bffa8c592fe6136e5c3e1169c" prot="public" virt="non-virtual"><scope>WebCam</scope><name>WebCam</name></member>
+      <member refid="class_video_source_1a16d36d7c9baedd74ea8528b36a2ae273" prot="public" virt="virtual"><scope>WebCam</scope><name>~VideoSource</name></member>
+      <member refid="class_web_cam_1aaf1c93e655f88429180747b2e248201b" prot="public" virt="non-virtual"><scope>WebCam</scope><name>~WebCam</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

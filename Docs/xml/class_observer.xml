@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_observer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Observer</compoundname>
+    <derivedcompoundref refid="class_recognition_manager" prot="public" virt="non-virtual">RecognitionManager</derivedcompoundref>
+    <includes refid="_observer_8h" local="no">Observer.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_observer_1a88fce56285a1da63ebc78300e4d5fcd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Observer::updateByObservee</definition>
+        <argsstring>(cv::Mat imageColor, cv::Mat imageDepth)=0</argsstring>
+        <name>updateByObservee</name>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageColor</declname>
+        </param>
+        <param>
+          <type>cv::Mat</type>
+          <declname>imageDepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the state of this observer <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>test</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>entier de test </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/Observer.h" line="15" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Interface for the <ref refid="class_observer" kindref="compound">Observer</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="87">
+        <label>RecognitionManager</label>
+        <link refid="class_recognition_manager"/>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>Observer</label>
+        <link refid="class_observer"/>
+      </node>
+    </inheritancegraph>
+    <location file="model/Observer.h" line="7" column="1" bodyfile="model/Observer.h" bodystart="7" bodyend="17"/>
+    <listofallmembers>
+      <member refid="class_observer_1a88fce56285a1da63ebc78300e4d5fcd4" prot="public" virt="pure-virtual"><scope>Observer</scope><name>updateByObservee</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

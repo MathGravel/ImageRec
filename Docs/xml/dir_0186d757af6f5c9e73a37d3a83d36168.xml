@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_0186d757af6f5c9e73a37d3a83d36168" kind="dir">
+    <compoundname>model/recoActivite/recoImage</compoundname>
+    <innerdir refid="dir_4a9036867757a8162e591dc86fc3a991">model/recoActivite/recoImage/cnn</innerdir>
+    <innerfile refid="_activity_region_8cpp">ActivityRegion.cpp</innerfile>
+    <innerfile refid="_activity_region_8h">ActivityRegion.h</innerfile>
+    <innerfile refid="_detected_object_8h">DetectedObject.h</innerfile>
+    <innerfile refid="_detector_8h">Detector.h</innerfile>
+    <innerfile refid="selective_search_depth_8h">selectiveSearchDepth.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,88 @@
+.TH "Policy" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Policy
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPolicy\fP ()"
+.br
+.RI "Constructor of \fBPolicy\fP\&. "
+.ti -1c
+.RI "bool \fBupdate\fP (\fBAffordance\fP *observation)"
+.br
+.RI "adds the current observation in gP "
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.RI "gP becomes a new solver "
+.ti -1c
+.RI "std::vector< std::pair< std::string, float > > \fBgetNextActions\fP ()"
+.br
+.RI "getNextActions "
+.ti -1c
+.RI "std::vector< std::pair< std::string, float > > \fBgetGoalsProba\fP ()"
+.br
+.RI "getGoalsProba "
+.ti -1c
+.RI "bool \fBload\fP (string pathDomain)"
+.br
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::pair< std::string, float > > Policy::getGoalsProba ()"
+
+.PP
+getGoalsProba 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "std::vector< std::pair< std::string, float > > Policy::getNextActions ()"
+
+.PP
+getNextActions 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+.SS "Policy::load (string pathDomain)"
+
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpathDomain\fP : string => path to choose Domain 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+boolean 
+.RE
+.PP
+
+.SS "Policy::update (\fBAffordance\fP * observation)"
+
+.PP
+adds the current observation in gP 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobservation\fP : Affordance* observation 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

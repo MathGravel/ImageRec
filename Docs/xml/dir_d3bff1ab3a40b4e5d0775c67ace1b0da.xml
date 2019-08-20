@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d3bff1ab3a40b4e5d0775c67ace1b0da" kind="dir">
+    <compoundname>controller</compoundname>
+    <innerdir refid="dir_e489200c4e40348e64df31662ab1cc1c">controller/sources</innerdir>
+    <innerfile refid="_manage_source_video_8cpp">ManageSourceVideo.cpp</innerfile>
+    <innerfile refid="_manage_source_video_8h">ManageSourceVideo.h</innerfile>
+    <innerfile refid="_subject_8h">Subject.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="controller/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1___cycle" kind="class" language="C++" prot="public">
+    <compoundname>bnf::_Cycle</compoundname>
+    <basecompoundref refid="classbnf_1_1___tie" prot="public" virt="non-virtual">bnf::_Tie</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbnf_1_1___cycle_1a5de2217c87fc0ea3ded9f18ee7526ae2" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int bnf::_Cycle::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="522" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="522" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___cycle_1a8a684c1ff75700a7829eecfdad13b980" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int bnf::_Cycle::max</definition>
+        <argsstring></argsstring>
+        <name>max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="523" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="523" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___cycle_1ae9edffb7c86f168a055ab1ebffa6e995" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int bnf::_Cycle::flag</definition>
+        <argsstring></argsstring>
+        <name>flag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="524" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="524" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1___cycle_1ab555bd08f573aad86ad95feb76007c15" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Tie</definition>
+        <argsstring></argsstring>
+        <name>_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="525" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="525" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___cycle_1a42c2b33ba506a4cf0d9c52e320e471ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle operator*</definition>
+        <argsstring>(int x, const _Tie &amp;link)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="544" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="555" bodyend="556"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___cycle_1a8f5b6bfc935f03ffd6af67c00ed3c27e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle Repeat</definition>
+        <argsstring>(int at_least, const Rule &amp;rule, int total=maxLexemLength, int limit=maxLexemLength)</argsstring>
+        <name>Repeat</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="545" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="557" bodyend="558"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___cycle_1a35464540445f3163727003daeebb8904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle Iterate</definition>
+        <argsstring>(int at_least, const Lexem &amp;lexem, int total=maxLexemLength, int limit=maxLexemLength)</argsstring>
+        <name>Iterate</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_lexem" kindref="compound">Lexem</ref> &amp;</type>
+          <declname>lexem</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="546" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="559" bodyend="560"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___cycle_1a39253986f40d82c4455593c7afc3e426" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle Series</definition>
+        <argsstring>(int at_least, const Token &amp;token, int total=maxLexemLength, int limit=maxLexemLength)</argsstring>
+        <name>Series</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+          <declname>token</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+          <defval>maxLexemLength</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="547" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="561" bodyend="562"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1___cycle_1a4c0920f51b63a6e78f5c2b117bf2c81b" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Cycle::_Cycle</definition>
+        <argsstring>(const _Cycle *cl)</argsstring>
+        <name>_Cycle</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref> *</type>
+          <declname>cl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="526" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="526" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___cycle_1acf425c301789e1e7f7dda3685a869b96" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Cycle::_Cycle</definition>
+        <argsstring>(const _Cycle &amp;cycle)</argsstring>
+        <name>_Cycle</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref> &amp;</type>
+          <declname>cycle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="528" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="528" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___cycle_1adb2e2eaec3ddc1bce09855229cb5f2ca" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>int bnf::_Cycle::_parse</definition>
+        <argsstring>(_Base *parser) const</argsstring>
+        <name>_parse</name>
+        <reimplements refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8">_parse</reimplements>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="530" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="530" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___cycle_1a2d6de9d3b4c142c1396d34ca2b0e8ae3" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Cycle::_Cycle</definition>
+        <argsstring>(int at_least, const _Tie &amp;link, int total=maxIterate, int limit=maxIterate)</argsstring>
+        <name>_Cycle</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+          <defval>maxIterate</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>limit</declname>
+          <defval>maxIterate</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="538" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="538" bodyend="540"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1___cycle_1ade41371d5058c036bfc33791df046ae8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Cycle::~_Cycle</definition>
+        <argsstring>()</argsstring>
+        <name>~_Cycle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="542" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="542" bodyend="543"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="11">
+        <label>bnf::_Cycle</label>
+        <link refid="classbnf_1_1___cycle"/>
+        <childnode refid="12" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>bnf::_Cycle</label>
+        <link refid="classbnf_1_1___cycle"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="521" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="520" bodyend="548"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1___cycle_1a4c0920f51b63a6e78f5c2b117bf2c81b" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_Cycle</name></member>
+      <member refid="classbnf_1_1___cycle_1acf425c301789e1e7f7dda3685a869b96" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_Cycle</name></member>
+      <member refid="classbnf_1_1___cycle_1a2d6de9d3b4c142c1396d34ca2b0e8ae3" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_Cycle</name></member>
+      <member refid="classbnf_1_1___cycle_1adb2e2eaec3ddc1bce09855229cb5f2ca" prot="protected" virt="virtual"><scope>bnf::_Cycle</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1___cycle_1ab555bd08f573aad86ad95feb76007c15" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Cycle</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Cycle</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Cycle</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1___cycle_1ae9edffb7c86f168a055ab1ebffa6e995" prot="private" virt="non-virtual"><scope>bnf::_Cycle</scope><name>flag</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>getName</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>inner</name></member>
+      <member refid="classbnf_1_1___cycle_1a35464540445f3163727003daeebb8904" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>Iterate</name></member>
+      <member refid="classbnf_1_1___cycle_1a8a684c1ff75700a7829eecfdad13b980" prot="private" virt="non-virtual"><scope>bnf::_Cycle</scope><name>max</name></member>
+      <member refid="classbnf_1_1___cycle_1a5de2217c87fc0ea3ded9f18ee7526ae2" prot="private" virt="non-virtual"><scope>bnf::_Cycle</scope><name>min</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___cycle_1a42c2b33ba506a4cf0d9c52e320e471ae" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::_Cycle</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___cycle_1a8f5b6bfc935f03ffd6af67c00ed3c27e" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>Repeat</name></member>
+      <member refid="classbnf_1_1___cycle_1a39253986f40d82c4455593c7afc3e426" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>Series</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>setName</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::_Cycle</scope><name>use</name></member>
+      <member refid="classbnf_1_1___cycle_1ade41371d5058c036bfc33791df046ae8" prot="public" virt="non-virtual"><scope>bnf::_Cycle</scope><name>~_Cycle</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::_Cycle</scope><name>~_Tie</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

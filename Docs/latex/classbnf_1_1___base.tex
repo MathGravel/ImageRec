@@ -1,0 +1,89 @@
+\section{bnf\+:\+:\+\_\+\+Base Class Reference}
+\label{classbnf_1_1___base}\index{bnf\+::\+\_\+\+Base@{bnf\+::\+\_\+\+Base}}
+
+
+Inheritance diagram for bnf\+:\+:\+\_\+\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classbnf_1_1___base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_aefdb796fdec5b4172924717aa934dc4a}} 
+int {\bfseries \+\_\+analyze} (\textbf{ \+\_\+\+Tie} \&root, const char $\ast$text, size\+\_\+t $\ast$)
+\item 
+\mbox{\label{classbnf_1_1___base_aabf499c8688286f6be285b89f101b720}} 
+{\bfseries \+\_\+\+Base} (const char $\ast$($\ast$pre)(const char $\ast$))
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_a3e28ced9cdb3f0443bcee04031fc49c9}} 
+static const char $\ast$ {\bfseries base\+\_\+parser} (const char $\ast$ptr)
+\item 
+\mbox{\label{classbnf_1_1___base_a2f5856c7ff0791a7d9b9dbc0fc2c0fa7}} 
+static int {\bfseries base\+\_\+error} (const char $\ast$ptr)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_a305816876d6e007b3216289fa5cb763b}} 
+std\+::vector$<$ const char $\ast$ $>$ {\bfseries cntxV}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_a24b2c70e93327da9f342c11f7a8a61d1}} 
+virtual void {\bfseries \+\_\+erase} (int low, int up=0)
+\item 
+\mbox{\label{classbnf_1_1___base_a00e146f614347f5cd256da4972b2b021}} 
+virtual std\+::pair$<$ void $\ast$, int $>$ {\bfseries \+\_\+pre\+\_\+call} (void $\ast$callback)
+\item 
+\mbox{\label{classbnf_1_1___base_ab1a1132dd9a8294a9ec7ae9e9d908f2b}} 
+virtual void {\bfseries \+\_\+post\+\_\+call} (std\+::pair$<$ void $\ast$, int $>$ up)
+\item 
+\mbox{\label{classbnf_1_1___base_ac63cafa36d2b032f030950622b59bde7}} 
+virtual void {\bfseries \+\_\+do\+\_\+call} (std\+::pair$<$ void $\ast$, int $>$ up, void $\ast$callback, const char $\ast$begin, const char $\ast$end, const char $\ast$name)
+\item 
+\mbox{\label{classbnf_1_1___base_a088e0841175a63af7d6867728fb67857}} 
+virtual void {\bfseries \+\_\+stub\+\_\+call} (const char $\ast$begin, const char $\ast$end, const char $\ast$name)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_a453778efab1591833f58f9e87ce1847c}} 
+int {\bfseries level}
+\item 
+\mbox{\label{classbnf_1_1___base_a2c4c10392aceaaae362f05a10c76ee95}} 
+const char $\ast$($\ast$ {\bfseries zero\+\_\+parse} )(const char $\ast$)
+\item 
+\mbox{\label{classbnf_1_1___base_afbb5aeec84c9cea8874db4d3f6911ce9}} 
+int($\ast$ {\bfseries catch\+\_\+error} )(const char $\ast$ptr)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___base_a48f5c1ca47af8dc65eca7e0274de96e2}} 
+class {\bfseries Token}
+\item 
+\mbox{\label{classbnf_1_1___base_a5e39c58451938ac9fc35e0ac18674f12}} 
+class {\bfseries Lexem}
+\item 
+\mbox{\label{classbnf_1_1___base_a6c87f8640d92f86217b1b5ac79943269}} 
+class {\bfseries Rule}
+\item 
+\mbox{\label{classbnf_1_1___base_abc37899b09eb024e8e57c00ec8fba682}} 
+class {\bfseries \+\_\+\+And}
+\item 
+\mbox{\label{classbnf_1_1___base_abc2ecc13a8a23716fb474fcc5d47a88f}} 
+class {\bfseries \+\_\+\+Or}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\+P\+A\+R\+C/include/bnflite.\+h\end{DoxyCompactItemize}

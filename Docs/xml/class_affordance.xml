@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_affordance" kind="class" language="C++" prot="public">
+    <compoundname>Affordance</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_affordance_1a1d725bf121376264629c263a8fcba428" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Affordance::objectName</definition>
+        <argsstring></argsstring>
+        <name>objectName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="107" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_1ad58f3bf48d1176d8ee7fbe5ed31dce82" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Affordance::objectPos</definition>
+        <argsstring></argsstring>
+        <name>objectPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="108" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_1a8a62775b168ea448cd6eea1babdc7ae4" prot="private" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect Affordance::region</definition>
+        <argsstring></argsstring>
+        <name>region</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="109" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_1a89a8d2060a3f82d17019cdae12953821" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Affordance::objProb</definition>
+        <argsstring></argsstring>
+        <name>objProb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="110" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_affordance_1a6e7951970d97c4b1ee666b7006120c35" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Affordance::dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="111" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_affordance_1af5eb0d211b08c5e74bda3d278f4c0c36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Affordance::Affordance</definition>
+        <argsstring>(std::string obj=&quot;teacup&quot;, double prob=76.7653)</argsstring>
+        <name>Affordance</name>
+        <param>
+          <type>std::string</type>
+          <declname>obj</declname>
+          <defval>&quot;teacup&quot;</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>prob</declname>
+          <defval>76.7653</defval>
+        </param>
+        <briefdescription>
+<para>Constructor of <ref refid="class_affordance" kindref="compound">Affordance</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the new Object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Confidence rate on the object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="30" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="3" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a7a5b691f83565f6905dabd64b80f8312" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Affordance::Affordance</definition>
+        <argsstring>(std::string obj, double pos, cv::Rect reg, double prob, double _dist=0)</argsstring>
+        <name>Affordance</name>
+        <param>
+          <type>std::string</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>cv::Rect</type>
+          <declname>reg</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>prob</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_dist</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Constructor of <ref refid="class_affordance" kindref="compound">Affordance</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String : Name of the new Object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double : position of the Object at Creation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>reg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>cv::Rect : OpenCv class for 2D rectangles </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prob</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double : Confidence rate on the object </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dist</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double : Distance between the Hand and the Object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="42" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="17" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a1df2b93a131f51a9ec09543c3e90a973" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>Affordance::getName</definition>
+        <argsstring>() const</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="47" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1ae0af285b48f141b9a562be0dce29c118" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>Affordance::getObjectPosition</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="52" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a946913b09e3996204b38e6ec95760927" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const cv::Rect &amp;</type>
+        <definition>Affordance::getRegion</definition>
+        <argsstring>() const</argsstring>
+        <name>getRegion</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="57" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a0d994c5c809aba784d58eb855db218e0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>Affordance::getObjectProbability</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectProbability</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="62" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1acb92606601365f5fc88cd35d95fe9ef5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Affordance::setDist</definition>
+        <argsstring>(double dist)</argsstring>
+        <name>setDist</name>
+        <param>
+          <type>double</type>
+          <declname>dist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="67" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a9ac80d93d6e91a45ac4167f0e59d6672" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>Affordance::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="74" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a4f7ff7d10b07287cb73c519689c60678" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Affordance::operator==</definition>
+        <argsstring>(const Affordance &amp;autre)</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_affordance" kindref="compound">Affordance</ref> &amp;</type>
+          <declname>autre</declname>
+        </param>
+        <briefdescription>
+<para>Overload of the &apos;==&apos; operator for two <ref refid="class_affordance" kindref="compound">Affordance</ref> objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if this == &apos;autre&apos; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="84" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="29" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1af080e51eb9ea5965c2cb0bee6caa4ff0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Affordance::operator&lt;</definition>
+        <argsstring>(const Affordance &amp;autre)</argsstring>
+        <name>operator&lt;</name>
+        <param>
+          <type>const <ref refid="class_affordance" kindref="compound">Affordance</ref> &amp;</type>
+          <declname>autre</declname>
+        </param>
+        <briefdescription>
+<para>Overload of the &apos;&lt;&apos; operator for two <ref refid="class_affordance" kindref="compound">Affordance</ref> objects. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if this &lt; &apos;autre&apos; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="91" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.cpp" bodystart="39" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_affordance_1a0e999f7c0a400f4f1936c392843b5051" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>Affordance::to_str</definition>
+        <argsstring>() const</argsstring>
+        <name>to_str</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="98" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="98" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_affordance_1a1d761ec04ad58029e54101c201c15d89" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;o, const Affordance a)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_affordance" kindref="compound">Affordance</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/Affordance.h" line="116" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="116" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/Affordance.h" line="20" column="1" bodyfile="model/recoActivite/recoAffordance/Affordance.h" bodystart="20" bodyend="122"/>
+    <listofallmembers>
+      <member refid="class_affordance_1af5eb0d211b08c5e74bda3d278f4c0c36" prot="public" virt="non-virtual"><scope>Affordance</scope><name>Affordance</name></member>
+      <member refid="class_affordance_1a7a5b691f83565f6905dabd64b80f8312" prot="public" virt="non-virtual"><scope>Affordance</scope><name>Affordance</name></member>
+      <member refid="class_affordance_1a6e7951970d97c4b1ee666b7006120c35" prot="private" virt="non-virtual"><scope>Affordance</scope><name>dist</name></member>
+      <member refid="class_affordance_1a1df2b93a131f51a9ec09543c3e90a973" prot="public" virt="non-virtual"><scope>Affordance</scope><name>getName</name></member>
+      <member refid="class_affordance_1ae0af285b48f141b9a562be0dce29c118" prot="public" virt="non-virtual"><scope>Affordance</scope><name>getObjectPosition</name></member>
+      <member refid="class_affordance_1a0d994c5c809aba784d58eb855db218e0" prot="public" virt="non-virtual"><scope>Affordance</scope><name>getObjectProbability</name></member>
+      <member refid="class_affordance_1a946913b09e3996204b38e6ec95760927" prot="public" virt="non-virtual"><scope>Affordance</scope><name>getRegion</name></member>
+      <member refid="class_affordance_1a1d725bf121376264629c263a8fcba428" prot="private" virt="non-virtual"><scope>Affordance</scope><name>objectName</name></member>
+      <member refid="class_affordance_1ad58f3bf48d1176d8ee7fbe5ed31dce82" prot="private" virt="non-virtual"><scope>Affordance</scope><name>objectPos</name></member>
+      <member refid="class_affordance_1a89a8d2060a3f82d17019cdae12953821" prot="private" virt="non-virtual"><scope>Affordance</scope><name>objProb</name></member>
+      <member refid="class_affordance_1af080e51eb9ea5965c2cb0bee6caa4ff0" prot="public" virt="non-virtual"><scope>Affordance</scope><name>operator&lt;</name></member>
+      <member refid="class_affordance_1a1d761ec04ad58029e54101c201c15d89" prot="private" virt="non-virtual"><scope>Affordance</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_affordance_1a4f7ff7d10b07287cb73c519689c60678" prot="public" virt="non-virtual"><scope>Affordance</scope><name>operator==</name></member>
+      <member refid="class_affordance_1a8a62775b168ea448cd6eea1babdc7ae4" prot="private" virt="non-virtual"><scope>Affordance</scope><name>region</name></member>
+      <member refid="class_affordance_1a9ac80d93d6e91a45ac4167f0e59d6672" prot="public" virt="non-virtual"><scope>Affordance</scope><name>reset</name></member>
+      <member refid="class_affordance_1acb92606601365f5fc88cd35d95fe9ef5" prot="public" virt="non-virtual"><scope>Affordance</scope><name>setDist</name></member>
+      <member refid="class_affordance_1a0e999f7c0a400f4f1936c392843b5051" prot="public" virt="non-virtual"><scope>Affordance</scope><name>to_str</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

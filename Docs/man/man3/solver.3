@@ -1,0 +1,55 @@
+.TH "solver" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+solver
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBsolver\fP (\fBextendedPlanLibrary\fP *_epl, int _nbParticle)"
+.br
+.ti -1c
+.RI "bool \fBaddObservation\fP (int obs)"
+.br
+.ti -1c
+.RI "bool \fBaddObservation\fP (std::string obs)"
+.br
+.ti -1c
+.RI "bool \fBstatus\fP ()"
+.br
+.ti -1c
+.RI "map< int, int > \fBgetGoals\fP ()"
+.br
+.ti -1c
+.RI "map< int, int > \fBgetParticles\fP ()"
+.br
+.ti -1c
+.RI "map< std::string, float > \fBgetProbGoals\fP ()"
+.br
+.ti -1c
+.RI "map< std::string, float > \fBgetProbParticles\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetMaxGoal\fP ()"
+.br
+.ti -1c
+.RI "const int & \fBgetSize\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "pair< int, vector< int > > \fBgeneratePlan\fP ()"
+.br
+.ti -1c
+.RI "pair< int, vector< int > > \fBgeneratePlanFO\fP ()"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

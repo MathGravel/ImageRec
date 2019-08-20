@@ -1,0 +1,6 @@
+<map id="tree" name="tree">
+<area shape="rect" id="node2" href="$classtree_node.html" title="treeNode" alt="" coords="172,199,247,225"/>
+<area shape="rect" id="node3" href="$classextended_plan_library.html" title="extendedPlanLibrary" alt="" coords="78,109,218,136"/>
+<area shape="rect" id="node4" href="$classprobability_distribution.html" title="probabilityDistribution" alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node5" href="$classplan_library.html" title="planLibrary" alt="" coords="176,5,261,32"/>
+</map>

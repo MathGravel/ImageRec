@@ -1,0 +1,150 @@
+\section{Activity\+Region Class Reference}
+\label{class_activity_region}\index{Activity\+Region@{Activity\+Region}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Activity\+Region} (map$<$ string, string $>$ setting)
+\begin{DoxyCompactList}\small\item\em Constructor of class \doxyref{Activity\+Region}{p.}{class_activity_region}. \end{DoxyCompactList}\item 
+void \textbf{ Update} (cv\+::\+Mat vision, cv\+::\+Mat depth\+Vision)
+\begin{DoxyCompactList}\small\item\em send to Y\+O\+LO image then update vector of Hands and Objects \end{DoxyCompactList}\item 
+\textbf{ Detected\+Objects} \textbf{ detect\+Hand} (cv\+::\+Mat color, cv\+::\+Mat depth)
+\begin{DoxyCompactList}\small\item\em from matrix of color and depth, found hands \end{DoxyCompactList}\item 
+\textbf{ Detected\+Objects} \textbf{ detect\+Objets} (cv\+::\+Mat color, cv\+::\+Mat depth)
+\begin{DoxyCompactList}\small\item\em from matrix of color and depth, found objects \end{DoxyCompactList}\item 
+\mbox{\label{class_activity_region_aaedd12ffbb381ef845cd5aa72ed6826e}} 
+void \textbf{ Update\+R\+OI} (cv\+::\+Mat vision, cv\+::\+Mat depth\+Vision)
+\begin{DoxyCompactList}\small\item\em Y\+O\+LO I guess. \end{DoxyCompactList}\item 
+\mbox{\label{class_activity_region_af55c48016552bc9438e7170a72ad8687}} 
+void {\bfseries update\+Manual\+R\+OI} (cv\+::\+Mat vision, cv\+::\+Mat depth\+Vision, cv\+::\+Rect chosen\+R\+OI)
+\item 
+\mbox{\label{class_activity_region_a10c0391215447dfb4ae98fba2c89a1a1}} 
+cv\+::\+Mat {\bfseries get\+Image\+With\+R\+OI} () const
+\item 
+\mbox{\label{class_activity_region_a2a5370220d07bc85f1ea716f8f3c57bb}} 
+void \textbf{ reset} ()
+\begin{DoxyCompactList}\small\item\em Reset vector of hands, objects, and regions. \end{DoxyCompactList}\item 
+\mbox{\label{class_activity_region_a6bd9e8a428ebb079fd1d747ba5498b2a}} 
+\textbf{ Detected\+Objects} \textbf{ get\+Hands} ()
+\begin{DoxyCompactList}\small\item\em Getter. \end{DoxyCompactList}\item 
+\mbox{\label{class_activity_region_a4f5e2d307274c28c5ce699f7621ab5f6}} 
+\textbf{ Detected\+Objects} {\bfseries get\+Items} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ Activity\+Region} $\ast$ \textbf{ instance} (map$<$ string, string $>$ setting)
+\begin{DoxyCompactList}\small\item\em check if \doxyref{Activity\+Region}{p.}{class_activity_region} object exist, else create it, then return it \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_activity_region_adde853c35d4b63094570ca276867a94e}} 
+std\+::mutex \textbf{ mtx}
+\begin{DoxyCompactList}\small\item\em public variables \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{class_activity_region_ada1bc74916bf73465a08634c5178ec30}} 
+class {\bfseries Primary\+Window}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_activity_region_a2f202193c7944ed13d0188af8a0cfca7}} 
+\index{Activity\+Region@{Activity\+Region}!Activity\+Region@{Activity\+Region}}
+\index{Activity\+Region@{Activity\+Region}!Activity\+Region@{Activity\+Region}}
+\subsubsection{Activity\+Region()}
+{\footnotesize\ttfamily Activity\+Region\+::\+Activity\+Region (\begin{DoxyParamCaption}\item[{map$<$ string, string $>$}]{setting }\end{DoxyParamCaption})}
+
+
+
+Constructor of class \doxyref{Activity\+Region}{p.}{class_activity_region}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em setting} & \+: map$<$string,string$>$ which contain every path and information to use (fisrt String = name\+\_\+of\+\_\+information, second String = information) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_activity_region_a2975005c4e59a86dd21f9ac8da394d29}} 
+\index{Activity\+Region@{Activity\+Region}!detect\+Hand@{detect\+Hand}}
+\index{detect\+Hand@{detect\+Hand}!Activity\+Region@{Activity\+Region}}
+\subsubsection{detect\+Hand()}
+{\footnotesize\ttfamily \textbf{ Detected\+Objects} Activity\+Region\+::detect\+Hand (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{color,  }\item[{cv\+::\+Mat}]{depth }\end{DoxyParamCaption})}
+
+
+
+from matrix of color and depth, found hands 
+
+Use Y\+O\+LO 
+\begin{DoxyParams}{Parameters}
+{\em vision} & \+: matrice which represent color of the picture \\
+\hline
+{\em depth\+Vision} & \+: matrice which represent the depth in the picture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Detected\+Objects}{p.}{class_detected_objects} every hands that cnn have found 
+\end{DoxyReturn}
+\mbox{\label{class_activity_region_a6cc3ac4cd2d6e39367121776fc2e0437}} 
+\index{Activity\+Region@{Activity\+Region}!detect\+Objets@{detect\+Objets}}
+\index{detect\+Objets@{detect\+Objets}!Activity\+Region@{Activity\+Region}}
+\subsubsection{detect\+Objets()}
+{\footnotesize\ttfamily \textbf{ Detected\+Objects} Activity\+Region\+::detect\+Objets (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{color,  }\item[{cv\+::\+Mat}]{depth }\end{DoxyParamCaption})}
+
+
+
+from matrix of color and depth, found objects 
+
+Use Y\+O\+LO 
+\begin{DoxyParams}{Parameters}
+{\em vision} & \+: matrix which represent color of the picture \\
+\hline
+{\em depth\+Vision} & \+: matrix which represent the depth in the picture \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Detected\+Objects}{p.}{class_detected_objects} \+: every pbjects that cnn have found 
+\end{DoxyReturn}
+\mbox{\label{class_activity_region_a92a746c743f639a177c4f3a48b39420c}} 
+\index{Activity\+Region@{Activity\+Region}!instance@{instance}}
+\index{instance@{instance}!Activity\+Region@{Activity\+Region}}
+\subsubsection{instance()}
+{\footnotesize\ttfamily \textbf{ Activity\+Region} $\ast$ Activity\+Region\+::instance (\begin{DoxyParamCaption}\item[{map$<$ string, string $>$}]{setting }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+check if \doxyref{Activity\+Region}{p.}{class_activity_region} object exist, else create it, then return it 
+
+if it\textquotesingle{}s the first step of the loop (Mise\+A\+Jour\+Image) or pointer of \doxyref{Activity\+Region}{p.}{class_activity_region} as been delete 
+\begin{DoxyParams}{Parameters}
+{\em setting} & \+: map$<$string,string$>$ which contain every path and information to use (fisrt String = name\+\_\+of\+\_\+information, second String = information) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Activity\+Region\+::ar\+\_\+instance \+: object of \doxyref{Activity\+Region}{p.}{class_activity_region} 
+\end{DoxyReturn}
+\mbox{\label{class_activity_region_aad8005109904e86239656d558720b198}} 
+\index{Activity\+Region@{Activity\+Region}!Update@{Update}}
+\index{Update@{Update}!Activity\+Region@{Activity\+Region}}
+\subsubsection{Update()}
+{\footnotesize\ttfamily void Activity\+Region\+::\+Update (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{vision,  }\item[{cv\+::\+Mat}]{depth\+Vision }\end{DoxyParamCaption})}
+
+
+
+send to Y\+O\+LO image then update vector of Hands and Objects 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vision} & \+: matrice which represent color of the picture \\
+\hline
+{\em depth\+Vision} & \+: matrice which represent the depth in the picture \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Activite/reco\+Image/\textbf{ Activity\+Region.\+h}\item 
+model/reco\+Activite/reco\+Image/Activity\+Region.\+cpp\end{DoxyCompactItemize}

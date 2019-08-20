@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_primary_window" kind="class" language="C++" prot="public">
+    <compoundname>PrimaryWindow</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_primary_window_1ad72a23dab7e1aa8067c384ed56473f66" prot="private" static="no" mutable="no">
+        <type><ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> *</type>
+        <definition>AffordanceTime* PrimaryWindow::pastAffordance</definition>
+        <argsstring></argsstring>
+        <name>pastAffordance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="80" column="1" bodyfile="view/PrimaryWindow.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_primary_window_1a1d0b420c3063ed542e13ce06a70cbf2a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool PrimaryWindow::display</definition>
+        <argsstring></argsstring>
+        <name>display</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="81" column="1" bodyfile="view/PrimaryWindow.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_primary_window_1a8b841d6991616941a6a17abfa60df260" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PrimaryWindow::PrimaryWindow</definition>
+        <argsstring>(bool display)</argsstring>
+        <name>PrimaryWindow</name>
+        <param>
+          <type>bool</type>
+          <declname>display</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>enable all composant only if display is true <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>display</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: send by configuration file | without one display is ON </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="50" column="1" bodyfile="view/PrimaryWindow.cpp" bodystart="3" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_primary_window_1ae2a17fec92af8d8c15bf255028494cc5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual PrimaryWindow::~PrimaryWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~PrimaryWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="56" column="1" bodyfile="view/PrimaryWindow.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_primary_window_1a81d64431709d41e7f3e5583cc494e65a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>PrimaryWindow::updateView</definition>
+        <argsstring>(ActivityRegion *act, std::vector&lt; AffordanceTime *&gt; currentAffordance)</argsstring>
+        <name>updateView</name>
+        <param>
+          <type><ref refid="class_activity_region" kindref="compound">ActivityRegion</ref> *</type>
+          <declname>act</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> *&gt;</type>
+          <declname>currentAffordance</declname>
+        </param>
+        <briefdescription>
+<para>update View </para>        </briefdescription>
+        <detaileddescription>
+<para>called by <ref refid="class_recognition_manager" kindref="compound">RecognitionManager</ref> at each course of the loop call treatPicture which draw rectangle over the initial picture <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>act</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Object of <ref refid="class_activity_region" kindref="compound">ActivityRegion</ref>: contains imageColor, position of hands and objects </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentAffordance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: vector of Object of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> contain position of hands and objects </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="67" column="1" bodyfile="view/PrimaryWindow.cpp" bodystart="14" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_primary_window_1a06bec221f7a0a1f205976a6e21a2f29d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>PrimaryWindow::treatPicture</definition>
+        <argsstring>(ActivityRegion *act, std::vector&lt; AffordanceTime *&gt; currentAffordance)</argsstring>
+        <name>treatPicture</name>
+        <param>
+          <type><ref refid="class_activity_region" kindref="compound">ActivityRegion</ref> *</type>
+          <declname>act</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> *&gt;</type>
+          <declname>currentAffordance</declname>
+        </param>
+        <briefdescription>
+<para>draw rectangle over hands and </para>        </briefdescription>
+        <detaileddescription>
+<para>called by updateView <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>act</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Object of <ref refid="class_activity_region" kindref="compound">ActivityRegion</ref>: contains imageColor, position of hands and objects </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>currentAffordance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: vector of Object of <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> contain position of hands and objects </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="view/PrimaryWindow.h" line="76" column="1" bodyfile="view/PrimaryWindow.cpp" bodystart="25" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="view/PrimaryWindow.h" line="41" column="1" bodyfile="view/PrimaryWindow.h" bodystart="41" bodyend="82"/>
+    <listofallmembers>
+      <member refid="class_primary_window_1a1d0b420c3063ed542e13ce06a70cbf2a" prot="private" virt="non-virtual"><scope>PrimaryWindow</scope><name>display</name></member>
+      <member refid="class_primary_window_1ad72a23dab7e1aa8067c384ed56473f66" prot="private" virt="non-virtual"><scope>PrimaryWindow</scope><name>pastAffordance</name></member>
+      <member refid="class_primary_window_1a8b841d6991616941a6a17abfa60df260" prot="public" virt="non-virtual"><scope>PrimaryWindow</scope><name>PrimaryWindow</name></member>
+      <member refid="class_primary_window_1a06bec221f7a0a1f205976a6e21a2f29d" prot="public" virt="non-virtual"><scope>PrimaryWindow</scope><name>treatPicture</name></member>
+      <member refid="class_primary_window_1a81d64431709d41e7f3e5583cc494e65a" prot="public" virt="non-virtual"><scope>PrimaryWindow</scope><name>updateView</name></member>
+      <member refid="class_primary_window_1ae2a17fec92af8d8c15bf255028494cc5" prot="public" virt="virtual"><scope>PrimaryWindow</scope><name>~PrimaryWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

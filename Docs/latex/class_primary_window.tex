@@ -1,0 +1,72 @@
+\section{Primary\+Window Class Reference}
+\label{class_primary_window}\index{Primary\+Window@{Primary\+Window}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Primary\+Window} (bool display)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \textbf{ update\+View} (\textbf{ Activity\+Region} $\ast$act, std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$ current\+Affordance)
+\begin{DoxyCompactList}\small\item\em update View \end{DoxyCompactList}\item 
+void \textbf{ treat\+Picture} (\textbf{ Activity\+Region} $\ast$act, std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$ current\+Affordance)
+\begin{DoxyCompactList}\small\item\em draw rectangle over hands and \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_primary_window_a8b841d6991616941a6a17abfa60df260}} 
+\index{Primary\+Window@{Primary\+Window}!Primary\+Window@{Primary\+Window}}
+\index{Primary\+Window@{Primary\+Window}!Primary\+Window@{Primary\+Window}}
+\subsubsection{Primary\+Window()}
+{\footnotesize\ttfamily Primary\+Window\+::\+Primary\+Window (\begin{DoxyParamCaption}\item[{bool}]{display }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+enable all composant only if display is true 
+\begin{DoxyParams}{Parameters}
+{\em display} & \+: send by configuration file $\vert$ without one display is ON \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_primary_window_a06bec221f7a0a1f205976a6e21a2f29d}} 
+\index{Primary\+Window@{Primary\+Window}!treat\+Picture@{treat\+Picture}}
+\index{treat\+Picture@{treat\+Picture}!Primary\+Window@{Primary\+Window}}
+\subsubsection{treat\+Picture()}
+{\footnotesize\ttfamily Primary\+Window\+::treat\+Picture (\begin{DoxyParamCaption}\item[{\textbf{ Activity\+Region} $\ast$}]{act,  }\item[{std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$}]{current\+Affordance }\end{DoxyParamCaption})}
+
+
+
+draw rectangle over hands and 
+
+called by update\+View 
+\begin{DoxyParams}{Parameters}
+{\em act} & \+: Object of \doxyref{Activity\+Region}{p.}{class_activity_region}\+: contains image\+Color, position of hands and objects \\
+\hline
+{\em current\+Affordance} & \+: vector of Object of \doxyref{Affordance\+Time}{p.}{class_affordance_time} contain position of hands and objects \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_primary_window_a81d64431709d41e7f3e5583cc494e65a}} 
+\index{Primary\+Window@{Primary\+Window}!update\+View@{update\+View}}
+\index{update\+View@{update\+View}!Primary\+Window@{Primary\+Window}}
+\subsubsection{update\+View()}
+{\footnotesize\ttfamily Primary\+Window\+::update\+View (\begin{DoxyParamCaption}\item[{\textbf{ Activity\+Region} $\ast$}]{act,  }\item[{std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$$>$}]{current\+Affordance }\end{DoxyParamCaption})}
+
+
+
+update View 
+
+called by \doxyref{Recognition\+Manager}{p.}{class_recognition_manager} at each course of the loop call treat\+Picture which draw rectangle over the initial picture 
+\begin{DoxyParams}{Parameters}
+{\em act} & \+: Object of \doxyref{Activity\+Region}{p.}{class_activity_region}\+: contains image\+Color, position of hands and objects \\
+\hline
+{\em current\+Affordance} & \+: vector of Object of \doxyref{Affordance\+Time}{p.}{class_affordance_time} contain position of hands and objects \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+view/\textbf{ Primary\+Window.\+h}\item 
+view/Primary\+Window.\+cpp\end{DoxyCompactItemize}

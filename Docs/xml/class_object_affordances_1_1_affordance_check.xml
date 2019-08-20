@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_object_affordances_1_1_affordance_check" kind="class" language="C++" prot="private">
+    <compoundname>ObjectAffordances::AffordanceCheck</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1ae1233a15b9193722cac45dedecf610e8" prot="private" static="no" mutable="no">
+        <type>Region</type>
+        <definition>Region ObjectAffordances::AffordanceCheck::object</definition>
+        <argsstring></argsstring>
+        <name>object</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="153" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1aa2f3e49d34f1090ea0a8752e79e9b318" prot="private" static="no" mutable="no">
+        <type>Region</type>
+        <definition>Region ObjectAffordances::AffordanceCheck::hand</definition>
+        <argsstring></argsstring>
+        <name>hand</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="154" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1a088e1bafeb850de48dbbd029ae68a67b" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string ObjectAffordances::AffordanceCheck::objectClass</definition>
+        <argsstring></argsstring>
+        <name>objectClass</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="155" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1af8056167706cb12db5785594c10187b4" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double ObjectAffordances::AffordanceCheck::dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="156" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1ae590909b7748574ddfd10f746b5ce5e4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectAffordances::AffordanceCheck::gros</definition>
+        <argsstring></argsstring>
+        <name>gros</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="157" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_object_affordances_1_1_affordance_check_1ac058d858b060bb179a6f6b4cdd1accd4" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ObjectAffordances::AffordanceCheck::ens</definition>
+        <argsstring></argsstring>
+        <name>ens</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="158" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_object_affordances_1_1_affordance_check_1a7d16b84a699752bd1c0b14ada567d46f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ObjectAffordances::AffordanceCheck::AffordanceCheck</definition>
+        <argsstring>(const DetectedObject &amp;obj, const DetectedObject &amp;_hand)</argsstring>
+        <name>AffordanceCheck</name>
+        <param>
+          <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &amp;</type>
+          <declname>_hand</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of AffordanceCheck. </para>        </briefdescription>
+        <detaileddescription>
+<para>sets the object and the hand position, sets the Name of the object and the distance between the hand and the object <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_detected_object" kindref="compound">DetectedObject</ref>&amp; obj : object given as parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_detected_object" kindref="compound">DetectedObject</ref>&amp; _hand : hand given as parameter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="117" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="117" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1_1_affordance_check_1af5489d2d245eb3e7d954e72d0cdf0c80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ObjectAffordances::AffordanceCheck::AffordanceCheck</definition>
+        <argsstring>(Region obj, Region _hand)</argsstring>
+        <name>AffordanceCheck</name>
+        <param>
+          <type>Region</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>Region</type>
+          <declname>_hand</declname>
+        </param>
+        <briefdescription>
+<para>Constructor of AffordanceCheck. </para>        </briefdescription>
+        <detaileddescription>
+<para>sets the hand and the object for an unknown object, sets the distance to 0. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>obj : object given as parameter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Region</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>_hand : hand given as parameter </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="134" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="134" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1_1_affordance_check_1aa1993bbaa77f71cd4f7c5d10fc484466" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ObjectAffordances::AffordanceCheck::operator bool</definition>
+        <argsstring>() const</argsstring>
+        <name>operator bool</name>
+        <briefdescription>
+<para>operator bool </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="143" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="143" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_object_affordances_1_1_affordance_check_1ae690dda640df3d58a7bf2f5c92e32a8b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>ObjectAffordances::AffordanceCheck::getObjectType</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjectType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="150" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="150" bodyend="150"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/ObjectAff.h" line="107" column="1" bodyfile="model/recoActivite/recoAffordance/ObjectAff.h" bodystart="107" bodyend="161"/>
+    <listofallmembers>
+      <member refid="class_object_affordances_1_1_affordance_check_1a7d16b84a699752bd1c0b14ada567d46f" prot="public" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>AffordanceCheck</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1af5489d2d245eb3e7d954e72d0cdf0c80" prot="public" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>AffordanceCheck</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1af8056167706cb12db5785594c10187b4" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>dist</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1ac058d858b060bb179a6f6b4cdd1accd4" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>ens</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1ae690dda640df3d58a7bf2f5c92e32a8b" prot="public" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>getObjectType</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1ae590909b7748574ddfd10f746b5ce5e4" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>gros</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1aa2f3e49d34f1090ea0a8752e79e9b318" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>hand</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1ae1233a15b9193722cac45dedecf610e8" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>object</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1a088e1bafeb850de48dbbd029ae68a67b" prot="private" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>objectClass</name></member>
+      <member refid="class_object_affordances_1_1_affordance_check_1aa1993bbaa77f71cd4f7c5d10fc484466" prot="public" virt="non-virtual"><scope>ObjectAffordances::AffordanceCheck</scope><name>operator bool</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

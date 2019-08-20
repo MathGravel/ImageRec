@@ -1,0 +1,43 @@
+.TH "DetectedObjects" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DetectedObjects
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDetectedObjects\fP (std::vector< \fBDetectedObject\fP > objets)"
+.br
+.ti -1c
+.RI "const \fBDetectedObject\fP * \fBbegin\fP () const"
+.br
+.ti -1c
+.RI "const \fBDetectedObject\fP * \fBend\fP () const"
+.br
+.ti -1c
+.RI "bool \fBempty\fP () const"
+.br
+.ti -1c
+.RI "void \fBclear\fP ()"
+.br
+.ti -1c
+.RI "int \fBsize\fP ()"
+.br
+.ti -1c
+.RI "const std::vector< \fBDetectedObject\fP > & \fBgetObjects\fP () const"
+.br
+.ti -1c
+.RI "const \fBDetectedObject\fP \fBgetObject\fP (std::string objName) const"
+.br
+.ti -1c
+.RI "const \fBDetectedObject\fP \fBgetObject\fP (cv::Rect &region) const"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

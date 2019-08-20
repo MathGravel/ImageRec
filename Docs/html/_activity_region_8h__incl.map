@@ -1,0 +1,8 @@
+<map id="model/recoActivite/recoImage/ActivityRegion.h" name="model/recoActivite/recoImage/ActivityRegion.h">
+<area shape="rect" id="node5" href="$_detected_object_8h.html" title="3 class : DetectedMatrice, DetectedObject, DetectedObjects " alt="" coords="299,319,423,345"/>
+<area shape="rect" id="node9" href="$selective_search_depth_8h_source.html" title="selectiveSearchDepth.h" alt="" coords="1487,95,1649,121"/>
+<area shape="rect" id="node28" href="$_yolo_g_p_u_8h_source.html" title="cnn/YoloGPU.h" alt="" coords="269,95,382,121"/>
+<area shape="rect" id="node31" href="$_yolo_c_p_u_8h_source.html" title="cnn/YoloCPU.h" alt="" coords="705,95,818,121"/>
+<area shape="rect" id="node29" href="$_detector_8h_source.html" title="../Detector.h" alt="" coords="361,244,455,271"/>
+<area shape="rect" id="node30" href="$_yolo_8h_source.html" title="Yolo.h" alt="" coords="296,169,355,196"/>
+</map>

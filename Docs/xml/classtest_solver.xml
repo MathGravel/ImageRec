@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtest_solver" kind="class" language="C++" prot="public">
+    <compoundname>testSolver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classtest_solver_1ae6cbd4b8bb2e91a9c4899952a7867444" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int testSolver::nbTests</definition>
+        <argsstring></argsstring>
+        <name>nbTests</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="30" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_solver_1a782b68735ce349560fb2dfae4f5b5782" prot="private" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref></type>
+        <definition>extendedPlanLibrary testSolver::current_epl</definition>
+        <argsstring></argsstring>
+        <name>current_epl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="31" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_solver_1af8f72e5bb60f22c127564456e2473162" prot="private" static="no" mutable="no">
+        <type>vector&lt; <ref refid="classsolver" kindref="compound">solver</ref> &gt;</type>
+        <definition>vector&lt;solver&gt; testSolver::solvers</definition>
+        <argsstring></argsstring>
+        <name>solvers</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="32" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_solver_1a717cd5f83752228a55dadf07c96fc34a" prot="private" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref></type>
+        <definition>extendedPlanLibrary testSolver::epl</definition>
+        <argsstring></argsstring>
+        <name>epl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="33" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_solver_1af1d1df604aa9f94d8007d312ae333f96" prot="private" static="no" mutable="no">
+        <type>vector&lt; vector&lt; int &gt; &gt;</type>
+        <definition>vector&lt;vector&lt;int&gt; &gt; testSolver::results</definition>
+        <argsstring></argsstring>
+        <name>results</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="34" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtest_solver_1a80d5b25b75b611fad31aa4f2b8ae612d" prot="private" static="no" mutable="no">
+        <type>vector&lt; int &gt;</type>
+        <definition>vector&lt;int&gt; testSolver::timeSecond</definition>
+        <argsstring></argsstring>
+        <name>timeSecond</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="35" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtest_solver_1a21b06892128ecd5ad11ec6bb6f4a5858" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>testSolver::testSolver</definition>
+        <argsstring>(int _nbTest)</argsstring>
+        <name>testSolver</name>
+        <param>
+          <type>int</type>
+          <declname>_nbTest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="23" column="1" bodyfile="model/recoPlan/PARC/src/solver/testSolver.cpp" bodystart="3" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_solver_1ae0de4f5ce5ab56541c4c65092aa26aa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>testSolver::~testSolver</definition>
+        <argsstring>()</argsstring>
+        <name>~testSolver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="24" column="1" bodyfile="model/recoPlan/PARC/src/solver/testSolver.cpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_solver_1aa9db0184fafc3f4ff962bfecdfb2d500" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testSolver::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="25" column="1" bodyfile="model/recoPlan/PARC/src/solver/testSolver.cpp" bodystart="17" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_solver_1a9e0f0753e7d3a309da94fdb989046b3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testSolver::print</definition>
+        <argsstring>()</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="26" column="1" bodyfile="model/recoPlan/PARC/src/solver/testSolver.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classtest_solver_1abb53fb745e83c43a7fb0bf0dba7310df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testSolver::addSolver</definition>
+        <argsstring>(solver s)</argsstring>
+        <name>addSolver</name>
+        <param>
+          <type><ref refid="classsolver" kindref="compound">solver</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/testSolver.h" line="27" column="1" bodyfile="model/recoPlan/PARC/src/solver/testSolver.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/testSolver.h" line="21" column="1" bodyfile="model/recoPlan/PARC/include/testSolver.h" bodystart="20" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classtest_solver_1abb53fb745e83c43a7fb0bf0dba7310df" prot="public" virt="non-virtual"><scope>testSolver</scope><name>addSolver</name></member>
+      <member refid="classtest_solver_1a782b68735ce349560fb2dfae4f5b5782" prot="private" virt="non-virtual"><scope>testSolver</scope><name>current_epl</name></member>
+      <member refid="classtest_solver_1a717cd5f83752228a55dadf07c96fc34a" prot="private" virt="non-virtual"><scope>testSolver</scope><name>epl</name></member>
+      <member refid="classtest_solver_1ae6cbd4b8bb2e91a9c4899952a7867444" prot="private" virt="non-virtual"><scope>testSolver</scope><name>nbTests</name></member>
+      <member refid="classtest_solver_1a9e0f0753e7d3a309da94fdb989046b3f" prot="public" virt="non-virtual"><scope>testSolver</scope><name>print</name></member>
+      <member refid="classtest_solver_1af1d1df604aa9f94d8007d312ae333f96" prot="private" virt="non-virtual"><scope>testSolver</scope><name>results</name></member>
+      <member refid="classtest_solver_1aa9db0184fafc3f4ff962bfecdfb2d500" prot="public" virt="non-virtual"><scope>testSolver</scope><name>run</name></member>
+      <member refid="classtest_solver_1af8f72e5bb60f22c127564456e2473162" prot="private" virt="non-virtual"><scope>testSolver</scope><name>solvers</name></member>
+      <member refid="classtest_solver_1a21b06892128ecd5ad11ec6bb6f4a5858" prot="public" virt="non-virtual"><scope>testSolver</scope><name>testSolver</name></member>
+      <member refid="classtest_solver_1a80d5b25b75b611fad31aa4f2b8ae612d" prot="private" virt="non-virtual"><scope>testSolver</scope><name>timeSecond</name></member>
+      <member refid="classtest_solver_1ae0de4f5ce5ab56541c4c65092aa26aa1" prot="public" virt="virtual"><scope>testSolver</scope><name>~testSolver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

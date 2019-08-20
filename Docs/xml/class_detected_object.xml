@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detected_object" kind="class" language="C++" prot="public">
+    <compoundname>DetectedObject</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_detected_object_1a8c5800312ef77dc7dbe6aa3c88514963" prot="private" static="no" mutable="no">
+        <type>cv::Rect</type>
+        <definition>cv::Rect DetectedObject::objPos</definition>
+        <argsstring></argsstring>
+        <name>objPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="160" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1a0b670d4e49986184aed650b9e1cca822" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string DetectedObject::objName</definition>
+        <argsstring></argsstring>
+        <name>objName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="161" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1a39fbd812521929b37a43ae96267482d8" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectedObject::dist</definition>
+        <argsstring></argsstring>
+        <name>dist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="162" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1a3b602999357f3767c592f48dc539f5f6" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double DetectedObject::prob</definition>
+        <argsstring></argsstring>
+        <name>prob</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="163" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1a33c6c917b91f9adbcdf257aeef5f2689" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DetectedObject::_r</definition>
+        <argsstring></argsstring>
+        <name>_r</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="164" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1a7fcff535aef975c3fb1c25e0a99d66fb" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DetectedObject::_g</definition>
+        <argsstring></argsstring>
+        <name>_g</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="165" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="165" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_detected_object_1ac64eaca123f7669bd724c90d3272f062" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float DetectedObject::_b</definition>
+        <argsstring></argsstring>
+        <name>_b</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="166" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="166" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detected_object_1ac0739bdcb2ce2667689c0ba51d468a06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObject::DetectedObject</definition>
+        <argsstring>(cv::Rect position, std::string name, double _dist)</argsstring>
+        <name>DetectedObject</name>
+        <param>
+          <type>cv::Rect</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_dist</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="63" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="63" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1aa146b28c06cbb765bcc91eaab4dc5779" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObject::DetectedObject</definition>
+        <argsstring>(cv::Rect position, std::string name, double _dist, double _prob)</argsstring>
+        <name>DetectedObject</name>
+        <param>
+          <type>cv::Rect</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_dist</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_prob</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="80" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="80" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1ad0e1af3fc53fc20bd6dd683aeba5d381" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObject::DetectedObject</definition>
+        <argsstring>(cv::Rect position, std::string name, double _dist, double _prob, float r, float g, float b)</argsstring>
+        <name>DetectedObject</name>
+        <param>
+          <type>cv::Rect</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_dist</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>_prob</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>g</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="96" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="96" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a76a07a96600d2c887567a6ce0467b6c0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DetectedObject::DetectedObject</definition>
+        <argsstring>(const DetectedObject &amp;obj)</argsstring>
+        <name>DetectedObject</name>
+        <param>
+          <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="112" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="112" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a90f4ef671b48ae8f4d48aee61f20e03b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const cv::Rect &amp;</type>
+        <definition>const cv::Rect&amp; DetectedObject::getObjPos</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjPos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="125" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="125" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a7ddbb811f9c986fe38e2993b0ffb751d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string &amp;</type>
+        <definition>const std::string&amp; DetectedObject::getObjName</definition>
+        <argsstring>() const</argsstring>
+        <name>getObjName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="129" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a3e72ea4cf7d0d466a8cb117b914ebb3a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const double &amp;</type>
+        <definition>const double&amp; DetectedObject::getDist</definition>
+        <argsstring>() const</argsstring>
+        <name>getDist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="133" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="133" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a8fd5a4c683876ff0c9b0a2842132aff1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const double</type>
+        <definition>const double DetectedObject::getProb</definition>
+        <argsstring>() const</argsstring>
+        <name>getProb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="137" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="137" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1aae31024c46b148c9209680b0aa4ae5f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float DetectedObject::getRed</definition>
+        <argsstring>() const</argsstring>
+        <name>getRed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="141" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="141" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a29ef493dd383255ffc2e742828533b2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float DetectedObject::getGreen</definition>
+        <argsstring>() const</argsstring>
+        <name>getGreen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="144" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="144" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a551abb9b51b4e7631d5a571fee65c212" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const float</type>
+        <definition>const float DetectedObject::getBlue</definition>
+        <argsstring>() const</argsstring>
+        <name>getBlue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="147" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="147" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_detected_object_1a7c9880948e0111fd319a62306e651427" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DetectedObject::fusePosition</definition>
+        <argsstring>(const DetectedObject &amp;obj)</argsstring>
+        <name>fusePosition</name>
+        <param>
+          <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="151" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="151" bodyend="156"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_detected_object_1a1db38dd0a9d22af8fbc737d50ee9bfe7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;o, const DetectedObject &amp;obj)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>o</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/DetectedObject.h" line="168" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="168" bodyend="171"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/DetectedObject.h" line="61" column="1" bodyfile="model/recoActivite/recoImage/DetectedObject.h" bodystart="61" bodyend="174"/>
+    <listofallmembers>
+      <member refid="class_detected_object_1ac64eaca123f7669bd724c90d3272f062" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>_b</name></member>
+      <member refid="class_detected_object_1a7fcff535aef975c3fb1c25e0a99d66fb" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>_g</name></member>
+      <member refid="class_detected_object_1a33c6c917b91f9adbcdf257aeef5f2689" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>_r</name></member>
+      <member refid="class_detected_object_1ac0739bdcb2ce2667689c0ba51d468a06" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>DetectedObject</name></member>
+      <member refid="class_detected_object_1aa146b28c06cbb765bcc91eaab4dc5779" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>DetectedObject</name></member>
+      <member refid="class_detected_object_1ad0e1af3fc53fc20bd6dd683aeba5d381" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>DetectedObject</name></member>
+      <member refid="class_detected_object_1a76a07a96600d2c887567a6ce0467b6c0" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>DetectedObject</name></member>
+      <member refid="class_detected_object_1a39fbd812521929b37a43ae96267482d8" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>dist</name></member>
+      <member refid="class_detected_object_1a7c9880948e0111fd319a62306e651427" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>fusePosition</name></member>
+      <member refid="class_detected_object_1a551abb9b51b4e7631d5a571fee65c212" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getBlue</name></member>
+      <member refid="class_detected_object_1a3e72ea4cf7d0d466a8cb117b914ebb3a" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getDist</name></member>
+      <member refid="class_detected_object_1a29ef493dd383255ffc2e742828533b2d" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getGreen</name></member>
+      <member refid="class_detected_object_1a7ddbb811f9c986fe38e2993b0ffb751d" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getObjName</name></member>
+      <member refid="class_detected_object_1a90f4ef671b48ae8f4d48aee61f20e03b" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getObjPos</name></member>
+      <member refid="class_detected_object_1a8fd5a4c683876ff0c9b0a2842132aff1" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getProb</name></member>
+      <member refid="class_detected_object_1aae31024c46b148c9209680b0aa4ae5f1" prot="public" virt="non-virtual"><scope>DetectedObject</scope><name>getRed</name></member>
+      <member refid="class_detected_object_1a0b670d4e49986184aed650b9e1cca822" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>objName</name></member>
+      <member refid="class_detected_object_1a8c5800312ef77dc7dbe6aa3c88514963" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>objPos</name></member>
+      <member refid="class_detected_object_1a1db38dd0a9d22af8fbc737d50ee9bfe7" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>operator&lt;&lt;</name></member>
+      <member refid="class_detected_object_1a3b602999357f3767c592f48dc539f5f6" prot="private" virt="non-virtual"><scope>DetectedObject</scope><name>prob</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

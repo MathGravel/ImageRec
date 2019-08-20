@@ -1,0 +1,54 @@
+\section{model/\+Recognition\+Manager.h File Reference}
+\label{_recognition_manager_8h}\index{model/\+Recognition\+Manager.\+h@{model/\+Recognition\+Manager.\+h}}
+
+
+Manage all project.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include \char`\"{}../controller/\+Manage\+Source\+Video.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Observer.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$opencv2/opencv.\+hpp$>$}\newline
+{\ttfamily \#include \char`\"{}../view/\+Primary\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reco\+Activite/reco\+Image/\+Activity\+Region.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reco\+Activite/reco\+Affordance/\+Object\+Aff.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reco\+Activite/reco\+Affordance/\+Matrice\+Affordance.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}reco\+Plan/\+Policy.\+h\char`\"{}}\newline
+Include dependency graph for Recognition\+Manager.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_recognition_manager_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{_recognition_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Recognition\+Manager}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manage all project. 
+
+\begin{DoxyAuthor}{Author}
+Alexandre Gonzalvez 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+2.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+8 August 2019
+\end{DoxyDate}
+Function launching the entire project Define Paramater =$>$ C\+O\+N\+S\+T\+A\+NT (In .cpp) //\+T\+O\+DO \+: put in setting if constant are pertinent Initialize Controller Initialize Activities recognition, Plan recognition Initialize view Start main loop of recognition which update every composant of the program 

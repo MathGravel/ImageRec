@@ -1,0 +1,156 @@
+.TH "ActivityRegion" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ActivityRegion
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBActivityRegion\fP (map< string, string > setting)"
+.br
+.RI "Constructor of class \fBActivityRegion\fP\&. "
+.ti -1c
+.RI "void \fBUpdate\fP (cv::Mat vision, cv::Mat depthVision)"
+.br
+.RI "send to YOLO image then update vector of Hands and Objects "
+.ti -1c
+.RI "\fBDetectedObjects\fP \fBdetectHand\fP (cv::Mat color, cv::Mat depth)"
+.br
+.RI "from matrix of color and depth, found hands "
+.ti -1c
+.RI "\fBDetectedObjects\fP \fBdetectObjets\fP (cv::Mat color, cv::Mat depth)"
+.br
+.RI "from matrix of color and depth, found objects "
+.ti -1c
+.RI "void \fBUpdateROI\fP (cv::Mat vision, cv::Mat depthVision)"
+.br
+.RI "YOLO I guess\&. "
+.ti -1c
+.RI "void \fBupdateManualROI\fP (cv::Mat vision, cv::Mat depthVision, cv::Rect chosenROI)"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetImageWithROI\fP () const"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.RI "Reset vector of hands, objects, and regions\&. "
+.ti -1c
+.RI "\fBDetectedObjects\fP \fBgetHands\fP ()"
+.br
+.RI "Getter\&. "
+.ti -1c
+.RI "\fBDetectedObjects\fP \fBgetItems\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBActivityRegion\fP * \fBinstance\fP (map< string, string > setting)"
+.br
+.RI "check if \fBActivityRegion\fP object exist, else create it, then return it "
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::mutex \fBmtx\fP"
+.br
+.RI "public variables "
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBPrimaryWindow\fP"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ActivityRegion::ActivityRegion (map< string, string > setting)"
+
+.PP
+Constructor of class \fBActivityRegion\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsetting\fP : map<string,string> which contain every path and information to use (fisrt String = name_of_information, second String = information) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBDetectedObjects\fP ActivityRegion::detectHand (cv::Mat color, cv::Mat depth)"
+
+.PP
+from matrix of color and depth, found hands Use YOLO 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvision\fP : matrice which represent color of the picture 
+.br
+\fIdepthVision\fP : matrice which represent the depth in the picture 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDetectedObjects\fP every hands that cnn have found 
+.RE
+.PP
+
+.SS "\fBDetectedObjects\fP ActivityRegion::detectObjets (cv::Mat color, cv::Mat depth)"
+
+.PP
+from matrix of color and depth, found objects Use YOLO 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvision\fP : matrix which represent color of the picture 
+.br
+\fIdepthVision\fP : matrix which represent the depth in the picture 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBDetectedObjects\fP : every pbjects that cnn have found 
+.RE
+.PP
+
+.SS "\fBActivityRegion\fP * ActivityRegion::instance (map< string, string > setting)\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+check if \fBActivityRegion\fP object exist, else create it, then return it if it's the first step of the loop (MiseAJourImage) or pointer of \fBActivityRegion\fP as been delete 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsetting\fP : map<string,string> which contain every path and information to use (fisrt String = name_of_information, second String = information) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+ActivityRegion::ar_instance : object of \fBActivityRegion\fP 
+.RE
+.PP
+
+.SS "void ActivityRegion::Update (cv::Mat vision, cv::Mat depthVision)"
+
+.PP
+send to YOLO image then update vector of Hands and Objects 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvision\fP : matrice which represent color of the picture 
+.br
+\fIdepthVision\fP : matrice which represent the depth in the picture 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

@@ -1,0 +1,54 @@
+.TH "view/PrimaryWindow.h" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+view/PrimaryWindow.h \- interface of the program  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <opencv2/opencv\&.hpp>\fP
+.br
+\fC#include <opencv2/core/core\&.hpp>\fP
+.br
+\fC#include <opencv2/highgui/highgui\&.hpp>\fP
+.br
+\fC#include '\&.\&./model/recoActivite/recoImage/ActivityRegion\&.h'\fP
+.br
+\fC#include '\&.\&./model/recoActivite/recoAffordance/Affordance\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBPrimaryWindow\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+interface of the program 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Mathieu Gravel Edited by Alexandre Gonzalvez 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+8 August 2019
+.RE
+.PP
+If boolean = True take a the matrix of color, position of hands and objects in input draw rectangle over it int the matrix and display it Else do nothing TO ADD : DISPLAY display current action and 2 previous or more display next action (most likely) (like 3) display current plan (most likely) (like 3) Alert when the user do an action which is unlikely BUTTON To start the program To choose option (controller(realSense/webcam/video/kinect), ect \&.\&.\&. (maybe FPS, GPU/CPU, langage)) AGEWELL & GDAC/UQAM & author (J\&.Massardi/M\&.Gravel/E\&.Beaudry) 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

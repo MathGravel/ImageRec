@@ -1,0 +1,40 @@
+.TH "probabilityDistribution" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+probabilityDistribution
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBprobabilityDistribution\fP (unordered_map< int, unordered_map< int, float >> _distribution)"
+.br
+.ti -1c
+.RI "\fBprobabilityDistribution\fP (\fBplanLibrary\fP &_pl)"
+.br
+.ti -1c
+.RI "\fBprobabilityDistribution\fP (unordered_set< int > _terminals, float noise=0\&.0)"
+.br
+.ti -1c
+.RI "bool \fBisValid\fP () const"
+.br
+.ti -1c
+.RI "int \fBRNC\fP (int i) const"
+.br
+.ti -1c
+.RI "void \fBsetProb\fP (int primitive, int element, float probability)"
+.br
+.ti -1c
+.RI "void \fBsetNoise\fP (int Prct)"
+.br
+.ti -1c
+.RI "const unordered_map< int, unordered_map< int, float > > & \fBgetDistribution\fP () const"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

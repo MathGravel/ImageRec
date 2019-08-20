@@ -1,0 +1,54 @@
+.TH "bnf::Interface< Data >" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::Interface< Data >
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInterface\fP (const \fBInterface\fP &ifc, const char *text, size_t length, const char *name)"
+.br
+.ti -1c
+.RI "\fBInterface\fP (const char *text, size_t length, const char *name)"
+.br
+.ti -1c
+.RI "\fBInterface\fP (Data data, std::vector< \fBInterface\fP > &res, const char *name='')"
+.br
+.ti -1c
+.RI "\fBInterface\fP (const \fBInterface\fP &front, const \fBInterface\fP &back, const char *name='')"
+.br
+.ti -1c
+.RI "int \fB_get_pstop\fP (const char **pstop)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBInterface\fP \fBByPass\fP (std::vector< \fBInterface\fP > &res)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "Data \fBdata\fP"
+.br
+.ti -1c
+.RI "const char * \fBtext\fP"
+.br
+.ti -1c
+.RI "size_t \fBlength\fP"
+.br
+.ti -1c
+.RI "const char * \fBname\fP"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

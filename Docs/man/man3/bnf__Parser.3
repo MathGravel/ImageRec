@@ -1,0 +1,62 @@
+.TH "bnf::_Parser< U >" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::_Parser< U >
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBbnf::_Base\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB_Parser\fP (const char *(*f)(const char *), std::vector< U > *v)"
+.br
+.ti -1c
+.RI "int \fB_get_result\fP (U &u)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_erase\fP (int low, int up=0)"
+.br
+.ti -1c
+.RI "virtual std::pair< void *, int > \fB_pre_call\fP (void *callback)"
+.br
+.ti -1c
+.RI "virtual void \fB_post_call\fP (std::pair< void *, int > up)"
+.br
+.ti -1c
+.RI "virtual void \fB_do_call\fP (std::pair< void *, int > up, void *callback, const char *begin, const char *end, const char *name)"
+.br
+.ti -1c
+.RI "virtual void \fB_stub_call\fP (const char *begin, const char *end, const char *name)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< U > * \fBcntxU\fP"
+.br
+.ti -1c
+.RI "unsigned int \fBoff\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "template<class W > \fBRule\fP & \fBBind\fP (\fBRule\fP &\fBrule\fP, W(*callback)(std::vector< W > &))"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

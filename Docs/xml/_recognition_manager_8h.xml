@@ -1,0 +1,663 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_recognition_manager_8h" kind="file" language="C++">
+    <compoundname>RecognitionManager.h</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">vector</includes>
+    <includes local="no">chrono</includes>
+    <includes refid="_manage_source_video_8h" local="yes">../controller/ManageSourceVideo.h</includes>
+    <includes refid="_observer_8h" local="yes">Observer.h</includes>
+    <includes local="no">opencv2/opencv.hpp</includes>
+    <includes refid="_primary_window_8h" local="yes">../view/PrimaryWindow.h</includes>
+    <includes refid="_activity_region_8h" local="yes">recoActivite/recoImage/ActivityRegion.h</includes>
+    <includes refid="_object_aff_8h" local="yes">recoActivite/recoAffordance/ObjectAff.h</includes>
+    <includes refid="_matrice_affordance_8h" local="yes">recoActivite/recoAffordance/MatriceAffordance.h</includes>
+    <includes refid="_policy_8h" local="yes">recoPlan/Policy.h</includes>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="_recognition_manager_8cpp" local="yes">model/RecognitionManager.cpp</includedby>
+    <incdepgraph>
+      <node id="599">
+        <label>list</label>
+      </node>
+      <node id="635">
+        <label>MatriceAffordance.h</label>
+        <link refid="_matrice_affordance_8h"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="612">
+        <label>iterator</label>
+      </node>
+      <node id="640">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+      </node>
+      <node id="625">
+        <label>cnn/YoloGPU.h</label>
+        <link refid="_yolo_g_p_u_8h_source"/>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="626" relation="include">
+        </childnode>
+        <childnode refid="627" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+      </node>
+      <node id="638">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+      </node>
+      <node id="620">
+        <label>opencv2/objdetect.hpp</label>
+      </node>
+      <node id="589">
+        <label>sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h_source"/>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+      </node>
+      <node id="611">
+        <label>cmath</label>
+      </node>
+      <node id="610">
+        <label>cassert</label>
+      </node>
+      <node id="621">
+        <label>opencv2/ml.hpp</label>
+      </node>
+      <node id="593">
+        <label>sources/Kinect.h</label>
+        <link refid="_kinect_8h_source"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="595" relation="include">
+        </childnode>
+        <childnode refid="596" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="584" relation="include">
+        </childnode>
+      </node>
+      <node id="604">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="619">
+        <label>opencv2/imgproc.hpp</label>
+      </node>
+      <node id="585">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="590">
+        <label>string</label>
+      </node>
+      <node id="642">
+        <label>PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="640" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+      </node>
+      <node id="607">
+        <label>DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="600" relation="include">
+        </childnode>
+      </node>
+      <node id="598">
+        <label>map</label>
+      </node>
+      <node id="606">
+        <label>../model/recoActivite/recoImage/ActivityRegion.h</label>
+        <link refid="_activity_region_8h"/>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="608" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="622" relation="include">
+        </childnode>
+        <childnode refid="623" relation="include">
+        </childnode>
+        <childnode refid="624" relation="include">
+        </childnode>
+        <childnode refid="625" relation="include">
+        </childnode>
+        <childnode refid="628" relation="include">
+        </childnode>
+        <childnode refid="631" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+      </node>
+      <node id="639">
+        <label>unordered_set</label>
+      </node>
+      <node id="629">
+        <label>opencv2/dnn.hpp</label>
+      </node>
+      <node id="592">
+        <label>fstream</label>
+      </node>
+      <node id="587">
+        <label>sources/RealSense.h</label>
+        <link refid="_real_sense_8h_source"/>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="588" relation="include">
+        </childnode>
+      </node>
+      <node id="634">
+        <label>recoActivite/recoAffordance/ObjectAff.h</label>
+        <link refid="_object_aff_8h"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+      </node>
+      <node id="597">
+        <label>sources/WebCam.h</label>
+        <link refid="_web_cam_8h_source"/>
+        <childnode refid="584" relation="include">
+        </childnode>
+      </node>
+      <node id="636">
+        <label>recoPlan/Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+        <childnode refid="637" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="642" relation="include">
+        </childnode>
+      </node>
+      <node id="618">
+        <label>opencv2/imgcodecs.hpp</label>
+      </node>
+      <node id="614">
+        <label>random</label>
+      </node>
+      <node id="601">
+        <label>Subject.h</label>
+        <link refid="_subject_8h_source"/>
+        <childnode refid="602" relation="include">
+        </childnode>
+      </node>
+      <node id="624">
+        <label>future</label>
+      </node>
+      <node id="633">
+        <label>ctime</label>
+      </node>
+      <node id="637">
+        <label>PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h_source"/>
+        <childnode refid="638" relation="include">
+        </childnode>
+        <childnode refid="641" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+      </node>
+      <node id="608">
+        <label>selectiveSearchDepth.h</label>
+        <link refid="selective_search_depth_8h_source"/>
+        <childnode refid="600" relation="include">
+        </childnode>
+        <childnode refid="609" relation="include">
+        </childnode>
+        <childnode refid="610" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="611" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="612" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="613" relation="include">
+        </childnode>
+        <childnode refid="614" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="616" relation="include">
+        </childnode>
+        <childnode refid="617" relation="include">
+        </childnode>
+        <childnode refid="618" relation="include">
+        </childnode>
+        <childnode refid="619" relation="include">
+        </childnode>
+        <childnode refid="620" relation="include">
+        </childnode>
+        <childnode refid="621" relation="include">
+        </childnode>
+      </node>
+      <node id="584">
+        <label>sources/VideoSource.h</label>
+        <link refid="_video_source_8h_source"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="586" relation="include">
+        </childnode>
+      </node>
+      <node id="616">
+        <label>opencv2/core.hpp</label>
+      </node>
+      <node id="631">
+        <label>stack</label>
+      </node>
+      <node id="581">
+        <label>vector</label>
+      </node>
+      <node id="627">
+        <label>Yolo.h</label>
+        <link refid="_yolo_8h_source"/>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="626" relation="include">
+        </childnode>
+      </node>
+      <node id="595">
+        <label>signal.h</label>
+      </node>
+      <node id="626">
+        <label>../Detector.h</label>
+        <link refid="_detector_8h_source"/>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+      </node>
+      <node id="586">
+        <label>utility</label>
+      </node>
+      <node id="609">
+        <label>array</label>
+      </node>
+      <node id="591">
+        <label>sstream</label>
+      </node>
+      <node id="641">
+        <label>probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h_source"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="639" relation="include">
+        </childnode>
+        <childnode refid="615" relation="include">
+        </childnode>
+        <childnode refid="638" relation="include">
+        </childnode>
+      </node>
+      <node id="588">
+        <label>librealsense2/rs.hpp</label>
+      </node>
+      <node id="602">
+        <label>../model/Observer.h</label>
+        <link refid="_observer_8h_source"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+      </node>
+      <node id="596">
+        <label>time.h</label>
+      </node>
+      <node id="617">
+        <label>opencv2/highgui.hpp</label>
+      </node>
+      <node id="605">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="594">
+        <label>cstdlib</label>
+      </node>
+      <node id="580">
+        <label>iostream</label>
+      </node>
+      <node id="615">
+        <label>unordered_map</label>
+      </node>
+      <node id="632">
+        <label>../model/recoActivite/recoAffordance/Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="633" relation="include">
+        </childnode>
+        <childnode refid="591" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+      </node>
+      <node id="622">
+        <label>mutex</label>
+      </node>
+      <node id="582">
+        <label>chrono</label>
+      </node>
+      <node id="579">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="582" relation="include">
+        </childnode>
+        <childnode refid="583" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="603" relation="include">
+        </childnode>
+        <childnode refid="606" relation="include">
+        </childnode>
+        <childnode refid="634" relation="include">
+        </childnode>
+        <childnode refid="635" relation="include">
+        </childnode>
+        <childnode refid="636" relation="include">
+        </childnode>
+      </node>
+      <node id="623">
+        <label>thread</label>
+      </node>
+      <node id="583">
+        <label>../controller/ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="584" relation="include">
+        </childnode>
+        <childnode refid="587" relation="include">
+        </childnode>
+        <childnode refid="589" relation="include">
+        </childnode>
+        <childnode refid="593" relation="include">
+        </childnode>
+        <childnode refid="597" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+        <childnode refid="590" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="599" relation="include">
+        </childnode>
+        <childnode refid="594" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="600" relation="include">
+        </childnode>
+        <childnode refid="601" relation="include">
+        </childnode>
+        <childnode refid="602" relation="include">
+        </childnode>
+      </node>
+      <node id="603">
+        <label>../view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="604" relation="include">
+        </childnode>
+        <childnode refid="605" relation="include">
+        </childnode>
+        <childnode refid="606" relation="include">
+        </childnode>
+        <childnode refid="632" relation="include">
+        </childnode>
+      </node>
+      <node id="628">
+        <label>cnn/YoloCPU.h</label>
+        <link refid="_yolo_c_p_u_8h_source"/>
+        <childnode refid="629" relation="include">
+        </childnode>
+        <childnode refid="585" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+        <childnode refid="592" relation="include">
+        </childnode>
+        <childnode refid="630" relation="include">
+        </childnode>
+        <childnode refid="607" relation="include">
+        </childnode>
+        <childnode refid="626" relation="include">
+        </childnode>
+        <childnode refid="627" relation="include">
+        </childnode>
+        <childnode refid="598" relation="include">
+        </childnode>
+      </node>
+      <node id="600">
+        <label>algorithm</label>
+      </node>
+      <node id="630">
+        <label>stdio.h</label>
+      </node>
+      <node id="613">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="644">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="643">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="644" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_recognition_manager" prot="public">RecognitionManager</innerclass>
+    <briefdescription>
+<para>Manage all project. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Alexandre Gonzalvez </para></simplesect>
+<simplesect kind="version"><para>2.0 </para></simplesect>
+<simplesect kind="date"><para>8 August 2019</para></simplesect>
+Function launching the entire project Define Paramater =&gt; CONSTANT (In .cpp) //TODO : put in setting if constant are pertinent Initialize Controller Initialize Activities recognition, Plan recognition Initialize view Start main loop of recognition which update every composant of the program </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="14"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor">#include<sp/>&lt;chrono&gt;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">#include<sp/>&quot;../controller/ManageSourceVideo.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Observer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;opencv2/opencv.hpp&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//To<sp/>read<sp/>Matrix<sp/>of<sp/>picture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#include<sp/>&quot;../view/PrimaryWindow.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_activity_region_8h" kindref="compound">recoActivite/recoImage/ActivityRegion.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_object_aff_8h" kindref="compound">recoActivite/recoAffordance/ObjectAff.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_matrice_affordance_8h" kindref="compound">recoActivite/recoAffordance/MatriceAffordance.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_policy_8h" kindref="compound">recoPlan/Policy.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacecv" kindref="compound">cv</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="class_recognition_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_recognition_manager" kindref="compound">RecognitionManager</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_observer" kindref="compound">Observer</ref>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_recognition_manager" kindref="compound">RecognitionManager</ref>(<ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>*<sp/>p_view,<ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref>*<sp/>p_controller,map&lt;string,string&gt;<sp/>setting);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62" refid="class_recognition_manager_1af23137fcb979eadc69a872723fd5648c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="class_recognition_manager_1af23137fcb979eadc69a872723fd5648c" kindref="member">~RecognitionManager</ref>(){}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>recognitionLoop(<ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref>*<sp/>p_controller,<ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref>*<sp/>p_view);<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateInternVar();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>askToQuit();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateByObservee(Mat<sp/>imageColor,Mat<sp/>imageDepth);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateAffordanceSeen(<ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>items,<ref refid="class_detected_objects" kindref="compound">DetectedObjects</ref><sp/>hands,</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>removeLastValue);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updatePlanRecognition(<ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>checkedActAffordance);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,string&gt;<sp/>setting;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>chrono::milliseconds<sp/>startTime;</highlight><highlight class="comment">//<sp/>time<sp/>when<sp/>program<sp/>has<sp/>begun</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>chrono::milliseconds<sp/>actualTime;</highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>at<sp/>each<sp/>course<sp/>of<sp/>the<sp/>main<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>chrono::milliseconds<sp/>lastsecondTime;</highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>at<sp/>each<sp/>seconds</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>chrono::milliseconds<sp/>delay;</highlight><highlight class="comment">//<sp/>time<sp/>updated<sp/>each<sp/>time<sp/>a<sp/>new<sp/>real<sp/>affordance<sp/>is<sp/>detected</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//chrono::milliseconds<sp/>timeBeforeCheckAff;//time<sp/>updated<sp/>when<sp/>we<sp/>have<sp/>checked<sp/>if<sp/>the<sp/>affordance<sp/>is<sp/>good,<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>play=</highlight><highlight class="keyword">true</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>=<sp/>true,<sp/>because<sp/>no<sp/>interface<sp/>which<sp/>launch<sp/>the<sp/>program<sp/>yet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countFrame<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//number<sp/>of<sp/>frame<sp/>in<sp/>the<sp/>whole<sp/>process<sp/>(Useless)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countSeconds=0;<sp/></highlight><highlight class="comment">//count<sp/>each<sp/>seconds<sp/>to<sp/>know<sp/>for<sp/>how<sp/>many<sp/>time<sp/>the<sp/>loop<sp/>is<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>countFPS=0;<sp/></highlight><highlight class="comment">//<sp/>count<sp/>Frame<sp/>but<sp/>is<sp/>reset<sp/>each<sp/>seconds<sp/>so<sp/>we<sp/>can<sp/>evaluate<sp/>how<sp/>many<sp/>FPS<sp/>we<sp/>have</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fps;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>Mat<sp/>imageColor;<sp/></highlight><highlight class="comment">//3<sp/>matrix<sp/>which<sp/>represent<sp/>RGB<sp/>of<sp/>the<sp/>last<sp/>image<sp/>~<sp/>Not<sp/>sure<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>Mat<sp/>imageDepth;<sp/></highlight><highlight class="comment">//a<sp/>matrix<sp/>which<sp/>represent<sp/>the<sp/>depth<sp/>of<sp/>last<sp/>image</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_activity_region" kindref="compound">ActivityRegion</ref>*<sp/>act;<sp/></highlight><highlight class="comment">//Initialize<sp/>activity<sp/>recognition</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>:<sp/>reduce<sp/>this<sp/>list<sp/>if<sp/>possible<sp/>to<sp/>complicated</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref><sp/>objectsMat;<sp/></highlight><highlight class="comment">//(keep<sp/>in<sp/>record<sp/>last<sp/>affordance<sp/>seen)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_object_affordances" kindref="compound">ObjectAffordances</ref><sp/>affordances;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;AffordanceTime*&gt;<sp/>currentAffordance;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>checkedActAffordance;<sp/></highlight><highlight class="comment">//<sp/>Last<sp/>affordance<sp/>checked<sp/>|<sp/>the<sp/>one<sp/>to<sp/>print</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_affordance" kindref="compound">Affordance</ref>*<sp/>checkedPrecAffordance;<sp/></highlight><highlight class="comment">//<sp/>Last<sp/>affordance<sp/>checked<sp/>|<sp/>the<sp/>one<sp/>to<sp/>print</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>std::stack&lt;AffordanceTime*&gt;<sp/>currentAffordances;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>thread<sp/>*<sp/>threadth;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>mutex<sp/>mtx;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isStopped<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>atomic_bool<sp/>check;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>newCheckedAff=</highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_policy" kindref="compound">Policy</ref><sp/>pl;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/>tempActions;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;std::pair&lt;std::string,float&gt;&gt;<sp/>tempGoal;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,<sp/>map&lt;string,string&gt;&gt;<sp/>informations;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="model/RecognitionManager.h"/>
+  </compounddef>
+</doxygen>

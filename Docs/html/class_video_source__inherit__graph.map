@@ -1,0 +1,5 @@
+<map id="VideoSource" name="VideoSource">
+<area shape="rect" id="node2" href="$class_kinect.html" title="Kinect" alt="" coords="5,80,64,107"/>
+<area shape="rect" id="node3" href="$class_real_sense_video.html" title="RealSenseVideo" alt="" coords="89,80,207,107"/>
+<area shape="rect" id="node4" href="$class_web_cam.html" title="WebCam" alt="" coords="231,80,308,107"/>
+</map>

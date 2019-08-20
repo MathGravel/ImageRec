@@ -1,0 +1,122 @@
+\section{Object\+Affordances Class Reference}
+\label{class_object_affordances}\index{Object\+Affordances@{Object\+Affordances}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Object\+Affordances} (int number\+Classes=10)
+\begin{DoxyCompactList}\small\item\em Constructor of \doxyref{Object\+Affordances}{p.}{class_object_affordances}. \end{DoxyCompactList}\item 
+void \textbf{ clear\+Current\+Affordances} ()
+\begin{DoxyCompactList}\small\item\em clears current affordances of the object \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$ $>$ \textbf{ find\+Affordances} (\textbf{ Detected\+Objects} \&regions, \textbf{ Detected\+Objects} \&hands, \textbf{ Matrice\+Affordance} \&Objects\+Mat, bool remove\+Last\+Value)
+\begin{DoxyCompactList}\small\item\em finds the affordances between the hands and the different objects \end{DoxyCompactList}\item 
+std\+::vector$<$ \textbf{ Affordance\+Time} $\ast$ $>$ \textbf{ add\+Null} (\textbf{ Matrice\+Affordance} \&object\+Mat, bool remove\+Last\+Value)
+\begin{DoxyCompactList}\small\item\em adds a null affordance if no hands and no objects are detected \end{DoxyCompactList}\item 
+\mbox{\label{class_object_affordances_acc72750bd4f0a062af9ae5ae96eeda8f}} 
+\textbf{ Affordance\+Time} {\bfseries get\+Object\+Affordance} (const std\+::string object)
+\item 
+\mbox{\label{class_object_affordances_ab8b3bb3d0d33186a100572ead48a5c46}} 
+std\+::vector$<$ \textbf{ Affordance\+Time} $>$ {\bfseries get\+Affordances} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \textbf{ operator$>$$>$} (std\+::istream \&is, \textbf{ Object\+Affordances} \&objaff)
+\begin{DoxyCompactList}\small\item\em operator $>$$>$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_object_affordances_a5b542eef939819cd120bbe0a63b32182}} 
+\index{Object\+Affordances@{Object\+Affordances}!Object\+Affordances@{Object\+Affordances}}
+\index{Object\+Affordances@{Object\+Affordances}!Object\+Affordances@{Object\+Affordances}}
+\subsubsection{Object\+Affordances()}
+{\footnotesize\ttfamily Object\+Affordances\+::\+Object\+Affordances (\begin{DoxyParamCaption}\item[{int}]{number\+Classes = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Constructor of \doxyref{Object\+Affordances}{p.}{class_object_affordances}. 
+
+initializes num\+Classes with the given parameter, sets frame\+Count and nb\+Classes to 0, sets current\+Aff to false 
+\begin{DoxyParams}{Parameters}
+{\em int} & number\+Classes \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_object_affordances_a61c42ae31ceaac32ccfb86200b75a6a3}} 
+\index{Object\+Affordances@{Object\+Affordances}!add\+Null@{add\+Null}}
+\index{add\+Null@{add\+Null}!Object\+Affordances@{Object\+Affordances}}
+\subsubsection{add\+Null()}
+{\footnotesize\ttfamily Object\+Affordances\+::add\+Null (\begin{DoxyParamCaption}\item[{\textbf{ Matrice\+Affordance} \&}]{object\+Mat,  }\item[{bool}]{sup\+Atime }\end{DoxyParamCaption})}
+
+
+
+adds a null affordance if no hands and no objects are detected 
+
+Creates a null affordance, adds it to the vector of affordances current\+Affordances, updates object\+Mat with the updated vector of affordances and returns current\+Affordances 
+\begin{DoxyParams}{Parameters}
+{\em \doxyref{Matrice\+Affordance}{p.}{class_matrice_affordance}} & \&object\+Mat \+: object from the class Object\+Mat \\
+\hline
+{\em bool} & sup\+Atime \+: boolean, indicates if more than a certain time passed since the start of the video \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_object_affordances_a9bd8059744b50263d97fde3409d7fde9}} 
+\index{Object\+Affordances@{Object\+Affordances}!clear\+Current\+Affordances@{clear\+Current\+Affordances}}
+\index{clear\+Current\+Affordances@{clear\+Current\+Affordances}!Object\+Affordances@{Object\+Affordances}}
+\subsubsection{clear\+Current\+Affordances()}
+{\footnotesize\ttfamily Object\+Affordances\+::clear\+Current\+Affordances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+clears current affordances of the object 
+
+calls the clear() method of affordances, sets frame\+Count to 0 \mbox{\label{class_object_affordances_af8acefd33e80ca5566171e9590fac2e5}} 
+\index{Object\+Affordances@{Object\+Affordances}!find\+Affordances@{find\+Affordances}}
+\index{find\+Affordances@{find\+Affordances}!Object\+Affordances@{Object\+Affordances}}
+\subsubsection{find\+Affordances()}
+{\footnotesize\ttfamily Object\+Affordances\+::find\+Affordances (\begin{DoxyParamCaption}\item[{\textbf{ Detected\+Objects} \&}]{regions,  }\item[{\textbf{ Detected\+Objects} \&}]{hands,  }\item[{\textbf{ Matrice\+Affordance} \&}]{Objects\+Mat,  }\item[{bool}]{remove\+Last\+Value }\end{DoxyParamCaption})}
+
+
+
+finds the affordances between the hands and the different objects 
+
+Compares the distance between each objects and the hands. If their are affordances, returnes the vector of \doxyref{Affordance\+Time}{p.}{class_affordance_time} 
+\begin{DoxyParams}{Parameters}
+{\em Detected\+Objects\&} & regions \+: object from the class \doxyref{Detected\+Objects}{p.}{class_detected_objects}, vector of objects detected on the screen besides Hands \\
+\hline
+{\em Detected\+Objects\&} & hands \+: object from the class \doxyref{Detected\+Objects}{p.}{class_detected_objects}, vector of hands detected on the screen \\
+\hline
+{\em Matrice\+Affordance\&} & Objects\+Mat \+: object having a vector of \doxyref{Affordance\+Time}{p.}{class_affordance_time} \\
+\hline
+{\em bool} & sup\+Atime \+: boolean, indicates if more than a certain time passed since the start of the video \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{class_object_affordances_aa3b4883534360440aa3e598a3da82eb0}} 
+\index{Object\+Affordances@{Object\+Affordances}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Object\+Affordances@{Object\+Affordances}}
+\subsubsection{operator$>$$>$}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\textbf{ Object\+Affordances} \&}]{objaff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator $>$$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & \\
+\hline
+{\em objaff} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Activite/reco\+Affordance/\textbf{ Object\+Aff.\+h}\item 
+model/reco\+Activite/reco\+Affordance/Object\+Aff.\+cpp\end{DoxyCompactItemize}

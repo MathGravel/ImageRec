@@ -1,0 +1,142 @@
+.TH "bnf::_Tie" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bnf::_Tie
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBbnf::_And\fP, \fBbnf::_Ctrl< flg, cc >\fP, \fBbnf::_Cycle\fP, \fBbnf::_Or\fP, \fBbnf::Action\fP, \fBbnf::Lexem\fP, \fBbnf::Rule\fP, and \fBbnf::Token\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetName\fP (const char *name)"
+.br
+.ti -1c
+.RI "const char * \fBgetName\fP ()"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (const char *s)"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (bool(*f)(const char *, size_t))"
+.br
+.ti -1c
+.RI "\fB_Or\fP \fBoperator|\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "\fB_Or\fP \fBoperator|\fP (const char *s)"
+.br
+.ti -1c
+.RI "\fB_Or\fP \fBoperator|\fP (bool(*f)(const char *, size_t))"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBoperator()\fP (int at_least, int total)"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBoperator*\fP ()"
+.br
+.ti -1c
+.RI "\fB_Cycle\fP \fBoperator!\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fB_clone\fP (const \fB_Tie\fP *lnk)"
+.br
+.ti -1c
+.RI "\fB_Tie\fP (std::string nm='')"
+.br
+.ti -1c
+.RI "\fB_Tie\fP (const \fB_Tie\fP *lnk)"
+.br
+.ti -1c
+.RI "\fB_Tie\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "void \fB_clue\fP (const \fB_Tie\fP &link)"
+.br
+.ti -1c
+.RI "virtual int \fB_parse\fP (\fB_Base\fP *parser) const =0  throw ()"
+.br
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "template<class T > static void \fB_setname\fP (T *t, const char *name=0)"
+.br
+.ti -1c
+.RI "static int \fBcall_1st\fP (const \fB_Tie\fP *lnk, \fB_Base\fP *parser)"
+.br
+.ti -1c
+.RI "template<class T > static T * \fB_safe_delete\fP (T *t)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBinner\fP"
+.br
+.ti -1c
+.RI "std::vector< const \fB_Tie\fP * > \fBuse\fP"
+.br
+.ti -1c
+.RI "std::list< const \fB_Tie\fP * > \fBusage\fP"
+.br
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fB_Base\fP"
+.br
+.ti -1c
+.RI "class \fBExtParser\fP"
+.br
+.ti -1c
+.RI "class \fB_And\fP"
+.br
+.ti -1c
+.RI "class \fB_Or\fP"
+.br
+.ti -1c
+.RI "class \fB_Cycle\fP"
+.br
+.ti -1c
+.RI "class \fBToken\fP"
+.br
+.ti -1c
+.RI "class \fBLexem\fP"
+.br
+.ti -1c
+.RI "class \fBRule\fP"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (const char *s, const \fB_Tie\fP &lnk)"
+.br
+.ti -1c
+.RI "\fB_And\fP \fBoperator+\fP (bool(*f)(const char *, size_t), const \fB_Tie\fP &lnk)"
+.br
+.ti -1c
+.RI "\fB_Or\fP \fBoperator|\fP (const char *s, const \fB_Tie\fP &lnk)"
+.br
+.ti -1c
+.RI "\fB_Or\fP \fBoperator|\fP (bool(*f)(const char *, size_t), const \fB_Tie\fP &lnk)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

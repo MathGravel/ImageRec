@@ -1,0 +1,752 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1___tie" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>bnf::_Tie</compoundname>
+    <derivedcompoundref refid="classbnf_1_1___and" prot="public" virt="non-virtual">bnf::_And</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1___ctrl" prot="public" virt="non-virtual">bnf::_Ctrl&lt; flg, cc &gt;</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1___cycle" prot="public" virt="non-virtual">bnf::_Cycle</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1___or" prot="public" virt="non-virtual">bnf::_Or</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1_action" prot="public" virt="non-virtual">bnf::Action</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1_lexem" prot="public" virt="non-virtual">bnf::Lexem</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1_rule" prot="public" virt="non-virtual">bnf::Rule</derivedcompoundref>
+    <derivedcompoundref refid="classbnf_1_1_token" prot="public" virt="non-virtual">bnf::Token</derivedcompoundref>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1___tie_1acc4a46af6ba91f5c229096b7f622876a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Base</definition>
+        <argsstring></argsstring>
+        <name>_Base</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="122" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a56aeb37d353745b814d576d4eee8bf58" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class ExtParser</definition>
+        <argsstring></argsstring>
+        <name>ExtParser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="122" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1abc37899b09eb024e8e57c00ec8fba682" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _And</definition>
+        <argsstring></argsstring>
+        <name>_And</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="123" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1abc2ecc13a8a23716fb474fcc5d47a88f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Or</definition>
+        <argsstring></argsstring>
+        <name>_Or</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="123" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a42b7257dd7b67cb080c28eed1201d5e2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Cycle</definition>
+        <argsstring></argsstring>
+        <name>_Cycle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="123" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a48f5c1ca47af8dc65eca7e0274de96e2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Token</definition>
+        <argsstring></argsstring>
+        <name>Token</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="124" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a5e39c58451938ac9fc35e0ac18674f12" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Lexem</definition>
+        <argsstring></argsstring>
+        <name>Lexem</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="124" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a6c87f8640d92f86217b1b5ac79943269" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class Rule</definition>
+        <argsstring></argsstring>
+        <name>Rule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="124" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1ae39b09ed012034d4a0ca5e90ec961764" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And operator+</definition>
+        <argsstring>(const char *s, const _Tie &amp;lnk)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="189" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="367" bodyend="368"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1affdc9f825c9dea37493c32c4e5547cb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And operator+</definition>
+        <argsstring>(bool(*f)(const char *, size_t), const _Tie &amp;lnk)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="190" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="369" bodyend="370"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a13f77fb3c0e59327b41449c74cfca230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or operator|</definition>
+        <argsstring>(const char *s, const _Tie &amp;lnk)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="194" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="419" bodyend="420"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1___tie_1a49635d0b72696d3519c0e4993b6636d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or operator|</definition>
+        <argsstring>(bool(*f)(const char *, size_t), const _Tie &amp;lnk)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="195" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="421" bodyend="422"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool bnf::_Tie::inner</definition>
+        <argsstring></argsstring>
+        <name>inner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="126" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" static="no" mutable="yes">
+        <type>std::vector&lt; const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> * &gt;</type>
+        <definition>std::vector&lt;const _Tie*&gt; bnf::_Tie::use</definition>
+        <argsstring></argsstring>
+        <name>use</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="127" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" static="no" mutable="yes">
+        <type>std::list&lt; const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> * &gt;</type>
+        <definition>std::list&lt;const _Tie*&gt; bnf::_Tie::usage</definition>
+        <argsstring></argsstring>
+        <name>usage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="128" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string bnf::_Tie::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="129" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classbnf_1_1___tie_1aa5a52edc26656bc2abccf2c64c8eec6d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool bnf::_Tie::_is_compound</definition>
+        <argsstring>()</argsstring>
+        <name>_is_compound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="121" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="423" bodyend="424"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void bnf::_Tie::_setname</definition>
+        <argsstring>(T *t, const char *name=0)</argsstring>
+        <name>_setname</name>
+        <param>
+          <type>T *</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="130" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="130" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>static int bnf::_Tie::call_1st</definition>
+        <argsstring>(const _Tie *lnk, _Base *parser)</argsstring>
+        <name>call_1st</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> *</type>
+          <declname>lnk</declname>
+        </param>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="163" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="163" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>T *</type>
+        <definition>static T* bnf::_Tie::_safe_delete</definition>
+        <argsstring>(T *t)</argsstring>
+        <name>_safe_delete</name>
+        <param>
+          <type>T *</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="175" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="175" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::_Tie::_clone</definition>
+        <argsstring>(const _Tie *lnk)</argsstring>
+        <name>_clone</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> *</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="136" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Tie::_Tie</definition>
+        <argsstring>(std::string nm=&quot;&quot;)</argsstring>
+        <name>_Tie</name>
+        <param>
+          <type>std::string</type>
+          <declname>nm</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="150" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="150" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Tie::_Tie</definition>
+        <argsstring>(const _Tie *lnk)</argsstring>
+        <name>_Tie</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> *</type>
+          <declname>lnk</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="152" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="152" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::_Tie::_Tie</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>_Tie</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="154" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="154" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual bnf::_Tie::~_Tie</definition>
+        <argsstring>()</argsstring>
+        <name>~_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="156" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="156" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::_Tie::_clue</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>_clue</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="165" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="165" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int bnf::_Tie::_parse</definition>
+        <argsstring>(_Base *parser) const =0</argsstring>
+        <name>_parse</name>
+        <reimplementedby refid="classbnf_1_1___ctrl_1adbaef05a183046207b717abbc5e3e815">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1_token_1a94082cabb74558f2803657cae0a2ab44">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1_action_1a59f61814edc11a5b513fb4fc10158543">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1___and_1a75af45415ecbf1598ca1a73323d353fd">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1___or_1a47bf693c952f0cf06ed6ba0864efcd60">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1_lexem_1ad8d44651fcf8e326d3064f76392fa4fd">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1_rule_1a0460e1971d96c44b4885d7a72f5aec97">_parse</reimplementedby>
+        <reimplementedby refid="classbnf_1_1___cycle_1adb2e2eaec3ddc1bce09855229cb5f2ca">_parse</reimplementedby>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="180" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::_Tie::setName</definition>
+        <argsstring>(const char *name)</argsstring>
+        <name>setName</name>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="182" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="182" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* bnf::_Tie::getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="184" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="184" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And bnf::_Tie::operator+</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="186" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="361" bodyend="362"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And bnf::_Tie::operator+</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="187" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="363" bodyend="364"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___and" kindref="compound">_And</ref></type>
+        <definition>_And bnf::_Tie::operator+</definition>
+        <argsstring>(bool(*f)(const char *, size_t))</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="188" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="365" bodyend="366"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or bnf::_Tie::operator|</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="191" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="413" bodyend="414"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or bnf::_Tie::operator|</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="192" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="415" bodyend="416"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___or" kindref="compound">_Or</ref></type>
+        <definition>_Or bnf::_Tie::operator|</definition>
+        <argsstring>(bool(*f)(const char *, size_t))</argsstring>
+        <name>operator|</name>
+        <param>
+          <type>bool(*)(const char *, size_t)</type>
+          <declname>f</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="193" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="417" bodyend="418"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::_Tie::operator()</definition>
+        <argsstring>(int at_least, int total)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>int</type>
+          <declname>at_least</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>total</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="201" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="553" bodyend="554"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::_Tie::operator*</definition>
+        <argsstring>()</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="202" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="549" bodyend="550"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1___cycle" kindref="compound">_Cycle</ref></type>
+        <definition>_Cycle bnf::_Tie::operator!</definition>
+        <argsstring>()</argsstring>
+        <name>operator!</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="203" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="551" bodyend="552"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="30">
+        <label>bnf::Rule</label>
+        <link refid="classbnf_1_1_rule"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>bnf::_Cycle</label>
+        <link refid="classbnf_1_1___cycle"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>bnf::Token</label>
+        <link refid="classbnf_1_1_token"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+      <node id="24">
+        <label>bnf::_And</label>
+        <link refid="classbnf_1_1___and"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>bnf::_Or</label>
+        <link refid="classbnf_1_1___or"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>bnf::Lexem</label>
+        <link refid="classbnf_1_1_lexem"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>bnf::Action</label>
+        <link refid="classbnf_1_1_action"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>bnf::_Ctrl&lt; flg, cc &gt;</label>
+        <link refid="classbnf_1_1___ctrl"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="120" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="119" bodyend="204"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___tie_1abc37899b09eb024e8e57c00ec8fba682" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_And</name></member>
+      <member refid="classbnf_1_1___tie_1acc4a46af6ba91f5c229096b7f622876a" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Base</name></member>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1___tie_1a42b7257dd7b67cb080c28eed1201d5e2" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Cycle</name></member>
+      <member refid="classbnf_1_1___tie_1aa5a52edc26656bc2abccf2c64c8eec6d" prot="private" virt="non-virtual"><scope>bnf::_Tie</scope><name>_is_compound</name></member>
+      <member refid="classbnf_1_1___tie_1abc2ecc13a8a23716fb474fcc5d47a88f" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Or</name></member>
+      <member refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8" prot="protected" virt="pure-virtual"><scope>bnf::_Tie</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1___tie_1a56aeb37d353745b814d576d4eee8bf58" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>ExtParser</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>getName</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>inner</name></member>
+      <member refid="classbnf_1_1___tie_1a5e39c58451938ac9fc35e0ac18674f12" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>Lexem</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae39b09ed012034d4a0ca5e90ec961764" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1affdc9f825c9dea37493c32c4e5547cb3" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1a13f77fb3c0e59327b41449c74cfca230" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1a49635d0b72696d3519c0e4993b6636d4" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1a6c87f8640d92f86217b1b5ac79943269" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>Rule</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::_Tie</scope><name>setName</name></member>
+      <member refid="classbnf_1_1___tie_1a48f5c1ca47af8dc65eca7e0274de96e2" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>Token</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::_Tie</scope><name>use</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::_Tie</scope><name>~_Tie</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

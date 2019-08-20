@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_detector" kind="class" language="C++" prot="public">
+    <compoundname>Detector</compoundname>
+    <derivedcompoundref refid="class_yolo" prot="public" virt="non-virtual">Yolo</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_detector_1a608942d93773419f166a499be33bb7c1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>std::vector&lt; <ref refid="class_detected_object" kindref="compound">DetectedObject</ref> &gt;</type>
+        <definition>virtual std::vector&lt;DetectedObject&gt; Detector::findObjects</definition>
+        <argsstring>(cv::Mat color, cv::Mat depth)</argsstring>
+        <name>findObjects</name>
+        <reimplementedby refid="class_yolo_g_p_u_1af6542f94980b65ed5adcfee54256cee9">findObjects</reimplementedby>
+        <reimplementedby refid="class_yolo_c_p_u_1a79e51bfb44edafc29942c8482d134c27">findObjects</reimplementedby>
+        <param>
+          <type>cv::Mat</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>cv::Mat</type>
+          <declname>depth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/Detector.h" line="10" column="1" bodyfile="model/recoActivite/recoImage/Detector.h" bodystart="10" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="53">
+        <label>Detector</label>
+        <link refid="class_detector"/>
+      </node>
+      <node id="54">
+        <label>Yolo</label>
+        <link refid="class_yolo"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>YoloCPU</label>
+        <link refid="class_yolo_c_p_u"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="56">
+        <label>YoloGPU</label>
+        <link refid="class_yolo_g_p_u"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="model/recoActivite/recoImage/Detector.h" line="7" column="1" bodyfile="model/recoActivite/recoImage/Detector.h" bodystart="7" bodyend="13"/>
+    <listofallmembers>
+      <member refid="class_detector_1a608942d93773419f166a499be33bb7c1" prot="public" virt="virtual"><scope>Detector</scope><name>findObjects</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

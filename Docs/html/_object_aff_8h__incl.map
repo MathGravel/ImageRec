@@ -1,0 +1,5 @@
+<map id="model/recoActivite/recoAffordance/ObjectAff.h" name="model/recoActivite/recoAffordance/ObjectAff.h">
+<area shape="rect" id="node5" href="$_affordance_8h.html" title="Evaluates the position between an Object and the Hand. " alt="" coords="483,169,579,196"/>
+<area shape="rect" id="node9" href="$_detected_object_8h.html" title="3 class : DetectedMatrice, DetectedObject, DetectedObjects " alt="" coords="654,95,855,121"/>
+<area shape="rect" id="node12" href="$_matrice_affordance_8h.html" title="keep in memory the last affordances seen (frame in the last 800ms : in version 2.0) PUT in cpp ..." alt="" coords="217,95,356,121"/>
+</map>

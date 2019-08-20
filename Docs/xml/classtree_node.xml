@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classtree_node" kind="class" language="C++" prot="public">
+    <compoundname>treeNode</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classtree_node_1a747fc45b98bbf29fd6832a7a32c717a0" prot="public" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+        <definition>extendedPlanLibrary* treeNode::epl</definition>
+        <argsstring></argsstring>
+        <name>epl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="26" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree_node_1a84cfebe97cbef1ae4f1c6bfa110677ba" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int treeNode::symbol</definition>
+        <argsstring></argsstring>
+        <name>symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="27" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree_node_1ad9b561da695aed55e432e03680332b7c" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int treeNode::_rule</definition>
+        <argsstring></argsstring>
+        <name>_rule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="28" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree_node_1a0a2564e246dd61e694d812e93629fa83" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool treeNode::status</definition>
+        <argsstring></argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="29" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classtree_node_1afc2f0e77a278b60136c983e019403b1b" prot="public" static="no" mutable="no">
+        <type>map&lt; int, <ref refid="classtree_node" kindref="compound">treeNode</ref> &gt;</type>
+        <definition>map&lt;int,treeNode&gt; treeNode::children</definition>
+        <argsstring></argsstring>
+        <name>children</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="30" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtree_node_1aae09fc1a76c1996ff0815c0bfd2b9a03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>treeNode::treeNode</definition>
+        <argsstring>()</argsstring>
+        <name>treeNode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="23" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="327" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="function" id="classtree_node_1abd735f769cfebe48e8503ddb7f0e8ef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>treeNode::treeNode</definition>
+        <argsstring>(extendedPlanLibrary *_epl, int _symbol)</argsstring>
+        <name>treeNode</name>
+        <param>
+          <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+          <declname>_epl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_symbol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="24" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="331" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="function" id="classtree_node_1a17b78ee258c263487eeafa8126817c82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int treeNode::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="32" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="345" bodyend="413"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="141">
+        <label>planLibrary</label>
+        <link refid="classplan_library"/>
+      </node>
+      <node id="139">
+        <label>extendedPlanLibrary</label>
+        <link refid="classextended_plan_library"/>
+        <childnode refid="140" relation="usage">
+          <edgelabel>noise</edgelabel>
+          <edgelabel>decisionModel</edgelabel>
+        </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>ePlanLibrary</edgelabel>
+        </childnode>
+      </node>
+      <node id="138">
+        <label>treeNode</label>
+        <link refid="classtree_node"/>
+        <childnode refid="139" relation="usage">
+          <edgelabel>epl</edgelabel>
+        </childnode>
+      </node>
+      <node id="140">
+        <label>probabilityDistribution</label>
+        <link refid="classprobability_distribution"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/solver.h" line="21" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="20" bodyend="34"/>
+    <listofallmembers>
+      <member refid="classtree_node_1ad9b561da695aed55e432e03680332b7c" prot="public" virt="non-virtual"><scope>treeNode</scope><name>_rule</name></member>
+      <member refid="classtree_node_1afc2f0e77a278b60136c983e019403b1b" prot="public" virt="non-virtual"><scope>treeNode</scope><name>children</name></member>
+      <member refid="classtree_node_1a747fc45b98bbf29fd6832a7a32c717a0" prot="public" virt="non-virtual"><scope>treeNode</scope><name>epl</name></member>
+      <member refid="classtree_node_1a0a2564e246dd61e694d812e93629fa83" prot="public" virt="non-virtual"><scope>treeNode</scope><name>status</name></member>
+      <member refid="classtree_node_1a84cfebe97cbef1ae4f1c6bfa110677ba" prot="public" virt="non-virtual"><scope>treeNode</scope><name>symbol</name></member>
+      <member refid="classtree_node_1aae09fc1a76c1996ff0815c0bfd2b9a03" prot="public" virt="non-virtual"><scope>treeNode</scope><name>treeNode</name></member>
+      <member refid="classtree_node_1abd735f769cfebe48e8503ddb7f0e8ef6" prot="public" virt="non-virtual"><scope>treeNode</scope><name>treeNode</name></member>
+      <member refid="classtree_node_1a17b78ee258c263487eeafa8126817c82" prot="public" virt="non-virtual"><scope>treeNode</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

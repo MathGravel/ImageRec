@@ -1,0 +1,59 @@
+\section{rule Class Reference}
+\label{classrule}\index{rule@{rule}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrule_a57401587d56ba2964054d93c83b4fc91}} 
+{\bfseries rule} (int \+\_\+primitive, int \+\_\+id)
+\item 
+\mbox{\label{classrule_a16818e659188b4f1178c0b79db6bad9e}} 
+{\bfseries rule} (int \+\_\+id, string s)
+\item 
+\mbox{\label{classrule_a683407785d4a437670d3750de5a9443d}} 
+void {\bfseries add\+Child} (int child)
+\item 
+\mbox{\label{classrule_a5a32df9cc88c5738753f5dab97ef0c78}} 
+void {\bfseries add\+Constraint} (pair$<$ int, int $>$ constraint)
+\item 
+\mbox{\label{classrule_a254d66c82aa990b8aefbf1f455da4b54}} 
+void {\bfseries add\+Children} (vector$<$ int $>$ \+\_\+children)
+\item 
+\mbox{\label{classrule_afc2f02214950cd290b778c7cdeed1dce}} 
+void {\bfseries add\+Constraints} (vector$<$ pair$<$ int, int $>$$>$ \+\_\+constraints)
+\item 
+\mbox{\label{classrule_aa565618df29091d61d9c99dcae908c38}} 
+bool {\bfseries operator$<$} (const \textbf{ rule} \+\_\+r) const
+\item 
+\mbox{\label{classrule_ad88299597acd5c12937f762887cc3123}} 
+bool {\bfseries operator==} (const \textbf{ rule} \+\_\+r) const
+\item 
+\mbox{\label{classrule_a3583aea5924ca47331105829e7277c51}} 
+{\bfseries operator int} () const
+\item 
+\mbox{\label{classrule_a69402285132b8065910c3a8e66c92ca0}} 
+const int {\bfseries get\+Primitive} () const
+\item 
+\mbox{\label{classrule_a1affa4ca1a9b2d60e9b1e2ebd80af839}} 
+const vector$<$ int $>$ \& {\bfseries get\+Children} () const
+\item 
+\mbox{\label{classrule_a0320b0278bbedf43ea858e5f4531cdc6}} 
+const vector$<$ pair$<$ int, int $>$ $>$ \& {\bfseries get\+Constraints} () const
+\item 
+\mbox{\label{classrule_a7f67e512d14d0fb95d55dd819ec6a1cd}} 
+const string {\bfseries to\+String} ()
+\item 
+\mbox{\label{classrule_ab13ae3fc714c9706d14ffdbcff0d2ccb}} 
+const string {\bfseries to\+String} (map$<$ int, string $>$ rev\+Ids)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classrule_aaf5146e3508ab979d741cdada3c6e2b2}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&, const \textbf{ rule} \&)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\+P\+A\+R\+C/include/rule.\+h\item 
+model/reco\+Plan/\+P\+A\+R\+C/\+Plan\+\_\+\+Library/rule.\+cpp\end{DoxyCompactItemize}

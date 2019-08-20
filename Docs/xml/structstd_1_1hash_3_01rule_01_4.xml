@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structstd_1_1hash_3_01rule_01_4" kind="struct" language="C++" prot="public">
+    <compoundname>std::hash&lt; rule &gt;</compoundname>
+    <templateparamlist>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structstd_1_1hash_3_01rule_01_4_1a840ba7e533dcc8b1e8e9848659b496f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t std::hash&lt; rule &gt;::operator()</definition>
+        <argsstring>(const rule &amp;obj) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const <ref refid="classrule" kindref="compound">rule</ref> &amp;</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/rule.h" line="60" column="1" bodyfile="model/recoPlan/PARC/include/rule.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/rule.h" line="59" column="1" bodyfile="model/recoPlan/PARC/include/rule.h" bodystart="58" bodyend="64"/>
+    <listofallmembers>
+      <member refid="structstd_1_1hash_3_01rule_01_4_1a840ba7e533dcc8b1e8e9848659b496f6" prot="public" virt="non-virtual"><scope>std::hash&lt; rule &gt;</scope><name>operator()</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

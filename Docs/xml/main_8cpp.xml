@@ -1,0 +1,688 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="main_8cpp" kind="file" language="C++">
+    <compoundname>main.cpp</compoundname>
+    <includes local="no">iostream</includes>
+    <includes local="no">map</includes>
+    <includes refid="_recognition_manager_8h" local="yes">model/RecognitionManager.h</includes>
+    <includes refid="_primary_window_8h" local="yes">view/PrimaryWindow.h</includes>
+    <includes refid="_manage_source_video_8h" local="yes">controller/ManageSourceVideo.h</includes>
+    <incdepgraph>
+      <node id="176">
+        <label>list</label>
+      </node>
+      <node id="212">
+        <label>MatriceAffordance.h</label>
+        <link refid="_matrice_affordance_8h"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+      </node>
+      <node id="189">
+        <label>iterator</label>
+      </node>
+      <node id="217">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="202">
+        <label>cnn/YoloGPU.h</label>
+        <link refid="_yolo_g_p_u_8h_source"/>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="215">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+      </node>
+      <node id="197">
+        <label>opencv2/objdetect.hpp</label>
+      </node>
+      <node id="167">
+        <label>sources/RealSenseVideo.h</label>
+        <link refid="_real_sense_video_8h_source"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+      </node>
+      <node id="188">
+        <label>cmath</label>
+      </node>
+      <node id="187">
+        <label>cassert</label>
+      </node>
+      <node id="198">
+        <label>opencv2/ml.hpp</label>
+      </node>
+      <node id="171">
+        <label>sources/Kinect.h</label>
+        <link refid="_kinect_8h_source"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="173" relation="include">
+        </childnode>
+        <childnode refid="174" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>opencv2/core/core.hpp</label>
+      </node>
+      <node id="196">
+        <label>opencv2/imgproc.hpp</label>
+      </node>
+      <node id="163">
+        <label>opencv2/opencv.hpp</label>
+      </node>
+      <node id="168">
+        <label>string</label>
+      </node>
+      <node id="219">
+        <label>PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="217" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+      </node>
+      <node id="184">
+        <label>DetectedObject.h</label>
+        <link refid="_detected_object_8h"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>map</label>
+      </node>
+      <node id="183">
+        <label>../model/recoActivite/recoImage/ActivityRegion.h</label>
+        <link refid="_activity_region_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="185" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="199" relation="include">
+        </childnode>
+        <childnode refid="200" relation="include">
+        </childnode>
+        <childnode refid="201" relation="include">
+        </childnode>
+        <childnode refid="202" relation="include">
+        </childnode>
+        <childnode refid="205" relation="include">
+        </childnode>
+        <childnode refid="208" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="216">
+        <label>unordered_set</label>
+      </node>
+      <node id="206">
+        <label>opencv2/dnn.hpp</label>
+      </node>
+      <node id="170">
+        <label>fstream</label>
+      </node>
+      <node id="165">
+        <label>sources/RealSense.h</label>
+        <link refid="_real_sense_8h_source"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="166" relation="include">
+        </childnode>
+      </node>
+      <node id="211">
+        <label>recoActivite/recoAffordance/ObjectAff.h</label>
+        <link refid="_object_aff_8h"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+      </node>
+      <node id="175">
+        <label>sources/WebCam.h</label>
+        <link refid="_web_cam_8h_source"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>recoPlan/Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="214" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="219" relation="include">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>opencv2/imgcodecs.hpp</label>
+      </node>
+      <node id="191">
+        <label>random</label>
+      </node>
+      <node id="178">
+        <label>Subject.h</label>
+        <link refid="_subject_8h_source"/>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="201">
+        <label>future</label>
+      </node>
+      <node id="210">
+        <label>ctime</label>
+      </node>
+      <node id="214">
+        <label>PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h_source"/>
+        <childnode refid="215" relation="include">
+        </childnode>
+        <childnode refid="218" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="185">
+        <label>selectiveSearchDepth.h</label>
+        <link refid="selective_search_depth_8h_source"/>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="186" relation="include">
+        </childnode>
+        <childnode refid="187" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="188" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="189" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="190" relation="include">
+        </childnode>
+        <childnode refid="191" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="193" relation="include">
+        </childnode>
+        <childnode refid="194" relation="include">
+        </childnode>
+        <childnode refid="195" relation="include">
+        </childnode>
+        <childnode refid="196" relation="include">
+        </childnode>
+        <childnode refid="197" relation="include">
+        </childnode>
+        <childnode refid="198" relation="include">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>sources/VideoSource.h</label>
+        <link refid="_video_source_8h_source"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="164" relation="include">
+        </childnode>
+      </node>
+      <node id="193">
+        <label>opencv2/core.hpp</label>
+      </node>
+      <node id="155">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="158" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+      </node>
+      <node id="208">
+        <label>stack</label>
+      </node>
+      <node id="159">
+        <label>vector</label>
+      </node>
+      <node id="204">
+        <label>Yolo.h</label>
+        <link refid="_yolo_8h_source"/>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+      </node>
+      <node id="173">
+        <label>signal.h</label>
+      </node>
+      <node id="203">
+        <label>../Detector.h</label>
+        <link refid="_detector_8h_source"/>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+      </node>
+      <node id="164">
+        <label>utility</label>
+      </node>
+      <node id="186">
+        <label>array</label>
+      </node>
+      <node id="169">
+        <label>sstream</label>
+      </node>
+      <node id="218">
+        <label>probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h_source"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="216" relation="include">
+        </childnode>
+        <childnode refid="192" relation="include">
+        </childnode>
+        <childnode refid="215" relation="include">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>librealsense2/rs.hpp</label>
+      </node>
+      <node id="179">
+        <label>../model/Observer.h</label>
+        <link refid="_observer_8h_source"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+      </node>
+      <node id="174">
+        <label>time.h</label>
+      </node>
+      <node id="194">
+        <label>opencv2/highgui.hpp</label>
+      </node>
+      <node id="182">
+        <label>opencv2/highgui/highgui.hpp</label>
+      </node>
+      <node id="172">
+        <label>cstdlib</label>
+      </node>
+      <node id="156">
+        <label>iostream</label>
+      </node>
+      <node id="192">
+        <label>unordered_map</label>
+      </node>
+      <node id="209">
+        <label>../model/recoActivite/recoAffordance/Affordance.h</label>
+        <link refid="_affordance_8h"/>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="210" relation="include">
+        </childnode>
+        <childnode refid="169" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+      </node>
+      <node id="199">
+        <label>mutex</label>
+      </node>
+      <node id="160">
+        <label>chrono</label>
+      </node>
+      <node id="158">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="160" relation="include">
+        </childnode>
+        <childnode refid="161" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="180" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="211" relation="include">
+        </childnode>
+        <childnode refid="212" relation="include">
+        </childnode>
+        <childnode refid="213" relation="include">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>thread</label>
+      </node>
+      <node id="161">
+        <label>../controller/ManageSourceVideo.h</label>
+        <link refid="_manage_source_video_8h"/>
+        <childnode refid="162" relation="include">
+        </childnode>
+        <childnode refid="165" relation="include">
+        </childnode>
+        <childnode refid="167" relation="include">
+        </childnode>
+        <childnode refid="171" relation="include">
+        </childnode>
+        <childnode refid="175" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+        <childnode refid="168" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="176" relation="include">
+        </childnode>
+        <childnode refid="172" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="177" relation="include">
+        </childnode>
+        <childnode refid="178" relation="include">
+        </childnode>
+        <childnode refid="179" relation="include">
+        </childnode>
+      </node>
+      <node id="180">
+        <label>../view/PrimaryWindow.h</label>
+        <link refid="_primary_window_8h"/>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="181" relation="include">
+        </childnode>
+        <childnode refid="182" relation="include">
+        </childnode>
+        <childnode refid="183" relation="include">
+        </childnode>
+        <childnode refid="209" relation="include">
+        </childnode>
+      </node>
+      <node id="205">
+        <label>cnn/YoloCPU.h</label>
+        <link refid="_yolo_c_p_u_8h_source"/>
+        <childnode refid="206" relation="include">
+        </childnode>
+        <childnode refid="163" relation="include">
+        </childnode>
+        <childnode refid="159" relation="include">
+        </childnode>
+        <childnode refid="156" relation="include">
+        </childnode>
+        <childnode refid="170" relation="include">
+        </childnode>
+        <childnode refid="207" relation="include">
+        </childnode>
+        <childnode refid="184" relation="include">
+        </childnode>
+        <childnode refid="203" relation="include">
+        </childnode>
+        <childnode refid="204" relation="include">
+        </childnode>
+        <childnode refid="157" relation="include">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>algorithm</label>
+      </node>
+      <node id="207">
+        <label>stdio.h</label>
+      </node>
+      <node id="190">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8cpp_1ad56b994e44d328f3cd6ae3850d527d74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>map&lt; string, string &gt;</type>
+        <definition>loadingSetting</definition>
+        <argsstring>(string fileSetting)</argsstring>
+        <name>loadingSetting</name>
+        <param>
+          <type>string</type>
+          <declname>fileSetting</declname>
+        </param>
+        <briefdescription>
+<para>Model. </para>        </briefdescription>
+        <detaileddescription>
+<para>View Controller Function</para><para>load setting <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileSetting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: name of the file which contains the setting, he as to be in the same folder than the <ref refid="main_8cpp" kindref="compound">main.cpp</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>setting : map&lt;string,string&gt; which contain every path and information to use (fisrt String = name_of_information, second String = information) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.cpp" line="32" column="1" bodyfile="main.cpp" bodystart="32" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Load settings</para><para>Display setting in console</para><para>Start video acquisition</para><para>Create View object (Window if boolean is true) TODO: Window create <ref refid="class_recognition_manager" kindref="compound">RecognitionManager</ref> when button play is handle (require create a complex window)</para><para>Initalize reconnaissance</para><para>Start main loop </para>        </inbodydescription>
+        <location file="main.cpp" line="61" column="1" bodyfile="main.cpp" bodystart="61" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="main_8cpp" kindref="compound">main.cpp</ref> : Function launching the entire project </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Mathieu Gravel - Edited by Alexandre Gonzalvez </para></simplesect>
+<simplesect kind="version"><para>2.0 </para></simplesect>
+<simplesect kind="date"><para>25 June 2019</para></simplesect>
+Function launching the entire project Create Model, View and Controller Take configuration files in argument </para>    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//Setting<sp/>area</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_recognition_manager_8h" kindref="compound">model/RecognitionManager.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_primary_window_8h" kindref="compound">view/PrimaryWindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_manage_source_video_8h" kindref="compound">controller/ManageSourceVideo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"></codeline>
+<codeline lineno="32"><highlight class="normal">map&lt;string,string&gt;<sp/><ref refid="main_8cpp_1ad56b994e44d328f3cd6ae3850d527d74" kindref="member">loadingSetting</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>fileSetting){</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>ifstream<sp/>fichier(fileSetting,<sp/>ios::in);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,string&gt;<sp/><sp/>setting;<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(fichier)<sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>line;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(getline(fichier,<sp/>line))<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(line.substr(0,1)!=</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name<sp/>=<sp/>line.substr(0,<sp/>line.find(</highlight><highlight class="stringliteral">&quot;=&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>line.substr(line.find(</highlight><highlight class="stringliteral">&quot;=&quot;</highlight><highlight class="normal">)+1);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setting.insert<sp/>(<sp/>pair&lt;string,string&gt;(name,value)<sp/>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fichier.close();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Impossible<sp/>to<sp/>open<sp/>configuration<sp/>file<sp/>!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>setting;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8cpp_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Begin\n&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>map&lt;string,string&gt;<sp/>setting;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(argc&gt;1){</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setting=<ref refid="main_8cpp_1ad56b994e44d328f3cd6ae3850d527d74" kindref="member">loadingSetting</ref>(argv[1]);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Setting<sp/>Loaded\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;No<sp/>setting<sp/>files<sp/>gived,<sp/>default<sp/>paramater\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Default<sp/>are<sp/>with<sp/>webcam(640x480),<sp/>view<sp/>ON,<sp/>planRecognition=smallDomain,<sp/>DefaultArea=Ball,<sp/>pathVideo=None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Order<sp/>doesn&apos;t<sp/>matter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setting<sp/>=<sp/>{{</highlight><highlight class="stringliteral">&quot;Display_View&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;True&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;plan_recognition&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/plan/ressources/domains/smallDomain.txt&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;Input_Video&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Webcam&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;pathSourceVideo&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;color.mp4&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;pathSourceVideoDepth&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;depth.mp4&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;Webcam_Width&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;640&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;Webcam_Height&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;480&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUKitchen_dat&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/yolo-kitchen.data&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUKitchen_cfg&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/corpusKitchen.cfg&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUKitchen_wei&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/corpusKitchen.backup&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUKitchen_wei&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/corpusKitchen.backup&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUKitchen_lbl&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/classes-kitchen.name&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_dat&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/classes-kitchen.name&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_dat&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/classes-kitchen.name&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_dat&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.classes&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_cfg&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.cfg&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_wei&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.backup&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;GPUDefault_lbl&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.name&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUKitchen_network&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/yolov3-kitchen.backup&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUKitchen_networkDef&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/yolov3-kitchen.cfg&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUKitchen_Name&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/c-kitchen.name&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUDefault_network&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.backup&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUDefault_networkDef&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/balls.cfg&quot;</highlight><highlight class="normal">},{</highlight><highlight class="stringliteral">&quot;CPUDefault_Name&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;model/recoImage/ressources/models/c-balls.name&quot;</highlight><highlight class="normal">}};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>/*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\nSetting<sp/>:\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">&amp;<sp/>x<sp/>:<sp/>setting){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>x.first<sp/><sp/></highlight><highlight class="comment">//<sp/>string<sp/>(key)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>x.second&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>string&apos;s<sp/>value<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_manage_source_video" kindref="compound">ManageSourceVideo</ref><sp/>controller(setting);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Controller<sp/>On\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_primary_window" kindref="compound">PrimaryWindow</ref><sp/>view(setting[</highlight><highlight class="stringliteral">&quot;Display_View&quot;</highlight><highlight class="normal">]==</highlight><highlight class="stringliteral">&quot;True&quot;</highlight><highlight class="normal">);<sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\nModel<sp/>OFF\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_recognition_manager" kindref="compound">RecognitionManager</ref><sp/>model(&amp;view,&amp;controller,setting);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\nModel<sp/>On\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\nPress<sp/>a<sp/>key<sp/>or<sp/>wait<sp/>5<sp/>seconds<sp/>to<sp/>start<sp/>the<sp/>main<sp/>loop\n\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>waitKey(5000);<sp/></highlight><highlight class="comment">//flush<sp/>input<sp/>buffer<sp/>to<sp/>resolv<sp/>swhen<sp/>argc<sp/>&gt;<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>model.recognitionLoop(&amp;controller,&amp;view);<sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;\n\nEnd&quot;</highlight><highlight class="normal">&lt;&lt;endl;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>42;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="main.cpp"/>
+  </compounddef>
+</doxygen>

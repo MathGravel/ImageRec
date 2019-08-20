@@ -1,0 +1,103 @@
+.TH "ManageSourceVideo" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ManageSourceVideo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBSubject\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBManageSourceVideo\fP (map< string, string > setting)"
+.br
+.RI "Constructor of class \fBManageSourceVideo\fP\&. "
+.ti -1c
+.RI "virtual \fB~ManageSourceVideo\fP ()"
+.br
+.RI "Destructor of class \fBManageSourceVideo\fP\&. "
+.ti -1c
+.RI "std::string \fBgetTimeStamp\fP ()"
+.br
+.ti -1c
+.RI "int \fBgetTimePosition\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBchooseInputVideo\fP (string typeInputVideo, int width, int height, string pathSourceVideo, string pathSourceVideoDepth)"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetOriginalImage\fP ()"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetCurrentImage\fP ()"
+.br
+.ti -1c
+.RI "cv::Mat \fBgetDepthImage\fP ()"
+.br
+.ti -1c
+.RI "std::pair< int, int > \fBgetScreenSize\fP () const"
+.br
+.ti -1c
+.RI "void \fBsaveVideos\fP ()"
+.br
+.ti -1c
+.RI "void \fBregisterObserver\fP (\fBObserver\fP *observer) override"
+.br
+.ti -1c
+.RI "void \fBremoveObserver\fP (\fBObserver\fP *observer) override"
+.br
+.ti -1c
+.RI "void \fBnotifyObservers\fP () override"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ManageSourceVideo::ManageSourceVideo (map< string, string > setting)"
+
+.PP
+Constructor of class \fBManageSourceVideo\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsetting\fP : map<string,string>* which contain every path and information to use (fisrt String = name_of_information, second String = information) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ManageSourceVideo::notifyObservers ()\fC [override]\fP, \fC [virtual]\fP"
+Notify all the registered observers when a change happens 
+.PP
+Implements \fBSubject\fP\&.
+.SS "void ManageSourceVideo::registerObserver (\fBObserver\fP * observer)\fC [override]\fP, \fC [virtual]\fP"
+Register an observer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobserver\fP the observer object to be registered 
+.RE
+.PP
+
+.PP
+Implements \fBSubject\fP\&.
+.SS "void ManageSourceVideo::removeObserver (\fBObserver\fP * observer)\fC [override]\fP, \fC [virtual]\fP"
+Unregister an observer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobserver\fP the observer object to be unregistered 
+.RE
+.PP
+
+.PP
+Implements \fBSubject\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

@@ -1,0 +1,64 @@
+.TH "model/RecognitionManager.h" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+model/RecognitionManager.h \- Manage all project\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <iostream>\fP
+.br
+\fC#include <vector>\fP
+.br
+\fC#include <chrono>\fP
+.br
+\fC#include '\&.\&./controller/ManageSourceVideo\&.h'\fP
+.br
+\fC#include 'Observer\&.h'\fP
+.br
+\fC#include <opencv2/opencv\&.hpp>\fP
+.br
+\fC#include '\&.\&./view/PrimaryWindow\&.h'\fP
+.br
+\fC#include 'recoActivite/recoImage/ActivityRegion\&.h'\fP
+.br
+\fC#include 'recoActivite/recoAffordance/ObjectAff\&.h'\fP
+.br
+\fC#include 'recoActivite/recoAffordance/MatriceAffordance\&.h'\fP
+.br
+\fC#include 'recoPlan/Policy\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBRecognitionManager\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manage all project\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Alexandre Gonzalvez 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+2\&.0 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+8 August 2019
+.RE
+.PP
+Function launching the entire project Define Paramater => CONSTANT (In \&.cpp) //TODO : put in setting if constant are pertinent Initialize Controller Initialize Activities recognition, Plan recognition Initialize view Start main loop of recognition which update every composant of the program 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

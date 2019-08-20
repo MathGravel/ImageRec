@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsolver_particle" kind="class" language="C++" prot="public">
+    <compoundname>solverParticle</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsolver_particle_1a474cbf822017532e42fe641dd63370ef" prot="public" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+        <definition>extendedPlanLibrary* solverParticle::epl</definition>
+        <argsstring></argsstring>
+        <name>epl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="54" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_particle_1ac6455144f89db14fce27193d861066ab" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int solverParticle::goal</definition>
+        <argsstring></argsstring>
+        <name>goal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="55" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_particle_1a3fdf0c071a78a83ab49cc60cbc9a2d06" prot="public" static="no" mutable="no">
+        <type>vector&lt; int &gt;</type>
+        <definition>vector&lt;int&gt; solverParticle::expNextObs</definition>
+        <argsstring></argsstring>
+        <name>expNextObs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="56" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_particle_1a0e2950fe5ea4b71b686ae4986919327e" prot="public" static="no" mutable="no">
+        <type><ref refid="classtree" kindref="compound">tree</ref></type>
+        <definition>tree solverParticle::planTree</definition>
+        <argsstring></argsstring>
+        <name>planTree</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="57" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsolver_particle_1a1a94b951cf5e503cf20b7df7a59428b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>solverParticle::solverParticle</definition>
+        <argsstring>(extendedPlanLibrary *_epl)</argsstring>
+        <name>solverParticle</name>
+        <param>
+          <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+          <declname>_epl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="52" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="251" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_particle_1a036aa885efb5c6c4dbfa7a6840d4a68b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool solverParticle::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="58" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="259" bodyend="267"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="119">
+        <label>planLibrary</label>
+        <link refid="classplan_library"/>
+      </node>
+      <node id="117">
+        <label>extendedPlanLibrary</label>
+        <link refid="classextended_plan_library"/>
+        <childnode refid="118" relation="usage">
+          <edgelabel>noise</edgelabel>
+          <edgelabel>decisionModel</edgelabel>
+        </childnode>
+        <childnode refid="119" relation="usage">
+          <edgelabel>ePlanLibrary</edgelabel>
+        </childnode>
+      </node>
+      <node id="121">
+        <label>treeNode</label>
+        <link refid="classtree_node"/>
+        <childnode refid="117" relation="usage">
+          <edgelabel>epl</edgelabel>
+        </childnode>
+      </node>
+      <node id="118">
+        <label>probabilityDistribution</label>
+        <link refid="classprobability_distribution"/>
+      </node>
+      <node id="120">
+        <label>tree</label>
+        <link refid="classtree"/>
+        <childnode refid="121" relation="usage">
+          <edgelabel>root</edgelabel>
+        </childnode>
+        <childnode refid="117" relation="usage">
+          <edgelabel>epl</edgelabel>
+        </childnode>
+      </node>
+      <node id="116">
+        <label>solverParticle</label>
+        <link refid="classsolver_particle"/>
+        <childnode refid="117" relation="usage">
+          <edgelabel>epl</edgelabel>
+        </childnode>
+        <childnode refid="120" relation="usage">
+          <edgelabel>planTree</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/solver.h" line="50" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="49" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classsolver_particle_1a474cbf822017532e42fe641dd63370ef" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>epl</name></member>
+      <member refid="classsolver_particle_1a3fdf0c071a78a83ab49cc60cbc9a2d06" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>expNextObs</name></member>
+      <member refid="classsolver_particle_1ac6455144f89db14fce27193d861066ab" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>goal</name></member>
+      <member refid="classsolver_particle_1a0e2950fe5ea4b71b686ae4986919327e" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>planTree</name></member>
+      <member refid="classsolver_particle_1a1a94b951cf5e503cf20b7df7a59428b0" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>solverParticle</name></member>
+      <member refid="classsolver_particle_1a036aa885efb5c6c4dbfa7a6840d4a68b" prot="public" virt="non-virtual"><scope>solverParticle</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

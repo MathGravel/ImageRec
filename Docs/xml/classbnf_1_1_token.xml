@@ -1,0 +1,399 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1_token" kind="class" language="C++" prot="public">
+    <compoundname>bnf::Token</compoundname>
+    <basecompoundref refid="classbnf_1_1___tie" prot="public" virt="non-virtual">bnf::_Tie</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbnf_1_1_token_1a0fc047c347e93577e4671178b8f11c91" prot="private" static="no" mutable="no">
+        <type>std::bitset&lt; bnf::maxCharNum &gt;</type>
+        <definition>std::bitset&lt;bnf::maxCharNum&gt; bnf::Token::match</definition>
+        <argsstring></argsstring>
+        <name>match</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="247" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="247" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1_token_1ab555bd08f573aad86ad95feb76007c15" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Tie</definition>
+        <argsstring></argsstring>
+        <name>_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="248" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classbnf_1_1_token_1a4a4fd8111fdd46a80d0d9c1d0d0a0a34" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+        <definition>Token&amp; bnf::Token::operator=</definition>
+        <argsstring>(const _Tie &amp;)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="245" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a176a72c8a0ee718393a2de47dce255d1" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const _Tie &amp;)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="246" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1_token_1af0f404eb33b567648857bc249b01d217" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const Token *tkn)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_token" kindref="compound">Token</ref> *</type>
+          <declname>tkn</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="249" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="249" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a94082cabb74558f2803657cae0a2ab44" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int bnf::Token::_parse</definition>
+        <argsstring>(_Base *parser) const</argsstring>
+        <name>_parse</name>
+        <reimplements refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8">_parse</reimplements>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="251" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="251" bodyend="261"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1_token_1aed0696c50a0fae76696157f108fbbc43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const char c)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const char</type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="263" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="263" bodyend="264"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1aba69ea21ddea7965460bec26567ff11a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(int fst, int lst)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>int</type>
+          <declname>fst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="265" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="265" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a1a143d2e52f9e2f2ebf28fb23983b23e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const char *s)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="267" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="267" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1aa2a87c84514305d23d686e76a13b531a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const char *s, const Token &amp;token)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+          <declname>token</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="269" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="269" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a80f5a655347bfd8719d5ed906fa8563f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Token::Token</definition>
+        <argsstring>(const Token &amp;token)</argsstring>
+        <name>Token</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+          <declname>token</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="271" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="271" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a48021a1cc356c84294ae9b4809331c09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual bnf::Token::~Token</definition>
+        <argsstring>()</argsstring>
+        <name>~Token</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="273" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="273" bodyend="274"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a1006b1383cd19db732176d9a2179f454" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::Token::Add</definition>
+        <argsstring>(int fst, int lst=0)</argsstring>
+        <name>Add</name>
+        <param>
+          <type>int</type>
+          <declname>fst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lst</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="275" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="275" bodyend="281"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1aebbe469ff4a8c576d136472758a68e1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::Token::Add</definition>
+        <argsstring>(const char *sample)</argsstring>
+        <name>Add</name>
+        <param>
+          <type>const char *</type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="282" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="282" bodyend="284"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a5975313bf65e86a093bdd369b02f986e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::Token::Remove</definition>
+        <argsstring>(int fst, int lst=0)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type>int</type>
+          <declname>fst</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>lst</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="285" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="285" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1acbe7cc5ba1f6b22f16bfd6790510bba6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void bnf::Token::Remove</definition>
+        <argsstring>(const char *sample)</argsstring>
+        <name>Remove</name>
+        <param>
+          <type>const char *</type>
+          <declname>sample</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="288" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="288" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1afc1cc232799ef3977c968897a227a114" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int bnf::Token::GetSymbol</definition>
+        <argsstring>(int next=0)</argsstring>
+        <name>GetSymbol</name>
+        <param>
+          <type>int</type>
+          <declname>next</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="291" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="291" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_token_1a0e47888270947f053645d3571a72e39a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_token" kindref="compound">Token</ref> &amp;</type>
+        <definition>Token&amp; bnf::Token::Invert</definition>
+        <argsstring>()</argsstring>
+        <name>Invert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="295" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="295" bodyend="298"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="127">
+        <label>bnf::Token</label>
+        <link refid="classbnf_1_1_token"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="129">
+        <label>bnf::Token</label>
+        <link refid="classbnf_1_1_token"/>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="244" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="243" bodyend="300"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1_token_1a94082cabb74558f2803657cae0a2ab44" prot="protected" virt="virtual"><scope>bnf::Token</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1_token_1ab555bd08f573aad86ad95feb76007c15" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Token</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Token</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Token</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1_token_1a1006b1383cd19db732176d9a2179f454" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Add</name></member>
+      <member refid="classbnf_1_1_token_1aebbe469ff4a8c576d136472758a68e1a" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Add</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>getName</name></member>
+      <member refid="classbnf_1_1_token_1afc1cc232799ef3977c968897a227a114" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>GetSymbol</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>inner</name></member>
+      <member refid="classbnf_1_1_token_1a0e47888270947f053645d3571a72e39a" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Invert</name></member>
+      <member refid="classbnf_1_1_token_1a0fc047c347e93577e4671178b8f11c91" prot="private" virt="non-virtual"><scope>bnf::Token</scope><name>match</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1_token_1a4a4fd8111fdd46a80d0d9c1d0d0a0a34" prot="private" virt="non-virtual"><scope>bnf::Token</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1_token_1a5975313bf65e86a093bdd369b02f986e" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Remove</name></member>
+      <member refid="classbnf_1_1_token_1acbe7cc5ba1f6b22f16bfd6790510bba6" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Remove</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>setName</name></member>
+      <member refid="classbnf_1_1_token_1a176a72c8a0ee718393a2de47dce255d1" prot="private" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1af0f404eb33b567648857bc249b01d217" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1aed0696c50a0fae76696157f108fbbc43" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1aba69ea21ddea7965460bec26567ff11a" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1a1a143d2e52f9e2f2ebf28fb23983b23e" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1aa2a87c84514305d23d686e76a13b531a" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1_token_1a80f5a655347bfd8719d5ed906fa8563f" prot="public" virt="non-virtual"><scope>bnf::Token</scope><name>Token</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::Token</scope><name>use</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::Token</scope><name>~_Tie</name></member>
+      <member refid="classbnf_1_1_token_1a48021a1cc356c84294ae9b4809331c09" prot="public" virt="virtual"><scope>bnf::Token</scope><name>~Token</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

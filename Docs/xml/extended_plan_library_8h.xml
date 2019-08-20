@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="extended_plan_library_8h" kind="file" language="C++">
+    <compoundname>extendedPlanLibrary.h</compoundname>
+    <includes refid="plan_library_8h" local="yes">planLibrary.h</includes>
+    <includes refid="probability_distribution_8h" local="yes">probabilityDistribution.h</includes>
+    <includes local="no">utility</includes>
+    <includes local="no">map</includes>
+    <includedby refid="_policy_8h" local="yes">model/recoPlan/Policy.h</includedby>
+    <includedby refid="solver_8h" local="yes">model/recoPlan/PARC/include/solver.h</includedby>
+    <includedby refid="test_solver_8h" local="yes">model/recoPlan/PARC/include/testSolver.h</includedby>
+    <includedby refid="extended_plan_library_8cpp" local="yes">model/recoPlan/PARC/Plan_Library/extendedPlanLibrary.cpp</includedby>
+    <incdepgraph>
+      <node id="660">
+        <label>rule.h</label>
+        <link refid="rule_8h_source"/>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="661" relation="include">
+        </childnode>
+        <childnode refid="662" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
+        </childnode>
+      </node>
+      <node id="655">
+        <label>planLibrary.h</label>
+        <link refid="plan_library_8h"/>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="659" relation="include">
+        </childnode>
+        <childnode refid="660" relation="include">
+        </childnode>
+      </node>
+      <node id="659">
+        <label>string</label>
+      </node>
+      <node id="662">
+        <label>map</label>
+      </node>
+      <node id="657">
+        <label>unordered_set</label>
+      </node>
+      <node id="654">
+        <label>model/recoPlan/PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h"/>
+        <childnode refid="655" relation="include">
+        </childnode>
+        <childnode refid="664" relation="include">
+        </childnode>
+        <childnode refid="663" relation="include">
+        </childnode>
+        <childnode refid="662" relation="include">
+        </childnode>
+      </node>
+      <node id="661">
+        <label>vector</label>
+      </node>
+      <node id="663">
+        <label>utility</label>
+      </node>
+      <node id="664">
+        <label>probabilityDistribution.h</label>
+        <link refid="probability_distribution_8h_source"/>
+        <childnode refid="656" relation="include">
+        </childnode>
+        <childnode refid="657" relation="include">
+        </childnode>
+        <childnode refid="658" relation="include">
+        </childnode>
+        <childnode refid="655" relation="include">
+        </childnode>
+      </node>
+      <node id="656">
+        <label>iostream</label>
+      </node>
+      <node id="658">
+        <label>unordered_map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="669">
+        <label>model/recoPlan/PARC/include/solver.h</label>
+        <link refid="solver_8h_source"/>
+        <childnode refid="666" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+      </node>
+      <node id="666">
+        <label>model/recoPlan/Policy.h</label>
+        <link refid="_policy_8h"/>
+        <childnode refid="667" relation="include">
+        </childnode>
+      </node>
+      <node id="665">
+        <label>model/recoPlan/PARC/include/extendedPlanLibrary.h</label>
+        <link refid="extended_plan_library_8h"/>
+        <childnode refid="666" relation="include">
+        </childnode>
+        <childnode refid="669" relation="include">
+        </childnode>
+        <childnode refid="670" relation="include">
+        </childnode>
+      </node>
+      <node id="668">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="670">
+        <label>model/recoPlan/PARC/include/testSolver.h</label>
+        <link refid="test_solver_8h_source"/>
+      </node>
+      <node id="667">
+        <label>model/RecognitionManager.h</label>
+        <link refid="_recognition_manager_8h"/>
+        <childnode refid="668" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classextended_plan_library" prot="public">extendedPlanLibrary</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="9"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="plan_library_8h" kindref="compound">planLibrary.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;probabilityDistribution.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;map&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>EXTENDEDPLANLIBRARY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>EXTENDEDPLANLIBRARY_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classextended_plan_library" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//extendedPlanLibrary();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>spl);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>(<ref refid="classplan_library" kindref="compound">planLibrary</ref>*<sp/>_ePlanLibrary);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>&amp;<sp/>epl);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>rnd<sp/>=</highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>noisePRCT<sp/>=<sp/>0.0,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>goal<sp/>=<sp/>5,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_size<sp/>=<sp/>10,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>depth<sp/>=<sp/>2,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>widthAND<sp/>=<sp/>3,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>widthOR<sp/>=<sp/>2,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>DM<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classplan_library" kindref="compound">planLibrary</ref>*<sp/>ePlanLibrary;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref><sp/>decisionModel;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classprobability_distribution" kindref="compound">probabilityDistribution</ref><sp/>noise;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;string,int&gt;<sp/>ids;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>map&lt;int,<sp/>string&gt;<sp/>revIds;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>extra();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>toString();<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>EXTENDEDPLANLIBRARY_H</highlight></codeline>
+    </programlisting>
+    <location file="model/recoPlan/PARC/include/extendedPlanLibrary.h"/>
+  </compounddef>
+</doxygen>

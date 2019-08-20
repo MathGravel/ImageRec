@@ -1,0 +1,140 @@
+\section{bnf\+:\+:\+\_\+\+Tie Class Reference}
+\label{classbnf_1_1___tie}\index{bnf\+::\+\_\+\+Tie@{bnf\+::\+\_\+\+Tie}}
+
+
+Inheritance diagram for bnf\+:\+:\+\_\+\+Tie\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{classbnf_1_1___tie__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___tie_ac647ba15a4aee726c7995c611db02492}} 
+void {\bfseries set\+Name} (const char $\ast$name)
+\item 
+\mbox{\label{classbnf_1_1___tie_a5ada30dfe6ddee89e0fc1f590be13266}} 
+const char $\ast$ {\bfseries get\+Name} ()
+\item 
+\mbox{\label{classbnf_1_1___tie_ace83835bbee0790d181ed4de97086aea}} 
+\textbf{ \+\_\+\+And} {\bfseries operator+} (const \textbf{ \+\_\+\+Tie} \&link)
+\item 
+\mbox{\label{classbnf_1_1___tie_ae6275d0d44f0edd915b5a8709a317017}} 
+\textbf{ \+\_\+\+And} {\bfseries operator+} (const char $\ast$s)
+\item 
+\mbox{\label{classbnf_1_1___tie_a7fcf8ccdc485bfd1bf8d5f187ccadcee}} 
+\textbf{ \+\_\+\+And} {\bfseries operator+} (bool($\ast$f)(const char $\ast$, size\+\_\+t))
+\item 
+\mbox{\label{classbnf_1_1___tie_a0fb85544a86647ff1db09eabe235d730}} 
+\textbf{ \+\_\+\+Or} {\bfseries operator$\vert$} (const \textbf{ \+\_\+\+Tie} \&link)
+\item 
+\mbox{\label{classbnf_1_1___tie_ab5624a8f40f51c8eeb96ec1a47cccce6}} 
+\textbf{ \+\_\+\+Or} {\bfseries operator$\vert$} (const char $\ast$s)
+\item 
+\mbox{\label{classbnf_1_1___tie_af1b6229c7c9c3975b82edbfb5c92ef24}} 
+\textbf{ \+\_\+\+Or} {\bfseries operator$\vert$} (bool($\ast$f)(const char $\ast$, size\+\_\+t))
+\item 
+\mbox{\label{classbnf_1_1___tie_a787b666fa012e38d60e04b46c2ad01ef}} 
+\textbf{ \+\_\+\+Cycle} {\bfseries operator()} (int at\+\_\+least, int total)
+\item 
+\mbox{\label{classbnf_1_1___tie_a2c5e2c656a996cfefff611ac533be9c1}} 
+\textbf{ \+\_\+\+Cycle} {\bfseries operator$\ast$} ()
+\item 
+\mbox{\label{classbnf_1_1___tie_afdd94b85872f795af274e258e66396e7}} 
+\textbf{ \+\_\+\+Cycle} {\bfseries operator!} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___tie_ae1a6db1009a1212f8d9297446dea3af5}} 
+void {\bfseries \+\_\+clone} (const \textbf{ \+\_\+\+Tie} $\ast$lnk)
+\item 
+\mbox{\label{classbnf_1_1___tie_a5acb87106d25769797a347fba072dcbd}} 
+{\bfseries \+\_\+\+Tie} (std\+::string nm=\char`\"{}\char`\"{})
+\item 
+\mbox{\label{classbnf_1_1___tie_a4fea3452db346af8ff973c94068f3e4a}} 
+{\bfseries \+\_\+\+Tie} (const \textbf{ \+\_\+\+Tie} $\ast$lnk)
+\item 
+\mbox{\label{classbnf_1_1___tie_a1d2910459130d3377281fe40053b8b72}} 
+{\bfseries \+\_\+\+Tie} (const \textbf{ \+\_\+\+Tie} \&link)
+\item 
+\mbox{\label{classbnf_1_1___tie_a76631238fac475a2a9b6adfe8e31b529}} 
+void {\bfseries \+\_\+clue} (const \textbf{ \+\_\+\+Tie} \&link)
+\item 
+\mbox{\label{classbnf_1_1___tie_a3ef41cf1dbd1d28f3f1ab22256ea3bd8}} 
+virtual int {\bfseries \+\_\+parse} (\textbf{ \+\_\+\+Base} $\ast$parser) const =0  throw ()
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___tie_a2e6c961a8607120b153024a83bf7e046}} 
+{\footnotesize template$<$class T $>$ }\\static void {\bfseries \+\_\+setname} (T $\ast$t, const char $\ast$name=0)
+\item 
+\mbox{\label{classbnf_1_1___tie_af1bc0dc1dfc73e91de8d3aef513b12e0}} 
+static int {\bfseries call\+\_\+1st} (const \textbf{ \+\_\+\+Tie} $\ast$lnk, \textbf{ \+\_\+\+Base} $\ast$parser)
+\item 
+\mbox{\label{classbnf_1_1___tie_ade0d3607f99af81e30b336bf73087b8e}} 
+{\footnotesize template$<$class T $>$ }\\static T $\ast$ {\bfseries \+\_\+safe\+\_\+delete} (T $\ast$t)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___tie_aaa82ae6741bf93468654c650fcb66675}} 
+bool {\bfseries inner}
+\item 
+\mbox{\label{classbnf_1_1___tie_ad389488f34be5f98c813498a24274b7e}} 
+std\+::vector$<$ const \textbf{ \+\_\+\+Tie} $\ast$ $>$ {\bfseries use}
+\item 
+\mbox{\label{classbnf_1_1___tie_a6de3678b6baf706a990d2da5f77e786e}} 
+std\+::list$<$ const \textbf{ \+\_\+\+Tie} $\ast$ $>$ {\bfseries usage}
+\item 
+\mbox{\label{classbnf_1_1___tie_a3f421bf925f39f3c571fe97981dd82af}} 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\label{classbnf_1_1___tie_acc4a46af6ba91f5c229096b7f622876a}} 
+class {\bfseries \+\_\+\+Base}
+\item 
+\mbox{\label{classbnf_1_1___tie_a56aeb37d353745b814d576d4eee8bf58}} 
+class {\bfseries Ext\+Parser}
+\item 
+\mbox{\label{classbnf_1_1___tie_abc37899b09eb024e8e57c00ec8fba682}} 
+class {\bfseries \+\_\+\+And}
+\item 
+\mbox{\label{classbnf_1_1___tie_abc2ecc13a8a23716fb474fcc5d47a88f}} 
+class {\bfseries \+\_\+\+Or}
+\item 
+\mbox{\label{classbnf_1_1___tie_a42b7257dd7b67cb080c28eed1201d5e2}} 
+class {\bfseries \+\_\+\+Cycle}
+\item 
+\mbox{\label{classbnf_1_1___tie_a48f5c1ca47af8dc65eca7e0274de96e2}} 
+class {\bfseries Token}
+\item 
+\mbox{\label{classbnf_1_1___tie_a5e39c58451938ac9fc35e0ac18674f12}} 
+class {\bfseries Lexem}
+\item 
+\mbox{\label{classbnf_1_1___tie_a6c87f8640d92f86217b1b5ac79943269}} 
+class {\bfseries Rule}
+\item 
+\mbox{\label{classbnf_1_1___tie_ae39b09ed012034d4a0ca5e90ec961764}} 
+\textbf{ \+\_\+\+And} {\bfseries operator+} (const char $\ast$s, const \textbf{ \+\_\+\+Tie} \&lnk)
+\item 
+\mbox{\label{classbnf_1_1___tie_affdc9f825c9dea37493c32c4e5547cb3}} 
+\textbf{ \+\_\+\+And} {\bfseries operator+} (bool($\ast$f)(const char $\ast$, size\+\_\+t), const \textbf{ \+\_\+\+Tie} \&lnk)
+\item 
+\mbox{\label{classbnf_1_1___tie_a13f77fb3c0e59327b41449c74cfca230}} 
+\textbf{ \+\_\+\+Or} {\bfseries operator$\vert$} (const char $\ast$s, const \textbf{ \+\_\+\+Tie} \&lnk)
+\item 
+\mbox{\label{classbnf_1_1___tie_a49635d0b72696d3519c0e4993b6636d4}} 
+\textbf{ \+\_\+\+Or} {\bfseries operator$\vert$} (bool($\ast$f)(const char $\ast$, size\+\_\+t), const \textbf{ \+\_\+\+Tie} \&lnk)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+model/reco\+Plan/\+P\+A\+R\+C/include/bnflite.\+h\end{DoxyCompactItemize}

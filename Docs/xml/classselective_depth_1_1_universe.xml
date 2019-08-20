@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classselective_depth_1_1_universe" kind="class" language="C++" prot="public">
+    <compoundname>selectiveDepth::Universe</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classselective_depth_1_1_universe_1a6c22f603a6a3fdbfd7a55f493e40c621" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="structselective_depth_1_1_universe_element" kindref="compound">UniverseElement</ref> &gt;</type>
+        <definition>std::vector&lt;UniverseElement&gt; selectiveDepth::Universe::elements</definition>
+        <argsstring></argsstring>
+        <name>elements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="76" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classselective_depth_1_1_universe_1a69b6aa51f340e4c76b77faba33092ee3" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int selectiveDepth::Universe::num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="77" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1a7557a2a93c9e2708366f317d46cd8e64" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Universe::Universe</definition>
+        <argsstring>(int num)</argsstring>
+        <name>Universe</name>
+        <param>
+          <type>int</type>
+          <declname>num</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="80" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="80" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1a41d26583d4cdbf2f11755a9b48a81b39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>selectiveDepth::Universe::~Universe</definition>
+        <argsstring>()</argsstring>
+        <name>~Universe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="90" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="90" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1a3b22248be73dccc078ecf00c7d5d283e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int selectiveDepth::Universe::find</definition>
+        <argsstring>(int x)</argsstring>
+        <name>find</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="92" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="92" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1abc6256b32cfff6d2fa22511dc7003cf2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void selectiveDepth::Universe::join</definition>
+        <argsstring>(int x, int y)</argsstring>
+        <name>join</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="104" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="104" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1ad7c55b559a1dfdf375dfc1cd4d35f2b0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int selectiveDepth::Universe::size</definition>
+        <argsstring>(int x) const</argsstring>
+        <name>size</name>
+        <param>
+          <type>int</type>
+          <declname>x</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="123" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classselective_depth_1_1_universe_1a80057a5312e715f231650b647afa43e9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int selectiveDepth::Universe::numSets</definition>
+        <argsstring>() const</argsstring>
+        <name>numSets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="124" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoImage/selectiveSearchDepth.h" line="74" column="1" bodyfile="model/recoActivite/recoImage/selectiveSearchDepth.h" bodystart="73" bodyend="125"/>
+    <listofallmembers>
+      <member refid="classselective_depth_1_1_universe_1a6c22f603a6a3fdbfd7a55f493e40c621" prot="private" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>elements</name></member>
+      <member refid="classselective_depth_1_1_universe_1a3b22248be73dccc078ecf00c7d5d283e" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>find</name></member>
+      <member refid="classselective_depth_1_1_universe_1abc6256b32cfff6d2fa22511dc7003cf2" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>join</name></member>
+      <member refid="classselective_depth_1_1_universe_1a69b6aa51f340e4c76b77faba33092ee3" prot="private" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>num</name></member>
+      <member refid="classselective_depth_1_1_universe_1a80057a5312e715f231650b647afa43e9" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>numSets</name></member>
+      <member refid="classselective_depth_1_1_universe_1ad7c55b559a1dfdf375dfc1cd4d35f2b0" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>size</name></member>
+      <member refid="classselective_depth_1_1_universe_1a7557a2a93c9e2708366f317d46cd8e64" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>Universe</name></member>
+      <member refid="classselective_depth_1_1_universe_1a41d26583d4cdbf2f11755a9b48a81b39" prot="public" virt="non-virtual"><scope>selectiveDepth::Universe</scope><name>~Universe</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

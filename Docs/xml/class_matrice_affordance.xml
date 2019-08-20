@@ -1,0 +1,334 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="class_matrice_affordance" kind="class" language="C++" prot="public">
+    <compoundname>MatriceAffordance</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_matrice_affordance_1a7baee762e6591a91f46e3d36f064c4ec" prot="private" static="no" mutable="no">
+        <type>const string</type>
+        <definition>const string MatriceAffordance::NULLNAME</definition>
+        <argsstring></argsstring>
+        <name>NULLNAME</name>
+        <initializer>= &quot;NULL&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="28" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_matrice_affordance_1a74a8cc88bfba4ffb9b09b17cae001890" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double MatriceAffordance::PROBABILITY_WHEN_VECTOR_EMPTY</definition>
+        <argsstring></argsstring>
+        <name>PROBABILITY_WHEN_VECTOR_EMPTY</name>
+        <initializer>= 0.5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="29" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_matrice_affordance_1ad836adde62be0c86f3fe54f296538d48" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt; &gt;</type>
+        <definition>std::vector&lt;std::vector&lt;AffordanceTime*&gt; &gt; MatriceAffordance::mat_objets</definition>
+        <argsstring></argsstring>
+        <name>mat_objets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="211" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_matrice_affordance_1aa4a8c86588a885109823953371b5e09d" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_affordance" kindref="compound">Affordance</ref> * &gt;</type>
+        <definition>std::vector&lt;Affordance*&gt; MatriceAffordance::mat_prec_act</definition>
+        <argsstring></argsstring>
+        <name>mat_prec_act</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="212" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_matrice_affordance_1aa3814661eb661cab07fdfc9001a1d427" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>MatriceAffordance::MatriceAffordance</definition>
+        <argsstring>()</argsstring>
+        <name>MatriceAffordance</name>
+        <briefdescription>
+<para>Constructor of <ref refid="class_matrice_affordance" kindref="compound">MatriceAffordance</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>initializes mat_objets, matrix of objects </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="38" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a940661edba2a036c235db4c69b925407" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>MatriceAffordance::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <briefdescription>
+<para>removes all the elements from mat_objects </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="46" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a198c11b0b8429bc9a5cc417e294ca496" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>MatriceAffordance::instance</definition>
+        <argsstring>()</argsstring>
+        <name>instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="53" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1aa115589d909a394b21237e77daad8bcb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>MatriceAffordance::addnewAff</definition>
+        <argsstring>(Affordance *aff, bool removeLastValue)</argsstring>
+        <name>addnewAff</name>
+        <param>
+          <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+          <declname>aff</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removeLastValue</declname>
+        </param>
+        <briefdescription>
+<para>update vector of last aff </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_affordance" kindref="compound">Affordance</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aff : last affordance seen </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>removeLastValue : indicates if the time since the start is great enough for start to delete the oldest vector of affordance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="106" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="106" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a8c313fa68aa813a1b4e3f40521098774" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>MatriceAffordance::update</definition>
+        <argsstring>(std::vector&lt; AffordanceTime *&gt; objs, bool removeLastValue)</argsstring>
+        <name>update</name>
+        <param>
+          <type>std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> *&gt;</type>
+          <declname>objs</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>removeLastValue</declname>
+        </param>
+        <briefdescription>
+<para>add last <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>(vector of <ref refid="class_affordance" kindref="compound">Affordance</ref> = every affordance possible for one frame) and suppress the oldest one if time since the start is great enough </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>std::vector&lt;AffordanceTime*&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>objs : <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref>(vector of <ref refid="class_affordance" kindref="compound">Affordance</ref> = every affordance possible for one frame) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bool</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>removeLastValue : indicates if the time since the start is great enough for start to delete the oldest vector of affordance </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="121" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="121" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1ad2f6f6e0f926492a34707c723a8dd45c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>MatriceAffordance::getFrequence</definition>
+        <argsstring>(string name)</argsstring>
+        <name>getFrequence</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+<para>returns the frequence of the affordance with an object in the last images | Never Used </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Name of the class of the object to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the frequence of the object in the last images and itself </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="138" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="138" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a8627ac21309fadc468b7f00941166043" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>MatriceAffordance::probCalculation</definition>
+        <argsstring>(string name, double prob_object)</argsstring>
+        <name>probCalculation</name>
+        <param>
+          <type>string</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>prob_object</declname>
+        </param>
+        <briefdescription>
+<para>Calculation of the average probability : weighted average. </para>        </briefdescription>
+        <detaileddescription>
+<para>(prob_of_object + sum(for i=2 to n) of (i/n) * prob_same_object_affordance_at_i_frame_of_vector )/ sum(for i=1 to n) of i/n <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: Name of the class of the object to check </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prob_object</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: probabilty of image recognition of the object (probability written on the screen in treadPicture </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>double : probabilty of the affordance </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="167" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="167" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a30ec6965bc564f64fa4c21c70cb7bdc9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MatriceAffordance::moreThanAffFrame</definition>
+        <argsstring>(string nom_aff, int that)</argsstring>
+        <name>moreThanAffFrame</name>
+        <param>
+          <type>string</type>
+          <declname>nom_aff</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>that</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="193" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="193" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a6e87fc1af407ea5e08187d9a282fcffc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; std::vector&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> * &gt; &gt;</type>
+        <definition>MatriceAffordance::get_affordances</definition>
+        <argsstring>() const</argsstring>
+        <name>get_affordances</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="207" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="207" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="class_matrice_affordance_1a59553d4970376643f93668045ffc6fe7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_affordance" kindref="compound">Affordance</ref> * &gt;</type>
+        <definition>std::vector&lt;Affordance*&gt; MatriceAffordance::get_Mat_prec_act</definition>
+        <argsstring>() const</argsstring>
+        <name>get_Mat_prec_act</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="208" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="208" bodyend="208"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_matrice_affordance_1ac9892b6441386d2ad01347c14840df67" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_affordance" kindref="compound">Affordance</ref> *</type>
+        <definition>MatriceAffordance::updateAffordance</definition>
+        <argsstring>(const std::stack&lt; AffordanceTime *&gt; matrice)</argsstring>
+        <name>updateAffordance</name>
+        <param>
+          <type>const std::stack&lt; <ref refid="class_affordance_time" kindref="compound">AffordanceTime</ref> *&gt;</type>
+          <declname>matrice</declname>
+        </param>
+        <briefdescription>
+<para>from the stack of AffordanceTime* return the most likely affordance of the last frame </para>        </briefdescription>
+        <detaileddescription>
+<para>with vector of each affordance order by probability for each frame <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>const</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>std::stack&lt;AffordanceTime*&gt; matrice : vector/stack of vector of affordanceTime (first : each frame, second : each possibility for this frame </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="63" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="63" bodyend="98"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoActivite/recoAffordance/MatriceAffordance.h" line="26" column="1" bodyfile="model/recoActivite/recoAffordance/MatriceAffordance.h" bodystart="26" bodyend="216"/>
+    <listofallmembers>
+      <member refid="class_matrice_affordance_1aa115589d909a394b21237e77daad8bcb" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>addnewAff</name></member>
+      <member refid="class_matrice_affordance_1a6e87fc1af407ea5e08187d9a282fcffc" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>get_affordances</name></member>
+      <member refid="class_matrice_affordance_1a59553d4970376643f93668045ffc6fe7" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>get_Mat_prec_act</name></member>
+      <member refid="class_matrice_affordance_1ad2f6f6e0f926492a34707c723a8dd45c" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>getFrequence</name></member>
+      <member refid="class_matrice_affordance_1a198c11b0b8429bc9a5cc417e294ca496" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>instance</name></member>
+      <member refid="class_matrice_affordance_1ad836adde62be0c86f3fe54f296538d48" prot="private" virt="non-virtual"><scope>MatriceAffordance</scope><name>mat_objets</name></member>
+      <member refid="class_matrice_affordance_1aa4a8c86588a885109823953371b5e09d" prot="private" virt="non-virtual"><scope>MatriceAffordance</scope><name>mat_prec_act</name></member>
+      <member refid="class_matrice_affordance_1aa3814661eb661cab07fdfc9001a1d427" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>MatriceAffordance</name></member>
+      <member refid="class_matrice_affordance_1a30ec6965bc564f64fa4c21c70cb7bdc9" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>moreThanAffFrame</name></member>
+      <member refid="class_matrice_affordance_1a7baee762e6591a91f46e3d36f064c4ec" prot="private" virt="non-virtual"><scope>MatriceAffordance</scope><name>NULLNAME</name></member>
+      <member refid="class_matrice_affordance_1a74a8cc88bfba4ffb9b09b17cae001890" prot="private" virt="non-virtual"><scope>MatriceAffordance</scope><name>PROBABILITY_WHEN_VECTOR_EMPTY</name></member>
+      <member refid="class_matrice_affordance_1a8627ac21309fadc468b7f00941166043" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>probCalculation</name></member>
+      <member refid="class_matrice_affordance_1a940661edba2a036c235db4c69b925407" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>reset</name></member>
+      <member refid="class_matrice_affordance_1a8c313fa68aa813a1b4e3f40521098774" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>update</name></member>
+      <member refid="class_matrice_affordance_1ac9892b6441386d2ad01347c14840df67" prot="public" virt="non-virtual"><scope>MatriceAffordance</scope><name>updateAffordance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

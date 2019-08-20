@@ -1,0 +1,65 @@
+.TH "rule" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+rule
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBrule\fP (int _primitive, int _id)"
+.br
+.ti -1c
+.RI "\fBrule\fP (int _id, string s)"
+.br
+.ti -1c
+.RI "void \fBaddChild\fP (int child)"
+.br
+.ti -1c
+.RI "void \fBaddConstraint\fP (pair< int, int > constraint)"
+.br
+.ti -1c
+.RI "void \fBaddChildren\fP (vector< int > _children)"
+.br
+.ti -1c
+.RI "void \fBaddConstraints\fP (vector< pair< int, int >> _constraints)"
+.br
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBrule\fP _r) const"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBrule\fP _r) const"
+.br
+.ti -1c
+.RI "\fBoperator int\fP () const"
+.br
+.ti -1c
+.RI "const int \fBgetPrimitive\fP () const"
+.br
+.ti -1c
+.RI "const vector< int > & \fBgetChildren\fP () const"
+.br
+.ti -1c
+.RI "const vector< pair< int, int > > & \fBgetConstraints\fP () const"
+.br
+.ti -1c
+.RI "const string \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "const string \fBtoString\fP (map< int, string > revIds)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &, const \fBrule\fP &)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

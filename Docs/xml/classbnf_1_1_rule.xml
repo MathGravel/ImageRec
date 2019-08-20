@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classbnf_1_1_rule" kind="class" language="C++" prot="public">
+    <compoundname>bnf::Rule</compoundname>
+    <basecompoundref refid="classbnf_1_1___tie" prot="public" virt="non-virtual">bnf::_Tie</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classbnf_1_1_rule_1ad72c627a250f93ab39802edfa7834750" prot="private" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* bnf::Rule::callback</definition>
+        <argsstring></argsstring>
+        <name>callback</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="479" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classbnf_1_1_rule_1ab555bd08f573aad86ad95feb76007c15" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _Tie</definition>
+        <argsstring></argsstring>
+        <name>_Tie</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="480" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1_rule_1abc37899b09eb024e8e57c00ec8fba682" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class _And</definition>
+        <argsstring></argsstring>
+        <name>_And</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="480" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="classbnf_1_1_rule_1a3823850d893658658dfba4a9337b47e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type>friend <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule&amp; Bind</definition>
+        <argsstring>(Rule &amp;rule, U(*callback)(std::vector&lt; U &gt; &amp;))</argsstring>
+        <name>Bind</name>
+        <param>
+          <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <param>
+          <type>U(*)(std::vector&lt; U &gt; &amp;)</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="511" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="664" bodyend="665"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classbnf_1_1_rule_1afa36b50741ac4b5bcc1e80effa6a2b55" prot="protected" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Rule::Rule</definition>
+        <argsstring>(const Rule *rl)</argsstring>
+        <name>Rule</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> *</type>
+          <declname>rl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="481" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="481" bodyend="482"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1a0460e1971d96c44b4885d7a72f5aec97" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>int</type>
+        <definition>virtual int bnf::Rule::_parse</definition>
+        <argsstring>(_Base *parser) const</argsstring>
+        <name>_parse</name>
+        <reimplements refid="classbnf_1_1___tie_1a3ef41cf1dbd1d28f3f1ab22256ea3bd8">_parse</reimplements>
+        <param>
+          <type><ref refid="classbnf_1_1___base" kindref="compound">_Base</ref> *</type>
+          <declname>parser</declname>
+        </param>
+        <exceptions> throw ()</exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="483" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="483" bodyend="496"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classbnf_1_1_rule_1afc8449e5278d22d2a7b7298418fadab8" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Rule::Rule</definition>
+        <argsstring>()</argsstring>
+        <name>Rule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="498" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="498" bodyend="499"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1abe5228b1f3bf7fc98e5433dba845e947" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type></type>
+        <definition>virtual bnf::Rule::~Rule</definition>
+        <argsstring>()</argsstring>
+        <name>~Rule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="500" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="500" bodyend="501"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1a60dabd7f6981a64c258e7abd92d714a7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>bnf::Rule::Rule</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>Rule</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="502" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="502" bodyend="505"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1a67e1acace3996adffbbe39d98407d4fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule&amp; bnf::Rule::operator=</definition>
+        <argsstring>(const _Tie &amp;link)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1___tie" kindref="compound">_Tie</ref> &amp;</type>
+          <declname>link</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="506" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="506" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1ae7b4e923d52fd9963747a0192d42e105" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule&amp; bnf::Rule::operator=</definition>
+        <argsstring>(const Rule &amp;rule)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+          <declname>rule</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="508" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="508" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="classbnf_1_1_rule_1a2c44184d509b95b5d6dc9bed966fe40e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class U</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classbnf_1_1_rule" kindref="compound">Rule</ref> &amp;</type>
+        <definition>Rule &amp; bnf::Rule::operator[]</definition>
+        <argsstring>(U(*callback)(std::vector&lt; U &gt; &amp;))</argsstring>
+        <name>operator[]</name>
+        <param>
+          <type>U(*)(std::vector&lt; U &gt; &amp;)</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/bnflite.h" line="512" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="666" bodyend="667"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="107">
+        <label>bnf::Rule</label>
+        <link refid="classbnf_1_1_rule"/>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="109">
+        <label>bnf::Rule</label>
+        <link refid="classbnf_1_1_rule"/>
+        <childnode refid="110" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>bnf::_Tie</label>
+        <link refid="classbnf_1_1___tie"/>
+      </node>
+    </collaborationgraph>
+    <location file="model/recoPlan/PARC/include/bnflite.h" line="478" column="1" bodyfile="model/recoPlan/PARC/include/bnflite.h" bodystart="477" bodyend="513"/>
+    <listofallmembers>
+      <member refid="classbnf_1_1_rule_1abc37899b09eb024e8e57c00ec8fba682" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_And</name></member>
+      <member refid="classbnf_1_1___tie_1ae1a6db1009a1212f8d9297446dea3af5" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_clone</name></member>
+      <member refid="classbnf_1_1___tie_1a76631238fac475a2a9b6adfe8e31b529" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_clue</name></member>
+      <member refid="classbnf_1_1_rule_1a0460e1971d96c44b4885d7a72f5aec97" prot="protected" virt="virtual"><scope>bnf::Rule</scope><name>_parse</name></member>
+      <member refid="classbnf_1_1___tie_1ade0d3607f99af81e30b336bf73087b8e" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_safe_delete</name></member>
+      <member refid="classbnf_1_1___tie_1a2e6c961a8607120b153024a83bf7e046" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_setname</name></member>
+      <member refid="classbnf_1_1_rule_1ab555bd08f573aad86ad95feb76007c15" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a5acb87106d25769797a347fba072dcbd" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Rule</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a4fea3452db346af8ff973c94068f3e4a" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Rule</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1___tie_1a1d2910459130d3377281fe40053b8b72" prot="protected" virt="non-virtual" ambiguityscope="bnf::_Tie::"><scope>bnf::Rule</scope><name>_Tie</name></member>
+      <member refid="classbnf_1_1_rule_1a3823850d893658658dfba4a9337b47e3" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>Bind</name></member>
+      <member refid="classbnf_1_1___tie_1af1bc0dc1dfc73e91de8d3aef513b12e0" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>call_1st</name></member>
+      <member refid="classbnf_1_1_rule_1ad72c627a250f93ab39802edfa7834750" prot="private" virt="non-virtual"><scope>bnf::Rule</scope><name>callback</name></member>
+      <member refid="classbnf_1_1___tie_1a5ada30dfe6ddee89e0fc1f590be13266" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>getName</name></member>
+      <member refid="classbnf_1_1___tie_1aaa82ae6741bf93468654c650fcb66675" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>inner</name></member>
+      <member refid="classbnf_1_1___tie_1a3f421bf925f39f3c571fe97981dd82af" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>name</name></member>
+      <member refid="classbnf_1_1___tie_1afdd94b85872f795af274e258e66396e7" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator!</name></member>
+      <member refid="classbnf_1_1___tie_1a787b666fa012e38d60e04b46c2ad01ef" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator()</name></member>
+      <member refid="classbnf_1_1___tie_1a2c5e2c656a996cfefff611ac533be9c1" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator*</name></member>
+      <member refid="classbnf_1_1___tie_1ace83835bbee0790d181ed4de97086aea" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1ae6275d0d44f0edd915b5a8709a317017" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1___tie_1a7fcf8ccdc485bfd1bf8d5f187ccadcee" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator+</name></member>
+      <member refid="classbnf_1_1_rule_1a67e1acace3996adffbbe39d98407d4fb" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1_rule_1ae7b4e923d52fd9963747a0192d42e105" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator=</name></member>
+      <member refid="classbnf_1_1_rule_1a2c44184d509b95b5d6dc9bed966fe40e" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator[]</name></member>
+      <member refid="classbnf_1_1___tie_1a0fb85544a86647ff1db09eabe235d730" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1ab5624a8f40f51c8eeb96ec1a47cccce6" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1___tie_1af1b6229c7c9c3975b82edbfb5c92ef24" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>operator|</name></member>
+      <member refid="classbnf_1_1_rule_1afa36b50741ac4b5bcc1e80effa6a2b55" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>Rule</name></member>
+      <member refid="classbnf_1_1_rule_1afc8449e5278d22d2a7b7298418fadab8" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>Rule</name></member>
+      <member refid="classbnf_1_1_rule_1a60dabd7f6981a64c258e7abd92d714a7" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>Rule</name></member>
+      <member refid="classbnf_1_1___tie_1ac647ba15a4aee726c7995c611db02492" prot="public" virt="non-virtual"><scope>bnf::Rule</scope><name>setName</name></member>
+      <member refid="classbnf_1_1___tie_1a6de3678b6baf706a990d2da5f77e786e" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>usage</name></member>
+      <member refid="classbnf_1_1___tie_1ad389488f34be5f98c813498a24274b7e" prot="protected" virt="non-virtual"><scope>bnf::Rule</scope><name>use</name></member>
+      <member refid="classbnf_1_1___tie_1a1cd353da436d2c8e6bee9f4b5c83cbca" prot="protected" virt="virtual"><scope>bnf::Rule</scope><name>~_Tie</name></member>
+      <member refid="classbnf_1_1_rule_1abe5228b1f3bf7fc98e5433dba845e947" prot="public" virt="virtual"><scope>bnf::Rule</scope><name>~Rule</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

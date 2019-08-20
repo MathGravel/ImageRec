@@ -1,0 +1,299 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classsolver" kind="class" language="C++" prot="public">
+    <compoundname>solver</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsolver_1ae8ac83ba99457e63f406c6014914e951" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int solver::nbParticles</definition>
+        <argsstring></argsstring>
+        <name>nbParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="83" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_1aa7dfc3c2c42b2ac5c4663f24d88a01ed" prot="private" static="no" mutable="no">
+        <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+        <definition>extendedPlanLibrary* solver::epl</definition>
+        <argsstring></argsstring>
+        <name>epl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="84" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_1a982eb3f44cbf77c6012939ace6770bbe" prot="private" static="no" mutable="no">
+        <type>vector&lt; int &gt;</type>
+        <definition>vector&lt;int&gt; solver::previousObservations</definition>
+        <argsstring></argsstring>
+        <name>previousObservations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="85" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsolver_1adeac092744b37d030df50a6aebe22831" prot="private" static="no" mutable="no">
+        <type>map&lt; int, vector&lt; <ref refid="classsolver_particle" kindref="compound">solverParticle</ref> &gt; &gt;</type>
+        <definition>map&lt;int, vector&lt;solverParticle&gt; &gt; solver::particles</definition>
+        <argsstring></argsstring>
+        <name>particles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="86" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsolver_1a34be95cc07bc1cbfea8c6ac8601495e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>solver::solver</definition>
+        <argsstring>()</argsstring>
+        <name>solver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="64" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a8ec9903435c8e17381aad968f0539003" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>solver::solver</definition>
+        <argsstring>(extendedPlanLibrary *_epl, int _nbParticle)</argsstring>
+        <name>solver</name>
+        <param>
+          <type><ref refid="classextended_plan_library" kindref="compound">extendedPlanLibrary</ref> *</type>
+          <declname>_epl</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>_nbParticle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="65" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="3" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a7f25bb5ed8f7c3696b16e7d605ff7f8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>solver::~solver</definition>
+        <argsstring>()</argsstring>
+        <name>~solver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="66" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1ad3330e122355d5243387d0a92fc04978" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool solver::addObservation</definition>
+        <argsstring>(int obs)</argsstring>
+        <name>addObservation</name>
+        <param>
+          <type>int</type>
+          <declname>obs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="68" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="35" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a041206bc0d3b165a141b24dfe8e0b90d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool solver::addObservation</definition>
+        <argsstring>(std::string obs)</argsstring>
+        <name>addObservation</name>
+        <param>
+          <type>std::string</type>
+          <declname>obs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a8eca9e760991959fc71913fd5987f886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool solver::status</definition>
+        <argsstring>()</argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="70" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="97" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a18051200fe6815673e8a54822b726f97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>map&lt; int, int &gt;</type>
+        <definition>map&lt; int, int &gt; solver::getGoals</definition>
+        <argsstring>()</argsstring>
+        <name>getGoals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="71" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="102" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1ae1ba892ffdca41c210c34eadd84b19b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>map&lt; int, int &gt;</type>
+        <definition>map&lt; int, int &gt; solver::getParticles</definition>
+        <argsstring>()</argsstring>
+        <name>getParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="72" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="120" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a5f16741d3a28994464faa54280c98efa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>map&lt; std::string, float &gt;</type>
+        <definition>map&lt; std::string, float &gt; solver::getProbGoals</definition>
+        <argsstring>()</argsstring>
+        <name>getProbGoals</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="73" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="130" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a93b69fb6a44494697a805d3b320c574c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>map&lt; std::string, float &gt;</type>
+        <definition>map&lt; std::string, float &gt; solver::getProbParticles</definition>
+        <argsstring>()</argsstring>
+        <name>getProbParticles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="74" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="148" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a96f03ffec3cba4c72fd83ae6ffd02f5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int solver::getMaxGoal</definition>
+        <argsstring>()</argsstring>
+        <name>getMaxGoal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="75" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="209" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1ace7514165a3e96c444392f53cd9b5ef4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const int &amp;</type>
+        <definition>const int &amp; solver::getSize</definition>
+        <argsstring>() const</argsstring>
+        <name>getSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="76" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a10f3e831fbffb0ca926e3eedb840943e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void solver::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="77" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="227" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a7a4dcd1caf3438bc1a208aa3cb6ca2b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pair&lt; int, vector&lt; int &gt; &gt;</type>
+        <definition>pair&lt; int, vector&lt; int &gt; &gt; solver::generatePlan</definition>
+        <argsstring>()</argsstring>
+        <name>generatePlan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="79" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="164" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classsolver_1a854e71f54847aa138ed08559873ad182" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>pair&lt; int, vector&lt; int &gt; &gt;</type>
+        <definition>pair&lt; int, vector&lt; int &gt; &gt; solver::generatePlanFO</definition>
+        <argsstring>()</argsstring>
+        <name>generatePlanFO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="model/recoPlan/PARC/include/solver.h" line="80" column="1" bodyfile="model/recoPlan/PARC/src/solver/solver.cpp" bodystart="196" bodyend="207"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="model/recoPlan/PARC/include/solver.h" line="62" column="1" bodyfile="model/recoPlan/PARC/include/solver.h" bodystart="61" bodyend="88"/>
+    <listofallmembers>
+      <member refid="classsolver_1ad3330e122355d5243387d0a92fc04978" prot="public" virt="non-virtual"><scope>solver</scope><name>addObservation</name></member>
+      <member refid="classsolver_1a041206bc0d3b165a141b24dfe8e0b90d" prot="public" virt="non-virtual"><scope>solver</scope><name>addObservation</name></member>
+      <member refid="classsolver_1a10f3e831fbffb0ca926e3eedb840943e" prot="public" virt="non-virtual"><scope>solver</scope><name>clear</name></member>
+      <member refid="classsolver_1aa7dfc3c2c42b2ac5c4663f24d88a01ed" prot="private" virt="non-virtual"><scope>solver</scope><name>epl</name></member>
+      <member refid="classsolver_1a7a4dcd1caf3438bc1a208aa3cb6ca2b2" prot="public" virt="non-virtual"><scope>solver</scope><name>generatePlan</name></member>
+      <member refid="classsolver_1a854e71f54847aa138ed08559873ad182" prot="public" virt="non-virtual"><scope>solver</scope><name>generatePlanFO</name></member>
+      <member refid="classsolver_1a18051200fe6815673e8a54822b726f97" prot="public" virt="non-virtual"><scope>solver</scope><name>getGoals</name></member>
+      <member refid="classsolver_1a96f03ffec3cba4c72fd83ae6ffd02f5c" prot="public" virt="non-virtual"><scope>solver</scope><name>getMaxGoal</name></member>
+      <member refid="classsolver_1ae1ba892ffdca41c210c34eadd84b19b5" prot="public" virt="non-virtual"><scope>solver</scope><name>getParticles</name></member>
+      <member refid="classsolver_1a5f16741d3a28994464faa54280c98efa" prot="public" virt="non-virtual"><scope>solver</scope><name>getProbGoals</name></member>
+      <member refid="classsolver_1a93b69fb6a44494697a805d3b320c574c" prot="public" virt="non-virtual"><scope>solver</scope><name>getProbParticles</name></member>
+      <member refid="classsolver_1ace7514165a3e96c444392f53cd9b5ef4" prot="public" virt="non-virtual"><scope>solver</scope><name>getSize</name></member>
+      <member refid="classsolver_1ae8ac83ba99457e63f406c6014914e951" prot="private" virt="non-virtual"><scope>solver</scope><name>nbParticles</name></member>
+      <member refid="classsolver_1adeac092744b37d030df50a6aebe22831" prot="private" virt="non-virtual"><scope>solver</scope><name>particles</name></member>
+      <member refid="classsolver_1a982eb3f44cbf77c6012939ace6770bbe" prot="private" virt="non-virtual"><scope>solver</scope><name>previousObservations</name></member>
+      <member refid="classsolver_1a34be95cc07bc1cbfea8c6ac8601495e6" prot="public" virt="non-virtual"><scope>solver</scope><name>solver</name></member>
+      <member refid="classsolver_1a8ec9903435c8e17381aad968f0539003" prot="public" virt="non-virtual"><scope>solver</scope><name>solver</name></member>
+      <member refid="classsolver_1a8eca9e760991959fc71913fd5987f886" prot="public" virt="non-virtual"><scope>solver</scope><name>status</name></member>
+      <member refid="classsolver_1a7f25bb5ed8f7c3696b16e7d605ff7f8b" prot="public" virt="virtual"><scope>solver</scope><name>~solver</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

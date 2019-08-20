@@ -1,0 +1,76 @@
+\section{Subject Class Reference}
+\label{class_subject}\index{Subject@{Subject}}
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+
+
+Inheritance diagram for Subject\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_subject__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \textbf{ register\+Observer} (\textbf{ Observer} $\ast$observer)=0
+\item 
+virtual void \textbf{ remove\+Observer} (\textbf{ Observer} $\ast$observer)=0
+\item 
+virtual void \textbf{ notify\+Observers} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface for the \doxyref{Subject}{p.}{class_subject} 
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_subject_adb3adcf5638dda8dbd4b1d4356d02453}} 
+\index{Subject@{Subject}!notify\+Observers@{notify\+Observers}}
+\index{notify\+Observers@{notify\+Observers}!Subject@{Subject}}
+\subsubsection{notify\+Observers()}
+{\footnotesize\ttfamily virtual void Subject\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Notify all the registered observers when a change happens 
+
+Implemented in \textbf{ Manage\+Source\+Video} \doxyref{}{p.}{class_manage_source_video_a199cb436b1ca354c8a3723a33b2dd8d8}.
+
+\mbox{\label{class_subject_ae3f8d320b19b7d0fe695a3b4e7660002}} 
+\index{Subject@{Subject}!register\+Observer@{register\+Observer}}
+\index{register\+Observer@{register\+Observer}!Subject@{Subject}}
+\subsubsection{register\+Observer()}
+{\footnotesize\ttfamily virtual void Subject\+::register\+Observer (\begin{DoxyParamCaption}\item[{\textbf{ Observer} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Register an observer 
+\begin{DoxyParams}{Parameters}
+{\em observer} & the observer object to be registered \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ Manage\+Source\+Video} \doxyref{}{p.}{class_manage_source_video_a15dea65edbe41f3f58279a3ed291fce9}.
+
+\mbox{\label{class_subject_a86699df0364a9091d1887f344255e9ff}} 
+\index{Subject@{Subject}!remove\+Observer@{remove\+Observer}}
+\index{remove\+Observer@{remove\+Observer}!Subject@{Subject}}
+\subsubsection{remove\+Observer()}
+{\footnotesize\ttfamily virtual void Subject\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\textbf{ Observer} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Unregister an observer 
+\begin{DoxyParams}{Parameters}
+{\em observer} & the observer object to be unregistered \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ Manage\+Source\+Video} \doxyref{}{p.}{class_manage_source_video_a7b6316cf6df23315705d4eb9bc0e07ff}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+controller/Subject.\+h\end{DoxyCompactItemize}

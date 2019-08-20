@@ -1,0 +1,49 @@
+.TH "planLibrary" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+planLibrary
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBplanLibrary\fP (const \fBplanLibrary\fP &_pl)"
+.br
+.ti -1c
+.RI "\fBplanLibrary\fP (const char *spl)"
+.br
+.ti -1c
+.RI "bool \fBisTerminal\fP (int symbol) const"
+.br
+.ti -1c
+.RI "bool \fBisGoal\fP (int symbol) const"
+.br
+.ti -1c
+.RI "int \fBaddSymbol\fP (int s, bool t, bool g)"
+.br
+.ti -1c
+.RI "int \fBaddRule\fP (\fBrule\fP r)"
+.br
+.ti -1c
+.RI "const string \fBtoString\fP ()"
+.br
+.ti -1c
+.RI "const unordered_set< int > & \fBgetTerminals\fP () const"
+.br
+.ti -1c
+.RI "const unordered_set< int > & \fBgetNonTerminals\fP () const"
+.br
+.ti -1c
+.RI "const unordered_set< int > & \fBgetGoals\fP () const"
+.br
+.ti -1c
+.RI "const unordered_map< int, \fBrule\fP > & \fBgetRules\fP () const"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.

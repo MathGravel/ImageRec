@@ -1,0 +1,127 @@
+.TH "Affordance" 3 "Mon Aug 19 2019" "plan recognition algorithms" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Affordance
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAffordance\fP (std::string obj='teacup', double prob=76\&.7653)"
+.br
+.RI "Constructor of \fBAffordance\fP\&. "
+.ti -1c
+.RI "\fBAffordance\fP (std::string obj, double pos, cv::Rect reg, double prob, double _dist=0)"
+.br
+.RI "Constructor of \fBAffordance\fP\&. "
+.ti -1c
+.RI "std::string \fBgetName\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetObjectPosition\fP () const"
+.br
+.ti -1c
+.RI "const cv::Rect & \fBgetRegion\fP () const"
+.br
+.ti -1c
+.RI "double \fBgetObjectProbability\fP () const"
+.br
+.ti -1c
+.RI "void \fBsetDist\fP (double dist)"
+.br
+.ti -1c
+.RI "void \fBreset\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (const \fBAffordance\fP &autre)"
+.br
+.RI "Overload of the '==' operator for two \fBAffordance\fP objects\&. "
+.ti -1c
+.RI "bool \fBoperator<\fP (const \fBAffordance\fP &autre)"
+.br
+.RI "Overload of the '<' operator for two \fBAffordance\fP objects\&. "
+.ti -1c
+.RI "std::string \fBto_str\fP () const"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "std::ostream & \fBoperator<<\fP (std::ostream &o, const \fBAffordance\fP a)"
+.br
+.in -1c
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Affordance::Affordance (std::string obj = \fC'teacup'\fP, double prob = \fC76\&.7653\fP)"
+
+.PP
+Constructor of \fBAffordance\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP Name of the new Object 
+.br
+\fIprob\fP Confidence rate on the object 
+.RE
+.PP
+
+.SS "Affordance::Affordance (std::string obj, double pos, cv::Rect reg, double prob, double _dist = \fC0\fP)"
+
+.PP
+Constructor of \fBAffordance\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP String : Name of the new Object 
+.br
+\fIpos\fP double : position of the Object at Creation 
+.br
+\fIreg\fP cv::Rect : OpenCv class for 2D rectangles 
+.br
+\fIprob\fP double : Confidence rate on the object 
+.br
+\fIdist\fP double : Distance between the Hand and the Object 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool Affordance::operator< (const \fBAffordance\fP & autre)"
+
+.PP
+Overload of the '<' operator for two \fBAffordance\fP objects\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if this < 'autre' 
+.RE
+.PP
+
+.SS "bool Affordance::operator== (const \fBAffordance\fP & autre)"
+
+.PP
+Overload of the '==' operator for two \fBAffordance\fP objects\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+True if this == 'autre' 
+.RE
+.PP
+
+.SS "Affordance::to_str () const\fC [inline]\fP"
+
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for plan recognition algorithms from the source code\&.
