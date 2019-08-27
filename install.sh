@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get -y install python-dev python-numpy python-setuptools python-pip libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
+sudo apt-get -y install build-essential gcc python-dev python-numpy python-setuptools python-pip libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-22-dev
 sudo apt-get -y install libusb-1.0-0-dev
 sudo apt-get -y install beignet-dev
 sudo apt-get -y install libva-dev libjpeg-dev
@@ -28,8 +28,6 @@ sudo apt-get install librealsense2-dev
 sudo apt-get install librealsense2-dbg
 
 #Ubuntu 16.04?
-sudo apt-get install qttools5-dev #Pour qt5_add_translation dans le CMake
-sudo apt-get install qtbase5-dev
 sudo apt-get -y install python3-pydot python-pydot-ng graphviz
 sudo apt-get -y install python-pydot 
 #

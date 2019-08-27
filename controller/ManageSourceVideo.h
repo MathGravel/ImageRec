@@ -11,6 +11,8 @@
 #include "sources/VideoSource.h"
 #include "sources/RealSense.h"
 #include "sources/RealSenseVideo.h"
+#include "sources/RealSenseBag.h"
+
 #include "sources/Kinect.h"
 #include "sources/WebCam.h"
 

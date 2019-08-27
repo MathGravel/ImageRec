@@ -4,6 +4,9 @@ reconnaissance-plans-activites.*
 reconnaissance-plans-activites_*/
 !reconnaissance-plans-activites.pro
 *.backup
+recActPlan
+recActPlan.*
+recActPlan_*/
 
 # OS generated files
 .DS_Store

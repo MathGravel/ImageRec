@@ -158,7 +158,7 @@ void RecognitionManager::updateAffordanceSeen(DetectedObjects items,DetectedObje
 				newCheckedAff=true;
 				delay=actualTime;
 				//cout<<"Previous affordance was with : "<<checkedPrecAffordance->getName()<<"\n";
-				cout<<"Current affordance with : "<<checkedActAffordance->getName()<<"\n";
+				cout<<"Current affordance with : "<<checkedActAffordance->getName()<<"\n\n";
 				cout<<endl;
 		}
 }

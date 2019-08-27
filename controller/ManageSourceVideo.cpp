@@ -20,10 +20,14 @@ void ManageSourceVideo::chooseInputVideo(string typeInputVideo,int width,int hei
         this->source = new RealSenseVideo(pathSourceVideo,pathSourceVideoDepth);
         originalSize = this->source->getScreenSize();
         screenSize = std::make_pair(1280,720);
-        cout<<"Possible that don't work | Cause : LocalVideo was never tested\n"; //It's possible that's not actual 
     }
     else if (typeInputVideo == "RealSense") {
         this->source = new RealSense();
+        originalSize = std::make_pair(1280,720);
+        screenSize = std::make_pair(1280,720);
+    }
+    else if (typeInputVideo == "RealSenseBag") {
+        this->source = new RealSenseBag(pathSourceVideo);
         originalSize = std::make_pair(1280,720);
         screenSize = std::make_pair(1280,720);
     }
@@ -42,6 +46,7 @@ void ManageSourceVideo::chooseInputVideo(string typeInputVideo,int width,int hei
         originalSize = std::make_pair(1280,720);
         screenSize = std::make_pair(1280,720);
     }
+
 }
 
 
