@@ -4,12 +4,13 @@
 /// Constant 
 const double MAX_FPS_PERFORMANCE = 60.0; // 60 FPS MAX (NOT IMPLEMENTED YET)
 const int NUMBER_SECONDS_BEFORE_UPDATE_FPS=1; //in seconds | 
-const int TIME_BEFORE_NEW_AFFORDANCE=5000; //in millisecond | Time lapse between 2 differents affordances on the same object
+const int TIME_BEFORE_NEW_AFFORDANCE=3000; //in millisecond | Time lapse between 2 differents affordances on the same object
 const int TIME_LAST_AFFORDANCE=1000; // in milliseconds | Time during we check the average affordance
 const int TIME_BEFORE_ALERT=30000; // in milliseconds | Time without any action before the system turn on an alarm
 const int TIME_BEFORE_ASKING_CLOSURE =300000; // in milliseconds (=300s=5min) | DISABLE
 const string EXIT_LOOP_WORD="STOP"; // EXIT_LOOP_WORD = "STOP" | DISABLE
-RecognitionManager::RecognitionManager(PrimaryWindow* p_view,ManageSourceVideo* p_controller,map<string,string> setting){
+RecognitionManager::RecognitionManager(PrimaryWindow* p_view,ManageSourceVideo* p_controller,map<string,string> setting): tr(setting["Traces_Folder"],setting["pathSourceVideo"])
+{
 	
 	///Add setting to his attribute
 	this->setting=setting;
@@ -58,6 +59,7 @@ void RecognitionManager::recognitionLoop(ManageSourceVideo *p_controller,Primary
 			
 			/// Update input (Camera)
 			p_controller->update();
+			if (!play) break;
 	
 			/// Update image recognition (send to YOLO which update vectors of hands and objects)
 			this->act->Update(imageColor,imageDepth);
@@ -82,6 +84,7 @@ void RecognitionManager::recognitionLoop(ManageSourceVideo *p_controller,Primary
 			//DISABLED | if you want to limit time during loop is running or you want to see end display 
 			/// Ask if exit after TIME_BEFORE_ASKING_CLOSURE seconds
 			//askToQuit();
+			play = p_controller->hasNextFrame();
 		 
 	}
 }
@@ -151,13 +154,13 @@ void RecognitionManager::updateAffordanceSeen(DetectedObjects items,DetectedObje
         ///To see an affordance from each frame
         //cout<<"New affordance is : "<<newAffordance->getName()<<" | Probability : "<<newAffordance->getObjectProbability()*100<<"%\n";
         ///check if aff not null and (doesn't = the 2 before except if more than 5 sec ) and 3 time in last 0.8 s  
-        if(newAffordance->getName()!="NULL" && ( ((newAffordance->getName()!=checkedActAffordance->getName()) && (newAffordance->getName()!=checkedPrecAffordance->getName())) || ((actualTime-delay).count()> TIME_BEFORE_NEW_AFFORDANCE) ) && objectsMat.moreThanAffFrame(newAffordance->getName(),(int)((fps*(TIME_LAST_AFFORDANCE/(double)1000)/5.0)+1))){
+        if(newAffordance->getName()!="NULL" && ( ((newAffordance->getName()!=checkedActAffordance->getName()) && (newAffordance->getName()!=checkedPrecAffordance->getName())) || ((actualTime-delay).count()> TIME_BEFORE_NEW_AFFORDANCE) ) && objectsMat.moreThanAffFrame(newAffordance->getName(),(int)((fps*(TIME_LAST_AFFORDANCE/(double)1000)/3.0)+1))){
 				
 				checkedPrecAffordance=checkedActAffordance;
 				checkedActAffordance=newAffordance;
 				newCheckedAff=true;
 				delay=actualTime;
-				//cout<<"Previous affordance was with : "<<checkedPrecAffordance->getName()<<"\n";
+				cout<<"Previous affordance was with : "<<checkedPrecAffordance->getName()<<"\n";
 				cout<<"Current affordance with : "<<checkedActAffordance->getName()<<"\n\n";
 				cout<<endl;
 		}
@@ -166,26 +169,38 @@ void RecognitionManager::updateAffordanceSeen(DetectedObjects items,DetectedObje
 void RecognitionManager::updatePlanRecognition(Affordance* checkedActAffordance){
 
 		   auto checking = pl.update(checkedActAffordance);
+		   tr.addAffordance(checkedActAffordance);
                    if (!checking){
                        //std::cout << "L'action a retourne False" << std::endl;
                        pl.Reset();
+                       tr.addPlanReset();
                    } else {
                        tempActions = pl.getNextActions();
-		       tempGoal = pl.getGoalsProba();
-			 /// Update plan recognition
+					   tempGoal = pl.getGoalsProba();
+					 /// Update plan recognition
 
                    
                    
-                   cout<<"\n\nAction_predicted :\n";
-                   for(int i=0;i<tempActions.size();i++)
-							cout<<"Action "<<i+1<<" : "<<tempActions[i].first<<" | "<<tempActions[i].second*100<<"%\n";
-                   
-                   
-                   
-		   cout<<"\nGoal_predicted :\n";
-                   for(int i=0;i<tempGoal.size();i++)
-							cout<<"Goal "<<i+1<<" : "<<tempGoal[i].first<<" | "<<tempGoal[i].second*100<<"%\n";
-                   }
+					   cout<<"\n\nAction_predicted :\n";
+					   std::string msg;
+					   for(int i=0;i<tempActions.size();i++) {
+								cout<<"Action "<<i+1<<" : "<<tempActions[i].first<<" | "<<tempActions[i].second*100<<"%\n";
+								msg = msg + tempActions[i].first + "|" + std::to_string(tempActions[i].second*100) + " ";
+							}
+					   tr.addFutureActivities(msg);
+					   
+					   msg = "";
+						cout<<"\nGoal_predicted :\n";
+						
+					   for(int i=0;i<tempGoal.size();i++) {
+								cout<<"Goal "<<i+1<<" : "<<tempGoal[i].first<<" | "<<tempGoal[i].second*100<<"%\n";
+								msg = msg + tempGoal[i].first + "|" + std::to_string(tempGoal[i].second*100) + " ";
+					   
+						}
+					   tr.addCurrentPlan(msg);
+
+					   
+					}
 
 
 

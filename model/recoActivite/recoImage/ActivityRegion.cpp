@@ -34,8 +34,9 @@ void ActivityRegion::Update(cv::Mat vision,cv::Mat depthVision) {
 
         }
         mtx.lock();
-        hands.clear();
-        items.clear();
+        
+        //hands.clear();
+        //items.clear();
         hands = DetectedObjects(mains);
         items = DetectedObjects(newit);
         mtx.unlock();

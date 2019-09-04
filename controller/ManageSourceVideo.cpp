@@ -9,7 +9,6 @@ ManageSourceVideo::~ManageSourceVideo() {
     delete source;
 }
 
-//TODO add sourceChemin and sourceCheminProfondeur to use LOCALvIDEO | THEN REFONT KINECT
 // width and height only use if it's a webcam cause resolution depend of the webcam
 void ManageSourceVideo::chooseInputVideo(string typeInputVideo,int width,int height,string pathSourceVideo,string pathSourceVideoDepth){
 	if(source != nullptr){
@@ -49,6 +48,12 @@ void ManageSourceVideo::chooseInputVideo(string typeInputVideo,int width,int hei
 
 }
 
+bool ManageSourceVideo::hasNextFrame() {
+	if (source != nullptr)
+		return (source->getTimeStamp() != "-1");
+	else
+		return false;
+}
 
 void ManageSourceVideo::update() {
     if (source == nullptr)

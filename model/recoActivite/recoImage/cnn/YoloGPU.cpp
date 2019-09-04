@@ -111,6 +111,7 @@ inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat de
             int right = (b.x+b.w/2.)*im.w;
             int top   = (b.y-b.h/2.)*im.h;
             int bot   = (b.y+b.h/2.)*im.h;
+            std::string nom = names[pos];
 
             if(left < 0) left = 0;
             if(right > im.w-1) right = im.w-1;
@@ -127,6 +128,8 @@ inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat de
             central.y = obj.y + obj.height/4;
             central.width = obj.width/2;
             central.height = obj.height/2;
+            if (nom != "hand")
+				central = obj;
 /*
             central.x = obj.x + obj.width/2 -3;
             central.y = obj.y + obj.height/2 - 3;
@@ -134,8 +137,9 @@ inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat de
             central.height = 3;
 */
 
+
             cv::Scalar m = mean(depth(central));
-            std::string nom = names[pos];
+
             int offset = pos*123457 % 10;
             float red = get_color(2,offset,10);
              float green = get_color(1,offset,10);
@@ -144,7 +148,20 @@ inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat de
               rgb[0] = red;
               rgb[1] = green;
               rgb[2] = blue;
-            objects.emplace_back(DetectedObject(obj,nom,m[0],dets[i].prob[pos],red,green,blue));
+              bool tosave = true;
+              for (auto it = objects.begin(); it != objects.end();++it) {\
+				  if (nom != "hand" && ((it->getObjPos() & obj).area() >= 0.8 * std::min(obj.area(), it->getObjPos().area()))) {
+					if (m[0] > it->getProb()) {
+						objects.erase(it);
+						break;
+					}
+					else {
+						tosave = false;
+					}
+				}
+			  }
+            if(tosave)
+				objects.emplace_back(DetectedObject(obj,nom,m[0],dets[i].prob[pos],red,green,blue));
         }
     }
     std::vector<bool> posi(objects.size());

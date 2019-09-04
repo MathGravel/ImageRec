@@ -105,6 +105,6 @@ int main(int argc, char *argv[])
 	
 	cout<<"\n\nEnd"<<endl;
 	
-    return 42;
+    return -1;
 }
 

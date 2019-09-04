@@ -36,7 +36,8 @@ RealSenseBag::RealSenseBag(std::string bagFile) : bagVideo(std::move(bagFile)) {
 }
 
 RealSenseBag::~RealSenseBag() {
-   pipe->stop();
+   //pipe->stop();
+   std::exit(42);
 }
 
 cv::Mat RealSenseBag::getColorFeed() {
@@ -71,7 +72,6 @@ inline void RealSenseBag::update() {
 
    frame = std::max(depth_frame.get_frame_number(),color_frame.get_frame_number());
    maxframe = std::max(frame,maxframe);
-   assert(frame >= maxframe);
 
 }
 

@@ -5,6 +5,8 @@
 #include "../DetectedObject.h"
 #include "../Detector.h"
 #include "Yolo.h"
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
 
 #include <map> //Setting area
 

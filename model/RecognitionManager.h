@@ -33,6 +33,7 @@
 ///To update recognition activities
 #include "recoActivite/recoAffordance/ObjectAff.h"
 #include "recoActivite/recoAffordance/MatriceAffordance.h"
+#include "Traces.h"
 
 ///To update plan recognition
 #include "recoPlan/Policy.h"
@@ -127,7 +128,7 @@ class RecognitionManager : public Observer{
 	
 	///Setting of this application
 	map<string,string> setting;
-	
+	Traces tr;
 	/// time variable
 	chrono::milliseconds startTime;// time when program has begun
 	chrono::milliseconds actualTime;// time updated at each course of the main loop
@@ -169,6 +170,7 @@ class RecognitionManager : public Observer{
 	bool isStopped = false;
 	atomic_bool check;
 	bool newCheckedAff=false;
+	
 	
 	/// Plan Recognition
 	Policy pl;

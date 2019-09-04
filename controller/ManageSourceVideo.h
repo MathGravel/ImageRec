@@ -66,6 +66,8 @@ public:
      }
     void saveVideos();
 
+	bool hasNextFrame();
+
 //from observee
 	void registerObserver(Observer *observer) override;
 //from observee
