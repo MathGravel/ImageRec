@@ -13,6 +13,8 @@ class Traces
 public:
     Traces(std::string traceLoc,std::string planName);
     ~Traces();
+    inline bool exists_test0 (const std::string& name);
+
     void addAffordance(Affordance* aff);
     void addFutureActivities(std::string ac1);
     void addCurrentPlan(std::string plan);

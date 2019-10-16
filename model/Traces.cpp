@@ -8,6 +8,11 @@ Traces::Traces(std::string traceLoc,std::string planName):fileLoc(std::move(trac
   std::size_t found = planName.find_last_of("/\\");
   planName = planName.substr(found+1);
   direct = fileLoc + "/" + planName + ".txt";
+  while (exists_test0(direct)) {
+	for (int i = 0; i < 4;i++)
+		direct.pop_back();
+	direct = direct + "(a).txt";
+  }
     this->trace = std::ofstream(direct);
     std::cout <<"\n\n\n\n\nICITTE :" << direct << std::endl;
     last = "";
@@ -22,6 +27,11 @@ Traces::~Traces(){
 void Traces::addPlanReset() {
 	buffer << "Reset" << std::endl;
 }
+inline bool Traces::exists_test0 (const std::string& name) {
+    std::ifstream f(name.c_str());
+    return f.good();
+}
+
 
 
 void Traces::dumpBuffer() {

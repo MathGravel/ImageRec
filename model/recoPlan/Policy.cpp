@@ -13,7 +13,7 @@ bool Policy::update(Affordance* observation)  {
 
 void Policy::Reset() {
 
-      gP = solver(&ePL,500);
+      gP = solver(&ePL,2500);
 }
 
 

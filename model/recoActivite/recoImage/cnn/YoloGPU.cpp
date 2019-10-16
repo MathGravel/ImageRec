@@ -137,9 +137,22 @@ inline std::vector<DetectedObject> YoloGPU::findObjects(cv::Mat color,cv::Mat de
             central.height = 3;
 */
 
+			auto maxi = mean(depth)[0];
+            //cv::Scalar m = mean(depth(obj), depth(obj) <= maxi + 1 );
+            //cv::Scalar m = mean(depth(obj));
+			cv::Mat thresh,mask;
+			threshold(depth(obj), thresh, maxi, maxi + 1, cv::THRESH_TOZERO_INV);
+			thresh.convertTo(mask,CV_8U);
+            cv::Scalar m= mean(depth(obj),mask);
 
-            cv::Scalar m = mean(depth(central));
-
+			/*if(nom == "green")
+				std::cout << "distance vert " << m[0] << " " << m2[0]  << std::endl;
+			if(nom == "hand")
+				std::cout << "distance main " << m[0] << " " << m2[0] << std::endl;	
+				//if(nom == "blue")
+				//std::cout << "distance bleu " << m[0]<< std::endl;	
+				*/
+						
             int offset = pos*123457 % 10;
             float red = get_color(2,offset,10);
              float green = get_color(1,offset,10);

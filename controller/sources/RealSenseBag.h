@@ -35,7 +35,7 @@ public:
     int getTimePosition() {return (int)((std::clock() - startTime)/(double) CLOCKS_PER_SEC);}
     double getExactTimePosition() {return (std::clock() - startTime)/(double) CLOCKS_PER_SEC;}
     std::pair<int,int> getScreenSize(){return std::pair<int,int>(1280,720);}
-    std::string getTimeStamp() {return frame < maxframe ? "-1":"En direct";}
+    std::string getTimeStamp() {return maxframe - frame >= 500  ? "-1":"En direct";}
 
 
 private:

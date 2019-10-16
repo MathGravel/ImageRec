@@ -45,7 +45,7 @@ bool solver::addObservation(int obs)
         if(it.goal == epl->ids["A"])
         test++;
     }
-    std::cout << test << std::endl;
+    //std::cout << test << std::endl;
 
     if(validParticles.size() == 0)
     {
@@ -251,6 +251,9 @@ void solver::clear()
 solverParticle::solverParticle(extendedPlanLibrary* _epl):epl(_epl)
 {
     int ruleGoal = epl->decisionModel.RNC(-1);
+    for(auto it =  epl->ePlanLibrary->getRules().begin(); it !=  epl->ePlanLibrary->getRules().end(); ++it) {
+		cout << ruleGoal << " " << it->first << "\n";
+	}
     goal = epl->ePlanLibrary->getRules().at(ruleGoal).getChildren().at(0);
     planTree = tree(epl,goal);
     expNextObs = planTree.update();

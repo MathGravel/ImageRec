@@ -31,7 +31,7 @@ std::vector<AffordanceTime*> ObjectAffordances::findAffordances(DetectedObjects 
             //double dist = sqrt( pow( ( (obj.getObjPos().y+obj.getObjPos().height/2) - (hand.getObjPos().y+hand.getObjPos().height/2) ),2) + pow( ( (obj.getObjPos().x+obj.getObjPos().width/2) - (hand.getObjPos().x+hand.getObjPos().width/2) ),2));
 
             if((obj.getObjPos() & hand.getObjPos()).area() > (0.3 * std::min(obj.getObjPos().area(),hand.getObjPos().area()))
-             && abs(obj.getDist()-hand.getDist())<0.04)
+             && abs(obj.getDist()-hand.getDist())<0.05 )
             {
 		
                //double prob=objectMat.getFrequence(obj.getObjName());
